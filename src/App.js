@@ -6,7 +6,10 @@ function App() {
       <Header />
       {/* <!-- content goes here --> */}
       <div className="py-32 text-center">
-        <h2 className="font-light text-6xl text-sky-300">Don't worry it's just a demo, we will change everything.</h2>
+        <h2 className="font-light text-6xl text-sky-300">
+          Don't worry it's just a demo, we will change everything.
+        </h2>
+        <h3 className="font-light text-4xl text-sky-300">Development Branch</h3>
       </div>
     </div>
   );
