@@ -25,38 +25,37 @@ const toggleFunction=()=>{
                         <i className="fas fa-bars text-2xl px-2"></i>
                     </button>
                 </div>
-            <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex-shrink-0 flex items-center">
-                    <Link to="/home">
-                        <img className="hidden lg:block h-10 w-auto" src="https://i.ibb.co/HzzW0Xv/logo.png" alt="Workflow"/>
-                    </Link>
-                </div>
-                <div className="hidden sm:block sm:ml-6">
-                    <div className="flex space-x-4">
-                        <Link 
-                            className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium" 
-                            to="/">Home
-                        </Link>
-                        <Link 
-                            className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium" 
-                            to="/Courses">Courses
-                        </Link>
-                        <Link 
-                            className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium" 
-                            to="/blog">Blog
-                        </Link>
-                        <Link 
-                            className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium" 
-                            to="/about">About
-                        </Link>
-                        <Link
-                            className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
-                            to="/contact">Contact
+                <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <div className="flex-shrink-0 flex items-center">
+                        <Link to="/home">
+                            <img className="hidden lg:block h-10 w-auto" src="https://i.ibb.co/HzzW0Xv/logo.png" alt="Workflow"/>
                         </Link>
                     </div>
+                    <div className="hidden sm:block sm:ml-6">
+                        <div className="flex space-x-4">
+                            <Link 
+                                className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium" 
+                                to="/">Home
+                            </Link>
+                            <Link 
+                                className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium" 
+                                to="/Courses">Courses
+                            </Link>
+                            <Link 
+                                className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium" 
+                                to="/blog">Blog
+                            </Link>
+                            <Link 
+                                className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium" 
+                                to="/about">About
+                            </Link>
+                            <Link
+                                className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                                to="/contact">Contact
+                            </Link>
+                        </div>
+                    </div>
                 </div>
-                </div>
-                
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 userProfile">
                     <div className="relative mt-2">
                         <img 
