@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "../src/Components/Header/Header";
+import Footer from "../src/Components/Footer/Footer";
 function App() {
   return (
     <div className="App">
@@ -13,8 +14,15 @@ function App() {
         <br />
         <br />
         <br />
-        <h3 className="font-light text-4xl text-sky-300 uppercase">Development Branch</h3>
+        <h3 className="font-light text-4xl text-sky-300 uppercase">
+          Development Branch
+        </h3>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <Footer />
     </div>
   );
 }
