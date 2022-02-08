@@ -35,7 +35,7 @@ const Banner = () => {
                     <div className="slider-text text-left absolute top-1/4 left-1/4 ">
                     <p className="text-yellow-500 font-bold text-lg tracking-wider"> Learn & Achieve </p>
                         <h1 className="text-5xl mb-8 text-white uppercase font-bold leading-normal">Become A Perfect Developer <br /> With Edu Buddies</h1>
-                        <p className="mb-8 text-gray-300 text-xl">Better Education For A Better World. Best Industry Leaders And Learn Courses Online <br /> “Learning to code has the inadvertent effect of teaching you how to think,” says Adrian Degus </p>
+                        <p className="mb-8 text-gray-300 text-xl">Better Education For A Better World. Best Industry Leaders And Learn Courses Online <br /> “Learning to code has the inadvertent effect of teaching you how to think,” says Adrian Degus. </p>
                         <Link to="/Courses">
                             <button className="border-2 border-yellow-600 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg">Ready To Get Started ?</button>
                         </Link>
