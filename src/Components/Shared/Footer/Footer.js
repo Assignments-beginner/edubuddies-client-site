@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -88,6 +89,22 @@ const Footer = () => {
             </div>
         </footer>
     );
+=======
+import React from "react";
+
+const Footer = ({ backgroundColor = "#EDF2F7", children }) => {
+  return (
+    <div style={{ backgroundColor }}>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h1 className="text-xl pb-4">Copyright © 2022 All Rights Reserved</h1>
+    </div>
+  );
+>>>>>>> 2d9f0447dde36d0e17bddf9bdcad00121a006e4c
 };
 
 export default Footer;
