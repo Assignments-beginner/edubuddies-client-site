@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 
-const Footer = () => {
-    return (
-        <div>
-            <h1 className="text-4xl">Hello From Footer</h1>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-        </div>
-    );
+const Footer = ({ backgroundColor = "#EDF2F7", children }) => {
+  return (
+    <div style={{ backgroundColor }}>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h1 className="text-xl pb-4">Copyright © 2022 All Rights Reserved</h1>
+    </div>
+  );
 };
 
 export default Footer;
