@@ -12,6 +12,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "router-dom": "^2.2.9",
+    "swiper": "^8.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
