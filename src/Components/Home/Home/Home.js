@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { addCourse, loadStudent } from "../../../Redux/edubuddySlice";
+import { loadStudent } from "../../../Redux/edubuddySlice";
 import Banner from "../Banner/Banner";
 
 const Home = () => {
-  const [student, setStudent] = useState();
   const dispath = useDispatch();
 
   const allStudent = useSelector((state) => state.edu.student);
