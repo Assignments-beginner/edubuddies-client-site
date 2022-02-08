@@ -1,15 +1,15 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ backgroundColor = "#EDF2F7", children }) => {
   return (
-    <div>
+    <div style={{ backgroundColor }}>
       <br />
       <br />
       <br />
       <br />
       <br />
       <br />
-      <h1 className="text-xl mb-4">Copyright © 2022 All Rights Reserved</h1>
+      <h1 className="text-xl pb-4">Copyright © 2022 All Rights Reserved</h1>
     </div>
   );
 };
