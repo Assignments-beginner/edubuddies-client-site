@@ -7,28 +7,30 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "./Testimonial.css";
 
 SwiperCore.use([Autoplay, Pagination]);
 
 const Testimonial = () => {
 	return (
-		<div className='container mx-auto my-2'>
+		<div className='container mx-auto my-8'>
 			<div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
-				<div className='text-left'>
+				{/* <div className=' sm:flex-col border-2'> */}
+				<div className='text-left px-6 w-full'>
 					<div className='text-2xl font-black my-5 text-blue-700'>
 						Testimonial
 					</div>
-					<div className='text-5xl font-black  my-5'>
+					<div className='text-5xl font-black my-5 '>
 						What Our Client Says About Us
 					</div>
-					<div className='text-xl  my-5'>
+					<div className='text-xl my-5 text-justify text-p '>
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa
 						laudantium vel quas nihil ad non hic doloribus esse. Delectus minima
 						architecto recusandae modi accusamus aspernatur numquam odio
 						expedita minus illo.
 					</div>
 				</div>
-				<div>
+				<div className='px-6 w-full' style={{ overflow: "hidden" }}>
 					<Swiper
 						loop={true}
 						autoplay={{ delay: 2000 }}
@@ -63,7 +65,7 @@ const Testimonial = () => {
 											</div>
 										</div>
 										<FontAwesomeIcon
-											className='text-9xl text-right text-orange-500 opacity-50'
+											className='text-9xl text-right text-orange-500 opacity-50 faQuoteRight'
 											icon={faQuoteRight}
 										/>
 									</div>

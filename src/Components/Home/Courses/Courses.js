@@ -36,14 +36,11 @@ const Courses = () => {
 					},
 					900: {
 						slidesPerView: 4,
-					},
-					1020: {
-						slidesPerView: 5,
-					},
+					}
 				}}
 				className='mySwiper'>
 				{Array.from({ length: 5 }).map((_, idx) => (
-					<SwiperSlide>
+					<SwiperSlide className='px-2'>
 						<div className='border-2 rounded-lg card'>
 							<img
 								className='w-full card-image'

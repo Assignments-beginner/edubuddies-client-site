@@ -1,0 +1,9 @@
+@media all and (max-width: 688px) {
+	.faQuoteRight {
+		display: none;
+	}
+	.text-p {
+		font-size: 16px;
+		text-align: left;
+	}
+}
