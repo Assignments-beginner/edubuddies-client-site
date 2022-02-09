@@ -6,7 +6,7 @@ import "../Login/Login.css";
 const Login = ({ backgroundColor = "#EDF2F7", children }) => {
   return (
     <div style={{ backgroundColor }}>
-      <div className="w-full max-w-xs mx-auto pt-8">
+      <div className="w-full max-w-xs mx-auto pt-8 pb-16">
         <h1 className="text-2xl uppercase mb-4 text-indigo-700">
           Please Sign In
         </h1>
