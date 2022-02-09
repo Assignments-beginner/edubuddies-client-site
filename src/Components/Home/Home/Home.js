@@ -1,16 +1,33 @@
-import React from 'react';
-import Banner from '../Banner/Banner';
-import Teachers from '../Teachers/Teachers';
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { loadStudent } from "../../../Redux/edubuddySlice";
+import Banner from "../Banner/Banner";
+import Courses from "../Courses/Courses";
+import Testimonial from "../Testimonial/Testimonial";
 
 const Home = () => {
-    return (
-        <div>
-            <h1 className="text-4xl">All Home Component Call From Here</h1>
-            <Banner/>
+	const dispath = useDispatch();
 
-            <Teachers/>
-        </div>
-    );
+	const allStudent = useSelector((state) => state.edu.student);
+	console.log(allStudent);
+
+	useEffect(() => {
+		fetch("https://jsonplaceholder.typicode.com/users")
+			.then((res) => res.json())
+			.then((data) => {
+				dispath(loadStudent(data));
+			});
+	}, [dispath]);
+
+	return (
+		<div>
+			{/* All Home Component Call From Here */}
+			<Banner />
+			<Courses />
+			<Testimonial />
+		</div>
+	);
 };
 
 export default Home;
