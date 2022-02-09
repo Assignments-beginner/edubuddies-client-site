@@ -13,13 +13,18 @@ SwiperCore.use([Autoplay, Pagination]);
 const Courses = () => {
 	return (
 		<div className='container mx-auto my-14'>
-			<h1 className='text-4xl font-semibold mt-9 mb-4'>POPULAR COURSES</h1>
+			<h1 className='text-4xl font-semibold mt-9 mb-4 text-blue-500'>
+				POPULAR COURSES
+			</h1>
 			<Swiper
 				loop={true}
 				autoplay={{ delay: 3000 }}
 				grabCursor={true}
 				slidesPerView={3}
 				spaceBetween={30}
+				pagination={{
+					clickable: true,
+				}}
 				breakpoints={{
 					300: {
 						slidesPerView: 1,
@@ -38,37 +43,37 @@ const Courses = () => {
 				{Array.from({ length: 5 }).map((_, idx) => (
 					<SwiperSlide>
 						<div
-							className='border-2 rounded-lg card mx-auto'
+							className='border border-blue-500 rounded-lg card mx-auto'
 							style={{ maxWidth: "350px" }}>
 							<img
-								className='w-full card-image'
+								className='w-full card-image rounded-t-lg '
 								src='https://eduma.thimpress.com/demo-1/wp-content/uploads/sites/89/2015/06/course-6-400x300.jpg'
 								alt=''
 							/>
 							<div className='px-4 pb-4 card-content'>
 								<img
-									className='w-20 rounded-full mx-auto -mt-9'
+									className='w-20 rounded-full mx-auto -mt-9 border-2 border-blue-500 relative z-10'
 									alt=''
 									src='https://eduma.thimpress.com/demo-1/wp-content/uploads/learn-press-profile/7/9c081444f942cc8fe0ddf55631b584e2.jpg'
 								/>
-								<h6 className='text-stone-500 mt-2 hover:underline duration-300 cursor-pointer'>
+								<h6 className='text-base text-stone-500 mt-2 hover:underline duration-300 cursor-pointer'>
 									John Doe
 								</h6>
-								<h1 className='font-bold my-3 text-stone-700 hover:text-yellow-400 duration-300 cursor-pointer'>
+								<h1 className='text-lg font-bold mt-1 mb-3 text-stone-700 hover:text-blue-400 duration-300 cursor-pointer'>
 									Learn Complete Web Development
 								</h1>
-								<hr />
+								<hr className='border border-blue-500' />
 								<div className='flex justify-between pt-2'>
 									<div className='flex text-stone-500 text-sm'>
-										<div className='mr-4 '>
+										<div className='mr-3 text-base'>
 											<FontAwesomeIcon icon={faUsers} /> <span>50</span>
 										</div>
-										<div>
+										<div className='text-base'>
 											<FontAwesomeIcon icon={faComment} /> <span>50</span>
 										</div>
 									</div>
 									<div>
-										<h6 className='text-sm font-bold text-red-500'>500$</h6>
+										<h6 className='text-base font-bold text-red-500'>500$</h6>
 									</div>
 								</div>
 							</div>
