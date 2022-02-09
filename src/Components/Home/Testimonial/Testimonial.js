@@ -1,10 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
-import SwiperCore, { Autoplay, Pagination } from "swiper";
+import SwiperCore, { EffectCards, Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/effect-fade";
+import "swiper/css/effect-cards";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Testimonial.css";
@@ -13,9 +13,10 @@ SwiperCore.use([Autoplay, Pagination]);
 
 const Testimonial = () => {
 	return (
-		<div className='container mx-auto my-8'>
-			<div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
-				{/* <div className=' sm:flex-col border-2'> */}
+		<div className='container mx-auto my-14'>
+			<div
+				className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'
+				style={{ alignItems: "center" }}>
 				<div className='text-left px-6 w-full'>
 					<div className='text-2xl font-black my-5 text-blue-700'>
 						Testimonial
@@ -33,8 +34,10 @@ const Testimonial = () => {
 				<div className='px-6 w-full' style={{ overflow: "hidden" }}>
 					<Swiper
 						loop={true}
-						autoplay={{ delay: 2000 }}
+						effect={"cards"}
 						grabCursor={true}
+						modules={[EffectCards]}
+						autoplay={{ delay: 3000 }}
 						pagination={{
 							clickable: true,
 						}}
@@ -43,7 +46,7 @@ const Testimonial = () => {
 							<SwiperSlide>
 								<div
 									className='text-left border-2 rounded-lg p-5'
-									style={{ maxWidth: "500px" }}>
+									style={{ backgroundColor: "white" }}>
 									<div className='mb-5'>
 										Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 										Culpa laudantium vel quas nihil ad non hic doloribus esse.
@@ -52,13 +55,16 @@ const Testimonial = () => {
 									</div>
 									<div className='flex justify-between'>
 										<div className='flex items-center'>
-											<img
-												width='200px'
-												height='350px'
-												className='border-2 p-3 border-orange-500 rounded-lg mr-3'
-												src='https://shivaaythemes.in/educater-html/assets/images/client-3.jpg'
-												alt=''
-											/>
+											<div className='border-2 p-2 border-orange-500 rounded-lg mr-4'>
+												<img
+													width='150px'
+													height='300px'
+													className=' rounded-lg'
+													src='https://shivaaythemes.in/educater-html/assets/images/client-3.jpg'
+													alt=''
+												/>
+											</div>
+
 											<div className='w-full'>
 												<div className='text-3xl font-medium'>John Doe</div>
 												<div className='text-xl text-orange-500'>Student</div>

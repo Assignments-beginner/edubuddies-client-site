@@ -12,21 +12,14 @@ SwiperCore.use([Autoplay, Pagination]);
 
 const Courses = () => {
 	return (
-		<div className='container mx-auto my-2'>
-			<h1 className='text-4xl font-bold mt-9 mb-4 text-left'>
-				POPULAR COURSES
-			</h1>
-
-			{/*  <div className='grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-6'> */}
+		<div className='container mx-auto my-14'>
+			<h1 className='text-4xl font-semibold mt-9 mb-4'>POPULAR COURSES</h1>
 			<Swiper
 				loop={true}
-				autoplay={{ delay: 2000 }}
+				autoplay={{ delay: 3000 }}
 				grabCursor={true}
 				slidesPerView={3}
 				spaceBetween={30}
-				/*   pagination={{
-                      clickable: true,
-                  }} */
 				breakpoints={{
 					300: {
 						slidesPerView: 1,
@@ -36,12 +29,17 @@ const Courses = () => {
 					},
 					900: {
 						slidesPerView: 4,
-					}
+					},
+					1020: {
+						slidesPerView: 5,
+					},
 				}}
 				className='mySwiper'>
 				{Array.from({ length: 5 }).map((_, idx) => (
-					<SwiperSlide className='px-2'>
-						<div className='border-2 rounded-lg card'>
+					<SwiperSlide>
+						<div
+							className='border-2 rounded-lg card mx-auto'
+							style={{ maxWidth: "350px" }}>
 							<img
 								className='w-full card-image'
 								src='https://eduma.thimpress.com/demo-1/wp-content/uploads/sites/89/2015/06/course-6-400x300.jpg'
@@ -79,7 +77,6 @@ const Courses = () => {
 				))}
 			</Swiper>
 		</div>
-		/*   </div > */
 	);
 };
 
