@@ -22,7 +22,7 @@ const Home = () => {
 
 	return (
 		<div>
-			<h1 className='text-4xl'>All Home Component Call From Here</h1>
+			{/* All Home Component Call From Here */}
 			<Banner />
 			<Courses />
 			<Testimonial />
