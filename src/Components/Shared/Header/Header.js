@@ -88,11 +88,11 @@ const Header = () => {
           {/* ///////////////////// User Box /////////////////// */}
 
           {user?.email && (
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0">
-              <div className="relative flex">
+            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0 userProfile">
+              <div className="flex">
                 {/* ///////// Profile img & name /////////// */}
 
-                <div className="flex items-center userProfile">
+                <div className="relative flex items-center profile-imgName">
                   <img
                     className="user-img h-8 w-8 rounded-full ring-2 ring-offset-2"
                     src={user.photoURL}
