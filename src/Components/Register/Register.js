@@ -52,7 +52,7 @@ const Register = ({ backgroundColor = "#EDF2F7", children }) => {
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              name="fullname"
+              name="name"
               type="text"
               onClick={removeError}
               onBlur={handleOnBlur}
