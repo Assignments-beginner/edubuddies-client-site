@@ -52,17 +52,12 @@ const Contact = () => {
         event.target.reset();
     }
 
-
-
-
-
     return (
-        <div className="contact">
-            <div className="contact-box">
-                
+        <div className="contact  py-16">
+            <div className="contact-box mr-24">                
                 {/* <form className="contact-form" onsubmit="sendEmail(); reset(); return false;"> */}
                 <form className="contact-form" onSubmit={handleFormSubmit} >
-                    <h3>GET IN TOUCH</h3>
+                    <h3 className="mt-4">GET IN TOUCH</h3>
                     <input type="text" id="name" name="User Name" placeholder="Your Name" required />
                     <input type="email" id="email" placeholder="Your Email" required name="email"/>
                     <input type="text" id="phone" placeholder="Your Phone No." required />
