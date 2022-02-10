@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 const Register = ({ backgroundColor = "#EDF2F7", children }) => {
   return (
     <div style={{ backgroundColor }}>
