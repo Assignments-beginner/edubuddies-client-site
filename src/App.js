@@ -15,29 +15,29 @@ import AuthProvider from "../src/contexts/AuthProvider/AuthProvider";
 import UserProfile from "./Components/UserProfile/UserProfile/UserProfile";
 
 function App() {
-  return (
-    <div className="App">
-      <AuthProvider>
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/*" element={<NotFound />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/userProfile" element={<UserProfile />} />
-            <Route path="/dashboard/*" element={<Dashboard />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </AuthProvider>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<AuthProvider>
+				<BrowserRouter>
+					<Header />
+					<Routes>
+						<Route path='/*' element={<NotFound />} />
+						<Route path='/' element={<Home />} />
+						<Route path='/home' element={<Home />} />
+						<Route path='/blog' element={<Blog />} />
+						<Route path='/about' element={<About />} />
+						<Route path='/courses' element={<Courses />} />
+						<Route path='/contact' element={<Contact />} />
+						<Route path='/register' element={<Register />} />
+						<Route path='/login' element={<Login />} />
+						<Route path='/userProfile' element={<UserProfile />} />
+						<Route path='/dashboard/*' element={<Dashboard />} />
+					</Routes>
+					<Footer />
+				</BrowserRouter>
+			</AuthProvider>
+		</div>
+	);
 }
 
 export default App;
