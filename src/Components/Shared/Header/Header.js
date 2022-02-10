@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-indigo-700 sticky top-0 z-50">
+    <nav className="bg-indigo-700 py-3 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -32,7 +32,9 @@ const Header = () => {
             <div className="flex-shrink-0 flex items-center">
               <Link to="/home">
                 <img
-                  className="hidden lg:block h-10 w-auto"
+                  className="hidden lg:block"
+                  height="230"
+                  width="130"
                   src="https://i.ibb.co/HzzW0Xv/logo.png"
                   alt="Workflow"
                 />
