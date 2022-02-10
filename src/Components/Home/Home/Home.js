@@ -7,6 +7,7 @@ import Courses from "../Courses/Courses";
 import Testimonial from "../Testimonial/Testimonial";
 import Teachers from "../Teachers/Teachers";
 import Blogs from "../Blogs/Blogs";
+import Newsletter from "../Newsletter/Newsletter";
 
 const Home = () => {
 	const dispath = useDispatch();
@@ -30,6 +31,7 @@ const Home = () => {
 			<Testimonial />
 			<Blogs />
 			<Teachers />
+			<Newsletter />
 		</div>
 	);
 };
