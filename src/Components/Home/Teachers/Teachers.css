@@ -32,8 +32,7 @@
 .box {
   display: flex;
   flex-direction: column;
-  justify-items: center;
-  border: #033cf7 2px solid;
+  align-items: center;
   width: 330px;
   margin: 20px;
   padding-top: 20px;

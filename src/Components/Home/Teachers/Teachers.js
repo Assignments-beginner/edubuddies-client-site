@@ -24,7 +24,7 @@ const Teachers = () => {
             </div>
             <div>
               <h2 className="mt-4">Kelly Franklin</h2>
-              <span>Software Engineer</span>
+              <span>Senior Developer</span>
               <ul>
                 <li>
                   <a href="/#">
@@ -85,7 +85,7 @@ const Teachers = () => {
             </div>
             <div>
               <h2 className="mt-4">J.K Alice</h2>
-              <span>Software Engineer</span>
+              <span>Web Developer</span>
               <ul>
                 <li>
                   <a href="/#">
