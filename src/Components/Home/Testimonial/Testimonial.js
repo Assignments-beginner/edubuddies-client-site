@@ -31,7 +31,9 @@ const Testimonial = () => {
 						expedita minus illo.
 					</div>
 				</div>
-				<div className='px-6 w-full py-7' style={{ overflow: "hidden" }}>
+				<div
+					className='px-6 w-full py-7 pagination'
+					style={{ overflow: "hidden" }}>
 					<Swiper
 						loop={true}
 						grabCursor={true}

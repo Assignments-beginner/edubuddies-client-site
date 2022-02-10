@@ -1,19 +1,21 @@
 @media all and (max-width: 688px) {
 	.faQuoteRight {
-		display: none;
+		/* display: none; */
+		position: absolute;
+		right: 10px;
+		opacity: 20%;
 	}
 	.text-p {
 		font-size: 16px;
 		text-align: left;
 	}
 }
-.swiper-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-	bottom: -25px !important;
+.pagination .swiper-horizontal > .swiper-pagination-bullets {
+	bottom: -30px !important;
 }
-
-.swiper-pagination-bullet-active {
+.pagination .swiper {
+	overflow: visible;
+}
+.pagination .swiper-pagination-bullet-active {
 	background-color: blue !important;
 }
