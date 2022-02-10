@@ -88,28 +88,27 @@ const Header = () => {
           {/* ///////////////////// User Box /////////////////// */}
 
           {user?.email && (
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0 userProfile">
-              <div className="flex">
-                {/* ///////// Profile img & name /////////// */}
+            <div className="flex userProfile">
+              {/* ///////// Profile img & name /////////// */}
 
-                <div className="relative flex items-center profile-imgName">
-                  <img
-                    className="user-img h-8 w-8 rounded-full ring-2 ring-offset-2"
-                    src={user.photoURL}
-                    alt=""
-                  />
-                  <span
-                    style={{ fontSize: "12px" }}
-                    className="text-white ml-2 uppercase"
-                  >
-                    {user.displayName}
-                  </span>
-                </div>
+              <div className="flex items-center profile-imgName">
+                <img
+                  className=" user-img h-8 w-8 rounded-full ring-2 ring-offset-2"
+                  src={user.photoURL}
+                  alt=""
+                />
+                <span
+                  style={{ fontSize: "12px" }}
+                  className="text-white ml-2 uppercase"
+                >
+                  {user.displayName}
+                </span>
+              </div>
 
-                {/* ///////// Profile Hamburger /////////// */}
+              {/* ///////// Profile Hamburger /////////// */}
 
-                <div
-                  className="
+              <div
+                className="
                 origin-top-right 
                 absolute 
                 right-0 
@@ -118,7 +117,7 @@ const Header = () => {
                 shadow-lg 
                 py-1 
                 px-1
-                mr-32
+                mr-12
                 mt-10
                 bg-white 
                 ring-1 
@@ -127,36 +126,36 @@ const Header = () => {
                 focus:outline-none 
                 hidden 
                 show"
-                  id="userProfileDiv"
+                id="userProfileDiv"
+              >
+                <Link
+                  className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
+                  to="/dashboard"
                 >
-                  <Link
-                    className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
-                    to="/dashboard"
-                  >
-                    Dashboard
-                  </Link>
-                  <Link
-                    to="/userProfile"
-                    className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
-                  >
-                    Profile
-                  </Link>
-                  <Link
-                    to="/login"
-                    onClick={logout}
-                    className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
-                  >
-                    Log Out
-                  </Link>
-                </div>
-
-                {/* //////////////// Logout Button /////////////// */}
-
-                <Link onClick={logout} to="/login">
-                  <i className="xl:ml-4 lg:ml-4 sm:ml-2 fas fa-sign-in-alt text-white text-lg px-2 py-1 border border-indigo-700 rounded-lg hover:border-white hover:bg-indigo-900"></i>
+                  Dashboard
+                </Link>
+                <Link
+                  to="/userProfile"
+                  className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
+                >
+                  Profile
+                </Link>
+                <Link
+                  to="/login"
+                  onClick={logout}
+                  className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
+                >
+                  Log Out
                 </Link>
               </div>
             </div>
+          )}
+          {/* //////////////// Logout Button /////////////// */}
+
+          {user?.email && (
+            <Link onClick={logout} to="/login">
+              <i className="xl:ml-4 lg:ml-4 sm:ml-2 fas fa-sign-in-alt text-white text-lg px-2 py-1 border border-indigo-700 rounded-lg hover:border-white hover:bg-indigo-900"></i>
+            </Link>
           )}
         </div>
       </div>

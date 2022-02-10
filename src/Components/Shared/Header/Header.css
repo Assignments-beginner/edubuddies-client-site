@@ -1,9 +1,11 @@
 .userProfile:hover .show {
   display: block;
 }
+
 .user-img {
   background-image: url("../../../Images/user.png");
 }
+
 .profile-imgName:hover {
   cursor: pointer;
 }

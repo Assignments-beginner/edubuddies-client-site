@@ -6,7 +6,12 @@ import "../Login/Login.css";
 
 const Login = ({ backgroundColor = "#EDF2F7", children }) => {
   const [loginData, setLoginData] = useState({});
-  const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
+  const { loginUser, signInWithGoogle, isLoading, authError, setAuthError } =
+    useAuth();
+
+  const removeError = () => {
+    setAuthError("");
+  };
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -48,6 +53,7 @@ const Login = ({ backgroundColor = "#EDF2F7", children }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="email"
               type="email"
+              onClick={removeError}
               onChange={handleOnChange}
               placeholder="Email"
             />
@@ -63,6 +69,7 @@ const Login = ({ backgroundColor = "#EDF2F7", children }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:shadow-outline"
               id="password"
               type="password"
+              onClick={removeError}
               onChange={handleOnChange}
               placeholder="******************"
             />
@@ -96,7 +103,10 @@ const Login = ({ backgroundColor = "#EDF2F7", children }) => {
             </div>
           )}
         </form>
-        <div className="mt-8 pb-5 grid justify-items-center">
+
+        {/* //////////////// Google Button ////////////////// */}
+
+        <div className="mt-8 pb-5 flex flex-col justify-items-center">
           <p className="text-secondary mb-4 text-center">Or you can also</p>
           <button onClick={handleGoogleSignIn} className="mx-auto signin-btn">
             <div className="flex items-center justify-between">
