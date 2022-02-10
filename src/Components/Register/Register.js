@@ -84,7 +84,23 @@ const Register = ({ backgroundColor = "#EDF2F7", children }) => {
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
+              name="password"
+              type="password"
+              onClick={removeError}
+              onBlur={handleOnBlur}
+              placeholder="******************"
+            />
+          </div>
+          <div className="mb-2">
+            <label
+              className="block text-gray-700 text-left text-sm font-bold mb-2"
+              for="password"
+            >
+              Retype Password
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:shadow-outline"
+              name="password2"
               type="password"
               onClick={removeError}
               onBlur={handleOnBlur}
@@ -108,7 +124,7 @@ const Register = ({ backgroundColor = "#EDF2F7", children }) => {
           </div>
           {authError && (
             <div
-              className="bg-red-100 border border-red-400 text-red-700 mt-4 px-4 py-3 rounded relative"
+              className="bg-red-100 border border-red-400 text-red-700 mb-4 px-4 py-3 rounded relative"
               role="alert"
             >
               <strong className="font-bold">Error!</strong>
