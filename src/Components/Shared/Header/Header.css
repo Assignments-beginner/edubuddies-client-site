@@ -1,3 +1,10 @@
-.userProfile:hover .show{
-    display: block;
+.user-img {
+  background-image: url("../../../Images/user.png");
+}
+/* .user-img:hover {
+  cursor: pointer;
+} */
+
+.userProfile:hover .show {
+  display: block;
 }
