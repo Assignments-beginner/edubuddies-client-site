@@ -154,7 +154,20 @@ const Header = () => {
 
           {user?.email && (
             <Link onClick={logout} to="/login">
-              <i className="xl:ml-4 lg:ml-4 sm:ml-2 fas fa-sign-in-alt text-white text-lg px-2 py-1 border border-indigo-700 rounded-lg hover:border-white hover:bg-indigo-900"></i>
+              <i className="
+              xl:ml-4 
+              lg:ml-4 
+              sm:ml-2 
+              fas fa-sign-in-alt 
+              text-white 
+              text-lg 
+              px-2 
+              py-1 
+              border 
+              border-indigo-700 
+              rounded-lg 
+              hover:border-white 
+              hover:bg-indigo-900"></i>
             </Link>
           )}
         </div>
