@@ -3,16 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const Register = ({ backgroundColor = "#EDF2F7", children }) => {
-  const [loginData, setLoginData] = useState({});
+  const [registerData, setRegisterData] = useState({});
   const navigate = useNavigate();
   const { registerUser, authError, setAuthError } = useAuth();
 
   const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
-    const newLoginData = { ...loginData };
-    newLoginData[field] = value;
-    setLoginData(newLoginData);
+    const newRegisterData = { ...registerData };
+    newRegisterData[field] = value;
+    setRegisterData(newRegisterData);
   };
 
   const removeError = () => {
@@ -20,11 +20,16 @@ const Register = ({ backgroundColor = "#EDF2F7", children }) => {
   };
 
   const registerHandler = (e) => {
-    if (loginData.password !== loginData.password2) {
+    if (registerData.password !== registerData.password2) {
       alert("Your password did not match");
       return;
     }
-    registerUser(loginData.email, loginData.password, loginData.name, navigate);
+    registerUser(
+      registerData.email,
+      registerData.password,
+      registerData.name,
+      navigate
+    );
     e.preventDefault();
   };
 
