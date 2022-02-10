@@ -39,17 +39,14 @@ const Courses = () => {
 						900: {
 							slidesPerView: 4,
 						},
-						1020: {
-							slidesPerView: 5,
-						},
 					}}
 					className='mySwiper'>
 					{Array.from({ length: 5 }).map((_, idx) => (
 						<SwiperSlide>
 							<div
-								className='border border-blue-500 rounded-lg card duration-300'
+								className='border rounded-lg card duration-300'
 								style={{ maxWidth: "350px" }}>
-								<div className=' overflow-hidden'>
+								<div className=' overflow-hidden rounded-t-lg'>
 									<img
 										className='w-full card-image rounded-t-lg'
 										src='https://eduma.thimpress.com/demo-1/wp-content/uploads/sites/89/2015/06/course-6-400x300.jpg'
@@ -68,7 +65,7 @@ const Courses = () => {
 									<h1 className='text-lg font-bold mt-1 mb-3 text-stone-700 hover:text-blue-400 duration-300 cursor-pointer'>
 										Learn Complete Web Development
 									</h1>
-									<hr className='border border-blue-500' />
+									<hr className='border ' />
 									<div className='flex justify-between pt-2'>
 										<div className='flex text-stone-500 text-sm'>
 											<div className='mr-3 text-base'>

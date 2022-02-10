@@ -48,7 +48,7 @@ const Blogs = () => {
 					{Array.from({ length: 5 }).map((_, idx) => (
 						<SwiperSlide>
 							<div
-								className='border border-blue-500 rounded-lg card mx-auto duration-300'
+								className='border  rounded-lg card mx-auto duration-300'
 								style={{ maxWidth: "400px" }}>
 								<div className=' overflow-hidden'>
 									<img
@@ -62,7 +62,7 @@ const Blogs = () => {
 										Lorem, ipsum dolor sit amet consectetur adipisicing elit.
 										Eligendi, quae.
 									</h1>
-									<hr className='border border-blue-500' />
+									<hr className='border' />
 									<div className='flex justify-evenly pt-2 '>
 										<div className='flex text-stone-500 text-sm'>
 											<div className='text-base'>
@@ -73,7 +73,7 @@ const Blogs = () => {
 												<span>{new Date().toLocaleString()}</span>
 											</div>
 										</div>
-										<div className='border-l-2 border-blue-500'></div>
+										<div className='border-l-2 '></div>
 										<div className='flex text-stone-500 text-sm'>
 											<div className='text-base'>
 												<FontAwesomeIcon
