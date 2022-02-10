@@ -47,16 +47,18 @@ const Courses = () => {
 					{Array.from({ length: 5 }).map((_, idx) => (
 						<SwiperSlide>
 							<div
-								className='border border-blue-500 rounded-lg card mx-auto'
+								className='border border-blue-500 rounded-lg card duration-300'
 								style={{ maxWidth: "350px" }}>
-								<img
-									className='w-full card-image rounded-t-lg '
-									src='https://eduma.thimpress.com/demo-1/wp-content/uploads/sites/89/2015/06/course-6-400x300.jpg'
-									alt=''
-								/>
+								<div className=' overflow-hidden'>
+									<img
+										className='w-full card-image rounded-t-lg duration-300 '
+										src='https://eduma.thimpress.com/demo-1/wp-content/uploads/sites/89/2015/06/course-6-400x300.jpg'
+										alt=''
+									/>
+								</div>
 								<div className='px-4 pb-4 card-content'>
 									<img
-										className='w-20 rounded-full mx-auto -mt-9 border-2 border-blue-500 relative z-10'
+										className='w-20 rounded-full mx-auto -mt-9 border-4 border-white relative z-10'
 										alt=''
 										src='https://eduma.thimpress.com/demo-1/wp-content/uploads/learn-press-profile/7/9c081444f942cc8fe0ddf55631b584e2.jpg'
 									/>

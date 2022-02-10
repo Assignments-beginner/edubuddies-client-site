@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "./Blogs.css";
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -47,13 +48,15 @@ const Blogs = () => {
 					{Array.from({ length: 5 }).map((_, idx) => (
 						<SwiperSlide>
 							<div
-								className='border border-blue-500 rounded-lg card mx-auto'
+								className='border border-blue-500 rounded-lg card mx-auto duration-300'
 								style={{ maxWidth: "400px" }}>
-								<img
-									className='w-full card-image rounded-t-lg '
-									src='https://shivaaythemes.in/educater-html/assets/images/blog-2.jpg'
-									alt=''
-								/>
+								<div className=' overflow-hidden'>
+									<img
+										className='w-full card-image rounded-t-lg duration-300'
+										src='https://shivaaythemes.in/educater-html/assets/images/blog-2.jpg'
+										alt=''
+									/>
+								</div>
 								<div className='px-4 pb-4 card-content'>
 									<h1 className='text-lg font-bold my-5 text-stone-700 hover:text-blue-400 duration-300 cursor-pointer text-left'>
 										Lorem, ipsum dolor sit amet consectetur adipisicing elit.

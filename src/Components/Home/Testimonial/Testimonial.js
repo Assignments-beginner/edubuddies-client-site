@@ -51,9 +51,11 @@ const Testimonial = () => {
 						}}
 						className='mySwiper'>
 						{Array.from({ length: 4 }).map((_, idx) => (
-							<SwiperSlide>
+							<SwiperSlide
+								className='rounded-lg'
+								style={{ boxShadow: "-2px 5px 12px -2px rgba(0,0,0,0.51)" }}>
 								<div
-									className='text-left border border-blue-500 rounded-lg p-5'
+									className='text-left  rounded-lg p-5'
 									style={{ backgroundColor: "white" }}>
 									<div className='mb-5'>
 										Lorem ipsum, dolor sit amet consectetur adipisicing elit.
