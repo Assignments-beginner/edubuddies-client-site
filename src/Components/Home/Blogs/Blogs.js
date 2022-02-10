@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faUsers } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendarAlt, faComment } from "@fortawesome/free-solid-svg-icons";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -10,12 +10,12 @@ import "swiper/css/pagination";
 
 SwiperCore.use([Autoplay, Pagination]);
 
-const Courses = () => {
+const Blogs = () => {
 	return (
 		<div className='container mx-auto my-14'>
-			<h1 className='text-4xl font-semibold mt-9 mb-4 text-blue-500'>
-				POPULAR COURSES
-			</h1>
+			<div className='text-5xl font-black my-5 text-blue-700'>
+				Latest Blog & News
+			</div>
 			<div
 				className='px-6 w-full py-7 pagination'
 				style={{ overflow: "hidden" }}>
@@ -34,13 +34,13 @@ const Courses = () => {
 							slidesPerView: 1,
 						},
 						550: {
-							slidesPerView: 3,
+							slidesPerView: 2,
 						},
 						900: {
-							slidesPerView: 4,
+							slidesPerView: 2,
 						},
 						1020: {
-							slidesPerView: 5,
+							slidesPerView: 3,
 						},
 					}}
 					className='mySwiper'>
@@ -48,36 +48,37 @@ const Courses = () => {
 						<SwiperSlide>
 							<div
 								className='border border-blue-500 rounded-lg card mx-auto'
-								style={{ maxWidth: "350px" }}>
+								style={{ maxWidth: "400px" }}>
 								<img
 									className='w-full card-image rounded-t-lg '
-									src='https://eduma.thimpress.com/demo-1/wp-content/uploads/sites/89/2015/06/course-6-400x300.jpg'
+									src='https://shivaaythemes.in/educater-html/assets/images/blog-2.jpg'
 									alt=''
 								/>
 								<div className='px-4 pb-4 card-content'>
-									<img
-										className='w-20 rounded-full mx-auto -mt-9 border-2 border-blue-500 relative z-10'
-										alt=''
-										src='https://eduma.thimpress.com/demo-1/wp-content/uploads/learn-press-profile/7/9c081444f942cc8fe0ddf55631b584e2.jpg'
-									/>
-									<h6 className='text-base text-stone-500 mt-2 hover:underline duration-300 cursor-pointer'>
-										John Doe
-									</h6>
-									<h1 className='text-lg font-bold mt-1 mb-3 text-stone-700 hover:text-blue-400 duration-300 cursor-pointer'>
-										Learn Complete Web Development
+									<h1 className='text-lg font-bold my-5 text-stone-700 hover:text-blue-400 duration-300 cursor-pointer text-left'>
+										Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+										Eligendi, quae.
 									</h1>
 									<hr className='border border-blue-500' />
-									<div className='flex justify-between pt-2'>
+									<div className='flex justify-evenly pt-2 '>
 										<div className='flex text-stone-500 text-sm'>
-											<div className='mr-3 text-base'>
-												<FontAwesomeIcon icon={faUsers} /> <span>50</span>
-											</div>
 											<div className='text-base'>
-												<FontAwesomeIcon icon={faComment} /> <span>50</span>
+												<FontAwesomeIcon
+													className='mr-1 text-blue-500'
+													icon={faCalendarAlt}
+												/>
+												<span>{new Date().toLocaleString()}</span>
 											</div>
 										</div>
-										<div>
-											<h6 className='text-base font-bold text-red-500'>500$</h6>
+										<div className='border-l-2 border-blue-500'></div>
+										<div className='flex text-stone-500 text-sm'>
+											<div className='text-base'>
+												<FontAwesomeIcon
+													className='mr-1 text-blue-500'
+													icon={faComment}
+												/>
+												<span>50 Comments</span>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -90,4 +91,4 @@ const Courses = () => {
 	);
 };
 
-export default Courses;
+export default Blogs;
