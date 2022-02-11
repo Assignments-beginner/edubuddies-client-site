@@ -43,7 +43,7 @@ const Header = () => {
           </div>
           {/* /////////////////// Navbar Points /////////////////// */}
           <div className="flex items-center">
-            <div className="hidden sm:block">
+            <div className="hidden sm:block px-8">
               <div className="flex space-x-4">
                 <Link
                   className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium flex items-center"
@@ -80,38 +80,33 @@ const Header = () => {
 
             {!user?.email && (
               <Link
-                className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 ml-12 mr-2 border-2 rounded-md text-md font-medium flex items-center justify-center"
+                className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 mr-2 border-2 rounded-md text-md font-medium flex items-center justify-center"
                 to="/login"
               >
                 Sign In
               </Link>
             )}
-          </div>
-
-          {/* ///////////////////// User Box /////////////////// */}
-
-          {user?.email && (
-            <div className="flex userProfile">
-              {/* ///////// Profile img & name /////////// */}
-
-              <div className="flex items-center profile-imgName">
-                <img
-                  className=" user-img h-8 w-8 rounded-full ring-2 ring-offset-2"
-                  src={user.photoURL}
-                  alt=""
-                />
-                <span
-                  style={{ fontSize: "12px" }}
-                  className="text-white ml-2 uppercase"
-                >
-                  {user.displayName}
-                </span>
-              </div>
-
-              {/* ///////// Profile Hamburger /////////// */}
-
-              <div
-                className="
+            {user?.email && (
+              <div className="flex">
+                {/* /////////////// Nav Profile Box //////////// */}
+                <div className="flex userProfile">
+                  {/* ///////// Profile img & name /////////// */}
+                  <div className="flex items-center profile-imgName">
+                    <img
+                      className=" user-img h-8 w-8 rounded-full ring-2 ring-offset-2"
+                      src={user.photoURL}
+                      alt=""
+                    />
+                    <span
+                      style={{ fontSize: "12px" }}
+                      className="text-white ml-2 uppercase"
+                    >
+                      {user.displayName}
+                    </span>
+                  </div>
+                  {/* ///////// Profile Dropdown Menu /////////// */}
+                  <div
+                    className="
                 origin-top-right 
                 absolute 
                 right-0 
@@ -129,36 +124,33 @@ const Header = () => {
                 focus:outline-none 
                 hidden 
                 show"
-                id="userProfileDiv"
-              >
-                <Link
-                  className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
-                  to="/dashboard"
-                >
-                  Dashboard
-                </Link>
-                <Link
-                  to="/userProfile"
-                  className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
-                >
-                  Profile
-                </Link>
-                <Link
-                  to="/login"
-                  onClick={logout}
-                  className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
-                >
-                  Log Out
-                </Link>
-              </div>
-            </div>
-          )}
-          {/* //////////////// Logout Button /////////////// */}
-
-          {user?.email && (
-            <Link onClick={logout} to="/login">
-              <i
-                className="
+                    id="userProfileDiv"
+                  >
+                    <Link
+                      className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
+                      to="/dashboard"
+                    >
+                      Dashboard
+                    </Link>
+                    <Link
+                      to="/userProfile"
+                      className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
+                    >
+                      Profile
+                    </Link>
+                    <Link
+                      to="/login"
+                      onClick={logout}
+                      className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
+                    >
+                      Log Out
+                    </Link>
+                  </div>
+                </div>
+                {/* //////////////// Logout Button /////////////// */}
+                <Link onClick={logout} to="/login">
+                  <i
+                    className="
               xl:ml-4 
               lg:ml-4 
               sm:ml-2 
@@ -172,9 +164,11 @@ const Header = () => {
               rounded-lg 
               hover:border-white 
               hover:bg-indigo-900"
-              ></i>
-            </Link>
-          )}
+                  ></i>
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 

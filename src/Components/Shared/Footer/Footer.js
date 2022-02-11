@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-6">
-      <div className="container overflow-hidden flex flex-col lg:flex-row justify-between mx-auto p-4">
+      <div className="container px-6 overflow-hidden flex flex-col lg:flex-row justify-between mx-auto p-4">
         <div className="container block md:flex text-sm mt-6 lg:mt-0">
           {/* //////////// Edu Buddies /////////////// */}
-          <div className="border-2 w-1/4 text-gray-700 font-thin flex flex-col justify-center">
+          <div className="w-1/4 text-gray-700 font-thin flex flex-col justify-center">
             <div className="flex justify-center">
               <Link to="/home">
                 <img
@@ -48,8 +48,8 @@ const Footer = () => {
             </div>
           </div>
           {/* ////////////// Three Columns ////////////// */}
-          <div className="flex">
-            <ul className="text-gray-700 list-none p-0 font-thin flex flex-col text-left w-full">
+          <div className="flex justify-between w-3/4 pl-12">
+            <ul className="text-gray-700 list-none font-thin flex flex-col text-left">
               <li className="inline-block py-2 px-3 text-white uppercase font-medium tracking-wide">
                 Developers
               </li>
@@ -79,7 +79,7 @@ const Footer = () => {
                 </p>
               </li>
             </ul>
-            <ul className="text-gray-700 list-none p-0 font-thin flex flex-col text-left w-full">
+            <ul className="text-gray-700 list-none font-thin flex flex-col text-left">
               <li className="inline-block py-2 px-3 text-white uppercase font-medium tracking-wide">
                 Support
               </li>
@@ -112,7 +112,7 @@ const Footer = () => {
                 </p>
               </li>
             </ul>
-            <ul className="text-gray-700 list-none p-0 font-thin flex flex-col text-left w-full">
+            <ul className="text-gray-700 list-none font-thin flex flex-col text-left">
               <li className="inline-block py-2 px-3 text-white uppercase font-medium tracking-wide">
                 Our Programs
               </li>
@@ -145,7 +145,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="border-2 border-gray-800 flex flex-col md:flex-row justify-center items-center p-6 text-gray-300">
+      <div className="border-t text-sm border-gray-800 flex flex-col md:flex-row justify-center items-center p-6 text-gray-300">
         <span>Copyright &copy; 2022- TEAM SSYAAN - All Rights Reserved</span>
       </div>
     </footer>
