@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 import useAuth from "../../../hooks/useAuth";
 
@@ -24,7 +26,7 @@ const Header = () => {
             <button
               onClick={toggleFunction}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 focus:text-gray-300 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 focus:text-gray-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
               <i className="fas fa-bars text-2xl px-2"></i>
             </button>
@@ -46,31 +48,31 @@ const Header = () => {
             <div className="hidden sm:block px-8">
               <div className="flex space-x-4">
                 <Link
-                  className="text-gray-100 hover:bg-orange-500 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
                   to="/"
                 >
                   Home
                 </Link>
                 <Link
-                  className="text-gray-100 hover:bg-orange-500 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
                   to="/Courses"
                 >
                   Courses
                 </Link>
                 <Link
-                  className="text-gray-100 hover:bg-orange-500 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
                   to="/blog"
                 >
                   Blog
                 </Link>
                 <Link
-                  className="text-gray-100 hover:bg-orange-500 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
                   to="/about"
                 >
                   About
                 </Link>
                 <Link
-                  className="text-gray-100 hover:bg-orange-500 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
                   to="/contact"
                 >
                   Contact
@@ -80,7 +82,7 @@ const Header = () => {
 
             {!user?.email && (
               <Link
-                className="text-gray-100 hover:bg-orange-500 focus:text-gray-300 px-3 py-2 mr-2 border-2 rounded-md text-md font-medium flex items-center justify-center"
+                className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 mr-2 border-2 rounded-md text-md font-medium flex items-center justify-center"
                 to="/login"
               >
                 Sign In
@@ -127,29 +129,32 @@ const Header = () => {
                     id="userProfileDiv"
                   >
                     <Link
-                      className="text-black-200 hover:bg-orange-500 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
+                      className="text-black-200 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
                       to="/dashboard"
                     >
                       Dashboard
                     </Link>
                     <Link
                       to="/userProfile"
-                      className="text-black-200 hover:bg-orange-500 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
+                      className="text-black-200 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
                     >
                       Profile
                     </Link>
                     <Link
                       to="/login"
                       onClick={logout}
-                      className="text-black-200 hover:bg-orange-500 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
+                      className="text-black-200 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
                     >
                       Log Out
                     </Link>
                   </div>
                 </div>
                 {/* //////////////// Logout Button /////////////// */}
-                <Link onClick={logout} to="/login" className="text-gray-100 hover:bg-orange-500 focus:text-gray-300 px-3 py-2 ml-2 border-2 rounded-md text-md font-medium flex items-center justify-center">
-                  Sign Out
+                <Link onClick={logout} to="/login" className="text-gray-100 hover:bg-red-600 pr-2 pl-3 py-2 ml-2 rounded-md text-md font-medium flex items-center justify-center hover:border-red-600">
+                    <FontAwesomeIcon
+												className='mr-1 text-white'
+												icon={faRightFromBracket}
+										/>
                 </Link>
               </div>
             )}
@@ -162,31 +167,31 @@ const Header = () => {
         <div className="px-2 pt-2 pb-3 space-y-1">
           <Link
             to="/"
-            className="text-gray-100 hover:bg-orange-500 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-100 hover:bg-red-600 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             Home
           </Link>
           <Link
             to="/about"
-            className="text-gray-100 hover:bg-orange-500 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-100 hover:bg-red-600 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             About
           </Link>
           <Link
             to="/courses"
-            className="text-gray-100 hover:bg-orange-500 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-100 hover:bg-red-600 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             Courses
           </Link>
           <Link
             to="/blog"
-            className="text-gray-100 hover:bg-orange-500 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-100 hover:bg-red-600 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             Blog
           </Link>
           <Link
             to="/contact"
-            className="text-gray-100 hover:bg-orange-500 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-100 hover:bg-red-600 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             Contact
           </Link>
