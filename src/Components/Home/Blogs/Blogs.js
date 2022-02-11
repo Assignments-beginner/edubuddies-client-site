@@ -40,7 +40,7 @@ const Blogs = () => {
 	];
 	return (
 		<div className='container mx-auto my-14'>
-			<div className='text-5xl font-black my-5 text-blue-700'>
+			<div className='text-4xl font-black my-5 text-blue-700'>
 				Latest Blog & News
 			</div>
 			<div

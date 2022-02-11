@@ -60,8 +60,8 @@ const Courses = () => {
 
 	return (
 		<div className='container mx-auto my-14'>
-			<h1 className='text-4xl font-semibold mt-9 mb-4 text-blue-500'>
-				POPULAR COURSES
+			<h1 className='text-4xl font-semibold mt-9 mb-4 text-blue-700'>
+				Popular Courses
 			</h1>
 			<div
 				className='px-6 w-full py-7 pagination'

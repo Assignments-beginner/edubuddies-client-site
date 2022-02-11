@@ -91,7 +91,7 @@ const Register = ({ backgroundColor = "#EDF2F7", children }) => {
               placeholder="******************"
             />
           </div>
-          <div className="mb-2">
+          <div>
             <label
               className="block text-gray-700 text-left text-sm font-bold mb-2"
               for="password"
@@ -108,9 +108,9 @@ const Register = ({ backgroundColor = "#EDF2F7", children }) => {
             />
           </div>
           <div className="flex">
-            <p className="mb-3 text-left">Aready have an account ?</p>
+            <p className="my-4 text-sm text-left">Aready have an account ?</p>
             &nbsp;{" "}
-            <Link to="/login" className="text-indigo-700">
+            <Link to="/login" className="my-4 text-sm text-indigo-700">
               Sign In
             </Link>
           </div>

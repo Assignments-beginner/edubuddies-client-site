@@ -74,10 +74,10 @@ const Login = ({ backgroundColor = "#EDF2F7", children }) => {
               placeholder="******************"
             />
           </div>
-          <div className="flex">
-            <p className="mb-3 text-left">Don't have an account ?</p>
-            &nbsp;{" "}
-            <Link to="/register" className="text-indigo-700">
+          <div className="flex my-4">
+            <p className="text-sm text-left">Don't have an account ?</p>
+            &nbsp;
+            <Link to="/register" className="text-sm text-indigo-700">
               Create One
             </Link>
           </div>
