@@ -60,7 +60,7 @@ const Courses = () => {
 
 	return (
 		<div className='container mx-auto my-14  px-3 md:px-6  '>
-			<h1 className='md:text-6xl text-4xl font-semibold mt-9 md:mb-11 mb-5 text-blue-700'>
+			<h1 className='md:text-6xl text-4xl font-semibold mt-9 md:mb-9 mb-5 text-blue-700'>
 				Popular Courses
 			</h1>
 			<div className='w-full pb-7 pagination' style={{ overflow: "hidden" }}>
