@@ -11,6 +11,7 @@ import Blogs from "../Blogs/Blogs";
 import Newsletter from "../Newsletter/Newsletter";
 import Contact from "../../Contact/Contact";
 import OurCourses from "../OurCourses/OurCourses";
+import CoreFeatures from "../CoreFeatures/CoreFeatures";
 
 const Home = () => {
 	const dispath = useDispatch();
@@ -35,6 +36,7 @@ const Home = () => {
 			<OurCourses />
 			<Testimonial />
 			<Blogs />
+			<CoreFeatures />
 			<Teachers />
 			<Contact />
 			<Newsletter />
