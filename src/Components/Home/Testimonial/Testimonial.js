@@ -56,7 +56,7 @@ const Testimonial = () => {
 						<div className='md:text-4xl text-3xl font-black text-blue-700'>
 							Testimonial
 						</div>
-						<h1 className='md:text-6xl text-4xl font-semibold mt-4 md:mb-11 mb-5 text-blue-700'>
+						<h1 className='md:text-6xl text-4xl font-semibold md:mb-11 mb-5 text-blue-700'>
 							What Our Client Says About Us
 						</h1>
 						<div className='text-md my-5 text-justify text-p '>

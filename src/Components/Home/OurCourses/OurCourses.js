@@ -6,13 +6,13 @@ import "./OurCourses.css";
 const OurCourses = () => {
 	return (
 		<div className='container mx-auto my-14 py-11  px-3 md:px-6 '>
-			<h1 className='md:text-6xl text-4xl font-semibold mt-9 md:mb-11 mb-5 text-blue-700'>
+			<h1 className='md:text-6xl text-4xl font-semibold mt-9 md:mb-9 mb-5 text-blue-700'>
 				Explore Popular Courses
 			</h1>
 			<div className='w-full'>
 				<div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mx-auto md:gap-5 gap-4'>
 					{Array.from({ length: 6 }).map((_, idx) => (
-						<div className='flex border-2 p-5 align-middle justify-center OurCourses hover:cursor-pointer duration-300 rounded-md  bg-white'>
+						<div className='flex border-2 p-5 align-middle justify-center OurCourses hover:cursor-pointer duration-300 rounded-lg  bg-white'>
 							<div className='mr-3 '>
 								<FontAwesomeIcon
 									className='text-blue-500 icon'

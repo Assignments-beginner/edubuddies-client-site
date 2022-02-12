@@ -16,7 +16,7 @@ const CoreFeatures = () => {
 					<div className='flex py-5 align-middle justify-items-start  duration-300 rounded-md '>
 						<div className='mr-3 p-5 bg-blue-600 text-white rounded-md'>
 							<FontAwesomeIcon
-								className=' icon'
+								className=' icon '
 								style={{ fontSize: "60px" }}
 								icon={faDatabase}
 							/>

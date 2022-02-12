@@ -40,10 +40,10 @@ const Blogs = () => {
 	];
 	return (
 		<div className='container mx-auto my-14  px-3 md:px-6  '>
-			<h1 className='md:text-6xl text-4xl font-semibold mt-9 md:mb-11 mb-5 text-blue-700'>
+			<h1 className='md:text-6xl text-4xl font-semibold mt-9 md:mb-9 mb-5 text-blue-700'>
 				Latest Blog & News
 			</h1>
-			<div className='w-full py-7 pagination' style={{ overflow: "hidden" }}>
+			<div className='w-full pagination' style={{ overflow: "hidden" }}>
 				<Swiper
 					loop={true}
 					autoplay={{ delay: 3000 }}
