@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarAlt, faComment } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 
 const RecentBlogs = () => {
 	const blogs = [
