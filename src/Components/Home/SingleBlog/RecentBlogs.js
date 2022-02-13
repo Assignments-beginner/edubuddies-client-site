@@ -37,7 +37,7 @@ const RecentBlogs = () => {
 				top: 95,
 			}}>
 			<h1 className='md:text-3xl text-2xl font-semibold pb-4 text-blue-700'>
-				Recent Blog & News
+				Recent Blogs
 			</h1>
 			<div className='w-full pagination'>
 				{blogs?.map((blog, key) => (

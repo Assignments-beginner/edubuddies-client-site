@@ -1,5 +1,7 @@
 import React from "react";
+import AddReview from "./AddReview";
 import RecentBlogs from "./RecentBlogs";
+import Reviews from "./Reviews";
 import SingleBlog from "./SingleBlog";
 
 const SingleBlogMAin = () => {
@@ -8,6 +10,8 @@ const SingleBlogMAin = () => {
 			<div className='mx-auto grid grid-cols-12 gap-7'>
 				<div className='md:col-span-8 col-span-12'>
 					<SingleBlog />
+					<Reviews />
+					<AddReview />
 				</div>
 				<div className='md:col-span-4 col-span-12'>
 					<RecentBlogs />
