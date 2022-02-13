@@ -17,7 +17,7 @@ const SingleBlog = () => {
 	};
 
 	return (
-		<div className='container '>
+		<div className='container mb-9'>
 			<div className=' mx-auto duration-300'>
 				<div className=' overflow-hidden rounded-lg'>
 					<img

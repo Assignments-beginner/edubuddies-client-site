@@ -27,7 +27,7 @@ const AddReview = () => {
 					rows='7'
 					placeholder='Your Review'
 				/>
-				<button className='md:col-span-4 col-span-4 rounded-lg   hover:bg-blue-600 bg-blue-700 text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700'>
+				<button className='md:col-span-4 col-span-6 rounded-lg   hover:bg-blue-600 bg-blue-700 text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700'>
 					subscribe
 				</button>
 			</div>

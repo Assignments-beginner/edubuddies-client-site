@@ -39,13 +39,15 @@ const Reviews = () => {
 	];
 	return (
 		<div>
-			<h1 className='md:text-5xl text-4xl  md:text-left text-center font-semibold py-5 text-blue-700'>
+			<div className='md:text-2xl text-2xl font-black text-blue-700 md:text-left text-center'>
+				OUR REVIEW
+			</div>
+			<h1 className='md:text-6xl text-5xl font-semibold mt-3 mb-5 text-blue-700  md:text-left text-center'>
 				Comments
 			</h1>
 			<div className='w-full'>
 				{blogs?.map((blog, key) => (
 					<>
-						{" "}
 						<div
 							key={key}
 							className='grid grid-cols-8  mx-auto gap-5 align-center py-2'>
