@@ -4,7 +4,7 @@ import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
 const CoreFeatures = () => {
 	return (
-		<div className='container mx-auto my-14  px-3 md:px-6  '>
+		<div className='container mx-auto my-14  px-4 md:px-11  '>
 			<div className='grid md:grid-cols-2 grid-cols-1 mx-auto md:gap-5 gap-4'>
 				<div className='w-full'>
 					<div className='md:text-3xl text-2xl font-black text-blue-700 md:text-left text-center'>

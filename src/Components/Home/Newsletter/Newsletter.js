@@ -4,16 +4,16 @@ import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 
 const Newsletter = () => {
 	return (
-		<div className='container mx-auto py-11  px-3 md:px-6'>
+		<div className='container mx-auto my-14  px-4 md:px-11  '>
 			<div className='md:w-2/4 w-full text-center mx-auto'>
 				<div>
 					<FontAwesomeIcon
-						className='text-blue-700 my-5'
+						className='text-blue-700 my-0 md:my-3'
 						style={{ fontSize: "100px" }}
 						icon={faEnvelopeOpenText}
 					/>
 				</div>
-				<h1 className='text-2xl md:text-4xl xl:text-5xl font-bold leading-10 text-blue-700 mb-4 md:mt-0 mt-4'>
+				<h1 className='text-3xl md:text-4xl xl:text-5xl font-bold leading-10 text-blue-700 my-2 md:mb-4'>
 					Subscribe
 				</h1>
 				<p className='leading-normal text-gray-600'>
