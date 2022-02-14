@@ -39,13 +39,11 @@ const Blogs = () => {
 		},
 	];
 	return (
-		<div id="blog" className='container mx-auto my-14'>
-			<div className='text-4xl font-black my-5 text-blue-700'>
+		<div className='container mx-auto my-14  px-4 md:px-11  '>
+			<h1 className='md:text-6xl text-4xl font-semibold mt-9 md:mb-9 mb-5 text-blue-700'>
 				Latest Blog & News
-			</div>
-			<div
-				className='px-6 w-full py-7 pagination'
-				style={{ overflow: "hidden" }}>
+			</h1>
+			<div className='w-full py-7 pagination' style={{ overflow: "hidden" }}>
 				<Swiper
 					loop={true}
 					autoplay={{ delay: 3000 }}
@@ -68,13 +66,13 @@ const Blogs = () => {
 						},
 						1020: {
 							slidesPerView: 3,
-						},
+						}, 
 					}}
 					className='mySwiper'>
 					{blogs?.map((blog, key) => (
 						<SwiperSlide key={key}>
 							<div
-								className='border  rounded-lg card mx-auto duration-300'
+								className='border  rounded-lg card mx-auto duration-300  bg-white'
 								style={{ maxWidth: "400px" }}>
 								<div className=' overflow-hidden'>
 									<img
