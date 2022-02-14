@@ -12,6 +12,7 @@ import Newsletter from "../Newsletter/Newsletter";
 import Contact from "../../Contact/Contact";
 import OurCourses from "../OurCourses/OurCourses";
 import CoreFeatures from "../CoreFeatures/CoreFeatures";
+import InfoCard from "../InfoCard/InfoCard";
 
 const Home = () => {
 	const dispath = useDispatch();
@@ -31,6 +32,7 @@ const Home = () => {
 		<div>
 			{/* All Home Component Call From Here */}
 			<Banner />
+
 			<Courses />
 			<About />
 			<OurCourses />
@@ -40,6 +42,7 @@ const Home = () => {
 			<Teachers />
 			<Contact />
 			<Newsletter />
+			<InfoCard />
 		</div>
 	);
 };
