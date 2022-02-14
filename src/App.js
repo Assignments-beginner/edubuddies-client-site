@@ -21,8 +21,7 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route path="/*" element={<NotFound />} />
-            <Route path="/" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/blog" element={<Blogs />} />
             <Route path="/about" element={<About />} />
@@ -32,6 +31,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/userProfile" element={<UserProfile />} />
             <Route path="/dashboard/*" element={<Dashboard />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
           <Footer />
         </BrowserRouter>

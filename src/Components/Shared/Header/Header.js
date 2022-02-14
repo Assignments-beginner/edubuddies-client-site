@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import { HashLink } from "react-router-hash-link";
 import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
@@ -39,39 +40,45 @@ const Header = () => {
                 src="https://i.ibb.co/HzzW0Xv/logo.png"
                 alt="Workflow"
               />
+              <i className="fab fa-twitter"></i> 
             </Link>
           </div>
-          {/* /////////////////// Navbar Points /////////////////// */}
+          {/* /////////////////// Mobile Navbar Points /////////////////// */}
           <div className="flex items-center">
             <div className="hidden sm:block px-8">
               <div className="flex space-x-4">
                 <Link
                   className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium flex items-center"
-                  to="/"
+                  as={HashLink}
+                  to="/home#home"
                 >
                   Home
                 </Link>
                 <Link
                   className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium flex items-center"
-                  to="/about"
+                  as={HashLink}
+                  to="/home#about"
                 >
                   About
                 </Link>
                 <Link
                   className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium flex items-center"
-                  to="/Courses"
+                  as={HashLink}
+                  to="/home#Courses"
                 >
                   Courses
                 </Link>
                 <Link
                   className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium flex items-center"
-                  to="/blog"
+                  as={HashLink}
+                  to="/home#blog"
                 >
                   Blog
                 </Link>
                 <Link
                   className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium flex items-center"
-                  to="/contact"
+                  as={HashLink}
+                  to="/home#contact"
                 >
                   Contact
                 </Link>
@@ -176,31 +183,36 @@ const Header = () => {
       <div className="hidden" id="toogleDiv">
         <div className="px-2 pt-2 pb-3 space-y-1">
           <Link
-            to="/"
+            as={HashLink}
+            to="/home#home"
             className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             Home
           </Link>
           <Link
-            to="/about"
+            as={HashLink}
+            to="/home#about"
             className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             About
           </Link>
           <Link
-            to="/courses"
+            as={HashLink}
+            to="/home#Courses"
             className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             Courses
           </Link>
           <Link
-            to="/blog"
+            as={HashLink}
+            to="/home#blog"
             className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             Blog
           </Link>
           <Link
-            to="/contact"
+            as={HashLink}
+            to="/home#contact"
             className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             Contact
