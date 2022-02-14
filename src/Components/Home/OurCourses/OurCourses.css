@@ -1,0 +1,9 @@
+.OurCourses:hover {
+	background-color: #4338ca !important;
+}
+.OurCourses:hover .icon {
+	color: white !important;
+}
+.OurCourses:hover .text-left {
+	color: white !important;
+}
