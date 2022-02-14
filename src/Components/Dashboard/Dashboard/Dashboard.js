@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import underConstruction from "../../../Images/underConstruction.jpg";
+import "../Dashboard/Dashboard.css";
 
 const Dashboard = () => {
-    return (
-        <div>
-            <h1 className="text-4xl">Dashboard Route Here</h1>
-        </div>
-    );
+  return (
+    <div>
+      <div className="text-4xl font-black mt-5 mb-3 text-blue-700">Dashboard</div>
+      <div className="p-12 flex justify-center">
+        <img className="rounded-3xl shadow-xl" src={underConstruction} alt="" />
+      </div>
+    </div>
+  );
 };
 
 export default Dashboard;
