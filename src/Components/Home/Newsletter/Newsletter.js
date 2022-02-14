@@ -4,7 +4,7 @@ import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 
 const Newsletter = () => {
 	return (
-		<div className='container mx-auto my-14  px-4 md:px-11  '>
+		<div className='container mx-auto my-24  px-4 md:px-11  '>
 			<div className='md:w-2/4 w-full text-center mx-auto'>
 				<div>
 					<FontAwesomeIcon

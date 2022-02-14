@@ -5,8 +5,8 @@ import "./OurCourses.css";
 
 const OurCourses = () => {
 	return (
-		<div className='container mx-auto my-14  px-4 md:px-11  '>
-			<h1 className='md:text-6xl text-4xl font-semibold mt-9 md:mb-9 mb-5 text-blue-700'>
+		<div className='container mx-auto my-24  px-4 md:px-11  '>
+			<h1 className='md:text-5xl text-4xl font-semibold mt-9 md:mb-9 mb-5 text-blue-700'>
 				Explore Popular Courses
 			</h1>
 			<div className='w-full'>

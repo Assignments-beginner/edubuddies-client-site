@@ -2,7 +2,7 @@ import React from "react";
 
 const AddReview = () => {
 	return (
-		<div className='container mx-auto my-14 '>
+		<div className='container mx-auto my-24 '>
 			<div className='md:text-2xl text-2xl font-black text-blue-700 md:text-left text-center'>
 				WRITE COMMENT
 			</div>

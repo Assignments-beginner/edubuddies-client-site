@@ -47,7 +47,7 @@ const Testimonial = () => {
 		},
 	];
 	return (
-		<div className='container mx-auto my-14  px-4 md:px-11  '>
+		<div className='container mx-auto my-24  px-4 md:px-11  '>
 			<div className=' w-full'>
 				<div
 					className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-6'
@@ -56,7 +56,7 @@ const Testimonial = () => {
 						<div className='md:text-4xl text-3xl font-black text-blue-700'>
 							Testimonial
 						</div>
-						<h1 className='md:text-6xl text-4xl font-semibold md:mb-11 mb-5 text-blue-700'>
+						<h1 className='md:text-5xl text-4xl font-semibold md:mb-7 mb-5 mt-2 text-blue-700'>
 							What Our Client Says About Us
 						</h1>
 						<div className='text-md my-5 text-justify text-p '>
