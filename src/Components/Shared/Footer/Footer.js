@@ -13,7 +13,7 @@ const Footer = () => {
                             <Link to="/home">
                                 <img className="w-52 -mt-8 mb-4" src="https://i.ibb.co/HzzW0Xv/logo.png" alt="footer logo" />
                             </Link>
-                            <p className="mx-auto cursor-pointer ml-2 mr-4 w-4/4"> Great lesson ideas and lesson plans for ESL teachers! Educators can customize lesson plans to best.Great lesson ideas and lesson plans for ESL teachers! Educators can customize lesson plans to best.</p>
+                            <p className="mx-auto cursor-pointer ml-2 mr-4 w-4/4 text-justify"> Great lesson ideas and lesson plans for ESL teachers! Educators can customize lesson plans to best.Great lesson ideas and lesson plans for ESL teachers! Educators can customize lesson plans to best.</p>
                         </div>
                         <div className="mb-4 flex justify-center">
                             <div>
