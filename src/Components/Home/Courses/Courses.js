@@ -61,7 +61,7 @@ const Courses = () => {
 
 	return (
 		<div className='container mx-auto my-24  px-4 md:px-11  '>
-			<h1 className='md:text-5xl text-4xl font-semibold mt-9 md:mb-9 mb-5 text-red-600'>
+			<h1 className='md:text-5xl text-4xl font-semibold mt-9 md:mb-9 mb-5 text-red-500'>
 				Popular Courses
 			</h1>
 			<div className='w-full pb-7 pagination' style={{ overflow: "hidden" }}>
@@ -109,7 +109,7 @@ const Courses = () => {
 										<h6 className='text-base text-stone-500 mt-2 hover:underline duration-300 cursor-pointer'>
 											{course?.instructorName}
 										</h6>
-										<h1 className='text-lg font-bold mt-1 mb-3 text-stone-700 hover:text-red-600 duration-300 cursor-pointer'>
+										<h1 className='text-lg font-bold mt-1 mb-3 text-stone-700 hover:text-red-500 duration-300 cursor-pointer'>
 											{course?.courseName}
 										</h1>
 										<hr className='border ' />
@@ -125,7 +125,7 @@ const Courses = () => {
 												</div>
 											</div>
 											<div>
-												<h6 className='text-base font-bold text-red-600'>
+												<h6 className='text-base font-bold text-red-500'>
 													<span className='mr-1'>{course?.price}</span>$
 												</h6>
 											</div>

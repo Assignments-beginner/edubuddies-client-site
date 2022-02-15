@@ -3,7 +3,7 @@ import React from "react";
 const AddReview = () => {
 	return (
 		<div className='container mx-auto my-24 '>
-			<div className='text-2xl font-black text-red-600 md:text-left text-center'>
+			<div className='text-2xl font-black text-red-500 md:text-left text-center'>
 				WRITE COMMENT
 			</div>
 			<h1 className='md:text-5xl text-4xl font-semibold mt-3 mb-7 text-gray-800  md:text-left text-center'>
@@ -27,7 +27,7 @@ const AddReview = () => {
 					rows='7'
 					placeholder='Your Review'
 				/>
-				<button className='md:col-span-4 col-span-6 rounded-lg   hover:bg-red-600 bg-red-600 text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600'>
+				<button className='md:col-span-4 col-span-6 rounded-lg   hover:bg-red-600 bg-red-500 text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'>
 					subscribe
 				</button>
 			</div>
