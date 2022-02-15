@@ -11,35 +11,32 @@ import NotFound from "./Components/NotFound/NotFound";
 import Register from "./Components/Register/Register";
 import Footer from "./Components/Shared/Footer/Footer";
 import Header from "./Components/Shared/Header/Header";
-import AuthProvider from "../src/contexts/AuthProvider/AuthProvider";
 import UserProfile from "./Components/UserProfile/UserProfile/UserProfile";
 import SingleBlogMain from "./Components/Home/SingleBlog/SingleBlogMain";
 
 function App() {
-	return (
-		<div className='App'>
-			<AuthProvider>
-				<BrowserRouter>
-					<Header />
-					<Routes>
-						<Route path='/*' element={<NotFound />} />
-						<Route path='/' element={<Home />} />
-						<Route path='/home' element={<Home />} />
-						<Route path='/blog' element={<Blogs />} />
-						<Route path='/singleblog' element={<SingleBlogMain />} />
-						<Route path='/about' element={<About />} />
-						<Route path='/courses' element={<Courses />} />
-						<Route path='/contact' element={<Contact />} />
-						<Route path='/register' element={<Register />} />
-						<Route path='/login' element={<Login />} />
-						<Route path='/userProfile' element={<UserProfile />} />
-						<Route path='/dashboard/*' element={<Dashboard />} />
-					</Routes>
-					<Footer />
-				</BrowserRouter>
-			</AuthProvider>
-		</div>
-	);
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/*" element={<NotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/blog" element={<Blogs />} />
+          <Route path="/singleblog" element={<SingleBlogMain />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/userProfile" element={<UserProfile />} />
+          <Route path="/dashboard/*" element={<Dashboard />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
