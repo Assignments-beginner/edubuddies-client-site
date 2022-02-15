@@ -48,7 +48,7 @@ const Footer = () => {
                         </li>                      
                     </ul>
                 </div>
-                <div className="md:-ml-20">
+                <div className="md:-ml-20 lg:ml-6">
                     <h5 className="uppercase font-black text-lg mb-4 text-red-500 tracking-widest">
                         About Us
                     </h5>
