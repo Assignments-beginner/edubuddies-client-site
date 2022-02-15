@@ -91,8 +91,7 @@ const Courses = () => {
 						<SwiperSlide key={key}>
 							<Link to=''>
 								<div
-									className='border rounded-lg card duration-300  bg-white'
-									style={{ maxWidth: "350px" }}>
+									className='border rounded-lg card duration-300  bg-white'>
 									<div className=' overflow-hidden rounded-t-lg'>
 										<img
 											className='w-full card-image rounded-t-lg'
