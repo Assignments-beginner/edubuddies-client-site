@@ -15,7 +15,7 @@ const Header = () => {
       toggleButton.style.display = "block";
     } else {
       toggleButton.style.display = "none";
-    } 
+    }
   };
 
   return (
@@ -42,7 +42,6 @@ const Header = () => {
                 src="https://i.ibb.co/HzzW0Xv/logo.png"
                 alt="Workflow"
               />
-              <i className="fab fa-twitter"></i> 
             </Link>
           </div>
           {/* /////////////////// Mobile Navbar Points /////////////////// */}
@@ -152,11 +151,15 @@ const Header = () => {
                   </div>
                 </div>
                 {/* //////////////// Logout Button /////////////// */}
-                <Link onClick={logout} to="/login" className="text-gray-100 hover:bg-red-600 pr-2 pl-3 py-2 ml-2 rounded-md text-md font-medium flex items-center justify-center hover:border-red-600">
-                    <FontAwesomeIcon
-												className='mr-1 text-white'
-												icon={faRightFromBracket}
-										/>
+                <Link
+                  onClick={logout}
+                  to="/login"
+                  className="text-gray-100 hover:bg-red-600 pr-2 pl-3 py-2 ml-2 rounded-md text-md font-medium flex items-center justify-center hover:border-red-600"
+                >
+                  <FontAwesomeIcon
+                    className="mr-1 text-white"
+                    icon={faRightFromBracket}
+                  />
                 </Link>
               </div>
             )}
