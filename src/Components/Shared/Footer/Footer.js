@@ -6,160 +6,97 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="text-center text-gray-300 bg-gray-900 pt-10">
-      <div className="container mx-auto">
-        <div className="mx-6 py-10 text-left">
-          <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-14">
-            <div>
-              <Link to="/home">
-                <img
-                  className="w-52 -mt-8 mb-4"
-                  src="https://i.ibb.co/HzzW0Xv/logo.png"
-                  alt="footer logo"
-                />
-              </Link>
-              <p className="mx-auto cursor-pointer ml-2 mr-4 w-4/4 text-justify">
-                {" "}
-                Great lesson ideas and lesson plans for ESL teachers! Educators
-                can customize lesson plans to best.Great lesson ideas and lesson
-                plans for ESL teachers! Educators can customize lesson plans to
-                best.
-              </p>
-            </div>
-            <div className="mb-4 flex justify-center">
-              <div>
-                <h6 className="uppercase font-semibold mb-4 flex justify-center -ml-10 text-red-500">
-                  About Us
-                </h6>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Developers </Link>
-                </p>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Student List </Link>
-                </p>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Privacy Policy </Link>
-                </p>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Sitemap </Link>
-                </p>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Tutorial </Link>
-                </p>
-              </div>
-            </div>
-            <div className="mb-4 flex justify-center">
-              <div>
-                <h6 className="uppercase font-semibold mb-4 flex justify-center -ml-24 text-red-500">
-                  Support
-                </h6>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Contact Us </Link>
-                </p>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Guidelines </Link>
-                </p>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Supports </Link>
-                </p>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Terms & Conditions </Link>
-                </p>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Roadmap </Link>
-                </p>
-              </div>
-            </div>
-            <div className="mb-4 flex justify-center">
-              <div>
-                <h6 className="uppercase font-semibold mb-4 flex justify-center -ml-20 text-red-500">
-                  Our Programme
-                </h6>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Web design </Link>
-                </p>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Web development </Link>
-                </p>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Wordpress Development </Link>
-                </p>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> Digital Marketing </Link>
-                </p>
-                <p className="mb-3 hover:text-red-500">
-                  <FontAwesomeIcon
-                    className=" mr-2 text-red-500"
-                    icon={faAnglesRight}
-                  />
-                  <Link to="/home"> SEO </Link>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="text-center pb-8">
-          <span>Copyright; © 2022 - </span>
-          <a className="text-red-500 font-semibold" href="test">
+      <div className="container mx-auto grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 cursor-pointer pt-5">
+        <div className="w-3/6 mx-auto py-5">
+          <Link to="/home">
+            <img
+              className="w-40 -mt-8 mb-4"
+              src="https://i.ibb.co/HzzW0Xv/logo.png"
+              alt="footer logo"
+            />
+          </Link>
+          <p className="text-left">
             {" "}
-            Edu Buddies Team
-          </a>
+            Great lesson ideas and lesson plans for ESL teachers! Educators can
+            customize.
+          </p>
         </div>
+        <div>
+          <h5 className="text-lg uppercase font-black mb-4 text-red-500 tracking-widest">
+            Programms
+          </h5>
+          <ul>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Web Development </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Digital Marketing </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Res.Web Design </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> SEO (Advance) </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="md:-ml-20">
+          <h5 className="uppercase font-black text-lg mb-4 text-red-500 tracking-widest">
+            About Us
+          </h5>
+          <ul>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Student List </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Developers </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Our Terms </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Site Map </Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 className="text-lg uppercase font-black mb-4 text-red-500 tracking-widest">
+            Support
+          </h5>
+          <ul>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Career Guides</Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Contsct Us </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Conditions </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Guidlines </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="text-center pt-4 pb-8">
+        <span>Copyright- © 2022 - </span>
+        <a className="text-red-500 font-black" href="test">
+          {" "}
+          Team Edu Buddies
+        </a>
       </div>
     </footer>
   );

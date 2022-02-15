@@ -2,13 +2,19 @@ import React from "react";
 import img1 from "../../../Images/Teachers/team1.jpg";
 import img2 from "../../../Images/Teachers/team2.jpg";
 import img3 from "../../../Images/Teachers/team3.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import "./Teachers.css";
 
 const Teachers = () => {
   return (
     <div className="teachers mb-20">
       <div className="team-area">
-        <div className="text-4xl font-black mt-5 mb-8 text-blue-700">
+        <div className="text-red-500 text-3xl uppercase font-black mt-5 mb-8">
           Our Expert Instructors
           <br />
           <span className="text-sm text-black">
@@ -28,20 +34,26 @@ const Teachers = () => {
               <ul>
                 <li>
                   <a href="/#">
-                    {" "}
-                    <i className="fab fa-facebook"></i>
+                    <FontAwesomeIcon
+                      className="text-gray-700 text-3xl mx-2"
+                      icon={faFacebook}
+                    />
                   </a>
                 </li>
                 <li>
                   <a href="/#">
-                    {" "}
-                    <i className="fab fa-twitter"></i>{" "}
+                    <FontAwesomeIcon
+                      className="text-gray-700 text-3xl mx-2"
+                      icon={faTwitter}
+                    />
                   </a>
                 </li>
                 <li>
                   <a href="/#">
-                    {" "}
-                    <i className="fab fa-linkedin"></i>{" "}
+                    <FontAwesomeIcon
+                      className="text-gray-700 text-3xl mx-2"
+                      icon={faLinkedin}
+                    />
                   </a>
                 </li>
               </ul>
@@ -58,20 +70,26 @@ const Teachers = () => {
               <ul>
                 <li>
                   <a href="/#">
-                    {" "}
-                    <i className="fab fa-facebook"></i>
+                    <FontAwesomeIcon
+                      className="text-gray-700 text-3xl mx-2"
+                      icon={faFacebook}
+                    />
                   </a>
                 </li>
                 <li>
                   <a href="/#">
-                    {" "}
-                    <i className="fab fa-twitter"></i>{" "}
+                    <FontAwesomeIcon
+                      className="text-gray-700 text-3xl mx-2"
+                      icon={faTwitter}
+                    />
                   </a>
                 </li>
                 <li>
                   <a href="/#">
-                    {" "}
-                    <i className="fab fa-linkedin"></i>{" "}
+                    <FontAwesomeIcon
+                      className="text-gray-700 text-3xl mx-2"
+                      icon={faLinkedin}
+                    />
                   </a>
                 </li>
               </ul>
@@ -87,20 +105,26 @@ const Teachers = () => {
               <ul>
                 <li>
                   <a href="/#">
-                    {" "}
-                    <i className="fab fa-facebook"></i>
+                    <FontAwesomeIcon
+                      className="text-gray-700 text-3xl mx-2"
+                      icon={faFacebook}
+                    />
                   </a>
                 </li>
                 <li>
                   <a href="/#">
-                    {" "}
-                    <i className="fab fa-twitter"></i>{" "}
+                    <FontAwesomeIcon
+                      className="text-gray-700 text-3xl mx-2"
+                      icon={faTwitter}
+                    />
                   </a>
                 </li>
                 <li>
                   <a href="/#">
-                    {" "}
-                    <i className="fab fa-linkedin"></i>{" "}
+                    <FontAwesomeIcon
+                      className="text-gray-700 text-3xl mx-2"
+                      icon={faLinkedin}
+                    />
                   </a>
                 </li>
               </ul>

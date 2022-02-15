@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faRightFromBracket, faBars } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
+// import { HashLink } from "react-router-hash-link";
 import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
@@ -18,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-gray-900 sticky top-0 z-50">
+    <nav className="bg-gray-900 py-3 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           {/* ///////////////// Hamburger ///////////////// */}
@@ -26,9 +27,9 @@ const Header = () => {
             <button
               onClick={toggleFunction}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 focus:text-gray-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center py-2 px-2 rounded-md text-gray-400 focus:text-gray-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
-              <i className="fas fa-bars text-2xl px-2"></i>
+              <FontAwesomeIcon className="text-2xl px-2" icon={faBars} />
             </button>
           </div>
           {/* ///////////// Project Logo /////////// */}
@@ -43,7 +44,7 @@ const Header = () => {
               />
             </Link>
           </div>
-          {/* /////////////////// Navbar Points /////////////////// */}
+          {/* /////////////////// Mobile Navbar Points /////////////////// */}
           <div className="flex items-center">
             <div className="hidden sm:block px-8">
               <div className="flex space-x-4">
@@ -95,9 +96,9 @@ const Header = () => {
                   {/* ///////// Profile img & name /////////// */}
                   <div className="flex items-center profile-imgName">
                     <img
-                      className=" user-img h-8 w-8 rounded-full ring-2 ring-offset-2"
+                      className="user-img h-8 w-8 rounded-full ring-2 ring-offset-2"
                       src={user.photoURL}
-                      alt="Profile"
+                      alt=""
                     />
                     <span
                       style={{ fontSize: "12px" }}
@@ -150,11 +151,15 @@ const Header = () => {
                   </div>
                 </div>
                 {/* //////////////// Logout Button /////////////// */}
-                <Link onClick={logout} to="/login" className="text-gray-100 hover:bg-red-600 pr-2 pl-3 py-2 ml-2 rounded-md text-md font-medium flex items-center justify-center hover:border-red-600">
-                    <FontAwesomeIcon
-												className='mr-1 text-white'
-												icon={faRightFromBracket}
-										/>
+                <Link
+                  onClick={logout}
+                  to="/login"
+                  className="text-gray-100 hover:bg-red-600 pr-2 pl-3 py-2 ml-2 rounded-md text-md font-medium flex items-center justify-center hover:border-red-600"
+                >
+                  <FontAwesomeIcon
+                    className="mr-1 text-white"
+                    icon={faRightFromBracket}
+                  />
                 </Link>
               </div>
             )}
