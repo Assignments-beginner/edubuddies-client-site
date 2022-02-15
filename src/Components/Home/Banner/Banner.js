@@ -12,7 +12,7 @@ SwiperCore.use([Autoplay, EffectFade, Pagination]);
 
 const Banner = () => {
 	return (
-		<div>
+		<>
 			<Swiper
 				spaceBetween={30}
 				effect={"fade"}
@@ -26,8 +26,7 @@ const Banner = () => {
 					/>
 					<div className='slider-text text-left absolute top-1/4 left-1/4'>
 						<p className='text-red-500 font-bold text-xl tracking-wider mb-3'>
-							{" "}
-							Learn & Achieve{" "}
+							Learn & Achieve
 						</p>
 						<h1 className='lg:text-5xl md:text-3xl sm:text-xl mb-4 text-white uppercase font-bold'>
 							Find The Right Online
@@ -55,8 +54,7 @@ const Banner = () => {
 					/>
 					<div className='slider-text text-left absolute top-1/4 left-1/4 '>
 						<p className='text-red-500 font-bold text-xl tracking-wider mb-3'>
-							{" "}
-							Learn & Achieve{" "}
+							Learn & Achieve
 						</p>
 						<h1 className='lg:text-5xl md:text-3xl sm:text-xl mb-4 text-white uppercase font-bold'>
 							Become A Developer
@@ -84,8 +82,7 @@ const Banner = () => {
 					/>
 					<div className='slider-text text-left absolute top-1/4 left-1/4'>
 						<p className='text-red-500 font-bold text-xl tracking-wider mb-3'>
-							{" "}
-							Learn & Achieve{" "}
+							Learn & Achieve
 						</p>
 						<h1 className='lg:text-5xl md:text-3xl sm:text-xl mb-4 text-white uppercase font-bold'>
 							Explore A Different Way
@@ -106,7 +103,7 @@ const Banner = () => {
 					</div>
 				</SwiperSlide>
 			</Swiper>
-		</div>
+		</>
 	);
 };
 

@@ -10,7 +10,10 @@
         font-size: 14px;
     }
 }
-
 .head-text{
     line-height: 70px;
+}
+.swiper-pagination-bullet-active{
+    background: #EF4444;
+    opacity: 1;
 }
