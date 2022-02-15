@@ -8,7 +8,7 @@ const Teachers = () => {
   return (
     <div className="teachers mb-20">
       <div className="team-area">
-        <div className="text-4xl font-black mt-5 mb-8 text-blue-700">
+        <div className="text-red-500 text-3xl uppercase font-black mt-5 mb-8 text-blue-700">
           Our Expert Instructors
           <br />
           <span className="text-sm text-black">

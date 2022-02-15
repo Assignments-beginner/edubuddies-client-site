@@ -32,14 +32,14 @@ const SingleBlog = () => {
 					<div className='grid grid-cols-12 pt-2 text-left gap-3'>
 						<div className='md:col-span-3 col-span-6 text-stone-500 text-lg'>
 							<div>
-								<FontAwesomeIcon className='mr-2 text-blue-500' icon={faUser} />
+								<FontAwesomeIcon className='mr-2 text-red-500' icon={faUser} />
 								<span>{blog?.publisher}</span>
 							</div>
 						</div>
 						<div className='md:col-span-3 col-span-6 text-stone-500 text-lg '>
 							<div>
 								<FontAwesomeIcon
-									className='mr-2 text-blue-500'
+									className='mr-2 text-red-500'
 									icon={faCalendarAlt}
 								/>
 								<span>{blog?.date}</span>
@@ -48,7 +48,7 @@ const SingleBlog = () => {
 						<div className='md:col-span-3 col-span-6 text-stone-500 text-lg'>
 							<div>
 								<FontAwesomeIcon
-									className='mr-2 text-blue-500'
+									className='mr-2 text-red-500'
 									icon={faComment}
 								/>
 								<span>{blog?.comments} Comments</span>
