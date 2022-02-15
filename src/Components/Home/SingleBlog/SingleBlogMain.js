@@ -6,8 +6,8 @@ import SingleBlog from "./SingleBlog";
 
 const SingleBlogMAin = () => {
 	return (
-		<div className='container mx-auto my-24  px-4 md:px-11  '>
-			<div className='mx-auto grid grid-cols-12 gap-7'>
+		<div className='container mx-auto my-9  px-4 md:px-11  '>
+			<div className='mx-auto grid grid-cols-12 gap-9'>
 				<div className='md:col-span-8 col-span-12'>
 					<SingleBlog />
 					<Reviews />

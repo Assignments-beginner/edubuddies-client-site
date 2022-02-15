@@ -39,7 +39,7 @@ const Reviews = () => {
 	];
 	return (
 		<div>
-			<div className='text-2xl font-black text-red-600 md:text-left text-center'>
+			<div className='text-2xl font-black text-red-500 md:text-left text-center'>
 				OUR REVIEW
 			</div>
 			<h1 className='md:text-5xl text-4xl font-semibold mt-3 mb-5 text-gray-800  md:text-left text-center'>
@@ -53,13 +53,13 @@ const Reviews = () => {
 							className='grid grid-cols-9  mx-auto gap-5 align-center py-2'>
 							<div className='col-span-2'>
 								<img
-									className='w-full card-image rounded-lg'
+									className='w-full card-image rounded-lg border border-red-500'
 									src={user?.photo}
 									alt=''
 								/>
 							</div>
 							<div className='col-span-7 my-auto'>
-								<h1 className='text-3xl font-bold text-red-600 duration-300 mb-2 cursor-pointer text-left'>
+								<h1 className='text-3xl font-bold text-red-500 duration-300 mb-2 cursor-pointer text-left'>
 									{user?.name}
 								</h1>
 								<h3 className='text-md  text-stone-700 duration-300 cursor-pointer text-left'>
@@ -69,7 +69,7 @@ const Reviews = () => {
 									<div className=' text-stone-500 text-md mt-2'>
 										<div className='text-left'>
 											<FontAwesomeIcon
-												className='mr-1 text-red-600'
+												className='mr-1 text-red-500'
 												icon={faCalendarAlt}
 											/>
 											<span>{user?.date}</span>
