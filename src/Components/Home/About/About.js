@@ -13,7 +13,7 @@ const About = () => {
               <div className='text-2xl font-black my-5 text-blue-700'>
                 Why Choose Us
               </div>
-              <div className='text-5xl font-black my-5 '>
+              <div className='lg:text-5xl font-black my-5 md:text-4xl sm:text-3xl'>
                 Tools For Everyone
               </div>
               <div className="text-justify lg:pr-28">
