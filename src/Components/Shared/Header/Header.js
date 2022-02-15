@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightFromBracket, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faRightFromBracket,faBars } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 // import { HashLink } from "react-router-hash-link";
 import useAuth from "../../../hooks/useAuth";
@@ -29,11 +29,10 @@ const Header = () => {
               type="button"
               className="inline-flex items-center justify-center py-2 px-4 rounded-md text-gray-400 focus:text-gray-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
-              {/* <i className="fas fa-bars text-2xl px-2"></i> */}
               <FontAwesomeIcon
-                    className="text-2xl text-white"
-                    icon={faBars}
-                  />
+										className='text-2xl px-2'
+										icon={faBars}
+								/>
             </button>
           </div>
           {/* ///////////// Project Logo /////////// */}
