@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faRightFromBracket, faBars } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 // import { HashLink } from "react-router-hash-link";
 import useAuth from "../../../hooks/useAuth";
@@ -27,9 +27,13 @@ const Header = () => {
             <button
               onClick={toggleFunction}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 focus:text-gray-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center py-2 px-4 rounded-md text-gray-400 focus:text-gray-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
-              <i className="fas fa-bars text-2xl px-2"></i>
+              {/* <i className="fas fa-bars text-2xl px-2"></i> */}
+              <FontAwesomeIcon
+                    className="text-2xl text-white"
+                    icon={faBars}
+                  />
             </button>
           </div>
           {/* ///////////// Project Logo /////////// */}
@@ -96,9 +100,9 @@ const Header = () => {
                   {/* ///////// Profile img & name /////////// */}
                   <div className="flex items-center profile-imgName">
                     <img
-                      className=" user-img h-8 w-8 rounded-full ring-2 ring-offset-2"
+                      className="user-img h-8 w-8 rounded-full ring-2 ring-offset-2"
                       src={user.photoURL}
-                      alt="Profile"
+                      alt=""
                     />
                     <span
                       style={{ fontSize: "12px" }}
