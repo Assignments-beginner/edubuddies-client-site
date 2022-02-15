@@ -7,14 +7,14 @@ const CoreFeatures = () => {
 		<div className='container mx-auto my-24  px-4 md:px-11  '>
 			<div className='grid md:grid-cols-2 grid-cols-1 mx-auto md:gap-5 gap-4'>
 				<div className='w-full'>
-					<div className='md:text-3xl text-2xl font-black text-blue-700 md:text-left text-center'>
+					<div className='md:text-3xl text-2xl font-black text-red-600 md:text-left text-center'>
 						CORE FEATURES
 					</div>
-					<h1 className='md:text-5xl text-4xl font-semibold my-4 text-blue-700  md:text-left text-center'>
+					<h1 className='md:text-5xl text-4xl font-semibold my-4 text-red-600  md:text-left text-center'>
 						See What Our Mission Are
 					</h1>
 					<div className='flex py-5 align-middle justify-items-start  duration-300 rounded-md '>
-						<div className='mr-3 p-5 bg-blue-600 text-white rounded-md'>
+						<div className='mr-3 p-5 bg-red-600 text-white rounded-md'>
 							<FontAwesomeIcon
 								className=' icon '
 								style={{ fontSize: "60px" }}
@@ -22,7 +22,7 @@ const CoreFeatures = () => {
 							/>
 						</div>
 						<div className=' text-left'>
-							<div className='md:text-2xl text-xl font-bold mb-1 text-blue-700'>
+							<div className='md:text-2xl text-xl font-bold mb-1 text-red-600'>
 								Learn Data Science
 							</div>
 							<div className='text-base'>
@@ -32,7 +32,7 @@ const CoreFeatures = () => {
 						</div>
 					</div>
 					<div className='flex py-5 align-middle justify-items-start  duration-300 rounded-md '>
-						<div className='mr-3 p-5 bg-blue-600 text-white rounded-md'>
+						<div className='mr-3 p-5 bg-red-600 text-white rounded-md'>
 							<FontAwesomeIcon
 								className=' icon'
 								style={{ fontSize: "60px" }}
@@ -40,7 +40,7 @@ const CoreFeatures = () => {
 							/>
 						</div>
 						<div className='text-left'>
-							<div className='md:text-2xl text-xl font-bold mb-1 text-blue-700'>
+							<div className='md:text-2xl text-xl font-bold mb-1 text-red-600'>
 								Best Online Class
 							</div>
 							<div className='text-base'>
@@ -50,7 +50,7 @@ const CoreFeatures = () => {
 						</div>
 					</div>
 					<div className='flex py-5 align-middle justify-items-start  duration-300 rounded-md '>
-						<div className='mr-3 p-5 bg-blue-600 text-white rounded-md'>
+						<div className='mr-3 p-5 bg-red-600 text-white rounded-md'>
 							<FontAwesomeIcon
 								className=' icon'
 								style={{ fontSize: "60px" }}
@@ -58,7 +58,7 @@ const CoreFeatures = () => {
 							/>
 						</div>
 						<div className='text-left'>
-							<div className='md:text-2xl text-xl font-bold mb-1 text-blue-700'>
+							<div className='md:text-2xl text-xl font-bold mb-1 text-red-600'>
 								24x7 Program
 							</div>
 							<div className='text-base'>

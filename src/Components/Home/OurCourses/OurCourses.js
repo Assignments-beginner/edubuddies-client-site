@@ -6,7 +6,7 @@ import "./OurCourses.css";
 const OurCourses = () => {
 	return (
 		<div className='container mx-auto my-24  px-4 md:px-11  '>
-			<h1 className='md:text-5xl text-4xl font-semibold mt-9 md:mb-9 mb-5 text-blue-700'>
+			<h1 className='md:text-5xl text-4xl font-semibold mt-9 md:mb-9 mb-5 text-red-600'>
 				Explore Popular Courses
 			</h1>
 			<div className='w-full'>
@@ -15,12 +15,12 @@ const OurCourses = () => {
 						<div className='flex border-2 p-5 align-middle justify-center OurCourses hover:cursor-pointer duration-300 rounded-lg  bg-white'>
 							<div className='mr-3 '>
 								<FontAwesomeIcon
-									className='text-blue-500 icon'
+									className='text-red-600 icon p-3'
 									style={{ fontSize: "60px" }}
 									icon={faDatabase}
 								/>
 							</div>
-							<div className=' text-left'>
+							<div className=' text-left p-3'>
 								<div className='md:text-2xl text-xl font-bold mb-1'>
 									Learn Data Science
 								</div>
