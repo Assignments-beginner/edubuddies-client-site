@@ -47,16 +47,16 @@ const Testimonial = () => {
 		},
 	];
 	return (
-		<div className='container mx-auto my-14  px-4 md:px-11  '>
+		<div className='container mx-auto my-24  px-4 md:px-11  '>
 			<div className=' w-full'>
 				<div
 					className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-6'
 					style={{ alignItems: "center" }}>
 					<div className='text-left w-full'>
-						<div className='md:text-4xl text-3xl font-black text-blue-700'>
+						<div className='md:text-4xl text-3xl font-semibold  text-red-600'>
 							Testimonial
 						</div>
-						<h1 className='md:text-6xl text-4xl font-semibold md:mb-11 mb-5 text-blue-700'>
+						<h1 className='md:text-5xl text-4xl font-black md:mb-7 mb-5 mt-3 text-gray-800'>
 							What Our Client Says About Us
 						</h1>
 						<div className='text-md my-5 text-justify text-p '>
@@ -97,7 +97,7 @@ const Testimonial = () => {
 										<div className='mb-5'>{comment?.comment}</div>
 										<div className='flex justify-between'>
 											<div className='flex items-center'>
-												<div className='border-2 p-2 border-blue-500 rounded-lg mr-4'>
+												<div className='border-2 p-2 border-red-600 rounded-lg mr-4'>
 													<img
 														width='150px'
 														height='300px'
@@ -108,16 +108,16 @@ const Testimonial = () => {
 												</div>
 
 												<div className='w-full'>
-													<div className='text-3xl font-medium'>
+													<div className='text-3xl font-bold text-gray-800'>
 														{comment?.name}
 													</div>
-													<div className='text-xl text-blue-500'>
+													<div className='text-xl text-red-600'>
 														{comment?.role}
 													</div>
 												</div>
 											</div>
 											<FontAwesomeIcon
-												className='text-9xl text-right text-blue-500 opacity-50 faQuoteRight'
+												className='text-9xl text-right text-red-600 opacity-50 faQuoteRight'
 												icon={faQuoteRight}
 											/>
 										</div>

@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Link } from "react-router-dom";
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -59,8 +60,8 @@ const Courses = () => {
 	];
 
 	return (
-		<div className='container mx-auto my-14  px-4 md:px-11  '>
-			<h1 className='md:text-6xl text-4xl font-semibold mt-9 md:mb-9 mb-5 text-blue-700'>
+		<div className='container mx-auto my-24  px-4 md:px-11  '>
+			<h1 className='md:text-5xl text-4xl font-semibold mt-9 md:mb-9 mb-5 text-red-600'>
 				Popular Courses
 			</h1>
 			<div className='w-full pb-7 pagination' style={{ overflow: "hidden" }}>
@@ -88,48 +89,50 @@ const Courses = () => {
 					className='mySwiper'>
 					{courses?.map((course, key) => (
 						<SwiperSlide key={key}>
-							<div
-								className='border rounded-lg card duration-300  bg-white'
-								style={{ maxWidth: "350px" }}>
-								<div className=' overflow-hidden rounded-t-lg'>
-									<img
-										className='w-full card-image rounded-t-lg'
-										src={course?.coursePhoto}
-										alt=''
-									/>
-								</div>
-								<div className='px-4 pb-4 card-content'>
-									<img
-										className='w-20 rounded-full mx-auto -mt-9 border-4 border-white relative z-10'
-										alt=''
-										src={course?.instructorPhoto}
-									/>
-									<h6 className='text-base text-stone-500 mt-2 hover:underline duration-300 cursor-pointer'>
-										{course?.instructorName}
-									</h6>
-									<h1 className='text-lg font-bold mt-1 mb-3 text-stone-700 hover:text-blue-400 duration-300 cursor-pointer'>
-										{course?.courseName}
-									</h1>
-									<hr className='border ' />
-									<div className='flex justify-between pt-2'>
-										<div className='flex text-stone-500 text-sm'>
-											<div className='mr-3 text-base'>
-												<FontAwesomeIcon icon={faUsers} className='mr-1' />
-												<span>{course?.totalStudents}</span>
+							<Link to=''>
+								<div
+									className='border rounded-lg card duration-300  bg-white'
+									style={{ maxWidth: "350px" }}>
+									<div className=' overflow-hidden rounded-t-lg'>
+										<img
+											className='w-full card-image rounded-t-lg'
+											src={course?.coursePhoto}
+											alt=''
+										/>
+									</div>
+									<div className='px-4 pb-4 card-content'>
+										<img
+											className='w-20 rounded-full mx-auto -mt-9 border-4 border-white relative z-10'
+											alt=''
+											src={course?.instructorPhoto}
+										/>
+										<h6 className='text-base text-stone-500 mt-2 hover:underline duration-300 cursor-pointer'>
+											{course?.instructorName}
+										</h6>
+										<h1 className='text-lg font-bold mt-1 mb-3 text-stone-700 hover:text-red-600 duration-300 cursor-pointer'>
+											{course?.courseName}
+										</h1>
+										<hr className='border ' />
+										<div className='flex justify-between pt-2'>
+											<div className='flex text-stone-500 text-sm'>
+												<div className='mr-3 text-base'>
+													<FontAwesomeIcon icon={faUsers} className='mr-2 ' />
+													<span>{course?.totalStudents}</span>
+												</div>
+												<div className='text-base'>
+													<FontAwesomeIcon icon={faComment} className='mr-2 ' />
+													<span>{course?.comments}</span>
+												</div>
 											</div>
-											<div className='text-base'>
-												<FontAwesomeIcon icon={faComment} className='mr-1' />
-												<span>{course?.comments}</span>
+											<div>
+												<h6 className='text-base font-bold text-red-600'>
+													<span className='mr-1'>{course?.price}</span>$
+												</h6>
 											</div>
-										</div>
-										<div>
-											<h6 className='text-base font-bold text-red-500'>
-												<span className='mr-1'>{course?.price}</span>$
-											</h6>
 										</div>
 									</div>
 								</div>
-							</div>
+							</Link>
 						</SwiperSlide>
 					))}
 				</Swiper>

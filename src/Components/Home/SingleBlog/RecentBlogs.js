@@ -36,7 +36,7 @@ const RecentBlogs = () => {
 				position: "sticky",
 				top: 95,
 			}}>
-			<h1 className='md:text-3xl text-2xl font-semibold pb-4 text-blue-700'>
+			<h1 className='md:text-3xl text-2xl font-semibold pb-4 text-red-600'>
 				Recent Blogs
 			</h1>
 			<div className='w-full pagination'>
@@ -53,14 +53,14 @@ const RecentBlogs = () => {
 							/>
 						</div>
 						<div className='col-span-3'>
-							<h1 className='text-md font-bold text-stone-700 hover:text-blue-400 duration-300 cursor-pointer text-left'>
+							<h1 className='text-md font-bold text-stone-700 hover:text-red-600 duration-300 cursor-pointer text-left'>
 								{blog?.blogName}
 							</h1>
 							<div>
 								<div className=' text-stone-500 text-sm mt-2'>
 									<div className='text-left'>
 										<FontAwesomeIcon
-											className='mr-1 text-blue-500'
+											className='mr-1 text-red-600'
 											icon={faCalendarAlt}
 										/>
 										<span>{blog?.date}</span>
