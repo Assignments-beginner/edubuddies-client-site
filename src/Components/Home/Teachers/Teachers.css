@@ -75,13 +75,13 @@
   margin: 5px;
 }
 .box ul li a .fa-facebook:hover {
-  color: #4338ca;
+  color: #4867aa;
 }
 .box ul li a .fa-twitter:hover {
-  color: #4338ca;
+  color: #5da9dd;
 }
 .box ul li a .fa-linkedin:hover {
-  color: #4338ca;
+  color: #0077b5;
 }
 
 @media (max-width: 767px) {
