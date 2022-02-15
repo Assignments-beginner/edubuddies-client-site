@@ -1,6 +1,6 @@
 .teachers {
   font-family: "Roboto", sans-serif;
-  color: #999;
+  color: black;
 }
 
 .team-area {
@@ -28,6 +28,7 @@
 }
 
 .box {
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
