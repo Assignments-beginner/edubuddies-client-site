@@ -13,6 +13,7 @@ import Contact from "../../Contact/Contact";
 import OurCourses from "../OurCourses/OurCourses";
 import CoreFeatures from "../CoreFeatures/CoreFeatures";
 import InfoCard from "../InfoCard/InfoCard";
+import Achievement from "../Achievement/Achievement";
 
 const Home = () => {
 	const dispath = useDispatch();
@@ -35,6 +36,7 @@ const Home = () => {
 
 			<Courses />
 			<About />
+			<Achievement/>
 			<OurCourses />
 			<Testimonial />
 			<Blogs />
