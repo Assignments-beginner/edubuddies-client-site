@@ -92,7 +92,7 @@ const Header = () => {
             {user?.email && (
               <div className="flex">
                 {/* /////////////// Nav Profile Box //////////// */}
-                <div className="flex userProfile">
+                <div className="flex userProfile z-20">
                   {/* ///////// Profile img & name /////////// */}
                   <div className="flex items-center profile-imgName">
                     <img
@@ -113,6 +113,7 @@ const Header = () => {
                 origin-top-right 
                 absolute 
                 right-0 
+                top-2
                 w-40 
                 rounded-md 
                 shadow-lg 
