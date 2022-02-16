@@ -13,6 +13,7 @@ import Contact from "../../Contact/Contact";
 import OurCourses from "../OurCourses/OurCourses";
 import CoreFeatures from "../CoreFeatures/CoreFeatures";
 import InfoCard from "../InfoCard/InfoCard";
+import Achievement from "../Achievement/Achievement";
 
 const Home = () => {
   const dispath = useDispatch();
@@ -33,6 +34,21 @@ const Home = () => {
       {/* All Home Component Call From Here */}
       <Banner />
 
+<<<<<<< HEAD
+			<Courses />
+			<About />
+			<Achievement/>
+			<OurCourses />
+			<Testimonial />
+			<Blogs />
+			<CoreFeatures />
+			<Teachers />
+			<Contact />
+			<Newsletter />
+			<InfoCard />
+		</div>
+	);
+=======
       <Courses />
       <About />
       <OurCourses />
@@ -45,6 +61,7 @@ const Home = () => {
       <InfoCard />
     </div>
   );
+>>>>>>> da7b57744adf30ceb87a5fbd01bf555a28264f09
 };
 
 export default Home;
