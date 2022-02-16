@@ -21,7 +21,7 @@ const bgStyle = {
 const Achievement = () => {
   return (
     <div>
-      <h1 className="text-3xl uppercase font-semibold mt-14 md:mb-9 mb-5 text-red-500">
+      <h1 className="text-4xl uppercase font-semibold mt-14 md:mb-9 mb-5 text-red-500">
         Our Achievement
       </h1>
       <div style={bgStyle}>
@@ -35,7 +35,7 @@ const Achievement = () => {
             their career
           </p>
         </div>
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 container mx-auto h-48 items-center pb-28">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 container mx-auto lg:h-48 sm:h-72 items-center pb-28">
           <div className="flex items-center justify-center border border-gray-400 py-3 rounded-xl mx-5 mb-2">
             <FontAwesomeIcon
               className="text-5xl text-red-500"
