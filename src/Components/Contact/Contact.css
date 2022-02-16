@@ -17,13 +17,13 @@
 .contact-box {
   width: 50%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
 .contact-form {
   background: rgba(255, 255, 255, 0.664);
   display: flex;
   flex-direction: column;
-  padding: 2vw 4vw;
+  padding: 5%;
   width: 90%;
   max-width: 600px;
   border-radius: 10px;
@@ -63,6 +63,14 @@
   outline: none;
   cursor: pointer;
   width: 150px;
-  margin: 20px auto 0;
   border-radius: 30px;
+}
+
+@media all and (max-width: 688px) {
+  .contact {
+    justify-content: center;
+  }
+  .contact-box {
+    width: 95%;
+  }
 }

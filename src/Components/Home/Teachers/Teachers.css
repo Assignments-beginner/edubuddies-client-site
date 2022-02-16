@@ -7,20 +7,15 @@
   display: grid;
   justify-content: center;
 }
-.section-title h1 {
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 0;
-  color: #033cf7;
-  font-size: 40px;
-}
+
 .team-box {
   display: inline-flex;
 }
 
 .teachers-box {
-  width: 300px;
-  height: 300px;
+  width: 270px;
+  height: 270px;
+  margin-top: 15px;
   position: relative;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
@@ -32,12 +27,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 330px;
+  width: 300px;
   margin: 20px;
-  padding-top: 20px;
-  padding-bottom: 30px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -65,15 +58,6 @@
   transition: transform 2s ease-in-out;
 }
 
-.box ul li a .fab {
-  color: rgb(54, 46, 46);
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border: 1px solid #999;
-  border-radius: 50%;
-  margin: 5px;
-}
 .box ul li a .fa-facebook:hover {
   color: #4867aa;
 }
@@ -84,7 +68,7 @@
   color: #0077b5;
 }
 
-@media (max-width: 767px) {
+@media all and (max-width: 688px) {
   .team-box {
     display: block;
   }
