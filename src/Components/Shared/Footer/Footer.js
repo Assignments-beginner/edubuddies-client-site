@@ -4,12 +4,14 @@ import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 import "../Footer/Footer.css";
 import { Link } from "react-router-dom";
 
+/* Please don't edit this file - Team Leader (Avishek) */
+
 const Footer = () => {
   return (
     <footer className="text-center text-gray-300 bg-gray-900 pt-6">
       {/* ///////////////////////// Columns /////////////////////// */}
-      <div className="container mx-auto border-2 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
-        <div className="pt-6 px-12 border-2">
+      <div className="container mx-auto grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 pb-8">
+        <div className="logo-part py-6 px-12">
           <Link to="/home">
             <img
               className="w-40 mb-4"
@@ -17,14 +19,14 @@ const Footer = () => {
               alt="footer logo"
             />
           </Link>
-          <p className="text-left text-sm">
+          <p className="text-sm">
             {" "}
-            Great lesson ideas and lesson plans for ESL teachers! Educators can
-            customize.
+            Great lesson ideas and lesson plans for students, that students can
+            observe their learning.
           </p>
         </div>
         {/* ///////////////////////// Three Columns /////////////////////// */}
-        <div className="border-2 flex justify-center">
+        <div className="ul-section">
           <ul className="text-left">
             <h5 className="pt-6 text-lg uppercase font-black mb-4 text-red-500">
               Programs
@@ -47,7 +49,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="border-2 flex justify-center">
+        <div className="ul-section">
           <ul className="text-left">
             <h5 className="pt-6 uppercase font-black text-lg mb-4 text-red-500">
               About Us
@@ -70,7 +72,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="border-2 flex justify-center">
+        <div className="ul-section">
           <ul className="text-left">
             <h5 className="pt-6 text-lg uppercase font-black mb-4 text-red-500">
               Support
