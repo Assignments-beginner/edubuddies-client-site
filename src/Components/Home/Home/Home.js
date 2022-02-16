@@ -29,10 +29,10 @@ const Home = () => {
 			});
 	}, [dispath]);
 
-	return (
-		<div>
-			{/* All Home Component Call From Here */}
-			<Banner />
+  return (
+    <div>
+      {/* All Home Component Call From Here */}
+      <Banner />
 			<Courses />
 			<About />
 			<Achievement />
