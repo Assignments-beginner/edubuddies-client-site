@@ -30,17 +30,13 @@ const useFirebase = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setAuthError("");
-        const newUser = { email, displayName: name };
-        setUser(newUser);
+
         // save user to the database
         saveUser(email, name, "POST");
         // send name to firebase after creation
-        updateProfile(auth.currentUser, {
-          displayName: name,
-        })
-          .then(() => {})
-          .catch((error) => {});
-        navigate("/");
+        updateUserProfile(name);
+        setUser(userCredential.user);
+        navigate("/home");
       })
       .catch((error) => {
         setAuthError(error.message);
@@ -49,10 +45,21 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
+  // update User Profile
+  const updateUserProfile = (name) => {
+    console.log(name);
+    updateProfile(auth.currentUser, {
+      displayName: name,
+    });
+  };
+
   const loginUser = (email, password, location, navigate) => {
     setIsLoading(true);
+    console.log("from Firebase", email, password);
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        setUser(userCredential.user);
         const destination = location?.state?.from || "/";
         navigate(destination);
         setAuthError("");
@@ -70,6 +77,7 @@ const useFirebase = () => {
         const user = result.user;
         saveUser(user.email, user.displayName, "PUT");
         setAuthError("");
+        setUser(user);
         const destination = location?.state?.from || "/";
         navigate(destination);
       })
@@ -96,7 +104,7 @@ const useFirebase = () => {
   }, [auth]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://fierce-caverns-90976.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -115,7 +123,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("http://localhost:5000/users", {
+    fetch("https://fierce-caverns-90976.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
