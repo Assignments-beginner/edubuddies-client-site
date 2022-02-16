@@ -2,6 +2,9 @@
     .description{
         display: none!important;
     }
+    .slider-text{
+        top: 15px!important;
+    }
     .slider-text h3{
         display: none;
     }
