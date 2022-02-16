@@ -33,8 +33,6 @@ const Home = () => {
     <div>
       {/* All Home Component Call From Here */}
       <Banner />
-
-<<<<<<< HEAD
 			<Courses />
 			<About />
 			<Achievement/>
@@ -48,20 +46,6 @@ const Home = () => {
 			<InfoCard />
 		</div>
 	);
-=======
-      <Courses />
-      <About />
-      <OurCourses />
-      <Testimonial />
-      <Blogs />
-      <CoreFeatures />
-      <Teachers />
-      <Contact />
-      <Newsletter />
-      <InfoCard />
-    </div>
-  );
->>>>>>> da7b57744adf30ceb87a5fbd01bf555a28264f09
 };
 
 export default Home;
