@@ -13,28 +13,31 @@ import Contact from "../../Contact/Contact";
 import OurCourses from "../OurCourses/OurCourses";
 import CoreFeatures from "../CoreFeatures/CoreFeatures";
 import InfoCard from "../InfoCard/InfoCard";
+import Achievement from "../Achievement/Achievement";
 
 const Home = () => {
-	const dispath = useDispatch();
+  const dispath = useDispatch();
 
-	const allStudent = useSelector((state) => state.edu.student);
-	console.log(allStudent);
+  const allStudent = useSelector((state) => state.edu.student);
+  console.log(allStudent);
 
-	useEffect(() => {
-		fetch("https://jsonplaceholder.typicode.com/users")
-			.then((res) => res.json())
-			.then((data) => {
-				dispath(loadStudent(data));
-			});
-	}, [dispath]);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => {
+        dispath(loadStudent(data));
+      });
+  }, [dispath]);
 
-	return (
-		<div>
-			{/* All Home Component Call From Here */}
-			<Banner />
+  return (
+    <div>
+      {/* All Home Component Call From Here */}
+      <Banner />
 
+<<<<<<< HEAD
 			<Courses />
 			<About />
+			<Achievement/>
 			<OurCourses />
 			<Testimonial />
 			<Blogs />
@@ -45,6 +48,20 @@ const Home = () => {
 			<InfoCard />
 		</div>
 	);
+=======
+      <Courses />
+      <About />
+      <OurCourses />
+      <Testimonial />
+      <Blogs />
+      <CoreFeatures />
+      <Teachers />
+      <Contact />
+      <Newsletter />
+      <InfoCard />
+    </div>
+  );
+>>>>>>> da7b57744adf30ceb87a5fbd01bf555a28264f09
 };
 
 export default Home;

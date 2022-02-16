@@ -32,6 +32,8 @@ const Login = ({ backgroundColor = "#EDF2F7", children }) => {
     signInWithGoogle(location, navigate);
   };
 
+  console.log(loginData);
+
   return (
     <div style={{ backgroundColor }}>
       <div className="w-full max-w-xs mx-auto pt-8 pb-16">
@@ -53,6 +55,7 @@ const Login = ({ backgroundColor = "#EDF2F7", children }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="email"
               type="email"
+              name="email"
               onClick={removeError}
               onChange={handleOnChange}
               placeholder="Email"
@@ -69,6 +72,7 @@ const Login = ({ backgroundColor = "#EDF2F7", children }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:shadow-outline"
               id="password"
               type="password"
+              name="password"
               onClick={removeError}
               onChange={handleOnChange}
               placeholder="******************"
