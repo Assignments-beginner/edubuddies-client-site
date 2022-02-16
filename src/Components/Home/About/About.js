@@ -10,7 +10,7 @@ const About = () => {
         About Us
       </div>
       <div className="container mx-auto lg:flex justify-between md:block sm:block">
-        <div className="text-left px-6 w-full lg:pt-24">
+        <div className="lg:text-left md:text-left px-6 w-full lg:pt-24 sm:text-center">
           <div className="text-2xl font-black my-5 text-red-500">
             Why Choose Us
           </div>
@@ -24,12 +24,12 @@ const About = () => {
           </div>
           <div>
             <Link to="/Courses">
-              <button className="bg-red-500 text-white py-4 px-8 mt-10 rounded-md mr-2 hover:bg-white hover:text-red-500 transition-all ease-linear duration-300">
+              <button className="bg-red-500 text-white py-4 px-8 mt-10 rounded-md mr-4 hover:bg-white hover:text-red-500 transition-all ease-linear duration-300">
                 Join for Free
               </button>
             </Link>
             <Link to="/register">
-              <button className="ml-2 py-4 px-8 mt-10 rounded-md hover:text-red-500 transition-all ease-linear duration-300">
+              <button className="py-4 px-8 mt-10 rounded-md hover:text-red-500 transition-all ease-linear duration-300">
                 Sign Up Today
                 <FontAwesomeIcon
                   className="ml-4 faArrowRightLong"
