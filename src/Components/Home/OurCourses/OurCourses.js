@@ -6,7 +6,7 @@ import "./OurCourses.css";
 const OurCourses = () => {
   return (
 		<div className='container mx-auto px-4 md:px-11'>
-			<h1 className='text-3xl uppercase font-semibold mt-12 md:mb-9 mb-5 text-red-500'>
+			<h1 className='text-3xl uppercase font-semibold mt-24 md:mb-9 mb-5 text-red-500'>
 				Explore Course Categories
 			</h1>
 			<div className='w-full'>
