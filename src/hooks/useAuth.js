@@ -1,9 +1,7 @@
-import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
-import { useContext } from "react";
+import useFirebase from "./useFirebase";
 
 const useAuth = () => {
-  const auth = useContext(AuthContext);
-  return auth;
+  return useFirebase();
 };
 
 export default useAuth;
