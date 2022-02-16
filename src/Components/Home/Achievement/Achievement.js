@@ -19,15 +19,15 @@ const Achievement = () => {
             <h2 className="text-4xl uppercase font-black mt-24 text-red-500 mb-2">
                 Our Achievement
             </h2>
-            <div className="container mx-auto px-6">
-                <div className="text-2xl font-black mb-4 mt-6 text-red-500 text-left">
-                    We are Happy For This
-                </div>
-                <p className="text-left text-gray-500 mb-6">We are a growing team of professional trainers who love our work but overall <br /> helping our students reach their maximum potential in their career</p>
-            </div>
             <div style={bgStyle}>
-                <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 container mx-auto h-96 items-center" >
-                    <div className="border border-gray-400 py-3 rounded-xl mx-5">
+                <div className="mx-auto px-6 pt-8">
+                    <div className="text-2xl font-black text-center text-white mb-4">
+                        We are Happy For This
+                    </div>
+                    <p className="text-center text-gray-300 mb-2">We are a growing team of professional trainers who love our work but overall <br /> helping our students reach their maximum potential in their career</p>
+                </div>
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 container mx-auto h-96 items-center pb-28" >
+                    <div className="border border-gray-400 py-3 rounded-xl mx-5 mb-2">
                         <FontAwesomeIcon 
                             className="text-5xl text-red-500"
                             icon={faPerson}
@@ -42,7 +42,7 @@ const Achievement = () => {
                         </span>
                         <span className=" text-gray-300 text-2xl"> Students</span>
                     </div>
-                    <div className="border border-gray-400 py-3 rounded-xl mx-5">
+                    <div className="border border-gray-400 py-3 rounded-xl mx-5 mb-2">
                         <FontAwesomeIcon 
                             className="text-5xl text-red-500"
                             icon={faGraduationCap}
@@ -57,7 +57,7 @@ const Achievement = () => {
                         </span>
                         <span className="text-xl text-gray-300 ml-3"> Graduates</span>
                     </div>
-                    <div className="border border-gray-400 py-3 rounded-xl mx-5">
+                    <div className="border border-gray-400 py-3 rounded-xl mx-5 mb-2">
                         <FontAwesomeIcon 
                             className="text-5xl text-red-500"
                             icon={faTrophy}
@@ -72,7 +72,7 @@ const Achievement = () => {
                         </span>
                         <span className="text-xl text-gray-300 ml-3"> Awards</span>
                     </div>
-                    <div className="border border-gray-400 py-3 rounded-xl mx-5">
+                    <div className="border border-gray-400 py-3 rounded-xl mx-5 mb-2">
                         <FontAwesomeIcon 
                             className="text-5xl text-red-500"
                             icon={faVideo}
