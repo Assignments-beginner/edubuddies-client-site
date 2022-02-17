@@ -14,11 +14,14 @@ import Footer from "./Components/Shared/Footer/Footer";
 import Header from "./Components/Shared/Header/Header";
 import UserProfile from "./Components/UserProfile/UserProfile/UserProfile";
 import SingleBlogMain from "./Components/Home/SingleBlog/SingleBlogMain";
+import ScrollToTop from "../src/Components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <ScrollToTop />
+        {/* This will prevent bottom scroll of every route. */}
         <div className="page-container">
           {/* // This will put the footer always in bottom of the screen */}
           <div className="content-wrap">

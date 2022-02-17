@@ -11,7 +11,7 @@ const Teachers = () => {
   return (
     <div className="teachers mb-20">
       <div className="team-area">
-        <div className="text-red-500 text-3xl uppercase font-black mt-5 mb-8">
+        <div className="text-red-500 text-center text-3xl uppercase font-black mt-5 mb-8">
           Our Instructors
           <p className="text-sm text-black px-6 pt-3">
             You don't have to struggle alone, you've got our assistance and
@@ -22,7 +22,10 @@ const Teachers = () => {
         <div className="team-box mx-auto">
           <div className="box pb-6">
             <div className="teachers-box">
-              <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVuJTIwcG9ydHJhaXR8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+              <img
+                src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVuJTIwcG9ydHJhaXR8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
             </div>
             <div>
               <h2 className="mt-4">Rakib Siddique</h2>
@@ -58,7 +61,10 @@ const Teachers = () => {
 
           <div className="box pb-6">
             <div className="teachers-box">
-              <img src="https://images.unsplash.com/photo-1513690277738-c9bc7eb2a992?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTg4fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+              <img
+                src="https://images.unsplash.com/photo-1513690277738-c9bc7eb2a992?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTg4fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
             </div>
             <div>
               <h2 className="mt-4">Kelly Franklin</h2>
@@ -93,7 +99,10 @@ const Teachers = () => {
           </div>
           <div className="box pb-6">
             <div className="teachers-box">
-              <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+              <img
+                src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
             </div>
             <div>
               <h2 className="mt-4">Josh Mathew</h2>
