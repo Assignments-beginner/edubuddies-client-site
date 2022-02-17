@@ -44,13 +44,13 @@ const Header = () => {
               />
             </Link>
           </div>
-          {/* /////////////////// Mobile Navbar Points /////////////////// */}
+          {/* /////////////////// Navbar Points /////////////////// */}
           <div className="flex items-center">
             <div className="hidden sm:block px-8">
               <div className="flex space-x-4">
                 <Link
                   className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
-                  to="/"
+                  to="/home"
                 >
                   Home
                 </Link>
@@ -110,6 +110,7 @@ const Header = () => {
                   {/* ///////// Profile Dropdown Menu /////////// */}
                   <div
                     className="
+                text-center
                 origin-top-right 
                 absolute 
                 right-0 
@@ -170,9 +171,9 @@ const Header = () => {
 
       {/* //////////////////// Hamburger Mobile ////////////////////// */}
       <div className="hidden" id="toogleDiv">
-        <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="px-2 pt-2 pb-3 space-y-1 text-center">
           <Link
-            to="/"
+            to="/home"
             className="text-gray-100 hover:bg-red-600 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             Home
