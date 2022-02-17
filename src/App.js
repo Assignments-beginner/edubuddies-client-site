@@ -17,37 +17,37 @@ import SingleBlogMain from "./Components/Home/SingleBlog/SingleBlogMain";
 import ScrollToTop from "../src/Components/ScrollToTop/ScrollToTop";
 
 function App() {
-  return (
-    <div>
-      <BrowserRouter>
-        <ScrollToTop />
-        {/* This will prevent bottom scroll of every route. */}
-        <div className="page-container">
-          {/* // This will put the footer always in bottom of the screen */}
-          <div className="content-wrap">
-            {/* // This will put the footer always in bottom of the screen */}
-            <Header />
-            <Routes>
-              <Route path="/*" element={<NotFound />} />
-              <Route path="/" element={<Home />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/blog" element={<Blogs />} />
-              <Route path="/singleblog" element={<SingleBlogMain />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/courses" element={<Courses />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/greetings" element={<Greetings />} />
-              <Route path="/userProfile" element={<UserProfile />} />
-              <Route path="/dashboard/*" element={<Dashboard />} />
-            </Routes>
-          </div>
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<BrowserRouter>
+				<ScrollToTop />
+				{/* This will prevent bottom scroll of every route. */}
+				<div className='page-container'>
+					{/* // This will put the footer always in bottom of the screen */}
+					<div className='content-wrap'>
+						{/* // This will put the footer always in bottom of the screen */}
+						<Header />
+						<Routes>
+							<Route path='/*' element={<NotFound />} />
+							<Route path='/' element={<Home />} />
+							<Route path='/home' element={<Home />} />
+							<Route path='/blog' element={<Blogs />} />
+							<Route path='/singleblog' element={<SingleBlogMain />} />
+							<Route path='/about' element={<About />} />
+							<Route path='/courses' element={<Courses />} />
+							<Route path='/contact' element={<Contact />} />
+							<Route path='/register' element={<Register />} />
+							<Route path='/login' element={<Login />} />
+							<Route path='/greetings' element={<Greetings />} />
+							<Route path='/userProfile' element={<UserProfile />} />
+							<Route path='/dashboard/*' element={<Dashboard />} />
+						</Routes>
+					</div>
+					<Footer />
+				</div>
+			</BrowserRouter>
+		</div>
+	);
 }
 
 export default App;
