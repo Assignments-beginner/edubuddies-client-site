@@ -39,7 +39,7 @@ const About = () => {
             </Link>
           </div>
         </div>
-        <div class="w-full">
+        <div className="w-full">
           <img className="mt-8" src="https://i.ibb.co/m9Wydny/whyAll.png" alt="WhyImage" />
         </div>
       </div>

@@ -36,7 +36,8 @@ const useFirebase = () => {
         // send name to firebase after creation
         updateUserProfile(name);
         setUser(userCredential.user);
-        navigate("/home");
+        navigate("/greetings");
+        window.location.reload();
       })
       .catch((error) => {
         setAuthError(error.message);

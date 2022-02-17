@@ -1,4 +1,9 @@
-.App {
-	text-align: center;
-	background-color: #f3f4f8;
+/* For Footer */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content-wrap {
+  flex: 1;
 }
