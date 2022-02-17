@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Greetings = ({ backgroundColor = "#F7F7F7", children }) => {
   return (
     <div className="text-center">
-      {/* <h2 className="text-slate-900 text-4xl mt-8 uppercase">
+      <h2 className="text-slate-900 text-4xl mt-8 mb-72 uppercase">
         Thanks for the <br /> <span className="text-red-500">registration</span>{" "}
         !
       </h2>
@@ -14,7 +14,7 @@ const Greetings = ({ backgroundColor = "#F7F7F7", children }) => {
         <Link to="/home">
           <span className="text-red-500">Back To Home</span>
         </Link>
-      </div> */}
+      </div>
     </div>
   );
 };
