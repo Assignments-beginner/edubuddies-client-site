@@ -29,7 +29,7 @@ const Header = () => {
               type="button"
               className="inline-flex items-center justify-center py-2 px-2 rounded-md text-gray-400 focus:text-gray-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
-              <FontAwesomeIcon className="text-2xl px-2" icon={faBars} />
+              <FontAwesomeIcon className="text-2xl text-white px-2" icon={faBars} />
             </button>
           </div>
           {/* ///////////// Project Logo /////////// */}
@@ -92,7 +92,7 @@ const Header = () => {
             {user?.email && (
               <div className="flex">
                 {/* /////////////// Nav Profile Box //////////// */}
-                <div className="flex userProfile">
+                <div className="flex userProfile z-20">
                   {/* ///////// Profile img & name /////////// */}
                   <div className="flex items-center profile-imgName">
                     <img
@@ -113,6 +113,7 @@ const Header = () => {
                 origin-top-right 
                 absolute 
                 right-0 
+                top-2
                 w-40 
                 rounded-md 
                 shadow-lg 

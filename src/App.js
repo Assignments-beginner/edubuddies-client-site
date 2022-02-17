@@ -9,6 +9,7 @@ import Home from "../src/Components/Home/Home/Home";
 import Login from "./Components/Login/Login";
 import NotFound from "./Components/NotFound/NotFound";
 import Register from "./Components/Register/Register";
+import Greetings from "../src/Components/Register/Greetings/Greetings";
 import Footer from "./Components/Shared/Footer/Footer";
 import Header from "./Components/Shared/Header/Header";
 import UserProfile from "./Components/UserProfile/UserProfile/UserProfile";
@@ -16,24 +17,31 @@ import SingleBlogMain from "./Components/Home/SingleBlog/SingleBlogMain";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/*" element={<NotFound />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/blog" element={<Blogs />} />
-          <Route path="/singleblog" element={<SingleBlogMain />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/userProfile" element={<UserProfile />} />
-          <Route path="/dashboard/*" element={<Dashboard />} />
-        </Routes>
-        <Footer />
+        <div className="page-container">
+          {/* // This will put the footer always in bottom of the screen */}
+          <div className="content-wrap">
+            {/* // This will put the footer always in bottom of the screen */}
+            <Header />
+            <Routes>
+              <Route path="/*" element={<NotFound />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/blog" element={<Blogs />} />
+              <Route path="/singleblog" element={<SingleBlogMain />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/greetings" element={<Greetings />} />
+              <Route path="/userProfile" element={<UserProfile />} />
+              <Route path="/dashboard/*" element={<Dashboard />} />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
       </BrowserRouter>
     </div>
   );
