@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div id="about">
-      <div className="text-4xl uppercase font-black mt-24 text-red-500">
+    <div>
+      <div className="text-4xl text-center uppercase font-black mt-24 text-red-500">
         About Us
       </div>
       <div className="container mx-auto lg:flex justify-between md:block sm:block">
@@ -14,7 +14,9 @@ const About = () => {
           <div className="text-2xl font-black my-5 text-red-500">
             Why Choose Us
           </div>
-          <div className="text-5xl font-black mt-5 mb-10">Tools For Everyone</div>
+          <div className="text-5xl font-black mt-5 mb-10">
+            Tools For Everyone
+          </div>
           <div className="text-justify lg:pr-28">
             We are a growing team of professional trainers who love our work but
             overall helping our students reach their maximum potential in their
@@ -40,7 +42,11 @@ const About = () => {
           </div>
         </div>
         <div className="w-full">
-          <img className="mt-8" src="https://i.ibb.co/m9Wydny/whyAll.png" alt="WhyImage" />
+          <img
+            className="mt-8"
+            src="https://i.ibb.co/m9Wydny/whyAll.png"
+            alt="WhyImage"
+          />
         </div>
       </div>
     </div>
