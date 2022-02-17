@@ -29,7 +29,7 @@ const Header = () => {
               type="button"
               className="inline-flex items-center justify-center py-2 px-2 rounded-md text-gray-400 focus:text-gray-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
-              <FontAwesomeIcon className="text-2xl px-2" icon={faBars} />
+              <FontAwesomeIcon className="text-2xl text-white px-2" icon={faBars} />
             </button>
           </div>
           {/* ///////////// Project Logo /////////// */}

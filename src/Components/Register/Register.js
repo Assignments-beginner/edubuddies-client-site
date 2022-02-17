@@ -20,6 +20,7 @@ const Register = ({ backgroundColor = "#EDF2F7", children }) => {
   };
 
   const registerHandler = (e) => {
+  // const registerHandler = () => {
     if (registerData.password !== registerData.password2) {
       alert("Your password did not match");
       return;
