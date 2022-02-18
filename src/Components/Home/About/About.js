@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import about from "../../../Images/about.png";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -42,11 +43,7 @@ const About = () => {
           </div>
         </div>
         <div className="w-full">
-          <img
-            className="mt-8"
-            src="https://i.ibb.co/m9Wydny/whyAll.png"
-            alt="WhyImage"
-          />
+          <img className="mt-8" src={about} alt="WhyImage" />
         </div>
       </div>
     </div>

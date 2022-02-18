@@ -4,7 +4,7 @@ import About from "../src/Components/Home/About/About";
 import Blogs from "../src/Components/Home/Blogs/Blogs";
 import Contact from "../src/Components/Contact/Contact";
 import Courses from "../src/Components/Home/Courses/Courses";
-import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import Dashboard from "../src/Components/Dashboard/Dashboard";
 import Home from "../src/Components/Home/Home/Home";
 import Login from "./Components/Login/Login";
 import NotFound from "./Components/NotFound/NotFound";

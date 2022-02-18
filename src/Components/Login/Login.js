@@ -4,7 +4,7 @@ import google from "../../Images/google.png";
 import useAuth from "../../hooks/useAuth";
 import "../Login/Login.css";
 
-const Login = ({ backgroundColor = "#EDF2F7", children }) => {
+const Login = ({ backgroundColor = "whiteSmoke", children }) => {
   const [loginData, setLoginData] = useState({});
   const { loginUser, signInWithGoogle, isLoading, authError, setAuthError } =
     useAuth();
@@ -37,7 +37,7 @@ const Login = ({ backgroundColor = "#EDF2F7", children }) => {
   return (
     <div style={{ backgroundColor }}>
       <div className="w-full max-w-xs mx-auto pt-8 pb-16">
-        <h1 className="text-2xl uppercase mb-4 text-indigo-700">
+        <h1 className="text-2xl uppercase mb-4 text-slate-800">
           Please Sign In
         </h1>
         <form
@@ -81,13 +81,13 @@ const Login = ({ backgroundColor = "#EDF2F7", children }) => {
           <div className="flex my-4">
             <p className="text-sm text-left">Don't have an account ?</p>
             &nbsp;
-            <Link to="/register" className="text-sm text-indigo-700">
+            <Link to="/register" className="text-sm text-red-500">
               Create One
             </Link>
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="bg-indigo-700 hover:bg-indigo-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Sign In
