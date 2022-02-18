@@ -20,7 +20,7 @@ const bgStyle = {
 
 const Achievement = () => {
   return (
-    <div>
+    <div className="pb-12">
       <h1 className="text-center text-4xl uppercase font-semibold mt-14 md:mb-9 mb-5 text-red-500">
         Our Achievement
       </h1>
