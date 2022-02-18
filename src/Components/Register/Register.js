@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
-const Register = ({ backgroundColor = "#EDF2F7", children }) => {
+const Register = ({ backgroundColor = "whiteSmoke", children }) => {
   const [registerData, setRegisterData] = useState({});
   const navigate = useNavigate();
   const { registerUser, authError, setAuthError } = useAuth();
@@ -37,7 +37,7 @@ const Register = ({ backgroundColor = "#EDF2F7", children }) => {
   return (
     <div style={{ backgroundColor }}>
       <div className="w-full max-w-xs mx-auto pt-8 pb-24">
-        <h1 className="text-2xl uppercase mb-4 text-indigo-700">
+        <h1 className="text-2xl uppercase mb-4 text-slate-800">
           Registration
         </h1>
         <form
@@ -111,13 +111,13 @@ const Register = ({ backgroundColor = "#EDF2F7", children }) => {
           <div className="flex">
             <p className="my-4 text-sm text-left">Aready have an account ?</p>
             &nbsp;{" "}
-            <Link to="/login" className="my-4 text-sm text-indigo-700">
+            <Link to="/login" className="my-4 text-sm text-red-500">
               Sign In
             </Link>
           </div>
           <div className="flex items-center justify-between mb-6">
             <button
-              className="bg-indigo-700 hover:bg-indigo-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Sign Up
