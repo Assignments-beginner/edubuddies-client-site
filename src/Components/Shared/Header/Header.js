@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
+  const { user, logout } = useAuth();
+
   const toggleFunction = () => {
     const toggleButton = document.getElementById("toogleDiv");
     if (toggleButton.style.display === "none") {
@@ -13,9 +16,10 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-indigo-700 sticky top-0 z-50">
+    <nav className="bg-indigo-700 py-3 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
+          {/* ///////////////// Hamburger ///////////////// */}
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
               onClick={toggleFunction}
@@ -25,89 +29,150 @@ const Header = () => {
               <i className="fas fa-bars text-2xl px-2"></i>
             </button>
           </div>
-          <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex-shrink-0 flex items-center">
-              <Link to="/home">
-                <img
-                  className="hidden lg:block h-10 w-auto"
-                  src="https://i.ibb.co/HzzW0Xv/logo.png"
-                  alt="Workflow"
-                />
-              </Link>
-            </div>
-            <div className="hidden sm:block sm:ml-6">
+          {/* ///////////// Project Logo /////////// */}
+          <div className="flex-shrink-0 flex items-center">
+            <Link to="/home">
+              <img
+                className="hidden lg:block"
+                height="230"
+                width="130"
+                src="https://i.ibb.co/HzzW0Xv/logo.png"
+                alt="Workflow"
+              />
+            </Link>
+          </div>
+          {/* /////////////////// Navbar Points /////////////////// */}
+          <div className="flex items-center">
+            <div className="hidden sm:block px-8">
               <div className="flex space-x-4">
                 <Link
-                  className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium flex items-center"
                   to="/"
                 >
                   Home
                 </Link>
                 <Link
-                  className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
-                  to="/Courses"
-                >
-                  Courses
-                </Link>
-                <Link
-                  className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
-                  to="/blog"
-                >
-                  Blog
-                </Link>
-                <Link
-                  className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium flex items-center"
                   to="/about"
                 >
                   About
                 </Link>
                 <Link
-                  className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium flex items-center"
+                  to="/Courses"
+                >
+                  Courses
+                </Link>
+                <Link
+                  className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium flex items-center"
+                  to="/blog"
+                >
+                  Blog
+                </Link>
+                <Link
+                  className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium flex items-center"
                   to="/contact"
                 >
                   Contact
                 </Link>
               </div>
             </div>
-          </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 userProfile">            
-            <div className="relative mt-2">
-              <img
-                className="h-8 w-8 rounded-full ring-2 ring-offset-2 ml-2 mb-2"
-                src="https://avatars.githubusercontent.com/u/86690202?v=4"
-                alt="Profile"
-              />
-              <div
-                className="origin-top-right absolute right-0 w-40 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden show"
-                id="userProfileDiv"
+
+            {!user?.email && (
+              <Link
+                className="text-gray-100 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 mr-2 border-2 rounded-md text-md font-medium flex items-center justify-center"
+                to="/login"
               >
-                <Link
-                  className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
-                  to="/dashboard"
-                >
-                  Dashboard
-                </Link>
-                <Link
-                  to="/userProfile"
-                  className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
-                >
-                  Profile
-                </Link>
-                <Link
-                  to="/home"
-                  onClick="handleSignOut"
-                  className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
-                >
-                  Log Out
+                Sign In
+              </Link>
+            )}
+            {user?.email && (
+              <div className="flex">
+                {/* /////////////// Nav Profile Box //////////// */}
+                <div className="flex userProfile">
+                  {/* ///////// Profile img & name /////////// */}
+                  <div className="flex items-center profile-imgName">
+                    <img
+                      className=" user-img h-8 w-8 rounded-full ring-2 ring-offset-2"
+                      src={user.photoURL}
+                      alt=""
+                    />
+                    <span
+                      style={{ fontSize: "12px" }}
+                      className="text-white ml-2 uppercase"
+                    >
+                      {user.displayName}
+                    </span>
+                  </div>
+                  {/* ///////// Profile Dropdown Menu /////////// */}
+                  <div
+                    className="
+                origin-top-right 
+                absolute 
+                right-0 
+                w-40 
+                rounded-md 
+                shadow-lg 
+                py-1 
+                px-1
+                mr-12
+                mt-10
+                bg-white 
+                ring-1 
+                ring-black 
+                ring-opacity-5 
+                focus:outline-none 
+                hidden 
+                show"
+                    id="userProfileDiv"
+                  >
+                    <Link
+                      className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
+                      to="/dashboard"
+                    >
+                      Dashboard
+                    </Link>
+                    <Link
+                      to="/userProfile"
+                      className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
+                    >
+                      Profile
+                    </Link>
+                    <Link
+                      to="/login"
+                      onClick={logout}
+                      className="text-black-200 hover:bg-indigo-900 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium block hover:text-white"
+                    >
+                      Log Out
+                    </Link>
+                  </div>
+                </div>
+                {/* //////////////// Logout Button /////////////// */}
+                <Link onClick={logout} to="/login">
+                  <i
+                    className="
+              xl:ml-4 
+              lg:ml-4 
+              sm:ml-2 
+              fas fa-sign-in-alt 
+              text-white 
+              text-lg 
+              px-2 
+              py-1 
+              border 
+              border-indigo-700 
+              rounded-lg 
+              hover:border-white 
+              hover:bg-indigo-900"
+                  ></i>
                 </Link>
               </div>
-            </div>
+            )}
           </div>
-          <Link to="/login">
-            <i className="fas fa-sign-in-alt text-white ml-4 text-lg px-2 py-1 border border-indigo-700 rounded-lg hover:border-orange-300 hover:bg-indigo-900"></i>
-          </Link>
         </div>
       </div>
+
+      {/* //////////////////// Hamburger Mobile ////////////////////// */}
       <div className="hidden" id="toogleDiv">
         <div className="px-2 pt-2 pb-3 space-y-1">
           <Link
