@@ -1,152 +1,108 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+import "../Footer/Footer.css";
 import { Link } from "react-router-dom";
+
+/* Please don't edit this file - Team Leader (Avishek) */
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-6">
-      <div className="container px-6 overflow-hidden flex flex-col lg:flex-row justify-between mx-auto p-4">
-        <div className="container block md:flex text-sm mt-6 lg:mt-0">
-          {/* //////////// Edu Buddies /////////////// */}
-          <div className="w-1/4 text-gray-700 font-thin flex flex-col justify-center">
-            <div className="flex justify-center">
-              <Link to="/home">
-                <img
-                  className="w-40 mb-4"
-                  src="https://i.ibb.co/HzzW0Xv/logo.png"
-                  alt="Main Logo"
-                />
-              </Link>
-            </div>
-            <div className="flex justify-center">
-              <p className="p-2 text-gray-400 text-justify">
-                Great lesson ideas and lesson plans for ESL teachers! Educators
-                can customize lesson plans to best.Great lesson ideas and lesson
-                plans for ESL teachers! Educators can customize lesson plans to
-                best.Great lesson ideas and lesson plans for ESL teachers!
-                Educators can customize lesson plans to best.
-              </p>
-            </div>
-            <div className="social w-1/5 mx-5 my-5 flex flex-start">
-              <a
-                className="flex items-center text-gray-300 hover:text-white mr-6 no-underline"
-                href="test"
-              >
-                <i className="fab fa-facebook text-xl"></i>
-              </a>
-              <a
-                className="flex items-center text-gray-300 hover:text-white mr-6 no-underline"
-                href="test"
-              >
-                <i className="fab fa-twitter text-xl"></i>
-              </a>
-              <a
-                className="flex items-center text-gray-300 hover:text-white no-underline"
-                href="test"
-              >
-                <i className="fab fa-github text-xl"></i>
-              </a>
-            </div>
-          </div>
-          {/* ////////////// Three Columns ////////////// */}
-          <div className="flex justify-between w-3/4 pl-12">
-            <ul className="text-gray-700 list-none font-thin flex flex-col text-left">
-              <li className="inline-block py-2 px-3 text-white uppercase font-medium tracking-wide">
-                Developers
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  Developer API
-                </p>
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  Our Developers
-                </p>
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  Documentation
-                </p>
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  Tutorials
-                </p>
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  Career With Us
-                </p>
-              </li>
-            </ul>
-            <ul className="text-gray-700 list-none font-thin flex flex-col text-left">
-              <li className="inline-block py-2 px-3 text-white uppercase font-medium tracking-wide">
-                Support
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer"
-                >
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  Support
-                </p>
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  Guides
-                </p>
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  Terms & Conditions
-                </p>
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  Road Map
-                </p>
-              </li>
-            </ul>
-            <ul className="text-gray-700 list-none font-thin flex flex-col text-left">
-              <li className="inline-block py-2 px-3 text-white uppercase font-medium tracking-wide">
-                Our Programs
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white cursor-pointer">
-                  Web Design
-                </p>
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  Web Development
-                </p>
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  Wordpress Development
-                </p>
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  SEO
-                </p>
-              </li>
-              <li>
-                <p className="inline-block py-2 pl-3 pr-5 text-gray-300 hover:text-white no-underline cursor-pointer">
-                  Digital Marketing
-                </p>
-              </li>
-            </ul>
-          </div>
+    <footer className="main-footer text-center text-gray-300 bg-gray-900 pt-6">
+      {/* ///////////////////////// Columns /////////////////////// */}
+      <div className="container mx-auto grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 pb-8">
+        <div className="logo-part py-6 px-12">
+          <Link to="/home">
+            <img
+              className="w-40 mb-4"
+              src="https://i.ibb.co/HzzW0Xv/logo.png"
+              alt="footer logo"
+            />
+          </Link>
+          <p className="text-sm">
+            {" "}
+            Great lesson ideas and lesson plans for students, that students can
+            observe their learning.
+          </p>
+        </div>
+        {/* ///////////////////////// Three Columns /////////////////////// */}
+        <div className="ul-section">
+          <ul className="text-left">
+            <h5 className="pt-6 text-lg uppercase font-black mb-4 text-red-500">
+              Programs
+            </h5>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Web Development </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Digital Marketing </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Res.Web Design </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> SEO (Advance) </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="ul-section">
+          <ul className="text-left">
+            <h5 className="pt-6 uppercase font-black text-lg mb-4 text-red-500">
+              About Us
+            </h5>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Student List </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Developers </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Our Terms </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Site Map </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="ul-section">
+          <ul className="text-left">
+            <h5 className="pt-6 text-lg uppercase font-black mb-4 text-red-500">
+              Support
+            </h5>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Career Guides</Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Contsct Us </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Conditions </Link>
+            </li>
+            <li className="mb-4 hover:text-red-500">
+              <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
+              <Link to="/home"> Guidlines </Link>
+            </li>
+          </ul>
         </div>
       </div>
-      <div className="border-t text-sm border-gray-800 flex flex-col md:flex-row justify-center items-center p-6 text-gray-300">
-        <span>Copyright &copy; 2022- TEAM SSYAAN - All Rights Reserved</span>
+      <hr className="new" />
+      {/* ///////////////////////// Copyright /////////////////////// */}
+      <div className="text-center py-6">
+        <span>Copyright- © 2022 - </span>
+        <a className="text-red-500 font-black" href="test">
+          Team Edu Buddies
+        </a>
       </div>
     </footer>
   );

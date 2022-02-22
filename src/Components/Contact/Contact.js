@@ -53,8 +53,8 @@ const Contact = () => {
     }
 
     return (
-        <div className="contact  py-16">
-            <div className="contact-box mr-24">                
+        <div className="contact py-16">
+            <div className="contact-box">                
                 {/* <form className="contact-form" onsubmit="sendEmail(); reset(); return false;"> */}
                 <form className="contact-form" onSubmit={handleFormSubmit} >
                     <h3 className="mt-4 text-2xl">GET IN TOUCH</h3>

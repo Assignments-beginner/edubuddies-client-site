@@ -1,0 +1,22 @@
+@media screen and (max-width:639px) {
+    .description{
+        display: none!important;
+    }
+    .slider-text{
+        top: 15px!important;
+    }
+    .slider-text h3{
+        display: none;
+    }
+    .slider-text button{
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}
+.head-text{
+    line-height: 70px;
+}
+.swiper-pagination-bullet-active{
+    background: #EF4444;
+    opacity: 1;
+}

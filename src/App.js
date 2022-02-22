@@ -4,40 +4,50 @@ import About from "../src/Components/Home/About/About";
 import Blogs from "../src/Components/Home/Blogs/Blogs";
 import Contact from "../src/Components/Contact/Contact";
 import Courses from "../src/Components/Home/Courses/Courses";
-import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import Dashboard from "../src/Components/Dashboard/Dashboard";
 import Home from "../src/Components/Home/Home/Home";
 import Login from "./Components/Login/Login";
 import NotFound from "./Components/NotFound/NotFound";
 import Register from "./Components/Register/Register";
+import Greetings from "../src/Components/Register/Greetings/Greetings";
 import Footer from "./Components/Shared/Footer/Footer";
 import Header from "./Components/Shared/Header/Header";
-import AuthProvider from "../src/contexts/AuthProvider/AuthProvider";
 import UserProfile from "./Components/UserProfile/UserProfile/UserProfile";
+import SingleBlogMain from "./Components/Home/SingleBlog/SingleBlogMain";
+import ScrollToTop from "../src/Components/ScrollToTop/ScrollToTop";
 
 function App() {
-  return (
-    <div className="App">
-      <AuthProvider>
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/*" element={<NotFound />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/blog" element={<Blogs />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/userProfile" element={<UserProfile />} />
-            <Route path="/dashboard/*" element={<Dashboard />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </AuthProvider>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<BrowserRouter>
+				<ScrollToTop />
+				{/* This will prevent bottom scroll of every route. */}
+				<div className='page-container'>
+					{/* // This will put the footer always in bottom of the screen */}
+					<div className='content-wrap'>
+						{/* // This will put the footer always in bottom of the screen */}
+						<Header />
+						<Routes>
+							<Route path='/*' element={<NotFound />} />
+							<Route path='/' element={<Home />} />
+							<Route path='/home' element={<Home />} />
+							<Route path='/blog' element={<Blogs />} />
+							<Route path='/singleblog' element={<SingleBlogMain />} />
+							<Route path='/about' element={<About />} />
+							<Route path='/courses' element={<Courses />} />
+							<Route path='/contact' element={<Contact />} />
+							<Route path='/register' element={<Register />} />
+							<Route path='/login' element={<Login />} />
+							<Route path='/greetings' element={<Greetings />} />
+							<Route path='/userProfile' element={<UserProfile />} />
+							<Route path='/dashboard/*' element={<Dashboard />} />
+						</Routes>
+					</div>
+					<Footer />
+				</div>
+			</BrowserRouter>
+		</div>
+	);
 }
 
 export default App;

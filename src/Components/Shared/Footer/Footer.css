@@ -1,0 +1,32 @@
+.main-footer {
+  position: relative;
+  bottom: 0;
+}
+.logo-part {
+  text-align: start;
+}
+.ul-section {
+  display: flex;
+  justify-content: center;
+}
+hr.new {
+  border: 1px solid rgb(68, 68, 68);
+  width: 80%;
+  margin: auto;
+}
+
+/* //////////////////// Media Queries ///////////////////// */
+
+@media all and (max-width: 688px) {
+  .logo-part {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ul-section {
+    display: flex;
+    justify-content: start;
+    padding-left: 33%;
+  }
+}

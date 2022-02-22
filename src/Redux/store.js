@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import edubuddySlice from "./edubuddySlice";
+import eduBuddySlice from "./edubuddySlice";
 
 export const store = configureStore({
   reducer: {
-    edu: edubuddySlice,
+    edu: eduBuddySlice,
   },
 });
