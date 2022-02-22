@@ -15,6 +15,7 @@ import Header from "./Components/Shared/Header/Header";
 import UserProfile from "./Components/UserProfile/UserProfile/UserProfile";
 import SingleBlogMain from "./Components/Home/SingleBlog/SingleBlogMain";
 import ScrollToTop from "../src/Components/ScrollToTop/ScrollToTop";
+import AllBlogs from "./Components/Dashboard/AllBlogs/AllBlogs";
 
 function App() {
 	return (
@@ -40,7 +41,9 @@ function App() {
 							<Route path='/login' element={<Login />} />
 							<Route path='/greetings' element={<Greetings />} />
 							<Route path='/userProfile' element={<UserProfile />} />
-							<Route path='/dashboard/*' element={<Dashboard />} />
+							<Route path='/dashboard' element={<Dashboard />}>
+								<Route path='/dashboard/blogs' element={<AllBlogs />} />
+							</Route>
 						</Routes>
 					</div>
 					<Footer />
