@@ -8,7 +8,7 @@ const TeacherCourses = () => {
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"
               for="grid-coursename"
             >
               Course Name
@@ -23,7 +23,7 @@ const TeacherCourses = () => {
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"
               for="grid-milestonename"
             >
               Milestone Name
@@ -95,7 +95,22 @@ const TeacherCourses = () => {
         <div className="flex flex-wrap -mx-3 mt-8">
           <div className="w-full px-3">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"
+              for="grid-contentfile"
+            >
+              Content Title
+            </label>
+            <input
+              className="appearance-none block w-full  text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-contentfile"
+              type="text"
+            />
+          </div>
+        </div>
+        <div className="flex flex-wrap -mx-3 mt-6">
+          <div className="w-full px-3">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2"
               for="grid-contentfile"
             >
               Content File
@@ -108,13 +123,13 @@ const TeacherCourses = () => {
           </div>
         </div>
         <div className="flex items-center mt-8 justify-center">
-            <button
-              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-8 rounded"
-              type="submit"
-            >
-              Submit
-            </button>
-          </div>
+          <button
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-8 rounded"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );
