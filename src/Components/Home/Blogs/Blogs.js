@@ -76,7 +76,7 @@ const Blogs = () => {
                 className="border  rounded-lg card mx-auto duration-300  bg-white"
                 style={{ maxWidth: "400px" }}
               >
-                <div className=" overflow-hidden">
+                <div className="overflow-hidden">
                   <img
                     className="w-full card-image rounded-t-lg"
                     src={blog?.photo}
