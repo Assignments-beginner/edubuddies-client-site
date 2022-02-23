@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div>
+    <div className="pb-12">
       <div className="text-4xl text-center uppercase font-black mt-24 text-red-500">
         About Us
       </div>
-      <div className="container mx-auto lg:flex justify-between md:block sm:block">
+      <div className="container px-12 mx-auto lg:flex justify-between md:block sm:block">
         <div className="lg:text-left md:text-left px-6 w-full lg:pt-24 sm:text-center">
           <div className="text-2xl font-black my-5 text-red-500">
             Why Choose Us

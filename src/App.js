@@ -14,6 +14,7 @@ import Footer from "./Components/Shared/Footer/Footer";
 import Header from "./Components/Shared/Header/Header";
 import UserProfile from "./Components/UserProfile/UserProfile/UserProfile";
 import SingleBlogMain from "./Components/Home/SingleBlog/SingleBlogMain";
+import TeacherCourses from "../src/Components/Dashboard/TeacherCourses/TeacherCourses";
 import ScrollToTop from "../src/Components/ScrollToTop/ScrollToTop";
 import AllBlogs from "./Components/Dashboard/AllBlogs/AllBlogs";
 

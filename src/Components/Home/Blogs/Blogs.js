@@ -27,13 +27,13 @@ const Blogs = () => {
     },
     {
       blogName: "The 6 Best Cybersecurity Certifications to Launch Your Career",
-      photo: "https://shivaaythemes.in/educater-html/assets/images/blog-2.jpg",
+      photo: "https://i.ibb.co/9vMz2RZ/blog-2.png",
       comments: "100",
       date: "10/02/22",
     },
     {
       blogName: "The Great Reevaluation: Unlearning Work Myths About Wellness",
-      photo: "https://shivaaythemes.in/educater-html/assets/images/blog-3.jpg",
+      photo: "https://i.ibb.co/P6VZx08/blog-4.png",
       comments: "40",
       date: "05/07/21",
     },
@@ -76,7 +76,7 @@ const Blogs = () => {
                 className="border  rounded-lg card mx-auto duration-300  bg-white"
                 style={{ maxWidth: "400px" }}
               >
-                <div className=" overflow-hidden">
+                <div className="overflow-hidden">
                   <img
                     className="w-full card-image rounded-t-lg"
                     src={blog?.photo}
