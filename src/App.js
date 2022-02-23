@@ -16,40 +16,42 @@ import UserProfile from "./Components/UserProfile/UserProfile/UserProfile";
 import SingleBlogMain from "./Components/Home/SingleBlog/SingleBlogMain";
 import TeacherCourses from "../src/Components/Dashboard/TeacherCourses/TeacherCourses";
 import ScrollToTop from "../src/Components/ScrollToTop/ScrollToTop";
+import AllBlogs from "./Components/Dashboard/AllBlogs/AllBlogs";
 
 function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <ScrollToTop />
-        {/* This will prevent bottom scroll of every route. */}
-        <div className="page-container">
-          {/* // This will put the footer always in bottom of the screen */}
-          <div className="content-wrap">
-            {/* // This will put the footer always in bottom of the screen */}
-            <Header />
-            <Routes>
-              <Route path="/*" element={<NotFound />} />
-              <Route path="/" element={<Home />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/blog" element={<Blogs />} />
-              <Route path="/singleblog" element={<SingleBlogMain />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/courses" element={<Courses />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/greetings" element={<Greetings />} />
-              <Route path="/userProfile" element={<UserProfile />} />
-              <Route path="/dashboard/*" element={<Dashboard />} />
-              <Route path="/teachersCourse" element={<TeacherCourses />} />
-            </Routes>
-          </div>
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<BrowserRouter>
+				<ScrollToTop />
+				{/* This will prevent bottom scroll of every route. */}
+				<div className='page-container'>
+					{/* // This will put the footer always in bottom of the screen */}
+					<div className='content-wrap'>
+						{/* // This will put the footer always in bottom of the screen */}
+						<Header />
+						<Routes>
+							<Route path='/*' element={<NotFound />} />
+							<Route path='/' element={<Home />} />
+							<Route path='/home' element={<Home />} />
+							<Route path='/blog' element={<Blogs />} />
+							<Route path='/singleblog' element={<SingleBlogMain />} />
+							<Route path='/about' element={<About />} />
+							<Route path='/courses' element={<Courses />} />
+							<Route path='/contact' element={<Contact />} />
+							<Route path='/register' element={<Register />} />
+							<Route path='/login' element={<Login />} />
+							<Route path='/greetings' element={<Greetings />} />
+							<Route path='/userProfile' element={<UserProfile />} />
+							<Route path='/dashboard' element={<Dashboard />}>
+								<Route path='/dashboard/blogs' element={<AllBlogs />} />
+							</Route>
+						</Routes>
+					</div>
+					<Footer />
+				</div>
+			</BrowserRouter>
+		</div>
+	);
 }
 
 export default App;

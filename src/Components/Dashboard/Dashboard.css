@@ -1,0 +1,40 @@
+aside {
+	height: 100%;
+	width: 200px;
+}
+
+.right {
+	animation: slide-in 1s forwards !important;
+}
+.left {
+	animation: slide-out 1s forwards !important;
+}
+
+aside ul li {
+	padding: 9px;
+}
+
+aside ul li:hover,
+aside ul li:hover .icon,
+aside ul li:hover span {
+	background-color: #dc3545;
+	color: white !important;
+}
+
+@keyframes slide-in {
+	0% {
+		transform: translateX(-200px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
+
+@keyframes slide-out {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(-200px);
+	}
+}
