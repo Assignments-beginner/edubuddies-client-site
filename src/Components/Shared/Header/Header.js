@@ -29,7 +29,7 @@ const Header = () => {
               type="button"
               className="inline-flex items-center justify-center py-2 px-2 rounded-md text-gray-400 focus:text-gray-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
-              <FontAwesomeIcon className="text-2xl px-2" icon={faBars} />
+              <FontAwesomeIcon className="text-2xl text-white px-2" icon={faBars} />
             </button>
           </div>
           {/* ///////////// Project Logo /////////// */}
@@ -44,13 +44,13 @@ const Header = () => {
               />
             </Link>
           </div>
-          {/* /////////////////// Mobile Navbar Points /////////////////// */}
+          {/* /////////////////// Navbar Points /////////////////// */}
           <div className="flex items-center">
             <div className="hidden sm:block px-8">
               <div className="flex space-x-4">
                 <Link
                   className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
-                  to="/"
+                  to="/home"
                 >
                   Home
                 </Link>
@@ -92,7 +92,7 @@ const Header = () => {
             {user?.email && (
               <div className="flex">
                 {/* /////////////// Nav Profile Box //////////// */}
-                <div className="flex userProfile">
+                <div className="flex userProfile z-20">
                   {/* ///////// Profile img & name /////////// */}
                   <div className="flex items-center profile-imgName">
                     <img
@@ -110,9 +110,11 @@ const Header = () => {
                   {/* ///////// Profile Dropdown Menu /////////// */}
                   <div
                     className="
+                text-center
                 origin-top-right 
                 absolute 
                 right-0 
+                top-2
                 w-40 
                 rounded-md 
                 shadow-lg 
@@ -169,9 +171,9 @@ const Header = () => {
 
       {/* //////////////////// Hamburger Mobile ////////////////////// */}
       <div className="hidden" id="toogleDiv">
-        <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="px-2 pt-2 pb-3 space-y-1 text-center">
           <Link
-            to="/"
+            to="/home"
             className="text-gray-100 hover:bg-red-600 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
           >
             Home

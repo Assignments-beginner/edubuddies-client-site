@@ -19,7 +19,7 @@
     "firebase": "^9.6.6",
     "fortawesome": "^0.0.1-security",
     "react": "^17.0.2",
-    "react-azure-blob-storage": "^3.0.2",
+    "react-countup": "^6.1.1",
     "react-dom": "^17.0.2",
     "react-google-drive-picker": "^1.1.4",
     "react-player": "^2.9.0",

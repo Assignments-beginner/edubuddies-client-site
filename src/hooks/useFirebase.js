@@ -36,7 +36,8 @@ const useFirebase = () => {
         // send name to firebase after creation
         updateUserProfile(name);
         setUser(userCredential.user);
-        navigate("/home");
+        navigate("/greetings");
+        window.location.reload();
       })
       .catch((error) => {
         setAuthError(error.message);
@@ -104,7 +105,7 @@ const useFirebase = () => {
   }, [auth]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://fierce-caverns-90976.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -123,7 +124,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("http://localhost:5000/users", {
+    fetch("https://fierce-caverns-90976.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
