@@ -17,6 +17,8 @@ import SingleBlogMain from "./Components/Home/SingleBlog/SingleBlogMain";
 import TeacherCourses from "../src/Components/Dashboard/TeacherCourses/TeacherCourses";
 import ScrollToTop from "../src/Components/ScrollToTop/ScrollToTop";
 import AllBlogs from "./Components/Dashboard/AllBlogs/AllBlogs";
+import Signup from "./Components/Signup/Signup";
+import ResetPass from "./Components/ResetPass/ResetPass";
 
 function App() {
 	return (
@@ -40,10 +42,17 @@ function App() {
 							<Route path='/contact' element={<Contact />} />
 							<Route path='/register' element={<Register />} />
 							<Route path='/login' element={<Login />} />
+							<Route path='/signup' element={<Signup />} />
+							<Route path='/resetpassword' element={<ResetPass />} />
 							<Route path='/greetings' element={<Greetings />} />
 							<Route path='/userProfile' element={<UserProfile />} />
+							<Route path='/teachers' element={<TeacherCourses />} />
 							<Route path='/dashboard' element={<Dashboard />}>
-								<Route path='/dashboard/blogs' element={<AllBlogs />} />
+								<Route exact path='/dashboard/blogs' element={<AllBlogs />} />
+								<Route
+									path='/dashboard/addCourses'
+									element={<TeacherCourses />}
+								/>
 							</Route>
 						</Routes>
 					</div>

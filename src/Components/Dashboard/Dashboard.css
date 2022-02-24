@@ -1,6 +1,7 @@
 aside {
 	height: 100%;
 	width: 200px;
+	transform: translateX(0px);
 }
 
 .right {
@@ -23,7 +24,7 @@ aside ul li:hover span {
 
 @keyframes slide-in {
 	0% {
-		transform: translateX(-200px);
+		transform: translateX(-300px);
 	}
 	100% {
 		transform: translateX(0px);
@@ -35,6 +36,6 @@ aside ul li:hover span {
 		transform: translateX(0px);
 	}
 	100% {
-		transform: translateX(-200px);
+		transform: translateX(-300px);
 	}
 }

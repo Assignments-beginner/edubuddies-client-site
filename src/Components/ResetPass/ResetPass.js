@@ -3,26 +3,20 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { faLock } from "@fortawesome/free-solid-svg-icons";
+import { faRecycle } from "@fortawesome/free-solid-svg-icons";
 import { useForm } from "react-hook-form";
 
-const Login = () => {
-	const { signInUsingGoogle, signInWithEmailPassword, auth, error } = useAuth();
+const ResetPass = () => {
+	const { auth, error, resetPassword, signInUsingGoogle } = useAuth();
 	const location = useLocation();
 	const navigate = useNavigate();
 	console.log(error);
-	const handleGoogleLogin = () => {
-		signInUsingGoogle(navigate, location);
-	};
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => {
-		signInWithEmailPassword(
-			auth,
-			data.email,
-			data.password,
-			navigate,
-			location,
-		);
+		resetPassword(auth, data?.email, navigate, location);
+	};
+	const handleGoogleLogin = () => {
+		signInUsingGoogle(navigate, location);
 	};
 
 	return (
@@ -31,12 +25,12 @@ const Login = () => {
 				<div className='md:w-2/4 w-full bg-white p-5 drop-shadow-xl py-6'>
 					<div>
 						<FontAwesomeIcon
-							icon={faLock}
+							icon={faRecycle}
 							className='text-2xl rounded-full bg-gray-700 text-white p-3'
 						/>
 					</div>
 					<h3 className='mb-5 text-3xl font-semibold text-gray-700'>
-						Account Login
+						Reset Password
 					</h3>
 					<form
 						onSubmit={handleSubmit(onSubmit)}
@@ -56,39 +50,18 @@ const Login = () => {
 								className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
 							/>
 						</div>
-						<div className='flex flex-col space-y-1'>
-							<div className='flex items-center justify-between'>
-								<label
-									for='password'
-									className='text-sm font-semibold text-gray-500'>
-									Password
-								</label>
-								<Link
-									to='/resetpassword'
-									className='text-sm text-blue-600 hover:underline focus:text-blue-800'>
-									Forgot Password?
-								</Link>
-							</div>
-							<input
-								id='password'
-								type='password'
-								name='password'
-								{...register("password", { required: true })}
-								className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
-							/>
-						</div>
 						<div>
 							<Link
-								to='/signup'
+								to='/login'
 								className='text-sm text-blue-600 hover:underline focus:text-blue-800'>
-								Don't have account?
+								Remember your password?
 							</Link>
 						</div>
 
 						<button
 							type='submit'
 							className='w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-blue-200 focus:ring-4'>
-							Log in
+							Reset Password
 						</button>
 						<div className='flex flex-col space-y-5'>
 							<span className='flex items-center justify-center space-x-2'>
@@ -119,4 +92,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default ResetPass;
