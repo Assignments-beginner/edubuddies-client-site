@@ -13,6 +13,10 @@ import Footer from "./Components/Shared/Footer/Footer";
 import Header from "./Components/Shared/Header/Header";
 import UserProfile from "./Components/UserProfile/UserProfile/UserProfile";
 import SingleBlogMain from "./Components/Home/SingleBlog/SingleBlogMain";
+import Test from "./Components/Test/Test";
+import Success from "./Components/Test/Success";
+import GetCourses from "./Components/Test/GetCourses";
+import CourseDetails from "./Components/Test/CourseDetails";
 
 function App() {
   return (
@@ -27,6 +31,10 @@ function App() {
           <Route path="/singleblog" element={<SingleBlogMain />} />
           <Route path="/about" element={<About />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/test" element={<Test />} />
+          <Route path="/getCourse" element={<GetCourses />} />
+          <Route path="/courseDetail/:id" element={<CourseDetails />} />
+          <Route path="/success" element={<Success />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
