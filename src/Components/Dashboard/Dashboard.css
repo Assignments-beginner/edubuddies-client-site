@@ -11,13 +11,16 @@ aside {
 	animation: slide-out 1s forwards !important;
 }
 
-aside ul li {
-	padding: 9px;
+aside ul .li,
+.logout {
+	padding: 11px 3px;
 }
 
-aside ul li:hover,
-aside ul li:hover .icon,
-aside ul li:hover span {
+aside ul .li:hover,
+aside ul .li:hover .icon,
+.logout:hover,
+.logout:hover .icon,
+aside ul .li:hover span {
 	background-color: #dc3545;
 	color: white !important;
 }
