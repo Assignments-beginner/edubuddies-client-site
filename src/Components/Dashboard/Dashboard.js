@@ -26,7 +26,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className=" dashboard" style={{ minHeight: "70vh" }}>
+    <div className="dashboard" style={{ minHeight: "70vh" }}>
       <div className="relative min-h-screen md:flex ">
         <div class="bg-gray-800 text-gray-100 flex justify-between md:hidden">
           <a href="/" class="block p-4 text-white font-bold">
@@ -55,14 +55,6 @@ const Dashboard = () => {
         >
           <div className="py-4 overflow-y-auto bg-gray-900 text-left flex justify-center">
             <ul className="space-y-3">
-              <li className="rounded-lg flex justify-center hover:bg-gray-200">
-                <img
-                  className="border-2 border-red-500 "
-                  style={{ width: "70px", height: "70px", borderRadius: "50%" }}
-                  src={user?.photoURL}
-                  alt={user?.displayName}
-                />
-              </li>
               <li className="rounded-lg">
                 <NavLink to="addCourses" className="text-lg text-white ">
                   <FontAwesomeIcon
@@ -138,15 +130,6 @@ const Dashboard = () => {
                   <span className="mx-3">Certificate</span>
                 </Link>
               </li> */}
-              <li className="rounded-lg">
-                <Link to="" className="text-lg text-white ">
-                  <FontAwesomeIcon
-                    className="mx-2 text-red-500 icon"
-                    icon={faBell}
-                  />
-                  <span className="mx-3">Notices</span>
-                </Link>
-              </li>
               <li className="rounded-lg mt-4">
                 <Link to="" className="text-lg text-white ">
                   <FontAwesomeIcon
@@ -160,22 +143,37 @@ const Dashboard = () => {
           </div>
         </aside>
         <div className="flex-1 mx-auto">
-          {/* <Outlet></Outlet> */}
-          <div className="bg-slate-400 py-6">
+          <div className="py-6 border-b-2 flex items-center justify-between px-8">
+            <div className="flex items-center">
+              <h2 className="uppercase text-xl">Welcome, {user.displayName}</h2>
+              <Link to="">
+                <FontAwesomeIcon
+                  className="mx-6 mt-1 text-red-500 icon text-xl"
+                  icon={faBell}
+                />
+              </Link>
+            </div>
             <div className="flex items-center profile-imgName">
+              <div>
+                <span
+                  style={{ fontSize: "14px" }}
+                  className="text-black uppercase"
+                >
+                  {user.displayName}
+                </span>
+                <br />
+                <Link to="/userProfile" className="text-sm text-red-500">
+                  View Profile
+                </Link>
+              </div>
               <img
-                className="user-img h-8 w-8 rounded-full ring-2 ring-offset-2"
+                className="user-img h-14 w-14 rounded-full ml-2"
                 src={user.photoURL}
                 alt=""
               />
-              <span
-                style={{ fontSize: "12px" }}
-                className="text-white ml-2 uppercase"
-              >
-                {user.displayName}
-              </span>
             </div>
           </div>
+          <Outlet></Outlet>
         </div>
       </div>
     </div>
