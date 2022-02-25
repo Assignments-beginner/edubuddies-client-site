@@ -22,6 +22,7 @@ import ResetPass from "./Components/ResetPass/ResetPass";
 import AddNewCourse from "./Components/Dashboard/AddNewCourse/AddNewCourse";
 import UploadCourseContent from "./Components/Dashboard/UploadCourseContent/UploadCourseContent";
 import AllCourses from "./Components/Dashboard/AllCourses/AllCourses";
+import SingleCourse from "./Components/Home/SingleCourse/SingleCourse";
 
 function App() {
 	return (
@@ -42,6 +43,7 @@ function App() {
 							<Route path='/singleblog' element={<SingleBlogMain />} />
 							<Route path='/about' element={<About />} />
 							<Route path='/courses' element={<Courses />} />
+							<Route path='/singlecourse' element={<SingleCourse />} />
 							<Route path='/contact' element={<Contact />} />
 							<Route path='/register' element={<Register />} />
 							<Route path='/login' element={<Login />} />
