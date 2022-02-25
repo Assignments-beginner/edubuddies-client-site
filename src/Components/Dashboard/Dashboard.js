@@ -8,7 +8,6 @@ import {
 	faRightFromBracket,
 	faClock,
 	faFolder,
-	faPlus,
 	faBell,
 	faBars,
 	faXmark,
