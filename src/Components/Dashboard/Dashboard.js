@@ -42,7 +42,7 @@ const Dashboard = () => {
 								display: "flex",
 								alignItems: "center",
 								justifyContent: "center",
-								padding: "0 20px",
+								padding: "0 21px",
 							}}>
 							<div className='flex justify-center'>
 								<div style={{ position: "fixed", top: 0, right: 0 }}>
