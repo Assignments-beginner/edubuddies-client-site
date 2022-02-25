@@ -9,7 +9,6 @@ import { Link, useLocation } from "react-router-dom";
 const Footer = () => {
 	const [hide, setHide] = useState("block");
 	const location = useLocation();
-	console.log(location.pathname);
 	useEffect(() => {
 		if (location?.pathname.includes("/dashboard")) {
 			setHide("none");

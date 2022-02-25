@@ -27,23 +27,6 @@ const Dashboard = () => {
 	return (
 		<div className='dashboard' style={{ minHeight: "70vh" }}>
 			<div className='relative min-h-screen md:flex '>
-				<div class='bg-gray-800 text-gray-100 flex justify-between md:hidden'>
-					<a href='/' class='block p-4 text-white font-bold'>
-						Dashboard
-					</a>
-
-					<button
-						className={`flex bg-red-500 rounded-lg p-1 justify-start m-2 ${
-							isActive ? "block" : null
-						}`}
-						onClick={handleToggle}>
-						<FontAwesomeIcon
-							className='mx-2 text-2xl text-white icon text-left'
-							icon={isActive ? faXmark : faBars}
-						/>
-					</button>
-				</div>
-
 				<aside
 					/* onClick={handleToggle} */
 					style={{ position: "sticky", top: 0, zIndex: 999 }}
@@ -59,10 +42,25 @@ const Dashboard = () => {
 								display: "flex",
 								alignItems: "center",
 								justifyContent: "center",
+								padding: "0 21px",
 							}}>
 							<div className='flex justify-center'>
+								<div style={{ position: "fixed", top: 0, right: 0 }}>
+									<div className='block md:hidden'>
+										<button
+											className={`flex  rounded-lg p-1 justify-start m-2 ${
+												isActive ? "block" : null
+											}`}
+											onClick={handleToggle}>
+											<FontAwesomeIcon
+												className='mx-2 text-2xl text-white icon text-left'
+												icon={isActive ? faXmark : faBars}
+											/>
+										</button>
+									</div>
+								</div>
 								<div style={{ position: "fixed", top: "4rem" }}>
-									<div className='ml-3 text-center text-2xl text-white'>
+									<div className=' text-center text-2xl text-white'>
 										Dashboard
 									</div>
 								</div>
@@ -175,9 +173,24 @@ const Dashboard = () => {
 				<div className='flex-1 mx-auto'>
 					<div
 						className='py-3 bg-white border-b-2 flex items-center justify-between px-8'
-						style={{ position: "sticky", top: 0, zIndex: 999 }}>
+						style={{ position: "sticky", top: 0 }}>
 						<div className='flex items-center'>
-							<h2 className='uppercase text-xl'>Welcome, {user.displayName}</h2>
+							<div className='block md:hidden'>
+								<button
+									className={`flex bg-red-500 rounded-lg p-1 justify-start ${
+										isActive ? "block" : null
+									}`}
+									onClick={handleToggle}>
+									<FontAwesomeIcon
+										className='mx-2 text-2xl text-white icon text-left'
+										icon={isActive ? faXmark : faBars}
+									/>
+								</button>
+							</div>
+
+							<h2 className='uppercase text-xl hidden md:block'>
+								Welcome, {user.displayName}
+							</h2>
 							<Link to=''>
 								<FontAwesomeIcon
 									className='mx-6 mt-1 text-red-500 icon text-xl'
