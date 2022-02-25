@@ -21,46 +21,47 @@ import Signup from "./Components/Signup/Signup";
 import ResetPass from "./Components/ResetPass/ResetPass";
 
 function App() {
-	return (
-		<div className='App'>
-			<BrowserRouter>
-				<ScrollToTop />
-				{/* This will prevent bottom scroll of every route. */}
-				<div className='page-container'>
-					{/* // This will put the footer always in bottom of the screen */}
-					<div className='content-wrap'>
-						{/* // This will put the footer always in bottom of the screen */}
-						<Header />
-						<Routes>
-							<Route path='/*' element={<NotFound />} />
-							<Route path='/' element={<Home />} />
-							<Route path='/home' element={<Home />} />
-							<Route path='/blog' element={<Blogs />} />
-							<Route path='/singleblog' element={<SingleBlogMain />} />
-							<Route path='/about' element={<About />} />
-							<Route path='/courses' element={<Courses />} />
-							<Route path='/contact' element={<Contact />} />
-							<Route path='/register' element={<Register />} />
-							<Route path='/login' element={<Login />} />
-							<Route path='/signup' element={<Signup />} />
-							<Route path='/resetpassword' element={<ResetPass />} />
-							<Route path='/greetings' element={<Greetings />} />
-							<Route path='/userProfile' element={<UserProfile />} />
-							<Route path='/teachers' element={<TeacherCourses />} />
-							<Route path='/dashboard' element={<Dashboard />}>
-								<Route exact path='/dashboard/blogs' element={<AllBlogs />} />
-								<Route
-									path='/dashboard/addCourses'
-									element={<TeacherCourses />}
-								/>
-							</Route>
-						</Routes>
-					</div>
-					<Footer />
-				</div>
-			</BrowserRouter>
-		</div>
-	);
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <ScrollToTop />
+        {/* This will prevent bottom scroll of every route. */}
+        <div className="page-container">
+          {/* // This will put the footer always in bottom of the screen. */}
+          <div className="content-wrap">
+            {/* // This will put the footer always in bottom of the screen. */}
+            <Header />
+            <Routes>
+              <Route path="/*" element={<NotFound />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/blog" element={<Blogs />} />
+              <Route path="/singleblog" element={<SingleBlogMain />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/resetpassword" element={<ResetPass />} />
+              <Route path="/greetings" element={<Greetings />} />
+              <Route path="/userProfile" element={<UserProfile />} />
+              <Route path="/teachers" element={<TeacherCourses />} />
+              {/* // Dashboard Nested Routing */}
+              <Route path="/dashboard" element={<Dashboard />}>
+                <Route exact path="/dashboard/blogs" element={<AllBlogs />} />
+                <Route
+                  path="/dashboard/addCourses"
+                  element={<TeacherCourses />}
+                />
+              </Route>
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
