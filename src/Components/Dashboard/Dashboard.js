@@ -42,7 +42,6 @@ const Dashboard = () => {
 								display: "flex",
 								alignItems: "center",
 								justifyContent: "center",
-								padding: "0 21px",
 							}}>
 							<div className='flex justify-center'>
 								<div style={{ position: "fixed", top: 0, right: 0 }}>
@@ -68,13 +67,13 @@ const Dashboard = () => {
 									<ul className='space-y-5'>
 										<li>
 											<NavLink
-												to='addCourses'
+												to='addnewcourse'
 												className='li text-lg rounded-lg  text-white '>
 												<FontAwesomeIcon
 													className='mx-2 text-red-500 icon'
 													icon={faBook}
 												/>
-												<span className='mx-3'>Courses</span>
+												<span className='mx-3'>Add Courses</span>
 												{/* 	<FontAwesomeIcon
 											className='mx-2 text-red-500 icon'
 											icon={faPlus}
@@ -83,13 +82,13 @@ const Dashboard = () => {
 										</li>
 										<li>
 											<NavLink
-												to='addCourses'
+												to='allcourses'
 												className='li text-lg rounded-lg  text-white '>
 												<FontAwesomeIcon
 													className='mx-2 text-red-500 icon'
 													icon={faFolder}
 												/>
-												<span className='mx-3'>Modules</span>
+												<span className='mx-3'>All Courses</span>
 												{/* <FontAwesomeIcon
 											className='mx-2 text-red-500 icon'
 											icon={faPlus}
