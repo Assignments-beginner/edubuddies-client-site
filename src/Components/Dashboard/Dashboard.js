@@ -53,7 +53,7 @@ const Dashboard = () => {
           }`}
           aria-label="Sidebar"
         >
-          <div className="py-4 overflow-y-auto bg-gray-900 text-left flex justify-center">
+          <div className="py-36 overflow-y-auto bg-gray-900 text-left flex justify-center">
             <ul className="space-y-3">
               <li className="rounded-lg">
                 <NavLink to="addCourses" className="text-lg text-white ">
@@ -130,7 +130,7 @@ const Dashboard = () => {
                   <span className="mx-3">Certificate</span>
                 </Link>
               </li> */}
-              <li className="rounded-lg mt-4">
+              <li className="rounded-lg mt-24">
                 <Link to="" className="text-lg text-white ">
                   <FontAwesomeIcon
                     className="mx-2 text-red-500 icon"
