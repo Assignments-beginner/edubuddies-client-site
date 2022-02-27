@@ -18,11 +18,11 @@ import useAuth from "../../hooks/useAuth";
 import { NavLink } from "react-router-dom";
 
 const Dashboard = () => {
-  const { user } = useAuth();
-  const [isActive, setActive] = useState("block");
-  const handleToggle = () => {
-    setActive(!isActive);
-  };
+	const { user } = useAuth();
+	const [isActive, setActive] = useState("block");
+	const handleToggle = () => {
+		setActive(!isActive);
+	};
 
   return (
     <div className="dashboard" style={{ minHeight: "70vh" }}>
