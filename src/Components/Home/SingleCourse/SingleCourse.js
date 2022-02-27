@@ -1,7 +1,11 @@
 import React from "react";
 import "./SingleCourse.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers, faClockFour } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUsers,
+  faClockFour,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -47,30 +51,26 @@ const SingleCourse = () => {
       </div>
       {/* Course Card Details  */}
       <div class="w-1/3 rounded overflow-hidden shadow-lg mt-12">
-        <img
-          class="w-full"
-          src={sigleData.image}
-          alt=""
-        />
+        <img class="w-full" src={sigleData.image} alt="" />
         <div className="border-2 h-12 w-72 mt-4 mx-auto"></div>
         {/* Hours + Enrolled  */}
         <div className="flex justify-between pt-8 px-10">
           <div className="flex items-center">
             <FontAwesomeIcon
-              className="text-slate-900 icon pr-2 text-2xl"
+              className="text-slate-900 pr-2 text-2xl"
               icon={faUsers}
             />
             <span>Enrolled 1232</span>
           </div>
           <div className="flex items-center">
             <FontAwesomeIcon
-              className="text-slate-900 icon pr-2 text-2xl"
+              className="text-slate-900 pr-2 text-2xl"
               icon={faClockFour}
             />
             <span>{sigleData?.courseDuration} Hours</span>
           </div>
         </div>
-        <hr className="w-5/6 mt-6 mx-auto"/>
+        <hr className="w-5/6 mt-6 mx-auto" />
         {/* Enroll Button  */}
         <div className="px-4 pt-8 pb-3">
           <div className="flex justify-between items-center px-4 pb-2">
@@ -78,10 +78,14 @@ const SingleCourse = () => {
             <span className="text-3xl">$ {sigleData?.courseFee}</span>
           </div>
           <button
-            className="bg-red-700 hover:bg-red-800 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+            className="bg-red-700 hover:bg-red-800 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full flex items-center justify-center"
             type="submit"
           >
-            Get This Course
+            Get This Course &nbsp;&nbsp;
+            <FontAwesomeIcon
+              className="text-white pr-2 text-xl"
+              icon={faArrowRight}
+            />
           </button>
         </div>
       </div>
