@@ -53,7 +53,7 @@ function App() {
               <Route path="/userProfile" element={<UserProfile />} />
               <Route path="/teachers" element={<TeacherCourses />} />
 
-              {/* // Dashboard Nested Routing */}
+              {/* //Dashboard Nested Routing */}
               <Route path="/dashboard" element={<Dashboard />}>
                 <Route exact path="/dashboard/blogs" element={<AllBlogs />} />
                 <Route
