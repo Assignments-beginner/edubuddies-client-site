@@ -13,42 +13,12 @@ const OurCourses = () => {
   console.log(courses);
 
   useEffect(() => {
-    const url = "http://localhost:5000/courses";
+    const url = "http://fierce-caverns-90976.herokuapp.com/courses";
     axios.get(url).then((res) => {
       dispatch(addCourse(res.data));
     });
   }, []);
 
-  // const courses = [
-  // 	{
-  // 		courseName: "Learn Java",
-  // 		courseSubtitle:
-  // 			"A high-level, class-based, object-oriented programming language.",
-  // 	},
-  // 	{
-  // 		courseName: "Learn Python",
-  // 		courseSubtitle:
-  // 			"A interpreted high-level general-purpose programming language.",
-  // 	},
-  // 	{
-  // 		courseName: "Learn JavaScript",
-  // 		courseSubtitle:
-  // 			"A lightweight, interpreted programming language with first-class function.",
-  // 	},
-  // 	{
-  // 		courseName: "Learn Database",
-  // 		courseSubtitle:
-  // 			"A database is an organized collection of data stored and accessed electronically.",
-  // 	},
-  // 	{
-  // 		courseName: "Learn React",
-  // 		courseSubtitle: "A JavaScript library created by Facebook. ",
-  // 	},
-  // 	{
-  // 		courseName: "Learn C/C++",
-  // 		courseSubtitle: "A general-purpose programming language. ",
-  // 	},
-  // ];
   return (
     <div className="container mx-auto px-4 md:px-11">
       <h1 className="text-center text-3xl uppercase font-semibold mt-24 md:mb-9 mb-5 text-red-500">
@@ -62,19 +32,21 @@ const OurCourses = () => {
               className="flex border-2 p-5  justify-center OurCourses hover:cursor-pointer duration-500 rounded-lg  bg-white"
               style={{ alignItems: "center" }}
             >
-              <Link to={`/singlecourse/${course._id}`}>
+              <Link
+                className="flex items-center justify-center"
+                to={`/singlecourse/${course._id}`}
+              >
                 <div className="mr-3 ">
                   <FontAwesomeIcon
-                    className="text-slate-900 icon p-3"
-                    style={{ fontSize: "60px" }}
+                    className="text-slate-900 icon p-3 text-3xl"
                     icon={faCode}
                   />
                 </div>
                 <div className=" text-left p-3">
-                  <div className="md:text-xl text-red-500 text-xl font-extrabold mb-1">
+                  <div className="md:text-md text-red-500 text-md font-extrabold mb-1">
                     {course?.title}
                   </div>
-                  <div className="text-base">{course?.category}</div>
+                  <div className="text-sm">{course?.category}</div>
                 </div>
               </Link>
             </div>
