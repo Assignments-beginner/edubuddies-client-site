@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "../SingleCourse/SingleCourse.css";
 
 const SingleCourse = () => {
   const { id } = useParams();
@@ -18,27 +19,28 @@ const SingleCourse = () => {
   console.log(sigleData);
 
   return (
-    <div className="flex justify-center pb-24 container mx-auto">
+    <div className="grid lg:grid-cols-2 sm:grid-cols-1 container mx-auto pb-24 px-6">
       {/* Course Details  */}
-      <div className="w-2/4 px-4">
-        <h1 className="text-3xl text-left font-bold my-8">
+      <div>
+        <h1 className="text-3xl text-left font-bold mt-8">
           {sigleData?.title}
         </h1>
-        <div className="mx-auto">
-          <p className="my-8 w-96 text-justify">{sigleData?.category}</p>
-        </div>
+        <h4 className="text-left mb-8">{sigleData?.category}</h4>
+
         {/* Instructor  */}
-        <h2 className="text-xl text-left">Instructor</h2>
-        <div className="flex items-center justify-start rounded-lg border-2 p-4 mt-2">
-          <div className="overflow-hidden rounded-full pr-4">
+        <h2 className="text-xl Instructor">Instructor</h2>
+        <div className="Instructor-box rounded-lg border-2 p-4 mt-2">
+          <div className="overflow-hidden rounded-full">
             <img
-              className="w-20 h-20 rounded-full"
+              className="teacher-img rounded-full"
               src="https://randomuser.me/api/portraits/men/10.jpg"
               alt=""
             />
           </div>
           <div>
-            <p>Senior programmer graduated from MIT University, India.</p>
+            <span className="teacher-heading pl-3">
+              Senior programmer graduated from MIT University, India.
+            </span>
           </div>
         </div>
         {/* About  */}
@@ -50,8 +52,8 @@ const SingleCourse = () => {
         </div>
       </div>
       {/* Course Card Details  */}
-      <div class="w-1/3 rounded overflow-hidden shadow-lg mt-12">
-        <img class="w-full" src={sigleData.image} alt="" />
+      <div className="rounded overflow-hidden shadow-lg mt-12">
+        <img className="w-full" src={sigleData.image} alt="" />
         <div className="border-2 h-12 w-72 mt-4 mx-auto"></div>
         {/* Hours + Enrolled  */}
         <div className="flex justify-between pt-8 px-10">
