@@ -50,25 +50,39 @@ const SingleCourse = () => {
         <img
           class="w-full"
           src={sigleData.image}
-          alt="Sunset in the mountains"
+          alt=""
         />
         <div className="border-2 h-12 w-72 mt-4 mx-auto"></div>
         {/* Hours + Enrolled  */}
-        <div className="flex">
+        <div className="flex justify-between pt-8 px-10">
           <div className="flex items-center">
             <FontAwesomeIcon
-              className="text-slate-900 icon p-3 text-2xl"
+              className="text-slate-900 icon pr-2 text-2xl"
               icon={faUsers}
             />
             <span>Enrolled 1232</span>
           </div>
           <div className="flex items-center">
             <FontAwesomeIcon
-              className="text-slate-900 icon p-3 text-2xl"
+              className="text-slate-900 icon pr-2 text-2xl"
               icon={faClockFour}
             />
             <span>{sigleData?.courseDuration} Hours</span>
           </div>
+        </div>
+        <hr className="w-5/6 mt-6 mx-auto"/>
+        {/* Enroll Button  */}
+        <div className="px-4 pt-8 pb-3">
+          <div className="flex justify-between items-center px-4 pb-2">
+            <span>Promo Code</span>
+            <span className="text-3xl">$ {sigleData?.courseFee}</span>
+          </div>
+          <button
+            className="bg-red-700 hover:bg-red-800 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+            type="submit"
+          >
+            Get This Course
+          </button>
         </div>
       </div>
     </div>
