@@ -6,7 +6,7 @@ import {
   faClockFour,
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "../SingleCourse/SingleCourse.css";
 
@@ -80,16 +80,18 @@ const SingleCourse = () => {
               <span>Promo Code</span>
               <span className="text-3xl">$ {sigleData?.courseFee}</span>
             </div>
-            <button
-              className="bg-red-700 hover:bg-red-800 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full flex items-center justify-center"
-              type="submit"
-            >
-              Get This Course &nbsp;&nbsp;
-              <FontAwesomeIcon
-                className="text-white pr-2 text-xl"
-                icon={faArrowRight}
-              />
-            </button>
+            <Link to="/milestone">
+              <button
+                className="bg-red-700 hover:bg-red-800 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full flex items-center justify-center"
+                type="submit"
+              >
+                Get This Course &nbsp;&nbsp;
+                <FontAwesomeIcon
+                  className="text-white pr-2 text-xl"
+                  icon={faArrowRight}
+                />
+              </button>
+            </Link>
           </div>
         </div>
       </div>
