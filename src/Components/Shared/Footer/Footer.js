@@ -13,6 +13,9 @@ const Footer = () => {
     if (location?.pathname.includes("/dashboard")) {
       setHide("none");
     }
+    if (location?.pathname.includes("/teachersDashboard")) {
+      setHide("none");
+    }
   }, [location.pathname]);
   return (
     <footer
