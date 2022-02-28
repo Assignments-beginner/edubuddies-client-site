@@ -1,30 +1,54 @@
-.react-player > video {
-	position: absolute;
-	object-fit: fill;
+.entireCourse {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }
-label:after {
-	content: "+";
-	position: absolute;
-	right: 1em;
-	color: #fff;
+.instructor {
+  width: 80%;
+}
+.courseCard {
+  width: 55%;
+  margin-top: 3%;
+}
+.teacher-img {
+  height: 82px;
+  width: 82px;
+}
+.Instructor {
+  text-align: left;
+}
+.Instructor-box {
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
-input:checked + label:after {
-	content: "-";
-	line-height: 0.8em;
-}
-
-.accordion__content h2:hover,
-.accordion__content h2:hover .icon {
-	color: white;
-	background-color: #e84444;
-	cursor: pointer;
-}
-.accordion__content {
-	max-height: 0em;
-	transition: all 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
-}
-input[name="panel"]:checked ~ .accordion__content {
-	/* Get this as close to what height you expect */
-	max-height: 50em;
+@media all and (max-width: 688px) {
+  .teacher-img {
+    height: 82px;
+    width: 82px;
+  }
+  .teacher-heading {
+    font-size: 14px;
+  }
+  .Instructor {
+    text-align: center;
+  }
+  .Instructor-box {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .instructor {
+    width: 100%;
+    margin-top: 5%;
+  }
+  .courseCard {
+    width: 100%;
+    margin-top: 6%;
+  }
+  .entireCourse {
+    width: 100%;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
 }
