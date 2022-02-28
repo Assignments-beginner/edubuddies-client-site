@@ -33,7 +33,6 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
-          {/* ///////////////// Hamburger ///////////////// */}
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
               onClick={toggleFunction}
@@ -46,7 +45,6 @@ const Header = () => {
               />
             </button>
           </div>
-          {/* ///////////// Project Logo /////////// */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/home">
               <img
@@ -58,7 +56,6 @@ const Header = () => {
               />
             </Link>
           </div>
-          {/* /////////////////// Navbar Points /////////////////// */}
           <div className="flex items-center">
             <div className="hidden sm:block px-8">
               <div className="flex space-x-4">
@@ -92,6 +89,12 @@ const Header = () => {
                 >
                   Contact
                 </Link>
+                <Link
+                  className="text-gray-100 hover:bg-red-600 focus:bg-red-600 px-3 py-2 rounded-md text-md font-medium"
+                  to="/teachers"
+                >
+                  Teachers
+                </Link>
               </div>
             </div>
 
@@ -105,23 +108,14 @@ const Header = () => {
             )}
             {user?.email && (
               <div className="flex">
-                {/* /////////////// Nav Profile Box //////////// */}
                 <div className="flex userProfile z-20">
-                  {/* ///////// Profile img & name /////////// */}
                   <div className="flex items-center profile-imgName">
                     <img
                       className="user-img h-8 w-8 rounded-full ring-2 ring-offset-2"
                       src={user.photoURL}
-                      alt=""
+                      alt="User"
                     />
-                    {/* <span
-                      style={{ fontSize: "12px" }}
-                      className="text-white ml-2 uppercase"
-                    >
-                      {user.displayName}
-                    </span> */}
                   </div>
-                  {/* ///////// Profile Dropdown Menu /////////// */}
                   <div
                     className="
                 text-center
@@ -173,7 +167,6 @@ const Header = () => {
                     </Link>
                   </div>
                 </div>
-                {/* //////////////// Logout Button /////////////// */}
                 <Link
                   onClick={logout}
                   to="/login"
@@ -189,8 +182,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-
-      {/* //////////////////// Hamburger Mobile ////////////////////// */}
       <div className="hidden" id="toogleDiv">
         <div className="px-2 pt-2 pb-3 space-y-1 text-center">
           <Link
@@ -222,6 +213,12 @@ const Header = () => {
             className="text-gray-100 hover:bg-red-600 focus:bg-red-600 block px-3 py-2 rounded-md text-base font-medium"
           >
             Contact
+          </Link>
+          <Link
+            to="/teachers"
+            className="text-gray-100 hover:bg-red-600 focus:bg-red-600 block px-3 py-2 rounded-md text-base font-medium"
+          >
+            Teachers
           </Link>
         </div>
       </div>
