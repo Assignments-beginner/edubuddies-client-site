@@ -19,7 +19,7 @@ const SingleCourse = () => {
   console.log(sigleData);
 
   return (
-    <div className="entireCourse pb-24 container mx-auto">
+    <div className="entireCourse pb-20 container mx-auto">
       {/* Course Details /////////////////////////////////////////////  */}
       <div className="instructor px-4">
         <h1 className="text-3xl text-left font-bold mt-8">
