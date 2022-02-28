@@ -24,6 +24,9 @@ import UploadCourseContent from "./Components/Dashboard/UploadCourseContent/Uplo
 import AllCourses from "./Components/Dashboard/AllCourses/AllCourses";
 import SingleCourse from "./Components/Home/SingleCourse/SingleCourse";
 import Milestones from "../src/Components/Home/Milestones/Milestones";
+import TeachersDashboard from "./Components/TeachersDashboard/TeachersDashboard/TeachersDashboard";
+import AllTeachers from "./Components/TeachersDashboard/AllTeachers/AllTeachers";
+import TeachersProfile from "./Components/TeachersDashboard/TeachersProfile/TeachersProfile";
 
 function App() {
   return (
@@ -66,10 +69,24 @@ function App() {
                   path="/dashboard/addnewcourse"
                   element={<AddNewCourse />}
                 />
-                <Route path="/dashboard/allcourses" element={<AllCourses />} />{" "}
+                <Route path="/dashboard/allcourses" element={<AllCourses />} />
                 <Route
                   path="/dashboard/allcourses/:id"
                   element={<UploadCourseContent />}
+                />
+              </Route>
+
+              {/* Teacher Dashboard */}
+
+              <Route path="/teachersDashboard" element={<TeachersDashboard />}>
+                <Route
+                  exact
+                  path="/teachersDashboard/allTeachers"
+                  element={<AllTeachers />}
+                />
+                <Route
+                  path="/teachersDashboard/teacherProfile"
+                  element={<TeachersProfile />}
                 />
               </Route>
             </Routes>

@@ -13,6 +13,9 @@ const Header = () => {
     if (location?.pathname.includes("/dashboard")) {
       setHide("none");
     }
+    if (location?.pathname.includes("/teachersDashboard")) {
+      setHide("none");
+    }
   }, [location.pathname]);
 
   const { user, logout } = useAuth();
@@ -89,12 +92,6 @@ const Header = () => {
                 >
                   Contact
                 </Link>
-                <Link
-                  className="text-gray-100 hover:bg-red-600 focus:bg-red-600 px-3 py-2 rounded-md text-md font-medium"
-                  to="/teachers"
-                >
-                  Teachers
-                </Link>
               </div>
             </div>
 
@@ -122,7 +119,7 @@ const Header = () => {
                 origin-top-right 
                 absolute 
                 right-0 
-                top-3
+                top-2
                 w-40 
                 shadow-lg 
                 py-1 
@@ -156,6 +153,13 @@ const Header = () => {
                       to="/dashboard"
                     >
                       Dashboard
+                    </Link>
+                    <hr />
+                    <Link
+                      className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
+                      to="/teachersDashboard"
+                    >
+                      Teachers DB
                     </Link>
                     <hr />
                     <Link
@@ -213,12 +217,6 @@ const Header = () => {
             className="text-gray-100 hover:bg-red-600 focus:bg-red-600 block px-3 py-2 rounded-md text-base font-medium"
           >
             Contact
-          </Link>
-          <Link
-            to="/teachers"
-            className="text-gray-100 hover:bg-red-600 focus:bg-red-600 block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Teachers
           </Link>
         </div>
       </div>
