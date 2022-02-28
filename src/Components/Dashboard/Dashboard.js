@@ -5,6 +5,7 @@ import {
   faBook,
   faBlog,
   faCertificate,
+  faPlayCircle,
   faRightFromBracket,
   faClock,
   faFolder,
@@ -112,12 +113,12 @@ const Dashboard = () => {
                     </li>
                     <li>
                       <NavLink
-                        to="addCourses"
+                        to=""
                         className="li rounded-lg text-lg text-white "
                       >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
-                          icon={faFolder}
+                          icon={faPlayCircle}
                         />
                         <span className="mx-3">Content</span>
                         {/* 	<FontAwesomeIcon
@@ -137,7 +138,7 @@ const Dashboard = () => {
                     </li>
                     <li>
                       <NavLink
-                        to="addCourses"
+                        to=""
                         className="li text-lg rounded-lg  text-white "
                       >
                         <FontAwesomeIcon
