@@ -1,3 +1,7 @@
+.main-footer {
+  position: relative;
+  bottom: 0;
+}
 .logo-part {
   text-align: start;
 }

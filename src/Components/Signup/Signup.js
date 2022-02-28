@@ -3,23 +3,25 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { faLock } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { useForm } from "react-hook-form";
 
-const Login = () => {
-	const { signInUsingGoogle, signInWithEmailPassword, auth, error } = useAuth();
+const Signup = () => {
+	const { createNewUserUsingEmailPassword, signInUsingGoogle, auth } =
+		useAuth();
+	const { register, handleSubmit } = useForm();
 	const location = useLocation();
 	const navigate = useNavigate();
-	console.log(error);
-	const handleGoogleLogin = () => {
+	const handleGoogleSignUp = () => {
 		signInUsingGoogle(navigate, location);
 	};
-	const { register, handleSubmit } = useForm();
+
 	const onSubmit = (data) => {
-		signInWithEmailPassword(
+		createNewUserUsingEmailPassword(
 			auth,
 			data.email,
 			data.password,
+			data.displayName,
 			navigate,
 			location,
 		);
@@ -31,16 +33,29 @@ const Login = () => {
 				<div className='md:w-2/4 w-full bg-white p-5 drop-shadow-xl py-6'>
 					<div>
 						<FontAwesomeIcon
-							icon={faLock}
+							icon={faUser}
 							className='text-2xl rounded-full bg-gray-700 text-white p-3'
 						/>
 					</div>
-					<h3 className='mb-5 text-3xl font-semibold text-gray-700'>
-						Account Login
-					</h3>
+					<h3 className='mb-5 text-3xl font-semibold text-gray-700'>SIgnUp</h3>
 					<form
 						onSubmit={handleSubmit(onSubmit)}
 						className='flex flex-col space-y-3'>
+						<div className='flex flex-col space-y-1'>
+							<label
+								for='name'
+								className='text-sm font-semibold text-gray-500 text-left'>
+								Name
+							</label>
+							<input
+								id='name'
+								label='Name'
+								name='name'
+								{...register("displayName", { required: true })}
+								autofocus
+								className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
+							/>
+						</div>
 						<div className='flex flex-col space-y-1'>
 							<label
 								for='email'
@@ -60,14 +75,9 @@ const Login = () => {
 							<div className='flex items-center justify-between'>
 								<label
 									for='password'
-									className='text-sm font-semibold text-gray-500'>
+									className='text-sm font-semibold text-gray-500 text-left'>
 									Password
 								</label>
-								<Link
-									to='/resetpassword'
-									className='text-sm text-blue-600 hover:underline focus:text-blue-800'>
-									Forgot Password?
-								</Link>
 							</div>
 							<input
 								id='password'
@@ -79,16 +89,16 @@ const Login = () => {
 						</div>
 						<div>
 							<Link
-								to='/signup'
+								to='/login'
 								className='text-sm text-blue-600 hover:underline focus:text-blue-800'>
-								Don't have account?
+								Already have account?
 							</Link>
 						</div>
 
 						<button
 							type='submit'
 							className='w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-blue-200 focus:ring-4'>
-							Log in
+							SignUp
 						</button>
 						<div className='flex flex-col space-y-5'>
 							<span className='flex items-center justify-center space-x-2'>
@@ -98,7 +108,7 @@ const Login = () => {
 							</span>
 							<div className='flex flex-col space-y-4'>
 								<button
-									onClick={handleGoogleLogin}
+									onClick={handleGoogleSignUp}
 									className='flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-red-500 rounded-md group hover:bg-red-500 focus:outline-none'>
 									<span>
 										<FontAwesomeIcon
@@ -119,4 +129,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default Signup;

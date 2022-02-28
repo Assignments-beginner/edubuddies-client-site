@@ -21,27 +21,26 @@ const Blogs = () => {
     },
     {
       blogName: "The Tactical Skills All Employees Need in 2022",
-      photo:
-        "https://shivaaythemes.in/educater-html/assets/images/blog-3.jpg",
+      photo: "https://shivaaythemes.in/educater-html/assets/images/blog-3.jpg",
       comments: "70",
       date: "02/12/21",
     },
     {
       blogName: "The 6 Best Cybersecurity Certifications to Launch Your Career",
-      photo: "https://shivaaythemes.in/educater-html/assets/images/blog-2.jpg",
+      photo: "https://i.ibb.co/9vMz2RZ/blog-2.png",
       comments: "100",
       date: "10/02/22",
     },
     {
       blogName: "The Great Reevaluation: Unlearning Work Myths About Wellness",
-      photo: "https://shivaaythemes.in/educater-html/assets/images/blog-3.jpg",
+      photo: "https://i.ibb.co/P6VZx08/blog-4.png",
       comments: "40",
       date: "05/07/21",
     },
   ];
   return (
     <div className="container mx-auto my-24  px-4 md:px-11  ">
-      <h1 className="text-3xl uppercase font-semibold mt-9 md:mb-9 mb-5 text-red-500">
+      <h1 className="text-center text-3xl uppercase font-semibold mt-9 md:mb-9 mb-5 text-red-500">
         Latest Blog & News
       </h1>
       <div className="w-full pb-7 pagination" style={{ overflow: "hidden" }}>
@@ -77,7 +76,7 @@ const Blogs = () => {
                 className="border  rounded-lg card mx-auto duration-300  bg-white"
                 style={{ maxWidth: "400px" }}
               >
-                <div className=" overflow-hidden">
+                <div className="overflow-hidden">
                   <img
                     className="w-full card-image rounded-t-lg"
                     src={blog?.photo}

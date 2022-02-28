@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 import "../Footer/Footer.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 /* Please don't edit this file - Team Leader (Avishek) */
 
 const Footer = () => {
+  const [hide, setHide] = useState("block");
+  const location = useLocation();
+  useEffect(() => {
+    if (location?.pathname.includes("/dashboard")) {
+      setHide("none");
+    }
+  }, [location.pathname]);
   return (
-    <footer className="text-center text-gray-300 bg-gray-900 pt-6">
+    <footer
+      style={{ display: `${hide}` }}
+      className="main-footer text-center text-gray-300 bg-gray-900 pt-6"
+    >
       {/* ///////////////////////// Columns /////////////////////// */}
-      <div className="container mx-auto grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 pb-8">
+      <div className="container mx-auto grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 pb-8">
         <div className="logo-part py-6 px-12">
           <Link to="/home">
             <img
@@ -20,8 +30,9 @@ const Footer = () => {
             />
           </Link>
           <p className="text-sm">
+            {" "}
             Great lesson ideas and lesson plans for students, that students can
-            observe their learning. Keep Learning with us.
+            observe their learning.
           </p>
         </div>
         {/* ///////////////////////// Three Columns /////////////////////// */}
