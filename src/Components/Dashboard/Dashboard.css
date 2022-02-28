@@ -1,6 +1,7 @@
 aside {
 	height: 100%;
 	width: 200px;
+	transform: translateX(0px);
 }
 
 .right {
@@ -10,20 +11,23 @@ aside {
 	animation: slide-out 1s forwards !important;
 }
 
-aside ul li {
-	padding: 9px;
+aside ul .li,
+.logout {
+	padding: 11px 3px;
 }
 
-aside ul li:hover,
-aside ul li:hover .icon,
-aside ul li:hover span {
+aside ul .li:hover,
+aside ul .li:hover .icon,
+.logout:hover,
+.logout:hover .icon,
+aside ul .li:hover span {
 	background-color: #dc3545;
 	color: white !important;
 }
 
 @keyframes slide-in {
 	0% {
-		transform: translateX(-200px);
+		transform: translateX(-300px);
 	}
 	100% {
 		transform: translateX(0px);
@@ -35,6 +39,6 @@ aside ul li:hover span {
 		transform: translateX(0px);
 	}
 	100% {
-		transform: translateX(-200px);
+		transform: translateX(-300px);
 	}
 }

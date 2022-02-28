@@ -21,7 +21,11 @@
     "react": "^17.0.2",
     "react-countup": "^6.1.1",
     "react-dom": "^17.0.2",
+<<<<<<< HEAD
     "react-google-drive-picker": "^1.1.4",
+=======
+    "react-hook-form": "^7.27.1",
+>>>>>>> dde63a23c40a563dfb169f422b1b787c1fbfe937
     "react-player": "^2.9.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
@@ -30,6 +34,7 @@
     "router-dom": "^2.2.9",
     "sweetalert2": "^11.4.0",
     "swiper": "^8.0.3",
+    "tw-elements": "^1.0.0-alpha11",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
