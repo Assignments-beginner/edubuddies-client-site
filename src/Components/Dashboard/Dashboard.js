@@ -209,14 +209,13 @@ const Dashboard = () => {
               </Link>
             </div>
             <div className="flex items-center profile-imgName">
-              <div>
+              <div className="flex flex-col items-end">
                 <span
                   style={{ fontSize: "14px" }}
                   className="text-black uppercase"
                 >
                   {user.displayName}
                 </span>
-                <br />
                 <Link to="/userProfile" className="text-sm text-red-500">
                   View Profile
                 </Link>
