@@ -38,7 +38,7 @@ const Header = () => {
             <button
               onClick={toggleFunction}
               type="button"
-              className="inline-flex items-center justify-center py-2 px-2 rounded-md text-gray-400 focus:text-gray-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center py-2 px-2 rounded-md text-gray-400 focus:bg-red-600 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
               <FontAwesomeIcon
                 className="text-2xl text-white px-2"
@@ -63,31 +63,31 @@ const Header = () => {
             <div className="hidden sm:block px-8">
               <div className="flex space-x-4">
                 <Link
-                  className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-red-600 focus:bg-red-600 px-3 py-2 rounded-md text-md font-medium"
                   to="/home"
                 >
                   Home
                 </Link>
                 <Link
-                  className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-red-600 focus:bg-red-600 px-3 py-2 rounded-md text-md font-medium"
                   to="/Courses"
                 >
                   Courses
                 </Link>
                 <Link
-                  className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-red-600 focus:bg-red-600 px-3 py-2 rounded-md text-md font-medium"
                   to="/blog"
                 >
                   Blog
                 </Link>
                 <Link
-                  className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-red-600 focus:bg-red-600 px-3 py-2 rounded-md text-md font-medium"
                   to="/about"
                 >
                   About
                 </Link>
                 <Link
-                  className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-gray-100 hover:bg-red-600 focus:bg-red-600 px-3 py-2 rounded-md text-md font-medium"
                   to="/contact"
                 >
                   Contact
@@ -97,7 +97,7 @@ const Header = () => {
 
             {!user?.email && (
               <Link
-                className="text-gray-100 hover:bg-red-600 focus:text-gray-300 px-3 py-2 mr-2 border-2 rounded-md text-md font-medium flex items-center justify-center"
+                className="text-gray-100 hover:bg-red-600 focus:bg-red-600 px-3 py-2 mr-2 border-2 rounded-md text-md font-medium flex items-center justify-center"
                 to="/login"
               >
                 Sign In
@@ -152,13 +152,13 @@ const Header = () => {
                     <hr />
                     <Link
                       to="/userProfile"
-                      className="text-black-200 hover:bg-red-600 focus:text-gray-300 px-3 py-2 text-left text-md font-medium block hover:text-white"
+                      className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
                     >
                       View Profile
                     </Link>
                     <hr />
                     <Link
-                      className="text-black-200 hover:bg-red-600 focus:text-gray-300 px-3 py-2 text-left text-md font-medium block hover:text-white"
+                      className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
                       to="/dashboard"
                     >
                       Dashboard
@@ -167,7 +167,7 @@ const Header = () => {
                     <Link
                       to="/login"
                       onClick={logout}
-                      className="text-black-200 hover:bg-red-600 focus:text-gray-300 px-3 py-2 text-left text-md font-medium block hover:text-white"
+                      className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
                     >
                       Log Out
                     </Link>
@@ -195,31 +195,31 @@ const Header = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 text-center">
           <Link
             to="/home"
-            className="text-gray-100 hover:bg-red-600 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-100 hover:bg-red-600 focus:bg-red-600 block px-3 py-2 rounded-md text-base font-medium"
           >
             Home
           </Link>
           <Link
             to="/about"
-            className="text-gray-100 hover:bg-red-600 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-100 hover:bg-red-600 focus:bg-red-600 block px-3 py-2 rounded-md text-base font-medium"
           >
             About
           </Link>
           <Link
             to="/courses"
-            className="text-gray-100 hover:bg-red-600 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-100 hover:bg-red-600 focus:bg-red-600 block px-3 py-2 rounded-md text-base font-medium"
           >
             Courses
           </Link>
           <Link
             to="/blog"
-            className="text-gray-100 hover:bg-red-600 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-100 hover:bg-red-600 focus:bg-red-600 block px-3 py-2 rounded-md text-base font-medium"
           >
             Blog
           </Link>
           <Link
             to="/contact"
-            className="text-gray-100 hover:bg-red-600 focus:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-100 hover:bg-red-600 focus:bg-red-600 block px-3 py-2 rounded-md text-base font-medium"
           >
             Contact
           </Link>
