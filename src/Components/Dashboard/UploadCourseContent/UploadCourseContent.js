@@ -91,9 +91,9 @@ const UploadCourseContent = () => {
   return (
     <div className="container mx-auto px-4 md:px-11  ">
       <h1 className="text-center text-3xl uppercase font-semibold mt-14 mb-5 text-red-500">
-        Add New Course
+        Add New Content To
       </h1>
-      <h1 className="text-lg">{singleCourse?.title}</h1>
+      <h1 className="text-3xl">{singleCourse?.title}</h1>
       <div className="md:w-2/4 mx-auto w-full bg-white p-5 drop-shadow-xl ">
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -122,7 +122,7 @@ const UploadCourseContent = () => {
                       />
                     </label>
                     <button
-                      className="m-0 w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-blue-200 focus:ring-4"
+                      className="m-0 w-full px-4 py-2 text-lg text-white transition-colors duration-300 bg-red-500 rounded-md shadow hover:bg-red-600 focus:outline-none focus:ring-blue-200 focus:ring-4"
                       onClick={() => uploadFiless()}
                     >
                       {" "}
@@ -145,7 +145,7 @@ const UploadCourseContent = () => {
               for="Title"
               className="text-sm font-semibold text-gray-500 text-left"
             >
-              Title
+              Content Title
             </label>
             <input
               id="Title"
@@ -158,7 +158,7 @@ const UploadCourseContent = () => {
           </div>
           <button
             type="submit"
-            className="m-0 w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-blue-200 focus:ring-4"
+            className="m-0 w-full px-4 py-2 text-lg text-white transition-colors duration-300 bg-red-500 rounded-md shadow hover:bg-red-600 focus:outline-none focus:ring-blue-200 focus:ring-4"
           >
             Add New Content
           </button>

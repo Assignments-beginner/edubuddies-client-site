@@ -5,6 +5,7 @@ import {
   faBook,
   faBlog,
   faCertificate,
+  faPlayCircle,
   faRightFromBracket,
   faClock,
   faFolder,
@@ -18,11 +19,11 @@ import useAuth from "../../hooks/useAuth";
 import { NavLink } from "react-router-dom";
 
 const Dashboard = () => {
-	const { user } = useAuth();
-	const [isActive, setActive] = useState("block");
-	const handleToggle = () => {
-		setActive(!isActive);
-	};
+  const { user } = useAuth();
+  const [isActive, setActive] = useState("block");
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
 
   return (
     <div className="dashboard" style={{ minHeight: "70vh" }}>
@@ -62,29 +63,22 @@ const Dashboard = () => {
                     </button>
                   </div>
                 </div>
-                <div style={{ position: "fixed", top: "4rem" }}>
-                  <div className=" text-center text-2xl text-white">
-                    Dashboard
+                <div style={{ position: "fixed", top: "2rem" }}>
+                  <div className="flex flex-col items-center">
+                    <Link to="/home">
+                      <img
+                        className="w-34 h-16"
+                        src="https://i.ibb.co/HzzW0Xv/logo.png"
+                        alt=""
+                      />
+                    </Link>
+                    <span className="text-slate-100 text-sm uppercase">
+                      Dashboard
+                    </span>
                   </div>
                 </div>
                 <div>
                   <ul className="space-y-5">
-                    <li>
-                      <NavLink
-                        to="addnewcourse"
-                        className="li text-lg rounded-lg  text-white "
-                      >
-                        <FontAwesomeIcon
-                          className="mx-2 text-red-500 icon"
-                          icon={faBook}
-                        />
-                        <span className="mx-3">Add Courses</span>
-                        {/* 	<FontAwesomeIcon
-											className='mx-2 text-red-500 icon'
-											icon={faPlus}
-										/> */}
-                      </NavLink>
-                    </li>
                     <li>
                       <NavLink
                         to="allcourses"
@@ -103,12 +97,28 @@ const Dashboard = () => {
                     </li>
                     <li>
                       <NavLink
-                        to="addCourses"
+                        to="addnewcourse"
+                        className="li text-lg rounded-lg  text-white "
+                      >
+                        <FontAwesomeIcon
+                          className="mx-2 text-red-500 icon"
+                          icon={faBook}
+                        />
+                        <span className="mx-3">Add Courses</span>
+                        {/* 	<FontAwesomeIcon
+											className='mx-2 text-red-500 icon'
+											icon={faPlus}
+										/> */}
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to=""
                         className="li rounded-lg text-lg text-white "
                       >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
-                          icon={faFolder}
+                          icon={faPlayCircle}
                         />
                         <span className="mx-3">Content</span>
                         {/* 	<FontAwesomeIcon
@@ -128,7 +138,7 @@ const Dashboard = () => {
                     </li>
                     <li>
                       <NavLink
-                        to="addCourses"
+                        to=""
                         className="li text-lg rounded-lg  text-white "
                       >
                         <FontAwesomeIcon
@@ -209,14 +219,13 @@ const Dashboard = () => {
               </Link>
             </div>
             <div className="flex items-center profile-imgName">
-              <div>
+              <div className="flex flex-col items-end">
                 <span
                   style={{ fontSize: "14px" }}
                   className="text-black uppercase"
                 >
                   {user.displayName}
                 </span>
-                <br />
                 <Link to="/userProfile" className="text-sm text-red-500">
                   View Profile
                 </Link>
