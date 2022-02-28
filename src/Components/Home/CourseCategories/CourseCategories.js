@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
-import "./OurCourses.css";
+import "./CourseCategories.css";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { addCourse } from "../../../Redux/edubuddySlice";
 import { Link } from "react-router-dom";
 
-const OurCourses = () => {
+const CourseCategories = () => {
   const courses = useSelector((state) => state.edu.courses);
   const dispatch = useDispatch();
   console.log(courses);
@@ -17,7 +17,7 @@ const OurCourses = () => {
     axios.get(url).then((res) => {
       dispatch(addCourse(res.data));
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="container mx-auto px-4 md:px-11">
@@ -57,4 +57,4 @@ const OurCourses = () => {
   );
 };
 
-export default OurCourses;
+export default CourseCategories;

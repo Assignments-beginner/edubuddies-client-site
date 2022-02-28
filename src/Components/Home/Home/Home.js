@@ -10,7 +10,7 @@ import Teachers from "../Teachers/Teachers";
 import Blogs from "../Blogs/Blogs";
 import Newsletter from "../Newsletter/Newsletter";
 import Contact from "../../Contact/Contact";
-import OurCourses from "../OurCourses/OurCourses";
+import CourseCategories from "../CourseCategories/CourseCategories";
 import CoreFeatures from "../CoreFeatures/CoreFeatures";
 import InfoCard from "../InfoCard/InfoCard";
 import Achievement from "../Achievement/Achievement";
@@ -36,7 +36,7 @@ const Home = () => {
       <Courses />
       <About />
       <Achievement />
-      <OurCourses />
+      <CourseCategories />
       <Testimonial />
       <Blogs />
       <CoreFeatures />
