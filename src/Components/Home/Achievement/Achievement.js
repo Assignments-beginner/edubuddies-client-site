@@ -42,9 +42,9 @@ const Achievement = () => {
               icon={faPerson}
             />
             <span className="text-3xl text-white font-black ml-3">
-              <CountUp start={0} end={3000} duration={2.75} suffix={"+"} />
+              <CountUp start={0} end={3000} duration={2.75} suffix={"+ "} />
             </span>
-            <span className=" text-gray-300 text-2xl"> Students</span>
+            <span className=" text-gray-300 text-2xl ml-3"> Students</span>
           </div>
           <div className="flex items-center justify-center border border-gray-400 py-3 rounded-xl mx-5 mb-2">
             <FontAwesomeIcon
