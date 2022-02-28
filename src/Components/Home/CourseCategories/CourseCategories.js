@@ -27,29 +27,30 @@ const CourseCategories = () => {
       <div className="w-full">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mx-auto md:gap-5 gap-4">
           {courses?.map((course, key) => (
-            <div
+            <Link
               key={key}
-              className="flex border-2 p-5  justify-center OurCourses hover:cursor-pointer duration-500 rounded-lg  bg-white"
+              to={`/singlecourse/${course._id}`}
+              className="flex justify-start border-2 p-5 OurCourses hover:cursor-pointer duration-500 rounded-lg  bg-white"
               style={{ alignItems: "center" }}
             >
-              <Link
-                className="flex items-center justify-center"
+              {/* <Link
+                className="flex items-center justify-between border-2"
                 to={`/singlecourse/${course._id}`}
-              >
-                <div className="mr-3 ">
-                  <FontAwesomeIcon
-                    className="text-slate-900 icon p-3 text-3xl"
-                    icon={faCode}
-                  />
+              > */}
+              <div className="">
+                <FontAwesomeIcon
+                  className="text-slate-900 px-6 icon text-3xl"
+                  icon={faCode}
+                />
+              </div>
+              <div className="text-left px-3">
+                <div className="md:text-md text-red-500 text-md font-extrabold mb-1">
+                  {course?.title}
                 </div>
-                <div className=" text-left p-3">
-                  <div className="md:text-md text-red-500 text-md font-extrabold mb-1">
-                    {course?.title}
-                  </div>
-                  <div className="text-sm">{course?.category}</div>
-                </div>
-              </Link>
-            </div>
+                <div className="text-sm">{course?.category}</div>
+              </div>
+              {/* </Link> */}
+            </Link>
           ))}
         </div>
       </div>
