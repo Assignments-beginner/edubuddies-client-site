@@ -20,9 +20,8 @@ const Footer = () => {
             />
           </Link>
           <p className="text-sm">
-            {" "}
             Great lesson ideas and lesson plans for students, that students can
-            observe their learning.
+            observe their learning. Keep Learning with us.
           </p>
         </div>
         {/* ///////////////////////// Three Columns /////////////////////// */}
