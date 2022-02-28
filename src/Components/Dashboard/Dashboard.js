@@ -62,9 +62,10 @@ const Dashboard = () => {
                     </button>
                   </div>
                 </div>
-                <div style={{ position: "fixed", top: "4rem" }}>
-                  <div className=" text-center text-2xl text-white">
-                    Dashboard
+                <div style={{ position: "fixed", top: "2rem" }}>
+                  <div className="flex flex-col items-center">
+                    <img className="w-34 h-16" src="https://i.ibb.co/HzzW0Xv/logo.png" alt="" />
+                    <span className="text-slate-100 text-sm uppercase">Dashboard</span>
                   </div>
                 </div>
                 <div>
