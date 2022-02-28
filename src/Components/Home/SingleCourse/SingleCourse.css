@@ -1,3 +1,15 @@
+.entireCourse {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.instructor {
+  width: 80%;
+}
+.courseCard {
+  width: 55%;
+  margin-top: 3%;
+}
 .teacher-img {
   height: 82px;
   width: 82px;
@@ -10,6 +22,7 @@
   justify-content: start;
   align-items: center;
 }
+
 @media all and (max-width: 688px) {
   .teacher-img {
     height: 82px;
@@ -23,6 +36,19 @@
   }
   .Instructor-box {
     flex-direction: column;
+    justify-content: center;
+  }
+  .instructor {
+    width: 100%;
+    margin-top: 5%;
+  }
+  .courseCard {
+    width: 100%;
+    margin-top: 6%;
+  }
+  .entireCourse {
+    width: 100%;
+    flex-direction: column-reverse;
     justify-content: center;
   }
 }
