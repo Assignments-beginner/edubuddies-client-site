@@ -18,11 +18,11 @@ import useAuth from "../../hooks/useAuth";
 import { NavLink } from "react-router-dom";
 
 const Dashboard = () => {
-	const { user } = useAuth();
-	const [isActive, setActive] = useState("block");
-	const handleToggle = () => {
-		setActive(!isActive);
-	};
+  const { user } = useAuth();
+  const [isActive, setActive] = useState("block");
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
 
   return (
     <div className="dashboard" style={{ minHeight: "70vh" }}>
@@ -64,8 +64,16 @@ const Dashboard = () => {
                 </div>
                 <div style={{ position: "fixed", top: "2rem" }}>
                   <div className="flex flex-col items-center">
-                    <img className="w-34 h-16" src="https://i.ibb.co/HzzW0Xv/logo.png" alt="" />
-                    <span className="text-slate-100 text-sm uppercase">Dashboard</span>
+                    <Link to="/home">
+                      <img
+                        className="w-34 h-16"
+                        src="https://i.ibb.co/HzzW0Xv/logo.png"
+                        alt=""
+                      />
+                    </Link>
+                    <span className="text-slate-100 text-sm uppercase">
+                      Dashboard
+                    </span>
                   </div>
                 </div>
                 <div>
