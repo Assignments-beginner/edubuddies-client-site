@@ -41,8 +41,8 @@ const Milestones = () => {
 			{files?._id ? (
 				<div className='mx-auto grid grid-cols-12 gap-9'>
 					<div className='md:col-span-8 col-span-12'>
-						<h1 className='text-left text-3xl uppercase mb-5 font-semibold text-red-500'>
-							{files?.title}
+						<h1 className='text-left text-3xl uppercase mb-3 font-semibold text-red-500'>
+							{files?.category}
 						</h1>
 						<ReactPlayer
 							className='border border-red-500'
@@ -50,11 +50,12 @@ const Milestones = () => {
 							controls='true'
 							volume='1'
 							width='100%'
+							height='fit-content'
 							url={selectModule}
 						/>
 
 						<h1 className='text-left text-xl uppercase mt-5 font-semibold text-red-500'>
-							File title
+							{files?.title}
 						</h1>
 					</div>
 					<div className='md:col-span-4 col-span-12'>
