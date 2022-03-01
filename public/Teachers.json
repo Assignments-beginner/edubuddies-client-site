@@ -1,18 +1,218 @@
 [
     {
       "name":"Jon Brandly",
-      "image":"",
+      "image":"https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60",
       "designation":"React Developer",
-      "gender":"male",
+      "gender":"Male",
       "age":"28",
       "phone":"+001-123456789",
       "email":"bradly.contact@gmail.com",
-      "address":"ABC Road, XYZ City, Bangladesh",
+      "address":{
+        "street": "ABC Road",
+        "city": "Xyz City",
+        "zipcode": "7300"},
+        "country": "Bangladesh",
       "about":"",
       "operation done":"350",
-      "language":"Bangla, English, Hindi",
+      "language":[
+        "Bangla", "English", "Hindi"
+      ],
       "type":"Full Time",
       "experinece":"7",
-      "Experties":"Photoshop, React, JavaScript, TypeScript, Responsive"
+      "Experties":[
+        "Photoshop", "React", "JavaScript", "TypeScript", "Responsive"
+      ]
+    },
+    {
+      "name":"Emma Islam",
+      "image":"https://images.unsplash.com/photo-1513690277738-c9bc7eb2a992?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTg4fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "designation":"PHP Developer",
+      "gender":"FeMale",
+      "age":"26",
+      "phone":"+001-233456789",
+      "email":"emma.contact@gmail.com",
+      "address":{
+        "street": "Demo Road",
+        "city": "Tom City",
+        "zipcode": "3300"},
+        "country": "Bangladesh",
+      "about":"",
+      "operation done":"240",
+      "language":[
+        "Bangla", "English", "Hindi","Arabic"
+      ],
+      "type":"Full Time",
+      "experinece":"5",
+      "Experties":[
+        "PHP", "Wordpress", "JavaScript", "Illustrator", "Plugin"
+      ]
+    },
+    {
+      "name":"Isabella",
+      "image":"https://images.unsplash.com/photo-1513690277738-c9bc7eb2a992?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTg4fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "designation":"Testing Engineer",
+      "gender":"FeMale",
+      "age":"29",
+      "phone":"+001-120056789",
+      "email":"isabella.contact@gmail.com",
+      "address":{
+        "street": "Sukanta Road",
+        "city": "Cairo City",
+        "zipcode": "4500"},
+        "country": "Egypt",
+      "about":"",
+      "operation done":"310",
+      "language":[
+        "Arabic","Bangla", "English"
+      ],
+      "type":"Part Time",
+      "experinece":"8",
+      "Experties":[
+        "Testing", "Building", "Software Atchitecture"
+      ]
+    },
+    {
+      "name":"HH Porosh",
+      "image":"https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "designation":"Web Designer",
+      "gender":"Male",
+      "age":"26",
+      "phone":"+001-123456003",
+      "email":"porosh.contact@gmail.com",
+      "address":{
+        "street": "HSS Road",
+        "city": "Jhenaidah City",
+        "zipcode": "7300"},
+        "country": "Bangladesh",
+      "about":"",
+      "operation done":"289",
+      "language":[
+        "Bangla", "English", "Hindi","Urdu"
+      ],
+      "type":"Full Time",
+      "experinece":"4",
+      "Experties":[
+        "Photoshop", "Web Design", "JavaScript", "API", "Responsive"
+      ]
+    },
+    {
+      "name":"Era Jackson",
+      "image":"https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "designation":"MERN Developer",
+      "gender":"FeMale",
+      "age":"29",
+      "phone":"+001-103493789",
+      "email":"era.contact@gmail.com",
+      "address":{
+        "street": "Hotson Road",
+        "city": "Texas City",
+        "zipcode": "1300"},
+        "country": "USA",
+      "about":"",
+      "operation done":"405",
+      "language":[
+        "English", "Hindi", "Russian"
+      ],
+      "type":"Full Time",
+      "experinece":"9",
+      "Experties":[
+        "Node JS", "React", "JavaScript", "TypeScript", "Express JS"
+      ]
+    },
+    {
+      "name":"Anisul Islam",
+      "image":"https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "designation":"Software Engineer",
+      "gender":"Male",
+      "age":"30",
+      "phone":"+001-103406781",
+      "email":"anis.contact@gmail.com",
+      "address":{
+        "street": "SS Street",
+        "city": "Kushtia City",
+        "zipcode": "7300"},
+        "country": "Bangladesh",
+      "about":"",
+      "operation done":"420",
+      "language":[
+        "Bangla", "English", "French"
+      ],
+      "type":"Full Time",
+      "experinece":"9",
+      "Experties":[
+        "C++", "Python", "JavaScript", "Responsive"
+      ]
+    },
+    {
+      "name":"Rakib Siddique",
+      "image":"https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "designation":"Senior Developer",
+      "gender":"Male",
+      "age":"23",
+      "phone":"+001-980456789",
+      "email":"rakib.contact@gmail.com",
+      "address":{
+        "street": "Twenty Street",
+        "city": "Rajshahi City",
+        "zipcode": "700"},
+        "country": "Bangladesh",
+      "about":"",
+      "operation done":"295",
+      "language":[
+        "Bangla", "English", "Hindi", "Arabic"
+      ],
+      "type":"Part Time",
+      "experinece":"6",
+      "Experties":[
+        "C#", "Angular", "C++", "TypeScript", "Redux"
+      ]
+    },
+ {
+      "name":"Kelly Franklin",
+      "image":"https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "designation":"Front End Developer",
+      "gender":"FeMale",
+      "age":"25",
+      "phone":"+001-993456789",
+      "email":"Kelly.contact@gmail.com",
+      "address":{
+        "street": "Faul Road",
+        "city": "Best City",
+        "zipcode": "700"},
+        "country": "UK",
+      "about":"",
+      "operation done":"365",
+      "language":[
+        "English", "Hindi","Russian","Urdu"
+      ],
+      "type":"Part Time",
+      "experinece":"6",
+      "Experties":[
+         "React", "JavaScript", "TypeScript", "Responsive","Angular"
+      ]
+    },
+    {
+      "name":"John Smith",
+      "image":"https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHx3b21lbiUyMHBvcnRyYWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "designation":"Junior Engineer",
+      "gender":"Male",
+      "age":"30",
+      "phone":"+001-903456700",
+      "email":"smith.contact@gmail.com",
+      "address":{
+        "street": "College Road",
+        "city": "Khulna City",
+        "zipcode": "7300"},
+        "country": "Bangladesh",
+      "about":"",
+      "operation done":"210",
+      "language":[
+        "Bangla", "English", "Urdu"
+      ],
+      "type":"Full Time",
+      "experinece":"4",
+      "Experties":[
+        "Node JS", "React", "JavaScript", "TypeScript", "Responsive"
+      ]
     }
   ]
