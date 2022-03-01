@@ -29,7 +29,6 @@ const Modal = ({ setShowModal }) => {
 		setLoading(false);
 	};
 
-	const id = "";
 	const [data, setData] = useState();
 	const { register, handleSubmit, reset } = useForm({
 		defaultValues: {
@@ -40,10 +39,12 @@ const Modal = ({ setShowModal }) => {
 	});
 
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/allusers?email=${user?.email}`).then((res) => {
-			reset(res.data);
-			setData(res.data);
-		});
+		axios
+			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.then((res) => {
+				reset(res.data);
+				setData(res.data);
+			});
 	}, [reset, user?.email]);
 	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = ({ fullname, phone, about }) => {

@@ -3,15 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./Modal";
 import axios from "axios";
+import useAuth from "../../../hooks/useAuth";
 
 const StudentImportantLinks = () => {
+	const { user } = useAuth();
 	const [showModal, setShowModal] = React.useState(false);
 	const [importantlinks, setImportantlinks] = React.useState();
-	const email = "";
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/importantlinks/${email}`).then((res) => {
-			setImportantlinks(res.data);
-		});
+		axios
+			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.then((res) => {
+				setImportantlinks(res.data?.importantlinks);
+			});
 	}, []);
 
 	return (
