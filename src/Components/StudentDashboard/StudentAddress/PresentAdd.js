@@ -2,9 +2,10 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import useAuth from "../../../hooks/useAuth";
 
 const PresentAdd = ({ setPresentAddModal }) => {
-	const id = "";
+	const { user } = useAuth();
 	const [data, setData] = useState();
 	const { register, handleSubmit, reset } = useForm({
 		defaultValues: {
@@ -19,16 +20,18 @@ const PresentAdd = ({ setPresentAddModal }) => {
 	});
 
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/presentaddress/${id}`).then((res) => {
-			reset(res.data);
-			setData(res.data);
-		});
-	}, [id, reset]);
+		axios
+			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.then((res) => {
+				reset(res.data?.presentAddress);
+				setData(res.data?.presentAddress);
+			});
+	}, [reset, user?.email]);
 	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = (data) => {
 		setSubmitting(true);
 		axios
-			.put(`http://localhost:5000/presentaddress/${id}`, data)
+			.put(`http://localhost:5000/presentaddress?email=${user?.email}`, data)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",

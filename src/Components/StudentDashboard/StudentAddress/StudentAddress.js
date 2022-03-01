@@ -4,24 +4,29 @@ import PresentAdd from "./PresentAdd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import useAuth from "../../../hooks/useAuth";
 
 const StudentAddress = () => {
+	const { user } = useAuth();
 	const [presentAddModal, setPresentAddModal] = React.useState(false);
 	const [permanentAddModal, setPermanentAddModal] = React.useState(false);
-	const [presentaddress, setPresentaddress] = React.useState();
+	const [presentaddressUI, setPresentaddressUI] = React.useState();
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/presentaddress`).then((res) => {
-			setPresentaddress(res.data);
-		});
-	}, []);
+		axios
+			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.then((res) => {
+				setPresentaddressUI(res.data?.presentAddress);
+			});
+	}, [user?.email]);
 
-	const [permanentaddress, setPermanentaddress] = React.useState();
-	const email = "";
+	const [permanentaddressUI, setPermanentaddressUI] = React.useState();
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/permanentaddress/${email}`).then((res) => {
-			setPermanentaddress(res.data);
-		});
-	}, []);
+		axios
+			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.then((res) => {
+				setPermanentaddressUI(res.data?.permanentAddress);
+			});
+	}, [user?.email]);
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
@@ -49,15 +54,15 @@ const StudentAddress = () => {
 							<div className='flex flex-col text-left'>
 								<div className='my-2'>
 									<h2 className='text-lg'>Address Line 1:</h2>
-									<p>{presentaddress?.addressLine1 || "N/A"}</p>
+									<p>{presentaddressUI?.addressLine1 || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Address Line 2:</h2>
-									<p>{presentaddress?.addressLine2 || "N/A"}</p>
+									<p>{presentaddressUI?.addressLine2 || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>City:</h2>
-									<p>{presentaddress?.city || "N/A"}</p>
+									<p>{presentaddressUI?.city || "N/A"}</p>
 								</div>
 							</div>
 						</div>
@@ -65,15 +70,15 @@ const StudentAddress = () => {
 							<div className='flex flex-col text-left'>
 								<div className='my-2'>
 									<h2 className='text-lg'>State:</h2>
-									<p>{presentaddress?.state || "N/A"}</p>
+									<p>{presentaddressUI?.state || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Zip Code:</h2>
-									<p>{presentaddress?.zip || "N/A"}</p>
+									<p>{presentaddressUI?.zip || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Country:</h2>
-									<p>{presentaddress?.country || "N/A"}</p>
+									<p>{presentaddressUI?.country || "N/A"}</p>
 								</div>
 							</div>
 						</div>
@@ -95,15 +100,15 @@ const StudentAddress = () => {
 							<div className='flex flex-col text-left'>
 								<div className='my-2'>
 									<h2 className='text-lg'>Address Line 1:</h2>
-									<p>{permanentaddress?.addressLine1 || "N/A"}</p>
+									<p>{permanentaddressUI?.addressLine1 || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Address Line 2:</h2>
-									<p>{permanentaddress?.addressLine2 || "N/A"}</p>
+									<p>{permanentaddressUI?.addressLine2 || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>City:</h2>
-									<p>{permanentaddress?.city || "N/A"}</p>
+									<p>{permanentaddressUI?.city || "N/A"}</p>
 								</div>
 							</div>
 						</div>
@@ -111,15 +116,15 @@ const StudentAddress = () => {
 							<div className='flex flex-col text-left'>
 								<div className='my-2'>
 									<h2 className='text-lg'>State:</h2>
-									<p>{permanentaddress?.state || "N/A"}</p>
+									<p>{permanentaddressUI?.state || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Zip Code:</h2>
-									<p>{permanentaddress?.zip || "N/A"}</p>
+									<p>{permanentaddressUI?.zip || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Country:</h2>
-									<p>{permanentaddress?.country || "N/A"}</p>
+									<p>{permanentaddressUI?.country || "N/A"}</p>
 								</div>
 							</div>
 						</div>

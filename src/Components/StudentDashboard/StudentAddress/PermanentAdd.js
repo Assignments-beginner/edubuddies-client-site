@@ -2,9 +2,10 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import useAuth from "../../../hooks/useAuth";
 
 const PermanentAdd = ({ setPermanentAddModal }) => {
-	const id = "";
+	const { user } = useAuth();
 	const [data, setData] = useState();
 	const { register, handleSubmit, reset } = useForm({
 		defaultValues: {
@@ -19,16 +20,18 @@ const PermanentAdd = ({ setPermanentAddModal }) => {
 	});
 
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/permanentaddress/${id}`).then((res) => {
-			reset(res.data);
-			setData(res.data);
-		});
-	}, [id, reset]);
+		axios
+			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.then((res) => {
+				reset(res.data?.permanentAddress);
+				setData(res.data?.permanentAddress);
+			});
+	}, [reset, user?.email]);
 	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = (data) => {
 		setSubmitting(true);
 		axios
-			.put(`http://localhost:5000/permanentaddress/${id}`, data)
+			.put(`http://localhost:5000/permanentaddress?email=${user?.email}`, data)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",
