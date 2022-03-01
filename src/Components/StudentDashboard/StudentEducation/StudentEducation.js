@@ -1,12 +1,10 @@
 import React from "react";
-import useAuth from "../../../hooks/useAuth";
 import Modal from "./Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 const StudentEducation = () => {
 	const [showModal, setShowModal] = React.useState(false);
-	const { user } = useAuth();
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
 			<div className='grid '>
