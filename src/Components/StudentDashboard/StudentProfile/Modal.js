@@ -5,10 +5,12 @@ import { useForm } from "react-hook-form";
 import Loading from "../../Dashboard/Loading";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useAuth from "../../../hooks/useAuth";
 
 const Modal = ({ setShowModal }) => {
 	const [fileLink, setFileLink] = useState(null);
 	const [loading, setLoading] = useState(false);
+	const { user } = useAuth();
 	const uploadFile = async (e) => {
 		const files = e.target.files;
 		const data = new FormData();
@@ -38,11 +40,11 @@ const Modal = ({ setShowModal }) => {
 	});
 
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/users/${id}`).then((res) => {
+		axios.get(`http://localhost:5000/allusers?email=${user?.email}`).then((res) => {
 			reset(res.data);
 			setData(res.data);
 		});
-	}, [id, reset]);
+	}, [reset, user?.email]);
 	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = ({ fullname, phone, about }) => {
 		const profile = {
@@ -53,7 +55,7 @@ const Modal = ({ setShowModal }) => {
 		};
 		setSubmitting(true);
 		axios
-			.put(`http://localhost:5000/users/${id}`, profile)
+			.put(`http://localhost:5000/allusers?email=${user?.email}`, profile)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",

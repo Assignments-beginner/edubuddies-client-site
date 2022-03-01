@@ -7,12 +7,13 @@ const StudentProfile = () => {
 	const [showModal, setShowModal] = React.useState(false);
 	const { user } = useAuth();
 	const [users, setUsers] = React.useState();
-	const email = "";
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/users/${email}`).then((res) => {
-			setUsers(res.data);
-		});
-	}, []);
+		axios
+			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.then((res) => {
+				setUsers(res.data);
+			});
+	}, [user?.email]);
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
