@@ -24,6 +24,8 @@ import UploadCourseContent from "./Components/Dashboard/UploadCourseContent/Uplo
 import AllCourses from "./Components/Dashboard/AllCourses/AllCourses";
 import SingleCourse from "./Components/Home/SingleCourse/SingleCourse";
 import Milestones from "../src/Components/Home/Milestones/Milestones";
+import AddTeacher from "./Components/Dashboard/Admin/AddTeacher";
+import MakeAdmin from "./Components/Dashboard/Admin/MakeAdmin";
 
 function App() {
   return (
@@ -70,6 +72,14 @@ function App() {
                 <Route
                   path="/dashboard/allcourses/:id"
                   element={<UploadCourseContent />}
+                />
+                <Route
+                  path="/dashboard/admin/makeTeacher"
+                  element={<AddTeacher />}
+                />
+                <Route
+                  path="/dashboard/admin/makeAdmin"
+                  element={<MakeAdmin />}
                 />
               </Route>
             </Routes>
