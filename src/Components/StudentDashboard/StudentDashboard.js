@@ -5,8 +5,8 @@ import {
 	faLocationDot,
 	faRightFromBracket,
 	faGraduationCap,
-    faCode,
-    faUpRightFromSquare,
+	faCode,
+	faUpRightFromSquare,
 	faBell,
 	faBars,
 	faXmark,
@@ -104,17 +104,6 @@ const StudentDashboard = () => {
 													icon={faGraduationCap}
 												/>
 												<span className='mx-3'>Education</span>
-											</NavLink>
-										</li>
-										<li>
-											<NavLink
-												to='skillset'
-												className='li text-lg rounded-lg  text-white '>
-												<FontAwesomeIcon
-													className='ml-2 mr-1  text-red-500 icon'
-													icon={faCode}
-												/>
-												<span className='mx-3'>Skill Set</span>
 											</NavLink>
 										</li>
 										<li>

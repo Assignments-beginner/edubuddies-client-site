@@ -39,19 +39,19 @@ const StudentProfile = () => {
 						<div className='mx-auto md:mx-0 '>
 							<div className='flex flex-col text-left'>
 								<div className='my-2'>
-									<h2 className='text-xl'>Student ID:</h2>
+									<h2 className='text-lg'>Student ID:</h2>
 									<p>WEB4-2221</p>
 								</div>
 								<div className='my-2'>
-									<h2 className='text-xl'>Full Name:</h2>
+									<h2 className='text-lg'>Full Name:</h2>
 									<p>{user?.displayName}</p>
 								</div>
 								<div className='my-2'>
-									<h2 className='text-xl'>Email Address:</h2>
+									<h2 className='text-lg'>Email Address:</h2>
 									<p>{user?.email}</p>
 								</div>
 								<div className='my-2'>
-									<h2 className='text-xl'>Phone:</h2>
+									<h2 className='text-lg'>Phone:</h2>
 									<p>01861917938</p>
 								</div>
 							</div>

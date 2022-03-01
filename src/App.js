@@ -28,7 +28,6 @@ import StudentDashboard from "./Components/StudentDashboard/StudentDashboard";
 import StudentProfile from "./Components/StudentDashboard/StudentProfile/StudentProfile";
 import StudentAddress from "./Components/StudentDashboard/StudentAddress/StudentAddress";
 import StudentEducation from "./Components/StudentDashboard/StudentEducation/StudentEducation";
-import StudentSkillSet from "./Components/StudentDashboard/StudentSkillSet/StudentSkillSet";
 import StudentImportantLinks from "./Components/StudentDashboard/StudentImportantLinks/StudentImportantLinks";
 
 function App() {
@@ -72,10 +71,6 @@ function App() {
 								<Route
 									path='/studentdashboard/education'
 									element={<StudentEducation />}
-								/>
-								<Route
-									path='/studentdashboard/skillset'
-									element={<StudentSkillSet />}
 								/>
 								<Route
 									path='/studentdashboard/importantlinks'
