@@ -2,6 +2,7 @@ import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./AllTeachers.css";
 
 const AllTeachers = () => {
   const [teachers, setTeachers] = useState([]);
@@ -19,28 +20,32 @@ const AllTeachers = () => {
         All Of Our Teachers
       </h1>
       <div className="w-full">
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mx-auto md:gap-5 gap-4">
+        <div className=" px-32 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mx-auto md:gap-5 gap-4">
           {teachers?.map((teacher, key) => (
-            <Link
-              key={key}
-              to={`/singleteacher/${teacher._id}`}
-              className="flex justify-start Ourteachers hover:cursor-pointer duration-500 rounded-lg bg-white "
-              style={{ alignItems: "center" }}
-            >
-              <div className="text-left p-5">
+            <div className="text-left">
+              <div className="teacher-container relative">
                 <img
                   className=" rounded-t-md"
                   src={teacher?.image}
                   alt=" TeacherImage"
                 />
-                <div className="border shadow-lg px-5 pb-2 rounded-b-md">
-                  <h3 className="md:text-md text-red-500 text-xl font-extrabold mt-2">
-                    {teacher?.name}
-                  </h3>
-                  <h4>{teacher?.designation}</h4>
+                <div className="overlay absolute bottom-0 left-0 right-0 w-full h-full overflow-hidden bg-[#0000005c]">
+                  <Link
+                    key={key}
+                    to={`/singleTeacher/${teacher._id}`}
+                    className="absolute left-1/2 top-1/2 text-center -translate-x-1/2 -translate-y-1/2 font-lg text-white bg-red-500 py-2 px-4 rounded-md"
+                  >
+                    View Profile
+                  </Link>
                 </div>
               </div>
-            </Link>
+              <div className="border shadow-lg px-5 pb-2 rounded-b-md">
+                <h3 className="md:text-md text-red-500 text-xl font-extrabold mt-2">
+                  {teacher?.name}
+                </h3>
+                <h4>{teacher?.designation}</h4>
+              </div>
+            </div>
           ))}
         </div>
       </div>
