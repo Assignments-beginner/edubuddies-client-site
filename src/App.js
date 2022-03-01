@@ -27,6 +27,9 @@ import Milestones from "../src/Components/Home/Milestones/Milestones";
 import TeachersDashboard from "./Components/TeachersDashboard/TeachersDashboard/TeachersDashboard";
 import AllTeachers from "./Components/TeachersDashboard/AllTeachers/AllTeachers";
 import TeachersProfile from "./Components/TeachersDashboard/TeachersProfile/TeachersProfile";
+import AddCourse from "./Components/TeachersDashboard/AddCourse/AddCourse";
+import UpdateCourse from "./Components/TeachersDashboard/UpdateCourse/UpdateCourse";
+import RemoveCourse from "./Components/TeachersDashboard/RemoveCourse/RemoveCourse";
 
 function App() {
   return (
@@ -85,8 +88,16 @@ function App() {
                   element={<AllTeachers />}
                 />
                 <Route
-                  path="/teachersDashboard/teacherProfile"
-                  element={<TeachersProfile />}
+                  path="/teachersDashboard/addCourse"
+                  element={<AddCourse />}
+                />
+                <Route
+                  path="/teachersDashboard/updateCourse"
+                  element={<UpdateCourse />}
+                />
+                <Route
+                  path="/teachersDashboard/removeCourse"
+                  element={<RemoveCourse />}
                 />
               </Route>
             </Routes>

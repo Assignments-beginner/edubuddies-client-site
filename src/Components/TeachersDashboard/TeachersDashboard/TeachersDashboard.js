@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faUser,
-  faBook,
-  faBlog,
-  faCertificate,
+  faChalkboardUser,
   faPlayCircle,
   faRightFromBracket,
-  faClock,
-  faFolder,
+  faTrash,
+  faUserGraduate,
   faBell,
   faBars,
   faXmark,
+  faPen,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { Link, Outlet } from "react-router-dom";
@@ -27,11 +25,11 @@ const TeachersDashboard = () => {
   };
 
   return (
-    <div className="dashboard" style={{ minHeight: "70vh" }}>
+    <div className="dashboard min-h=[70vh]">
       <div className="relative min-h-screen md:flex ">
         <aside
           /* onClick={handleToggle} */
-          style={{ position: "sticky", top: 0, zIndex: 999 }}
+          className=" sticky top-0 z-50"
           aria-label="Sidebar"
         >
           <div
@@ -39,17 +37,9 @@ const TeachersDashboard = () => {
               isActive ? "block right" : "left"
             }`}
           >
-            <div
-              className="py-36 overflow-y-auto bg-gray-900 text-left "
-              style={{
-                minHeight: "100vh",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
+            <div className="py-36 overflow-y-auto bg-gray-900 text-left flex items-center justify-center min-h-screen">
               <div className="flex justify-center">
-                <div style={{ position: "fixed", top: 0, right: 0 }}>
+                <div className="fixed top-0 right-0">
                   <div className="block md:hidden">
                     <button
                       className={`flex  rounded-lg p-1 justify-start m-2 ${
@@ -64,7 +54,7 @@ const TeachersDashboard = () => {
                     </button>
                   </div>
                 </div>
-                <div style={{ position: "fixed", top: "2rem" }}>
+                <div className="fixed top-4">
                   <div className="flex flex-col items-center">
                     <Link to="/home">
                       <img
@@ -74,7 +64,7 @@ const TeachersDashboard = () => {
                       />
                     </Link>
                     <span className="text-slate-100 text-sm uppercase">
-                      Dashboard
+                      Teachers Dashboard
                     </span>
                   </div>
                 </div>
@@ -87,7 +77,7 @@ const TeachersDashboard = () => {
                       >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
-                          icon={faBook}
+                          icon={faChalkboardUser}
                         />
                         <span className="mx-3">Dashboard</span>
                       </NavLink>
@@ -99,7 +89,7 @@ const TeachersDashboard = () => {
                       >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
-                          icon={faFolder}
+                          icon={faUserGraduate}
                         />
                         <span className="mx-3">All Teachers</span>
                       </NavLink>
@@ -107,40 +97,43 @@ const TeachersDashboard = () => {
 
                     <li>
                       <NavLink
-                        to=""
+                        to="addCourse"
                         className="li rounded-lg text-lg text-white "
                       >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
                           icon={faPlayCircle}
                         />
-                        <span className="mx-3">Content</span>
+                        <span className="mx-3">Add Course</span>
                       </NavLink>
                     </li>
                     <li>
-                      <Link to="" className="li text-lg rounded-lg  text-white">
+                      <Link
+                        to="updateCourse"
+                        className="li text-lg rounded-lg  text-white"
+                      >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
-                          icon={faUser}
+                          icon={faPen}
                         />
-                        <span className="mx-3">Students</span>
+                        <span className="mx-3">Update Course</span>
                       </Link>
                     </li>
                     <li>
                       <NavLink
-                        to=""
+                        to="removeCourse"
                         className="li text-lg rounded-lg  text-white "
                       >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
-                          icon={faClock}
+                          icon={faTrash}
                         />
-                        <span className="mx-3">Schedule</span>
+                        <span className="mx-3">Remove Course</span>
                       </NavLink>
                     </li>
                   </ul>
                 </div>
-                <div style={{ position: "fixed", bottom: "4rem" }}>
+                <div className="fixed bottom-20">
                   <Link
                     to=""
                     className="logout text-lg rounded-lg  text-white "
@@ -157,10 +150,7 @@ const TeachersDashboard = () => {
           </div>
         </aside>
         <div className="flex-1 mx-auto">
-          <div
-            className="py-3 bg-white border-b-2 flex items-center justify-between px-8"
-            style={{ position: "sticky", top: 0 }}
-          >
+          <div className="py-3 bg-white border-b-2 flex items-center justify-between px-8 sticky top-0">
             <div className="flex items-center">
               <div className="block md:hidden">
                 <button
@@ -177,7 +167,7 @@ const TeachersDashboard = () => {
               </div>
 
               <h2 className="uppercase text-xl hidden md:block">
-                Welcome, {user.displayName}
+                Welcome, Honorable Teacher
               </h2>
               <Link to="">
                 <FontAwesomeIcon
@@ -188,10 +178,7 @@ const TeachersDashboard = () => {
             </div>
             <div className="flex items-center profile-imgName">
               <div className="flex flex-col items-end">
-                <span
-                  style={{ fontSize: "14px" }}
-                  className="text-black uppercase"
-                >
+                <span className="text-black uppercase text-[14px]">
                   {user.displayName}
                 </span>
                 <Link to="/userProfile" className="text-sm text-red-500">
@@ -201,7 +188,7 @@ const TeachersDashboard = () => {
               <img
                 className="user-img h-14 w-14 rounded-full ml-2"
                 src={user.photoURL}
-                alt=""
+                alt="TeacherImage"
               />
             </div>
           </div>

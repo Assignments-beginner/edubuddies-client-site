@@ -1,0 +1,258 @@
+[
+    {
+      "roll": "801",
+      "name": "Munni Shaha",
+      "class": "Nine",
+      "hall_name": "Mohsin",
+      "age":"16",
+      "status":"Active"
+    },
+    {
+      "roll": "802",
+      "name": "Muskan Ara",
+      "class": "Nine",
+      "hall_name": "Mohsin",
+      "age":"16",
+      "status":"Active"
+    },
+    {
+      "roll": "803",
+      "name": "Nice Akter",
+      "class": "Nine",
+      "hall_name": "Mohsin",
+      "age":"16",
+      "status":"InActive"
+    },
+    {
+      "roll": "804",
+      "name": "Rahima Khatun",
+      "class": "Eight",
+      "hall_name": "Mohsin",
+      "age":"15",
+      "status":"Active"
+    },
+    {
+      "roll": "805",
+      "name": "Rebeka Akter",
+      "class": "Eight",
+      "hall_name": "Mohsin",
+      "age":"15",
+      "status":"Active"
+    },
+    {
+      "roll": "806",
+      "name": "Sharmin Sheela",
+      "class": "Eight",
+      "hall_name": "Mohsin",
+      "age":"15",
+      "status":"InActive"
+    },
+    {
+      "roll": "807",
+      "name": "Shorifa Khatun",
+      "class": "Eight",
+      "hall_name": "Mohsin",
+      "age":"15",
+      "status":"Active"
+    },
+    {
+      "roll": "808",
+      "name": "Jahanara Akter",
+      "class": "Eight",
+      "hall_name": "Rokeya",
+      "age":"15",
+      "status":"Active"
+    },
+    {
+      "roll": "809",
+      "name": "Tony Sadia",
+      "class": "Seven",
+      "hall_name": "Rokeya",
+      "age":"14",
+      "status":"Active"
+    },
+    {
+      "roll": "810",
+      "name": "Nasreen",
+      "class": "Seven",
+      "hall_name": "Rokeya",
+      "age":"15",
+      "status":"InActive"
+    },
+    {
+      "roll": "811",
+      "name": "Lipi Narges",
+      "class": "Seven",
+      "hall_name": "Rokeya",
+      "age":"16",
+      "status":"Active"
+    },
+    {
+      "roll": "812",
+      "name": "Rahima Akter",
+      "class": "Seven",
+      "hall_name": "Rokeya",
+      "age":"14",
+      "status":"Active"
+    },
+    {
+      "roll": "813",
+      "name": "Masuma Nabila",
+      "class": "Ten",
+      "hall_name": "Rokeya",
+      "age":"16",
+      "status":"InActive"
+    },
+    {
+      "roll": "814",
+      "name": "Pory Moni",
+      "class": "Ten",
+      "hall_name": "Rokeya",
+      "age":"19",
+      "status":"Active"
+    },
+    {
+      "roll": "815",
+      "name": "Mithila Kabir",
+      "class": "Ten",
+      "hall_name": "Solimulla",
+      "age":"18",
+      "status":"Active"
+    },
+    {
+      "roll": "816",
+      "name": "Shastika Das",
+      "class": "Ten",
+      "hall_name": "Solimulla",
+      "age":"19",
+      "status":"Active"
+    },
+    {
+      "roll": "817",
+      "name": "Mitali Mukhargee",
+      "class": "Eleven",
+      "hall_name": "Solimulla",
+      "age":"20",
+      "status":"InActive"
+    },
+    {
+      "roll": "818",
+      "name": "Alia Bhatt",
+      "class": "Eleven",
+      "hall_name": "Solimulla",
+      "age":"20",
+      "status":"Active"
+    },
+    {
+      "roll": "819",
+      "name": "Popy Akter",
+      "class": "Eleven",
+      "hall_name": "Solimulla",
+      "age":"21",
+      "status":"Active"
+    },
+    {
+      "roll": "820",
+      "name": "Shabnam Bubly",
+      "class": "Eleven",
+      "hall_name": "Solimulla",
+      "age":"19",
+      "status":"InActive"
+    },
+    {
+      "roll": "821",
+      "name": "Anushka Shetthi",
+      "class": "Eleven",
+      "hall_name": "Solimulla",
+      "age":"20",
+      "status":"Active"
+    },
+    {
+      "roll": "822",
+      "name": "Madhuri Dexit",
+      "class": "Twelve",
+      "hall_name": "A.K",
+      "age":"22",
+      "status":"Active"
+    },
+    {
+      "roll": "823",
+      "name": "Priyanka Roy",
+      "class": "Twelve",
+      "hall_name": "A.K",
+      "age":"21",
+      "status":"Active"
+    },
+    {
+      "roll": "824",
+      "name": "Kareena Kapoor",
+      "class": "Twelve",
+      "hall_name": "A.K",
+      "age":"22",
+      "status":"InActive"
+    },
+    {
+      "roll": "825",
+      "name": "Katreena Kaif",
+      "class": "Twelve",
+      "hall_name": "A.K",
+      "age":"21",
+      "status":"Active"
+    },
+    {
+      "roll": "826",
+      "name": "Opu Biswash",
+      "class": "Twelve",
+      "hall_name": "A.K",
+      "age":"22",
+      "status":"Active"
+    },
+    {
+      "roll": "827",
+      "name": "Purnima Akter",
+      "class": "Twelve",
+      "hall_name": "A.K",
+      "age":"21",
+      "status":"InActive"
+    },
+    {
+      "roll": "828",
+      "name": "Setu Debnath",
+      "class": "Eleven",
+      "hall_name": "A.K",
+      "age":"20",
+      "status":"Active"
+    },
+    {
+      "roll": "829",
+      "name": "Nusrat Fahima",
+      "class": "Eleven",
+      "hall_name": "Mostofa",
+      "age":"22",
+      "status":"Active"
+    },
+    {
+      "roll": "830",
+      "name": "Monika",
+      "class": "Eleven",
+      "hall_name": "Mostofa",
+      "age":"21",
+      "status":"Active"
+    },
+    {
+      "roll": "831",
+      "name": "Miss Cream",
+      "class": "Eleven",
+      "hall_name": "Mostofa",
+      "age":"19",
+      "status":"InActive"
+    },
+    {
+      "roll": "832",
+      "name": "Beauty Akter",
+      "class": "Eight",
+      "hall_name": "Mostofa",
+      "age":"15",
+      "status":"Active"
+    }
+  ]
