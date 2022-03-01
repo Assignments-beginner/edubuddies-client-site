@@ -2,9 +2,17 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./Modal";
+import axios from "axios";
 
 const StudentImportantLinks = () => {
 	const [showModal, setShowModal] = React.useState(false);
+	const [importantlinks, setImportantlinks] = React.useState();
+	const email = "";
+	React.useEffect(() => {
+		axios.get(`http://localhost:5000/importantlinks/${email}`).then((res) => {
+			setImportantlinks(res.data);
+		});
+	}, []);
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
@@ -32,19 +40,19 @@ const StudentImportantLinks = () => {
 							<div className='flex flex-col text-left'>
 								<div className='my-2'>
 									<h2 className='text-lg'>CV Link:</h2>
-									<p>asdasd</p>
+									<p>{importantlinks?.cvLink || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Github Profile:</h2>
-									<p>sac</p>
+									<p>{importantlinks?.githubLink || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Portfolio:</h2>
-									<p>sac</p>
+									<p>{importantlinks?.portfolio || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>LinkedIn Profile:</h2>
-									<p>scasc</p>
+									<p>{importantlinks?.linkedinProfile || "N/A"}</p>
 								</div>
 							</div>
 						</div>

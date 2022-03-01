@@ -1,9 +1,46 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const Modal = ({ setShowModal }) => {
-	const { register, handleSubmit } = useForm();
+	const id = "";
+	const [data, setData] = useState();
+	const { register, handleSubmit, reset } = useForm({
+		defaultValues: {
+			educationalLevel: "",
+			degree: "",
+			instituteName: "",
+			passingYear: "",
+			currentYear: "",
+			grade: "",
+		},
+	});
+
+	React.useEffect(() => {
+		axios.get(`http://localhost:5000/education/${id}`).then((res) => {
+			reset(res.data);
+			setData(res.data);
+		});
+	}, [id, reset]);
+	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = (data) => {
+		setSubmitting(true);
+		axios
+			.put(`http://localhost:5000/education/${id}`, data)
+			.then(function (response) {
+				Swal.fire({
+					icon: "success",
+					title: "Your Educational Status Successfully Updated",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+				setSubmitting(false);
+			})
+			.catch(function (error) {
+				console.log("error", error);
+				console.log(error);
+			});
 		console.log(data);
 	};
 	return (

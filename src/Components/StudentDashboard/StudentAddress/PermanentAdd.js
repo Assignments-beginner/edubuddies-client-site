@@ -1,9 +1,47 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const PermanentAdd = ({ setPermanentAddModal }) => {
-	const { register, handleSubmit } = useForm();
+	const id = "";
+	const [data, setData] = useState();
+	const { register, handleSubmit, reset } = useForm({
+		defaultValues: {
+			addressLine1: "",
+			addressLine2: "",
+			city: "",
+			state: "",
+			phone: "",
+			zip: "",
+			country: "",
+		},
+	});
+
+	React.useEffect(() => {
+		axios.get(`http://localhost:5000/permanentaddress/${id}`).then((res) => {
+			reset(res.data);
+			setData(res.data);
+		});
+	}, [id, reset]);
+	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = (data) => {
+		setSubmitting(true);
+		axios
+			.put(`http://localhost:5000/permanentaddress/${id}`, data)
+			.then(function (response) {
+				Swal.fire({
+					icon: "success",
+					title: "Your Address Successfully Updated",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+				setSubmitting(false);
+			})
+			.catch(function (error) {
+				console.log("error", error);
+				console.log(error);
+			});
 		console.log(data);
 	};
 	return (
@@ -23,7 +61,7 @@ const PermanentAdd = ({ setPermanentAddModal }) => {
 							<div className='relative p-6 grid grid-cols-1 md:grid-cols-2 gap-3'>
 								<div className='flex flex-col space-y-1'>
 									<label
-										for='fullname'
+										for='addressLine1'
 										className='text-sm font-semibold text-red-500 text-left mt-2'>
 										Address Line 1
 									</label>
@@ -98,7 +136,7 @@ const PermanentAdd = ({ setPermanentAddModal }) => {
 								</div>
 								<div className='flex flex-col space-y-1'>
 									<label
-										for='phone'
+										for='zip'
 										className='text-sm font-semibold text-red-500 text-left mt-2'>
 										Zip
 									</label>
@@ -113,7 +151,7 @@ const PermanentAdd = ({ setPermanentAddModal }) => {
 								</div>
 								<div className='flex flex-col space-y-1'>
 									<label
-										for='phone'
+										for='country'
 										className='text-sm font-semibold text-red-500 text-left mt-2'>
 										Country
 									</label>

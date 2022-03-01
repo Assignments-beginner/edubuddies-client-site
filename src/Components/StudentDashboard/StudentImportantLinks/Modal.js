@@ -1,11 +1,49 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const Modal = ({ setShowModal }) => {
-	const { register, handleSubmit } = useForm();
+
+	const id = "";
+	const [data, setData] = useState();
+	const { register, handleSubmit, reset } = useForm({
+		defaultValues: {
+			cvLink: "",
+			githubLink: "",
+			portfolio: "",
+			linkedinProfile: "",
+		},
+	});
+
+	React.useEffect(() => {
+		axios.get(`http://localhost:5000/importantlinks/${id}`).then((res) => {
+			reset(res.data);
+			setData(res.data);
+		});
+	}, [id, reset]);
+
+	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = (data) => {
+		setSubmitting(true);
+		axios
+			.put(`http://localhost:5000/importantlinks/${id}`, data)
+			.then(function (response) {
+				Swal.fire({
+					icon: "success",
+					title: "Your Links Successfully Updated",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+				setSubmitting(false);
+			})
+			.catch(function (error) {
+				console.log("error", error);
+				console.log(error);
+			});
 		console.log(data);
 	};
+
 	return (
 		<div>
 			<div className='my-2 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>

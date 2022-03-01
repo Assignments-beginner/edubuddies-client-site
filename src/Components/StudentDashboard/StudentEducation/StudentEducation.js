@@ -2,9 +2,18 @@ import React from "react";
 import Modal from "./Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const StudentEducation = () => {
 	const [showModal, setShowModal] = React.useState(false);
+	const [education, setEducation] = React.useState();
+	const email = "";
+	React.useEffect(() => {
+		axios.get(`http://localhost:5000/education/${email}`).then((res) => {
+			setEducation(res.data);
+		});
+	}, []);
+
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
 			<div className='grid '>
@@ -31,19 +40,19 @@ const StudentEducation = () => {
 							<div className='flex flex-col text-left'>
 								<div className='my-2'>
 									<h2 className='text-lg'>Educational Level:</h2>
-									<p>asdasd</p>
+									<p>{education?.educationalLevel || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Degree:</h2>
-									<p>sac</p>
+									<p>{education?.degree || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Institute Name:</h2>
-									<p>scasc</p>
+									<p>{education?.instituteName || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Passing Year:</h2>
-									<p>sadas</p>
+									<p>{education?.passingYear || "N/A"}</p>
 								</div>
 							</div>
 						</div>
@@ -51,11 +60,11 @@ const StudentEducation = () => {
 							<div className='flex flex-col text-left'>
 								<div className='my-2'>
 									<h2 className='text-lg'>Current Year:</h2>
-									<p>asdas</p>
+									<p>{education?.currentYear || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Grade:</h2>
-									<p>sac</p>
+									<p>{education?.grade || "N/A"}</p>
 								</div>
 							</div>
 						</div>

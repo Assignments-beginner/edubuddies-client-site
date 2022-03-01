@@ -3,6 +3,8 @@ import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Loading from "../../Dashboard/Loading";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Modal = ({ setShowModal }) => {
 	const [fileLink, setFileLink] = useState(null);
@@ -24,13 +26,47 @@ const Modal = ({ setShowModal }) => {
 		setFileLink(file.secure_url);
 		setLoading(false);
 	};
-	const { register, handleSubmit } = useForm();
-	const onSubmit = ({ fullname, phone }) => {
-		const data = {
+
+	const id = "";
+	const [data, setData] = useState();
+	const { register, handleSubmit, reset } = useForm({
+		defaultValues: {
+			fullname: "",
+			phone: "",
+			about: "",
+		},
+	});
+
+	React.useEffect(() => {
+		axios.get(`http://localhost:5000/users/${id}`).then((res) => {
+			reset(res.data);
+			setData(res.data);
+		});
+	}, [id, reset]);
+	const [submitting, setSubmitting] = useState(false);
+	const onSubmit = ({ fullname, phone, about }) => {
+		const profile = {
 			fullname,
 			phone,
-			photoURL: fileLink,
+			about,
+			photoURL: data?.fileLink || fileLink,
 		};
+		setSubmitting(true);
+		axios
+			.put(`http://localhost:5000/users/${id}`, profile)
+			.then(function (response) {
+				Swal.fire({
+					icon: "success",
+					title: "Your Profile Successfully Updated",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+				setSubmitting(false);
+			})
+			.catch(function (error) {
+				console.log("error", error);
+				console.log(error);
+			});
 		console.log(data);
 	};
 	return (
@@ -46,7 +82,6 @@ const Modal = ({ setShowModal }) => {
 									Update Profile
 								</h3>
 							</div>
-
 							<div className='relative p-6 flex-auto'>
 								<div className='flex flex-col space-y-1'>
 									<div className='flex flex-col space-y-1 mx-auto'>
@@ -91,7 +126,7 @@ const Modal = ({ setShowModal }) => {
 										Full Name
 									</label>
 									<input
-										type='fullname'
+										type='text'
 										id='fullname'
 										name='fullname'
 										{...register("fullname", { required: true })}
@@ -106,10 +141,26 @@ const Modal = ({ setShowModal }) => {
 										Phone
 									</label>
 									<input
-										type='phone'
+										type='text'
 										id='phone'
 										name='phone'
 										{...register("phone", { required: true })}
+										autofocus
+										className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
+									/>
+								</div>
+								<div className='flex flex-col space-y-1'>
+									<label
+										for='about'
+										className='text-sm font-semibold text-red-500 text-left mt-2'>
+										About
+									</label>
+									<textarea
+										rows='4'
+										type='text'
+										id='about'
+										name='about'
+										{...register("about", { required: true })}
 										autofocus
 										className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
 									/>

@@ -3,10 +3,26 @@ import PermanentAdd from "./PermanentAdd";
 import PresentAdd from "./PresentAdd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const StudentAddress = () => {
 	const [presentAddModal, setPresentAddModal] = React.useState(false);
 	const [permanentAddModal, setPermanentAddModal] = React.useState(false);
+	const [presentaddress, setPresentaddress] = React.useState();
+	React.useEffect(() => {
+		axios.get(`http://localhost:5000/presentaddress`).then((res) => {
+			setPresentaddress(res.data);
+		});
+	}, []);
+
+	const [permanentaddress, setPermanentaddress] = React.useState();
+	const email = "";
+	React.useEffect(() => {
+		axios.get(`http://localhost:5000/permanentaddress/${email}`).then((res) => {
+			setPermanentaddress(res.data);
+		});
+	}, []);
+
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
 			<div className='grid '>
@@ -28,36 +44,36 @@ const StudentAddress = () => {
 							/>
 						</div>
 					</div>
-					<div className='mx-auto grid grid-cols-1 md:grid-cols-2 gap-9 '>
+					<div className='mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-9 '>
 						<div className='mx-0 '>
 							<div className='flex flex-col text-left'>
 								<div className='my-2'>
 									<h2 className='text-lg'>Address Line 1:</h2>
-									<p>asdasd</p>
+									<p>{presentaddress?.addressLine1 || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Address Line 2:</h2>
-									<p>sac</p>
+									<p>{presentaddress?.addressLine2 || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>City:</h2>
-									<p>scasc</p>
-								</div>
-								<div className='my-2'>
-									<h2 className='text-lg'>State:</h2>
-									<p>sadas</p>
+									<p>{presentaddress?.city || "N/A"}</p>
 								</div>
 							</div>
 						</div>
 						<div className='mx-0 '>
 							<div className='flex flex-col text-left'>
 								<div className='my-2'>
+									<h2 className='text-lg'>State:</h2>
+									<p>{presentaddress?.state || "N/A"}</p>
+								</div>
+								<div className='my-2'>
 									<h2 className='text-lg'>Zip Code:</h2>
-									<p>asdas</p>
+									<p>{presentaddress?.zip || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Country:</h2>
-									<p>sac</p>
+									<p>{presentaddress?.country || "N/A"}</p>
 								</div>
 							</div>
 						</div>
@@ -74,36 +90,36 @@ const StudentAddress = () => {
 							/>
 						</div>
 					</div>
-					<div className='mx-auto grid grid-cols-1 md:grid-cols-2 gap-9 '>
+					<div className='mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-9 '>
 						<div className='mx-0 '>
 							<div className='flex flex-col text-left'>
 								<div className='my-2'>
 									<h2 className='text-lg'>Address Line 1:</h2>
-									<p>asdasd</p>
+									<p>{permanentaddress?.addressLine1 || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Address Line 2:</h2>
-									<p>sac</p>
+									<p>{permanentaddress?.addressLine2 || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>City:</h2>
-									<p>scasc</p>
-								</div>
-								<div className='my-2'>
-									<h2 className='text-lg'>State:</h2>
-									<p>sadas</p>
+									<p>{permanentaddress?.city || "N/A"}</p>
 								</div>
 							</div>
 						</div>
 						<div className='mx-0 '>
 							<div className='flex flex-col text-left'>
 								<div className='my-2'>
+									<h2 className='text-lg'>State:</h2>
+									<p>{permanentaddress?.state || "N/A"}</p>
+								</div>
+								<div className='my-2'>
 									<h2 className='text-lg'>Zip Code:</h2>
-									<p>asdas</p>
+									<p>{permanentaddress?.zip || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Country:</h2>
-									<p>sac</p>
+									<p>{permanentaddress?.country || "N/A"}</p>
 								</div>
 							</div>
 						</div>

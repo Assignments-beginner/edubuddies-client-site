@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import useAuth from "../../../hooks/useAuth";
 import Modal from "./Modal";
@@ -5,18 +6,28 @@ import Modal from "./Modal";
 const StudentProfile = () => {
 	const [showModal, setShowModal] = React.useState(false);
 	const { user } = useAuth();
+	const [users, setUsers] = React.useState();
+	const email = "";
+	React.useEffect(() => {
+		axios.get(`http://localhost:5000/users/${email}`).then((res) => {
+			setUsers(res.data);
+		});
+	}, []);
+
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
 			<div className='grid '>
-				<div className=' w-full bg-white px-7 drop-shadow-xl '>
-					<div className='p-5 border-b border-solid border-red-500 rounded-t mb-5'>
+				<div className=' w-full bg-white px-7 drop-shadow-xl  mb-7'>
+					<div className='p-5 border-b border-solid border-red-500 rounded-t'>
 						<h3 className='text-3xl font-semibold text-center text-red-500'>
 							Your Profile
 						</h3>
 					</div>
-					<div className='mx-auto grid grid-cols-1 md:grid-cols-2 gap-9 '>
+					<div className='mx-auto py-4'>
 						<div className='mx-auto '>
-							<div className='flex flex-col'>
+							<div
+								className='flex flex-col mb-1'
+								style={{ alignItems: "center" }}>
 								<img
 									src={user?.photoURL}
 									alt={user?.displayName}
@@ -36,24 +47,28 @@ const StudentProfile = () => {
 								</button>
 							</div>
 						</div>
-						<div className='mx-auto md:mx-0 '>
-							<div className='flex flex-col text-left'>
+						<div className='mx-auto'>
+							<div className='grid grid-cols-1 md:grid-cols-2 gap-4 '>
 								<div className='my-2'>
 									<h2 className='text-lg'>Student ID:</h2>
-									<p>WEB4-2221</p>
+									<p>{users?._id || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Full Name:</h2>
-									<p>{user?.displayName}</p>
+									<p>{user?.displayName || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Email Address:</h2>
-									<p>{user?.email}</p>
+									<p>{user?.email || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Phone:</h2>
-									<p>01861917938</p>
+									<p>{users?.phone || "N/A"}</p>
 								</div>
+							</div>
+							<div className='my-3'>
+								<h2 className='text-lg'>About:</h2>
+								<p>{users?.about || "N/A"}</p>
 							</div>
 						</div>
 					</div>

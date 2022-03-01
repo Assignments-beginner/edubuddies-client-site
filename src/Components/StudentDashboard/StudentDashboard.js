@@ -5,7 +5,6 @@ import {
 	faLocationDot,
 	faRightFromBracket,
 	faGraduationCap,
-	faCode,
 	faUpRightFromSquare,
 	faBell,
 	faBars,
