@@ -30,6 +30,12 @@ import TeachersProfile from "./Components/TeachersDashboard/TeachersProfile/Teac
 import AddCourse from "./Components/TeachersDashboard/AddCourse/AddCourse";
 import UpdateCourse from "./Components/TeachersDashboard/UpdateCourse/UpdateCourse";
 import RemoveCourse from "./Components/TeachersDashboard/RemoveCourse/RemoveCourse";
+import StudentDashboard from "./Components/StudentDashboard/StudentDashboard";
+import StudentProfile from "./Components/StudentDashboard/StudentProfile/StudentProfile";
+import StudentAddress from "./Components/StudentDashboard/StudentAddress/StudentAddress";
+import StudentEducation from "./Components/StudentDashboard/StudentEducation/StudentEducation";
+import StudentImportantLinks from "./Components/StudentDashboard/StudentImportantLinks/StudentImportantLinks";
+import StudentSkills from "./Components/StudentDashboard/StudentSkills/StudentSkills";
 
 function App() {
   return (
@@ -59,7 +65,29 @@ function App() {
               <Route path="/resetpassword" element={<ResetPass />} />
               <Route path="/greetings" element={<Greetings />} />
               <Route path="/userProfile" element={<UserProfile />} />
-              <Route path="/teachers" element={<TeacherCourses />} />
+
+              <Route path="/studentdashboard" element={<StudentDashboard />}>
+                <Route
+                  path="/studentdashboard/profile"
+                  element={<StudentProfile />}
+                />
+                <Route
+                  path="/studentdashboard/address"
+                  element={<StudentAddress />}
+                />
+                <Route
+                  path="/studentdashboard/education"
+                  element={<StudentEducation />}
+                />
+                <Route
+                  path="/studentdashboard/importantlinks"
+                  element={<StudentImportantLinks />}
+                />
+                <Route
+                  path="/studentdashboard/skills"
+                  element={<StudentSkills />}
+                />
+              </Route>
 
               {/* //Dashboard Nested Routing */}
               <Route path="/dashboard" element={<Dashboard />}>
@@ -78,8 +106,6 @@ function App() {
                   element={<UploadCourseContent />}
                 />
               </Route>
-
-              {/* Teacher Dashboard */}
 
               <Route path="/teachersDashboard" element={<TeachersDashboard />}>
                 <Route
