@@ -88,6 +88,11 @@ function App() {
                   element={<AllTeachers />}
                 />
                 <Route
+                  exact
+                  path="/teachersDashboard/singleTeacher/:id"
+                  element={<TeachersProfile />}
+                />
+                <Route
                   path="/teachersDashboard/addCourse"
                   element={<AddCourse />}
                 />
