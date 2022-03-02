@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const StudentAddress = () => {
 	const { user } = useAuth();
@@ -13,7 +14,9 @@ const StudentAddress = () => {
 	const [presentaddressUI, setPresentaddressUI] = React.useState();
 	React.useEffect(() => {
 		axios
-			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.get(
+				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
+			)
 			.then((res) => {
 				setPresentaddressUI(res.data?.presentAddress);
 			});
@@ -22,7 +25,9 @@ const StudentAddress = () => {
 	const [permanentaddressUI, setPermanentaddressUI] = React.useState();
 	React.useEffect(() => {
 		axios
-			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.get(
+				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
+			)
 			.then((res) => {
 				setPermanentaddressUI(res.data?.permanentAddress);
 			});
@@ -141,6 +146,7 @@ const StudentAddress = () => {
 					<PermanentAdd setPermanentAddModal={setPermanentAddModal} />
 				</>
 			) : null}
+			{/* {(!permanentaddressUI || !presentaddressUI) && <LoadingOverlay />} */}
 		</div>
 	);
 };

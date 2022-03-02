@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const Modal = ({ setShowModal }) => {
 	const { user } = useAuth();
@@ -20,7 +21,9 @@ const Modal = ({ setShowModal }) => {
 
 	React.useEffect(() => {
 		axios
-			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.get(
+				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
+			)
 			.then((res) => {
 				reset(res.data?.educationalExp);
 				setData(res.data?.educationalExp);
@@ -30,7 +33,10 @@ const Modal = ({ setShowModal }) => {
 	const onSubmit = (data) => {
 		setSubmitting(true);
 		axios
-			.put(`http://localhost:5000/education?email=${user?.email}`, data)
+			.put(
+				`https://fierce-caverns-90976.herokuapp.com/education?email=${user?.email}`,
+				data,
+			)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",
@@ -170,6 +176,7 @@ const Modal = ({ setShowModal }) => {
 					</div>
 				</form>
 			</div>
+			{/* {(!data || submitting) && <LoadingOverlay />} */}
 		</div>
 	);
 };

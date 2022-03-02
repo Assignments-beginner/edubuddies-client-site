@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const StudentEducation = () => {
 	const [showModal, setShowModal] = React.useState(false);
@@ -11,7 +12,9 @@ const StudentEducation = () => {
 	const { user } = useAuth();
 	React.useEffect(() => {
 		axios
-			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.get(
+				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
+			)
 			.then((res) => {
 				setEducation(res.data?.educationalExp);
 			});
@@ -79,6 +82,7 @@ const StudentEducation = () => {
 					<Modal setShowModal={setShowModal} />
 				</>
 			) : null}
+			{/* 	{!education && <LoadingOverlay />} */}
 		</div>
 	);
 };

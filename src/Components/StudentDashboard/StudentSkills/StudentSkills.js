@@ -1,28 +1,52 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import AddSkillModal from "./AddSkillModal";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
+import Swal from "sweetalert2";
 
 const StudentSkills = () => {
 	const { user } = useAuth();
-	const [data, setData] = React.useState();
+	const [skills, setSkills] = React.useState();
 	React.useEffect(() => {
 		axios
-			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.get(
+				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
+			)
 			.then((res) => {
-				setData(res.data?.skillset);
+				setSkills(res.data);
 			});
 	}, [user?.email]);
+	console.log(skills);
 
-	const [datas, setDatas] = React.useState();
-	React.useEffect(() => {
-		axios.get(`http://localhost:5000/allusers?email=${user?.email}`).then((res) => {
-			setDatas(res.data);
+	const [deleted, setDeleted] = React.useState(false);
+	const handleDelete = (skill) => {
+		Swal.fire({
+			title: "Are you sure?",
+			text: "You won't be able to revert this!",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#3085d6",
+			cancelButtonColor: "#d33",
+			confirmButtonText: "Yes, delete it!",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				axios
+					.put(
+						`https://fierce-caverns-90976.herokuapp.com/skillsetDelete/${user?.email}/${skill}`,
+					)
+					.then(function (response) {
+						Swal.fire("Deleted!", "That mail has been deleted.", "success");
+						setDeleted(true);
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+			}
 		});
-	}, [user?.email]);
-	console.log(datas);
+	};
 
 	const [showAddSkillModal, setShowAddSkillModal] = React.useState(false);
 	let n = 1;
@@ -46,46 +70,62 @@ const StudentSkills = () => {
 			<div class='flex flex-col'>
 				<div class='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
 					<div class='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
-						<div class='shadow overflow-hidden border-b border-gray-200 sm:rounded-lg'>
-							<table class='min-w-full divide-y divide-gray-200'>
-								<thead class='bg-gray-50'>
+						<div class='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'>
+							<table class='min-w-full divide-y divide-red-200'>
+								<thead class='bg-red-50'>
 									<tr>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											No
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Skill
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Experiance Year
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Projects
+										</th>
+										<th
+											scope='col'
+											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											Action
 										</th>
 									</tr>
 								</thead>
-								<tbody class='bg-white divide-y divide-gray-200'>
-									<tr>
-										<td class='px-6 py-4 whitespace-nowrap text-left'>{n++}</td>
-										<td class='px-6 py-4 whitespace-nowrap text-left'>
-											{data?.skill}
-										</td>
-										<td class='px-6 py-4 whitespace-nowrap text-left'>
-											{data?.expYear}
-										</td>
-										<td class='px-6 py-4 whitespace-nowrap text-left'>
-											{data?.projects}
-										</td>
-									</tr>
-								</tbody>
+								{skills?.skillset?.map((skill) => (
+									<tbody class='bg-white divide-y divide-red-200'>
+										<tr>
+											<td class='px-6 py-4 whitespace-nowrap text-left'>
+												{n++}
+											</td>
+											<td class='px-6 py-4 whitespace-nowrap text-left'>
+												{skill?.skill}
+											</td>
+											<td class='px-6 py-4 whitespace-nowrap text-left'>
+												{skill?.expYear}
+											</td>
+											<td class='px-6 py-4 whitespace-nowrap text-left'>
+												{skill?.projects}
+											</td>
+											<td class='px-6 py-4 whitespace-nowrap text-left'>
+												<FontAwesomeIcon
+													onClick={() => handleDelete(skill?.skill)}
+													icon={faTrashCan}
+													className='text-2xl hover:text-red-500 cursor-pointer'
+												/>
+											</td>
+										</tr>
+									</tbody>
+								))}
 							</table>
 						</div>
 					</div>
@@ -96,6 +136,7 @@ const StudentSkills = () => {
 					<AddSkillModal setShowAddSkillModal={setShowAddSkillModal} />
 				</>
 			) : null}
+			{/* {!data && <LoadingOverlay />} */}
 		</div>
 	);
 };
