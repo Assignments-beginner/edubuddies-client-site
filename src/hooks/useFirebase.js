@@ -140,7 +140,7 @@ const useFirebase = () => {
 			photoURL: "https://cutt.ly/demouser",
 		};
 		axios
-			.post(`http://localhost:5000/users`, save)
+			.post(`https://fierce-caverns-90976.herokuapp.com/users`, save)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",
@@ -171,7 +171,7 @@ const useFirebase = () => {
 	) => {
 		const save = { email, displayName, photoURL };
 		axios
-			.put(`http://localhost:5000/users`, save)
+			.put(`https://fierce-caverns-90976.herokuapp.com/users`, save)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",
@@ -196,7 +196,7 @@ const useFirebase = () => {
 
 	/*------ to findout user is admin or not---------- */
 	useEffect(() => {
-		fetch(`http://localhost:5000/users/${user?.email}`)
+		fetch(`https://fierce-caverns-90976.herokuapp.com/users/${user?.email}`)
 			.then((res) => res.json())
 			.then((data) => setAdmin(data?.admin));
 	}, [user?.email]);
