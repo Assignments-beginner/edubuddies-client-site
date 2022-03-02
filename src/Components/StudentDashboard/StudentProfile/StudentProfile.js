@@ -16,7 +16,7 @@ const StudentProfile = () => {
 			.then((res) => {
 				setUsers(res.data);
 			});
-	}, [user?.email]);
+	}, [user?.email, showModal]);
 	console.log(users);
 
 	return (
@@ -34,7 +34,7 @@ const StudentProfile = () => {
 								className='flex flex-col mb-1'
 								style={{ alignItems: "center" }}>
 								<img
-									src={user?.photoURL}
+									src={users?.photoURL || user?.photoURL}
 									alt={user?.displayName}
 									style={{
 										width: "150px",
@@ -60,7 +60,7 @@ const StudentProfile = () => {
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Full Name:</h2>
-									<p>{user?.displayName || "N/A"}</p>
+									<p>{users?.fullname || user?.displayName || "N/A"}</p>
 								</div>
 								<div className='my-2'>
 									<h2 className='text-lg'>Email Address:</h2>

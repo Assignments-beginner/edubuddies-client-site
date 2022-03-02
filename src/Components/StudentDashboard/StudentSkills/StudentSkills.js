@@ -8,6 +8,8 @@ import LoadingOverlay from "../../Loading/LoadingOverlay";
 import Swal from "sweetalert2";
 
 const StudentSkills = () => {
+	const [showAddSkillModal, setShowAddSkillModal] = React.useState(false);
+	const [deleted, setDeleted] = React.useState(false);
 	const { user } = useAuth();
 	const [skills, setSkills] = React.useState();
 	React.useEffect(() => {
@@ -18,10 +20,9 @@ const StudentSkills = () => {
 			.then((res) => {
 				setSkills(res.data);
 			});
-	}, [user?.email]);
+	}, [user?.email, deleted, showAddSkillModal]);
 	console.log(skills);
 
-	const [deleted, setDeleted] = React.useState(false);
 	const handleDelete = (skill) => {
 		Swal.fire({
 			title: "Are you sure?",
@@ -48,7 +49,6 @@ const StudentSkills = () => {
 		});
 	};
 
-	const [showAddSkillModal, setShowAddSkillModal] = React.useState(false);
 	let n = 1;
 
 	return (
