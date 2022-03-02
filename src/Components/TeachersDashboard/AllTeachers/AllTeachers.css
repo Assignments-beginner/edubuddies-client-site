@@ -11,8 +11,8 @@
     transform: scale(1);
   }
   .performer-container{
-    background-image: url("https://i.ibb.co/NT0YqGm/Performer-back.png");
-    background-size: cover;
-    background-position:bottom;
+    background-image: url("https://i.ibb.co/5hy56Bn/why-shape-pink.png");
+    background-position:top left;
     background-attachment: fixed;
+    background-repeat: no-repeat;
   }
