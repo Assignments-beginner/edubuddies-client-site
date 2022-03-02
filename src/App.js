@@ -41,6 +41,8 @@ import MakeAdmin from "./Components/Dashboard/Admin/MakeAdmin";
 import CoursesList from "./Components/Dashboard/Admin/CoursesList";
 import TeacherList from "./Components/Dashboard/Admin/TeacherList";
 import RecycleBin from "./Components/Dashboard/Admin/RecycleBin";
+import Bestperformer from "./Components/TeachersDashboard/Bestperformer/Bestperformer";
+import PostNotice from "./Components/TeachersDashboard/PostNotice/PostNotice";
 
 function App() {
   return (
@@ -72,10 +74,7 @@ function App() {
               <Route path="/userProfile" element={<UserProfile />} />
 
               <Route path="/studentdashboard" element={<StudentDashboard />}>
-                <Route
-                  path="/studentdashboard"
-                  element={<StudentProfile />}
-                />
+                <Route path="/studentdashboard" element={<StudentProfile />} />
                 <Route
                   path="/studentdashboard/address"
                   element={<StudentAddress />}
@@ -140,6 +139,11 @@ function App() {
                 />
                 <Route
                   exact
+                  path="/teachersDashboard/bestPerformer"
+                  element={<Bestperformer />}
+                />
+                <Route
+                  exact
                   path="/teachersDashboard/singleTeacher/:teacherId"
                   element={<TeachersProfile />}
                 />
@@ -154,6 +158,10 @@ function App() {
                 <Route
                   path="/teachersDashboard/removeCourse"
                   element={<RemoveCourse />}
+                />
+                <Route
+                  path="/teachersDashboard/postNotice"
+                  element={<PostNotice />}
                 />
               </Route>
             </Routes>
