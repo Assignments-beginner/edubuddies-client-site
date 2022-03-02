@@ -56,7 +56,7 @@ const Modal = ({ setShowModal }) => {
 		};
 		setSubmitting(true);
 		axios
-			.put(`http://localhost:5000/allusers?email=${user?.email}`, profile)
+			.put(`http://localhost:5000/profile?email=${user?.email}`, profile)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",

@@ -14,6 +14,7 @@ const StudentProfile = () => {
 				setUsers(res.data);
 			});
 	}, [user?.email]);
+	console.log(users);
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
