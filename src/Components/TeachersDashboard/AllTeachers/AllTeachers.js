@@ -1,5 +1,3 @@
-import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./AllTeachers.css";
@@ -8,9 +6,7 @@ const AllTeachers = () => {
   const [teachers, setTeachers] = useState([]);
   useEffect(() => {
     fetch("https://fierce-caverns-90976.herokuapp.com/teachers")
-      .then((res) =>
-        res.json("https://fierce-caverns-90976.herokuapp.com/teachers")
-      )
+      .then((res) => res.json())
       .then((data) => setTeachers(data));
   }, []);
   console.log(teachers);
