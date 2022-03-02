@@ -24,12 +24,21 @@ import UploadCourseContent from "./Components/Dashboard/UploadCourseContent/Uplo
 import AllCourses from "./Components/Dashboard/AllCourses/AllCourses";
 import SingleCourse from "./Components/Home/SingleCourse/SingleCourse";
 import Milestones from "../src/Components/Home/Milestones/Milestones";
+<<<<<<< HEAD
 import StudentDashboard from "./Components/StudentDashboard/StudentDashboard";
 import StudentProfile from "./Components/StudentDashboard/StudentProfile/StudentProfile";
 import StudentAddress from "./Components/StudentDashboard/StudentAddress/StudentAddress";
 import StudentEducation from "./Components/StudentDashboard/StudentEducation/StudentEducation";
 import StudentImportantLinks from "./Components/StudentDashboard/StudentImportantLinks/StudentImportantLinks";
 import StudentSkills from "./Components/StudentDashboard/StudentSkills/StudentSkills";
+=======
+import TeachersDashboard from "./Components/TeachersDashboard/TeachersDashboard/TeachersDashboard";
+import AllTeachers from "./Components/TeachersDashboard/AllTeachers/AllTeachers";
+import TeachersProfile from "./Components/TeachersDashboard/TeachersProfile/TeachersProfile";
+import AddCourse from "./Components/TeachersDashboard/AddCourse/AddCourse";
+import UpdateCourse from "./Components/TeachersDashboard/UpdateCourse/UpdateCourse";
+import RemoveCourse from "./Components/TeachersDashboard/RemoveCourse/RemoveCourse";
+>>>>>>> 9f16650fb21c59bcda5d67b60ffc6289671c067b
 
 function App() {
 	return (
@@ -60,6 +69,7 @@ function App() {
 							<Route path='/greetings' element={<Greetings />} />
 							<Route path='/userProfile' element={<UserProfile />} />
 
+<<<<<<< HEAD
 							<Route path='/studentdashboard' element={<StudentDashboard />}>
 								<Route
 									path='/studentdashboard/profile'
@@ -107,6 +117,54 @@ function App() {
 			</BrowserRouter>
 		</div>
 	);
+=======
+              {/* //Dashboard Nested Routing */}
+              <Route path="/dashboard" element={<Dashboard />}>
+                <Route exact path="/dashboard/blogs" element={<AllBlogs />} />
+                <Route
+                  path="/dashboard/addCourses"
+                  element={<TeacherCourses />}
+                />
+                <Route
+                  path="/dashboard/addnewcourse"
+                  element={<AddNewCourse />}
+                />
+                <Route path="/dashboard/allcourses" element={<AllCourses />} />
+                <Route
+                  path="/dashboard/allcourses/:id"
+                  element={<UploadCourseContent />}
+                />
+              </Route>
+
+              {/* Teacher Dashboard */}
+
+              <Route path="/teachersDashboard" element={<TeachersDashboard />}>
+                <Route
+                  exact
+                  path="/teachersDashboard/allTeachers"
+                  element={<AllTeachers />}
+                />
+                <Route
+                  path="/teachersDashboard/addCourse"
+                  element={<AddCourse />}
+                />
+                <Route
+                  path="/teachersDashboard/updateCourse"
+                  element={<UpdateCourse />}
+                />
+                <Route
+                  path="/teachersDashboard/removeCourse"
+                  element={<RemoveCourse />}
+                />
+              </Route>
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </div>
+  );
+>>>>>>> 9f16650fb21c59bcda5d67b60ffc6289671c067b
 }
 
 export default App;
