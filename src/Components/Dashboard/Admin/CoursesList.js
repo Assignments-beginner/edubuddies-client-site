@@ -1,13 +1,44 @@
 import axios from "axios";
-import React from "react";
-import { useSelector } from "react-redux";
-
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
+import { addCourse } from "../../../Redux/edubuddySlice";
 const CoursesList = () => {
-  const courses = useSelector((state) => state.edu.courses);
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    const url = "https://fierce-caverns-90976.herokuapp.com/courses";
+    axios.get(url).then((res) => {
+      setCourses(res.data);
+    });
+  }, [courses]);
 
   const deleteCOurse = (id) => {
     console.log(id);
-    axios.delete("http://localhost:5000/deleteCourses");
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .delete(`http://localhost:5000/deleteCourses/${id}`)
+          .then((res) => {
+            if (res.data.deletedCount > 0) {
+              Swal.fire({
+                showConfirmButton: false,
+                icon: "success",
+                title: "Your file has been deleted",
+                timer: 1000,
+              });
+            }
+          });
+      }
+    });
   };
   return (
     <div>
