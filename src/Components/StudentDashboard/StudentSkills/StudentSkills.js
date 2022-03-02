@@ -15,10 +15,18 @@ const StudentSkills = () => {
 				setData(res.data?.skillset);
 			});
 	}, [user?.email]);
-    const [showAddSkillModal, setShowAddSkillModal] = React.useState(false);
-    let n = 1;
-    
-    
+
+	const [datas, setDatas] = React.useState();
+	React.useEffect(() => {
+		axios.get(`http://localhost:5000/allusers?email=${user?.email}`).then((res) => {
+			setDatas(res.data);
+		});
+	}, [user?.email]);
+	console.log(datas);
+
+	const [showAddSkillModal, setShowAddSkillModal] = React.useState(false);
+	let n = 1;
+
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
 			<div className='p-5 border-b border-solid border-red-500 rounded-t mb-5'>
