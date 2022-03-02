@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="pb-12">
-      <div className="text-4xl text-center uppercase font-black mt-24 text-red-500">
+      <div className="text-4xl text-center uppercase font-black mt-10 text-red-500">
         About Us
       </div>
       <div className="container px-12 mx-auto lg:flex justify-between md:block sm:block">

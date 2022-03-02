@@ -22,59 +22,137 @@ import ResetPass from "./Components/ResetPass/ResetPass";
 import AddNewCourse from "./Components/Dashboard/AddNewCourse/AddNewCourse";
 import UploadCourseContent from "./Components/Dashboard/UploadCourseContent/UploadCourseContent";
 import AllCourses from "./Components/Dashboard/AllCourses/AllCourses";
+import SingleCourse from "./Components/Home/SingleCourse/SingleCourse";
+import Milestones from "../src/Components/Home/Milestones/Milestones";
+import TeachersDashboard from "./Components/TeachersDashboard/TeachersDashboard/TeachersDashboard";
+import AllTeachers from "./Components/TeachersDashboard/AllTeachers/AllTeachers";
+import TeachersProfile from "./Components/TeachersDashboard/TeachersProfile/TeachersProfile";
+import AddCourse from "./Components/TeachersDashboard/AddCourse/AddCourse";
+import UpdateCourse from "./Components/TeachersDashboard/UpdateCourse/UpdateCourse";
+import RemoveCourse from "./Components/TeachersDashboard/RemoveCourse/RemoveCourse";
+import StudentDashboard from "./Components/StudentDashboard/StudentDashboard";
+import StudentProfile from "./Components/StudentDashboard/StudentProfile/StudentProfile";
+import StudentAddress from "./Components/StudentDashboard/StudentAddress/StudentAddress";
+import StudentEducation from "./Components/StudentDashboard/StudentEducation/StudentEducation";
+import StudentImportantLinks from "./Components/StudentDashboard/StudentImportantLinks/StudentImportantLinks";
+import StudentSkills from "./Components/StudentDashboard/StudentSkills/StudentSkills";
+import AddTeacher from "./Components/Dashboard/Admin/AddTeacher";
+import MakeAdmin from "./Components/Dashboard/Admin/MakeAdmin";
+import CoursesList from "./Components/Dashboard/Admin/CoursesList";
 
 function App() {
-	return (
-		<div className='App'>
-			<BrowserRouter>
-				<ScrollToTop />
-				{/* This will prevent bottom scroll of every route. */}
-				<div className='page-container'>
-					{/* // This will put the footer always in bottom of the screen. */}
-					<div className='content-wrap'>
-						{/* // This will put the footer always in bottom of the screen. */}
-						<Header />
-						<Routes>
-							<Route path='/*' element={<NotFound />} />
-							<Route path='/' element={<Home />} />
-							<Route path='/home' element={<Home />} />
-							<Route path='/blog' element={<Blogs />} />
-							<Route path='/singleblog' element={<SingleBlogMain />} />
-							<Route path='/about' element={<About />} />
-							<Route path='/courses' element={<Courses />} />
-							<Route path='/contact' element={<Contact />} />
-							<Route path='/register' element={<Register />} />
-							<Route path='/login' element={<Login />} />
-							<Route path='/signup' element={<Signup />} />
-							<Route path='/resetpassword' element={<ResetPass />} />
-							<Route path='/greetings' element={<Greetings />} />
-							<Route path='/userProfile' element={<UserProfile />} />
-							<Route path='/teachers' element={<TeacherCourses />} />
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <ScrollToTop />
+        {/* This will prevent bottom scroll of every route. */}
+        <div className="page-container">
+          {/* // This will put the footer always in bottom of the screen. */}
+          <div className="content-wrap">
+            {/* // This will put the footer always in bottom of the screen. */}
+            <Header />
+            <Routes>
+              <Route path="/*" element={<NotFound />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/blog" element={<Blogs />} />
+              <Route path="/singleblog" element={<SingleBlogMain />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/singlecourse/:id" element={<SingleCourse />} />
+              <Route path="/milestone" element={<Milestones />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/resetpassword" element={<ResetPass />} />
+              <Route path="/greetings" element={<Greetings />} />
+              <Route path="/userProfile" element={<UserProfile />} />
 
-							{/* // Dashboard Nested Routing */}
-							<Route path='/dashboard' element={<Dashboard />}>
-								<Route exact path='/dashboard/blogs' element={<AllBlogs />} />
-								<Route
-									path='/dashboard/addCourses'
-									element={<TeacherCourses />}
-								/>
-								<Route
-									path='/dashboard/addnewcourse'
-									element={<AddNewCourse />}
-								/>
-								<Route path='/dashboard/allcourses' element={<AllCourses />} />{" "}
-								<Route
-									path='/dashboard/allcourses/:id'
-									element={<UploadCourseContent />}
-								/>
-							</Route>
-						</Routes>
-					</div>
-					<Footer />
-				</div>
-			</BrowserRouter>
-		</div>
-	);
+              <Route path="/studentdashboard" element={<StudentDashboard />}>
+                <Route
+                  path="/studentdashboard/profile"
+                  element={<StudentProfile />}
+                />
+                <Route
+                  path="/studentdashboard/address"
+                  element={<StudentAddress />}
+                />
+                <Route
+                  path="/studentdashboard/education"
+                  element={<StudentEducation />}
+                />
+                <Route
+                  path="/studentdashboard/importantlinks"
+                  element={<StudentImportantLinks />}
+                />
+                <Route
+                  path="/studentdashboard/skills"
+                  element={<StudentSkills />}
+                />
+              </Route>
+
+              {/* //Dashboard Nested Routing */}
+              <Route path="/dashboard" element={<Dashboard />}>
+                <Route exact path="/dashboard/blogs" element={<AllBlogs />} />
+                <Route
+                  path="/dashboard/addCourses"
+                  element={<TeacherCourses />}
+                />
+                <Route
+                  path="/dashboard/addnewcourse"
+                  element={<AddNewCourse />}
+                />
+                <Route path="/dashboard/allcourses" element={<AllCourses />} />
+                <Route
+                  path="/dashboard/allcourses/:id"
+                  element={<UploadCourseContent />}
+                />
+                <Route
+                  path="/dashboard/admin/makeTeacher"
+                  element={<AddTeacher />}
+                />
+                <Route
+                  path="/dashboard/admin/makeAdmin"
+                  element={<MakeAdmin />}
+                />
+                <Route
+                  path="/dashboard/admin/CoursesList"
+                  element={<CoursesList />}
+                />
+              </Route>
+
+              <Route path="/teachersDashboard" element={<TeachersDashboard />}>
+                <Route
+                  exact
+                  path="/teachersDashboard/allTeachers"
+                  element={<AllTeachers />}
+                />
+                <Route
+                  exact
+                  path="/teachersDashboard/singleTeacher/:id"
+                  element={<TeachersProfile />}
+                />
+                <Route
+                  path="/teachersDashboard/addCourse"
+                  element={<AddCourse />}
+                />
+                <Route
+                  path="/teachersDashboard/updateCourse"
+                  element={<UpdateCourse />}
+                />
+                <Route
+                  path="/teachersDashboard/removeCourse"
+                  element={<RemoveCourse />}
+                />
+              </Route>
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;

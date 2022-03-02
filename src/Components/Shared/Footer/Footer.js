@@ -13,12 +13,20 @@ const Footer = () => {
 		if (location?.pathname.includes("/dashboard")) {
 			setHide("none");
 		}
+		if (location?.pathname.includes("/teachersDashboard")) {
+			setHide("none");
+		}
+		if (location?.pathname.includes("/dashboard")) {
+			setHide("none");
+		}
+		if (location?.pathname.includes("/studentdashboard")) {
+			setHide("none");
+		}
 	}, [location.pathname]);
 	return (
 		<footer
 			style={{ display: `${hide}` }}
 			className='main-footer text-center text-gray-300 bg-gray-900 pt-6'>
-			{/* ///////////////////////// Columns /////////////////////// */}
 			<div className='container mx-auto grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 pb-8'>
 				<div className='logo-part py-6 px-12'>
 					<Link to='/home'>
@@ -34,7 +42,6 @@ const Footer = () => {
 						observe their learning.
 					</p>
 				</div>
-				{/* ///////////////////////// Three Columns /////////////////////// */}
 				<div className='ul-section'>
 					<ul className='text-left'>
 						<h5 className='pt-6 text-lg uppercase font-black mb-4 text-red-500'>
@@ -106,7 +113,6 @@ const Footer = () => {
 				</div>
 			</div>
 			<hr className='new' />
-			{/* ///////////////////////// Copyright /////////////////////// */}
 			<div className='text-center py-6'>
 				<span>Copyright- © 2022 - </span>
 				<a className='text-red-500 font-black' href='test'>
