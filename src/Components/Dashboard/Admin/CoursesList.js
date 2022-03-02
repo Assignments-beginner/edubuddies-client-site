@@ -14,7 +14,6 @@ const CoursesList = () => {
   }, [courses]);
 
   const deleteCOurse = (id) => {
-    console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -40,6 +39,46 @@ const CoursesList = () => {
       }
     });
   };
+
+  // courses update
+  const updateCourseStatus = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "green",
+      cancelButtonColor: "red",
+      confirmButtonText: "Yes, Approved it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.patch(`http://localhost:5000/courses/${id}`).then((res) => {
+          if (res.data.modifiedCount > 0) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Updated Successfully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+      }
+    });
+
+    // axios.patch(`http://localhost:5000/courses/${id}`).then((res) => {
+    //   if (res.data.modifiedCount > 0) {
+    //     Swal.fire({
+    //       position: "center",
+    //       icon: "success",
+    //       title: "Updated Successfully",
+    //       showConfirmButton: false,
+    //       timer: 1500,
+    //     });
+    //   }
+    // });
+  };
+
   return (
     <div>
       <h1>All Students List</h1>
@@ -65,7 +104,9 @@ const CoursesList = () => {
                     {item.courseFee} TK
                   </td>
                   <td class="border border-slate-300 ...">
-                    {item.courseStatus}
+                    <button onClick={() => updateCourseStatus(item._id)}>
+                      {item.courseStatus}
+                    </button>
                   </td>
                   <td class="border border-slate-300 ...">
                     <button onClick={() => deleteCOurse(item._id)}>
