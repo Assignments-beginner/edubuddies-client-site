@@ -38,6 +38,7 @@ const Modal = ({ setShowModal }) => {
 					showConfirmButton: false,
 					timer: 1500,
 				});
+				setShowModal(false);
 				setSubmitting(false);
 			})
 			.catch(function (error) {

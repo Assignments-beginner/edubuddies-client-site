@@ -39,6 +39,7 @@ const PermanentAdd = ({ setPermanentAddModal }) => {
 					showConfirmButton: false,
 					timer: 1500,
 				});
+				setPermanentAddModal(false);
 				setSubmitting(false);
 			})
 			.catch(function (error) {

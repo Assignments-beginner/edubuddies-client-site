@@ -39,6 +39,7 @@ const PresentAdd = ({ setPresentAddModal }) => {
 					showConfirmButton: false,
 					timer: 1500,
 				});
+				setPresentAddModal(false);
 				setSubmitting(false);
 			})
 			.catch(function (error) {
