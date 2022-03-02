@@ -4,27 +4,13 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
 const AutoEmailSendTest = () => {
-	const [data, setData] = useState();
-	const { register, handleSubmit, reset } = useForm({
-		defaultValues: {
-			subject: "",
-			email: "",
-		},
-	});
-	React.useEffect(() => {
-		axios
-			.get(`https://fierce-caverns-90976.herokuapp.com/autoEmail`)
-			.then((res) => {
-				reset(res.data);
-				setData(res.data);
-			});
-	}, [reset]);
+	const { register, handleSubmit, reset } = useForm();
 
 	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = (data) => {
 		setSubmitting(true);
 		axios
-			.put(`https://fierce-caverns-90976.herokuapp.com/autoEmail`, data)
+			.post(`https://fierce-caverns-90976.herokuapp.com/autoEmail`, data)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",
@@ -52,6 +38,7 @@ const AutoEmailSendTest = () => {
 							<h3 className='text-3xl font-semibold text-center text-red-500'>
 								Auto Email Sending
 							</h3>
+							<p>Send Email to all students</p>
 						</div>
 						<div className='relative p-6 grid grid-cols-1 gap-3'>
 							<div className='flex flex-col space-y-1'>
@@ -65,6 +52,36 @@ const AutoEmailSendTest = () => {
 									id='subject'
 									name='subject'
 									{...register("subject", { required: true })}
+									autofocus
+									className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
+								/>
+							</div>
+							<div className='flex flex-col space-y-1'>
+								<label
+									for='cc'
+									className='text-sm font-semibold text-red-500 text-left'>
+									CC
+								</label>
+								<input
+									type='text'
+									id='cc'
+									name='cc'
+									{...register("cc", { required: true })}
+									autofocus
+									className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
+								/>
+							</div>
+							<div className='flex flex-col space-y-1'>
+								<label
+									for='bcc'
+									className='text-sm font-semibold text-red-500 text-left'>
+									BCC
+								</label>
+								<input
+									type='text'
+									id='bcc'
+									name='bcc'
+									{...register("bcc", { required: true })}
 									autofocus
 									className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
 								/>
@@ -86,7 +103,7 @@ const AutoEmailSendTest = () => {
 								/>
 							</div>
 							<button
-								className='bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+								className='bg-red-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
 								type='submit'>
 								Send Email
 							</button>
