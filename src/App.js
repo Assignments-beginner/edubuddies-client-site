@@ -36,6 +36,10 @@ import StudentAddress from "./Components/StudentDashboard/StudentAddress/Student
 import StudentEducation from "./Components/StudentDashboard/StudentEducation/StudentEducation";
 import StudentImportantLinks from "./Components/StudentDashboard/StudentImportantLinks/StudentImportantLinks";
 import StudentSkills from "./Components/StudentDashboard/StudentSkills/StudentSkills";
+import AddTeacher from "./Components/Dashboard/Admin/AddTeacher";
+import MakeAdmin from "./Components/Dashboard/Admin/MakeAdmin";
+import CoursesList from "./Components/Dashboard/Admin/CoursesList";
+import TeacherList from "./Components/Dashboard/Admin/TeacherList";
 
 function App() {
   return (
@@ -105,6 +109,22 @@ function App() {
                   path="/dashboard/allcourses/:id"
                   element={<UploadCourseContent />}
                 />
+                <Route
+                  path="/dashboard/admin/makeTeacher"
+                  element={<AddTeacher />}
+                />
+                <Route
+                  path="/dashboard/admin/makeAdmin"
+                  element={<MakeAdmin />}
+                />
+                <Route
+                  path="/dashboard/admin/CoursesList"
+                  element={<CoursesList />}
+                />
+                <Route
+                  path="/dashboard/admin/teacherList"
+                  element={<TeacherList />}
+                />
               </Route>
 
               <Route path="/teachersDashboard" element={<TeachersDashboard />}>
@@ -115,7 +135,7 @@ function App() {
                 />
                 <Route
                   exact
-                  path="/teachersDashboard/singleTeacher/:id"
+                  path="/teachersDashboard/singleTeacher/:teacherId"
                   element={<TeachersProfile />}
                 />
                 <Route

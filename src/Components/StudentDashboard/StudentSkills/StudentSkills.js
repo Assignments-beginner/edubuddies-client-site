@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import AddSkillModal from "./AddSkillModal";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
@@ -32,9 +32,7 @@ const StudentSkills = () => {
 		}).then((result) => {
 			if (result.isConfirmed) {
 				axios
-					.put(
-						`http://localhost:5000/skillsetDelete/${user?.email}/${skill}`,
-					)
+					.put(`http://localhost:5000/skillsetDelete/${user?.email}/${skill}`)
 					.then(function (response) {
 						Swal.fire("Deleted!", "That mail has been deleted.", "success");
 						setDeleted(true);
@@ -68,39 +66,39 @@ const StudentSkills = () => {
 			<div class='flex flex-col'>
 				<div class='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
 					<div class='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
-						<div class='shadow overflow-hidden border-b border-gray-200 sm:rounded-lg'>
-							<table class='min-w-full divide-y divide-gray-200'>
-								<thead class='bg-gray-50'>
+						<div class='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'>
+							<table class='min-w-full divide-y divide-red-200'>
+								<thead class='bg-red-50'>
 									<tr>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											No
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Skill
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Experiance Year
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Projects
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Action
 										</th>
 									</tr>
 								</thead>
 								{skills?.skillset?.map((skill) => (
-									<tbody class='bg-white divide-y divide-gray-200'>
+									<tbody class='bg-white divide-y divide-red-200'>
 										<tr>
 											<td class='px-6 py-4 whitespace-nowrap text-left'>
 												{n++}
@@ -115,9 +113,11 @@ const StudentSkills = () => {
 												{skill?.projects}
 											</td>
 											<td class='px-6 py-4 whitespace-nowrap text-left'>
-												<button onClick={() => handleDelete(skill?.skill)}>
-													Delete
-												</button>
+												<FontAwesomeIcon
+													onClick={() => handleDelete(skill?.skill)}
+													icon={faTrashCan}
+													className='text-2xl hover:text-red-500 cursor-pointer'
+												/>
 											</td>
 										</tr>
 									</tbody>
