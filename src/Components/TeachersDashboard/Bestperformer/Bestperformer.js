@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Bestperformer = () => {
+  const [performer, setPerformer] = useState([]);
+  useEffect(() => {
+    fetch(
+      "http://localhost:5000/teachersDashboard/bestPerformer?performer=best"
+    )
+      .then((res) => res.json())
+      .then((data) => setPerformer(data));
+  }, []);
+
   return (
-    <div>
-      <h1 className="text-center text-3xl uppercase font-semibold mt-4 md:mb-9 mb-5 text-red-500">
+    <div className="bg-gray-100 min-h-screen performer-container">
+      <h1 className="text-center text-3xl uppercase font-semibold pt-4 md:mb-9 mb-5 text-red-500">
         Best Performer Of The Year
       </h1>
-      <div className="grid">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT2jV7ybyvkndv6D3Sp7NwgZanZ6CtYOL9pw&usqp=CAU"
-          alt="best Performer"
-        />
-        <h1>Name: Mr.Nizam Uddin Job</h1>
-        <h1>Name: Mr.Nizam Uddin Job</h1>
+      <div className="container mx-auto">
+        {performer?.map((best, key) => (
+          <div key={key} className="px-4 font-bold">
+            <img
+              className="mx-auto shadow-md rounded-md"
+              src={best?.image}
+              alt="best Performer"
+            />
+            <div className="mt-4">
+              <h2 className="text-3xl text-red-500"> {best?.name}</h2>
+              <p className="text-md">{best?.designation}</p>
+              <p className="text-md">{best?.email}</p>
+              <p className="text-md">Country: {best?.country}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
