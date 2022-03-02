@@ -17,7 +17,9 @@ const AddSkillModal = ({ setShowAddSkillModal }) => {
 
 	React.useEffect(() => {
 		axios
-			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.get(
+				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
+			)
 			.then((res) => {
 				reset(res.data?.skillset);
 				setData(res.data?.skillset);
@@ -27,7 +29,10 @@ const AddSkillModal = ({ setShowAddSkillModal }) => {
 	const onSubmit = (data) => {
 		setSubmitting(true);
 		axios
-			.put(`http://localhost:5000/skillset?email=${user?.email}`, data)
+			.put(
+				`https://fierce-caverns-90976.herokuapp.com/skillset?email=${user?.email}`,
+				data,
+			)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",

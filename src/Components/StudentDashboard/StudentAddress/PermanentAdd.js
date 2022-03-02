@@ -21,7 +21,9 @@ const PermanentAdd = ({ setPermanentAddModal }) => {
 
 	React.useEffect(() => {
 		axios
-			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.get(
+				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
+			)
 			.then((res) => {
 				reset(res.data?.permanentAddress);
 				setData(res.data?.permanentAddress);
@@ -31,7 +33,10 @@ const PermanentAdd = ({ setPermanentAddModal }) => {
 	const onSubmit = (data) => {
 		setSubmitting(true);
 		axios
-			.put(`http://localhost:5000/permanentaddress?email=${user?.email}`, data)
+			.put(
+				`https://fierce-caverns-90976.herokuapp.com/permanentaddress?email=${user?.email}`,
+				data,
+			)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",

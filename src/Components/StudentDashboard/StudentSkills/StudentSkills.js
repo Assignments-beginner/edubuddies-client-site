@@ -10,7 +10,9 @@ const StudentSkills = () => {
 	const [data, setData] = React.useState();
 	React.useEffect(() => {
 		axios
-			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.get(
+				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
+			)
 			.then((res) => {
 				setData(res.data?.skillset);
 			});
@@ -18,9 +20,13 @@ const StudentSkills = () => {
 
 	const [datas, setDatas] = React.useState();
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/allusers?email=${user?.email}`).then((res) => {
-			setDatas(res.data);
-		});
+		axios
+			.get(
+				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
+			)
+			.then((res) => {
+				setDatas(res.data);
+			});
 	}, [user?.email]);
 	console.log(datas);
 

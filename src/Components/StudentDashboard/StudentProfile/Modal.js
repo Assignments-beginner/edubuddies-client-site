@@ -40,7 +40,9 @@ const Modal = ({ setShowModal }) => {
 
 	React.useEffect(() => {
 		axios
-			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.get(
+				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
+			)
 			.then((res) => {
 				reset(res.data);
 				setData(res.data);
@@ -56,7 +58,10 @@ const Modal = ({ setShowModal }) => {
 		};
 		setSubmitting(true);
 		axios
-			.put(`http://localhost:5000/profile?email=${user?.email}`, profile)
+			.put(
+				`https://fierce-caverns-90976.herokuapp.com/profile?email=${user?.email}`,
+				profile,
+			)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",
