@@ -29,10 +29,10 @@ const AllTeachers = () => {
                   src={teacher?.image}
                   alt=" TeacherImage"
                 />
-                <div className="overlay absolute bottom-0 left-0 right-0 w-full h-full overflow-hidden bg-[#0000005c]">
+                <div className="overlay absolute bottom-0 left-0 right-0 w-full h-full overflow-hidden bg-[#0000005c] rounded-md">
                   <Link
                     key={key}
-                    to={`/singleTeacher/${teacher._id}`}
+                    to={`/teachersDashboard/singleTeacher/${teacher?._id}`}
                     className="absolute left-1/2 top-1/2 text-center -translate-x-1/2 -translate-y-1/2 font-lg text-white bg-red-500 py-2 px-4 rounded-md"
                   >
                     View Profile
