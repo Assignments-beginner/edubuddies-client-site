@@ -18,16 +18,28 @@ const MakeAdmin = () => {
 
   return (
     <div>
-      <h1 className="text-4xl ">Make a Admin</h1> <br />
+
+
+
+
+      <h1 className="text-4xl ">Make Admin</h1> <br />
+<br/>
+
       <form onSubmit={handleSubmit(onSubmit)}>
+        <div className=" flex flex-nowrap justify-center">
+       
         <input
+        className=" bg-red-50 p-2 rounded border-2 border-blue-300 m-1"
           type={"email"}
           {...register("email", { required: true })}
           placeholder="Enter Email"
         />{" "}
         <br />
         {errors.exampleRequired && <span>This field is required</span>} <br />
-        <input type="submit" /> <br />
+        <input
+         className=" bg-red-400 m-1 p-1 rounded "
+        type="submit" /> <br />
+        </div>
       </form>
     </div>
   );
