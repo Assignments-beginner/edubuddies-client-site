@@ -13,7 +13,7 @@ const CourseCategories = () => {
 	console.log(courses);
 
 	useEffect(() => {
-		const url = "https://fierce-caverns-90976.herokuapp.com/courses";
+		const url = "http://localhost:5000/courses";
 		axios.get(url).then((res) => {
 			dispatch(addCourse(res?.data));
 		});

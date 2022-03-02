@@ -58,7 +58,7 @@ const StudentDashboard = () => {
 								</div>
 								<div style={{ position: "fixed", top: "2rem" }}>
 									<div className='flex flex-col items-center'>
-										<Link to='/home'>
+										<Link to='/'>
 											<img
 												className='w-34 h-16'
 												src='https://i.ibb.co/HzzW0Xv/logo.png'
@@ -74,7 +74,7 @@ const StudentDashboard = () => {
 									<ul className='space-y-5'>
 										<li>
 											<NavLink
-												to='profile'
+												to=''
 												className='li text-lg rounded-lg  text-white '>
 												<FontAwesomeIcon
 													className='mx-2 text-red-500 icon'

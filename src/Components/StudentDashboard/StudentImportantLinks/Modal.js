@@ -19,9 +19,7 @@ const Modal = ({ setShowModal }) => {
 
 	React.useEffect(() => {
 		axios
-			.get(
-				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
-			)
+			.get(`http://localhost:5000/allusers?email=${user?.email}`)
 			.then((res) => {
 				reset(res.data?.importantlinks);
 				setData(res.data?.importantlinks);
@@ -32,10 +30,7 @@ const Modal = ({ setShowModal }) => {
 	const onSubmit = (data) => {
 		setSubmitting(true);
 		axios
-			.put(
-				`https://fierce-caverns-90976.herokuapp.com/importantlinks?email=${user?.email}`,
-				data,
-			)
+			.put(`http://localhost:5000/importantlinks?email=${user?.email}`, data)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",
@@ -146,7 +141,7 @@ const Modal = ({ setShowModal }) => {
 					</div>
 				</form>
 			</div>
-			{(!data || submitting) && <LoadingOverlay />}
+			{/* {(!data || submitting) && <LoadingOverlay />} */}
 		</div>
 	);
 };

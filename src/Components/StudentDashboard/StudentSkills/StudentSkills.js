@@ -5,31 +5,46 @@ import AddSkillModal from "./AddSkillModal";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
 import LoadingOverlay from "../../Loading/LoadingOverlay";
+import Swal from "sweetalert2";
 
 const StudentSkills = () => {
 	const { user } = useAuth();
-	const [data, setData] = React.useState();
+	const [skills, setSkills] = React.useState();
 	React.useEffect(() => {
 		axios
-			.get(
-				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
-			)
+			.get(`http://localhost:5000/allusers?email=${user?.email}`)
 			.then((res) => {
-				setData(res.data?.skillset);
+				setSkills(res.data);
 			});
 	}, [user?.email]);
+	console.log(skills);
 
-	const [datas, setDatas] = React.useState();
-	React.useEffect(() => {
-		axios
-			.get(
-				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
-			)
-			.then((res) => {
-				setDatas(res.data);
-			});
-	}, [user?.email]);
-	console.log(datas);
+	const [deleted, setDeleted] = React.useState(false);
+	const handleDelete = (skill) => {
+		Swal.fire({
+			title: "Are you sure?",
+			text: "You won't be able to revert this!",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#3085d6",
+			cancelButtonColor: "#d33",
+			confirmButtonText: "Yes, delete it!",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				axios
+					.put(
+						`http://localhost:5000/skillsetDelete/${user?.email}/${skill}`,
+					)
+					.then(function (response) {
+						Swal.fire("Deleted!", "That mail has been deleted.", "success");
+						setDeleted(true);
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+			}
+		});
+	};
 
 	const [showAddSkillModal, setShowAddSkillModal] = React.useState(false);
 	let n = 1;
@@ -77,22 +92,36 @@ const StudentSkills = () => {
 											class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
 											Projects
 										</th>
+										<th
+											scope='col'
+											class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+											Action
+										</th>
 									</tr>
 								</thead>
-								<tbody class='bg-white divide-y divide-gray-200'>
-									<tr>
-										<td class='px-6 py-4 whitespace-nowrap text-left'>{n++}</td>
-										<td class='px-6 py-4 whitespace-nowrap text-left'>
-											{data?.skill}
-										</td>
-										<td class='px-6 py-4 whitespace-nowrap text-left'>
-											{data?.expYear}
-										</td>
-										<td class='px-6 py-4 whitespace-nowrap text-left'>
-											{data?.projects}
-										</td>
-									</tr>
-								</tbody>
+								{skills?.skillset?.map((skill) => (
+									<tbody class='bg-white divide-y divide-gray-200'>
+										<tr>
+											<td class='px-6 py-4 whitespace-nowrap text-left'>
+												{n++}
+											</td>
+											<td class='px-6 py-4 whitespace-nowrap text-left'>
+												{skill?.skill}
+											</td>
+											<td class='px-6 py-4 whitespace-nowrap text-left'>
+												{skill?.expYear}
+											</td>
+											<td class='px-6 py-4 whitespace-nowrap text-left'>
+												{skill?.projects}
+											</td>
+											<td class='px-6 py-4 whitespace-nowrap text-left'>
+												<button onClick={() => handleDelete(skill?.skill)}>
+													Delete
+												</button>
+											</td>
+										</tr>
+									</tbody>
+								))}
 							</table>
 						</div>
 					</div>
@@ -103,7 +132,7 @@ const StudentSkills = () => {
 					<AddSkillModal setShowAddSkillModal={setShowAddSkillModal} />
 				</>
 			) : null}
-			{!data && <LoadingOverlay />}
+			{/* {!data && <LoadingOverlay />} */}
 		</div>
 	);
 };

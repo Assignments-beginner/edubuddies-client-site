@@ -7,33 +7,12 @@ import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const AddSkillModal = ({ setShowAddSkillModal }) => {
 	const { user } = useAuth();
-	const [data, setData] = useState();
-	const { register, handleSubmit, reset } = useForm({
-		defaultValues: {
-			skill: "",
-			expYear: "",
-			projects: "",
-		},
-	});
-
-	React.useEffect(() => {
-		axios
-			.get(
-				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
-			)
-			.then((res) => {
-				reset(res.data?.skillset);
-				setData(res.data?.skillset);
-			});
-	}, [reset, user?.email]);
+	const { register, handleSubmit, reset } = useForm();
 	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = (data) => {
 		setSubmitting(true);
 		axios
-			.put(
-				`https://fierce-caverns-90976.herokuapp.com/skillset?email=${user?.email}`,
-				data,
-			)
+			.put(`http://localhost:5000/skillset?email=${user?.email}`, data)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",
@@ -127,7 +106,7 @@ const AddSkillModal = ({ setShowAddSkillModal }) => {
 					</div>
 				</div>
 			</form>
-			{(!data || submitting) && <LoadingOverlay />}
+				{/* {(!data || submitting) && <LoadingOverlay />} */}
 		</div>
 	);
 };

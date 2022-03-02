@@ -17,7 +17,7 @@ const Milestones = () => {
 
 	const [files, setFiles] = React.useState([]);
 	React.useEffect(() => {
-		fetch(`https://fierce-caverns-90976.herokuapp.com/courses`)
+		fetch(`http://localhost:5000/courses`)
 			.then((res) => res.json())
 			.then((data) => setFiles(data[0]));
 	}, []);

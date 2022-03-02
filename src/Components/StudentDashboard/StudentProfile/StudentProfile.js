@@ -10,9 +10,7 @@ const StudentProfile = () => {
 	const [users, setUsers] = React.useState();
 	React.useEffect(() => {
 		axios
-			.get(
-				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
-			)
+			.get(`http://localhost:5000/allusers?email=${user?.email}`)
 			.then((res) => {
 				setUsers(res.data);
 			});
@@ -84,7 +82,7 @@ const StudentProfile = () => {
 					<Modal setShowModal={setShowModal} />
 				</>
 			) : null}
-			{!users && <LoadingOverlay />}
+		{/* 	{!users && <LoadingOverlay />} */}
 		</div>
 	);
 };
