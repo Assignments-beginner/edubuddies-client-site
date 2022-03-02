@@ -4,6 +4,7 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./Modal";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const StudentImportantLinks = () => {
 	const { user } = useAuth();
@@ -11,7 +12,9 @@ const StudentImportantLinks = () => {
 	const [importantlinks, setImportantlinks] = React.useState();
 	React.useEffect(() => {
 		axios
-			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.get(
+				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
+			)
 			.then((res) => {
 				setImportantlinks(res.data?.importantlinks);
 			});
@@ -67,6 +70,7 @@ const StudentImportantLinks = () => {
 					<Modal setShowModal={setShowModal} />
 				</>
 			) : null}
+			{/* {!importantlinks && <LoadingOverlay />} */}
 		</div>
 	);
 };
