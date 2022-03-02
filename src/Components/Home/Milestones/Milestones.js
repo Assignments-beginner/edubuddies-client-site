@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Loading from "../../Dashboard/Loading";
+import Loading from "../../Loading/Loading";
 
 const Milestones = () => {
 	/* 	const { id } = useParams();

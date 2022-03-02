@@ -3,18 +3,20 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const AddTeacher = () => {
-  const {
-    register,
-    handleSubmit,
+	const {
+		register,
+		handleSubmit,
 
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data, e) => {
-    axios.put("http://localhost:5000/users/teacher", data).then((res) => {
-      console.log(res.data);
-    });
-    e.target.reset();
-  };
+		formState: { errors },
+	} = useForm();
+	const onSubmit = (data, e) => {
+		axios
+			.put("https://fierce-caverns-90976.herokuapp.com/users/teacher", data)
+			.then((res) => {
+				console.log(res.data);
+			});
+		e.target.reset();
+	};
 
   return (
     <div>

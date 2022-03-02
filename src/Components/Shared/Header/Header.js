@@ -157,6 +157,12 @@ const Header = () => {
 										</Link>
 										<hr />
 										<Link
+											className='text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white'
+											to='/studentdashboard'>
+											Student DB
+										</Link>
+										<hr />
+										<Link
 											to='/login'
 											onClick={logout}
 											className='text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white'>

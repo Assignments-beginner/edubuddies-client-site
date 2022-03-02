@@ -196,6 +196,18 @@ const Dashboard = () => {
                         <span className="mx-3">TeacherList</span>
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        to="admin/RecycleBin"
+                        className="li text-lg rounded-lg  text-white "
+                      >
+                        <FontAwesomeIcon
+                          className="mx-2 text-red-500 icon"
+                          icon={faCertificate}
+                        />
+                        <span className="mx-3">Recycle Bin</span>
+                      </Link>
+                    </li>
                   </ul>
                 </div>
                 <div style={{ position: "fixed", bottom: "4rem" }}>

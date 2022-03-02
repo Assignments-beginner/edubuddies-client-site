@@ -3,39 +3,41 @@ import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const TeacherList = () => {
-  const [teachers, setTeachers] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://fierce-caverns-90976.herokuapp.com/teachers")
-      .then((res) => setTeachers(res.data));
-  }, [teachers]);
+	const [teachers, setTeachers] = useState([]);
+	useEffect(() => {
+		axios
+			.get("https://fierce-caverns-90976.herokuapp.com/teachers")
+			.then((res) => setTeachers(res.data));
+	}, [teachers]);
 
-  const deleteTeacher = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "green",
-      cancelButtonColor: "red",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axios
-          .delete(`http://localhost:5000/deleteTeacher/${id}`)
-          .then((res) => {
-            if (res.data.deletedCount > 0) {
-              Swal.fire({
-                showConfirmButton: false,
-                icon: "success",
-                title: "Your file has been deleted",
-                timer: 1000,
-              });
-            }
-          });
-      }
-    });
-  };
+	const deleteTeacher = (id) => {
+		Swal.fire({
+			title: "Are you sure?",
+			text: "You won't be able to revert this!",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "green",
+			cancelButtonColor: "red",
+			confirmButtonText: "Yes, delete it!",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				axios
+					.delete(
+						`https://fierce-caverns-90976.herokuapp.com/deleteTeacher/${id}`,
+					)
+					.then((res) => {
+						if (res.data.deletedCount > 0) {
+							Swal.fire({
+								showConfirmButton: false,
+								icon: "success",
+								title: "Your file has been deleted",
+								timer: 1000,
+							});
+						}
+					});
+			}
+		});
+	};
 
   return (
     <div>

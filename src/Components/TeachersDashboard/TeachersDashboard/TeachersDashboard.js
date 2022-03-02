@@ -6,6 +6,7 @@ import {
   faRightFromBracket,
   faTrash,
   faUserGraduate,
+  faGraduationCap,
   faBell,
   faBars,
   faXmark,
@@ -73,7 +74,7 @@ const TeachersDashboard = () => {
                     <li>
                       <NavLink
                         to=""
-                        className="li text-lg rounded-lg  text-white "
+                        className="li text-lg rounded-lg text-white "
                       >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
@@ -92,6 +93,18 @@ const TeachersDashboard = () => {
                           icon={faUserGraduate}
                         />
                         <span className="mx-3">All Teachers</span>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="bestPerformer"
+                        className="li text-lg rounded-lg  text-white "
+                      >
+                        <FontAwesomeIcon
+                          className="mx-2 text-red-500 icon"
+                          icon={faGraduationCap}
+                        />
+                        <span className="mx-3">Best Performer</span>
                       </NavLink>
                     </li>
 
@@ -129,6 +142,18 @@ const TeachersDashboard = () => {
                           icon={faTrash}
                         />
                         <span className="mx-3">Remove Course</span>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="postNotice"
+                        className="li text-lg rounded-lg  text-white "
+                      >
+                        <FontAwesomeIcon
+                          className="mx-2 text-red-500 icon"
+                          icon={faChalkboardUser}
+                        />
+                        <span className="mx-3">Post Notice</span>
                       </NavLink>
                     </li>
                   </ul>
