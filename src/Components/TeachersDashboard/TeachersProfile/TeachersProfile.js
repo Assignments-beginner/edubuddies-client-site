@@ -13,9 +13,9 @@ const TeachersProfile = () => {
   }, []);
 
   return (
-    <div className=" container mt-4 px-10">
-      <div className="flex flex-row">
-        <div className="basis-1/4 text-left border rounded-md">
+    <div className=" container mt-4 mx-auto">
+      <div className="xl:flex lg:flex: md:flex sm:block flex-row">
+        <div className="basis-1/4 text-left border rounded-md mb-4 mx-4 shadow-md">
           <img
             className="rounded-t-md"
             src={singleTeacher?.image}
@@ -25,7 +25,7 @@ const TeachersProfile = () => {
             <h4 className="text-lg text-red-500">{singleTeacher?.name}</h4>
             <h4 className="text-white">{singleTeacher?.designation}</h4>
           </div>
-          <div className="pl-5 shadow-md text-lg pt-2 pb-7">
+          <div className="pl-5 pr-3 text-lg pt-2 pb-7">
             <h4>
               <span className="font-bold">Email:</span> {singleTeacher?.email}
             </h4>
@@ -46,7 +46,7 @@ const TeachersProfile = () => {
             <h4>{singleTeacher?.country}</h4>
           </div>
         </div>
-        <div className="basis-3/4 ml-10 border rounded-md shadow-md pb-5">
+        <div className="basis-3/4 mx-4 border rounded-md shadow-md pb-5 mb-8">
           <h4 className="text-left text-2xl p-5 font-semibold">
             About Of
             <span className="text-red-500 text-3xl">
@@ -62,23 +62,23 @@ const TeachersProfile = () => {
             <h2 className="text-2xl font-bold">Skills</h2>
             <h4 className="my-6">
               {singleTeacher?.Experties?.map((expert, key) => (
-                <span
-                  className="mr-4 bg-gray-800 text-red-500 py-2 px-4 rounded-md"
+                <p
+                  className="mr-4 bg-gray-800 text-red-500 py-2 px-4 rounded-md inline-block mb-2"
                   key={key}
                 >
                   {expert}
-                </span>
+                </p>
               ))}
             </h4>
             <h2 className="text-2xl font-bold">Language</h2>
             <h4 className="my-6">
               {singleTeacher?.language?.map((lang, key) => (
-                <span
-                  className="mr-4 bg-gray-800 py-2 px-4 text-red-500 rounded-md"
+                <p
+                  className="mr-4 bg-gray-800 py-2 px-4 text-red-500 rounded-md inline-block mb-2"
                   key={key}
                 >
                   {lang}
-                </span>
+                </p>
               ))}
             </h4>
             <h2 className="text-lg mb-2">
