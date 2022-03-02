@@ -115,7 +115,7 @@ function App() {
                 />
                 <Route
                   exact
-                  path="/teachersDashboard/singleTeacher/:id"
+                  path="/teachersDashboard/singleTeacher/:teacherId"
                   element={<TeachersProfile />}
                 />
                 <Route
