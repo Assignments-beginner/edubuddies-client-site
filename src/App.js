@@ -40,6 +40,7 @@ import AddTeacher from "./Components/Dashboard/Admin/AddTeacher";
 import MakeAdmin from "./Components/Dashboard/Admin/MakeAdmin";
 import CoursesList from "./Components/Dashboard/Admin/CoursesList";
 import TeacherList from "./Components/Dashboard/Admin/TeacherList";
+import RecycleBin from "./Components/Dashboard/Admin/RecycleBin";
 
 function App() {
   return (
@@ -124,6 +125,10 @@ function App() {
                 <Route
                   path="/dashboard/admin/teacherList"
                   element={<TeacherList />}
+                />
+                <Route
+                  path="/dashboard/admin/RecycleBin"
+                  element={<RecycleBin />}
                 />
               </Route>
 
