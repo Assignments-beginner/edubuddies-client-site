@@ -116,6 +116,17 @@ const StudentDashboard = () => {
 												<span className='mx-3'>Important Links</span>
 											</NavLink>
 										</li>
+										<li>
+											<NavLink
+												to='skills'
+												className='li text-lg rounded-lg  text-white '>
+												<FontAwesomeIcon
+													className='mx-2 text-red-500 icon'
+													icon={faUpRightFromSquare}
+												/>
+												<span className='mx-3'>Skills</span>
+											</NavLink>
+										</li>
 									</ul>
 								</div>
 								<div style={{ position: "fixed", bottom: "4rem" }}>

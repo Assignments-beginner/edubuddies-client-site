@@ -29,6 +29,7 @@ import StudentProfile from "./Components/StudentDashboard/StudentProfile/Student
 import StudentAddress from "./Components/StudentDashboard/StudentAddress/StudentAddress";
 import StudentEducation from "./Components/StudentDashboard/StudentEducation/StudentEducation";
 import StudentImportantLinks from "./Components/StudentDashboard/StudentImportantLinks/StudentImportantLinks";
+import StudentSkills from "./Components/StudentDashboard/StudentSkills/StudentSkills";
 
 function App() {
 	return (
@@ -75,6 +76,10 @@ function App() {
 								<Route
 									path='/studentdashboard/importantlinks'
 									element={<StudentImportantLinks />}
+								/>
+								<Route
+									path='/studentdashboard/skills'
+									element={<StudentSkills />}
 								/>
 							</Route>
 
