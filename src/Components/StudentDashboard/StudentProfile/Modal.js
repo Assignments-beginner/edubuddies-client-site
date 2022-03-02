@@ -2,10 +2,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import Loading from "../../Dashboard/Loading";
+import Loading from "../../Loading/Loading";
 import axios from "axios";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const Modal = ({ setShowModal }) => {
 	const [fileLink, setFileLink] = useState(null);
@@ -40,7 +41,9 @@ const Modal = ({ setShowModal }) => {
 
 	React.useEffect(() => {
 		axios
-			.get(`http://localhost:5000/allusers?email=${user?.email}`)
+			.get(
+				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
+			)
 			.then((res) => {
 				reset(res.data);
 				setData(res.data);
@@ -56,7 +59,10 @@ const Modal = ({ setShowModal }) => {
 		};
 		setSubmitting(true);
 		axios
-			.put(`http://localhost:5000/profile?email=${user?.email}`, profile)
+			.put(
+				`https://fierce-caverns-90976.herokuapp.com/profile?email=${user?.email}`,
+				profile,
+			)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",
@@ -187,6 +193,7 @@ const Modal = ({ setShowModal }) => {
 					</div>
 				</form>
 			</div>
+			{/* {(!data || submitting) && <LoadingOverlay />} */}
 		</div>
 	);
 };

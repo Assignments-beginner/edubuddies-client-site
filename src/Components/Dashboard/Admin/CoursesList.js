@@ -45,18 +45,6 @@ const CoursesList = () => {
           });
       }
     });
-
-    // axios.patch(`http://localhost:5000/courses/${id}`).then((res) => {
-    //   if (res.data.modifiedCount > 0) {
-    //     Swal.fire({
-    //       position: "center",
-    //       icon: "success",
-    //       title: "Updated Successfully",
-    //       showConfirmButton: false,
-    //       timer: 1500,
-    //     });
-    //   }
-    // });
   };
 
   return (

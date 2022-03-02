@@ -1,5 +1,3 @@
-import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./AllTeachers.css";
@@ -8,12 +6,9 @@ const AllTeachers = () => {
   const [teachers, setTeachers] = useState([]);
   useEffect(() => {
     fetch("https://fierce-caverns-90976.herokuapp.com/teachers")
-      .then((res) =>
-        res.json("https://fierce-caverns-90976.herokuapp.com/teachers")
-      )
+      .then((res) => res.json())
       .then((data) => setTeachers(data));
   }, []);
-  console.log(teachers);
   return (
     <div className="container mx-auto px-4 md:px-11 mb-10 min-h-screen">
       <h1 className="text-center text-3xl uppercase font-semibold mt-4 md:mb-9 mb-5 text-red-500">
@@ -22,7 +17,7 @@ const AllTeachers = () => {
       <div className="w-full">
         <div className=" px-32 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mx-auto md:gap-5 gap-4">
           {teachers?.map((teacher, key) => (
-            <div className="text-left">
+            <div className="text-left" key={key}>
               <div className="teacher-container relative">
                 <img
                   className=" rounded-t-md"
