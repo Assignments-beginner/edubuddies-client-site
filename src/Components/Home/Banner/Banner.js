@@ -48,7 +48,7 @@ const Banner = () => {
               Learn Courses Online.
             </p>
             <Link to="/Courses">
-              <button className="border-2 border-white hover:bg-red-500 hover:border-red-500 text-white font-bold py-3 px-6 rounded-lg tracking-wider">
+              <button className="border-2 border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold py-3 px-6 rounded-lg tracking-wider">
                 Get Started
               </button>
             </Link>
@@ -81,7 +81,7 @@ const Banner = () => {
               Learn Courses Online.
             </p>
             <Link to="/Courses">
-              <button className="border-2 border-white hover:bg-red-500 hover:border-red-500 text-white font-bold py-3 px-6 rounded-lg tracking-wider">
+              <button className="border-2 border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold py-3 px-6 rounded-lg tracking-wider">
                 Get Started
               </button>
             </Link>
@@ -114,7 +114,7 @@ const Banner = () => {
               Learn Courses Online.
             </p>
             <Link to="/Courses">
-              <button className="border-2 border-white hover:bg-red-500 hover:border-red-500 text-white font-bold py-3 px-6 rounded-lg tracking-wider">
+              <button className="border-2 border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold py-3 px-6 rounded-lg tracking-wider">
                 Get Started
               </button>
             </Link>
