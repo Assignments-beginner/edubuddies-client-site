@@ -9,10 +9,11 @@ const MakeAdmin = () => {
 
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
     axios.put("http://localhost:5000/users/admin", data).then((res) => {
       console.log(res.data);
     });
+    e.target.reset();
   };
 
   return (

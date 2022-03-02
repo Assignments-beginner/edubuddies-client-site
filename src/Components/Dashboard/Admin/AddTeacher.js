@@ -1,17 +1,19 @@
 import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
+
 const AddTeacher = () => {
   const {
     register,
     handleSubmit,
-    watch,
+
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
     axios.put("http://localhost:5000/users/teacher", data).then((res) => {
       console.log(res.data);
     });
+    e.target.reset();
   };
 
   return (
