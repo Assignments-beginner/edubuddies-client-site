@@ -172,6 +172,18 @@ const Dashboard = () => {
                         <span className="mx-3">Make Admin</span>
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        to="admin/CoursesList"
+                        className="li text-lg rounded-lg  text-white "
+                      >
+                        <FontAwesomeIcon
+                          className="mx-2 text-red-500 icon"
+                          icon={faCertificate}
+                        />
+                        <span className="mx-3">Course List</span>
+                      </Link>
+                    </li>
                   </ul>
                 </div>
                 <div style={{ position: "fixed", bottom: "4rem" }}>

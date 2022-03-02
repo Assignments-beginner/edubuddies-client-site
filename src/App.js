@@ -32,6 +32,7 @@ import UpdateCourse from "./Components/TeachersDashboard/UpdateCourse/UpdateCour
 import RemoveCourse from "./Components/TeachersDashboard/RemoveCourse/RemoveCourse";
 import AddTeacher from "./Components/Dashboard/Admin/AddTeacher";
 import MakeAdmin from "./Components/Dashboard/Admin/MakeAdmin";
+import CoursesList from "./Components/Dashboard/Admin/CoursesList";
 function App() {
   return (
     <div className="App">
@@ -85,6 +86,10 @@ function App() {
                 <Route
                   path="/dashboard/admin/makeAdmin"
                   element={<MakeAdmin />}
+                />
+                <Route
+                  path="/dashboard/admin/CoursesList"
+                  element={<CoursesList />}
                 />
               </Route>
 
