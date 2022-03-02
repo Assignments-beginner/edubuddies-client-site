@@ -39,19 +39,20 @@ const TeacherList = () => {
 
   return (
     <div>
-      <h1 className="text-4xl">Teacher List</h1>
-      <div>
-        <table class="border-collapse border border-slate-400 ...">
+      <h1 className="text-4xl mt-5">Teacher List</h1>
+      <br />
+      <div >
+        <table class=" ml-36 mb-24 border-collapse border border-slate-400 ...  ">
           <thead>
             <tr>
-              <th class="border border-slate-300 ...">Photo</th>
-              <th class="border border-slate-300 ...">Name</th>
-              <th class="border border-slate-300 ...">Designation</th>
-              <th class="border border-slate-300 ...">Gender</th>
-              <th class="border border-slate-300 ...">Email</th>
-              <th class="border border-slate-300 ...">country</th>
-              <th class="border border-slate-300 ...">Details</th>
-              <th class="border border-slate-300 ...">Action</th>
+              <th class="border border-slate-300 ... ">Photo</th>
+              <th class="border border-slate-300 ... p-8">Name</th>
+              <th class="border border-slate-300 ... p-8">Designation</th>
+              <th class="border border-slate-300 ... p-8">Gender</th>
+              <th class="border border-slate-300 ... p-8 ">Email</th>
+              <th class="border border-slate-300 ... p-8">country</th>
+              <th class="border border-slate-300 ... p-8">Details</th>
+              <th class="border border-slate-300 ... p-8">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -67,12 +68,12 @@ const TeacherList = () => {
                       alt={item.name}
                     />
                   </td>
-                  <td class="border border-slate-300 ...">{item.name}</td>
-                  <td class="border border-slate-300 ...">
+                  <td class="border border-slate-300 ... p-4">{item.name}</td>
+                  <td class="border border-slate-300 ... p-2">
                     {item.designation}
                   </td>
                   <td class="border border-slate-300 ...">{item.gender}</td>
-                  <td class="border border-slate-300 ...">{item.email}</td>
+                  <td class="border border-slate-300 ... p-4">{item.email}</td>
                   <td class="border border-slate-300 ...">{item.country}</td>
                   <td class="border border-slate-300 ...">
                     <button>View</button>
