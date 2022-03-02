@@ -30,83 +30,129 @@ import TeachersProfile from "./Components/TeachersDashboard/TeachersProfile/Teac
 import AddCourse from "./Components/TeachersDashboard/AddCourse/AddCourse";
 import UpdateCourse from "./Components/TeachersDashboard/UpdateCourse/UpdateCourse";
 import RemoveCourse from "./Components/TeachersDashboard/RemoveCourse/RemoveCourse";
+import StudentDashboard from "./Components/StudentDashboard/StudentDashboard";
+import StudentProfile from "./Components/StudentDashboard/StudentProfile/StudentProfile";
+import StudentAddress from "./Components/StudentDashboard/StudentAddress/StudentAddress";
+import StudentEducation from "./Components/StudentDashboard/StudentEducation/StudentEducation";
+import StudentImportantLinks from "./Components/StudentDashboard/StudentImportantLinks/StudentImportantLinks";
+import StudentSkills from "./Components/StudentDashboard/StudentSkills/StudentSkills";
 
 function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <ScrollToTop />
-        {/* This will prevent bottom scroll of every route. */}
-        <div className="page-container">
-          {/* // This will put the footer always in bottom of the screen. */}
-          <div className="content-wrap">
-            {/* // This will put the footer always in bottom of the screen. */}
-            <Header />
-            <Routes>
-              <Route path="/*" element={<NotFound />} />
-              <Route path="/" element={<Home />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/blog" element={<Blogs />} />
-              <Route path="/singleblog" element={<SingleBlogMain />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/courses" element={<Courses />} />
-              <Route path="/singlecourse/:id" element={<SingleCourse />} />
-              <Route path="/milestone" element={<Milestones />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/resetpassword" element={<ResetPass />} />
-              <Route path="/greetings" element={<Greetings />} />
-              <Route path="/userProfile" element={<UserProfile />} />
-              <Route path="/teachers" element={<TeacherCourses />} />
+	return (
+		<div className='App'>
+			<BrowserRouter>
+				<ScrollToTop />
+				{/* This will prevent bottom scroll of every route. */}
+				<div className='page-container'>
+					{/* // This will put the footer always in bottom of the screen. */}
+					<div className='content-wrap'>
+						{/* // This will put the footer always in bottom of the screen. */}
+						<Header />
+						<Routes>
+							<Route path='/*' element={<NotFound />} />
+							<Route path='/' element={<Home />} />
+							<Route path='/home' element={<Home />} />
+							<Route path='/blog' element={<Blogs />} />
+							<Route path='/singleblog' element={<SingleBlogMain />} />
+							<Route path='/about' element={<About />} />
+							<Route path='/courses' element={<Courses />} />
+							<Route path='/singlecourse/:id' element={<SingleCourse />} />
+							<Route path='/milestone' element={<Milestones />} />
+							<Route path='/contact' element={<Contact />} />
+							<Route path='/register' element={<Register />} />
+							<Route path='/login' element={<Login />} />
+							<Route path='/signup' element={<Signup />} />
+							<Route path='/resetpassword' element={<ResetPass />} />
+							<Route path='/greetings' element={<Greetings />} />
+							<Route path='/userProfile' element={<UserProfile />} />
 
-              {/* //Dashboard Nested Routing */}
-              <Route path="/dashboard" element={<Dashboard />}>
-                <Route exact path="/dashboard/blogs" element={<AllBlogs />} />
-                <Route
-                  path="/dashboard/addCourses"
-                  element={<TeacherCourses />}
-                />
-                <Route
-                  path="/dashboard/addnewcourse"
-                  element={<AddNewCourse />}
-                />
-                <Route path="/dashboard/allcourses" element={<AllCourses />} />
-                <Route
-                  path="/dashboard/allcourses/:id"
-                  element={<UploadCourseContent />}
-                />
-              </Route>
+							<Route path='/studentdashboard' element={<StudentDashboard />}>
+								<Route
+									path='/studentdashboard/profile'
+									element={<StudentProfile />}
+								/>
+								<Route
+									path='/studentdashboard/address'
+									element={<StudentAddress />}
+								/>
+								<Route
+									path='/studentdashboard/education'
+									element={<StudentEducation />}
+								/>
+								<Route
+									path='/studentdashboard/importantlinks'
+									element={<StudentImportantLinks />}
+								/>
+								<Route
+									path='/studentdashboard/skills'
+									element={<StudentSkills />}
+								/>
+							</Route>
 
-              {/* Teacher Dashboard */}
+							{/* //Dashboard Nested Routing */}
+							<Route path='/dashboard' element={<Dashboard />}>
+								<Route exact path='/dashboard/blogs' element={<AllBlogs />} />
+								<Route
+									path='/dashboard/addCourses'
+									element={<TeacherCourses />}
+								/>
+								<Route
+									path='/dashboard/addnewcourse'
+									element={<AddNewCourse />}
+								/>
+								<Route path='/dashboard/allcourses' element={<AllCourses />} />{" "}
+								<Route
+									path='/dashboard/allcourses/:id'
+									element={<UploadCourseContent />}
+								/>
+							</Route>
 
-              <Route path="/teachersDashboard" element={<TeachersDashboard />}>
-                <Route
-                  exact
-                  path="/teachersDashboard/allTeachers"
-                  element={<AllTeachers />}
-                />
-                <Route
-                  path="/teachersDashboard/addCourse"
-                  element={<AddCourse />}
-                />
-                <Route
-                  path="/teachersDashboard/updateCourse"
-                  element={<UpdateCourse />}
-                />
-                <Route
-                  path="/teachersDashboard/removeCourse"
-                  element={<RemoveCourse />}
-                />
-              </Route>
-            </Routes>
-          </div>
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </div>
-  );
+							{/* //Dashboard Nested Routing */}
+							<Route path='/dashboard' element={<Dashboard />}>
+								<Route exact path='/dashboard/blogs' element={<AllBlogs />} />
+								<Route
+									path='/dashboard/addCourses'
+									element={<TeacherCourses />}
+								/>
+								<Route
+									path='/dashboard/addnewcourse'
+									element={<AddNewCourse />}
+								/>
+								<Route path='/dashboard/allcourses' element={<AllCourses />} />
+								<Route
+									path='/dashboard/allcourses/:id'
+									element={<UploadCourseContent />}
+								/>
+							</Route>
+
+							{/* Teacher Dashboard */}
+
+							<Route path='/teachersDashboard' element={<TeachersDashboard />}>
+								<Route
+									exact
+									path='/teachersDashboard/allTeachers'
+									element={<AllTeachers />}
+								/>
+								<Route
+									path='/teachersDashboard/addCourse'
+									element={<AddCourse />}
+								/>
+								<Route
+									path='/teachersDashboard/updateCourse'
+									element={<UpdateCourse />}
+								/>
+								<Route
+									path='/teachersDashboard/removeCourse'
+									element={<RemoveCourse />}
+								/>
+							</Route>
+						</Routes>
+					</div>
+					<Footer />
+				</div>
+			</BrowserRouter>
+		</div>
+	);
 }
 
 export default App;
