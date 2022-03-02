@@ -2,10 +2,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import Loading from "../../Dashboard/Loading";
+import Loading from "../../Loading/Loading";
 import axios from "axios";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const Modal = ({ setShowModal }) => {
 	const [fileLink, setFileLink] = useState(null);
@@ -192,6 +193,7 @@ const Modal = ({ setShowModal }) => {
 					</div>
 				</form>
 			</div>
+			{(!data || submitting) && <LoadingOverlay />}
 		</div>
 	);
 };

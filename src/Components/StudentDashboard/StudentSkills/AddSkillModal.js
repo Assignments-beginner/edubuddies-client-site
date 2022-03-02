@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const AddSkillModal = ({ setShowAddSkillModal }) => {
 	const { user } = useAuth();
@@ -126,6 +127,7 @@ const AddSkillModal = ({ setShowAddSkillModal }) => {
 					</div>
 				</div>
 			</form>
+			{(!data || submitting) && <LoadingOverlay />}
 		</div>
 	);
 };

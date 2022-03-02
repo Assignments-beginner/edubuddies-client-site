@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 import Modal from "./Modal";
 
 const StudentProfile = () => {
@@ -83,6 +84,7 @@ const StudentProfile = () => {
 					<Modal setShowModal={setShowModal} />
 				</>
 			) : null}
+			{!users && <LoadingOverlay />}
 		</div>
 	);
 };

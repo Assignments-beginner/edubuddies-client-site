@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const PermanentAdd = ({ setPermanentAddModal }) => {
 	const { user } = useAuth();
@@ -191,6 +192,7 @@ const PermanentAdd = ({ setPermanentAddModal }) => {
 					</div>
 				</form>
 			</div>
+			{(!data || submitting) && <LoadingOverlay />}
 		</div>
 	);
 };

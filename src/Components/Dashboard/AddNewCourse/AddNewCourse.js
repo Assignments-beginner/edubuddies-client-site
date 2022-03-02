@@ -6,8 +6,8 @@ import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
-import Loading from "../Loading";
 import useAuth from "../../../hooks/useAuth";
+import Loading from "../../Loading/Loading";
 
 const AddNewCourse = () => {
 	/*	const blobSasUrl =

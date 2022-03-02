@@ -4,6 +4,7 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./Modal";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const StudentImportantLinks = () => {
 	const { user } = useAuth();
@@ -69,6 +70,7 @@ const StudentImportantLinks = () => {
 					<Modal setShowModal={setShowModal} />
 				</>
 			) : null}
+			{!importantlinks && <LoadingOverlay />}
 		</div>
 	);
 };

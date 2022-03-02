@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const Modal = ({ setShowModal }) => {
 	const { user } = useAuth();
@@ -145,6 +146,7 @@ const Modal = ({ setShowModal }) => {
 					</div>
 				</form>
 			</div>
+			{(!data || submitting) && <LoadingOverlay />}
 		</div>
 	);
 };

@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BlobServiceClient } from "@azure/storage-blob";
 import "../AddNewCourse/AddNewCourse.css";
-import Loading from "../Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import Loading from "../../Loading/Loading";
 
 const UploadCourseContent = () => {
 	const blobSasUrl =

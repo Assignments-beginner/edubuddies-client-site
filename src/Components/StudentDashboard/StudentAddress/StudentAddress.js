@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const StudentAddress = () => {
 	const { user } = useAuth();
@@ -145,6 +146,7 @@ const StudentAddress = () => {
 					<PermanentAdd setPermanentAddModal={setPermanentAddModal} />
 				</>
 			) : null}
+			{(!permanentaddressUI || !presentaddressUI) && <LoadingOverlay />}
 		</div>
 	);
 };

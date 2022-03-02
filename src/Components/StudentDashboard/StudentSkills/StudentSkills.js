@@ -4,6 +4,7 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import AddSkillModal from "./AddSkillModal";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const StudentSkills = () => {
 	const { user } = useAuth();
@@ -102,6 +103,7 @@ const StudentSkills = () => {
 					<AddSkillModal setShowAddSkillModal={setShowAddSkillModal} />
 				</>
 			) : null}
+			{!data && <LoadingOverlay />}
 		</div>
 	);
 };

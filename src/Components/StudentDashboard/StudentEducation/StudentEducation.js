@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
 const StudentEducation = () => {
 	const [showModal, setShowModal] = React.useState(false);
@@ -81,6 +82,7 @@ const StudentEducation = () => {
 					<Modal setShowModal={setShowModal} />
 				</>
 			) : null}
+			{!education && <LoadingOverlay />}
 		</div>
 	);
 };
