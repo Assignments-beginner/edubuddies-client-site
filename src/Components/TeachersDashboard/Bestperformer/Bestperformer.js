@@ -24,10 +24,10 @@ const Bestperformer = () => {
               alt="best Performer"
             />
             <div className="mt-4">
-              <h2 className="text-3xl text-red-500"> {best?.name}</h2>
-              <p className="text-md">{best?.designation}</p>
-              <p className="text-md">{best?.email}</p>
-              <p className="text-md">Country: {best?.country}</p>
+              <h2 className="text-4xl text-red-500"> {best?.name}</h2>
+              <p className="text-lg">{best?.designation}</p>
+              <p className="text-lg">{best?.email}</p>
+              <p className="text-lg">Country: {best?.country}</p>
             </div>
           </div>
         ))}
