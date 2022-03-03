@@ -79,35 +79,36 @@ const RecycleBin = () => {
     <div>
       <div>
         <h1 className="text-4xl">Courses</h1>
+        <br/>
         {courses.length > 0 ? (
-          <table class="border-collapse border border-slate-400 ...">
+          <table class="ml-80 mb-24 border-collapse border border-slate-400 ...">
             <thead>
-              <tr>
-                <th class="border border-slate-300 ...">Title</th>
-                <th class="border border-slate-300 ...">Category</th>
-                <th class="border border-slate-300 ...">Fee</th>
-                <th class="border border-slate-300 ...">Status</th>
-                <th class="border border-slate-300 ...">Action</th>
+              <tr className="bg-gray-300 ">
+                <th class="border border-slate-300 ... p-6">Title</th>
+                <th class="border border-slate-300 ... p-6">Category</th>
+                <th class="border border-slate-300 ... p-6">Fee</th>
+                <th class="border border-slate-300 ... p-6">Status</th>
+                <th class="border border-slate-300 ... p-6">Action</th>
               </tr>
             </thead>
             <tbody>
               {courses &&
                 courses.map((item) => (
                   <tr>
-                    <td class="border border-slate-300 ...">{item.title}</td>
-                    <td class="border border-slate-300 ...">{item.category}</td>
-                    <td class="border border-slate-300 ...">
+                    <td class="border border-slate-300 ... p-4">{item.title}</td>
+                    <td class="border border-slate-300 ... p-4">{item.category}</td>
+                    <td class="border border-slate-300 ... p-4">
                       {item.courseFee} TK
                     </td>
                     <td
                       onClick={() => updateCourseStatus(item._id, "approved")}
-                      class="border border-slate-300 ..."
+                      class="border border-slate-300 ... p-4"
                     >
                       <button>Restore</button>
                     </td>
-                    <td class="border border-slate-300 ...">
+                    <td class="border border-slate-300 ... text-red-700 p-4">
                       <button onClick={() => deleteCOurse(item._id)}>
-                        Delete Permanantly
+                        Delete Permanently
                       </button>
                     </td>
                   </tr>
