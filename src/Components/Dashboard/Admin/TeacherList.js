@@ -57,7 +57,7 @@ const TeacherList = () => {
             {teachers &&
               teachers.map((item, key) => (
                 <tr key={key}>
-                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
                     <img
                       className="rounded-full"
                       width="50px"
@@ -66,25 +66,25 @@ const TeacherList = () => {
                       alt={item.name}
                     />
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
                     {item.name}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
                     {item.designation}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
                     {item.gender}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
                     {item.email}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
                     {item.country}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
                     <button>View</button>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
                     <button
                       onClick={() =>
                         updateAlert(item._id, "verified", "teacherStatus")
@@ -101,7 +101,7 @@ const TeacherList = () => {
                       )}
                     </button>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
                     <button
                       onClick={() =>
                         updateAlert(item._id, "deleted", "teacherStatus")
