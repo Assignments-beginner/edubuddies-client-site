@@ -5,7 +5,9 @@ const MyCourseDetails = () => {
   const { courseId } = useParams();
   const [courseDetails, setcourseDetails] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/CourseDetails/${courseId}`)
+    fetch(
+      `https://fierce-caverns-90976.herokuapp.com/CourseDetails/${courseId}`
+    )
       .then((res) => res.json())
       .then((data) => setcourseDetails(data));
   }, []);
