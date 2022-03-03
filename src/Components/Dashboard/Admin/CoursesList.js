@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { addCourse } from "../../../Redux/edubuddySlice";
+import { updateAlert } from "../../../Utility/Utility";
 const CoursesList = () => {
   const [courses, setCourses] = useState([]);
 
@@ -73,14 +74,16 @@ const CoursesList = () => {
                   </td>
                   <td class="border border-slate-300 ...">
                     <button
-                      onClick={() => updateCourseStatus(item._id, "approved")}
+                      onClick={() =>
+                        updateAlert(item._id, "approved", "courses")
+                      }
                     >
                       {item.courseStatus}
                     </button>
                   </td>
                   <td class="border border-slate-300 ...">
                     <button
-                      onClick={() => updateCourseStatus(item._id, "delete")}
+                      onClick={() => updateAlert(item._id, "delete", "courses")}
                     >
                       DELETE
                     </button>
