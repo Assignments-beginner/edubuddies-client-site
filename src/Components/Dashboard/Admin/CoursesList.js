@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
-import { addCourse } from "../../../Redux/edubuddySlice";
 import { updateAlert } from "../../../Utility/Utility";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 const CoursesList = () => {
   const [courses, setCourses] = useState([]);
 
@@ -49,50 +49,87 @@ const CoursesList = () => {
   };
 
   return (
-    <div>
-      <h1>All Students List</h1>
-
-      <div>
-        <table class="border-collapse border border-slate-400 ...">
-          <thead>
-            <tr>
-              <th class="border border-slate-300 ...">Title</th>
-              <th class="border border-slate-300 ...">Category</th>
-              <th class="border border-slate-300 ...">Fee</th>
-              <th class="border border-slate-300 ...">Status</th>
-              <th class="border border-slate-300 ...">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {courses &&
-              courses.map((item) => (
-                <tr>
-                  <td class="border border-slate-300 ...">{item.title}</td>
-                  <td class="border border-slate-300 ...">{item.category}</td>
-                  <td class="border border-slate-300 ...">
-                    {item.courseFee} TK
-                  </td>
-                  <td class="border border-slate-300 ...">
-                    <button
-                      onClick={() =>
-                        updateAlert(item._id, "approved", "courses")
-                      }
-                    >
-                      {item.courseStatus}
-                    </button>
-                  </td>
-                  <td class="border border-slate-300 ...">
-                    <button
-                      onClick={() => updateAlert(item._id, "delete", "courses")}
-                    >
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
-      </div>
+    <div className="container mx-auto">
+      <h1 className="text-red-600 text-3xl font-bold mt-2 mb-6">
+        All Course List
+      </h1>
+      <table className="min-w-full divide-y divide-red-300 border border-red-300">
+        <thead className="bg-gray-800">
+          <tr>
+            <th
+              scope="col"
+              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest"
+            >
+              Title
+            </th>
+            <th
+              scope="col"
+              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest"
+            >
+              Category
+            </th>
+            <th
+              scope="col"
+              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest"
+            >
+              Fee
+            </th>
+            <th
+              scope="col"
+              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest"
+            >
+              Status
+            </th>
+            <th
+              scope="col"
+              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest"
+            >
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-red-300">
+          {courses &&
+            courses.map((item, key) => (
+              <tr key={key}>
+                <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  {item.title}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  {item.category}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  {item.courseFee} TK
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <button
+                    onClick={() => updateAlert(item._id, "approved", "courses")}
+                  >
+                    {item?.courseStatus === "approved" ? (
+                      <div className="text-sm font-medium text-white bg-green-600 px-3 py-1 rounded-md">
+                        {item?.courseStatus}
+                      </div>
+                    ) : (
+                      <div className="text-sm font-medium text-white bg-yellow-600 px-3 py-1 rounded-md">
+                        {item?.courseStatus}
+                      </div>
+                    )}
+                  </button>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <button
+                    onClick={() => updateAlert(item._id, "delete", "courses")}
+                  >
+                    <FontAwesomeIcon
+                      className="mx-2 text-red-500 text-xl"
+                      icon={faTrash}
+                    />
+                  </button>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
     </div>
   );
 };

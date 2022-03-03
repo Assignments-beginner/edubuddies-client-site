@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { updateAlert } from "../../../Utility/Utility";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const TeacherList = () => {
   const [teachers, setTeachers] = useState([]);
@@ -14,28 +16,48 @@ const TeacherList = () => {
   }, [teachers]);
 
   return (
-    <div>
-      <h1 className="text-4xl">Teacher List</h1>
+    <div className="container mx-auto">
+      <h1 className="text-red-600 text-3xl font-bold mt-2 mb-6">
+        Our Honour Teacher List
+      </h1>
       <div>
-        <table class="border-collapse border border-slate-400 ...">
-          <thead>
+        <table className="min-w-full divide-y divide-red-300 border border-red-300">
+          <thead className="bg-gray-800">
             <tr>
-              <th class="border border-slate-300 ...">Photo</th>
-              <th class="border border-slate-300 ...">Name</th>
-              <th class="border border-slate-300 ...">Designation</th>
-              <th class="border border-slate-300 ...">Gender</th>
-              <th class="border border-slate-300 ...">Email</th>
-              <th class="border border-slate-300 ...">country</th>
-              <th class="border border-slate-300 ...">Details</th>
-              <th class="border border-slate-300 ...">Status</th>
-              <th class="border border-slate-300 ...">Action</th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+                Photo
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+                Name
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+                Designation
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+                Gender
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+                Email
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+                country
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+                Details
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+                Status
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+                Action
+              </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bg-white divide-y divide-red-300">
             {teachers &&
-              teachers.map((item) => (
-                <tr>
-                  <td class="border border-slate-300 ...">
+              teachers.map((item, key) => (
+                <tr key={key}>
+                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
                     <img
                       className="rounded-full"
                       width="50px"
@@ -44,32 +66,51 @@ const TeacherList = () => {
                       alt={item.name}
                     />
                   </td>
-                  <td class="border border-slate-300 ...">{item.name}</td>
-                  <td class="border border-slate-300 ...">
+                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                    {item.name}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
                     {item.designation}
                   </td>
-                  <td class="border border-slate-300 ...">{item.gender}</td>
-                  <td class="border border-slate-300 ...">{item.email}</td>
-                  <td class="border border-slate-300 ...">{item.country}</td>
-                  <td class="border border-slate-300 ...">
+                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                    {item.gender}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                    {item.email}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                    {item.country}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
                     <button>View</button>
                   </td>
-                  <td class="border border-slate-300 ...">
+                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
                     <button
                       onClick={() =>
                         updateAlert(item._id, "verified", "teacherStatus")
                       }
                     >
-                      {item.status ? item.status : "pending"}
+                      {item?.status === "verified" ? (
+                        <div className="text-sm font-medium text-white bg-green-600 px-3 py-1 rounded-md">
+                          {item?.status}
+                        </div>
+                      ) : (
+                        <div className="text-sm font-medium text-white bg-yellow-600 px-3 py-1 rounded-md">
+                          {"pending"}
+                        </div>
+                      )}
                     </button>
                   </td>
-                  <td class="border border-slate-300 ...">
+                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
                     <button
                       onClick={() =>
                         updateAlert(item._id, "deleted", "teacherStatus")
                       }
                     >
-                      DELETE
+                      <FontAwesomeIcon
+                        className="mx-2 text-red-500 text-xl"
+                        icon={faTrash}
+                      />
                     </button>
                   </td>
                 </tr>
