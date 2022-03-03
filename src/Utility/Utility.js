@@ -40,7 +40,7 @@ export const updateAlert = (id, statusName, api) => {
     showCancelButton: true,
     confirmButtonColor: "green",
     cancelButtonColor: "red",
-    confirmButtonText: `Yes, ${statusName} it!`,
+    confirmButtonText: `Yes, I am sure`,
   }).then((result) => {
     if (result.isConfirmed) {
       axios
@@ -53,7 +53,7 @@ export const updateAlert = (id, statusName, api) => {
             Swal.fire({
               position: "center",
               icon: "success",
-              title: "Updated Successfully",
+              title: "Successfully Done",
               showConfirmButton: false,
               timer: 1500,
             });
