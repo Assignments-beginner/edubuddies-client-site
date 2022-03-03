@@ -124,6 +124,7 @@ const Dashboard = () => {
                         <span className="mx-3">Make Teacher</span>
                       </Link>
                     </li>
+
                     <li>
                       <Link
                         to="admin/RecycleBin"
