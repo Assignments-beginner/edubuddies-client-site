@@ -3,18 +3,20 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import { addCourse } from "../../../Redux/edubuddySlice";
 
 const MyCourses = () => {
+  const { user } = useAuth();
   const dispatch = useDispatch();
   const courses = useSelector((state) => state.edu.courses);
 
   useEffect(() => {
-    const url = "https://fierce-caverns-90976.herokuapp.com/courses";
+    const url = `https://fierce-caverns-90976.herokuapp.com/getCourse/${user?.email}`;
     axios.get(url).then((res) => {
       dispatch(addCourse(res.data));
     });
-  }, [dispatch]);
+  }, [dispatch, user?.email]);
 
   return (
     <div className="container mx-auto mt-4 px-4 md:px-11  ">
