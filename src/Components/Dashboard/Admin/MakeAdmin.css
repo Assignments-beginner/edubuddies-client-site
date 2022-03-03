@@ -6,3 +6,11 @@
     background-attachment: fixed;
     min-height:100vh;
 }
+.teacher-background{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.383),rgba(0, 0, 0, 0.418)),url("https://i.ibb.co/5WmBpfk/slider-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    min-height:100vh;
+}
