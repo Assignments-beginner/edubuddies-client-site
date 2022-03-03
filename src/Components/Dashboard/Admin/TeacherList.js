@@ -24,31 +24,31 @@ const TeacherList = () => {
         <table className="min-w-full divide-y divide-red-300 border border-red-300">
           <thead className="bg-gray-800">
             <tr>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Photo
               </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Name
               </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Designation
               </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Gender
               </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Email
               </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 country
               </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Details
               </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Status
               </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest">
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Action
               </th>
             </tr>
@@ -57,34 +57,34 @@ const TeacherList = () => {
             {teachers &&
               teachers.map((item, key) => (
                 <tr key={key}>
-                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
                     <img
-                      className="rounded-full"
+                      className="rounded-full mx-auto"
                       width="50px"
                       height="50px"
                       src={item.image}
                       alt={item.name}
                     />
                   </td>
-                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
                     {item.name}
                   </td>
-                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
                     {item.designation}
                   </td>
-                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
                     {item.gender}
                   </td>
-                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
                     {item.email}
                   </td>
-                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
                     {item.country}
                   </td>
-                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
                     <button>View</button>
                   </td>
-                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
                     <button
                       onClick={() =>
                         updateAlert(item._id, "verified", "teacherStatus")
@@ -101,7 +101,7 @@ const TeacherList = () => {
                       )}
                     </button>
                   </td>
-                  <td className="px-6 py-2 whitespace-nowrap text-gray-600">
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
                     <button
                       onClick={() =>
                         updateAlert(item._id, "deleted", "teacherStatus")
