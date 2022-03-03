@@ -14,14 +14,6 @@
   height: 82px;
   width: 82px;
 }
-.Instructor {
-  text-align: left;
-}
-.Instructor-box {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
 
 @media all and (max-width: 688px) {
   .teacher-img {

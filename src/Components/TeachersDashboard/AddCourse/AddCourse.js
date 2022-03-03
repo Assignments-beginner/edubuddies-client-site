@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faImage } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
 import Loading from "../../Loading/Loading";
@@ -90,7 +90,7 @@ const AddCourse = () => {
                 {!fileLink ? (
                   <label className="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer ">
                     <FontAwesomeIcon
-                      icon={faCloudArrowUp}
+                      icon={faImage}
                       className="text-2xl rounded-full bg-gray-700 text-white p-3"
                     />
                     <span className="mt-2 text-base leading-normal">
