@@ -17,8 +17,8 @@ const MyCourses = () => {
   }, [dispatch]);
 
   return (
-    <div className="container mx-auto my-9  px-4 md:px-11  ">
-      <h1 className="text-center text-3xl uppercase font-semibold mt-14 md:mb-9 mb-5 text-red-500">
+    <div className="container mx-auto mt-4 px-4 md:px-11  ">
+      <h1 className="text-center text-3xl uppercase font-semibold md:mb-9 mb-5 text-red-500">
         My Courses
       </h1>
       <div className="mx-auto grid grid-cols-12 gap-9">
