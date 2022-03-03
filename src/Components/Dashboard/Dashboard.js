@@ -12,6 +12,7 @@ import {
   faBell,
   faBars,
   faXmark,
+  farecycle,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Dashboard.css";
 import { Link, Outlet } from "react-router-dom";
