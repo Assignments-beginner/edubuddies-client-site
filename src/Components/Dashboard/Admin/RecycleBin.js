@@ -1,10 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Swal from "sweetalert2";
+import { updateAlert } from "../../../Utility/Utility";
+import { deleteAlert } from "../../../Utility/Utility";
 
 const RecycleBin = () => {
   const [courses, setCourses] = useState([]);
+  const [teacher, setTeacher] = useState([]);
 
+  // load courses
   useEffect(() => {
     const url = "https://fierce-caverns-90976.herokuapp.com/courses";
     axios.get(url).then((res) => {
@@ -13,68 +16,16 @@ const RecycleBin = () => {
     });
   }, [courses]);
 
-  // delete courses
+  // load teacher data
+  useEffect(() => {
+    axios
+      .get("https://fierce-caverns-90976.herokuapp.com/teachers")
+      .then((res) => {
+        const restData = res.data.filter((item) => item.status === "deleted");
+        setTeacher(restData);
+      });
+  }, [teacher]);
 
-  const deleteCOurse = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axios
-          .delete(`http://localhost:5000/deleteCourses/${id}`)
-          .then((res) => {
-            if (res.data.deletedCount > 0) {
-              Swal.fire({
-                showConfirmButton: false,
-                icon: "success",
-                title: "Your file has been deleted",
-                timer: 1000,
-              });
-            }
-          });
-      }
-    });
-  };
-
-  // restore the Courses
-  // courses update
-  const updateCourseStatus = (id, statusName) => {
-    const status = {
-      statusName: statusName,
-    };
-    console.log(status);
-    Swal.fire({
-      title: "Are you sure?",
-      text: `You won't be able ${statusName} this!`,
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "green",
-      cancelButtonColor: "red",
-      confirmButtonText: "Yes, Restore it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axios
-          .patch(`http://localhost:5000/courses/${id}`, status)
-          .then((res) => {
-            if (res.data.modifiedCount > 0) {
-              Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Updated Successfully",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-            }
-          });
-      }
-    });
-  };
   return (
     <div>
       <div>
@@ -100,13 +51,17 @@ const RecycleBin = () => {
                       {item.courseFee} TK
                     </td>
                     <td
-                      onClick={() => updateCourseStatus(item._id, "approved")}
+                      onClick={() =>
+                        updateAlert(item._id, "approved", "courses")
+                      }
                       class="border border-slate-300 ..."
                     >
                       <button>Restore</button>
                     </td>
                     <td class="border border-slate-300 ...">
-                      <button onClick={() => deleteCOurse(item._id)}>
+                      <button
+                        onClick={() => deleteAlert(item._id, "deleteCourses")}
+                      >
                         Delete Permanantly
                       </button>
                     </td>
@@ -116,7 +71,7 @@ const RecycleBin = () => {
           </table>
         ) : (
           <div>
-            <h1>There is No Deleted Courses</h1>
+            <h1>Empty</h1>
           </div>
         )}
 
@@ -124,6 +79,71 @@ const RecycleBin = () => {
       </div>
       <div>
         <h1 className="text-4xl">Teachers</h1>
+
+        {teacher.length > 0 ? (
+          <table class="border-collapse border border-slate-400 ...">
+            <thead>
+              <tr>
+                <th class="border border-slate-300 ...">Photo</th>
+                <th class="border border-slate-300 ...">Name</th>
+                <th class="border border-slate-300 ...">Designation</th>
+                <th class="border border-slate-300 ...">Gender</th>
+                <th class="border border-slate-300 ...">Email</th>
+                <th class="border border-slate-300 ...">country</th>
+                <th class="border border-slate-300 ...">Details</th>
+                <th class="border border-slate-300 ...">Status</th>
+                <th class="border border-slate-300 ...">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {teacher &&
+                teacher.map((item) => (
+                  <tr>
+                    <td class="border border-slate-300 ...">
+                      <img
+                        className="rounded-full"
+                        width="50px"
+                        height="50px"
+                        src={item.image}
+                        alt={item.name}
+                      />
+                    </td>
+                    <td class="border border-slate-300 ...">{item.name}</td>
+                    <td class="border border-slate-300 ...">
+                      {item.designation}
+                    </td>
+                    <td class="border border-slate-300 ...">{item.gender}</td>
+                    <td class="border border-slate-300 ...">{item.email}</td>
+                    <td class="border border-slate-300 ...">{item.country}</td>
+                    <td class="border border-slate-300 ...">
+                      <button>View</button>
+                    </td>
+                    <td class="border border-slate-300 ...">
+                      <button
+                        onClick={() =>
+                          updateAlert(item._id, "verified", "teacherStatus")
+                        }
+                      >
+                        Restor
+                      </button>
+                    </td>
+                    <td class="border border-slate-300 ...">
+                      <button
+                        onClick={() => deleteAlert(item._id, "deleteTeacher")}
+                      >
+                        DELETE Parmanently
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        ) : (
+          <div>
+            <h1>Empty</h1>
+          </div>
+        )}
+
         <hr />
       </div>
       <div>
