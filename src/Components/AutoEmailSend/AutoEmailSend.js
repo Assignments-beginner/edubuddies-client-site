@@ -23,6 +23,7 @@ const AutoEmailSendTest = () => {
 		axios
 			.post(`https://fierce-caverns-90976.herokuapp.com/autoEmail`, data)
 			.then(function (response) {
+				console.log("response", response);
 				Swal.fire({
 					icon: "success",
 					title: "Your Messsage Successfully Updated",
@@ -70,8 +71,8 @@ const AutoEmailSendTest = () => {
 							<div className='flex flex-col space-y-1'>
 								<label
 									for='subject'
-									className='text-sm font-semibold text-red-500 text-left'>
-									Subject
+									className='text-sm font-semibold text-black text-left'>
+									Email Subject
 								</label>
 								<input
 									type='text'
@@ -79,13 +80,13 @@ const AutoEmailSendTest = () => {
 									name='subject'
 									{...register("subject", { required: true })}
 									autofocus
-									className='px-4 py-2 transition duration-300 border border-red-500 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
+									className='px-4 py-2 transition duration-300 border border-black rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
 								/>
 							</div>
 							<div className='flex flex-col space-y-1'>
 								<label
 									for='cc'
-									className='text-sm font-semibold text-red-500 text-left'>
+									className='text-sm font-semibold text-black text-left'>
 									CC
 								</label>
 								<input
@@ -94,13 +95,13 @@ const AutoEmailSendTest = () => {
 									name='cc'
 									{...register("cc")}
 									autofocus
-									className='px-4 py-2 transition duration-300 border border-red-500 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
+									className='px-4 py-2 transition duration-300 border border-black rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
 								/>
 							</div>
 							<div className='flex flex-col space-y-1'>
 								<label
 									for='bcc'
-									className='text-sm font-semibold text-red-500 text-left'>
+									className='text-sm font-semibold text-black text-left'>
 									BCC
 								</label>
 								<input
@@ -109,13 +110,13 @@ const AutoEmailSendTest = () => {
 									name='bcc'
 									{...register("bcc")}
 									autofocus
-									className='px-4 py-2 transition duration-300 border border-red-500 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
+									className='px-4 py-2 transition duration-300 border border-black rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
 								/>
 							</div>
 							<div className='space-y-1'>
 								<label
 									for='email'
-									className='flex text-sm font-semibold text-red-500 text-left mt-2'>
+									className='flex text-sm font-semibold text-black text-left mt-2'>
 									Body
 								</label>
 								<Editor

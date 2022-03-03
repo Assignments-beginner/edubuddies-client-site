@@ -44,6 +44,7 @@ import AutoEmailSend from "./Components/AutoEmailSend/AutoEmailSend";
 import RecycleBin from "./Components/Dashboard/Admin/RecycleBin";
 import Bestperformer from "./Components/TeachersDashboard/Bestperformer/Bestperformer";
 import PostNotice from "./Components/TeachersDashboard/PostNotice/PostNotice";
+import PostBlog from "./Components/PostBlog/PostBlog";
 
 function App() {
 	return (
@@ -61,7 +62,7 @@ function App() {
 							<Route path='/' element={<Home />} />
 							<Route path='/home' element={<Home />} />
 							<Route path='/blog' element={<Blogs />} />
-							<Route path='/singleblog' element={<SingleBlogMain />} />
+							<Route path='/singleblog/:id' element={<SingleBlogMain />} />
 							<Route path='/about' element={<About />} />
 							<Route path='/courses' element={<Courses />} />
 							<Route path='/singlecourse/:id' element={<SingleCourse />} />
@@ -166,6 +167,7 @@ function App() {
 								/>
 							</Route>
 							<Route path='/autoemailsend' element={<AutoEmailSend />} />
+							<Route path='/postblog' element={<PostBlog />} />
 						</Routes>
 					</div>
 					<Footer />
