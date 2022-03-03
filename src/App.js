@@ -47,6 +47,7 @@ import PostNotice from "./Components/TeachersDashboard/PostNotice/PostNotice";
 import AddContent from "./Components/TeachersDashboard/AddContent/AddContent";
 import MyCourses from "./Components/TeachersDashboard/MyCourses/MyCourses";
 import MyCourseDetails from "./Components/TeachersDashboard/MyCourseDeatails/MyCourseDetails";
+import UploadMyContent from "./Components/TeachersDashboard/UploadMyContent/UploadMyContent";
 
 function App() {
   return (
@@ -156,6 +157,10 @@ function App() {
                 <Route
                   path="/teachersDashboard/CourseDetails/:courseId"
                   element={<MyCourseDetails />}
+                />
+                <Route
+                  path="/teachersDashboard/addContent/:courseId"
+                  element={<UploadMyContent />}
                 />
                 <Route
                   path="/teachersDashboard/addCourse"

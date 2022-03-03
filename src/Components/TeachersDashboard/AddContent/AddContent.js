@@ -28,7 +28,7 @@ const AddContent = () => {
         {courses &&
           courses?.map((item, key) => (
             <div className="md:col-span-4 col-span-12" key={key}>
-              <Link to={`/dashboard/allcourses/${item?._id}`}>
+              <Link to={`/teachersDashboard/addContent/${item?._id}`}>
                 <div
                   className="border  rounded-lg card mx-auto duration-300  bg-white"
                   style={{ maxWidth: "400px" }}
