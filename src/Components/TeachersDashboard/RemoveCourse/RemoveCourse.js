@@ -25,26 +25,28 @@ const RemoveCourse = () => {
         {courses &&
           courses?.map((item, key) => (
             <div className="md:col-span-4 col-span-12" key={key}>
-              <Link to={`/teachersDashboard/CourseDetails/${item?._id}`}>
-                <div
-                  className="border rounded-lg card mx-auto duration-300 bg-white"
-                  style={{ maxWidth: "400px" }}
-                >
-                  <div className="overflow-hidden">
-                    <img
-                      className="object-fill h-52 w-full card-image rounded-t-lg"
-                      src={item?.image}
-                      alt={item?.title}
-                    />
+              <div
+                className="border rounded-lg card mx-auto duration-300 bg-white"
+                style={{ maxWidth: "400px" }}
+              >
+                <div className="overflow-hidden teacher-container relative">
+                  <img
+                    className="object-fill h-52 w-full card-image rounded-t-lg"
+                    src={item?.image}
+                    alt={item?.title}
+                  />
+                  <div className="overlay absolute bottom-0 left-0 right-0 w-full h-full overflow-hidden bg-[#0000005c] rounded-md">
+                    <button
+                      onClick={() => updateAlert(item._id, "delete", "courses")}
+                      key={key}
+                      to={`/teachersDashboard/singleTeacher/${item?._id}`}
+                      className="absolute left-1/2 top-1/2 text-center -translate-x-1/2 -translate-y-1/2 font-lg text-white bg-red-600 py-2 px-4 rounded-md"
+                    >
+                      Remove Course
+                    </button>
                   </div>
                 </div>
-              </Link>
-              <button
-                className="bg-red-600"
-                onClick={() => updateAlert(item._id, "delete", "courses")}
-              >
-                Remove from List
-              </button>
+              </div>
             </div>
           ))}
       </div>
