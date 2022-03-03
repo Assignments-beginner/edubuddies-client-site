@@ -46,8 +46,8 @@ const TeacherList = () => {
       <div >
         <table class=" ml-36 mb-24 border-collapse border border-slate-400 ...  ">
           <thead>
-            <tr>
-              <th class="border border-slate-300 ... ">Photo</th>
+            <tr className="bg-gray-300">
+              <th class="border border-slate-300 ... px-6">Photo</th>
               <th class="border border-slate-300 ... p-8">Name</th>
               <th class="border border-slate-300 ... p-8">Designation</th>
               <th class="border border-slate-300 ... p-8">Gender</th>
@@ -77,10 +77,10 @@ const TeacherList = () => {
                   <td class="border border-slate-300 ...">{item.gender}</td>
                   <td class="border border-slate-300 ... p-4">{item.email}</td>
                   <td class="border border-slate-300 ...">{item.country}</td>
-                  <td class="border border-slate-300 ...">
+                  <td class="border border-slate-300 ... text-sky-700">
                     <button>View</button>
                   </td>
-                  <td class="border border-slate-300 ...">
+                  <td class="border border-slate-300 ... text-red-700">
                     <button onClick={() => deleteTeacher(item._id)}>
                       DELETE
                     </button>

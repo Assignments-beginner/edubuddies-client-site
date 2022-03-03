@@ -54,7 +54,7 @@ const CoursesList = () => {
       <div>
         <table class="ml-64 mb-24 border-collapse border border-slate-400 ...">
           <thead>
-            <tr>
+            <tr className="bg-gray-300">
               <th class="border border-slate-300 ... p-8">Title</th>
               <th class="border border-slate-300 ... p-8">Category</th>
               <th class="border border-slate-300 ... p-8">Fee</th>
@@ -71,14 +71,14 @@ const CoursesList = () => {
                   <td class="border border-slate-300 ... p-2">
                     {item.courseFee} TK
                   </td>
-                  <td class="border border-slate-300 ...">
+                  <td class="border border-slate-300 ... ">
                     <button
                       onClick={() => updateCourseStatus(item._id, "approved")}
                     >
                       {item.courseStatus}
                     </button>
                   </td>
-                  <td class="border border-slate-300 ...">
+                  <td class="border border-slate-300 ... text-red-700">
                     <button
                       onClick={() => updateCourseStatus(item._id, "delete")}
                     >
