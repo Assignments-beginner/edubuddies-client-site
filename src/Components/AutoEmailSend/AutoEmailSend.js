@@ -118,14 +118,13 @@ const AutoEmailSendTest = () => {
 									className='flex text-sm font-semibold text-red-500 text-left mt-2'>
 									Body
 								</label>
-									<Editor
-										editorState={editorState}
-										onEditorStateChange={handleEditorChange}
-										wrapperClassName='wrapper'
-										editorClassName='editor'
-										toolbarClassName='toolbar'
-									/>
-								}
+								<Editor
+									editorState={editorState}
+									onEditorStateChange={handleEditorChange}
+									wrapperClassName='wrapper'
+									editorClassName='editor'
+									toolbarClassName='toolbar'
+								/>
 							</div>
 							<button
 								className='bg-red-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
