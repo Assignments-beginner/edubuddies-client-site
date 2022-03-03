@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BlobServiceClient } from "@azure/storage-blob";
-import "../AddNewCourse/AddNewCourse.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { useForm } from "react-hook-form";
@@ -23,35 +22,24 @@ const UploadMyContent = () => {
   const courses = useSelector((state) => state.edu.courses);
 
   const singleCourse = courses && courses.find((item) => item._id === id);
-  console.log(singleCourse);
 
   // upload file
   const uploadFiless = async () => {
     setLoading(true);
-    console.log(form.file);
     try {
-      console.log("uploadding");
-      console.log(form.file.name);
       const containerClient = blobServiceClient.getContainerClient("courses");
       const blockBlobClient = containerClient.getBlockBlobClient(
         form.file.name
       );
-      console.log(form.file);
       const rest = await blockBlobClient.uploadBrowserData(form.file);
-      console.log(rest);
       setLoading(false);
       const resURL = rest?._response?.request?.url;
-      console.log(resURL);
       setFileLink(resURL.split("?")[0]);
-      console.log("Done");
-    } catch (error) {
-      console.log(error.message);
-    }
+    } catch (error) {}
   };
 
   const handleChange = (e) => {
     const value = e.target.name === "file" ? e.target.files[0] : e.target.value;
-    console.log(e.target.files[0]);
     setForm({
       ...form,
       [e.target.name]: value,
@@ -60,7 +48,6 @@ const UploadMyContent = () => {
 
   const [fileLink, setFileLink] = useState(null);
   const [loading, setLoading] = useState(false);
-  console.log(fileLink);
 
   const [submitting, setSubmitting] = useState(false);
   const { register, handleSubmit, reset } = useForm();
@@ -108,19 +95,19 @@ const UploadMyContent = () => {
               <>
                 {!fileLink ? (
                   <>
-                    <label class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer ">
+                    <label className="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer ">
                       <FontAwesomeIcon
                         icon={faCloudArrowUp}
                         className="text-2xl rounded-full bg-gray-700 text-white p-3"
                       />
-                      <span class="mt-2 text-base leading-normal">
+                      <span className="mt-2 text-base leading-normal">
                         Select a Video
                       </span>
                       <input
                         onChange={handleChange}
                         type="file"
                         name="file"
-                        class="hidden"
+                        className="hidden"
                         // accept="video/mp4"
                         placeholder="Upload A Video"
                       />
@@ -145,7 +132,7 @@ const UploadMyContent = () => {
           </div>
           <div className="flex flex-col space-y-1">
             <label
-              for="Title"
+              htmlFor="Title"
               className="text-sm font-semibold text-gray-500 text-left"
             >
               Content Title
@@ -155,7 +142,7 @@ const UploadMyContent = () => {
               label="Title"
               name="Title"
               {...register("title", { required: true })}
-              autofocus
+              autoFocus
               className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
             />
           </div>
