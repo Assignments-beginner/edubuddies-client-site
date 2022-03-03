@@ -12,6 +12,7 @@ import {
   faBars,
   faXmark,
   faPen,
+  faFolderPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { Link, Outlet } from "react-router-dom";
@@ -128,7 +129,7 @@ const TeachersDashboard = () => {
                       >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
-                          icon={faFolder}
+                          icon={faFolderPlus}
                         />
                         <span className="mx-3">Add Course</span>
                       </NavLink>
