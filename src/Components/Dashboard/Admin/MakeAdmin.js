@@ -20,11 +20,11 @@ const MakeAdmin = () => {
   };
 
   return (
-    <div className="h-full bg-style">
-      <h1 className="text-4xl ">Make a Admin</h1> <br />
+    <div className="bg-style pt-10 xl:pt-48 lg:pt-48">
+      <h1 className="text-3xl text-red-500 font-bold mb-5">Make an Admin</h1>{" "}
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
-          className="text-gray-600 focus:ring-2 focus:ring-indigo-700 dark:text-gray-400 focus:outline-none dark:focus:border-indigo-700 dark:border-gray-700 dark:bg-gray-800 bg-white font-normal py-2 px-12 text-sm mr-3 border-gray-300 rounded border shadow "
+          className="text-gray-600 focus:ring-2 focus:ring-red-600 focus:outline-none bg-white font-normal py-2 px-4 w-64 mx-auto text-md border-gray-300 rounded border shadow "
           type={"email"}
           {...register("email", { required: true })}
           placeholder="Enter Email to make Admin"
@@ -32,7 +32,7 @@ const MakeAdmin = () => {
         <br />
         {errors.exampleRequired && <span>This field is required</span>} <br />
         <input
-          className="bg-indigo-700 hover:bg-indigo-600 text-white py-2 px-6 rounded-lg ml-3"
+          className="bg-red-500 hover:bg-transparent border border-red-500 duration-300 text-white py-2 px-6 rounded-lg w-32 mx-auto"
           type="submit"
         />{" "}
         <br />
