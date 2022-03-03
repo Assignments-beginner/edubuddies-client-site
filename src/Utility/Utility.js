@@ -40,7 +40,7 @@ export const updateAlert = (id, statusName, api) => {
     showCancelButton: true,
     confirmButtonColor: "green",
     cancelButtonColor: "red",
-    confirmButtonText: "Yes, Restore it!",
+    confirmButtonText: `Yes, ${statusName} it!`,
   }).then((result) => {
     if (result.isConfirmed) {
       axios
