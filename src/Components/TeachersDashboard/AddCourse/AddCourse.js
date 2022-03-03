@@ -9,7 +9,7 @@ import Loading from "../../Loading/Loading";
 
 const AddCourse = () => {
   const { user } = useAuth();
-  console.log(user);
+
   const [fileLink, setFileLink] = useState(null);
   const [loading, setLoading] = useState(false);
   const uploadFile = async (e) => {
@@ -119,7 +119,7 @@ const AddCourse = () => {
               label="Title"
               name="Title"
               {...register("title", { required: true })}
-              autofocus
+              autoFocus
               className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
             />
           </div>
@@ -136,7 +136,7 @@ const AddCourse = () => {
               label="Category"
               name="Category"
               {...register("category", { required: true })}
-              autofocus
+              autoFocus
               className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
             />
           </div>
@@ -152,7 +152,7 @@ const AddCourse = () => {
               label="Course Fee"
               name="courseFee"
               {...register("courseFee", { required: true })}
-              autofocus
+              autoFocus
               className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
             />
           </div>
@@ -168,7 +168,7 @@ const AddCourse = () => {
               label="Course Duration"
               name="courseDuration"
               {...register("courseDuration", { required: true })}
-              autofocus
+              autoFocus
               className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
             />
           </div>
@@ -184,7 +184,7 @@ const AddCourse = () => {
               label="Description"
               name="Description"
               {...register("description", { required: true })}
-              autofocus
+              autoFocus
               className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
             />
           </div>

@@ -8,7 +8,6 @@ import { addCourse } from "../../../Redux/edubuddySlice";
 const MyCourses = () => {
   const dispatch = useDispatch();
   const courses = useSelector((state) => state.edu.courses);
-  console.log(courses);
 
   useEffect(() => {
     const url = "https://fierce-caverns-90976.herokuapp.com/courses";
@@ -24,9 +23,9 @@ const MyCourses = () => {
       </h1>
       <div className="mx-auto grid grid-cols-12 gap-9">
         {courses &&
-          courses?.map((item) => (
-            <div className="md:col-span-4 col-span-12">
-              <Link to={`/teachersDashboard/CourseDetails/${item._id}`}>
+          courses?.map((item, key) => (
+            <div className="md:col-span-4 col-span-12" key={key}>
+              <Link to={`/teachersDashboard/CourseDetails/${item?._id}`}>
                 <div
                   className="border rounded-lg card mx-auto duration-300 bg-white"
                   style={{ maxWidth: "400px" }}
