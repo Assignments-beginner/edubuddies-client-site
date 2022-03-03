@@ -88,15 +88,19 @@ const AddCourse = () => {
             {!loading ? (
               <>
                 {!fileLink ? (
-                  <label class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer ">
+                  <label className="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer ">
                     <FontAwesomeIcon
                       icon={faCloudArrowUp}
                       className="text-2xl rounded-full bg-gray-700 text-white p-3"
                     />
-                    <span class="mt-2 text-base leading-normal">
+                    <span className="mt-2 text-base leading-normal">
                       Select a photo
                     </span>
-                    <input type="file" class="hidden" onChange={uploadFile} />
+                    <input
+                      type="file"
+                      className="hidden"
+                      onChange={uploadFile}
+                    />
                   </label>
                 ) : (
                   <img src={fileLink} alt="" width="230px" height="130px" />
@@ -105,11 +109,11 @@ const AddCourse = () => {
             ) : (
               <Loading />
             )}
-            <span class="mt-2 text-base leading-normal">Course Banner</span>
+            <span className="mt-2 text-base leading-normal">Course Banner</span>
           </div>
           <div className="flex flex-col space-y-1">
             <label
-              for="Title"
+              htmlFor="Title"
               className="text-sm font-semibold text-gray-500 text-left"
             >
               Title
@@ -126,7 +130,7 @@ const AddCourse = () => {
 
           <div className="flex flex-col space-y-1">
             <label
-              for="Category"
+              htmlFor="Category"
               className="text-sm font-semibold text-gray-500 text-left"
             >
               Category
@@ -142,7 +146,7 @@ const AddCourse = () => {
           </div>
           <div className="flex flex-col space-y-1">
             <label
-              for="courseFee"
+              htmlFor="courseFee"
               className="text-sm font-semibold text-gray-500 text-left"
             >
               Course Fee
@@ -158,7 +162,7 @@ const AddCourse = () => {
           </div>
           <div className="flex flex-col space-y-1">
             <label
-              for="courseDuration"
+              htmlFor="courseDuration"
               className="text-sm font-semibold text-gray-500 text-left"
             >
               Course Duration
@@ -174,7 +178,7 @@ const AddCourse = () => {
           </div>
           <div className="flex flex-col space-y-1">
             <label
-              for="courseFee"
+              htmlFor="courseFee"
               className="text-sm font-semibold text-gray-500 text-left"
             >
               Description

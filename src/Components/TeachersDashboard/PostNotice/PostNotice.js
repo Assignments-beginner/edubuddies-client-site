@@ -28,12 +28,9 @@ const PostNotice = () => {
 
   return (
     <div className="container mx-auto px-4 md:px-11">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col space-y-3"
-      >
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className=" w-full my-6 mx-auto max-w-3xl">
-          <div className="border-0 rounded-lg flex flex-col w-full bg-white pb-7">
+          <div className="border-0 rounded-lg w-full bg-white pb-7">
             <h3 className="text-3xl font-semibold text-center text-red-500 mb-6">
               Post A Notice For Students
             </h3>
