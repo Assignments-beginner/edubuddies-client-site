@@ -4,7 +4,7 @@ const Bestperformer = () => {
   const [performer, setPerformer] = useState([]);
   useEffect(() => {
     fetch(
-      "http://localhost:5000/teachersDashboard/bestPerformer?performer=best"
+      "https://fierce-caverns-90976.herokuapp.com/teachersDashboard/bestPerformer?performer=best"
     )
       .then((res) => res.json())
       .then((data) => setPerformer(data));

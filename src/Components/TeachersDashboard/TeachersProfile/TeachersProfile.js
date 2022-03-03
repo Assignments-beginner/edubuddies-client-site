@@ -7,7 +7,9 @@ const TeachersProfile = () => {
   const [singleTeacher, setSingleTeacher] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/singleTeacher/${teacherId}`)
+    fetch(
+      `https://fierce-caverns-90976.herokuapp.com/singleTeacher/${teacherId}`
+    )
       .then((res) => res.json())
       .then((data) => setSingleTeacher(data));
   }, []);
@@ -100,9 +102,6 @@ const TeachersProfile = () => {
               <span className="font-bold">Job Type: </span>
               {singleTeacher?.type}
             </h2>
-            <button className="bg-red-500 border border-red-500 text-white px-4 py-2 rounded-md hover:bg-transparent hover:text-red-500">
-              View Published Post
-            </button>
           </div>
         </div>
       </div>
