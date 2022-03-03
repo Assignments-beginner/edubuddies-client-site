@@ -46,6 +46,7 @@ import Bestperformer from "./Components/TeachersDashboard/Bestperformer/Bestperf
 import PostNotice from "./Components/TeachersDashboard/PostNotice/PostNotice";
 import AddContent from "./Components/TeachersDashboard/AddContent/AddContent";
 import MyCourses from "./Components/TeachersDashboard/MyCourses/MyCourses";
+import MyCourseDetails from "./Components/TeachersDashboard/MyCourseDeatails/MyCourseDetails";
 
 function App() {
   return (
@@ -151,6 +152,10 @@ function App() {
                 <Route
                   path="/teachersDashboard/singleTeacher/:teacherId"
                   element={<TeachersProfile />}
+                />
+                <Route
+                  path="/teachersDashboard/CourseDetails/:courseId"
+                  element={<MyCourseDetails />}
                 />
                 <Route
                   path="/teachersDashboard/addCourse"
