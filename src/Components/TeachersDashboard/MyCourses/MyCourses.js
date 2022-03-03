@@ -26,7 +26,7 @@ const MyCourses = () => {
         {courses &&
           courses?.map((item) => (
             <div className="md:col-span-4 col-span-12">
-              <Link to={`teachersDashboard/singlecourse/${item._id}`}>
+              <Link to={`/teachersDashboard/CourseDetails/${item._id}`}>
                 <div
                   className="border rounded-lg card mx-auto duration-300 bg-white"
                   style={{ maxWidth: "400px" }}

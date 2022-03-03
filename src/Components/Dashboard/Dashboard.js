@@ -199,7 +199,7 @@ const Dashboard = () => {
               <img
                 className="user-img h-14 w-14 rounded-full ml-2"
                 src={user.photoURL}
-                alt=""
+                alt="user"
               />
             </div>
           </div>
