@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 import { EditorState } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import { convertToHTML } from "draft-convert";
-import DOMPurify from "dompurify";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "./AutoEmailSend.css";
 
@@ -54,17 +53,8 @@ const AutoEmailSendTest = () => {
 		setConvertedContent(currentContentAsHTML);
 	};
 
-	const createMarkup = (html) => {
-		return {
-			__html: DOMPurify.sanitize(html),
-		};
-	};
-
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
-			<div
-				className='preview'
-				dangerouslySetInnerHTML={createMarkup(convertedContent)}></div>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				className='flex flex-col space-y-3'>
