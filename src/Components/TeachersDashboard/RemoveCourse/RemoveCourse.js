@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import { updateAlert } from "../../../Utility/Utility";
 
 const RemoveCourse = () => {
   const { user } = useAuth();
@@ -38,7 +39,12 @@ const RemoveCourse = () => {
                   </div>
                 </div>
               </Link>
-              {/* <button className="bg-red-600" onClick={() => updateCourseStatus(item._id, "delete")}>Remove from List</button> */}
+              <button
+                className="bg-red-600"
+                onClick={() => updateAlert(item._id, "delete", "courses")}
+              >
+                Remove from List
+              </button>
             </div>
           ))}
       </div>
