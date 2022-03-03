@@ -1,22 +1,19 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faUser,
-  faBook,
-  faBlog,
-  faCertificate,
-  faPlayCircle,
   faRightFromBracket,
-  faClock,
-  faFolder,
   faBell,
   faBars,
   faXmark,
+  faRecycle,
+  faChalkboardUser,
+  faUserGraduate,
+  faUserShield,
+  faGraduationCap,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Dashboard.css";
 import { Link, Outlet } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import { NavLink } from "react-router-dom";
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -80,106 +77,13 @@ const Dashboard = () => {
                 <div>
                   <ul className="space-y-5">
                     <li>
-                      <NavLink
-                        to="allcourses"
-                        className="li text-lg rounded-lg  text-white "
-                      >
-                        <FontAwesomeIcon
-                          className="mx-2 text-red-500 icon"
-                          icon={faFolder}
-                        />
-                        <span className="mx-3">All Courses</span>
-                        {/* <FontAwesomeIcon
-											className='mx-2 text-red-500 icon'
-											icon={faPlus}
-										/> */}
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="addnewcourse"
-                        className="li text-lg rounded-lg  text-white "
-                      >
-                        <FontAwesomeIcon
-                          className="mx-2 text-red-500 icon"
-                          icon={faBook}
-                        />
-                        <span className="mx-3">Add Courses</span>
-                        {/* 	<FontAwesomeIcon
-											className='mx-2 text-red-500 icon'
-											icon={faPlus}
-										/> */}
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to=""
-                        className="li rounded-lg text-lg text-white "
-                      >
-                        <FontAwesomeIcon
-                          className="mx-2 text-red-500 icon"
-                          icon={faPlayCircle}
-                        />
-                        <span className="mx-3">Content</span>
-                        {/* 	<FontAwesomeIcon
-											className='mx-2 text-red-500 icon'
-											icon={faPlus}
-										/> */}
-                      </NavLink>
-                    </li>
-                    <li>
-                      <Link to="" className="li text-lg rounded-lg  text-white">
-                        <FontAwesomeIcon
-                          className="mx-2 text-red-500 icon"
-                          icon={faUser}
-                        />
-                        <span className="mx-3">Students</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <NavLink
-                        to=""
-                        className="li text-lg rounded-lg  text-white "
-                      >
-                        <FontAwesomeIcon
-                          className="mx-2 text-red-500 icon"
-                          icon={faClock}
-                        />
-                        <span className="mx-3">Schedule</span>
-                      </NavLink>
-                    </li>
-                    <li>
-                      <Link
-                        to="admin/makeTeacher"
-                        className="li text-lg rounded-lg  text-white "
-                      >
-                        <FontAwesomeIcon
-                          className="mx-2 text-red-500 icon"
-                          icon={faBlog}
-                        />
-                        <span className="mx-3">Make Teacher</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="admin/makeAdmin"
-                        className="li text-lg rounded-lg  text-white "
-                      >
-                        <FontAwesomeIcon
-                          className="mx-2 text-red-500 icon"
-                          icon={faCertificate}
-                        />
-                        <span className="mx-3">Make Admin</span>
-                      </Link>
-                    </li>
-                    <li>
                       <Link
                         to="admin/CoursesList"
                         className="li text-lg rounded-lg  text-white "
                       >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
-                          icon={faCertificate}
+                          icon={faUserGraduate}
                         />
                         <span className="mx-3">Course List</span>
                       </Link>
@@ -191,9 +95,33 @@ const Dashboard = () => {
                       >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
-                          icon={faCertificate}
+                          icon={faChalkboardUser}
                         />
                         <span className="mx-3">TeacherList</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="admin/makeAdmin"
+                        className="li text-lg rounded-lg  text-white "
+                      >
+                        <FontAwesomeIcon
+                          className="mx-2 text-red-500 icon"
+                          icon={faUserShield}
+                        />
+                        <span className="mx-3">Make Admin</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="admin/makeTeacher"
+                        className="li text-lg rounded-lg  text-white "
+                      >
+                        <FontAwesomeIcon
+                          className="mx-2 text-red-500 icon"
+                          icon={faGraduationCap}
+                        />
+                        <span className="mx-3">Make Teacher</span>
                       </Link>
                     </li>
                     <li>
@@ -203,7 +131,7 @@ const Dashboard = () => {
                       >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
-                          icon={faCertificate}
+                          icon={faRecycle}
                         />
                         <span className="mx-3">Recycle Bin</span>
                       </Link>
