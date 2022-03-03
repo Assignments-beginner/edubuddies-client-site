@@ -32,8 +32,8 @@ const PostNotice = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col space-y-3"
       >
-        <div className="relative w-full my-6 mx-auto max-w-3xl">
-          <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white pb-7">
+        <div className=" w-full my-6 mx-auto max-w-3xl">
+          <div className="border-0 rounded-lg flex flex-col w-full bg-white pb-7">
             <h3 className="text-3xl font-semibold text-center text-red-500 mb-6">
               Post A Notice For Students
             </h3>

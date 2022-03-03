@@ -9,7 +9,7 @@ const MyCourseDetails = () => {
       .then((res) => res.json())
       .then((data) => setcourseDetails(data));
   }, []);
-  console.log(courseDetails);
+
   return (
     <div>
       <h1 className="text-3xl text-red-600 mt-4 mb-10 font-bold">
