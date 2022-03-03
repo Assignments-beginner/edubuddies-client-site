@@ -2,8 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { updateAlert } from "../../../Utility/Utility";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 const CoursesList = () => {
   const [courses, setCourses] = useState([]);
 
@@ -50,8 +50,9 @@ const CoursesList = () => {
 
   return (
     <div className="container mx-auto">
-      <h1>All Students List</h1>
-
+      <h1 className="text-red-600 text-3xl font-bold mt-2 mb-6">
+        All Course List
+      </h1>
       <table className="min-w-full divide-y divide-red-300 border border-red-300">
         <thead className="bg-gray-800">
           <tr>
@@ -91,9 +92,13 @@ const CoursesList = () => {
           {courses &&
             courses.map((item, key) => (
               <tr key={key}>
-                <td className="px-6 py-4 whitespace-nowrap">{item.title}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{item.category}</td>
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  {item.title}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                  {item.category}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-gray-600">
                   {item.courseFee} TK
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
