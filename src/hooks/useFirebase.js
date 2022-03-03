@@ -140,7 +140,7 @@ const useFirebase = () => {
 			photoURL: "https://cutt.ly/demouser",
 		};
 		axios
-			.post(`https://fierce-caverns-90976.herokuapp.com/users`, save)
+			.post(`https://fierce-caverns-90976.herokuapp.com/signup`, save)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",
@@ -171,7 +171,7 @@ const useFirebase = () => {
 	) => {
 		const save = { email, displayName, photoURL };
 		axios
-			.put(`https://fierce-caverns-90976.herokuapp.com/users`, save)
+			.put(`https://fierce-caverns-90976.herokuapp.com/login`, save)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",

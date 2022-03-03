@@ -40,7 +40,7 @@ import AddTeacher from "./Components/Dashboard/Admin/AddTeacher";
 import MakeAdmin from "./Components/Dashboard/Admin/MakeAdmin";
 import CoursesList from "./Components/Dashboard/Admin/CoursesList";
 import TeacherList from "./Components/Dashboard/Admin/TeacherList";
-import AutoEmailSendTest from "./Components/Test/AutoEmailSendTest";
+import AutoEmailSend from "./Components/AutoEmailSend/AutoEmailSend";
 
 function App() {
 	return (
@@ -149,7 +149,7 @@ function App() {
 									element={<RemoveCourse />}
 								/>
 							</Route>
-							<Route path='/autoemailsend' element={<AutoEmailSendTest />} />
+							<Route path='/autoemailsend' element={<AutoEmailSend />} />
 						</Routes>
 					</div>
 					<Footer />
