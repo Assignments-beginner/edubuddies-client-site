@@ -55,6 +55,7 @@ const Modal = ({ setShowModal }) => {
 			fullname,
 			phone,
 			about,
+			email: user?.email,
 			photoURL: data?.fileLink || fileLink,
 		};
 		setSubmitting(true);

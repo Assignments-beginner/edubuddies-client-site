@@ -18,7 +18,7 @@ const StudentEducation = () => {
 			.then((res) => {
 				setEducation(res.data?.educationalExp);
 			});
-	}, [user?.email]);
+	}, [user?.email, showModal]);
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>

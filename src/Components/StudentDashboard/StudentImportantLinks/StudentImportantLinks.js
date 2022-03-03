@@ -18,7 +18,7 @@ const StudentImportantLinks = () => {
 			.then((res) => {
 				setImportantlinks(res.data?.importantlinks);
 			});
-	}, [user?.email]);
+	}, [user?.email, showModal]);
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>

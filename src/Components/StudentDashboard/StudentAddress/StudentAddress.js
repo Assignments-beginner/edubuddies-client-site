@@ -20,7 +20,7 @@ const StudentAddress = () => {
 			.then((res) => {
 				setPresentaddressUI(res.data?.presentAddress);
 			});
-	}, [user?.email]);
+	}, [user?.email, permanentAddModal, presentAddModal]);
 
 	const [permanentaddressUI, setPermanentaddressUI] = React.useState();
 	React.useEffect(() => {
@@ -31,7 +31,7 @@ const StudentAddress = () => {
 			.then((res) => {
 				setPermanentaddressUI(res.data?.permanentAddress);
 			});
-	}, [user?.email]);
+	}, [user?.email, permanentAddModal, presentAddModal]);
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
