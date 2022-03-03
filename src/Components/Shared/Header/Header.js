@@ -175,12 +175,9 @@ const Header = () => {
                     </Link>
                     <hr />
                     {user?.email && (
-                      <button
-                        onClick={logOut}
-                        className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
-                      >
-                        Log Out
-                      </button>
+                      <p className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white">
+                        <button onClick={logOut}>Log Out</button>
+                      </p>
                     )}
                   </div>
                 </div>
