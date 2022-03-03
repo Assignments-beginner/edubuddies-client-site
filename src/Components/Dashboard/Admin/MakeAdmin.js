@@ -24,7 +24,7 @@ const MakeAdmin = () => {
       <h1 className="text-3xl text-red-500 font-bold mb-5">Make an Admin</h1>{" "}
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
-          className="text-gray-600 focus:ring-2 focus:ring-red-600 focus:outline-none bg-white font-normal py-2 px-4 w-64 mx-auto text-md border-gray-300 rounded border shadow "
+          className="text-gray-600 focus:ring-2 focus:ring-red-600 focus:outline-none bg-white font-normal py-2 px-4 w-64 mx-auto text-md border-gray-300 rounded border"
           type={"email"}
           {...register("email", { required: true })}
           placeholder="Enter Email to make Admin"
