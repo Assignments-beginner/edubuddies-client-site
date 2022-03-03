@@ -19,7 +19,6 @@ const Home = () => {
   const dispath = useDispatch();
 
   const allStudent = useSelector((state) => state.edu.student);
-  console.log("All_Students", allStudent);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")

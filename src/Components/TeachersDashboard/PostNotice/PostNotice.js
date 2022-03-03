@@ -14,7 +14,7 @@ const PostNotice = () => {
     EditorState.createEmpty()
   );
   const [convertedContent, setConvertedContent] = useState(null);
-  console.log(convertedContent);
+
   const handleEditorChange = (state) => {
     setEditorState(state);
     convertContentToHTML();
