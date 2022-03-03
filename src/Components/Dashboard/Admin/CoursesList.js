@@ -58,31 +58,31 @@ const CoursesList = () => {
           <tr>
             <th
               scope="col"
-              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest"
+              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300"
             >
               Title
             </th>
             <th
               scope="col"
-              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest"
+              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300"
             >
               Category
             </th>
             <th
               scope="col"
-              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest"
+              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300"
             >
               Fee
             </th>
             <th
               scope="col"
-              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest"
+              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300"
             >
               Status
             </th>
             <th
               scope="col"
-              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest"
+              className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300"
             >
               Action
             </th>
@@ -92,16 +92,16 @@ const CoursesList = () => {
           {courses &&
             courses.map((item, key) => (
               <tr key={key}>
-                <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                <td className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300">
                   {item.title}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                <td className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300">
                   {item.category}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                <td className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300">
                   {item.courseFee} TK
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-6 py-4 whitespace-nowrap border border-red-300">
                   <button
                     onClick={() => updateAlert(item._id, "approved", "courses")}
                   >
