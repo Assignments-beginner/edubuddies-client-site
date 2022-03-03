@@ -79,7 +79,7 @@ const AutoEmailSendTest = () => {
 									name='subject'
 									{...register("subject", { required: true })}
 									autofocus
-									className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
+									className='px-4 py-2 transition duration-300 border border-red-500 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
 								/>
 							</div>
 							<div className='flex flex-col space-y-1'>
@@ -94,7 +94,7 @@ const AutoEmailSendTest = () => {
 									name='cc'
 									{...register("cc")}
 									autofocus
-									className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
+									className='px-4 py-2 transition duration-300 border border-red-500 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
 								/>
 							</div>
 							<div className='flex flex-col space-y-1'>
@@ -109,7 +109,7 @@ const AutoEmailSendTest = () => {
 									name='bcc'
 									{...register("bcc")}
 									autofocus
-									className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
+									className='px-4 py-2 transition duration-300 border border-red-500 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200'
 								/>
 							</div>
 							<div className='space-y-1'>
