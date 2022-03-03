@@ -10,3 +10,9 @@
     -ms-transform: scale(1);
     transform: scale(1);
   }
+  .performer-container{
+    background-image: url("https://i.ibb.co/5hy56Bn/why-shape-pink.png");
+    background-position:top left;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }

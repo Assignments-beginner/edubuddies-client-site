@@ -15,7 +15,7 @@ const AllTeachers = () => {
         All Of Our Teachers
       </h1>
       <div className="w-full">
-        <div className=" px-32 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mx-auto md:gap-5 gap-4">
+        <div className=" xl:px-32 lg:px-32 px-0 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mx-auto md:gap-5 gap-4">
           {teachers?.map((teacher, key) => (
             <div className="text-left" key={key}>
               <div className="teacher-container relative">

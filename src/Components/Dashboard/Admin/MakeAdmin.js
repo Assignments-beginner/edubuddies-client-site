@@ -19,7 +19,7 @@ const MakeAdmin = () => {
 	};
 
   return (
-    <div>
+    <div className="mt-36">
 
 
 
@@ -31,16 +31,19 @@ const MakeAdmin = () => {
         <div className=" flex flex-nowrap justify-center">
        
         <input
-        className=" bg-red-50 p-2 rounded border-2 border-blue-300 m-1"
+        className=" bg-red-50 p-2 rounded border-2 border-red-300 m-1"
           type={"email"}
           {...register("email", { required: true })}
           placeholder="Enter Email"
         />{" "}
         <br />
-        {errors.exampleRequired && <span>This field is required</span>} <br />
-        <input
-         className=" bg-red-400 m-1 p-1 rounded "
-        type="submit" /> <br />
+        {errors.exampleRequired && <span>This field is required</span>} 
+        
+          <button className="border-2 border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold m-1 p-2 rounded-lg tracking-wider">
+                Submit
+              </button>
+        
+         <br />
         </div>
       </form>
     </div>

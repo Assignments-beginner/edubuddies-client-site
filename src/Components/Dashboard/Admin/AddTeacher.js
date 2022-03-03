@@ -19,22 +19,24 @@ const AddTeacher = () => {
 	};
 
   return (
-    <div>
-      <h1 className="text-4xl ">Make a Teacher</h1> <br />
+    <div className="mt-44 ">
+      <h1 className="text-4xl ">Make a Teacher</h1>
+       <br />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className=" flex flex-nowrap justify-center">
        
         <input
-        className=" bg-green-50 p-2 rounded border-2 border-blue-300 m-1"
+        className=" bg-red-50 p-2 rounded border-2 border-red-300 m-1"
           type={"email"}
           {...register("email", { required: true })}
           placeholder="Enter Email"
         />{" "}
         <br />
         {errors.exampleRequired && <span>This field is required</span>} <br />
-        <input
-         className=" bg-green-500 m-1 p-1 rounded "
-        type="submit" /> <br />
+        <button className="border-2 border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold m-1 p-2 rounded-lg tracking-wider">
+                Submit
+              </button>
+        <br />
         </div>
       </form>
 
