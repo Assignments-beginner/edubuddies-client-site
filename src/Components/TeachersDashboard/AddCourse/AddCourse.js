@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faImage } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
 import Loading from "../../Loading/Loading";
 
 const AddCourse = () => {
   const { user } = useAuth();
-  console.log(user);
+
   const [fileLink, setFileLink] = useState(null);
   const [loading, setLoading] = useState(false);
   const uploadFile = async (e) => {
@@ -30,54 +30,54 @@ const AddCourse = () => {
     setLoading(false);
   };
 
-  const [submitting, setSubmitting] = useState(false);
-  const { register, handleSubmit, reset } = useForm();
-  const onSubmit = ({
-    title,
-    category,
-    courseFee,
-    courseDuration,
-    description,
-  }) => {
-    const file = {
-      title,
-      category,
-      courseFee,
-      courseDuration,
-      description,
-      image: fileLink,
-      owner: { email: user?.email, name: user?.displayName },
-      /* owner: { email: "nizamcse.seu@gmail.com", name: "Nizam Uddin" }, */
-      data: [],
-      enrolledStudents: [],
-      courseStatus: "Pending",
-    };
-    setSubmitting(true);
-    axios
-      .post(`https://fierce-caverns-90976.herokuapp.com/addCourse`, file)
-      .then(function (response) {
-        Swal.fire({
-          icon: "success",
-          title: "Your File Successfully Added",
-          showConfirmButton: true,
-          timer: 2500,
-        });
-        setSubmitting(false);
-        setFileLink(null);
-        reset();
-      })
-      .catch(function (error) {
-        console.log("error", error);
-        console.log(error);
-      });
-  };
+	const [submitting, setSubmitting] = useState(false);
+	const { register, handleSubmit, reset } = useForm();
+	const onSubmit = ({
+		title,
+		category,
+		courseFee,
+		courseDuration,
+		description,
+	}) => {
+		const file = {
+			title,
+			category,
+			courseFee,
+			courseDuration,
+			description,
+			image: fileLink,
+			owner: { email: user?.email, name: user?.displayName },
+			/* owner: { email: "nizamcse.seu@gmail.com", name: "Nizam Uddin" }, */
+			data: [],
+			enrolledStudents: [],
+			courseStatus: "Pending",
+		};
+		setSubmitting(true);
+		axios
+			.post(`https://fierce-caverns-90976.herokuapp.com/addCourse`, file)
+			.then(function (response) {
+				Swal.fire({
+					icon: "success",
+					title: "Your File Successfully Added",
+					showConfirmButton: true,
+					timer: 2500,
+				});
+				setSubmitting(false);
+				setFileLink(null);
+				reset();
+			})
+			.catch(function (error) {
+				console.log("error", error);
+				console.log(error);
+			});
+	};
 
-  return (
-    <div className="container mx-auto px-4 md:px-11  ">
-      <h1 className="text-center text-3xl uppercase font-semibold mt-14 text-red-500">
-        Add A Course in
-      </h1>
-      <h4 className="mb-5 text-lg text-red-600 font-bold">Your Course List</h4>
+	return (
+		<div className='container mx-auto px-4 md:px-11  '>
+			<h1 className='text-center text-3xl uppercase font-semibold mt-14 text-red-500'>
+				Add A Course in
+			</h1>
+			<h4 className='mb-5 text-lg text-red-600 font-bold'>Your Course List</h4>
 
       <div className="md:w-2/4 mx-auto w-full bg-white p-5 drop-shadow-xl ">
         <form
@@ -88,15 +88,19 @@ const AddCourse = () => {
             {!loading ? (
               <>
                 {!fileLink ? (
-                  <label class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer ">
+                  <label className="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer ">
                     <FontAwesomeIcon
-                      icon={faCloudArrowUp}
+                      icon={faImage}
                       className="text-2xl rounded-full bg-gray-700 text-white p-3"
                     />
-                    <span class="mt-2 text-base leading-normal">
+                    <span className="mt-2 text-base leading-normal">
                       Select a photo
                     </span>
-                    <input type="file" class="hidden" onChange={uploadFile} />
+                    <input
+                      type="file"
+                      className="hidden"
+                      onChange={uploadFile}
+                    />
                   </label>
                 ) : (
                   <img src={fileLink} alt="" width="230px" height="130px" />
@@ -105,11 +109,11 @@ const AddCourse = () => {
             ) : (
               <Loading />
             )}
-            <span class="mt-2 text-base leading-normal">Course Banner</span>
+            <span className="mt-2 text-base leading-normal">Course Banner</span>
           </div>
           <div className="flex flex-col space-y-1">
             <label
-              for="Title"
+              htmlFor="Title"
               className="text-sm font-semibold text-gray-500 text-left"
             >
               Title
@@ -119,14 +123,14 @@ const AddCourse = () => {
               label="Title"
               name="Title"
               {...register("title", { required: true })}
-              autofocus
+              autoFocus
               className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
             />
           </div>
 
           <div className="flex flex-col space-y-1">
             <label
-              for="Category"
+              htmlFor="Category"
               className="text-sm font-semibold text-gray-500 text-left"
             >
               Category
@@ -136,13 +140,13 @@ const AddCourse = () => {
               label="Category"
               name="Category"
               {...register("category", { required: true })}
-              autofocus
+              autoFocus
               className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
             />
           </div>
           <div className="flex flex-col space-y-1">
             <label
-              for="courseFee"
+              htmlFor="courseFee"
               className="text-sm font-semibold text-gray-500 text-left"
             >
               Course Fee
@@ -152,13 +156,13 @@ const AddCourse = () => {
               label="Course Fee"
               name="courseFee"
               {...register("courseFee", { required: true })}
-              autofocus
+              autoFocus
               className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
             />
           </div>
           <div className="flex flex-col space-y-1">
             <label
-              for="courseDuration"
+              htmlFor="courseDuration"
               className="text-sm font-semibold text-gray-500 text-left"
             >
               Course Duration
@@ -168,13 +172,13 @@ const AddCourse = () => {
               label="Course Duration"
               name="courseDuration"
               {...register("courseDuration", { required: true })}
-              autofocus
+              autoFocus
               className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
             />
           </div>
           <div className="flex flex-col space-y-1">
             <label
-              for="courseFee"
+              htmlFor="courseFee"
               className="text-sm font-semibold text-gray-500 text-left"
             >
               Description
@@ -184,7 +188,7 @@ const AddCourse = () => {
               label="Description"
               name="Description"
               {...register("description", { required: true })}
-              autofocus
+              autoFocus
               className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
             />
           </div>

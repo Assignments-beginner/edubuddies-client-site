@@ -1,14 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Swal from "sweetalert2";
+import { updateAlert } from "../../../Utility/Utility";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const TeacherList = () => {
-	const [teachers, setTeachers] = useState([]);
-	useEffect(() => {
-		axios
-			.get("https://fierce-caverns-90976.herokuapp.com/teachers")
-			.then((res) => setTeachers(res.data));
-	}, [teachers]);
+  const [teachers, setTeachers] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://fierce-caverns-90976.herokuapp.com/teachers")
+      .then((res) => {
+        const restData = res.data.filter((item) => item.status !== "deleted");
+        setTeachers(restData);
+      });
+  }, [teachers]);
 
 	const deleteTeacher = (id) => {
 		Swal.fire({

@@ -9,8 +9,8 @@ import {
 	faBell,
 	faBars,
 	faXmark,
+	faLightbulb,
 } from "@fortawesome/free-solid-svg-icons";
-import "../Dashboard/Dashboard.css";
 import { Link, Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
@@ -122,7 +122,7 @@ const StudentDashboard = () => {
 												className='li text-lg rounded-lg  text-white '>
 												<FontAwesomeIcon
 													className='mx-2 text-red-500 icon'
-													icon={faUpRightFromSquare}
+													icon={faLightbulb}
 												/>
 												<span className='mx-3'>Skills</span>
 											</NavLink>
