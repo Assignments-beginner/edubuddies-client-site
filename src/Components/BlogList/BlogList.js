@@ -75,8 +75,8 @@ const BlogList = () => {
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
-			<div className='p-5 border-b border-solid border-red-500 rounded-t mb-5'>
-				<div className='mb-2 mt-7 flex justify-between'>
+			<div className='p-2 border-b border-solid border-red-500 rounded-t mb-5'>
+				<div className='mb-2'>
 					<h3 className='text-3xl font-semibold text-center text-red-500'>
 						All Blogs
 					</h3>

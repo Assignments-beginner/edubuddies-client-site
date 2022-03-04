@@ -27,7 +27,7 @@ const Dashboard = () => {
 			<div className='relative min-h-screen md:flex '>
 				<aside
 					/* onClick={handleToggle} */
-					style={{ position: "sticky", top: 0, zIndex: 999 }}
+					style={{ position: "sticky", top: 0, zIndex: 999, minWidth: "250px" }}
 					aria-label='Sidebar'>
 					<div
 						className={`md:relative absolute delay-500  ${
@@ -71,7 +71,13 @@ const Dashboard = () => {
 									</div>
 								</div>
 								<div>
-									<ul className='space-y-5'>
+									<ul
+										className='space-y-5'
+										style={{
+											maxHeight: "60vh",
+											overflow: "hidden",
+											overflowY: "scroll",
+										}}>
 										<li>
 											<Link
 												to=''
@@ -116,7 +122,61 @@ const Dashboard = () => {
 												<span className='mx-3'>Make Teacher</span>
 											</Link>
 										</li>
-
+										<li>
+											<Link
+												to='newsletterlist'
+												className='li text-lg rounded-lg  text-white '>
+												<FontAwesomeIcon
+													className='mx-2 text-red-500 icon'
+													icon={faUserShield}
+												/>
+												<span className='mx-3'>Subscribers</span>
+											</Link>
+										</li>
+										<li>
+											<Link
+												to='postnewsletter'
+												className='li text-lg rounded-lg  text-white '>
+												<FontAwesomeIcon
+													className='mx-2 text-red-500 icon'
+													icon={faUserShield}
+												/>
+												<span className='mx-3'>Send Newsletter</span>
+											</Link>
+										</li>
+										<li>
+											<Link
+												to='postblog'
+												className='li text-lg rounded-lg  text-white '>
+												<FontAwesomeIcon
+													className='mx-2 text-red-500 icon'
+													icon={faUserShield}
+												/>
+												<span className='mx-3'>Post Blog</span>
+											</Link>
+										</li>
+										<li>
+											<Link
+												to='bloglist'
+												className='li text-lg rounded-lg  text-white '>
+												<FontAwesomeIcon
+													className='mx-2 text-red-500 icon'
+													icon={faUserShield}
+												/>
+												<span className='mx-3'>All Blogs</span>
+											</Link>
+										</li>
+										<li>
+											<Link
+												to='autoemailsend'
+												className='li text-lg rounded-lg  text-white '>
+												<FontAwesomeIcon
+													className='mx-2 text-red-500 icon'
+													icon={faUserShield}
+												/>
+												<span className='mx-3'>Send Emaill</span>
+											</Link>
+										</li>
 										<li>
 											<Link
 												to='admin/RecycleBin'
