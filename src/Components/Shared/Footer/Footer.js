@@ -10,6 +10,9 @@ const Footer = () => {
 	const [hide, setHide] = useState("block");
 	const location = useLocation();
 	useEffect(() => {
+		if (location?.pathname.includes("/home")) {
+			setHide("block");
+		}
 		if (location?.pathname.includes("/dashboard")) {
 			setHide("none");
 		}

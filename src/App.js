@@ -1,9 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "../src/Components/Home/About/About";
-import Blogs from "../src/Components/Home/Blogs/Blogs";
 import Contact from "../src/Components/Contact/Contact";
-import Courses from "../src/Components/Home/Courses/Courses";
 import Dashboard from "../src/Components/Dashboard/Dashboard";
 import Home from "../src/Components/Home/Home/Home";
 import Login from "./Components/Login/Login";
@@ -45,6 +43,10 @@ import RecycleBin from "./Components/Dashboard/Admin/RecycleBin";
 import Bestperformer from "./Components/TeachersDashboard/Bestperformer/Bestperformer";
 import PostNotice from "./Components/TeachersDashboard/PostNotice/PostNotice";
 import PostBlog from "./Components/PostBlog/PostBlog";
+import AllCoursesPage from "./Components/AllCoursesPage/AllCoursesPage";
+import AllBlogsPage from "./Components/AllBlogsPage/AllBlogsPage";
+import NewsletterList from "./Components/NewsletterList/NewsletterList";
+import PostNewsLetter from "./Components/PostNewsLetter/PostNewsLetter";
 
 function App() {
 	return (
@@ -61,10 +63,10 @@ function App() {
 							<Route path='/*' element={<NotFound />} />
 							<Route path='/' element={<Home />} />
 							<Route path='/home' element={<Home />} />
-							<Route path='/blog' element={<Blogs />} />
+							<Route path='/blog' element={<AllBlogsPage />} />
 							<Route path='/singleblog/:id' element={<SingleBlogMain />} />
 							<Route path='/about' element={<About />} />
-							<Route path='/courses' element={<Courses />} />
+							<Route path='/courses' element={<AllCoursesPage />} />
 							<Route path='/singlecourse/:id' element={<SingleCourse />} />
 							<Route path='/milestone' element={<Milestones />} />
 							<Route path='/contact' element={<Contact />} />
@@ -168,6 +170,8 @@ function App() {
 							</Route>
 							<Route path='/autoemailsend' element={<AutoEmailSend />} />
 							<Route path='/postblog' element={<PostBlog />} />
+							<Route path='/newsletterlist' element={<NewsletterList />} />
+							<Route path='/postnewsletter' element={<PostNewsLetter />} />
 						</Routes>
 					</div>
 					<Footer />
