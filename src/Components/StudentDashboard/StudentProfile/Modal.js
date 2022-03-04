@@ -99,17 +99,17 @@ const Modal = ({ setShowModal }) => {
 										{!loading ? (
 											<>
 												{!fileLink ? (
-													<label class='w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer '>
+													<label className='w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer '>
 														<FontAwesomeIcon
 															icon={faCloudArrowUp}
 															className='text-2xl rounded-full bg-gray-700 text-white p-3'
 														/>
-														<span class='mt-2 text-base leading-normal'>
+														<span className='mt-2 text-base leading-normal'>
 															Select a photo
 														</span>
 														<input
 															type='file'
-															class='hidden'
+															className='hidden'
 															onChange={uploadFile}
 														/>
 													</label>
@@ -125,7 +125,7 @@ const Modal = ({ setShowModal }) => {
 										) : (
 											<Loading />
 										)}
-										<span class='mt-2 text-base text-red-500 leading-normal'>
+										<span className='mt-2 text-base text-red-500 leading-normal'>
 											Profile Photo
 										</span>
 									</div>

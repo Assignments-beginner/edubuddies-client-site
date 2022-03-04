@@ -63,7 +63,7 @@ const Milestones = () => {
 							Course Contents
 						</h1>
 						<div
-							class='accordion '
+							className='accordion '
 							style={{ maxHeight: "60vh", overflowY: "scroll" }}>
 							{files?.data?.map((modules) => (
 								<div>
@@ -71,17 +71,17 @@ const Milestones = () => {
 										type='checkbox'
 										name='panel'
 										id='panel-1'
-										class='hidden'
+										className='hidden'
 									/>
 									<label
 										for='panel-1'
-										class='relative block bg-gray-800 text-white p-4 shadow border-b border-grey'>
+										className='relative block bg-gray-800 text-white p-4 shadow border-b border-grey'>
 										{modules?.milestone}
 									</label>
-									<div class='accordion__content overflow-hidden bg-grey-lighter'>
+									<div className='accordion__content overflow-hidden bg-grey-lighter'>
 										{files?.data?.map((video) => (
 											<h2
-												class='accordion__header p-3 border-2 font-semibold border-black'
+												className='accordion__header p-3 border-2 font-semibold border-black'
 												onClick={() => setSelectModule(video?.lectureURL)}>
 												<FontAwesomeIcon
 													className='text-gray-800 icon mr-3 '

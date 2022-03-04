@@ -92,56 +92,56 @@ const NewsletterList = () => {
 					</h3>
 				</div>
 			</div>
-			<div class='flex flex-col'>
-				<div class='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
-					<div class='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
-						<div class='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'>
-							<table class='min-w-full divide-y divide-red-200'>
-								<thead class='bg-red-50'>
+			<div className='flex flex-col'>
+				<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
+					<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
+						<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'>
+							<table className='min-w-full divide-y divide-red-200'>
+								<thead className='bg-red-50'>
 									<tr>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											No
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											User Email
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Status
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Action
 										</th>
 									</tr>
 								</thead>
-								<tbody class='bg-white divide-y divide-red-200'>
+								<tbody className='bg-white divide-y divide-red-200'>
 									{newsletters?.map((newsletter, key) => (
 										<tr key={key}>
-											<td class='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-4 whitespace-nowrap text-left'>
 												{n++}
 											</td>
-											<td class='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-4 whitespace-nowrap text-left'>
 												{newsletter?.email}
 											</td>
 											{`${newsletter?.status}` === "Subscribed" && (
-												<td class='px-6 py-4 whitespace-nowrap text-left'>
-													<p class='text-center text-white rounded-lg bg-green-500'>{`${newsletter?.status}`}</p>
+												<td className='px-6 py-4 whitespace-nowrap text-left'>
+													<p className='text-center text-white rounded-lg bg-green-500'>{`${newsletter?.status}`}</p>
 												</td>
 											)}
 											{`${newsletter?.status}` === "Unsubscribed" && (
-												<td class='px-6 py-4 whitespace-nowrap text-left'>
-													<p class='text-center text-white rounded-lg bg-red-500'>{`${newsletter?.status}`}</p>
+												<td className='px-6 py-4 whitespace-nowrap text-left'>
+													<p className='text-center text-white rounded-lg bg-red-500'>{`${newsletter?.status}`}</p>
 												</td>
 											)}
 
-											<td class='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-4 whitespace-nowrap text-left'>
 												<FontAwesomeIcon
 													onClick={() =>
 														handleStatus(
