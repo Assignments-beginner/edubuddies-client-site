@@ -30,54 +30,54 @@ const AddCourse = () => {
     setLoading(false);
   };
 
-  const [submitting, setSubmitting] = useState(false);
-  const { register, handleSubmit, reset } = useForm();
-  const onSubmit = ({
-    title,
-    category,
-    courseFee,
-    courseDuration,
-    description,
-  }) => {
-    const file = {
-      title,
-      category,
-      courseFee,
-      courseDuration,
-      description,
-      image: fileLink,
-      owner: { email: user?.email, name: user?.displayName },
-      /* owner: { email: "nizamcse.seu@gmail.com", name: "Nizam Uddin" }, */
-      data: [],
-      enrolledStudents: [],
-      courseStatus: "Pending",
-    };
-    setSubmitting(true);
-    axios
-      .post(`https://fierce-caverns-90976.herokuapp.com/addCourse`, file)
-      .then(function (response) {
-        Swal.fire({
-          icon: "success",
-          title: "Your File Successfully Added",
-          showConfirmButton: true,
-          timer: 2500,
-        });
-        setSubmitting(false);
-        setFileLink(null);
-        reset();
-      })
-      .catch(function (error) {
-        console.log("error", error);
-        console.log(error);
-      });
-  };
+	const [submitting, setSubmitting] = useState(false);
+	const { register, handleSubmit, reset } = useForm();
+	const onSubmit = ({
+		title,
+		category,
+		courseFee,
+		courseDuration,
+		description,
+	}) => {
+		const file = {
+			title,
+			category,
+			courseFee,
+			courseDuration,
+			description,
+			image: fileLink,
+			owner: { email: user?.email, name: user?.displayName },
+			/* owner: { email: "nizamcse.seu@gmail.com", name: "Nizam Uddin" }, */
+			data: [],
+			enrolledStudents: [],
+			courseStatus: "Pending",
+		};
+		setSubmitting(true);
+		axios
+			.post(`https://fierce-caverns-90976.herokuapp.com/addCourse`, file)
+			.then(function (response) {
+				Swal.fire({
+					icon: "success",
+					title: "Your File Successfully Added",
+					showConfirmButton: true,
+					timer: 2500,
+				});
+				setSubmitting(false);
+				setFileLink(null);
+				reset();
+			})
+			.catch(function (error) {
+				console.log("error", error);
+				console.log(error);
+			});
+	};
 
-  return (
-    <div className="container mx-auto px-4 md:px-11  ">
-      <h1 className="text-center text-3xl uppercase font-semibold mt-14 text-red-500">
-        Add A Course in
-      </h1>
-      <h4 className="mb-5 text-lg text-red-600 font-bold">Your Course List</h4>
+	return (
+		<div className='container mx-auto px-4 md:px-11  '>
+			<h1 className='text-center text-3xl uppercase font-semibold mt-14 text-red-500'>
+				Add A Course in
+			</h1>
+			<h4 className='mb-5 text-lg text-red-600 font-bold'>Your Course List</h4>
 
       <div className="md:w-2/4 mx-auto w-full bg-white p-5 drop-shadow-xl ">
         <form

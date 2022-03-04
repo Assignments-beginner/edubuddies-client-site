@@ -5,48 +5,51 @@ import { updateAlert } from "../../../Utility/Utility";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 const CoursesList = () => {
-  const [courses, setCourses] = useState([]);
+	const [courses, setCourses] = useState([]);
 
-  useEffect(() => {
-    const url = "https://fierce-caverns-90976.herokuapp.com/courses";
-    axios.get(url).then((res) => {
-      const data = res.data.filter((item) => item.courseStatus !== "delete");
-      setCourses(data);
-    });
-  }, [courses]);
+	useEffect(() => {
+		const url = "https://fierce-caverns-90976.herokuapp.com/courses";
+		axios.get(url).then((res) => {
+			const data = res.data.filter((item) => item.courseStatus !== "delete");
+			setCourses(data);
+		});
+	}, [courses]);
 
-  // courses update
-  const updateCourseStatus = (id, statusName) => {
-    const status = {
-      statusName: statusName,
-    };
-    console.log(status);
-    Swal.fire({
-      title: "Are you sure?",
-      text: `You won't be able ${statusName} this!`,
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "green",
-      cancelButtonColor: "red",
-      confirmButtonText: "Yes, Approved it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axios
-          .patch(`http://localhost:5000/courses/${id}`, status)
-          .then((res) => {
-            if (res.data.modifiedCount > 0) {
-              Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Updated Successfully",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-            }
-          });
-      }
-    });
-  };
+	// courses update
+	const updateCourseStatus = (id, statusName) => {
+		const status = {
+			statusName: statusName,
+		};
+		console.log(status);
+		Swal.fire({
+			title: "Are you sure?",
+			text: `You won't be able ${statusName} this!`,
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "green",
+			cancelButtonColor: "red",
+			confirmButtonText: "Yes, Approved it!",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				axios
+					.patch(
+						`https://fierce-caverns-90976.herokuapp.com/courses/${id}`,
+						status,
+					)
+					.then((res) => {
+						if (res.data.modifiedCount > 0) {
+							Swal.fire({
+								position: "center",
+								icon: "success",
+								title: "Updated Successfully",
+								showConfirmButton: false,
+								timer: 1500,
+							});
+						}
+					});
+			}
+		});
+	};
 
   return (
     <div className="container mx-auto">
