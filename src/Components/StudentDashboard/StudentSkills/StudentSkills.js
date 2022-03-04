@@ -67,56 +67,56 @@ const StudentSkills = () => {
 					</div>
 				</div>
 			</div>
-			<div class='flex flex-col'>
-				<div class='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
-					<div class='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
-						<div class='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'>
-							<table class='min-w-full divide-y divide-red-200'>
-								<thead class='bg-red-50'>
+			<div className='flex flex-col'>
+				<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
+					<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
+						<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'>
+							<table className='min-w-full divide-y divide-red-200'>
+								<thead className='bg-red-50'>
 									<tr>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											No
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Skill
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Experiance Year
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Projects
 										</th>
 										<th
 											scope='col'
-											class='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
 											Action
 										</th>
 									</tr>
 								</thead>
 								{skills?.skillset?.map((skill) => (
-									<tbody class='bg-white divide-y divide-red-200'>
+									<tbody className='bg-white divide-y divide-red-200'>
 										<tr>
-											<td class='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-4 whitespace-nowrap text-left'>
 												{n++}
 											</td>
-											<td class='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-4 whitespace-nowrap text-left'>
 												{skill?.skill}
 											</td>
-											<td class='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-4 whitespace-nowrap text-left'>
 												{skill?.expYear}
 											</td>
-											<td class='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-4 whitespace-nowrap text-left'>
 												{skill?.projects}
 											</td>
-											<td class='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-4 whitespace-nowrap text-left'>
 												<FontAwesomeIcon
 													onClick={() => handleDelete(skill?.skill)}
 													icon={faTrashCan}

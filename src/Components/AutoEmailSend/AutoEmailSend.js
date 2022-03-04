@@ -9,7 +9,7 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "./AutoEmailSend.css";
 
 const AutoEmailSendTest = () => {
-  const { register, handleSubmit, reset } = useForm();
+	const { register, handleSubmit, reset } = useForm();
 
 	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = ({ subject, bcc, cc }) => {
@@ -39,34 +39,32 @@ const AutoEmailSendTest = () => {
 		console.log(data);
 	};
 
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
-  );
-  const [convertedContent, setConvertedContent] = useState(null);
-  console.log(convertedContent);
-  const handleEditorChange = (state) => {
-    setEditorState(state);
-    convertContentToHTML();
-  };
+	const [editorState, setEditorState] = useState(() =>
+		EditorState.createEmpty(),
+	);
+	const [convertedContent, setConvertedContent] = useState(null);
+	console.log(convertedContent);
+	const handleEditorChange = (state) => {
+		setEditorState(state);
+		convertContentToHTML();
+	};
 
-  const convertContentToHTML = () => {
-    let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
-    setConvertedContent(currentContentAsHTML);
-  };
+	const convertContentToHTML = () => {
+		let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
+		setConvertedContent(currentContentAsHTML);
+	};
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
-			<form
-				onSubmit={handleSubmit(onSubmit)}
-				className='flex flex-col space-y-3'>
-				<div className='relative w-full my-6 mx-auto max-w-3xl'>
-					<div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none'>
-						<div className=' p-5 border-b border-solid border-red-500 rounded-t'>
-							<h3 className='text-3xl font-semibold text-center text-red-500'>
-								Auto Email Sending
-							</h3>
-							<p>Send Email to all students</p>
-						</div>
+			<div className=' mx-auto w-full bg-white p-5 drop-shadow-xl '>
+				<h3 className='text-3xl font-semibold text-center text-red-500'>
+					Auto Email Sending
+				</h3>
+				<p>Send Email to all students</p>
+				<form
+					onSubmit={handleSubmit(onSubmit)}
+					className='flex flex-col space-y-3'>
+					<div className='flex flex-col space-y-1 mx-auto'>
 						<div className='relative p-6 grid grid-cols-1 gap-3'>
 							<div className='flex flex-col space-y-1'>
 								<label
@@ -134,8 +132,8 @@ const AutoEmailSendTest = () => {
 							</button>
 						</div>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
 	);
 };

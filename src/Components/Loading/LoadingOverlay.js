@@ -4,11 +4,11 @@ const LoadingOverlay = () => {
 	return (
 		<div
 			id='loading-screen'
-			class=' w-full h-full fixed block top-0 left-0 bg-white opacity-75 z-50'>
-			<span class='text-green-500 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0'>
+			className=' w-full h-full fixed block top-0 left-0 bg-white opacity-75 z-50'>
+			<span className='text-green-500 opacity-75 top-1/2 my-0 mx-auto block relative w-0 h-0'>
 				<svg
 					role='status'
-					class='inline  w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600 mx-auto'
+					className='inline  w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600 mx-auto'
 					viewBox='0 0 100 101'
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'>

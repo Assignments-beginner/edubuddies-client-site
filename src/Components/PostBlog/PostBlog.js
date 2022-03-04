@@ -10,7 +10,6 @@ import { EditorState } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import { convertToHTML } from "draft-convert";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import BlogList from "../BlogList/BlogList";
 
 const PostBlog = () => {
 	const { user } = useAuth();
@@ -86,11 +85,10 @@ const PostBlog = () => {
 
 	return (
 		<div className='container mx-auto px-4 md:px-11  '>
-			<h1 className='text-center text-3xl uppercase font-semibold mt-14 mb-5 text-red-500'>
+			<h1 className='text-center text-3xl uppercase font-semibold mt-2 text-red-500'>
 				Post New Blog
 			</h1>
-
-			<div className='md:w-2/4 mx-auto w-full bg-white p-5 drop-shadow-xl '>
+			<div className=' mx-auto w-full bg-white p-5 drop-shadow-xl '>
 				<form
 					onSubmit={handleSubmit(onSubmit)}
 					className='flex flex-col space-y-3'>
@@ -98,15 +96,19 @@ const PostBlog = () => {
 						{!loading ? (
 							<>
 								{!fileLink ? (
-									<label class='w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer '>
+									<label className='w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer '>
 										<FontAwesomeIcon
 											icon={faCloudArrowUp}
 											className='text-2xl rounded-full bg-gray-700 text-white p-3'
 										/>
-										<span class='mt-2 text-base leading-normal'>
+										<span className='mt-2 text-base leading-normal'>
 											Select a photo
 										</span>
-										<input type='file' class='hidden' onChange={uploadFile} />
+										<input
+											type='file'
+											className='hidden'
+											onChange={uploadFile}
+										/>
 									</label>
 								) : (
 									<img src={fileLink} alt='' width='230px' height='130px' />
@@ -115,7 +117,7 @@ const PostBlog = () => {
 						) : (
 							<Loading />
 						)}
-						<span class='mt-2 text-base leading-normal'>Blog Banner</span>
+						<span className='mt-2 text-base leading-normal'>Blog Banner</span>
 					</div>
 					<div className='flex flex-col space-y-1'>
 						<label
@@ -155,8 +157,6 @@ const PostBlog = () => {
 			</div>
 
 			<div>{submitting ? <Loading /> : ""}</div>
-
-			<BlogList />
 		</div>
 	);
 };

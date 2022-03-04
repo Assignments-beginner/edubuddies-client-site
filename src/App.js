@@ -51,6 +51,7 @@ import MyCourses from "./Components/TeachersDashboard/MyCourses/MyCourses";
 import UploadMyContent from "./Components/TeachersDashboard/UploadMyContent/UploadMyContent";
 import MyCourseDetails from "./Components/TeachersDashboard/MyCourseDeatails/MyCourseDetails";
 import AddContent from "./Components/TeachersDashboard/AddContent/AddContent";
+import BlogList from "./Components/BlogList/BlogList";
 
 function App() {
 	return (
@@ -92,6 +93,10 @@ function App() {
 									element={<StudentEducation />}
 								/>
 								<Route
+									path='/studentdashboard/postblog'
+									element={<PostBlog />}
+								/>
+								<Route
 									path='/studentdashboard/importantlinks'
 									element={<StudentImportantLinks />}
 								/>
@@ -113,6 +118,20 @@ function App() {
 									path='/dashboard/addnewcourse'
 									element={<AddNewCourse />}
 								/>
+								<Route
+									path='/dashboard/autoemailsend'
+									element={<AutoEmailSend />}
+								/>
+								<Route path='/dashboard/postblog' element={<PostBlog />} />
+								<Route
+									path='/dashboard/newsletterlist'
+									element={<NewsletterList />}
+								/>
+								<Route
+									path='/dashboard/postnewsletter'
+									element={<PostNewsLetter />}
+								/>
+								<Route path='/dashboard/bloglist' element={<BlogList />} />
 								<Route path='/dashboard/allcourses' element={<AllCourses />} />
 								<Route
 									path='/dashboard/allcourses/:id'
@@ -145,6 +164,11 @@ function App() {
 								<Route
 									path='/teachersDashboard/bestPerformer'
 									element={<Bestperformer />}
+								/>
+
+								<Route
+									path='/teachersDashboard/postblog'
+									element={<PostBlog />}
 								/>
 								<Route
 									path='/teachersDashboard/myCourse'
@@ -183,11 +207,6 @@ function App() {
 									element={<PostNotice />}
 								/>
 							</Route>
-
-							<Route path='/autoemailsend' element={<AutoEmailSend />} />
-							<Route path='/postblog' element={<PostBlog />} />
-							<Route path='/newsletterlist' element={<NewsletterList />} />
-							<Route path='/postnewsletter' element={<PostNewsLetter />} />
 						</Routes>
 					</div>
 					<Footer />

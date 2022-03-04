@@ -1,75 +1,79 @@
 .teachers {
-  font-family: "Roboto", sans-serif;
-  color: black;
+	font-family: "Roboto", sans-serif;
+	color: black;
 }
 
 .team-area {
-  display: grid;
-  justify-content: center;
+	display: grid;
+	justify-content: center;
 }
 
 .team-box {
-  display: inline-flex;
+	display: inline-flex;
 }
 
 .teachers-box {
-  width: 270px;
-  height: 270px;
-  margin-top: 15px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+	width: 270px;
+	height: 270px;
+	margin-top: 15px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+		rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 .box {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-  margin: 20px;
-  text-align: center;
-  border-radius: 15px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 300px;
+	margin: 20px;
+	text-align: center;
+	border-radius: 15px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .box h2 {
-  font-size: 20px;
-  line-height: 1.6;
-  margin-bottom: 0;
+	font-size: 20px;
+	line-height: 1.6;
+	margin-bottom: 0;
 }
 .box span {
-  font-size: 14px;
-  display: block;
-  font-style: italic;
-  margin-bottom: 25px;
+	font-size: 14px;
+	display: block;
+	font-style: italic;
+	margin-bottom: 25px;
 }
 .box ul {
-  padding: 0;
+	padding: 0;
 }
 .box ul li {
-  display: inline-block;
-  list-style: none;
+	display: inline-block;
+	list-style: none;
+}
+
+.box img {
+	transition: transform 1s ease-in-out;
 }
 
 .box:hover img {
-  transform: scale(1.1);
-  transition: transform 2s ease-in-out;
+	transform: scale(1.1);
+	transition: transform 1s ease-in-out;
 }
 
 .box ul li a .fa-facebook:hover {
-  color: #4867aa;
+	color: #4867aa;
 }
 .box ul li a .fa-twitter:hover {
-  color: #5da9dd;
+	color: #5da9dd;
 }
 .box ul li a .fa-linkedin:hover {
-  color: #0077b5;
+	color: #0077b5;
 }
 
 @media all and (max-width: 688px) {
-  .team-box {
-    display: block;
-  }
+	.team-box {
+		display: block;
+	}
 }
