@@ -1,96 +1,125 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Swal from "sweetalert2";
+import { updateAlert } from "../../../Utility/Utility";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const TeacherList = () => {
-	const [teachers, setTeachers] = useState([]);
-	useEffect(() => {
-		axios
-			.get("https://fierce-caverns-90976.herokuapp.com/teachers")
-			.then((res) => setTeachers(res.data));
-	}, [teachers]);
+  const [teachers, setTeachers] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://fierce-caverns-90976.herokuapp.com/teachers")
+      .then((res) => {
+        const restData = res.data.filter((item) => item.status !== "deleted");
+        setTeachers(restData);
+      });
+  }, [teachers]);
 
-	const deleteTeacher = (id) => {
-		Swal.fire({
-			title: "Are you sure?",
-			text: "You won't be able to revert this!",
-			icon: "warning",
-			showCancelButton: true,
-			confirmButtonColor: "green",
-			cancelButtonColor: "red",
-			confirmButtonText: "Yes, delete it!",
-		}).then((result) => {
-			if (result.isConfirmed) {
-				axios
-					.delete(
-						`https://fierce-caverns-90976.herokuapp.com/deleteTeacher/${id}`,
-					)
-					.then((res) => {
-						if (res.data.deletedCount > 0) {
-							Swal.fire({
-								showConfirmButton: false,
-								icon: "success",
-								title: "Your file has been deleted",
-								timer: 1000,
-							});
-						}
-					});
-			}
-		});
-	};
-
-	return (
-		<div>
-			<h1 className='text-4xl'>Teacher List</h1>
-			<div>
-				<table class='border-collapse border border-slate-400 ...'>
-					<thead>
-						<tr>
-							<th class='border border-slate-300 ...'>Photo</th>
-							<th class='border border-slate-300 ...'>Name</th>
-							<th class='border border-slate-300 ...'>Designation</th>
-							<th class='border border-slate-300 ...'>Gender</th>
-							<th class='border border-slate-300 ...'>Email</th>
-							<th class='border border-slate-300 ...'>country</th>
-							<th class='border border-slate-300 ...'>Details</th>
-							<th class='border border-slate-300 ...'>Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						{teachers &&
-							teachers.map((item) => (
-								<tr>
-									<td class='border border-slate-300 ...'>
-										<img
-											className='rounded-full'
-											width='50px'
-											height='50px'
-											src={item.image}
-											alt={item.name}
-										/>
-									</td>
-									<td class='border border-slate-300 ...'>{item.name}</td>
-									<td class='border border-slate-300 ...'>
-										{item.designation}
-									</td>
-									<td class='border border-slate-300 ...'>{item.gender}</td>
-									<td class='border border-slate-300 ...'>{item.email}</td>
-									<td class='border border-slate-300 ...'>{item.country}</td>
-									<td class='border border-slate-300 ...'>
-										<button>View</button>
-									</td>
-									<td class='border border-slate-300 ...'>
-										<button onClick={() => deleteTeacher(item._id)}>
-											DELETE
-										</button>
-									</td>
-								</tr>
-							))}
-					</tbody>
-				</table>
-			</div>
-		</div>
-	);
+  return (
+    <div className="container mx-auto">
+      <h1 className="text-red-600 text-3xl font-bold mt-2 mb-6">
+        Our Honour Teacher List
+      </h1>
+      <div>
+        <table className="min-w-full divide-y divide-red-300 border border-red-300">
+          <thead className="bg-gray-800">
+            <tr>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Photo
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Name
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Designation
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Gender
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Email
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                country
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Details
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Status
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-red-300">
+            {teachers &&
+              teachers.map((item, key) => (
+                <tr key={key}>
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                    <img
+                      className="rounded-full mx-auto"
+                      width="50px"
+                      height="50px"
+                      src={item.image}
+                      alt={item.name}
+                    />
+                  </td>
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                    {item.name}
+                  </td>
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                    {item.designation}
+                  </td>
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                    {item.gender}
+                  </td>
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                    {item.email}
+                  </td>
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                    {item.country}
+                  </td>
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                    <button>View</button>
+                  </td>
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                    <button
+                      onClick={() =>
+                        updateAlert(item._id, "verified", "teacherStatus")
+                      }
+                    >
+                      {item?.status === "verified" ? (
+                        <div className="text-sm font-medium text-white bg-green-600 px-3 py-1 rounded-md">
+                          {item?.status}
+                        </div>
+                      ) : (
+                        <div className="text-sm font-medium text-white bg-yellow-600 px-3 py-1 rounded-md">
+                          {"pending"}
+                        </div>
+                      )}
+                    </button>
+                  </td>
+                  <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                    <button
+                      onClick={() =>
+                        updateAlert(item._id, "deleted", "teacherStatus")
+                      }
+                    >
+                      <FontAwesomeIcon
+                        className="mx-2 text-red-500 text-xl"
+                        icon={faTrash}
+                      />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
 
 export default TeacherList;

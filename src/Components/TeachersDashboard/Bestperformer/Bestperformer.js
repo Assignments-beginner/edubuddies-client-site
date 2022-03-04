@@ -13,7 +13,7 @@ const Bestperformer = () => {
 	return (
 		<div className='bg-gray-100 min-h-screen performer-container'>
 			<h1 className='text-center text-3xl uppercase font-semibold pt-4 md:mb-9 mb-5 text-red-500'>
-				Best Performer Of The Year
+				Top Teacher Of The Year
 			</h1>
 			<div className='container mx-auto'>
 				{performer?.map((best, key) => (

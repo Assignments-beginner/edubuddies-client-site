@@ -3,8 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightFromBracket, faBars } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
-// import { HashLink } from "react-router-hash-link";
 import useAuth from "../../../hooks/useAuth";
+// import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
 	const [hide, setHide] = useState("block");
@@ -27,7 +27,7 @@ const Header = () => {
 		}
 	}, [location, hide]);
 
-	const { user, logout } = useAuth();
+	const { user, logOut } = useAuth();
 
 	const toggleFunction = () => {
 		const toggleButton = document.getElementById("toogleDiv");
@@ -165,23 +165,21 @@ const Header = () => {
 											Student DB
 										</Link>
 										<hr />
-										<Link
-											to='/login'
-											onClick={logout}
-											className='text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white'>
-											Log Out
-										</Link>
+										{user?.email && (
+											<p className='text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white'>
+												<button onClick={logOut}>Log Out</button>
+											</p>
+										)}
 									</div>
 								</div>
-								<Link
-									onClick={logout}
-									to='/login'
+								<button
+									onClick={logOut}
 									className='text-gray-100 hover:bg-red-600 pr-2 pl-3 py-2 ml-2 rounded-md text-md font-medium flex items-center justify-center hover:border-red-600'>
 									<FontAwesomeIcon
 										className='mr-1 text-white'
 										icon={faRightFromBracket}
 									/>
-								</Link>
+								</button>
 							</div>
 						)}
 					</div>

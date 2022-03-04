@@ -65,7 +65,7 @@ const TeachersProfile = () => {
 						<h4 className='my-6'>
 							{singleTeacher?.Experties?.map((expert, key) => (
 								<p
-									className='mr-4 bg-gray-800 text-red-500 py-2 px-4 rounded-md inline-block mb-2'
+									className='mr-4 bg-gray-800 text-white py-2 px-4 rounded-md inline-block mb-2'
 									key={key}>
 									{expert}
 								</p>
@@ -75,7 +75,7 @@ const TeachersProfile = () => {
 						<h4 className='my-6'>
 							{singleTeacher?.language?.map((lang, key) => (
 								<p
-									className='mr-4 bg-gray-800 py-2 px-4 text-red-500 rounded-md inline-block mb-2'
+									className='mr-4 bg-gray-800 py-2 px-4 text-white rounded-md inline-block mb-2'
 									key={key}>
 									{lang}
 								</p>
@@ -100,9 +100,6 @@ const TeachersProfile = () => {
 							<span className='font-bold'>Job Type: </span>
 							{singleTeacher?.type}
 						</h2>
-						<button className='bg-red-500 border border-red-500 text-white px-4 py-2 rounded-md hover:bg-transparent hover:text-red-500'>
-							View Published Post
-						</button>
 					</div>
 				</div>
 			</div>

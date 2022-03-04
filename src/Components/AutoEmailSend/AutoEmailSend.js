@@ -9,7 +9,7 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "./AutoEmailSend.css";
 
 const AutoEmailSendTest = () => {
-	const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
 	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = ({ subject, bcc, cc }) => {
@@ -39,20 +39,20 @@ const AutoEmailSendTest = () => {
 		console.log(data);
 	};
 
-	const [editorState, setEditorState] = useState(() =>
-		EditorState.createEmpty(),
-	);
-	const [convertedContent, setConvertedContent] = useState(null);
-	console.log(convertedContent);
-	const handleEditorChange = (state) => {
-		setEditorState(state);
-		convertContentToHTML();
-	};
+  const [editorState, setEditorState] = useState(() =>
+    EditorState.createEmpty()
+  );
+  const [convertedContent, setConvertedContent] = useState(null);
+  console.log(convertedContent);
+  const handleEditorChange = (state) => {
+    setEditorState(state);
+    convertContentToHTML();
+  };
 
-	const convertContentToHTML = () => {
-		let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
-		setConvertedContent(currentContentAsHTML);
-	};
+  const convertContentToHTML = () => {
+    let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
+    setConvertedContent(currentContentAsHTML);
+  };
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>

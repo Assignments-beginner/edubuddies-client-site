@@ -28,7 +28,7 @@ const AllTeachers = () => {
 									<Link
 										key={key}
 										to={`/teachersDashboard/singleTeacher/${teacher?._id}`}
-										className='absolute left-1/2 top-1/2 text-center -translate-x-1/2 -translate-y-1/2 font-lg text-white bg-red-500 py-2 px-4 rounded-md'>
+										className='absolute left-1/2 top-1/2 text-center -translate-x-1/2 -translate-y-1/2 font-lg text-white bg-red-600 py-2 px-4 rounded-md'>
 										View Profile
 									</Link>
 								</div>

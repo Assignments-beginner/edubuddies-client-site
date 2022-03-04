@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChalkboardUser,
-  faPlayCircle,
   faRightFromBracket,
   faTrash,
+  faFolder,
   faUserGraduate,
   faGraduationCap,
+  faPlayCircle,
   faBell,
   faBars,
   faXmark,
   faPen,
+  faFolderPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { Link, Outlet } from "react-router-dom";
@@ -104,10 +106,22 @@ const TeachersDashboard = () => {
                           className="mx-2 text-red-500 icon"
                           icon={faGraduationCap}
                         />
-                        <span className="mx-3">Best Performer</span>
+                        <span className="mx-3">Top Teacher</span>
                       </NavLink>
                     </li>
 
+                    <li>
+                      <NavLink
+                        to="myCourse"
+                        className="li rounded-lg text-lg text-white "
+                      >
+                        <FontAwesomeIcon
+                          className="mx-2 text-red-500 icon"
+                          icon={faFolder}
+                        />
+                        <span className="mx-3">My Courses</span>
+                      </NavLink>
+                    </li>
                     <li>
                       <NavLink
                         to="addCourse"
@@ -115,9 +129,21 @@ const TeachersDashboard = () => {
                       >
                         <FontAwesomeIcon
                           className="mx-2 text-red-500 icon"
-                          icon={faPlayCircle}
+                          icon={faFolderPlus}
                         />
                         <span className="mx-3">Add Course</span>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="addContent"
+                        className="li rounded-lg text-lg text-white "
+                      >
+                        <FontAwesomeIcon
+                          className="mx-2 text-red-500 icon"
+                          icon={faPlayCircle}
+                        />
+                        <span className="mx-3">Add Content</span>
                       </NavLink>
                     </li>
                     <li>
