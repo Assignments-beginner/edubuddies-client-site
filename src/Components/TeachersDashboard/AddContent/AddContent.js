@@ -17,7 +17,7 @@ const AddContent = () => {
 	}, [dispatch]);
 	/* 	const [courses, setCourses] = React.useState(); 
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/promo`).then((res) => {
+		axios.get(`https://fierce-caverns-90976.herokuapp.com/promo`).then((res) => {
 			setCourses(res.data);
 		});
 	}, []); */

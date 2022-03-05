@@ -23,9 +23,11 @@ const SingleCourse = () => {
 	const [promo, setPromo] = useState("");
 	const [promos, setPromos] = React.useState();
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/promo`).then((res) => {
-			setPromos(res.data);
-		});
+		axios
+			.get(`https://fierce-caverns-90976.herokuapp.com/promo`)
+			.then((res) => {
+				setPromos(res.data);
+			});
 	}, []);
 	console.log(promos);
 	const filterPromo = promos?.filter(

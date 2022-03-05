@@ -32,9 +32,11 @@ const MakeAdmin = () => {
 	};
 	const [allUsers, setAllusers] = useState();
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/allusersdata`).then((res) => {
-			setAllusers(res.data);
-		});
+		axios
+			.get(`https://fierce-caverns-90976.herokuapp.com/allusersdata`)
+			.then((res) => {
+				setAllusers(res.data);
+			});
 	}, []);
 	console.log(allUsers);
 	const options = [
@@ -55,15 +57,17 @@ const MakeAdmin = () => {
 			email: emails?.email,
 			role: role?.value,
 		};
-		axios.put("http://localhost:5000/changerole", data).then((res) => {
-			console.log(res.data);
-			Swal.fire({
-				icon: "success",
-				title: `Role Changed Successfully for ${emails?.displayName}`,
-				showConfirmButton: false,
-				timer: 1500,
+		axios
+			.put("https://fierce-caverns-90976.herokuapp.com/changerole", data)
+			.then((res) => {
+				console.log(res.data);
+				Swal.fire({
+					icon: "success",
+					title: `Role Changed Successfully for ${emails?.displayName}`,
+					showConfirmButton: false,
+					timer: 1500,
+				});
 			});
-		});
 	};
 
 	const handleOnSearch = (string, results) => {};
