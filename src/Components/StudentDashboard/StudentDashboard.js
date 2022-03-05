@@ -16,7 +16,7 @@ import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const StudentDashboard = () => {
-	const { user } = useAuth();
+	const { user, logOut } = useAuth();
 	const [isActive, setActive] = useState("block");
 	const handleToggle = () => {
 		setActive(!isActive);
@@ -58,7 +58,7 @@ const StudentDashboard = () => {
 								</div>
 								<div style={{ position: "fixed", top: "2rem" }}>
 									<div className='flex flex-col items-center'>
-										<Link to='/'>
+										<Link to='/home'>
 											<img
 												className='w-34 h-16'
 												src='https://i.ibb.co/HzzW0Xv/logo.png'
@@ -147,15 +147,15 @@ const StudentDashboard = () => {
 									</ul>
 								</div>
 								<div style={{ position: "fixed", bottom: "4rem" }}>
-									<Link
-										to=''
+									<div
+										onClick={logOut}
 										className='logout text-lg rounded-lg  text-white '>
 										<FontAwesomeIcon
 											className='mx-2 text-red-500 icon '
 											icon={faRightFromBracket}
 										/>
 										<span className='mx-3'>Log Out</span>
-									</Link>
+									</div>
 								</div>
 							</div>
 						</div>

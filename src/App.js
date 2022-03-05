@@ -34,7 +34,6 @@ import StudentAddress from "./Components/StudentDashboard/StudentAddress/Student
 import StudentEducation from "./Components/StudentDashboard/StudentEducation/StudentEducation";
 import StudentImportantLinks from "./Components/StudentDashboard/StudentImportantLinks/StudentImportantLinks";
 import StudentSkills from "./Components/StudentDashboard/StudentSkills/StudentSkills";
-import AddTeacher from "./Components/Dashboard/Admin/AddTeacher";
 import MakeAdmin from "./Components/Dashboard/Admin/MakeAdmin";
 import CoursesList from "./Components/Dashboard/Admin/CoursesList";
 import TeacherList from "./Components/Dashboard/Admin/TeacherList";
@@ -52,6 +51,7 @@ import UploadMyContent from "./Components/TeachersDashboard/UploadMyContent/Uplo
 import MyCourseDetails from "./Components/TeachersDashboard/MyCourseDeatails/MyCourseDetails";
 import AddContent from "./Components/TeachersDashboard/AddContent/AddContent";
 import BlogList from "./Components/BlogList/BlogList";
+import PromoCode from "./Components/Dashboard/PromoCode/PromoCode";
 
 function App() {
 	return (
@@ -122,6 +122,7 @@ function App() {
 									path='/dashboard/autoemailsend'
 									element={<AutoEmailSend />}
 								/>
+								<Route path='/dashboard/promo' element={<PromoCode />} />
 								<Route path='/dashboard/postblog' element={<PostBlog />} />
 								<Route
 									path='/dashboard/newsletterlist'
@@ -136,10 +137,6 @@ function App() {
 								<Route
 									path='/dashboard/allcourses/:id'
 									element={<UploadCourseContent />}
-								/>
-								<Route
-									path='/dashboard/admin/makeTeacher'
-									element={<AddTeacher />}
 								/>
 								<Route
 									path='/dashboard/admin/makeAdmin'
@@ -175,15 +172,15 @@ function App() {
 									element={<MyCourses />}
 								/>
 								<Route
-									path='/teachersDashboard/singleTeacher/:teacherId'
+									path='/teachersDashboard/singleTeacher/:id'
 									element={<TeachersProfile />}
 								/>
 								<Route
-									path='/teachersDashboard/CourseDetails/:courseId'
+									path='/teachersDashboard/CourseDetails/:id'
 									element={<MyCourseDetails />}
 								/>
 								<Route
-									path='/teachersDashboard/addContent/:courseId'
+									path='/teachersDashboard/addContent/:id'
 									element={<UploadMyContent />}
 								/>
 								<Route

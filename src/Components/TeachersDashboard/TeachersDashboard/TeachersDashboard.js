@@ -21,7 +21,7 @@ import { NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 const TeachersDashboard = () => {
-	const { user } = useAuth();
+	const { user, logOut } = useAuth();
 	const [isActive, setActive] = useState("block");
 	const handleToggle = () => {
 		setActive(!isActive);
@@ -196,15 +196,15 @@ const TeachersDashboard = () => {
 									</ul>
 								</div>
 								<div className='fixed bottom-20'>
-									<Link
-										to=''
+									<div
+										onClick={logOut}
 										className='logout text-lg rounded-lg  text-white '>
 										<FontAwesomeIcon
 											className='mx-2 text-red-500 icon '
 											icon={faRightFromBracket}
 										/>
 										<span className='mx-3'>Log Out</span>
-									</Link>
+									</div>
 								</div>
 							</div>
 						</div>

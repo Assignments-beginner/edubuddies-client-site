@@ -4,24 +4,29 @@ import {
 	faTrashCan,
 	faXmark,
 	faCheck,
+	faPlus,
 } from "@fortawesome/free-solid-svg-icons";
+import PromoModal from "./PromoModal";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useAuth from "../../../hooks/useAuth";
 
-const BlogList = () => {
-	const [deleted, setDeleted] = React.useState(false);
+const PromoCode = () => {
+	const [showPromoModal, setShowPromoModal] = React.useState(false);
 	const [status, setStatus] = React.useState(false);
-	const [allBlogs, setAllBlogs] = React.useState();
+	const [deleted, setDeleted] = React.useState(false);
+	const { user } = useAuth();
+	const [promo, setPromo] = React.useState();
 	React.useEffect(() => {
 		axios
-			.get(`https://fierce-caverns-90976.herokuapp.com/blogs`)
+			.get(`https://fierce-caverns-90976.herokuapp.com/promo`)
 			.then((res) => {
-				setAllBlogs(res.data);
+				setPromo(res.data);
 			});
-	}, [deleted, status]);
+	}, [deleted, showPromoModal, status]);
+	console.log(promo);
 
 	const handleDelete = (id) => {
-		setDeleted(true);
 		Swal.fire({
 			title: "Are you sure?",
 			text: "You won't be able to revert this!",
@@ -33,10 +38,10 @@ const BlogList = () => {
 		}).then((result) => {
 			if (result.isConfirmed) {
 				axios
-					.delete(`https://fierce-caverns-90976.herokuapp.com/blogs/${id}`)
+					.delete(`https://fierce-caverns-90976.herokuapp.com/promo/${id}`)
 					.then(function (response) {
-						Swal.fire("Deleted!", "That blog has been deleted.", "success");
-						setDeleted(false);
+						Swal.fire("Deleted!", "That promo has been deleted.", "success");
+						setDeleted(true);
 					})
 					.catch(function (error) {
 						console.log(error);
@@ -44,7 +49,6 @@ const BlogList = () => {
 			}
 		});
 	};
-
 	const handleStatus = (id, text, mark) => {
 		setStatus(true);
 		Swal.fire({
@@ -58,11 +62,11 @@ const BlogList = () => {
 		}).then((result) => {
 			if (result.isConfirmed) {
 				axios
-					.put(`https://fierce-caverns-90976.herokuapp.com/blogStatus/${id}`, {
+					.put(`https://fierce-caverns-90976.herokuapp.com/promo/${id}`, {
 						text: text,
 					})
 					.then(function (response) {
-						Swal.fire(`${text}!`, "That blog has been approved.", `${mark}`);
+						Swal.fire(`${text}!`, `That promo is ${text}.`, `${mark}`);
 						setStatus(false);
 					})
 					.catch(function (error) {
@@ -75,11 +79,19 @@ const BlogList = () => {
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
-			<div className='p-2 border-b border-solid border-red-500 rounded-t mb-5'>
-				<div className='mb-2'>
+			<div className='p-5 border-b border-solid border-red-500 rounded-t mb-5'>
+				<div className='mb-2 mt-7 flex justify-between'>
 					<h3 className='text-3xl font-semibold text-center text-red-500'>
-						All Blogs
+						Promo Codes
 					</h3>
+					<div className='flex align-center text-red-500'>
+						<span className='mr-2'>Add New Promo</span>
+						<FontAwesomeIcon
+							onClick={() => setShowPromoModal(true)}
+							icon={faPlus}
+							className='text-2xl sm:mr-9 mr-0 cursor-pointer'
+						/>
+					</div>
 				</div>
 			</div>
 			<div className='flex flex-col'>
@@ -97,86 +109,88 @@ const BlogList = () => {
 										<th
 											scope='col'
 											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
-											Publisher
+											Promo Code
 										</th>
 										<th
 											scope='col'
 											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
-											Blog Title
+											Discount Percentage
 										</th>
 										<th
 											scope='col'
 											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
-											Blog Status
+											Status
 										</th>
 										<th
 											scope='col'
-											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
+											className='px-6 py-3 text-center text-xs font-medium text-white uppercase tracking-wider'>
 											Action
 										</th>
 									</tr>
 								</thead>
-
-								<tbody className='bg-white divide-y divide-red-200'>
-									{allBlogs?.map((blog, key) => (
-										<tr key={key}>
+								{promo?.map((promoCode) => (
+									<tbody className='bg-white divide-y divide-red-200'>
+										<tr>
 											<td className='px-6 py-3 whitespace-nowrap text-center'>
 												{n++}
 											</td>
 											<td className='px-6 py-3 whitespace-nowrap text-center'>
-												{blog?.publisher}
+												{promoCode?.promo}
 											</td>
 											<td className='px-6 py-3 whitespace-nowrap text-center'>
-												{blog?.blogName}
+												{promoCode?.percent}
 											</td>
-											{`${blog?.blogStatus}` === "Denied" && (
+											{`${promoCode?.status}` === "Disabled" && (
 												<td className='px-6 py-3 whitespace-nowrap text-center'>
-													<p className='text-center text-white rounded-lg bg-red-500'>{`${blog?.blogStatus}`}</p>
+													<p className='text-center text-white rounded-lg bg-red-500'>{`${promoCode?.status}`}</p>
 												</td>
 											)}
-											{`${blog?.blogStatus}` === "Approved" && (
+											{`${promoCode?.status}` === "Pending" && (
 												<td className='px-6 py-3 whitespace-nowrap text-center'>
-													<p className='text-center text-white rounded-lg bg-green-500'>{`${blog?.blogStatus}`}</p>
+													<p className='text-center text-white rounded-lg bg-yellow-500'>{`${promoCode?.status}`}</p>
 												</td>
 											)}
-											{`${blog?.blogStatus}` === "Pending" && (
+											{`${promoCode?.status}` === "Live" && (
 												<td className='px-6 py-3 whitespace-nowrap text-center'>
-													<p className='text-center text-white rounded-lg bg-yellow-500'>{`${blog?.blogStatus}`}</p>
+													<p className='text-center text-white rounded-lg bg-green-500'>{`${promoCode?.status}`}</p>
 												</td>
 											)}
-
 											<td className='px-6 py-3 whitespace-nowrap text-center'>
 												<FontAwesomeIcon
 													onClick={() =>
-														handleStatus(blog?._id, "Approved", "success")
+														handleStatus(promoCode?._id, "Live", "success")
 													}
 													icon={faCheck}
 													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
 												/>
 												<FontAwesomeIcon
 													onClick={() =>
-														handleStatus(blog?._id, "Denied", "error")
+														handleStatus(promoCode?._id, "Disabled", "error")
 													}
 													icon={faXmark}
 													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
 												/>
 												<FontAwesomeIcon
-													onClick={() => handleDelete(blog?._id)}
+													onClick={() => handleDelete(promoCode?._id)}
 													icon={faTrashCan}
 													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
 												/>
 											</td>
 										</tr>
-									))}
-								</tbody>
+									</tbody>
+								))}
 							</table>
 						</div>
 					</div>
 				</div>
 			</div>
-			{/* {!data && <LoadingOverlay />} */}
+			{showPromoModal ? (
+				<>
+					<PromoModal setShowPromoModal={setShowPromoModal} />
+				</>
+			) : null}
 		</div>
 	);
 };
 
-export default BlogList;
+export default PromoCode;
