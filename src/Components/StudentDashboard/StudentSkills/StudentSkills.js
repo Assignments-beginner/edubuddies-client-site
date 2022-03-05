@@ -72,31 +72,31 @@ const StudentSkills = () => {
 					<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
 						<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'>
 							<table className='min-w-full divide-y divide-red-200'>
-								<thead className='bg-red-50'>
+								<thead className='bg-black font-bold'>
 									<tr>
 										<th
 											scope='col'
-											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
 											No
 										</th>
 										<th
 											scope='col'
-											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
 											Skill
 										</th>
 										<th
 											scope='col'
-											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
 											Experiance Year
 										</th>
 										<th
 											scope='col'
-											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
 											Projects
 										</th>
 										<th
 											scope='col'
-											className='px-6 py-3 text-left text-xs font-medium text-red-500 uppercase tracking-wider'>
+											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
 											Action
 										</th>
 									</tr>
@@ -104,19 +104,19 @@ const StudentSkills = () => {
 								{skills?.skillset?.map((skill) => (
 									<tbody className='bg-white divide-y divide-red-200'>
 										<tr>
-											<td className='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-3 whitespace-nowrap text-center'>
 												{n++}
 											</td>
-											<td className='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-3 whitespace-nowrap text-center'>
 												{skill?.skill}
 											</td>
-											<td className='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-3 whitespace-nowrap text-center'>
 												{skill?.expYear}
 											</td>
-											<td className='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-3 whitespace-nowrap text-center'>
 												{skill?.projects}
 											</td>
-											<td className='px-6 py-4 whitespace-nowrap text-left'>
+											<td className='px-6 py-3 whitespace-nowrap text-center'>
 												<FontAwesomeIcon
 													onClick={() => handleDelete(skill?.skill)}
 													icon={faTrashCan}

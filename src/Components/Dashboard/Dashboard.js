@@ -108,18 +108,18 @@ const Dashboard = () => {
 													className='mx-2 text-red-500 icon'
 													icon={faUserShield}
 												/>
-												<span className='mx-3'>Make Admin</span>
+												<span className='mx-3'>Change Role</span>
 											</Link>
 										</li>
 										<li>
 											<Link
-												to='admin/makeTeacher'
+												to='promo'
 												className='li text-lg rounded-lg  text-white '>
 												<FontAwesomeIcon
 													className='mx-2 text-red-500 icon'
-													icon={faGraduationCap}
+													icon={faUserShield}
 												/>
-												<span className='mx-3'>Make Teacher</span>
+												<span className='mx-3'>Promo</span>
 											</Link>
 										</li>
 										<li>
