@@ -62,12 +62,6 @@ const Contact = () => {
 
 
 
-{/* <div>
-    <p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233668.38703965239!2d90.27923822956306!3d23.780573256519364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka%2C%20Bangladesh!5e0!3m2!1sen!2sde!4v1646677948094!5m2!1sen!2sde" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </p>
-</div> */}
-
             <div className="contact-box">                
                 {/* <form className="contact-form" onsubmit="sendEmail(); reset(); return false;"> */}
                 <form className="contact-form" onSubmit={handleFormSubmit} >
