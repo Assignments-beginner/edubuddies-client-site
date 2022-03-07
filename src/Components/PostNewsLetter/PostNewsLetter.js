@@ -53,18 +53,16 @@ const PostNewsLetter = () => {
 	};
 
 	return (
-		<div className='container mx-auto px-4 md:px-11'>
-			<form
-				onSubmit={handleSubmit(onSubmit)}
-				className='flex flex-col space-y-3'>
-				<div className='relative w-full my-6 mx-auto max-w-3xl'>
-					<div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none'>
-						<div className=' p-5 border-b border-solid border-red-500 rounded-t'>
-							<h3 className='text-3xl font-semibold text-center text-red-500'>
-								Send NewsLetter
-							</h3>
-							<p>Send NewsLetter To All Subscribed Users</p>
-						</div>
+		<div className='container mx-auto px-4 md:px-11  '>
+			<h3 className='text-3xl font-semibold text-center  mt-2 text-red-500'>
+				Send NewsLetter
+			</h3>
+			<p>Send NewsLetter To All Subscribed Users</p>
+			<div className=' mx-auto w-full bg-white p-5 drop-shadow-xl '>
+				<form
+					onSubmit={handleSubmit(onSubmit)}
+					className='flex flex-col space-y-3'>
+					<div className='flex flex-col space-y-1 mx-auto'>
 						<div className='relative p-6 grid grid-cols-1 gap-3'>
 							<div className='flex flex-col space-y-1'>
 								<label
@@ -102,8 +100,8 @@ const PostNewsLetter = () => {
 							</button>
 						</div>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
 	);
 };
