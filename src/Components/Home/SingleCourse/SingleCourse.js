@@ -14,12 +14,19 @@ import "../SingleCourse/SingleCourse.css";
 import demoUser from "../../../Images/user-demo.png";
 import axios from "axios";
 import Swal from "sweetalert2";
+import AddReview from "./AddReview";
+import Reviews from "./Reviews";
 
 const SingleCourse = () => {
+	const [submitting, setSubmitting] = useState(false);
 	const [used, setUsed] = React.useState(false);
 	const { id } = useParams();
-	const courses = useSelector((state) => state?.edu?.courses);
-	const sigleData = courses && courses?.find((item) => item?._id === id);
+	const [sigleData, setSigleData] = React.useState();
+	React.useEffect(() => {
+		axios.get(`http://localhost:5000/courses/${id}`).then((res) => {
+			setSigleData(res.data);
+		});
+	}, [id, submitting]);
 	const [promo, setPromo] = useState("");
 	const [promos, setPromos] = React.useState();
 	React.useEffect(() => {
@@ -37,7 +44,6 @@ const SingleCourse = () => {
 	function handleChange(e) {
 		setPromo(e.target.value);
 	}
-	console.log(promo);
 	const [fee, setFee] = useState(sigleData?.courseFee);
 	const promocode = () => {
 		if (promo === filterPromo[0]?.promo) {
@@ -91,25 +97,36 @@ const SingleCourse = () => {
 						<p className='text-justify'>{sigleData?.description}</p>
 					</div>
 				</div>
+				<AddReview
+					setSubmitting={setSubmitting}
+					submitting={submitting}
+					sigleData={sigleData}
+				/>
+				<Reviews sigleData={sigleData} />
 			</div>
 			<div className='px-4 courseCard'>
-				<div className='rounded overflow-hidden shadow-lg'>
+				<div
+					className='rounded overflow-hidden shadow-lg'
+					style={{
+						position: "sticky",
+						top: 95,
+					}}>
 					<img className='w-full' src={sigleData?.image} alt='' />
-					<div className='flex justify-between items-center'>
-						<div className='border-2 w-72 mt-4 mx-auto bg-gray-800 rounded-lg'>
+					<div className='flex justify-between items-center py-2'>
+						<div className='border-2 w-72 mx-auto bg-gray-800 rounded-lg'>
 							<h4 className='text-xl font-black ml-3 pt-1 text-red-500'>
 								<CountUp start={0} end={270} duration={2.75} suffix={"+ "} />
 							</h4>
 							<h4 className=' text-xl ml-3 pb-1 text-white'> Videos</h4>
 						</div>
-						<div className='border-2 w-72 mt-4 mx-auto bg-gray-800 rounded-lg'>
+						<div className='border-2 w-72 mx-auto bg-gray-800 rounded-lg'>
 							<h4 className='text-xl text-red-500 font-black ml-3 pt-1'>
 								<CountUp start={0} end={1000} duration={2.75} suffix={"+ "} />
 							</h4>
 							<h4 className='text-white text-xl ml-3 pb-1'> Quizes</h4>
 						</div>
 					</div>
-					<div className='flex justify-between pt-8 px-10'>
+					<div className='flex justify-between px-10  py-2'>
 						<div className='flex items-center'>
 							<FontAwesomeIcon
 								className='text-slate-900 text-2xl mr-2'
@@ -133,8 +150,8 @@ const SingleCourse = () => {
 							</div>
 						</div>
 					</div>
-					<hr className='w-5/6 mt-6 mx-auto' />
-					<div className='px-4 pt-8 pb-3'>
+					<hr className='w-5/6 mx-auto' />
+					<div className='px-4 py-4'>
 						<div className='flex justify-between items-center px-4 pb-2'>
 							<div>
 								<span>Promo Code : </span>
@@ -163,7 +180,7 @@ const SingleCourse = () => {
 									</button>
 								)}
 							</div>
-							<span className='text-3xl'>$ {fee}</span>
+							<span className='text-3xl'>$ {fee || sigleData?.courseFee}</span>
 						</div>
 						<Link to='/milestone'>
 							<button

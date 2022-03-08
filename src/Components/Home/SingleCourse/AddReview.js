@@ -4,12 +4,13 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
 
-const AddReview = ({ blog, submitting, setSubmitting }) => {
-	console.log(blog);
+const AddReview = ({ sigleData, submitting, setSubmitting }) => {
+	console.log(sigleData);
 	const { user } = useAuth();
+	console.log(sigleData?._id);
 	const { register, handleSubmit, reset } = useForm();
 	const onSubmit = ({ review }) => {
-		const addBlog = {
+		const addReview = {
 			reviewId: "Review" + Math.floor(Math.random() * 90000) + 10000,
 			reviewer: user?.displayName,
 			email: user?.email,
@@ -19,10 +20,7 @@ const AddReview = ({ blog, submitting, setSubmitting }) => {
 		};
 		setSubmitting(true);
 		axios
-			.put(
-				`https://fierce-caverns-90976.herokuapp.com/review/${blog?._id}`,
-				addBlog,
-			)
+			.put(`http://localhost:5000/courseReview/${sigleData?._id}`, addReview)
 			.then(function (response) {
 				Swal.fire({
 					icon: "success",
@@ -37,15 +35,16 @@ const AddReview = ({ blog, submitting, setSubmitting }) => {
 				console.log("error", error);
 				console.log(error);
 			});
-		console.log(blog);
+		console.log(addReview);
 	};
 	return (
-		<div className='container mx-auto '>
-			<div className='text-xl font-black text-red-500 md:text-left text-center'>
-				WRITE COMMENT
+		<div className='container mx-auto mt-5'>
+			<div className='border border-black-100 my-2'></div>
+			<div className='text-xl font-black text-red-500 md:text-left text-center uppercase'>
+				Share Experiance
 			</div>
 			<h1 className='md:text-3xl text-4xl font-semibold mt-3 mb-7 text-gray-800  md:text-left text-center'>
-				Leave A Reply
+				Leave your valuable experiance
 			</h1>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<div className='mx-auto grid grid-cols-12 gap-5'>
@@ -69,8 +68,8 @@ const AddReview = ({ blog, submitting, setSubmitting }) => {
 						placeholder='Your Review'
 						{...register("review", { required: true })}
 					/>
-					<button className='md:col-span-4 col-span-6 rounded-lg   hover:bg-red-600 bg-red-500 text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'>
-						Add Review
+					<button className='md:col-span-5 col-span-7 rounded-lg   hover:bg-red-600 bg-red-500 text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'>
+						Share Experiance
 					</button>
 				</div>
 			</form>
