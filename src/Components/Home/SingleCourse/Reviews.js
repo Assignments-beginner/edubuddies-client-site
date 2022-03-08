@@ -57,10 +57,10 @@ const Reviews = ({ sigleData }) => {
 			) : (
 				<>
 					<h1 className='md:text-xl text-4xl font-semibold text-red-500  md:text-left text-center'>
-						No Comments Yet
+						No Experiance Yet
 					</h1>
 					<p className='md:text-left text-center'>
-						Be the first one to add review
+						Be the first one to add Experiance
 					</p>
 				</>
 			)}

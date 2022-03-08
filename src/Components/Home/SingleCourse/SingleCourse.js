@@ -23,9 +23,11 @@ const SingleCourse = () => {
 	const { id } = useParams();
 	const [sigleData, setSigleData] = React.useState();
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/courses/${id}`).then((res) => {
-			setSigleData(res.data);
-		});
+		axios
+			.get(`https://fierce-caverns-90976.herokuapp.com/courses/${id}`)
+			.then((res) => {
+				setSigleData(res.data);
+			});
 	}, [id, submitting]);
 	const [promo, setPromo] = useState("");
 	const [promos, setPromos] = React.useState();
@@ -186,7 +188,7 @@ const SingleCourse = () => {
 							<button
 								className='bg-red-700 hover:bg-red-800 text-white py-2 px-4 mt-2 rounded focus:outline-none focus:shadow-outline w-full flex items-center justify-center'
 								type='submit'>
-								Get This Course at ${fee} &nbsp;&nbsp;
+								Get This Course at ${fee || sigleData?.courseFee} &nbsp;&nbsp;
 								<FontAwesomeIcon
 									className='text-white pr-2 text-xl'
 									icon={faArrowRight}
