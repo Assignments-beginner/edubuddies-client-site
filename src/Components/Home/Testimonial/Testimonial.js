@@ -8,44 +8,25 @@ import "swiper/css/effect-cube";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Testimonial.css";
+import axios from "axios";
 
 SwiperCore.use([Autoplay, Pagination]);
 
 const Testimonial = () => {
-	const comments = [
-		{
-			photo:
-				"https://shivaaythemes.in/educater-html/assets/images/client-1.jpg",
-			name: "Fenton G.",
-			role: "Student",
-			comment:
-				"There was a lot of good stuff in this class and very helpful in getting more acclimated to Seaborn and Matplotlib. My only issue was the class is dated and using python 2 and there were a lot of methods and attributes that are not used anymore.",
-		},
-		{
-			photo:
-				"https://shivaaythemes.in/educater-html/assets/images/client-2.jpg",
-			name: "Jerry H.",
-			role: "Student",
-			comment:
-				"As you get to the visualisation part of this course you will find it very often that the codes the lecturer used is no longer valid. I end up going to Seaborn's website for updated codes. Sometime I figured out, sometime I dont.",
-		},
-		{
-			photo:
-				"https://shivaaythemes.in/educater-html/assets/images/client-3.jpg",
-			name: "Scott E.",
-			role: "Student",
-			comment:
-				"Jose is the gold standard on udemy for anything related to Python. However, I am not giving this course a 5-star rating because I believe he should either update its content for Python 3 rather than Python 2 or discontinue offering the course",
-		},
-		{
-			photo:
-				"https://shivaaythemes.in/educater-html/assets/images/client-2.jpg",
-			name: "Julie K.",
-			role: "Student",
-			comment:
-				"SO OUTDATED. This course is so old and none of the pages he navigates towards are accurate. In addition he does no installation examples or terminal examples on a Mac. I was so frustrated I couldn't follow along! What a waste!",
-		},
-	];
+	const [files, setFiles] = React.useState();
+	React.useEffect(() => {
+		axios
+			.get(`https://fierce-caverns-90976.herokuapp.com/courses`)
+			.then((res) => {
+				setFiles(res.data);
+			});
+	}, []);
+	const findReviewObject = files?.filter(
+		(course) => course?.reviews?.length > 0,
+	);
+	const separateAllReview = findReviewObject?.map((d) => d?.reviews);
+	const addAllInarray = separateAllReview?.flat();
+
 	return (
 		<div className='container mx-auto my-32 px-4 md:px-11'>
 			<div className=' w-full'>
@@ -86,7 +67,7 @@ const Testimonial = () => {
 								clickable: true,
 							}}
 							className='mySwiper'>
-							{comments?.map((comment, key) => (
+							{addAllInarray?.map((comment, key) => (
 								<SwiperSlide
 									key={key}
 									className='rounded-lg bg-white'
@@ -95,7 +76,7 @@ const Testimonial = () => {
 										className='text-left  rounded-lg p-5'
 										style={{ backgroundColor: "white" }}>
 										<div className='mb-5'>
-											<p className='text-sm'>{comment?.comment}</p>
+											<p className='text-sm'>{comment?.review}</p>
 										</div>
 										<div className='flex justify-between'>
 											<div className='flex items-center'>
@@ -110,11 +91,11 @@ const Testimonial = () => {
 												</div>
 
 												<div className='w-full'>
-													<div className='text-3xl font-bold text-gray-800'>
-														{comment?.name}
+													<div className='text-xl font-bold text-gray-800'>
+														{comment?.reviewer}
 													</div>
-													<div className='text-xl text-red-500'>
-														{comment?.role}
+													<div className='text-md text-red-500'>
+														{comment?.role || 'Student'}
 													</div>
 												</div>
 											</div>
