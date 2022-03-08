@@ -113,7 +113,12 @@ const SingleCourse = () => {
 						position: "sticky",
 						top: 95,
 					}}>
-					<img className='w-full' src={sigleData?.image} alt='' />
+					<img
+						style={{ maxHeight: "230px" }}
+						className='w-full'
+						src={sigleData?.image}
+						alt=''
+					/>
 					<div className='flex justify-between items-center py-2'>
 						<div className='border-2 w-72 mx-auto bg-gray-800 rounded-lg'>
 							<h4 className='text-xl font-black ml-3 pt-1 text-red-500'>
