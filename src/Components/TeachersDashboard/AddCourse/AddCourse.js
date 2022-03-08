@@ -54,6 +54,7 @@ const AddCourse = () => {
 			/* owner: { email: "nizamcse.seu@gmail.com", name: "Nizam Uddin" }, */
 			data: [],
 			enrolledStudents: [],
+			reviews: [],
 			courseStatus: "Pending",
 		};
 		setSubmitting(true);

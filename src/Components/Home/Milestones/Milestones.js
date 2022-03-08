@@ -4,26 +4,23 @@ import "./Milestones.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
 import Loading from "../../Loading/Loading";
+import axios from "axios";
 
 const Milestones = () => {
-	/* 	const { id } = useParams();
+	const { id } = useParams();
 
-	const courses = useSelector((state) => state.edu.courses);
-
-	const sigleData = courses && courses.find((item) => item._id === id);
-	console.log(sigleData); */
-
-	const [files, setFiles] = React.useState([]);
+	const [files, setFiles] = React.useState();
 	React.useEffect(() => {
-		fetch(`https://fierce-caverns-90976.herokuapp.com/courses`)
-			.then((res) => res.json())
-			.then((data) => setFiles(data[0]));
-	}, []);
+		axios
+			.get(`https://fierce-caverns-90976.herokuapp.com/courses/${id}`)
+			.then((res) => {
+				setFiles(res.data);
+			});
+	}, [id]);
 	console.log(files);
 	const [selectModule, setSelectModule] = React.useState(
-		"https://teamssyaan.blob.core.windows.net/courses/testing.mp4",
+		`${files?.data[0]?.lectureURL}`,
 	);
 
 	const datas = files?.data?.sort((a, b) =>
