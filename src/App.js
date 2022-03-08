@@ -42,6 +42,7 @@ import CoursesList from "./Components/Dashboard/Admin/CoursesList";
 import TeacherList from "./Components/Dashboard/Admin/TeacherList";
 import AutoEmailSend from "./Components/AutoEmailSend/AutoEmailSend";
 import RecycleBin from "./Components/Dashboard/Admin/RecycleBin";
+import History from "./Components/Dashboard/Admin/History";
 import Bestperformer from "./Components/TeachersDashboard/Bestperformer/Bestperformer";
 import PostNotice from "./Components/TeachersDashboard/PostNotice/PostNotice";
 import AddContent from "./Components/TeachersDashboard/AddContent/AddContent";
@@ -134,6 +135,7 @@ function App() {
                   path="/dashboard/admin/RecycleBin"
                   element={<RecycleBin />}
                 />
+                <Route path="/dashboard/admin/history" element={<History />} />
               </Route>
 
               <Route path="/teachersDashboard" element={<TeachersDashboard />}>
