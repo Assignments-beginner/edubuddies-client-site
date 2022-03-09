@@ -24,6 +24,9 @@ const History = () => {
         // doc.data() is never undefined for query doc snapshots
         logdData.push(i.data());
       });
+      logdData.sort(function (a, b) {
+        return new Date(b.date) - new Date(a.date);
+      });
       setHisData(logdData);
     });
   }, []);
@@ -43,39 +46,55 @@ const History = () => {
     <div>
       <h1 className="text-4xl">Live History</h1>
       <div>
-        <table className="border-collapse border border-slate-400 ...">
-          <thead>
+        <table className="min-w-full divide-y divide-red-300 border border-red-300">
+          <thead className="bg-gray-800">
             <tr>
-              <th className="border border-slate-300 ...">IP Address</th>
-              <th className="border border-slate-300 ...">Name</th>
-              <th className="border border-slate-300 ...">Email</th>
-              <th className="border border-slate-300 ...">Date</th>
-              <th className="border border-slate-300 ...">Method</th>
-              <th className="border border-slate-300 ...">Original URL</th>
-              <th className="border border-slate-300 ...">Host Name</th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                IP Address
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Name
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Email
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Date
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Method
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Original URL
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Host Name
+              </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bg-whwhitespace-nowrap text-gray-600 border border-red-300">
             {hisData &&
               hisData.map((item) => (
                 <tr>
-                  <td className="border border-slate-300 ...">
+                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.ipAddress}
                   </td>
-                  <td className="border border-slate-300 ...">
+                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.data?.name}
                   </td>
-                  <td className="border border-slate-300 ...">
+                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.data?.email}
                   </td>
-                  <td className="border border-slate-300 ...">{item?.date}</td>
-                  <td className="border border-slate-300 ...">
+                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
+                    {item?.date}
+                  </td>
+                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.method}
                   </td>
-                  <td className="border border-slate-300 ...">
+                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.originalURL}
                   </td>
-                  <td className="border border-slate-300 ...">
+                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.hostName}
                   </td>
                 </tr>

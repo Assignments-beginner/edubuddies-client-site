@@ -53,6 +53,7 @@ import MyCourseDetails from "./Components/TeachersDashboard/MyCourseDeatails/MyC
 import AddContent from "./Components/TeachersDashboard/AddContent/AddContent";
 import BlogList from "./Components/BlogList/BlogList";
 import PromoCode from "./Components/Dashboard/PromoCode/PromoCode";
+import Success from "./Components/Test/Success";
 
 function App() {
   return (
@@ -152,6 +153,7 @@ function App() {
                   element={<RecycleBin />}
                 />
                 <Route path="/dashboard/admin/history" element={<History />} />
+                <Route path="/dashboard/admin/success" element={<Success />} />
               </Route>
 
               <Route path="/teachersDashboard" element={<TeachersDashboard />}>
