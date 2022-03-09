@@ -35,7 +35,6 @@ const RecycleBin = () => {
   return (
     <div className="container mx-auto">
       <div>
-<<<<<<< HEAD
         <h1 className="text-4xl">Courses</h1>
         <br/>
         {courses.length > 0 ? (
@@ -47,35 +46,10 @@ const RecycleBin = () => {
                 <th class="border border-slate-300 ... p-6">Fee</th>
                 <th class="border border-slate-300 ... p-6">Status</th>
                 <th class="border border-slate-300 ... p-6">Action</th>
-=======
-        <h1 className="text-red-600 text-3xl font-bold mt-2 mb-6">
-          Action For Courses
-        </h1>
-        {courses.length > 0 ? (
-          <table className="min-w-full divide-y divide-red-300 border border-red-300">
-            <thead className="bg-gray-800">
-              <tr>
-                <th className="py-3 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
-                  Title
-                </th>
-                <th className="py-3 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
-                  Category
-                </th>
-                <th className="py-3 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
-                  Fee
-                </th>
-                <th className="py-3 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
-                  Restore
-                </th>
-                <th className="py-3 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
-                  Delete
-                </th>
->>>>>>> 9d99139684ff7d074450ecc10e27182f6e7182d3
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-red-300">
               {courses &&
-<<<<<<< HEAD
                 courses.map((item) => (
                   <tr>
                     <td class="border border-slate-300 ... p-4">{item.title}</td>
@@ -86,24 +60,6 @@ const RecycleBin = () => {
                     <td
                       onClick={() => updateCourseStatus(item._id, "approved")}
                       class="border border-slate-300 ... p-4"
-=======
-                courses.map((item, key) => (
-                  <tr key={key}>
-                    <td className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300">
-                      {item.title}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300">
-                      {item.category}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300">
-                      {item.courseFee} TK
-                    </td>
-                    <td
-                      onClick={() =>
-                        updateAlert(item._id, "approved", "courses")
-                      }
-                      className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300"
->>>>>>> 9d99139684ff7d074450ecc10e27182f6e7182d3
                     >
                       <button>
                         <FontAwesomeIcon
@@ -112,20 +68,9 @@ const RecycleBin = () => {
                         />
                       </button>
                     </td>
-<<<<<<< HEAD
                     <td class="border border-slate-300 ... text-red-700 p-4">
                       <button onClick={() => deleteCOurse(item._id)}>
                         Delete Permanently
-=======
-                    <td className="px-6 py-4 whitespace-nowrap text-gray-600">
-                      <button
-                        onClick={() => deleteAlert(item._id, "deleteCourses")}
-                      >
-                        <FontAwesomeIcon
-                          className="mx-2 text-red-500 text-xl"
-                          icon={faTrash}
-                        />
->>>>>>> 9d99139684ff7d074450ecc10e27182f6e7182d3
                       </button>
                     </td>
                   </tr>
