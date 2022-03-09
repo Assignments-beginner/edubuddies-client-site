@@ -53,6 +53,9 @@ import AddContent from "./Components/TeachersDashboard/AddContent/AddContent";
 import BlogList from "./Components/BlogList/BlogList";
 import PromoCode from "./Components/Dashboard/PromoCode/PromoCode";
 import PrivateRoute from "../src/Components/Login/PrivateRoute/PrivateRoute";
+import WrongAdminRoute from "../src/Components/Login/WrongAdminRoute/WrongAdminRoute";
+import WrongStudentRoute from "../src/Components/Login/WrongStudentRoute/WrongStudentRoute";
+import WrongTeacherRoute from "../src/Components/Login/WrongTeacherRoute/WrongTeacherRoute";
 
 function App() {
   return (
@@ -89,6 +92,15 @@ function App() {
               <Route path="/resetpassword" element={<ResetPass />} />
               <Route path="/greetings" element={<Greetings />} />
               <Route path="/userProfile" element={<UserProfile />} />
+              <Route
+                path="/wrongStudentRoute"
+                element={<WrongStudentRoute />}
+              />
+              <Route
+                path="/wrongTeacherRoute"
+                element={<WrongTeacherRoute />}
+              />
+              <Route path="/wrongAdminRoute" element={<WrongAdminRoute />} />
 
               <Route path="/studentdashboard" element={<StudentDashboard />}>
                 <Route path="/studentdashboard" element={<StudentProfile />} />
