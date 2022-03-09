@@ -1,14 +1,17 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 const WrongTeacherRoute = () => {
   return (
-    <div className="text-center mt-5">
-      <h1>
-        Sorry you're not a <span className="text-danger">Teacher</span>{" "}
+    <div className="text-center mt-8 mb-48">
+      <FontAwesomeIcon
+        className="text-8xl text-yellow-300"
+        icon={faTriangleExclamation}
+      />
+      <h1 className="text-4xl mt-4">
+        Sorry you're not a <span className="text-red-500">Teacher</span>{" "}
       </h1>
-      <span className="display-1">
-        <i className="fas fa-exclamation-triangle text-warning"></i>
-      </span>
     </div>
   );
 };

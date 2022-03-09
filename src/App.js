@@ -56,6 +56,7 @@ import PrivateRoute from "../src/Components/Login/PrivateRoute/PrivateRoute";
 import WrongAdminRoute from "../src/Components/Login/WrongAdminRoute/WrongAdminRoute";
 import WrongStudentRoute from "../src/Components/Login/WrongStudentRoute/WrongStudentRoute";
 import WrongTeacherRoute from "../src/Components/Login/WrongTeacherRoute/WrongTeacherRoute";
+import AdminRoute from "../src/Components/Login/AdminRoute/AdminRoute";
 
 function App() {
   return (
@@ -127,7 +128,14 @@ function App() {
               </Route>
 
               {/* //Dashboard Nested Routing */}
-              <Route path="/dashboard" element={<Dashboard />}>
+              <Route
+                path="/dashboard"
+                element={
+                  <AdminRoute>
+                    <Dashboard />
+                  </AdminRoute>
+                }
+              >
                 <Route exact path="/dashboard" element={<CoursesList />} />
                 <Route path="/dashboard/blogs" element={<AllBlogs />} />
                 <Route
