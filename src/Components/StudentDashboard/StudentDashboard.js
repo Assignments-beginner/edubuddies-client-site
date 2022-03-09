@@ -9,14 +9,14 @@ import {
 	faBell,
 	faBars,
 	faXmark,
+	faLightbulb,
 } from "@fortawesome/free-solid-svg-icons";
-import "../Dashboard/Dashboard.css";
 import { Link, Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const StudentDashboard = () => {
-	const { user } = useAuth();
+	const { user, logOut } = useAuth();
 	const [isActive, setActive] = useState("block");
 	const handleToggle = () => {
 		setActive(!isActive);
@@ -27,7 +27,7 @@ const StudentDashboard = () => {
 			<div className='relative min-h-screen md:flex '>
 				<aside
 					/* onClick={handleToggle} */
-					style={{ position: "sticky", top: 0, zIndex: 999 }}
+					style={{ position: "sticky", top: 0, zIndex: 999, minWidth: "250px" }}
 					aria-label='Sidebar'>
 					<div
 						className={`md:relative absolute delay-500  ${
@@ -58,7 +58,7 @@ const StudentDashboard = () => {
 								</div>
 								<div style={{ position: "fixed", top: "2rem" }}>
 									<div className='flex flex-col items-center'>
-										<Link to='/'>
+										<Link to='/home'>
 											<img
 												className='w-34 h-16'
 												src='https://i.ibb.co/HzzW0Xv/logo.png'
@@ -71,7 +71,13 @@ const StudentDashboard = () => {
 									</div>
 								</div>
 								<div>
-									<ul className='space-y-5'>
+									<ul
+										className='space-y-5'
+										style={{
+											maxHeight: "60vh",
+											overflow: "hidden",
+											overflowY: "scroll",
+										}}>
 										<li>
 											<NavLink
 												to=''
@@ -122,23 +128,34 @@ const StudentDashboard = () => {
 												className='li text-lg rounded-lg  text-white '>
 												<FontAwesomeIcon
 													className='mx-2 text-red-500 icon'
-													icon={faUpRightFromSquare}
+													icon={faLightbulb}
 												/>
 												<span className='mx-3'>Skills</span>
 											</NavLink>
 										</li>
+										<li>
+											<Link
+												to='postblog'
+												className='li text-lg rounded-lg  text-white '>
+												<FontAwesomeIcon
+													className='mx-2 text-red-500 icon'
+													icon={faLightbulb}
+												/>
+												<span className='mx-3'>Post Blog</span>
+											</Link>
+										</li>
 									</ul>
 								</div>
 								<div style={{ position: "fixed", bottom: "4rem" }}>
-									<Link
-										to=''
+									<div
+										onClick={logOut}
 										className='logout text-lg rounded-lg  text-white '>
 										<FontAwesomeIcon
 											className='mx-2 text-red-500 icon '
 											icon={faRightFromBracket}
 										/>
 										<span className='mx-3'>Log Out</span>
-									</Link>
+									</div>
 								</div>
 							</div>
 						</div>

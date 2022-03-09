@@ -41,14 +41,48 @@ const History = () => {
   console.log(hisData);
   return (
     <div>
-      <h1>History</h1>
-      {hisData &&
-        hisData.map((item) => (
-          <div>
-            <h1>{item.hostName}</h1>
-            <h1>{item.date}</h1>
-          </div>
-        ))}
+      <h1 className="text-4xl">Live History</h1>
+      <div>
+        <table className="border-collapse border border-slate-400 ...">
+          <thead>
+            <tr>
+              <th className="border border-slate-300 ...">IP Address</th>
+              <th className="border border-slate-300 ...">Name</th>
+              <th className="border border-slate-300 ...">Email</th>
+              <th className="border border-slate-300 ...">Date</th>
+              <th className="border border-slate-300 ...">Method</th>
+              <th className="border border-slate-300 ...">Original URL</th>
+              <th className="border border-slate-300 ...">Host Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {hisData &&
+              hisData.map((item) => (
+                <tr>
+                  <td className="border border-slate-300 ...">
+                    {item?.ipAddress}
+                  </td>
+                  <td className="border border-slate-300 ...">
+                    {item?.data?.name}
+                  </td>
+                  <td className="border border-slate-300 ...">
+                    {item?.data?.email}
+                  </td>
+                  <td className="border border-slate-300 ...">{item?.date}</td>
+                  <td className="border border-slate-300 ...">
+                    {item?.method}
+                  </td>
+                  <td className="border border-slate-300 ...">
+                    {item?.originalURL}
+                  </td>
+                  <td className="border border-slate-300 ...">
+                    {item?.hostName}
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

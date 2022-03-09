@@ -1,9 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "../src/Components/Home/About/About";
-import Blogs from "../src/Components/Home/Blogs/Blogs";
 import Contact from "../src/Components/Contact/Contact";
-import Courses from "../src/Components/Home/Courses/Courses";
 import Dashboard from "../src/Components/Dashboard/Dashboard";
 import Home from "../src/Components/Home/Home/Home";
 import Login from "./Components/Login/Login";
@@ -36,7 +34,6 @@ import StudentAddress from "./Components/StudentDashboard/StudentAddress/Student
 import StudentEducation from "./Components/StudentDashboard/StudentEducation/StudentEducation";
 import StudentImportantLinks from "./Components/StudentDashboard/StudentImportantLinks/StudentImportantLinks";
 import StudentSkills from "./Components/StudentDashboard/StudentSkills/StudentSkills";
-import AddTeacher from "./Components/Dashboard/Admin/AddTeacher";
 import MakeAdmin from "./Components/Dashboard/Admin/MakeAdmin";
 import CoursesList from "./Components/Dashboard/Admin/CoursesList";
 import TeacherList from "./Components/Dashboard/Admin/TeacherList";
@@ -45,10 +42,17 @@ import RecycleBin from "./Components/Dashboard/Admin/RecycleBin";
 import History from "./Components/Dashboard/Admin/History";
 import Bestperformer from "./Components/TeachersDashboard/Bestperformer/Bestperformer";
 import PostNotice from "./Components/TeachersDashboard/PostNotice/PostNotice";
-import AddContent from "./Components/TeachersDashboard/AddContent/AddContent";
+import PostBlog from "./Components/PostBlog/PostBlog";
+import AllCoursesPage from "./Components/AllCoursesPage/AllCoursesPage";
+import AllBlogsPage from "./Components/AllBlogsPage/AllBlogsPage";
+import NewsletterList from "./Components/NewsletterList/NewsletterList";
+import PostNewsLetter from "./Components/PostNewsLetter/PostNewsLetter";
 import MyCourses from "./Components/TeachersDashboard/MyCourses/MyCourses";
-import MyCourseDetails from "./Components/TeachersDashboard/MyCourseDeatails/MyCourseDetails";
 import UploadMyContent from "./Components/TeachersDashboard/UploadMyContent/UploadMyContent";
+import MyCourseDetails from "./Components/TeachersDashboard/MyCourseDeatails/MyCourseDetails";
+import AddContent from "./Components/TeachersDashboard/AddContent/AddContent";
+import BlogList from "./Components/BlogList/BlogList";
+import PromoCode from "./Components/Dashboard/PromoCode/PromoCode";
 
 function App() {
   return (
@@ -65,12 +69,12 @@ function App() {
               <Route path="/*" element={<NotFound />} />
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/blog" element={<Blogs />} />
-              <Route path="/singleblog" element={<SingleBlogMain />} />
+              <Route path="/blog" element={<AllBlogsPage />} />
+              <Route path="/singleblog/:id" element={<SingleBlogMain />} />
               <Route path="/about" element={<About />} />
-              <Route path="/courses" element={<Courses />} />
+              <Route path="/courses" element={<AllCoursesPage />} />
               <Route path="/singlecourse/:id" element={<SingleCourse />} />
-              <Route path="/milestone" element={<Milestones />} />
+              <Route path="/milestone/:id" element={<Milestones />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
@@ -90,6 +94,10 @@ function App() {
                   element={<StudentEducation />}
                 />
                 <Route
+                  path="/studentdashboard/postblog"
+                  element={<PostBlog />}
+                />
+                <Route
                   path="/studentdashboard/importantlinks"
                   element={<StudentImportantLinks />}
                 />
@@ -101,7 +109,8 @@ function App() {
 
               {/* //Dashboard Nested Routing */}
               <Route path="/dashboard" element={<Dashboard />}>
-                <Route exact path="/dashboard/blogs" element={<AllBlogs />} />
+                <Route exact path="/dashboard" element={<CoursesList />} />
+                <Route path="/dashboard/blogs" element={<AllBlogs />} />
                 <Route
                   path="/dashboard/addCourses"
                   element={<TeacherCourses />}
@@ -110,22 +119,29 @@ function App() {
                   path="/dashboard/addnewcourse"
                   element={<AddNewCourse />}
                 />
+                <Route
+                  path="/dashboard/autoemailsend"
+                  element={<AutoEmailSend />}
+                />
+                <Route path="/dashboard/promo" element={<PromoCode />} />
+                <Route path="/dashboard/postblog" element={<PostBlog />} />
+                <Route
+                  path="/dashboard/newsletterlist"
+                  element={<NewsletterList />}
+                />
+                <Route
+                  path="/dashboard/postnewsletter"
+                  element={<PostNewsLetter />}
+                />
+                <Route path="/dashboard/bloglist" element={<BlogList />} />
                 <Route path="/dashboard/allcourses" element={<AllCourses />} />
                 <Route
                   path="/dashboard/allcourses/:id"
                   element={<UploadCourseContent />}
                 />
                 <Route
-                  path="/dashboard/admin/makeTeacher"
-                  element={<AddTeacher />}
-                />
-                <Route
                   path="/dashboard/admin/makeAdmin"
                   element={<MakeAdmin />}
-                />
-                <Route
-                  path="/dashboard/admin/CoursesList"
-                  element={<CoursesList />}
                 />
                 <Route
                   path="/dashboard/admin/teacherList"
@@ -148,20 +164,25 @@ function App() {
                   path="/teachersDashboard/bestPerformer"
                   element={<Bestperformer />}
                 />
+
+                <Route
+                  path="/teachersDashboard/postblog"
+                  element={<PostBlog />}
+                />
                 <Route
                   path="/teachersDashboard/myCourse"
                   element={<MyCourses />}
                 />
                 <Route
-                  path="/teachersDashboard/singleTeacher/:teacherId"
+                  path="/teachersDashboard/singleTeacher/:id"
                   element={<TeachersProfile />}
                 />
                 <Route
-                  path="/teachersDashboard/CourseDetails/:courseId"
+                  path="/teachersDashboard/CourseDetails/:id"
                   element={<MyCourseDetails />}
                 />
                 <Route
-                  path="/teachersDashboard/addContent/:courseId"
+                  path="/teachersDashboard/addContent/:id"
                   element={<UploadMyContent />}
                 />
                 <Route
@@ -185,7 +206,6 @@ function App() {
                   element={<PostNotice />}
                 />
               </Route>
-              <Route path="/autoemailsend" element={<AutoEmailSend />} />
             </Routes>
           </div>
           <Footer />

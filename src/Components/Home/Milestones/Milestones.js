@@ -4,36 +4,30 @@ import "./Milestones.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
 import Loading from "../../Loading/Loading";
+import axios from "axios";
 
 const Milestones = () => {
-	/* 	const { id } = useParams();
+	const { id } = useParams();
 
-	const courses = useSelector((state) => state.edu.courses);
-
-	const sigleData = courses && courses.find((item) => item._id === id);
-	console.log(sigleData); */
-
-	const [files, setFiles] = React.useState([]);
+	const [files, setFiles] = React.useState();
 	React.useEffect(() => {
-		fetch(`https://fierce-caverns-90976.herokuapp.com/courses`)
-			.then((res) => res.json())
-			.then((data) => setFiles(data[0]));
-	}, []);
+		axios
+			.get(`https://fierce-caverns-90976.herokuapp.com/courses/${id}`)
+			.then((res) => {
+				setFiles(res.data);
+			});
+	}, [id]);
 	console.log(files);
-	const milestone1 = files?.data?.find(
-		(lecture) => lecture?.milestone === "milestone 0",
-	);
-	const milestone2 = files?.data?.find(
-		(lecture) => lecture?.milestone === "milestone 1",
-	);
-	const milestone3 = files?.data?.find(
-		(lecture) => lecture?.milestone === "milestone 2",
-	);
-	console.log(milestone1?.lectureURL);
 	const [selectModule, setSelectModule] = React.useState(
-		"https://teamssyaan.blob.core.windows.net/courses/testing.mp4",
+		`${files?.data[0]?.lectureURL}`,
+	);
+
+	const datas = files?.data?.sort((a, b) =>
+		a?.milestone?.split(" ")[1] > b?.milestone?.split(" ")[1] ? 1 : -1,
+	);
+	const filteredMilestones = datas?.filter(
+		(v, i, a) => a.findIndex((t) => t.milestone === v.milestone) === i,
 	);
 
 	return (
@@ -63,33 +57,37 @@ const Milestones = () => {
 							Course Contents
 						</h1>
 						<div
-							class='accordion '
+							className='accordion '
 							style={{ maxHeight: "60vh", overflowY: "scroll" }}>
-							{files?.data?.map((modules) => (
+							{filteredMilestones?.map((modules, i) => (
 								<div>
 									<input
 										type='checkbox'
 										name='panel'
-										id='panel-1'
-										class='hidden'
+										id={i}
+										className='hidden'
 									/>
 									<label
-										for='panel-1'
-										class='relative block bg-gray-800 text-white p-4 shadow border-b border-grey'>
+										for={i}
+										className='relative block bg-gray-800 text-white p-4 shadow border-b border-grey'>
 										{modules?.milestone}
 									</label>
-									<div class='accordion__content overflow-hidden bg-grey-lighter'>
-										{files?.data?.map((video) => (
-											<h2
-												class='accordion__header p-3 border-2 font-semibold border-black'
-												onClick={() => setSelectModule(video?.lectureURL)}>
-												<FontAwesomeIcon
-													className='text-gray-800 icon mr-3 '
-													icon={faPlay}
-												/>
-												{video?.title}
-											</h2>
-										))}
+									<div className='accordion__content overflow-hidden bg-grey-lighter'>
+										{files?.data
+											?.filter(
+												(lecture) => lecture?.milestone === modules?.milestone,
+											)
+											.map((video) => (
+												<h2
+													className='accordion__header p-3 border-2 font-semibold border-black'
+													onClick={() => setSelectModule(video?.lectureURL)}>
+													<FontAwesomeIcon
+														className='text-gray-800 icon mr-3 '
+														icon={faPlay}
+													/>
+													{video?.title}
+												</h2>
+											))}
 									</div>
 								</div>
 							))}

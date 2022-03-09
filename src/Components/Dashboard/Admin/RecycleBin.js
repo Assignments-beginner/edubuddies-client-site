@@ -2,6 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { updateAlert } from "../../../Utility/Utility";
 import { deleteAlert } from "../../../Utility/Utility";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faRotateLeft,
+  faTrash,
+  faEye,
+} from "@fortawesome/free-solid-svg-icons";
 
 const RecycleBin = () => {
   const [courses, setCourses] = useState([]);
@@ -27,42 +33,66 @@ const RecycleBin = () => {
   }, [teacher]);
 
   return (
-    <div>
+    <div className="container mx-auto">
       <div>
-        <h1 className="text-4xl">Courses</h1>
+        <h1 className="text-red-600 text-3xl font-bold mt-2 mb-6">
+          Action For Courses
+        </h1>
         {courses.length > 0 ? (
-          <table class="border-collapse border border-slate-400 ...">
-            <thead>
+          <table className="min-w-full divide-y divide-red-300 border border-red-300">
+            <thead className="bg-gray-800">
               <tr>
-                <th class="border border-slate-300 ...">Title</th>
-                <th class="border border-slate-300 ...">Category</th>
-                <th class="border border-slate-300 ...">Fee</th>
-                <th class="border border-slate-300 ...">Status</th>
-                <th class="border border-slate-300 ...">Action</th>
+                <th className="py-3 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Title
+                </th>
+                <th className="py-3 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Category
+                </th>
+                <th className="py-3 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Fee
+                </th>
+                <th className="py-3 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Restore
+                </th>
+                <th className="py-3 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Delete
+                </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-white divide-y divide-red-300">
               {courses &&
-                courses.map((item) => (
-                  <tr>
-                    <td class="border border-slate-300 ...">{item.title}</td>
-                    <td class="border border-slate-300 ...">{item.category}</td>
-                    <td class="border border-slate-300 ...">
+                courses.map((item, key) => (
+                  <tr key={key}>
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300">
+                      {item.title}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300">
+                      {item.category}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300">
                       {item.courseFee} TK
                     </td>
                     <td
                       onClick={() =>
                         updateAlert(item._id, "approved", "courses")
                       }
-                      class="border border-slate-300 ..."
+                      className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300"
                     >
-                      <button>Restore</button>
+                      <button>
+                        <FontAwesomeIcon
+                          className="mx-2 text-black text-xl"
+                          icon={faRotateLeft}
+                        />
+                      </button>
                     </td>
-                    <td class="border border-slate-300 ...">
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-600">
                       <button
                         onClick={() => deleteAlert(item._id, "deleteCourses")}
                       >
-                        Delete Permanantly
+                        <FontAwesomeIcon
+                          className="mx-2 text-red-500 text-xl"
+                          icon={faTrash}
+                        />
                       </button>
                     </td>
                   </tr>
@@ -74,64 +104,101 @@ const RecycleBin = () => {
             <h1>Empty</h1>
           </div>
         )}
-
-        <hr />
       </div>
       <div>
-        <h1 className="text-4xl">Teachers</h1>
+        <h1 className="text-red-600 text-3xl font-bold mb-6 mt-6">
+          Action For Teachers
+        </h1>
 
         {teacher.length > 0 ? (
-          <table class="border-collapse border border-slate-400 ...">
-            <thead>
+          <table className="min-w-full divide-y divide-red-300 border border-red-300">
+            <thead className="bg-gray-800">
               <tr>
-                <th class="border border-slate-300 ...">Photo</th>
-                <th class="border border-slate-300 ...">Name</th>
-                <th class="border border-slate-300 ...">Designation</th>
-                <th class="border border-slate-300 ...">Gender</th>
-                <th class="border border-slate-300 ...">Email</th>
-                <th class="border border-slate-300 ...">country</th>
-                <th class="border border-slate-300 ...">Details</th>
-                <th class="border border-slate-300 ...">Status</th>
-                <th class="border border-slate-300 ...">Action</th>
+                <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Photo
+                </th>
+                <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Name
+                </th>
+                <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Designation
+                </th>
+                <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Gender
+                </th>
+                <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Email
+                </th>
+                <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  country
+                </th>
+                <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Details
+                </th>
+                <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Restore
+                </th>
+                <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                  Delete
+                </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-white divide-y divide-red-300">
               {teacher &&
-                teacher.map((item) => (
-                  <tr>
-                    <td class="border border-slate-300 ...">
+                teacher.map((item, key) => (
+                  <tr key={key}>
+                    <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
                       <img
-                        className="rounded-full"
+                        className="rounded-full mx-auto"
                         width="50px"
                         height="50px"
                         src={item.image}
                         alt={item.name}
                       />
                     </td>
-                    <td class="border border-slate-300 ...">{item.name}</td>
-                    <td class="border border-slate-300 ...">
+                    <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                      {item.name}
+                    </td>
+                    <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
                       {item.designation}
                     </td>
-                    <td class="border border-slate-300 ...">{item.gender}</td>
-                    <td class="border border-slate-300 ...">{item.email}</td>
-                    <td class="border border-slate-300 ...">{item.country}</td>
-                    <td class="border border-slate-300 ...">
-                      <button>View</button>
+                    <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                      {item.gender}
                     </td>
-                    <td class="border border-slate-300 ...">
+                    <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                      {item.email}
+                    </td>
+                    <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                      {item.country}
+                    </td>
+                    <td className="px-6 py-2 whitespace-nowrap text-gray-600 border border-red-300">
+                      <button>
+                        <FontAwesomeIcon
+                          className="mx-2 text-black text-xl"
+                          icon={faEye}
+                        />
+                      </button>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300">
                       <button
                         onClick={() =>
                           updateAlert(item._id, "verified", "teacherStatus")
                         }
                       >
-                        Restor
+                        <FontAwesomeIcon
+                          className="mx-2 text-black text-xl"
+                          icon={faRotateLeft}
+                        />
                       </button>
                     </td>
-                    <td class="border border-slate-300 ...">
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-600 border border-red-300">
                       <button
                         onClick={() => deleteAlert(item._id, "deleteTeacher")}
                       >
-                        DELETE Parmanently
+                        <FontAwesomeIcon
+                          className="mx-2 text-red-500 text-xl"
+                          icon={faTrash}
+                        />
                       </button>
                     </td>
                   </tr>
@@ -143,12 +210,11 @@ const RecycleBin = () => {
             <h1>Empty</h1>
           </div>
         )}
-
-        <hr />
       </div>
       <div>
-        <h1 className="text-4xl">Student</h1>
-        <hr />
+        <h1 className="text-red-600 text-3xl font-bold mt-2 mb-6">
+          Action For Students
+        </h1>
       </div>
     </div>
   );

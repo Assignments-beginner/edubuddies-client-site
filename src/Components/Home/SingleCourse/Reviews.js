@@ -2,19 +2,19 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 
-const Reviews = ({ blog }) => {
+const Reviews = ({ sigleData }) => {
 	return (
 		<div className=' mt-7'>
 			<div className='border border-black-100 my-2'></div>
 			<div className='text-xl font-black text-red-500 md:text-left text-center'>
-				OUR REVIEW
+				Previous Students Experiance
 			</div>
 			<h1 className='md:text-3xl text-4xl font-semibold mt-3 mb-5 text-gray-800  md:text-left text-center'>
-				Comments
+				Experiances
 			</h1>
-			{blog?.reviews?.length > 0 ? (
+			{sigleData?.reviews?.length > 0 ? (
 				<div className='w-full'>
-					{blog?.reviews?.map((user, key) => (
+					{sigleData?.reviews?.map((user, key) => (
 						<>
 							<div
 								key={key}
@@ -57,10 +57,10 @@ const Reviews = ({ blog }) => {
 			) : (
 				<>
 					<h1 className='md:text-xl text-4xl font-semibold text-red-500  md:text-left text-center'>
-						No Comments Yet
+						No Experiance Yet
 					</h1>
 					<p className='md:text-left text-center'>
-						Be the first one to add review
+						Be the first one to add Experiance
 					</p>
 				</>
 			)}

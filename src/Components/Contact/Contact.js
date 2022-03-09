@@ -54,6 +54,14 @@ const Contact = () => {
 
     return (
         <div className="contact py-16">
+
+
+<div className="contact-map px-7 mx-5">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.1312072706355!2d91.41332071455426!3d22.982202184973552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd8f065795d95%3A0xf921aca48f8cf70a!2sDhaka%20-%20Chittagong%20Hwy%2C%20Bangladesh!5e0!3m2!1sen!2sde!4v1646679709300!5m2!1sen!2sde" width="600" height="auto"  loading="lazy"></iframe>
+</div>
+
+
+
             <div className="contact-box">                
                 {/* <form className="contact-form" onsubmit="sendEmail(); reset(); return false;"> */}
                 <form className="contact-form" onSubmit={handleFormSubmit} >
