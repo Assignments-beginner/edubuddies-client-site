@@ -143,14 +143,14 @@ const JoinSupportSessionModal = ({
 							)}
 							<div className='flex items-center justify-end p-6 border-t border-solid border-red-500 rounded-b mt-2'>
 								<button
-									className=' border-2 border-red-500 hover:bg-red-500 focus:500 bg-transparent duration-300 hover:text-white rounded duration-300 cursor-pointer text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm mr-1 mb-1 ease-linear transition-all duration-150'
+									className='hover:bg-red-500 focus:500 bg-transparent duration-300 px-4 py-2 hover:text-white rounded duration-300 cursor-pointer text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm mr-1 mb-1 ease-linear transition-all duration-150'
 									type='button'
 									onClick={() => setJoinSupportSessionModal(false)}>
 									Close
 								</button>
 								{!serial && (
 									<button
-										className='text-white font-bold uppercase text-sm px-6 py-3 shadow border-2 border-red-500 bg-red-500 hover:bg-transparent rounded-lg hover:text-red-500 transition-all ease-linear duration-300'
+										className='text-white font-bold uppercase text-sm px-4 py-2 shadow border-2 border-red-500 bg-red-500 hover:bg-transparent rounded-lg hover:text-red-500 transition-all ease-linear duration-300'
 										type='submit'>
 										Request
 									</button>
