@@ -45,9 +45,9 @@ const Header = () => {
 		let sy = window.scrollY;
 		if (Math.abs(lastScrollY - sy) > delta) {
 			if (sy > lastScrollY && sy > navHeight) {
-				nav.classList.add("nav-up");
+				nav?.classList?.add("nav-up");
 			} else if (sy < lastScrollY) {
-				nav.classList.remove("nav-up");
+				nav?.classList?.remove("nav-up");
 			}
 			lastScrollY = sy;
 		}
