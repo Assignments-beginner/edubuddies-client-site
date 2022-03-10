@@ -56,6 +56,7 @@ import PromoCode from "./Components/Dashboard/PromoCode/PromoCode";
 import Test from "./Components/Test/Test";
 import AllLiveSupportSessions from "./Components/Home/SupportSession/AllLiveSupportSessions";
 import SupportSessionList from "./Components/Home/SupportSession/SupportSessionList";
+import ChatBot006 from "./Components/Shared/ChatBot006/ChatBot006";
 
 function App() {
 	return (
@@ -222,6 +223,7 @@ function App() {
 					<Footer />
 				</div>
 			</BrowserRouter>
+			<ChatBot006 />
 		</div>
 	);
 }
