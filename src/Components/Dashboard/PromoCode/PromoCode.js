@@ -39,11 +39,11 @@ const PromoCode = () => {
       if (result.isConfirmed) {
         axios
           .delete(`https://fierce-caverns-90976.herokuapp.com/promo/${id}`)
-          .then(function (response) {
+          .then(function(response) {
             Swal.fire("Deleted!", "That promo has been deleted.", "success");
             setDeleted(true);
           })
-          .catch(function (error) {
+          .catch(function(error) {
             console.log(error);
           });
       }
@@ -65,11 +65,11 @@ const PromoCode = () => {
           .put(`https://fierce-caverns-90976.herokuapp.com/promo/${id}`, {
             text: text,
           })
-          .then(function (response) {
+          .then(function(response) {
             Swal.fire(`${text}!`, `That promo is ${text}.`, `${mark}`);
             setStatus(false);
           })
-          .catch(function (error) {
+          .catch(function(error) {
             console.log(error);
           });
       }
@@ -152,12 +152,12 @@ const PromoCode = () => {
                       )}
                       {`${promoCode?.status}` === "Pending" && (
                         <td className="whitespace-nowrap text-center">
-                          <p className="text-center text-black rounded-lg bg-yellow-500 w-[90px] mx-auto">{`${promoCode?.status}`}</p>
+                          <p className="text-center text-black rounded-lg bg-yellow-400 w-[90px] mx-auto">{`${promoCode?.status}`}</p>
                         </td>
                       )}
                       {`${promoCode?.status}` === "Live" && (
                         <td className="whitespace-nowrap text-center">
-                          <p className="text-center text-white rounded-lg bg-green-500 w-[90px] mx-auto">{`${promoCode?.status}`}</p>
+                          <p className="text-center text-white rounded-lg bg-green-600 w-[90px] mx-auto">{`${promoCode?.status}`}</p>
                         </td>
                       )}
                       <td className="whitespace-nowrap text-center">
