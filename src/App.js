@@ -52,6 +52,8 @@ import MyCourseDetails from "./Components/TeachersDashboard/MyCourseDeatails/MyC
 import AddContent from "./Components/TeachersDashboard/AddContent/AddContent";
 import BlogList from "./Components/BlogList/BlogList";
 import PromoCode from "./Components/Dashboard/PromoCode/PromoCode";
+import Test from "./Components/Test/Test";
+import SupportSession from "./Components/Home/SupportSession/SupportSession";
 
 function App() {
 	return (
@@ -81,6 +83,8 @@ function App() {
 							<Route path='/resetpassword' element={<ResetPass />} />
 							<Route path='/greetings' element={<Greetings />} />
 							<Route path='/userProfile' element={<UserProfile />} />
+							<Route path='/test' element={<Test />} />
+							<Route path='/supportsession' element={<SupportSession />} />
 
 							<Route path='/studentdashboard' element={<StudentDashboard />}>
 								<Route path='/studentdashboard' element={<StudentProfile />} />
