@@ -6,6 +6,7 @@ import LoadingOverlay from "../../Loading/LoadingOverlay";
 import "./MakeAdmin.css";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import Select from "react-select";
+import useAuth from "../../../hooks/useAuth";
 
 const MakeAdmin = () => {
   const [admin, setAdmin] = useState(false);

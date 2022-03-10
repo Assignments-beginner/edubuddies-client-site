@@ -13,6 +13,7 @@ import {
 	faXmark,
 	faPen,
 	faFolderPlus,
+	faHeadset,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { Link, Outlet } from "react-router-dom";
@@ -92,6 +93,17 @@ const TeachersDashboard = () => {
 													icon={faChalkboardUser}
 												/>
 												<span className='mx-3'>Dashboard</span>
+											</NavLink>
+										</li>
+										<li>
+											<NavLink
+												to='supportsession'
+												className='li text-lg rounded-lg  text-white '>
+												<FontAwesomeIcon
+													className='mx-2 text-red-500 icon'
+													icon={faHeadset}
+												/>
+												<span className='mx-3'>Support Session</span>
 											</NavLink>
 										</li>
 										<li>
@@ -211,7 +223,9 @@ const TeachersDashboard = () => {
 					</div>
 				</aside>
 				<div className='flex-1 mx-auto'>
-					<div className='py-3 bg-white border-b-2 flex items-center justify-between px-8 sticky top-0'>
+					<div
+						className='py-1 bg-white border-b-2 flex items-center justify-between px-8'
+						style={{ position: "sticky", top: 0 }}>
 						<div className='flex items-center'>
 							<div className='block md:hidden'>
 								<button
@@ -226,8 +240,8 @@ const TeachersDashboard = () => {
 								</button>
 							</div>
 
-							<h2 className='uppercase text-xl hidden md:block'>
-								Welcome, Honorable Teacher
+							<h2 className='uppercase text-md hidden md:block'>
+								Welcome, {user.displayName}
 							</h2>
 							<Link to=''>
 								<FontAwesomeIcon
@@ -238,7 +252,9 @@ const TeachersDashboard = () => {
 						</div>
 						<div className='flex items-center profile-imgName'>
 							<div className='flex flex-col items-end'>
-								<span className='text-black uppercase text-[14px]'>
+								<span
+									style={{ fontSize: "13px" }}
+									className='text-black uppercase'>
 									{user.displayName}
 								</span>
 								<Link to='/userProfile' className='text-sm text-red-500'>
@@ -246,9 +262,9 @@ const TeachersDashboard = () => {
 								</Link>
 							</div>
 							<img
-								className='user-img h-14 w-14 rounded-full ml-2'
+								className='user-img h-11 w-11 rounded-full ml-2'
 								src={user.photoURL}
-								alt='TeacherImage'
+								alt=''
 							/>
 						</div>
 					</div>
@@ -258,5 +274,4 @@ const TeachersDashboard = () => {
 		</div>
 	);
 };
-
 export default TeachersDashboard;

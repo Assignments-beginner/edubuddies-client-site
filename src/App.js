@@ -39,6 +39,7 @@ import CoursesList from "./Components/Dashboard/Admin/CoursesList";
 import TeacherList from "./Components/Dashboard/Admin/TeacherList";
 import AutoEmailSend from "./Components/AutoEmailSend/AutoEmailSend";
 import RecycleBin from "./Components/Dashboard/Admin/RecycleBin";
+import History from "./Components/Dashboard/Admin/History";
 import Bestperformer from "./Components/TeachersDashboard/Bestperformer/Bestperformer";
 import PostNotice from "./Components/TeachersDashboard/PostNotice/PostNotice";
 import PostBlog from "./Components/PostBlog/PostBlog";
@@ -52,6 +53,9 @@ import MyCourseDetails from "./Components/TeachersDashboard/MyCourseDeatails/MyC
 import AddContent from "./Components/TeachersDashboard/AddContent/AddContent";
 import BlogList from "./Components/BlogList/BlogList";
 import PromoCode from "./Components/Dashboard/PromoCode/PromoCode";
+import Test from "./Components/Test/Test";
+import AllLiveSupportSessions from "./Components/Home/SupportSession/AllLiveSupportSessions";
+import SupportSessionList from "./Components/Home/SupportSession/SupportSessionList";
 
 function App() {
 	return (
@@ -81,6 +85,7 @@ function App() {
 							<Route path='/resetpassword' element={<ResetPass />} />
 							<Route path='/greetings' element={<Greetings />} />
 							<Route path='/userProfile' element={<UserProfile />} />
+							<Route path='/test' element={<Test />} />
 
 							<Route path='/studentdashboard' element={<StudentDashboard />}>
 								<Route path='/studentdashboard' element={<StudentProfile />} />
@@ -99,6 +104,10 @@ function App() {
 								<Route
 									path='/studentdashboard/importantlinks'
 									element={<StudentImportantLinks />}
+								/>
+								<Route
+									path='/studentdashboard/supportsession'
+									element={<AllLiveSupportSessions />}
 								/>
 								<Route
 									path='/studentdashboard/skills'
@@ -150,6 +159,7 @@ function App() {
 									path='/dashboard/admin/RecycleBin'
 									element={<RecycleBin />}
 								/>
+								<Route path='/dashboard/admin/history' element={<History />} />
 							</Route>
 
 							<Route path='/teachersDashboard' element={<TeachersDashboard />}>
@@ -162,7 +172,10 @@ function App() {
 									path='/teachersDashboard/bestPerformer'
 									element={<Bestperformer />}
 								/>
-
+								<Route
+									path='/teachersDashboard/supportsession'
+									element={<SupportSessionList />}
+								/>
 								<Route
 									path='/teachersDashboard/postblog'
 									element={<PostBlog />}
