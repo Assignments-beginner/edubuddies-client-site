@@ -9,7 +9,6 @@ import Select from "react-select";
 import useAuth from "../../../hooks/useAuth";
 
 const MakeAdmin = () => {
-  const { user } = useAuth();
   const [admin, setAdmin] = useState(false);
   const {
     register,
@@ -58,8 +57,6 @@ const MakeAdmin = () => {
     const data = {
       email: emails?.email,
       role: role?.value,
-      displayName: user.displayName,
-      photoURL: user?.photoURL,
     };
     axios
       .put("https://fierce-caverns-90976.herokuapp.com/changerole", data)
@@ -97,9 +94,9 @@ const MakeAdmin = () => {
     }),
   };
   return (
-    <div className="bg-style container mx-auto px-4 md:px-11">
+    <div className="bg-style">
       <div className="grid place-items-center h-screen -mt-16">
-        <div style={{ width: 400 }}>
+        <div className=" lg:w-1/4 w-full">
           <h1 className="text-3xl mb-9 text-red-500 font-bold">
             Change User Role
           </h1>
