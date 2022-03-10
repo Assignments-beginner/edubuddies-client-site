@@ -1,7 +1,9 @@
+import { JitsiMeeting } from "@jitsi/react-sdk";
 import axios from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 import JoinSupportSessionModal from "./JoinSupportSessionModal";
 
 const AllLiveSupportSessions = () => {
@@ -38,9 +40,20 @@ const AllLiveSupportSessions = () => {
 		a?.needSupport?.some((u) => u?.email?.includes(user?.email)),
 	);
 	console.log("serialLive", serialLive);
+	const [supportRoom, setSupportRoom] = useState();
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
+			{supportRoom && (
+				<JitsiMeeting
+					roomName={supportRoom}
+					configOverwrite={{
+						startWithAudioMuted: true,
+						hiddenPremeetingButtons: ["microphone"],
+					}}
+					getIFrameRef={(node) => (node.style.height = "95vh")}
+				/>
+			)}
 			{serialLive?.length === 0 ? (
 				<div className='grid grid-cols-4 gap-2 mt-4'>
 					{
@@ -69,6 +82,7 @@ const AllLiveSupportSessions = () => {
 			{joinSupportSessionModal ? (
 				<>
 					<JoinSupportSessionModal
+						setSupportRoom={setSupportRoom}
 						setJoinSupportSessionModal={setJoinSupportSessionModal}
 						id={id}
 					/>

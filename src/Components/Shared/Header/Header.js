@@ -37,11 +37,37 @@ const Header = () => {
 			toggleButton.style.display = "none";
 		}
 	};
+	const nav = document.querySelector(".nav");
+	const navHeight = 70;
+	let lastScrollY = 0;
+	const delta = 10;
+	function scrolled() {
+		let sy = window.scrollY;
+		if (Math.abs(lastScrollY - sy) > delta) {
+			if (sy > lastScrollY && sy > navHeight) {
+				nav.classList.add("nav-up");
+			}
+			else if (sy < lastScrollY) {
+				nav.classList.remove("nav-up");
+			}
+			lastScrollY = sy;
+		}
+	}
+	let didScroll = false;
+	window.addEventListener("scroll", function(e) {
+		didScroll = true;
+	});
+	setInterval(function() {
+		if (didScroll) {
+			scrolled();
+			didScroll = false;
+		}
+	}, 250);
 
 	return (
 		<nav
 			style={{ display: `${hide}` }}
-			className='bg-gray-900 py-3 sticky top-0 z-50'>
+			className='bg-gray-900 py-3 sticky top-0 z-50 nav'>
 			<div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
 				<div className='relative flex items-center justify-between h-16'>
 					<div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
