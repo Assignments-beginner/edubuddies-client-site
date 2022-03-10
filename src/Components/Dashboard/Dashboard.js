@@ -207,7 +207,7 @@ const Dashboard = () => {
 				</aside>
 				<div className='flex-1 mx-auto'>
 					<div
-						className='py-3 bg-white border-b-2 flex items-center justify-between px-8'
+						className='py-1 bg-white border-b-2 flex items-center justify-between px-8'
 						style={{ position: "sticky", top: 0 }}>
 						<div className='flex items-center'>
 							<div className='block md:hidden'>
@@ -223,7 +223,7 @@ const Dashboard = () => {
 								</button>
 							</div>
 
-							<h2 className='uppercase text-xl hidden md:block'>
+							<h2 className='uppercase text-md hidden md:block'>
 								Welcome, {user.displayName}
 							</h2>
 							<Link to=''>
@@ -236,7 +236,7 @@ const Dashboard = () => {
 						<div className='flex items-center profile-imgName'>
 							<div className='flex flex-col items-end'>
 								<span
-									style={{ fontSize: "14px" }}
+									style={{ fontSize: "13px" }}
 									className='text-black uppercase'>
 									{user.displayName}
 								</span>
@@ -245,9 +245,9 @@ const Dashboard = () => {
 								</Link>
 							</div>
 							<img
-								className='user-img h-14 w-14 rounded-full ml-2'
+								className='user-img h-11 w-11 rounded-full ml-2'
 								src={user.photoURL}
-								alt='user'
+								alt=''
 							/>
 						</div>
 					</div>

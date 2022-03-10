@@ -1,6 +1,8 @@
 import { JitsiMeeting } from "@jitsi/react-sdk";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFaceFrown } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
 import LoadingOverlay from "../../Loading/LoadingOverlay";
@@ -43,51 +45,77 @@ const AllLiveSupportSessions = () => {
 	const [supportRoom, setSupportRoom] = useState();
 
 	return (
-		<div className='container mx-auto px-4 md:px-11'>
-			{supportRoom && (
-				<JitsiMeeting
-					roomName={supportRoom}
-					configOverwrite={{
-						startWithAudioMuted: true,
-						hiddenPremeetingButtons: ["microphone"],
-					}}
-					getIFrameRef={(node) => (node.style.height = "95vh")}
-				/>
-			)}
-			{serialLive?.length === 0 ? (
-				<div className='grid grid-cols-4 gap-2 mt-4'>
-					{
-						newArray?.map((supportSession) => (
-							<button
-								onClick={() => setModalAndId(supportSession?._id)}
-								className='p-5 bg-red-500 text-white'>
-								Support Session
-							</button>
-						))[0]
-					}
-				</div>
-			) : (
-				<div className='grid grid-cols-4 gap-2 mt-4'>
-					{
-						serialLive?.map((supportSession) => (
-							<button
-								onClick={() => setModalAndId(supportSession?._id)}
-								className='p-5 bg-red-500 text-white'>
-								Support Session
-							</button>
-						))[0]
-					}
-				</div>
-			)}
-			{joinSupportSessionModal ? (
-				<>
-					<JoinSupportSessionModal
-						setSupportRoom={setSupportRoom}
-						setJoinSupportSessionModal={setJoinSupportSessionModal}
-						id={id}
-					/>
-				</>
-			) : null}
+		<div className='container mx-auto p-1'>
+			<div
+				className='w-full mx-auto grid items-center '
+				style={{ minHeight: "90vh" }}>
+				{supportRoom ? (
+					<iframe
+						allow='camera; microphone; fullscreen; display-capture; autoplay'
+						src={`https://meet.jit.si/${supportRoom}`}
+						style={{ height: "90vh", width: "100%", border: "0px" }}
+						title='dsdadas'></iframe>
+				) : (
+					/* <JitsiMeeting className='my-3'
+						roomName={supportRoom}
+						configOverwrite={{
+							startWithAudioMuted: true,
+							hiddenPremeetingButtons: ["microphone"],
+						}}
+						getIFrameRef={(node) => (node.style.height = "90vh")}
+					/> */
+					<>
+						{filterLiveSupportSessions?.length > 0 ? (
+							<>
+								{serialLive?.length === 0 ? (
+									<div>
+										{
+											newArray?.map((supportSession) => (
+												<button
+													onClick={() => setModalAndId(supportSession?._id)}
+													className='p-5 bg-red-500 text-white'>
+													Support Session
+												</button>
+											))[0]
+										}
+									</div>
+								) : (
+									<div>
+										{
+											serialLive?.map((supportSession) => (
+												<button
+													onClick={() => setModalAndId(supportSession?._id)}
+													className='p-5 bg-red-500 text-white'>
+													Request For Support Session
+												</button>
+											))[0]
+										}
+									</div>
+								)}
+							</>
+						) : (
+							<div>
+								<FontAwesomeIcon
+									className='mx-auto text-red-500 icon text-4xl mb-4'
+									icon={faFaceFrown}
+								/>
+								<h2 className=' text-xl font-bold  text-red-500'>
+									Sorry, No support sessions for now
+								</h2>
+							</div>
+						)}
+					</>
+				)}
+				{joinSupportSessionModal ? (
+					<>
+						<JoinSupportSessionModal
+							setSupportRoom={setSupportRoom}
+							setJoinSupportSessionModal={setJoinSupportSessionModal}
+							id={id}
+						/>
+					</>
+				) : null}
+			</div>
 		</div>
 	);
 };
