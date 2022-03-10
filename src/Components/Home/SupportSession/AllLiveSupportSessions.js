@@ -74,7 +74,7 @@ const AllLiveSupportSessions = () => {
 												<button
 													onClick={() => setModalAndId(supportSession?._id)}
 													className='p-5 bg-red-500 text-white'>
-													Support Session
+													Request For Support Session
 												</button>
 											))[0]
 										}
@@ -86,7 +86,7 @@ const AllLiveSupportSessions = () => {
 												<button
 													onClick={() => setModalAndId(supportSession?._id)}
 													className='p-5 bg-red-500 text-white'>
-													Request For Support Session
+													Join Support Session
 												</button>
 											))[0]
 										}
