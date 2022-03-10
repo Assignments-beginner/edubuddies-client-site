@@ -10,6 +10,7 @@ import {
 	faBars,
 	faXmark,
 	faLightbulb,
+	faHeadset,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
@@ -78,6 +79,17 @@ const StudentDashboard = () => {
 											overflow: "hidden",
 											overflowY: "scroll",
 										}}>
+										<li>
+											<NavLink
+												to='supportsession'
+												className='li text-lg rounded-lg  text-white '>
+												<FontAwesomeIcon
+													className='mx-2 text-red-500 icon'
+													icon={faHeadset}
+												/>
+												<span className='mx-3'>Support Sessions</span>
+											</NavLink>
+										</li>
 										<li>
 											<NavLink
 												to=''
@@ -163,7 +175,7 @@ const StudentDashboard = () => {
 				</aside>
 				<div className='flex-1 mx-auto'>
 					<div
-						className='py-3 bg-white border-b-2 flex items-center justify-between px-8'
+						className='py-1 bg-white border-b-2 flex items-center justify-between px-8'
 						style={{ position: "sticky", top: 0 }}>
 						<div className='flex items-center'>
 							<div className='block md:hidden'>
@@ -179,7 +191,7 @@ const StudentDashboard = () => {
 								</button>
 							</div>
 
-							<h2 className='uppercase text-xl hidden md:block'>
+							<h2 className='uppercase text-md hidden md:block'>
 								Welcome, {user.displayName}
 							</h2>
 							<Link to=''>
@@ -192,7 +204,7 @@ const StudentDashboard = () => {
 						<div className='flex items-center profile-imgName'>
 							<div className='flex flex-col items-end'>
 								<span
-									style={{ fontSize: "14px" }}
+									style={{ fontSize: "13px" }}
 									className='text-black uppercase'>
 									{user.displayName}
 								</span>
@@ -201,7 +213,7 @@ const StudentDashboard = () => {
 								</Link>
 							</div>
 							<img
-								className='user-img h-14 w-14 rounded-full ml-2'
+								className='user-img h-11 w-11 rounded-full ml-2'
 								src={user.photoURL}
 								alt=''
 							/>
