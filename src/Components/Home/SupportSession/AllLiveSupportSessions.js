@@ -1,0 +1,81 @@
+import axios from "axios";
+import React from "react";
+import Swal from "sweetalert2";
+import useAuth from "../../../hooks/useAuth";
+import JoinSupportSessionModal from "./JoinSupportSessionModal";
+
+const AllLiveSupportSessions = () => {
+	const { user } = useAuth();
+	const [joinSupportSessionModal, setJoinSupportSessionModal] = React.useState(
+		false,
+	);
+	const [id, setId] = React.useState();
+
+	const [supportSessions, setSupportSessions] = React.useState();
+	console.log(id);
+	React.useEffect(() => {
+		axios
+			.get(`https://fierce-caverns-90976.herokuapp.com/supportsession`)
+			.then((res) => {
+				setSupportSessions(res.data);
+			});
+	}, []);
+	console.log(supportSessions);
+	const setModalAndId = (id) => {
+		setJoinSupportSessionModal(true);
+		setId(id);
+	};
+	const filterLiveSupportSessions = supportSessions?.filter(
+		(value) => value?.status === "Live",
+	);
+	console.log("filterLiveSupportSessions", filterLiveSupportSessions);
+
+	const newArray = filterLiveSupportSessions?.sort(
+		(a, b) => a?.needSupport?.length - b?.needSupport?.length,
+	);
+	console.log("newArray", newArray);
+	const serialLive = filterLiveSupportSessions?.filter((a) =>
+		a?.needSupport?.some((u) => u?.email?.includes(user?.email)),
+	);
+	console.log("serialLive", serialLive);
+
+	return (
+		<div className='container mx-auto px-4 md:px-11'>
+			{serialLive?.length === 0 ? (
+				<div className='grid grid-cols-4 gap-2 mt-4'>
+					{
+						newArray?.map((supportSession) => (
+							<button
+								onClick={() => setModalAndId(supportSession?._id)}
+								className='p-5 bg-red-500 text-white'>
+								Support Session
+							</button>
+						))[0]
+					}
+				</div>
+			) : (
+				<div className='grid grid-cols-4 gap-2 mt-4'>
+					{
+						serialLive?.map((supportSession) => (
+							<button
+								onClick={() => setModalAndId(supportSession?._id)}
+								className='p-5 bg-red-500 text-white'>
+								Support Session
+							</button>
+						))[0]
+					}
+				</div>
+			)}
+			{joinSupportSessionModal ? (
+				<>
+					<JoinSupportSessionModal
+						setJoinSupportSessionModal={setJoinSupportSessionModal}
+						id={id}
+					/>
+				</>
+			) : null}
+		</div>
+	);
+};
+
+export default AllLiveSupportSessions;
