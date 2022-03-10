@@ -10,3 +10,7 @@
 .content-wrap {
 	flex: 1;
 }
+.nav-up {
+	top: -90px;
+	transition: all 0.5s;
+}

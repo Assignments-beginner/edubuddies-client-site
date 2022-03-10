@@ -3,8 +3,13 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
-const JoinSupportSessionModal = ({ setJoinSupportSessionModal, id }) => {
+const JoinSupportSessionModal = ({
+	setJoinSupportSessionModal,
+	id,
+	setSupportRoom,
+}) => {
 	const [join, setJoin] = React.useState(false);
 	const { user } = useAuth();
 	const [submitting, setSubmitting] = React.useState(false);
@@ -71,6 +76,10 @@ const JoinSupportSessionModal = ({ setJoinSupportSessionModal, id }) => {
 		setSerial(remainingArray?.map((e) => e.email).indexOf(user?.email) + 1);
 	}, [remainingArray, user?.email, submitting, join]);
 
+	const setSupportRoomandClose = (url) => {
+		setSupportRoom(url);
+		setJoinSupportSessionModal(false);
+	};
 	return (
 		<div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
 			<form
@@ -115,13 +124,13 @@ const JoinSupportSessionModal = ({ setJoinSupportSessionModal, id }) => {
 										Waiting time {serial * 5 - 5} minutes
 									</div>
 									<div>
-										<a
-											href={`https://meet.jit.si/${singlesupportsession?.url}`}
-											target='_blank'
-											className='p-5 bg-red-500 text-white'
-											rel='noreferrer'>
+										<div
+											onClick={() =>
+												setSupportRoomandClose(singlesupportsession?.url)
+											}
+											className='p-5 bg-red-500 text-white cursor-pointer'>
 											Join Now
-										</a>
+										</div>
 									</div>
 								</div>
 							)}
@@ -144,6 +153,7 @@ const JoinSupportSessionModal = ({ setJoinSupportSessionModal, id }) => {
 					</div>
 				</div>
 			</form>
+			{!singlesupportsession && <LoadingOverlay />}
 		</div>
 	);
 };
