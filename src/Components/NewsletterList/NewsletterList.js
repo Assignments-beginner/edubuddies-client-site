@@ -34,7 +34,7 @@ const NewsletterList = () => {
       if (result.isConfirmed) {
         axios
           .delete(`https://fierce-caverns-90976.herokuapp.com/newsletter/${id}`)
-          .then(function (response) {
+          .then(function(response) {
             Swal.fire(
               "Deleted!",
               "That newsletter user has been unsubscribed.",
@@ -42,7 +42,7 @@ const NewsletterList = () => {
             );
             setDeleted(false);
           })
-          .catch(function (error) {
+          .catch(function(error) {
             console.log(error);
           });
       }
@@ -67,7 +67,7 @@ const NewsletterList = () => {
               text: text,
             }
           )
-          .then(function (response) {
+          .then(function(response) {
             Swal.fire(
               `${text}!`,
               `That newsletter has been ${text}`,
@@ -75,7 +75,7 @@ const NewsletterList = () => {
             );
             setStatus(false);
           })
-          .catch(function (error) {
+          .catch(function(error) {
             console.log(error);
           });
       }
@@ -136,7 +136,7 @@ const NewsletterList = () => {
                       </td>
                       {`${newsletter?.status}` === "Subscribed" && (
                         <td className="py-3 whitespace-nowrap text-center">
-                          <p className="text-center text-white rounded-lg bg-green-500 w-[120px] mx-auto">{`${newsletter?.status}`}</p>
+                          <p className="text-center text-white rounded-lg bg-green-600 w-[120px] mx-auto">{`${newsletter?.status}`}</p>
                         </td>
                       )}
                       {`${newsletter?.status}` === "Unsubscribed" && (
