@@ -7,6 +7,7 @@ import {
   initializeFirestore,
   collection,
   getDocs,
+  orderBy,
 } from "firebase/firestore";
 
 initializeFirebase();
@@ -17,17 +18,21 @@ const History = () => {
   useEffect(() => {
     const db = getFirestore();
     const colRef = collection(db, "history");
+    orderBy("timestamp");
 
     onSnapshot(colRef, (doc) => {
-      let logdData = [];
+      let logData = [];
+
       doc.forEach((i) => {
         // doc.data() is never undefined for query doc snapshots
-        logdData.push(i.data());
+        console.log(i.data());
+        logData.push(i.data());
       });
-      logdData.sort(function (a, b) {
-        return new Date(b.date) - new Date(a.date);
+
+      logData.sort(function (a, b) {
+        return b.now - a.now;
       });
-      setHisData(logdData);
+      setHisData(logData);
     });
   }, []);
 
@@ -52,14 +57,17 @@ const History = () => {
               <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 IP Address
               </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+              {/* <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Name
               </th>
               <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Email
-              </th>
+              </th> */}
               <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Date
+              </th>
+              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+                Time
               </th>
               <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Method
@@ -79,14 +87,17 @@ const History = () => {
                   <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.ipAddress}
                   </td>
-                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
+                  {/* <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.data?.name}
                   </td>
                   <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.data?.email}
-                  </td>
+                  </td> */}
                   <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.date}
+                  </td>
+                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
+                    {item?.time}
                   </td>
                   <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.method}
