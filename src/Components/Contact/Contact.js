@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import Swal from "sweetalert2";
+import emailjs from "@emailjs/browser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLocationDot,
@@ -13,6 +15,51 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Contact = () => {
+  const [formMsg, setFormMsg] = useState(true);
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_nv4khp1", //service ID
+        "template_dka5cee", //template id
+        event.target,
+        "user_LHVMNnpoRh5NOCx3QAi6S" //user ID
+      )
+      .then((result) => {
+        console.log("contact me result", result);
+
+        if (result.status === 200) {
+          setFormMsg(false);
+          let timerInterval;
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Thanks you!",
+            text: "Thanks! We will get back to you as soon as possible.",
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: () => {
+              Swal.showLoading();
+            },
+            willClose: () => {
+              clearInterval(timerInterval);
+            },
+          }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+              console.log("I was closed by the timer");
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        console.log("error", error);
+        // setFormMsg(error)
+      });
+    event.target.reset();
+  };
   return (
     <div
       className="max-w-screen-xl mt-24 px-6 grid gap-8 
@@ -28,7 +75,7 @@ const Contact = () => {
     text-gray-900"
     >
       {/* // Contact Form */}
-      <div>
+      <form onSubmit={handleFormSubmit}>
         <div>
           <h1 className="text-left text-3xl uppercase font-semibold md:mb-9 mb-5 text-red-500">
             Contact Us
@@ -51,7 +98,7 @@ const Contact = () => {
             </span> */}
             <input
               className="w-full bg-gray-100 text-gray-900 mt-2 py-3 px-4 rounded-lg"
-              type="text"
+              type="email"
               placeholder="Email"
             />
           </div>
@@ -76,11 +123,14 @@ const Contact = () => {
           ></textarea>
         </div>
         <div className="mt-3 text-left">
-          <button className="uppercase text-sm tracking-wide bg-gray-900 text-gray-100 py-3 px-4 hover:bg-gray-800 rounded-lg w-64">
+          <button
+            className="uppercase text-sm tracking-wide bg-gray-900 text-gray-100 py-3 px-4 hover:bg-gray-800 rounded-lg w-64"
+            type="submit"
+          >
             Send Message
           </button>
         </div>
-      </div>
+      </form>
       {/* // Contact Info */}
       <div
         className="bg-white py-12 
