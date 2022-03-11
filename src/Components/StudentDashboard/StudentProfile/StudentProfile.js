@@ -84,7 +84,7 @@ const StudentProfile = () => {
 					<Modal setShowModal={setShowModal} />
 				</>
 			) : null}
-			{/* 	{!users && <LoadingOverlay />} */}
+			{!user && <LoadingOverlay />}
 		</div>
 	);
 };

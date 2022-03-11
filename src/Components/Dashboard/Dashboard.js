@@ -9,7 +9,7 @@ import {
 	faChalkboardUser,
 	faUserGraduate,
 	faUserShield,
-	faGraduationCap,
+	faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Dashboard.css";
 import { Link, Outlet } from "react-router-dom";
@@ -87,6 +87,17 @@ const Dashboard = () => {
 													icon={faUserGraduate}
 												/>
 												<span className='mx-3'>Course List</span>
+											</Link>
+										</li>
+										<li>
+											<Link
+												to='mails'
+												className='li text-lg rounded-lg  text-white '>
+												<FontAwesomeIcon
+													className='mx-2 text-red-500 icon'
+													icon={faEnvelope}
+												/>
+												<span className='mx-3'>Emails</span>
 											</Link>
 										</li>
 										<li>
