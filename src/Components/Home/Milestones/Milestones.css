@@ -1,0 +1,30 @@
+.react-player > video {
+	position: absolute;
+	object-fit: fill;
+}
+label:after {
+	content: "+";
+	position: absolute;
+	right: 1em;
+	color: #fff;
+}
+
+input:checked + label:after {
+	content: "-";
+	line-height: 0.8em;
+}
+
+.accordion__content h2:hover,
+.accordion__content h2:hover .icon {
+	color: white;
+	background-color: #e84444;
+	cursor: pointer;
+}
+.accordion__content {
+	max-height: 0em;
+	transition: all 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+}
+input[name="panel"]:checked ~ .accordion__content {
+	/* Get this as close to what height you expect */
+	max-height: 50em;
+}

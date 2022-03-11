@@ -1,4 +1,41 @@
 .App {
 	text-align: center;
-	background-color: #f3f4f8;
+}
+/* For Footer */
+.page-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.content-wrap {
+	flex: 1;
+}
+.nav-up {
+	top: -90px;
+	transition: all 0.5s;
+}
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #dc3545;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+.rsc-header,
+.rsc-float-button,
+.rsc-ts-bubble {
+	background-color: #ef4444 !important;
+	color: #fff !important;
 }

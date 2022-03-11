@@ -1,0 +1,19 @@
+.editor-container {
+	padding: 0.5rem;
+}
+.text-area {
+	min-height: 40vh;
+	padding: 0.7rem;
+	border: 1px solid rgb(199, 198, 198);
+    border-radius: 5px;
+}
+.toolbar-area {
+	border: 1px solid rgb(199, 198, 198);
+    border-radius: 5px;
+}
+.wrapper{
+	border: none;
+}
+.toolbar, .editor{
+	border: 1px solid rgb(199, 198, 198);
+}
