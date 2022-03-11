@@ -6,11 +6,27 @@ import {
   faPhone,
   faCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faPinterest,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Contact = () => {
   return (
-    <div className="max-w-screen-xl mt-24 px-6 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-16 lg:px-16 xl:px-16 py-16 mx-auto text-gray-900">
+    <div
+      className="max-w-screen-xl mt-24 px-6 grid gap-8 
+    grid-cols-1 
+    md:grid-cols-1 
+    xl:grid-cols-2 
+    lg:grid-cols-2 
+    md:px-16 
+    lg:px-16 
+    xl:px-16 
+    py-16 
+    mx-auto 
+    text-gray-900"
+    >
       {/* // Contact Form */}
       <div>
         <div>
@@ -65,7 +81,20 @@ const Contact = () => {
           </button>
         </div>
       </div>
-      <div className="bg-white py-12 mx-4 lg:mx-20 xl:mx-20 md:mx-20 rounded-lg drop-shadow-xl">
+      {/* // Contact Info */}
+      <div
+        className="bg-white py-12 
+      mt-6
+      mx-4 
+      lg:mx-20 
+      xl:mx-20 
+      md:mx-20 
+      lg:mt-0 
+      xl:mt-0 
+      md:mt-0
+      rounded-lg 
+      drop-shadow-2xl"
+      >
         <div className="text-left px-16">
           <div className="flex items-baseline">
             <div>
@@ -124,13 +153,40 @@ const Contact = () => {
             />
             <div>
               <h2 className="text-lg font-bold">FOLLOW US</h2>
-              <div className="mt-4">
-                <button class="bg-blue-300 px-3 py-2 text-white inline-flex items-center space-x-2 rounded">
+              <div className="mt-4 flex gap-3">
+                <a
+                  href="https://img.freepik.com/free-photo/pile-3d-facebook-logos_1379-875.jpg?w=740"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-blue-300 hover:bg-blue-500 px-3 py-2 text-white inline-flex items-center space-x-2 rounded"
+                >
                   <FontAwesomeIcon
                     className="text-xl text-white"
                     icon={faFacebook}
                   />
-                </button>
+                </a>
+                <a
+                  href="https://img.freepik.com/free-photo/pile-3d-twitter-logos_1379-879.jpg?w=740"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-cyan-200 hover:bg-cyan-400 px-3 py-2 text-white inline-flex items-center space-x-2 rounded"
+                >
+                  <FontAwesomeIcon
+                    className="text-xl text-white"
+                    icon={faTwitter}
+                  />
+                </a>
+                <a
+                  href="https://img.freepik.com/free-photo/pile-3d-pinterest-logos_1379-877.jpg?w=740"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-rose-300 hover:bg-rose-500 px-3 py-2 text-white inline-flex items-center space-x-2 rounded"
+                >
+                  <FontAwesomeIcon
+                    className="text-xl text-white"
+                    icon={faPinterest}
+                  />
+                </a>
               </div>
             </div>
           </div>
