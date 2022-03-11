@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import Swal from "sweetalert2";
-import emailjs from "@emailjs/browser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faLocationDot,
@@ -18,7 +17,6 @@ import axios from "axios";
 import LoadingOverlay from "../Loading/LoadingOverlay";
 
 const Contact = () => {
-	const form = useRef();
 	const { register, handleSubmit, reset } = useForm();
 	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = ({ userName, email, subject, message }) => {
@@ -30,30 +28,21 @@ const Contact = () => {
 			submitTime: new Date(),
 		};
 		setSubmitting(true);
-		emailjs
-			.sendForm("sunywebdev", "edu-buddies", form.current, "PWaFtdVZyO_9EnOKL")
-			.then(
-				(result) => {
-					axios
-						.post(`https://fierce-caverns-90976.herokuapp.com/email`, data)
-						.then(function(response) {
-							setSubmitting(false);
-							Swal.fire({
-								icon: "success",
-								title: "Your Mail Sent Successfully",
-								showConfirmButton: true,
-								timer: 1500,
-							});
-							reset();
-						})
-						.catch(function(error) {
-							console.log(error);
-						});
-				},
-				(error) => {
-					console.log(error.text);
-				},
-			);
+		axios
+			.post(`https://fierce-caverns-90976.herokuapp.com/email`, data)
+			.then(function(response) {
+				setSubmitting(false);
+				Swal.fire({
+					icon: "success",
+					title: "Your Mail Sent Successfully",
+					showConfirmButton: true,
+					timer: 1500,
+				});
+				reset();
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
 	};
 	return (
 		<div
@@ -68,7 +57,7 @@ const Contact = () => {
     py-16 
     mx-auto 
     text-gray-900'>
-			<form ref={form} onSubmit={handleSubmit(onSubmit)} method='post'>
+			<form onSubmit={handleSubmit(onSubmit)} method='post'>
 				<div>
 					<h1 className='text-left text-3xl uppercase font-semibold md:mb-9 mb-5 text-red-500'>
 						Contact Us
