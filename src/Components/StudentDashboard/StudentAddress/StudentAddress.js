@@ -146,7 +146,7 @@ const StudentAddress = () => {
 					<PermanentAdd setPermanentAddModal={setPermanentAddModal} />
 				</>
 			) : null}
-			{/* {(!permanentaddressUI || !presentaddressUI) && <LoadingOverlay />} */}
+			{!user && <LoadingOverlay />}
 		</div>
 	);
 };

@@ -82,7 +82,7 @@ const StudentEducation = () => {
 					<Modal setShowModal={setShowModal} />
 				</>
 			) : null}
-			{/* 	{!education && <LoadingOverlay />} */}
+			{!user && <LoadingOverlay />}
 		</div>
 	);
 };
