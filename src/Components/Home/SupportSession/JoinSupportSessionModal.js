@@ -115,28 +115,33 @@ const JoinSupportSessionModal = ({
 									</div>
 								</div>
 							) : (
-								<div className='mx-auto my-4'>
-									<div className='text-sm font-semibold text-red-500 text-left mt-2'>
-										Total Students: {total}
+								<div className='mx-auto mb-4'>
+									<div className='text-sm text-red-500'>
+										Total Students :{" "}
+										<span className='font-bold text-xl'>{total}</span>
 									</div>
-									<div className='text-sm font-semibold text-red-500 text-left mb-5'>
-										Your Serial: {serial}
+
+									<div className='text-sm  text-red-500'>
+										Your Serial :{" "}
+										<span className='font-bold text-xl'>{serial}</span>
 									</div>
-									<div className='text-sm font-semibold text-red-500 text-left mb-5'>
-										Waiting time {serial * 5 - 5} minutes
+									<div className='text-sm  text-red-500'>
+										Waiting time :{" "}
+										<span className='font-bold text-xl'>{serial * 5 - 5}</span>{" "}
+										minutes
 									</div>
-									<div>
+
+									<div className='mt-4'>
 										<div
 											onClick={() =>
 												setSupportRoomandClose(singlesupportsession?.url)
 											}
 											className='border-2 border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold py-3 px-6 rounded-lg cursor-pointer hover:text-red-500 '>
-												
 											Join Now
 											<FontAwesomeIcon
-                               className="ml-4 faArrowRightLong"
-                  icon={faArrowRightLong}
-                />
+												className='ml-4 faArrowRightLong'
+												icon={faArrowRightLong}
+											/>
 										</div>
 									</div>
 								</div>
