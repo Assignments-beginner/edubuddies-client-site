@@ -29,7 +29,7 @@ const History = () => {
         logData.push(i.data());
       });
 
-      logData.sort(function (a, b) {
+      logData.sort(function(a, b) {
         return b.now - a.now;
       });
       setHisData(logData);
@@ -82,7 +82,7 @@ const History = () => {
           </thead>
           <tbody className="bg-whwhitespace-nowrap text-gray-600 border border-red-300">
             {hisData &&
-              hisData.map((item) => (
+              hisData.slice(0, 10).map((item) => (
                 <tr>
                   <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.ipAddress}
