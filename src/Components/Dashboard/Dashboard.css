@@ -24,6 +24,14 @@ aside ul .li:hover span {
 	background-color: #dc3545;
 	color: white !important;
 }
+aside ul .li:focus,
+aside ul .li:focus .icon,
+.logout:focus,
+.logout:focus .icon,
+aside ul .li:focus span {
+	background-color: #dc3545;
+	color: white !important;
+}
 
 @keyframes slide-in {
 	0% {
