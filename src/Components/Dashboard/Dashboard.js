@@ -179,6 +179,17 @@ const Dashboard = () => {
 										</li>
 										<li>
 											<Link
+												to='allusers'
+												className='li text-lg rounded-lg  text-white '>
+												<FontAwesomeIcon
+													className='mx-2 text-red-500 icon'
+													icon={faUserShield}
+												/>
+												<span className='mx-3'>All Users</span>
+											</Link>
+										</li>
+										<li>
+											<Link
 												to='autoemailsend'
 												className='li text-lg rounded-lg  text-white '>
 												<FontAwesomeIcon

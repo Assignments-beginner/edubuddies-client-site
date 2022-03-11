@@ -7,13 +7,9 @@ import LoadingOverlay from "../Loading/LoadingOverlay";
 const WarningModal = ({ setShowModal, submitting, setSubmitting }) => {
 	const { user } = useAuth();
 	const ok = () => {
-		const profile = {
-			skillset: [],
-			email: user?.email,
-		};
 		setSubmitting(true);
 		axios
-			.put(`http://localhost:5000/warning?email=${user?.email}`, profile)
+			.put(`http://localhost:5000/warning?email=${user?.email}`)
 			.then(function(response) {
 				Swal.fire({
 					icon: "success",
@@ -55,7 +51,7 @@ const WarningModal = ({ setShowModal, submitting, setSubmitting }) => {
 					</div>
 				</div>
 			</div>
-			{(submitting || user) && <LoadingOverlay />}
+			{/* 			{(submitting || user) && <LoadingOverlay />} */}
 		</div>
 	);
 };

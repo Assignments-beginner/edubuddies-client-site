@@ -58,6 +58,7 @@ import AllLiveSupportSessions from "./Components/Home/SupportSession/AllLiveSupp
 import SupportSessionList from "./Components/Home/SupportSession/SupportSessionList";
 import ChatBot006 from "./Components/Shared/ChatBot006/ChatBot006";
 import Mails from "./Components/Dashboard/Mails/Mails";
+import AllUsers from "./Components/Dashboard/AllUsers/AllUsers";
 
 function App() {
 	return (
@@ -145,6 +146,7 @@ function App() {
 								/>
 								<Route path='/dashboard/mails' element={<Mails />} />
 								<Route path='/dashboard/bloglist' element={<BlogList />} />
+								<Route path='/dashboard/allusers' element={<AllUsers />} />
 								<Route path='/dashboard/allcourses' element={<AllCourses />} />
 								<Route
 									path='/dashboard/allcourses/:id'
