@@ -35,7 +35,7 @@ const History = () => {
       setHisData(logData);
     });
   }, []);
-
+  console.log(hisData);
   //   const fireBaeData = async () => {
   //     const querySnapshot = await getDocs(collection(db, "history"));
   //     let logdData = [];
@@ -45,11 +45,11 @@ const History = () => {
   //     });
   //     // setHisData(logdData);
   //   };
+  console.log(new Date());
 
-  console.log(hisData);
   return (
     <div>
-      <h1 className="text-4xl">Live History</h1>
+      <h1 className="text-4xl">Live History {hisData.length}</h1>
       <div>
         <table className="min-w-full divide-y divide-red-300 border border-red-300">
           <thead className="bg-gray-800">
@@ -82,7 +82,7 @@ const History = () => {
           </thead>
           <tbody className="bg-whwhitespace-nowrap text-gray-600 border border-red-300">
             {hisData &&
-              hisData.slice(0, 10).map((item) => (
+              hisData.slice(0, 30).map((item) => (
                 <tr>
                   <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.ipAddress}
