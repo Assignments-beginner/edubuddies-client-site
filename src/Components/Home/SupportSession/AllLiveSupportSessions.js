@@ -116,6 +116,7 @@ const AllLiveSupportSessions = () => {
 					</>
 				) : null}
 			</div>
+			{!supportSessions && <LoadingOverlay />}
 		</div>
 	);
 };

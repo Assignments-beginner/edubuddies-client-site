@@ -1,80 +1,228 @@
-import React, { useState } from 'react';
-import Swal from 'sweetalert2';
-import emailjs from '@emailjs/browser';
-import './Contact.css';
+import React, { useRef, useState } from "react";
+import Swal from "sweetalert2";
+import emailjs from "@emailjs/browser";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faLocationDot,
+	faEnvelope,
+	faPhone,
+	faCircle,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+	faFacebook,
+	faPinterest,
+	faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import LoadingOverlay from "../Loading/LoadingOverlay";
 
 const Contact = () => {
-
-    const [formMsg, setFormMsg] = useState(true);
-
-  
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
-  
-        emailjs.sendForm(
-            'service_nv4khp1', //service ID
-            'template_dka5cee', //template id
-            event.target,
-            'user_LHVMNnpoRh5NOCx3QAi6S' //user ID
-        ).then(result => {
-            console.log('contact me result', result);
-  
-            
-  
-            if (result.status === 200) {
-                setFormMsg(false)
-                let timerInterval
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Thanks you!',
-                    text: 'Thanks! We will get back to you as soon as possible.',
-                    timer: 5000,
-                    timerProgressBar: true,
-                    didOpen: () => {
-                        Swal.showLoading()
-                    },
-                    willClose: () => {
-                        clearInterval(timerInterval)
-                    }
-                }).then((result) => {
-                    /* Read more about handling dismissals below */
-                    if (result.dismiss === Swal.DismissReason.timer) {
-                        console.log('I was closed by the timer')
-                    }
-                })
-            }
-  
-        }).catch(error => {
-            console.log('error', error);
-            // setFormMsg(error)
-        })
-        event.target.reset();
-    }
-
-    return (
-        <div className="contact py-16">
-
-
-<div className="contact-map px-7 mx-5">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.1312072706355!2d91.41332071455426!3d22.982202184973552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd8f065795d95%3A0xf921aca48f8cf70a!2sDhaka%20-%20Chittagong%20Hwy%2C%20Bangladesh!5e0!3m2!1sen!2sde!4v1646679709300!5m2!1sen!2sde" width="600" height="auto"  loading="lazy"></iframe>
-</div>
-
-
-
-            <div className="contact-box">                
-                {/* <form className="contact-form" onsubmit="sendEmail(); reset(); return false;"> */}
-                <form className="contact-form" onSubmit={handleFormSubmit} >
-                    <h3 className="mt-4 text-2xl">GET IN TOUCH</h3>
-                    <input type="text" id="name" name="User Name" placeholder="Your Name" required />
-                    <input type="email" id="email" placeholder="Your Email" required name="email"/>
-                    <input type="text" id="phone" placeholder="Your Phone No." required />
-                    <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
-        </div>
-    );
+	const form = useRef();
+	const { register, handleSubmit, reset } = useForm();
+	const [submitting, setSubmitting] = useState(false);
+	const onSubmit = ({ userName, email, subject, message }) => {
+		const data = {
+			userName,
+			email,
+			subject,
+			message,
+			submitTime: new Date(),
+		};
+		setSubmitting(true);
+		emailjs
+			.sendForm("sunywebdev", "edu-buddies", form.current, "PWaFtdVZyO_9EnOKL")
+			.then(
+				(result) => {
+					axios
+						.post(`https://fierce-caverns-90976.herokuapp.com/email`, data)
+						.then(function(response) {
+							setSubmitting(false);
+							Swal.fire({
+								icon: "success",
+								title: "Your Mail Sent Successfully",
+								showConfirmButton: true,
+								timer: 1500,
+							});
+							reset();
+						})
+						.catch(function(error) {
+							console.log(error);
+						});
+				},
+				(error) => {
+					console.log(error.text);
+				},
+			);
+	};
+	return (
+		<div
+			className='max-w-screen-xl mt-24 px-6 grid gap-8 
+    grid-cols-1 
+    md:grid-cols-1 
+    xl:grid-cols-2 
+    lg:grid-cols-2 
+    md:px-16 
+    lg:px-16 
+    xl:px-16 
+    py-16 
+    mx-auto 
+    text-gray-900'>
+			<form ref={form} onSubmit={handleSubmit(onSubmit)} method='post'>
+				<div>
+					<h1 className='text-left text-3xl uppercase font-semibold md:mb-9 mb-5 text-red-500'>
+						Contact Us
+					</h1>
+				</div>
+				<div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+					<div className='text-left'>
+						<input
+							className='w-full bg-gray-100 text-gray-900 mt-2 py-3 px-4 rounded-lg'
+							type='text'
+							placeholder='Full Name'
+							{...register("userName", { required: true })}
+						/>
+					</div>
+					<div className='text-left'>
+						<input
+							className='w-full bg-gray-100 text-gray-900 mt-2 py-3 px-4 rounded-lg'
+							type='email'
+							placeholder='Email'
+							{...register("email", { required: true })}
+						/>
+					</div>
+				</div>
+				<div className='mt-3 text-left'>
+					<input
+						className='w-full bg-gray-100 text-gray-900 mt-2 py-3 px-4 rounded-lg'
+						type='text'
+						placeholder='Subject'
+						{...register("subject", { required: true })}
+					/>
+				</div>
+				<div className='mt-3 text-left'>
+					<textarea
+						className='w-full h-32 bg-gray-100 text-gray-900 mt-2 py-3 px-4 rounded-lg'
+						placeholder='Message'
+						{...register("message", { required: true })}></textarea>
+				</div>
+				<div className='mt-3 text-left'>
+					<button
+						className='uppercase text-sm tracking-wide bg-gray-900 text-gray-100 py-3 px-4 hover:bg-gray-800 rounded-lg w-64'
+						type='submit'>
+						Send Message
+					</button>
+				</div>
+			</form>
+			<div
+				className='bg-white py-12 
+      mt-6
+      mx-4 
+      lg:mx-20 
+      xl:mx-20 
+      md:mx-20 
+      lg:mt-0 
+      xl:mt-0 
+      md:mt-0
+      rounded-lg 
+      drop-shadow-2xl'>
+				<div className='text-left px-16'>
+					<div className='flex items-baseline'>
+						<div>
+							<FontAwesomeIcon
+								className='text-lg text-red-500 pr-4'
+								icon={faLocationDot}
+							/>
+						</div>
+						<div>
+							<h2 className='text-lg font-bold'>New York Office</h2>
+							<span className='text-sm'>
+								Maypole Crescent 70-80 Upper St Norwich NR2 1LT
+							</span>
+						</div>
+					</div>
+				</div>
+				<div className='text-left px-16 mt-10'>
+					<div className='flex items-baseline'>
+						<div>
+							<FontAwesomeIcon
+								className='text-lg text-red-500 pr-4'
+								icon={faEnvelope}
+							/>
+						</div>
+						<div>
+							<h2 className='text-lg font-bold'>Email Us Directly</h2>
+							<span className='text-sm'>
+								support@eduBuddies.com <br />
+								info@eduBuddies.com
+							</span>
+						</div>
+					</div>
+				</div>
+				<div className='text-left px-16 mt-10'>
+					<div className='flex items-baseline'>
+						<div>
+							<FontAwesomeIcon
+								className='text-lg text-red-500 pr-4'
+								icon={faPhone}
+							/>
+						</div>
+						<div>
+							<h2 className='text-lg font-bold'>Phone</h2>
+							<span className='text-sm'>
+								+(224) 762 442 32 <br />
+								+(426) 742 26 44
+							</span>
+						</div>
+					</div>
+				</div>
+				<div className='text-left px-16 mt-10'>
+					<div className='flex items-baseline'>
+						<FontAwesomeIcon
+							className='text-lg text-white pr-4'
+							icon={faCircle}
+						/>
+						<div>
+							<h2 className='text-lg font-bold'>FOLLOW US</h2>
+							<div className='mt-4 flex gap-3'>
+								<a
+									href='https://img.freepik.com/free-photo/pile-3d-facebook-logos_1379-875.jpg?w=740'
+									target='_blank'
+									rel='noopener noreferrer'
+									class='bg-blue-300 hover:bg-blue-500 px-3 py-2 text-white inline-flex items-center space-x-2 rounded'>
+									<FontAwesomeIcon
+										className='text-xl text-white'
+										icon={faFacebook}
+									/>
+								</a>
+								<a
+									href='https://img.freepik.com/free-photo/pile-3d-twitter-logos_1379-879.jpg?w=740'
+									target='_blank'
+									rel='noopener noreferrer'
+									class='bg-cyan-200 hover:bg-cyan-400 px-3 py-2 text-white inline-flex items-center space-x-2 rounded'>
+									<FontAwesomeIcon
+										className='text-xl text-white'
+										icon={faTwitter}
+									/>
+								</a>
+								<a
+									href='https://img.freepik.com/free-photo/pile-3d-pinterest-logos_1379-877.jpg?w=740'
+									target='_blank'
+									rel='noopener noreferrer'
+									class='bg-rose-300 hover:bg-rose-500 px-3 py-2 text-white inline-flex items-center space-x-2 rounded'>
+									<FontAwesomeIcon
+										className='text-xl text-white'
+										icon={faPinterest}
+									/>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{submitting && <LoadingOverlay />}
+		</div>
+	);
 };
 
 export default Contact;

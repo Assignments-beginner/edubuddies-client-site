@@ -99,9 +99,9 @@ const SupportSessionList = () => {
 	};
 
 	return (
-		<div className='container mx-auto px-4 md:px-11'>
+		<div className='container mx-auto px-4 md:px-9'>
 			<div className='p-5 border-b border-solid border-red-500 rounded-t mb-5'>
-				<div className='mb-2 mt-7 flex justify-between'>
+				<div className='mb-2 mt-4 flex justify-between'>
 					<h3 className='text-3xl font-semibold text-center text-red-500'>
 						Support Sessions
 					</h3>
@@ -118,7 +118,13 @@ const SupportSessionList = () => {
 			<div className='flex flex-col'>
 				<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
 					<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
-						<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'>
+						<div
+							className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'
+							style={{
+								minHeight: "70vh",
+								maxWidth: "75vw",
+								overflowX: "scroll",
+							}}>
 							<table className='min-w-full divide-y divide-red-200'>
 								<thead className='bg-black font-bold'>
 									<tr>

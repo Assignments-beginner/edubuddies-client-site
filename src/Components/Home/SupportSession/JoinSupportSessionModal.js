@@ -4,6 +4,8 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
 import LoadingOverlay from "../../Loading/LoadingOverlay";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
 const JoinSupportSessionModal = ({
 	setJoinSupportSessionModal,
@@ -98,7 +100,7 @@ const JoinSupportSessionModal = ({
 									<div className='flex flex-col space-y-1'>
 										<label
 											for='url'
-											className='text-sm font-semibold text-red-500 text-left mt-2'>
+											className='text-sm font-semibold text-red-600 text-left mt-2'>
 											Describe your problem
 										</label>
 										<textarea
@@ -115,10 +117,10 @@ const JoinSupportSessionModal = ({
 							) : (
 								<div className='mx-auto my-4'>
 									<div className='text-sm font-semibold text-red-500 text-left mt-2'>
-										Total Students {total}
+										Total Students: {total}
 									</div>
 									<div className='text-sm font-semibold text-red-500 text-left mb-5'>
-										Your Serial {serial}
+										Your Serial: {serial}
 									</div>
 									<div className='text-sm font-semibold text-red-500 text-left mb-5'>
 										Waiting time {serial * 5 - 5} minutes
@@ -128,22 +130,27 @@ const JoinSupportSessionModal = ({
 											onClick={() =>
 												setSupportRoomandClose(singlesupportsession?.url)
 											}
-											className='p-5 bg-red-500 text-white cursor-pointer'>
+											className='border-2 border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold py-3 px-6 rounded-lg cursor-pointer hover:text-red-500 '>
+												
 											Join Now
+											<FontAwesomeIcon
+                               className="ml-4 faArrowRightLong"
+                  icon={faArrowRightLong}
+                />
 										</div>
 									</div>
 								</div>
 							)}
 							<div className='flex items-center justify-end p-6 border-t border-solid border-red-500 rounded-b mt-2'>
 								<button
-									className='text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+									className='hover:bg-red-500 focus:500 bg-transparent duration-300 px-4 py-2 hover:text-white rounded duration-300 cursor-pointer text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm mr-1 mb-1 ease-linear transition-all duration-150'
 									type='button'
 									onClick={() => setJoinSupportSessionModal(false)}>
 									Close
 								</button>
 								{!serial && (
 									<button
-										className='bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+										className='text-white font-bold uppercase text-sm px-4 py-2 shadow border-2 border-red-500 bg-red-500 hover:bg-transparent rounded-lg hover:text-red-500 transition-all ease-linear duration-300'
 										type='submit'>
 										Request
 									</button>
