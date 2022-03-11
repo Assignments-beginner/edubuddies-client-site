@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faUser,
@@ -17,7 +17,7 @@ import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import WarningModal from "./WarningModal";
-import Swal from "sweetalert2";
+import LoadingOverlay from "../Loading/LoadingOverlay";
 
 const StudentDashboard = () => {
 	const { user, logOut } = useAuth();
@@ -26,66 +26,28 @@ const StudentDashboard = () => {
 		setActive(!isActive);
 	};
 	/* 	const [showModal, setShowModal] = useState(false);
-	const [submitting, setSubmitting] = useState(false);
-	const [data, setData] = useState();	React.useEffect(() => {
+	const [data, setData] = useState();
+	React.useEffect(() => {
 		axios
-			.get(
-				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
-			)
+			.get(`http://localhost:5000/allusers?email=${user?.email}`)
 			.then((res) => {
 				setData(res.data);
 			});
-	}, [user?.email, submitting]);
-	 	useEffect(() => {
-		const profile = {
-			skillset: data?.skillset || [],
-		};
-		Swal.fire({
-			icon: "success",
-			title: "Welcome",
-			confirmButtonText: "Ok",
-			allowOutsideClick: false,
-			allowEscapeKey: false,
-		}).then((result) => {
-			if (result.isConfirmed) {
-				axios
-					.put(`http://localhost:5000/warning?email=${user?.email}`, profile)
-					.then(function(response) {
-						Swal.fire({
-							icon: "success",
-							title: "Have a nice journy",
-							showConfirmButton: false,
-							timer: 1500,
-						});
-					})
-					.catch(function(error) {
-						console.log("error", error);
-						console.log(error);
-					});
-			}
-		});
-	}, [data?.skillset, user?.email]); */
+	}, [user?.email]); */
 
 	return (
 		<div className='dashboard' style={{ minHeight: "70vh" }}>
-			{/* 		{showModal || !data?.skillset ? (
+			{/* 		{showModal || data?.skillset === undefined ? (
 				<>
-					<WarningModal
-						setShowModal={setShowModal}
-						submitting={submitting}
-						setSubmitting={setSubmitting}
-					/>
+					<WarningModal setShowModal={setShowModal} />
 				</>
-			) : null} */}
+			) : (
+				<> {!data?.skillset && <LoadingOverlay />}</>
+			)} */}
 			<div className='relative min-h-screen md:flex '>
 				<aside
 					/* onClick={handleToggle} */
-					style={{
-						position: "sticky",
-						top: 0,
-						zIndex: 999,
-						minWidth: "250px",
-					}}
+					style={{ position: "sticky", top: 0, zIndex: 999, minWidth: "250px" }}
 					aria-label='Sidebar'>
 					<div
 						className={`md:relative absolute delay-500  ${
@@ -100,12 +62,7 @@ const StudentDashboard = () => {
 								justifyContent: "center",
 							}}>
 							<div className='flex justify-center'>
-								<div
-									style={{
-										position: "fixed",
-										top: 0,
-										right: 0,
-									}}>
+								<div style={{ position: "fixed", top: 0, right: 0 }}>
 									<div className='block md:hidden'>
 										<button
 											className={`flex  rounded-lg p-1 justify-start m-2 ${
@@ -119,11 +76,7 @@ const StudentDashboard = () => {
 										</button>
 									</div>
 								</div>
-								<div
-									style={{
-										position: "fixed",
-										top: "2rem",
-									}}>
+								<div style={{ position: "fixed", top: "2rem" }}>
 									<div className='flex flex-col items-center'>
 										<Link to='/home'>
 											<img
@@ -224,11 +177,7 @@ const StudentDashboard = () => {
 										</li>
 									</ul>
 								</div>
-								<div
-									style={{
-										position: "fixed",
-										bottom: "4rem",
-									}}>
+								<div style={{ position: "fixed", bottom: "4rem" }}>
 									<div
 										onClick={logOut}
 										className='logout text-lg rounded-lg  text-white '>
@@ -246,10 +195,7 @@ const StudentDashboard = () => {
 				<div className='flex-1 mx-auto'>
 					<div
 						className='py-1 bg-white border-b-2 flex items-center justify-between px-8'
-						style={{
-							position: "sticky",
-							top: 0,
-						}}>
+						style={{ position: "sticky", top: 0 }}>
 						<div className='flex items-center'>
 							<div className='block md:hidden'>
 								<button
