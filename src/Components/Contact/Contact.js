@@ -1,4 +1,12 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLocationDot,
+  faEnvelope,
+  faPhone,
+  faCircle,
+} from "@fortawesome/free-solid-svg-icons";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 const Contact = () => {
   return (
@@ -16,7 +24,7 @@ const Contact = () => {
               Full Name
             </span> */}
             <input
-              className="w-full bg-slate-100 text-gray-900 mt-2 py-3 px-4 rounded-lg"
+              className="w-full bg-gray-100 text-gray-900 mt-2 py-3 px-4 rounded-lg"
               type="text"
               placeholder="Full Name"
             />
@@ -26,7 +34,7 @@ const Contact = () => {
               Email
             </span> */}
             <input
-              className="w-full bg-slate-100 text-gray-900 mt-2 py-3 px-4 rounded-lg"
+              className="w-full bg-gray-100 text-gray-900 mt-2 py-3 px-4 rounded-lg"
               type="text"
               placeholder="Email"
             />
@@ -37,7 +45,7 @@ const Contact = () => {
               Subject
             </span> */}
           <input
-            className="w-full bg-slate-100 text-gray-900 mt-2 py-3 px-4 rounded-lg"
+            className="w-full bg-gray-100 text-gray-900 mt-2 py-3 px-4 rounded-lg"
             type="text"
             placeholder="Subject"
           />
@@ -47,7 +55,7 @@ const Contact = () => {
               Message
             </span> */}
           <textarea
-            className="w-full h-32 bg-slate-100 text-gray-900 mt-2 py-3 px-4 rounded-lg"
+            className="w-full h-32 bg-gray-100 text-gray-900 mt-2 py-3 px-4 rounded-lg"
             placeholder="Message"
           ></textarea>
         </div>
@@ -57,13 +65,74 @@ const Contact = () => {
           </button>
         </div>
       </div>
-      <div className="bg-white mx-4 lg:mx-20 xl:mx-20 md:mx-20 rounded-lg shadow-md">
+      <div className="bg-white py-12 mx-4 lg:mx-20 xl:mx-20 md:mx-20 rounded-lg drop-shadow-xl">
         <div className="text-left px-16">
-          <div>
-            <h2 className="text-2xl">New York Office</h2>
-            <span className="text-sm">
-              Maypole Crescent 70-80 Upper St Norwich NR2 1LT
-            </span>
+          <div className="flex items-baseline">
+            <div>
+              <FontAwesomeIcon
+                className="text-lg text-red-500 pr-4"
+                icon={faLocationDot}
+              />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold">New York Office</h2>
+              <span className="text-sm">
+                Maypole Crescent 70-80 Upper St Norwich NR2 1LT
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="text-left px-16 mt-10">
+          <div className="flex items-baseline">
+            <div>
+              <FontAwesomeIcon
+                className="text-lg text-red-500 pr-4"
+                icon={faEnvelope}
+              />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold">Email Us Directly</h2>
+              <span className="text-sm">
+                support@eduBuddies.com <br />
+                info@eduBuddies.com
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="text-left px-16 mt-10">
+          <div className="flex items-baseline">
+            <div>
+              <FontAwesomeIcon
+                className="text-lg text-red-500 pr-4"
+                icon={faPhone}
+              />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold">Phone</h2>
+              <span className="text-sm">
+                +(224) 762 442 32 <br />
+                +(426) 742 26 44
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="text-left px-16 mt-10">
+          <div className="flex items-baseline">
+            <FontAwesomeIcon
+              className="text-lg text-white pr-4"
+              icon={faCircle}
+            />
+            <div>
+              <h2 className="text-lg font-bold">FOLLOW US</h2>
+              <div className="mt-4">
+                <button class="bg-blue-300 px-3 py-2 text-white inline-flex items-center space-x-2 rounded">
+                  <FontAwesomeIcon
+                    className="text-xl text-white"
+                    icon={faFacebook}
+                  />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
