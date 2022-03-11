@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="max-w-screen-xl mt-24 px-16 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-16 lg:px-16 xl:px-16 py-16 mx-auto text-gray-900">
+    <div className="max-w-screen-xl mt-24 px-6 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-16 lg:px-16 xl:px-16 py-16 mx-auto text-gray-900">
       {/* // Contact Form */}
       <div>
         <div>
@@ -57,14 +57,13 @@ const Contact = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-col justify-between">
-        <div>
-          <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
-            Lets talk about everything!
-          </h2>
-          <div className="text-gray-700 mt-3">
-            Hate forms? Send us an <span className="underline">email</span>{" "}
-            instead.
+      <div className="bg-white mx-4 lg:mx-20 xl:mx-20 md:mx-20 rounded-lg shadow-md">
+        <div className="text-left px-16">
+          <div>
+            <h2 className="text-2xl">New York Office</h2>
+            <span className="text-sm">
+              Maypole Crescent 70-80 Upper St Norwich NR2 1LT
+            </span>
           </div>
         </div>
       </div>
