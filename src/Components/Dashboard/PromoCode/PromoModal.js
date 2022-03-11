@@ -17,7 +17,7 @@ const PromoModal = ({ setShowPromoModal }) => {
     setSubmitting(true);
     axios
       .post(`https://fierce-caverns-90976.herokuapp.com/promo`, data)
-      .then(function (response) {
+      .then(function(response) {
         Swal.fire({
           icon: "success",
           title: "Your Promo Code Successfully Added",
@@ -27,7 +27,7 @@ const PromoModal = ({ setShowPromoModal }) => {
         setShowPromoModal(false);
         setSubmitting(false);
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log("error", error);
         console.log(error);
       });
@@ -60,7 +60,7 @@ const PromoModal = ({ setShowPromoModal }) => {
                     name="promo"
                     {...register("promo", { required: true })}
                     autofocus
-                    className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                    className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500"
                   />
                 </div>
 
@@ -77,7 +77,7 @@ const PromoModal = ({ setShowPromoModal }) => {
                     name="percent"
                     {...register("percent", { required: true })}
                     autofocus
-                    className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                    className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500"
                   />
                 </div>
               </div>
@@ -90,7 +90,7 @@ const PromoModal = ({ setShowPromoModal }) => {
                   Close
                 </button>
                 <button
-                  className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                  className="bg-red-500 text-white border border-red-500 hover:bg-transparent hover:text-red-500 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                   type="submit"
                 >
                   Add New Promo Code
