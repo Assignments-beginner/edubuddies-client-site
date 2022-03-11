@@ -133,7 +133,7 @@ const PostBlog = () => {
               name="blogName"
               {...register("blogName", { required: true })}
               autofocus
-              className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+              className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500"
             />
           </div>
           <div className="space-y-1">
