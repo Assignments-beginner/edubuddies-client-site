@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -16,7 +16,8 @@ const JoinSupportSessionModal = ({
 	const { user } = useAuth();
 	const [submitting, setSubmitting] = React.useState(false);
 	const { register, handleSubmit, reset } = useForm();
-
+	const [supportSession, setSupportSession] = useState();
+	console.log("supportSession", supportSession);
 	const onSubmit = ({ problem }) => {
 		const data = {
 			problem,
@@ -27,12 +28,12 @@ const JoinSupportSessionModal = ({
 		setSubmitting(true);
 		Swal.fire({
 			title: "Are you sure?",
-			text: "You won't be able to revert this!",
+			text: "You want to join our support session!",
 			icon: "warning",
 			showCancelButton: true,
 			confirmButtonColor: "#3085d6",
 			cancelButtonColor: "#d33",
-			confirmButtonText: `Yes, Join Now!`,
+			confirmButtonText: `Yes, Send Request!`,
 		}).then((result) => {
 			if (result.isConfirmed) {
 				axios
@@ -43,7 +44,7 @@ const JoinSupportSessionModal = ({
 					.then(function(response) {
 						Swal.fire({
 							icon: "success",
-							title: "You successfully requested",
+							title: "Click Join Now To Join On Support Session",
 							showConfirmButton: false,
 							timer: 1500,
 						});
@@ -87,20 +88,29 @@ const JoinSupportSessionModal = ({
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				className='flex flex-col space-y-3'>
-				<div className='relative w-auto my-6 mx-auto max-w-3xl'>
-					<div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none'>
-						<div className='p-5 border-b border-solid border-red-500 rounded-t'>
-							<h3 className='text-3xl font-semibold text-center text-red-500'>
-								Request to Join Support Session
+				<div
+					className='relative my-6 mx-auto max-w-3xl'
+					style={{ minWidth: "350px" }}>
+					<div className='p-4 border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none'>
+						<div className='rounded-t flex justify-between'>
+							<h3 className='text-md font-semibold text-left px-3 py-1  '>
+								Support Session
 							</h3>
+							<div className='text-md bg-gray-200 px-3 py-1 rounded-lg'>
+								{new Date().toDateString()}
+							</div>
 						</div>
-						<div className='relative p-6 grid grid-cols-1 gap-3'>
+						<div className='my-4 text-red-500 flex max-w-max bg-red-100 px-3 py-1 rounded-lg text-sm '>
+							Support Session {singlesupportsession?.name}{" "}
+							{new Date().toLocaleDateString()}
+						</div>
+						<div className='relative grid grid-cols-1  justify-around'>
 							{!join && !serial ? (
 								<div className='flex flex-col space-y-1'>
 									<div className='flex flex-col space-y-1'>
 										<label
 											for='url'
-											className='text-sm font-semibold tracking-widest text-left mt-2'>
+											className='text-md font-semibold tracking-widest text-left mb-1'>
 											Describe your problem
 										</label>
 										<textarea
@@ -110,7 +120,7 @@ const JoinSupportSessionModal = ({
 											name='problem'
 											{...register("problem", { required: true })}
 											autofocus
-											className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500'
+											className=' px-4 py-2 transition duration-300 border border-gray-300 rounded-xl focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500'
 										/>
 									</div>
 								</div>
@@ -138,18 +148,18 @@ const JoinSupportSessionModal = ({
 									</div>
 
 									<div className='mt-4'>
-										{/* 	<a
-											href={`https://meet.google.com/${singlesupportsession?.url}`}
+										<a
+											href={singlesupportsession?.url}
 											target='_blank'
-											className='border border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold py-2 w-[130px] mx-auto rounded-lg cursor-pointer hover:text-red-500 '
+											className='border border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold py-2 px-3 w-[130px] mx-auto rounded-lg cursor-pointer hover:text-red-500 '
 											rel='noreferrer'>
 											Join Now
 											<FontAwesomeIcon
 												className='ml-3 faArrowRightLong'
 												icon={faArrowRightLong}
 											/>
-										</a> */}
-										<div
+										</a>
+										{/* <div
 											onClick={() =>
 												setSupportRoomandClose(singlesupportsession?.url)
 											}
@@ -159,20 +169,38 @@ const JoinSupportSessionModal = ({
 												className='ml-3 faArrowRightLong'
 												icon={faArrowRightLong}
 											/>
-										</div>
+										</div> */}
 									</div>
 								</div>
 							)}
-							<div className='flex items-center justify-end p-6 border-t border-solid border-red-500 rounded-b mt-2'>
+							<div className=' flex justify-between mt-2'>
+								<div>
+									<div className='px-2 py-1 text-sm rounded-lg'>
+										Session Start
+									</div>
+									<div className='text-sm text-green-500 bg-green-100 px-2 py-1 rounded-lg'>
+										{singlesupportsession?.startTime}
+									</div>
+								</div>
+								<div>
+									<div className='px-2 py-1 text-sm rounded-lg'>
+										Session End
+									</div>
+									<div className='text-sm text-green-500 bg-green-100 px-2 py-1 rounded-lg'>
+										{singlesupportsession?.endTime}
+									</div>
+								</div>
+							</div>
+							<div className='flex items-center justify-center px-5 pt-5'>
 								<button
-									className='hover:bg-red-500 focus:500 bg-transparent duration-300 hover:text-white rounded cursor-pointer text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm mr-1 mb-1 ease-linear transition-all border border-red-500'
+									className='hover:bg-red-500 focus:500 bg-transparent duration-300 hover:text-white rounded cursor-pointer text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm ease-linear transition-all border border-red-500 mr-2'
 									type='button'
 									onClick={() => setJoinSupportSessionModal(false)}>
 									Close
 								</button>
 								{!serial && (
 									<button
-										className='text-white font-bold uppercase text-sm px-4 py-2 shadow border-2 border-red-500 bg-red-500 hover:bg-transparent rounded-lg hover:text-red-500 transition-all ease-linear duration-300'
+										className='text-white font-bold uppercase text-sm px-4 py-2 shadow border-2 border-red-500 bg-red-500 hover:bg-transparent rounded-lg hover:text-red-500 transition-all ease-linear duration-300  ml-2'
 										type='submit'>
 										Request
 									</button>
