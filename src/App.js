@@ -55,6 +55,7 @@ import BlogList from "./Components/BlogList/BlogList";
 import PromoCode from "./Components/Dashboard/PromoCode/PromoCode";
 import Test from "./Components/Test/Test";
 import SupportSession from "./Components/Home/SupportSession/SupportSession";
+import UserChart from "./Components/Dashboard/Admin/Chart/UserChart";
 
 function App() {
   return (
@@ -156,6 +157,10 @@ function App() {
                   element={<RecycleBin />}
                 />
                 <Route path="/dashboard/admin/history" element={<History />} />
+                <Route
+                  path="/dashboard/admin/userActivity"
+                  element={<UserChart />}
+                />
               </Route>
 
               <Route path="/teachersDashboard" element={<TeachersDashboard />}>

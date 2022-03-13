@@ -9,12 +9,14 @@ import {
   getDocs,
   orderBy,
 } from "firebase/firestore";
+import { useDispatch } from "react-redux";
+import { addHistoryData } from "../../../Redux/edubuddySlice";
 
 initializeFirebase();
 
 const History = () => {
   const [hisData, setHisData] = useState([]);
-
+  const dispatch = useDispatch();
   useEffect(() => {
     const db = getFirestore();
     const colRef = collection(db, "history");
@@ -33,6 +35,7 @@ const History = () => {
         return b.now - a.now;
       });
       setHisData(logData);
+      dispatch(addHistoryData(logData));
     });
   }, []);
   console.log(hisData);

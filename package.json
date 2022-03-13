@@ -39,6 +39,7 @@
     "react-select": "^5.2.2",
     "react-simple-chatbot": "^0.6.1",
     "reactjs-localstorage": "^1.0.1",
+    "recharts": "^2.1.9",
     "router-dom": "^2.2.9",
     "sweetalert2": "^11.4.0",
     "swiper": "^8.0.3",
