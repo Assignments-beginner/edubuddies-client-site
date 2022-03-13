@@ -50,3 +50,32 @@ aside ul .li:focus span {
 		transform: translateX(-300px);
 	}
 }
+.menu .topDashboard:hover .flex {
+	background-color: transparent !important;
+}
+.menu :where(li) {
+	/* 	border: 1px solid white !important;
+	border-radius: 9px !important; */
+	margin: 2px 0 !important;
+}
+.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active),
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active) {
+	background-color: #dc3545 !important;
+}
+.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active) .icon,
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active) .icon {
+	color: white !important;
+}
+
+.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).hover),
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):hover) {
+	background-color: #dc3545 !important;
+}
+.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).hover) .icon,
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):hover) .icon {
+	color: white !important;
+}
+.menu {
+	background-color: #111827 !important;
+	max-width: 270px !important;
+}

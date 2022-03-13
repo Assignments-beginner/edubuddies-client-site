@@ -2,7 +2,11 @@ import { JitsiMeeting } from "@jitsi/react-sdk";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFaceFrown, faVideo } from "@fortawesome/free-solid-svg-icons";
+import {
+	faFaceFrown,
+	faVideo,
+	faCode,
+} from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
 import LoadingOverlay from "../../Loading/LoadingOverlay";
@@ -76,7 +80,11 @@ const AllLiveSupportSessions = () => {
 											newArray?.map((supportSession) => (
 												<button
 													onClick={() => setModalAndId(supportSession?._id)}
-													className='p-5 bg-red-500 text-white'>
+													className='p-5 bg-red-500 text-white rounded-lg'>
+													<FontAwesomeIcon
+														className='text-white mx-2 group-hover:text-red-500'
+														icon={faCode}
+													/>{" "}
 													Request For Support Session
 												</button>
 											))[0]
@@ -93,7 +101,7 @@ const AllLiveSupportSessions = () => {
 														className='text-white mx-2 group-hover:text-red-500'
 														icon={faVideo}
 													/>{" "}
-													Click to Join
+													Click to Join On Support Session
 												</button>
 											))[0]
 										}
