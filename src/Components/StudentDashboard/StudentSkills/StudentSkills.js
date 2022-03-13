@@ -73,8 +73,9 @@ const StudentSkills = () => {
 						<div
 							className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'
 							style={{
-								maxWidth: "75vw",
-								overflowX: "scroll",
+								maxWidth: "90vw",
+								height: "70vh",
+								overflow: "scroll",
 							}}>
 							<table className='min-w-full divide-y divide-red-200'>
 								<thead className='bg-black font-bold'>

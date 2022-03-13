@@ -69,7 +69,7 @@ const StudentDashboard = () => {
 				<div className='drawer-side'>
 					<label for='my-drawer-2' className='drawer-overlay'></label>
 					<ul className='menu p-4 overflow-y-auto w-80 '>
-						<li style={{ pointerEvents: "none" }}>
+						<li className='topDashboard'>
 							<div className='flex flex-col items-center'>
 								<Link to='/home'>
 									<img

@@ -74,7 +74,7 @@ const Dashboard = () => {
 				<div className='drawer-side'>
 					<label for='my-drawer-2' className='drawer-overlay'></label>
 					<ul className='menu p-4 overflow-y-auto w-80 '>
-						<li style={{ pointerEvents: "none" }}>
+						<li className='topDashboard'>
 							<div className='flex flex-col items-center'>
 								<Link to='/home'>
 									<img
@@ -83,9 +83,7 @@ const Dashboard = () => {
 										alt=''
 									/>
 								</Link>
-								<span className='text-slate-100 text-sm uppercase'>
-									Admin
-								</span>
+								<span className='text-slate-100 text-sm uppercase'>Admin</span>
 							</div>
 						</li>
 						<li>

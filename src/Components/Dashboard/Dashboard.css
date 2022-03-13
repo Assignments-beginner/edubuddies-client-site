@@ -50,6 +50,9 @@ aside ul .li:focus span {
 		transform: translateX(-300px);
 	}
 }
+.menu .topDashboard:hover .flex {
+	background-color: transparent !important;
+}
 .menu :where(li) {
 	/* 	border: 1px solid white !important;
 	border-radius: 9px !important; */
@@ -74,5 +77,5 @@ aside ul .li:focus span {
 }
 .menu {
 	background-color: #111827 !important;
-	max-width: 275px !important;
+	max-width: 270px !important;
 }

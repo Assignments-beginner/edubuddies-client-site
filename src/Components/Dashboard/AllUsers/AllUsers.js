@@ -64,8 +64,8 @@ const AllUsers = () => {
 						<div
 							className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'
 							style={{
-								height: "75vh",
-								maxWidth: "75vw",
+								maxWidth: "90vw",
+								height: "70vh",
 								overflow: "scroll",
 							}}>
 							<table className='min-w-full divide-y divide-red-200'>
