@@ -39,3 +39,24 @@
 	background-color: #ef4444 !important;
 	color: #fff !important;
 }
+.tables {
+	height: 70vh !important;
+	max-width: 74vw !important;
+	overflow: scroll !important;
+}
+
+@media only screen and (min-width: 600px) {
+	.tables {
+		height: 70vh !important;
+		max-width: 90vw !important;
+		overflow: scroll !important;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.tables {
+		height: 70vh !important;
+		max-width: 74vw !important;
+		overflow: scroll !important;
+	}
+}
