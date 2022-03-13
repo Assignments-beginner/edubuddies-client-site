@@ -79,14 +79,14 @@ const StudentDashboard = () => {
 									/>
 								</Link>
 								<span className='text-slate-100 text-sm uppercase'>
-									Dashboard
+									Student
 								</span>
 							</div>
 						</li>
 						<li>
 							<NavLink
 								to='/studentdashboard/'
-								className='li text-lg rounded-lg  text-white'>
+								className='li text-md rounded-lg  text-white'>
 								<FontAwesomeIcon
 									className='mx-2 text-red-500 icon'
 									icon={faUser}
@@ -97,7 +97,7 @@ const StudentDashboard = () => {
 						<li>
 							<NavLink
 								to='supportsession'
-								className='li text-lg rounded-lg  text-white '>
+								className='li text-md rounded-lg  text-white '>
 								<FontAwesomeIcon
 									className='mx-2 text-red-500 icon'
 									icon={faHeadset}
@@ -108,7 +108,7 @@ const StudentDashboard = () => {
 						<li>
 							<NavLink
 								to='address'
-								className='li text-lg rounded-lg  text-white '>
+								className='li text-md rounded-lg  text-white '>
 								<FontAwesomeIcon
 									className='mx-2 text-red-500 icon'
 									icon={faLocationDot}
@@ -119,7 +119,7 @@ const StudentDashboard = () => {
 						<li>
 							<NavLink
 								to='education'
-								className='li text-lg rounded-lg  text-white '>
+								className='li text-md rounded-lg  text-white '>
 								<FontAwesomeIcon
 									className='ml-2 mr-1 text-red-500 icon'
 									icon={faGraduationCap}
@@ -130,7 +130,7 @@ const StudentDashboard = () => {
 						<li>
 							<NavLink
 								to='importantlinks'
-								className='li text-lg rounded-lg  text-white '>
+								className='li text-md rounded-lg  text-white '>
 								<FontAwesomeIcon
 									className='mx-2 text-red-500 icon'
 									icon={faUpRightFromSquare}
@@ -141,7 +141,7 @@ const StudentDashboard = () => {
 						<li>
 							<NavLink
 								to='skills'
-								className='li text-lg rounded-lg  text-white '>
+								className='li text-md rounded-lg  text-white '>
 								<FontAwesomeIcon
 									className='mx-2 text-red-500 icon'
 									icon={faLightbulb}
@@ -152,7 +152,7 @@ const StudentDashboard = () => {
 						<li>
 							<Link
 								to='postblog'
-								className='li text-lg rounded-lg  text-white '>
+								className='li text-md rounded-lg  text-white '>
 								<FontAwesomeIcon
 									className='mx-2 text-red-500 icon'
 									icon={faLightbulb}
@@ -163,7 +163,7 @@ const StudentDashboard = () => {
 						<li>
 							<div
 								onClick={logOut}
-								className='li text-lg rounded-lg  text-white '>
+								className='li text-md rounded-lg  text-white '>
 								<FontAwesomeIcon
 									className='mx-2 text-red-500 icon '
 									icon={faRightFromBracket}
