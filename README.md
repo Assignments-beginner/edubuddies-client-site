@@ -33,12 +33,30 @@ An Online Learning Management System Web Application.
 
 ![](https://img.shields.io/badge/Google_firebase-F76400?style=for-the-badge&logo=firebase&logoColor=F7F700)
 
-![]()
+![](https://img.shields.io/badge/jitsi-1D76BA?style=for-the-badge&logo=jitsi&logoColor=white)
 
-![]()
+![](https://img.shields.io/badge/fontawesome-183153?style=for-the-badge&logo=fontawesome&logoColor=skyblue)
 
-![]()
+![](https://img.shields.io/badge/react_hook_form-081229?style=for-the-badge&logo=react-hook-form&logoColor=pink)
+
+![](https://img.shields.io/badge/sweetalert_2-FDCC80?style=for-the-badge&logo=sweetalert2&logoColor=pink)
+
+![](https://img.shields.io/badge/draft_js-843131?style=for-the-badge&logo=draft.js&logoColor=skyblue)
+
+![](https://img.shields.io/badge/axios-373747?style=for-the-badge&logo=axios.js&logoColor=skyblue)
 
 ## Backend Technology
 
+![](https://img.shields.io/badge/node_js-233056?style=for-the-badge&logo=node.js&logoColor=green)
+
+![](https://img.shields.io/badge/express_js-233056?style=for-the-badge&logo=express&logoColor=blue)
+
 ![](https://img.shields.io/badge/MongoDB-darkgreen?style=for-the-badge&logo=mongodb&logoColor=white)
+
+![](https://img.shields.io/badge/Google_firebase-F76400?style=for-the-badge&logo=firebase&logoColor=F7F700)
+
+![](https://img.shields.io/badge/jwt-black?style=for-the-badge&logo=json.web.token&logoColor=pink)
+
+![](https://img.shields.io/badge/microsoft_azure-white?style=for-the-badge&logo=microsoftazure&logoColor=0085CF)
+
+![](https://img.shields.io/badge/cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
