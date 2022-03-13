@@ -2,7 +2,7 @@
 
 An Online Learning Management System Web Application.
 
-[Live Website](https://edu-buddies-demo.netlify.app/) | [Backend Server](https://github.com/nizamseu/edubuddies-Backend)
+[Live Website](https://edu-buddies.netlify.app/) | [Backend Server](https://github.com/nizamseu/edubuddies-Backend)
 
 ## Features
 
