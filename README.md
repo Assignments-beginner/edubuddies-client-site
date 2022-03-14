@@ -45,6 +45,8 @@ An Online Learning Management System Web Application.
 
 ![](https://img.shields.io/badge/axios-373747?style=for-the-badge&logo=axios.js&logoColor=skyblue)
 
+![](https://img.shields.io/badge/netlify-081569?style=for-the-badge&logo=netlify&logoColor=5CEBDF)
+
 ## Backend Technology
 
 ![](https://img.shields.io/badge/node_js-233056?style=for-the-badge&logo=node.js&logoColor=green)
@@ -60,4 +62,6 @@ An Online Learning Management System Web Application.
 ![](https://img.shields.io/badge/microsoft_azure-white?style=for-the-badge&logo=microsoftazure&logoColor=0085CF)
 
 ![](https://img.shields.io/badge/cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
+
+![](https://img.shields.io/badge/heroku-79589F?style=for-the-badge&logo=heroku&logoColor=white)
 
