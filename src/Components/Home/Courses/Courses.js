@@ -36,8 +36,7 @@ const Courses = () => {
 
   return (
     <div
-      style={{ backgroundColor: "#FAFAFA" }}
-      className="container mx-auto px-4 md:px-11"
+      className="container mx-auto pb-12 px-4 md:px-12"
     >
       <h1 className="text-center text-3xl uppercase font-semibold mt-14 md:mb-9 mb-5 text-red-500">
         Popular Courses
@@ -136,9 +135,9 @@ const Courses = () => {
                       <div className="flex items-center mr-4">
                         <FontAwesomeIcon
                           icon={faClock}
-                          className="mr-1 font-thin text-2xl text-gray-300"
+                          className="mr-1 font-thin text-2xl text-gray-400"
                         />
-                        <span className="text-sm text-gray-300">
+                        <span className="text-sm text-gray-400">
                           {course?.courseDuration || 0} hrs
                         </span>
                       </div>
@@ -146,9 +145,9 @@ const Courses = () => {
                       <div className="flex items-center">
                         <FontAwesomeIcon
                           icon={faUser}
-                          className="mr-1 font-thin text-lg text-gray-300"
+                          className="mr-1 font-thin text-lg text-gray-400"
                         />
-                        <span className="text-sm text-gray-300">
+                        <span className="text-sm text-gray-400">
                           {course?.totalStudents || 1024}
                         </span>
                       </div>

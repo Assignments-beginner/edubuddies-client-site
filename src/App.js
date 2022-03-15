@@ -4,6 +4,7 @@ import About from "../src/Components/Home/About/About";
 import Contact from "../src/Components/Contact/Contact";
 import Dashboard from "../src/Components/Dashboard/Dashboard";
 import Home from "../src/Components/Home/Home/Home";
+import Courses from "../src/Components/Home/Courses/Courses"
 import Login from "./Components/Login/Login";
 import NotFound from "./Components/NotFound/NotFound";
 import Register from "./Components/Register/Register";
@@ -42,7 +43,6 @@ import RecycleBin from "./Components/Dashboard/Admin/RecycleBin";
 import Bestperformer from "./Components/TeachersDashboard/Bestperformer/Bestperformer";
 import PostNotice from "./Components/TeachersDashboard/PostNotice/PostNotice";
 import PostBlog from "./Components/PostBlog/PostBlog";
-import AllCoursesPage from "./Components/AllCoursesPage/AllCoursesPage";
 import AllBlogsPage from "./Components/AllBlogsPage/AllBlogsPage";
 import NewsletterList from "./Components/NewsletterList/NewsletterList";
 import PostNewsLetter from "./Components/PostNewsLetter/PostNewsLetter";
@@ -76,7 +76,7 @@ function App() {
               <Route path="/blog" element={<AllBlogsPage />} />
               <Route path="/singleblog/:id" element={<SingleBlogMain />} />
               <Route path="/about" element={<About />} />
-              <Route path="/courses" element={<AllCoursesPage />} />
+              <Route path="/courses" element={<Courses />} />
               <Route
                 path="/singlecourse/:id"
                 element={
