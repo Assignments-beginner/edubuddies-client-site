@@ -24,6 +24,14 @@ aside ul .li:hover span {
 	background-color: #dc3545;
 	color: white !important;
 }
+aside ul .li:focus,
+aside ul .li:focus .icon,
+.logout:focus,
+.logout:focus .icon,
+aside ul .li:focus span {
+	background-color: #dc3545;
+	color: white !important;
+}
 
 @keyframes slide-in {
 	0% {
@@ -42,22 +50,32 @@ aside ul .li:hover span {
 		transform: translateX(-300px);
 	}
 }
-/* width */
-::-webkit-scrollbar {
-	width: 5px;
+.menu .topDashboard:hover .flex {
+	background-color: transparent !important;
+}
+.menu :where(li) {
+	/* 	border: 1px solid white !important;
+	border-radius: 9px !important; */
+	margin: 2px 0 !important;
+}
+.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active),
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active) {
+	background-color: #dc3545 !important;
+}
+.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active) .icon,
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active) .icon {
+	color: white !important;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-	background: #f1f1f1;
+.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).hover),
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):hover) {
+	background-color: #dc3545 !important;
 }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-	background: #dc3545;
+.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).hover) .icon,
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):hover) .icon {
+	color: white !important;
 }
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-	background: #555;
+.menu {
+	background-color: #111827 !important;
+	max-width: 270px !important;
 }

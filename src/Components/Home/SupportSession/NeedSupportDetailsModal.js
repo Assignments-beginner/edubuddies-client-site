@@ -28,6 +28,7 @@ const NeedSupportDetailsModal = ({ handleSolveId, setHandleSolveModal }) => {
 	const handleStatus = (datas, status, mark) => {
 		setSubmitting(true);
 		const data = { ...datas, status };
+		console.log(data);
 		Swal.fire({
 			title: "Are you sure?",
 			text: "You won't be able to revert this!",
@@ -62,18 +63,20 @@ const NeedSupportDetailsModal = ({ handleSolveId, setHandleSolveModal }) => {
 	let n = 1;
 
 	return (
-		<div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
+		<div
+			style={{ zIndex: 999 }}
+			className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
 			<div className='relative w-auto my-6 mx-auto'>
 				<div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none'>
 					<div className=' p-5 border-b border-solid border-red-500 rounded-t'>
 						<h3 className='text-3xl font-semibold text-center text-red-500'>
-							Add New Support Session
+							All support details
 						</h3>
 					</div>
 					<div className='flex flex-col'>
 						<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
 							<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
-								<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg m-4'>
+								<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg m-4 tables'>
 									<table className='min-w-full divide-y divide-red-200'>
 										<thead className='bg-black font-bold'>
 											<tr>

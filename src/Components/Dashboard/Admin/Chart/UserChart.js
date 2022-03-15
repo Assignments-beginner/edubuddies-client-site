@@ -12,7 +12,7 @@ import {
 } from "recharts";
 const UserChart = () => {
   const historyData = useSelector((state) => state.edu.historyData);
-
+  Math.max();
   const findDate = async () => {
     var d = new Date();
     d.setDate(d.getDate() - 1);

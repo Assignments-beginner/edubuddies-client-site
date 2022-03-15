@@ -35,7 +35,6 @@ const History = () => {
         return b.now - a.now;
       });
       setHisData(logData);
-      dispatch(addHistoryData(logData));
     });
   }, []);
   console.log(hisData);
@@ -51,70 +50,98 @@ const History = () => {
   console.log(new Date());
 
   return (
-    <div>
-      <h1 className="text-4xl">Live History {hisData.length}</h1>
-      <div>
-        <table className="min-w-full divide-y divide-red-300 border border-red-300">
-          <thead className="bg-gray-800">
-            <tr>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
-                IP Address
-              </th>
-              {/* <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+    <div className="container mx-auto px-4 md:px-9">
+      <div className="mb-8 mt-4">
+        <h3 className="text-3xl font-semibold text-center text-red-500">
+          Live History {hisData.length}
+        </h3>
+      </div>
+      <div className="flex flex-col">
+        <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8"></div>
+
+          <div className="shadow overflow-hidden border-b border-red-200 sm:rounded-lg mx-auto tables">
+            <table className="min-w-full divide-y divide-red-200">
+              <thead className="bg-black font-bold">
+                <tr>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider"
+                  >
+                    IP Address
+                  </th>
+                  {/* <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Name
               </th>
               <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
                 Email
               </th> */}
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
-                Date
-              </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
-                Time
-              </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
-                Method
-              </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
-                Original URL
-              </th>
-              <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
-                Host Name
-              </th>
-            </tr>
-          </thead>
-          <tbody className="bg-whwhitespace-nowrap text-gray-600 border border-red-300">
-            {hisData &&
-              hisData.slice(0, 30).map((item) => (
-                <tr>
-                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
-                    {item?.ipAddress}
-                  </td>
-                  {/* <td className="whitespace-nowrap text-gray-600 border border-red-300">
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider"
+                  >
+                    Date
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider"
+                  >
+                    Time
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider"
+                  >
+                    Method
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider"
+                  >
+                    Original URL
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider"
+                  >
+                    Host Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-red-200">
+                {hisData &&
+                  hisData.slice(0, 30).map((item) => (
+                    <tr>
+                      <td className="px-6 py-3 whitespace-nowrap text-center">
+                        {item?.ipAddress}
+                      </td>
+                      {/* <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.data?.name}
                   </td>
                   <td className="whitespace-nowrap text-gray-600 border border-red-300">
                     {item?.data?.email}
                   </td> */}
-                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
-                    {item?.date}
-                  </td>
-                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
-                    {item?.time}
-                  </td>
-                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
-                    {item?.method}
-                  </td>
-                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
-                    {item?.originalURL}
-                  </td>
-                  <td className="whitespace-nowrap text-gray-600 border border-red-300">
-                    {item?.hostName}
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+                      <td className="px-6 py-3 whitespace-nowrap text-center">
+                        {item?.date}
+                      </td>
+                      <td className="px-6 py-3 whitespace-nowrap text-center">
+                        {item?.time}
+                      </td>
+                      <td className="px-6 py-3 whitespace-nowrap text-center">
+                        {item?.method}
+                      </td>
+                      <td className="px-6 py-3 whitespace-nowrap text-center">
+                        {item?.originalURL}
+                      </td>
+                      <td className="px-6 py-3 whitespace-nowrap text-center">
+                        {item?.hostName}
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   );

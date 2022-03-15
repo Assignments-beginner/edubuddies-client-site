@@ -39,11 +39,11 @@ const PromoCode = () => {
 			if (result.isConfirmed) {
 				axios
 					.delete(`https://fierce-caverns-90976.herokuapp.com/promo/${id}`)
-					.then(function (response) {
+					.then(function(response) {
 						Swal.fire("Deleted!", "That promo has been deleted.", "success");
 						setDeleted(true);
 					})
-					.catch(function (error) {
+					.catch(function(error) {
 						console.log(error);
 					});
 			}
@@ -65,11 +65,11 @@ const PromoCode = () => {
 					.put(`https://fierce-caverns-90976.herokuapp.com/promo/${id}`, {
 						text: text,
 					})
-					.then(function (response) {
+					.then(function(response) {
 						Swal.fire(`${text}!`, `That promo is ${text}.`, `${mark}`);
 						setStatus(false);
 					})
-					.catch(function (error) {
+					.catch(function(error) {
 						console.log(error);
 					});
 			}
@@ -97,7 +97,7 @@ const PromoCode = () => {
 			<div className='flex flex-col'>
 				<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
 					<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
-						<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'>
+						<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg tables'>
 							<table className='min-w-full divide-y divide-red-200'>
 								<thead className='bg-black font-bold'>
 									<tr>
@@ -141,39 +141,39 @@ const PromoCode = () => {
 												{promoCode?.percent}
 											</td>
 											{`${promoCode?.status}` === "Disabled" && (
-												<td className='px-6 py-3 whitespace-nowrap text-center'>
-													<p className='text-center text-white rounded-lg bg-red-500'>{`${promoCode?.status}`}</p>
+												<td className='whitespace-nowrap text-center'>
+													<p className='text-center text-white rounded-lg bg-red-500 w-[90px] mx-auto'>{`${promoCode?.status}`}</p>
 												</td>
 											)}
 											{`${promoCode?.status}` === "Pending" && (
-												<td className='px-6 py-3 whitespace-nowrap text-center'>
-													<p className='text-center text-white rounded-lg bg-yellow-500'>{`${promoCode?.status}`}</p>
+												<td className='whitespace-nowrap text-center'>
+													<p className='text-center text-black rounded-lg bg-yellow-400 w-[90px] mx-auto'>{`${promoCode?.status}`}</p>
 												</td>
 											)}
 											{`${promoCode?.status}` === "Live" && (
-												<td className='px-6 py-3 whitespace-nowrap text-center'>
-													<p className='text-center text-white rounded-lg bg-green-500'>{`${promoCode?.status}`}</p>
+												<td className='whitespace-nowrap text-center'>
+													<p className='text-center text-white rounded-lg bg-green-600 w-[90px] mx-auto'>{`${promoCode?.status}`}</p>
 												</td>
 											)}
-											<td className='px-6 py-3 whitespace-nowrap text-center'>
+											<td className='whitespace-nowrap text-center'>
 												<FontAwesomeIcon
 													onClick={() =>
 														handleStatus(promoCode?._id, "Live", "success")
 													}
 													icon={faCheck}
-													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
+													className='text-2xl mx-2 hover:text-red-500 cursor-pointer'
 												/>
 												<FontAwesomeIcon
 													onClick={() =>
 														handleStatus(promoCode?._id, "Disabled", "error")
 													}
 													icon={faXmark}
-													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
+													className='text-2xl mx-2 hover:text-red-500 cursor-pointer'
 												/>
 												<FontAwesomeIcon
 													onClick={() => handleDelete(promoCode?._id)}
 													icon={faTrashCan}
-													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
+													className='text-2xl mx-2 hover:text-red-500 cursor-pointer text-red-500'
 												/>
 											</td>
 										</tr>

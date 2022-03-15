@@ -70,7 +70,7 @@ const StudentImportantLinks = () => {
 					<Modal setShowModal={setShowModal} />
 				</>
 			) : null}
-			{/* {!importantlinks && <LoadingOverlay />} */}
+			{!user && <LoadingOverlay />}
 		</div>
 	);
 };

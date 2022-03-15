@@ -54,7 +54,11 @@ import AddContent from "./Components/TeachersDashboard/AddContent/AddContent";
 import BlogList from "./Components/BlogList/BlogList";
 import PromoCode from "./Components/Dashboard/PromoCode/PromoCode";
 import Test from "./Components/Test/Test";
-import SupportSession from "./Components/Home/SupportSession/SupportSession";
+import AllLiveSupportSessions from "./Components/Home/SupportSession/AllLiveSupportSessions";
+import SupportSessionList from "./Components/Home/SupportSession/SupportSessionList";
+import ChatBot006 from "./Components/Shared/ChatBot006/ChatBot006";
+import Mails from "./Components/Dashboard/Mails/Mails";
+import AllUsers from "./Components/Dashboard/AllUsers/AllUsers";
 import UserChart from "./Components/Dashboard/Admin/Chart/UserChart";
 
 function App() {
@@ -86,7 +90,6 @@ function App() {
               <Route path="/greetings" element={<Greetings />} />
               <Route path="/userProfile" element={<UserProfile />} />
               <Route path="/test" element={<Test />} />
-              <Route path="/supportsession" element={<SupportSession />} />
 
               <Route path="/studentdashboard" element={<StudentDashboard />}>
                 <Route path="/studentdashboard" element={<StudentProfile />} />
@@ -105,6 +108,10 @@ function App() {
                 <Route
                   path="/studentdashboard/importantlinks"
                   element={<StudentImportantLinks />}
+                />
+                <Route
+                  path="/studentdashboard/supportsession"
+                  element={<AllLiveSupportSessions />}
                 />
                 <Route
                   path="/studentdashboard/skills"
@@ -138,7 +145,9 @@ function App() {
                   path="/dashboard/postnewsletter"
                   element={<PostNewsLetter />}
                 />
+                <Route path="/dashboard/mails" element={<Mails />} />
                 <Route path="/dashboard/bloglist" element={<BlogList />} />
+                <Route path="/dashboard/allusers" element={<AllUsers />} />
                 <Route path="/dashboard/allcourses" element={<AllCourses />} />
                 <Route
                   path="/dashboard/allcourses/:id"
@@ -173,7 +182,10 @@ function App() {
                   path="/teachersDashboard/bestPerformer"
                   element={<Bestperformer />}
                 />
-
+                <Route
+                  path="/teachersDashboard/supportsession"
+                  element={<SupportSessionList />}
+                />
                 <Route
                   path="/teachersDashboard/postblog"
                   element={<PostBlog />}
@@ -220,6 +232,7 @@ function App() {
           <Footer />
         </div>
       </BrowserRouter>
+      <ChatBot006 />
     </div>
   );
 }

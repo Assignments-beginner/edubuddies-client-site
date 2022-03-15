@@ -17,7 +17,7 @@ const StudentProfile = () => {
 				setUsers(res.data);
 			});
 	}, [user?.email, showModal]);
-	console.log(users);
+	console.log("users", users);
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
@@ -47,7 +47,7 @@ const StudentProfile = () => {
 									style={{
 										width: "150px",
 									}}
-									className=' px-4 py-2 text-lg my-6 font-semibold text-white transition-colors duration-300 bg-red-500 rounded-3xl shadow hover:bg-red-600 focus:outline-none focus:ring-red-200 focus:ring-4'>
+									className=' px-4 py-2 text-lg my-6 font-semibold text-white transition-colors duration-300 bg-red-500 rounded-3xl shadow hover:bg-red-600 focus:outline-none focus:ring-red-200 focus:ring-1'>
 									Update Profile
 								</button>
 							</div>
@@ -84,7 +84,7 @@ const StudentProfile = () => {
 					<Modal setShowModal={setShowModal} />
 				</>
 			) : null}
-			{/* 	{!users && <LoadingOverlay />} */}
+			{!user && <LoadingOverlay />}
 		</div>
 	);
 };

@@ -1,9 +1,8 @@
-import { JitsiMeeting } from "@jitsi/react-sdk";
-import React, { useState } from "react";
+import React from "react";
 import ChatBot from "react-simple-chatbot";
 
-const Test = () => {
-	/* 	const config = {
+const ChatBot006 = () => {
+	const config = {
 		width: "300px",
 		height: "400px",
 		floating: true,
@@ -56,40 +55,20 @@ const Test = () => {
 			id: "9",
 			message: "We have best Web developer.",
 		},
-	]; */
-	/* 	const [room, setRoom] = useState();
-	console.log(room);
-	const [start, setStart] = useState(false);
-	const createMeeting = () => {
-		setStart(true);
-	};
- */
-	return {
-		/*	<div className='chat'>
-			 	{start ? (
-				<JitsiMeeting
-					roomName={room}
-					configOverwrite={{
-						startWithAudioMuted: true,
-						hiddenPremeetingButtons: ["microphone"],
-					}}
-					getIFrameRef={(node) => (node.style.height = "800px")}
+	];
+	return (
+		<div>
+			<div className='chat'>
+				<ChatBot
+					headerTitle='Speech Recognition'
+					recognitionEnable={true}
+					/* speechSynthesis={{ enable: true, lang: "en" }} */
+					steps={steps}
+					{...config}
 				/>
-			) : (
-				<>
-					<input type='text' onChange={(e) => setRoom(e.target.value)} />
-					<button onClick={createMeeting}>Create</button>
-				</>
-			)} 
-		<ChatBot
-				headerTitle='Speech Recognition'
-				recognitionEnable={true}
-				speechSynthesis={{ enable: true, lang: "en" }}
-				steps={steps}
-				{...config}
-			/>
-		</div>  */
-	};
+			</div>
+		</div>
+	);
 };
 
-export default Test;
+export default ChatBot006;

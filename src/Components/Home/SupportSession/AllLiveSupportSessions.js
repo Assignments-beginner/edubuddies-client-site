@@ -1,7 +1,13 @@
 import axios from "axios";
 import React from "react";
-import Swal from "sweetalert2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faFaceFrown,
+	faVideo,
+	faCode,
+} from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../../hooks/useAuth";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 import JoinSupportSessionModal from "./JoinSupportSessionModal";
 
 const AllLiveSupportSessions = () => {
@@ -37,43 +43,76 @@ const AllLiveSupportSessions = () => {
 	const serialLive = filterLiveSupportSessions?.filter((a) =>
 		a?.needSupport?.some((u) => u?.email?.includes(user?.email)),
 	);
+	const serialPending = serialLive?.filter((a) =>
+		a?.needSupport?.some((u) => u?.status?.includes("Pending")),
+	);
 	console.log("serialLive", serialLive);
 
 	return (
-		<div className='container mx-auto px-4 md:px-11'>
-			{serialLive?.length === 0 ? (
-				<div className='grid grid-cols-4 gap-2 mt-4'>
-					{
-						newArray?.map((supportSession) => (
-							<button
-								onClick={() => setModalAndId(supportSession?._id)}
-								className='p-5 bg-red-500 text-white'>
-								Support Session
-							</button>
-						))[0]
-					}
-				</div>
-			) : (
-				<div className='grid grid-cols-4 gap-2 mt-4'>
-					{
-						serialLive?.map((supportSession) => (
-							<button
-								onClick={() => setModalAndId(supportSession?._id)}
-								className='p-5 bg-red-500 text-white'>
-								Support Session
-							</button>
-						))[0]
-					}
-				</div>
-			)}
-			{joinSupportSessionModal ? (
+		<div className='container mx-auto p-1'>
+			<div
+				className='w-full mx-auto grid items-center '
+				style={{ minHeight: "90vh" }}>
 				<>
-					<JoinSupportSessionModal
-						setJoinSupportSessionModal={setJoinSupportSessionModal}
-						id={id}
-					/>
+					{filterLiveSupportSessions?.length > 0 ? (
+						<>
+							{serialPending?.length === 0 ? (
+								<div>
+									{
+										newArray?.map((supportSession) => (
+											<button
+												onClick={() => setModalAndId(supportSession?._id)}
+												className='p-5 bg-red-500 text-white rounded-lg'>
+												<FontAwesomeIcon
+													className='text-white mx-2 group-hover:text-red-500'
+													icon={faCode}
+												/>{" "}
+												Request For Support Session
+											</button>
+										))[0]
+									}
+								</div>
+							) : (
+								<div>
+									{
+										serialLive?.map((supportSession) => (
+											<button
+												onClick={() => setModalAndId(supportSession?._id)}
+												className='px-5 py-3 bg-red-500 text-white rounded-md group hover:text-red-500 hover:bg-transparent border border-red-500 duration-200'>
+												<FontAwesomeIcon
+													className='text-white mx-2 group-hover:text-red-500'
+													icon={faVideo}
+												/>{" "}
+												Click to Join On Support Session
+											</button>
+										))[0]
+									}
+								</div>
+							)}
+						</>
+					) : (
+						<div>
+							<FontAwesomeIcon
+								className='mx-auto text-red-500 icon text-4xl mb-4'
+								icon={faFaceFrown}
+							/>
+							<h2 className=' text-xl font-bold  text-red-500'>
+								Sorry, No support sessions for now
+							</h2>
+						</div>
+					)}
 				</>
-			) : null}
+
+				{joinSupportSessionModal ? (
+					<>
+						<JoinSupportSessionModal
+							setJoinSupportSessionModal={setJoinSupportSessionModal}
+							id={id}
+						/>
+					</>
+				) : null}
+			</div>
+			{!supportSessions && <LoadingOverlay />}
 		</div>
 	);
 };

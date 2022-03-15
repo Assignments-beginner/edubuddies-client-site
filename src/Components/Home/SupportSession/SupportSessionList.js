@@ -30,6 +30,7 @@ const SupportSessionList = () => {
 	console.log(supportSessions);
 
 	const handleDelete = (id) => {
+		setDeleted(true);
 		Swal.fire({
 			title: "Are you sure?",
 			text: "You won't be able to revert this!",
@@ -50,7 +51,7 @@ const SupportSessionList = () => {
 							"That Support Session has been deleted.",
 							"success",
 						);
-						setDeleted(true);
+						setDeleted(false);
 					})
 					.catch(function(error) {
 						console.log(error);
@@ -99,9 +100,9 @@ const SupportSessionList = () => {
 	};
 
 	return (
-		<div className='container mx-auto px-4 md:px-11'>
+		<div className='container mx-auto px-4 md:px-9'>
 			<div className='p-5 border-b border-solid border-red-500 rounded-t mb-5'>
-				<div className='mb-2 mt-7 flex justify-between'>
+				<div className='mb-2 mt-4 flex justify-between'>
 					<h3 className='text-3xl font-semibold text-center text-red-500'>
 						Support Sessions
 					</h3>
@@ -118,7 +119,7 @@ const SupportSessionList = () => {
 			<div className='flex flex-col'>
 				<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
 					<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
-						<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'>
+						<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg tables'>
 							<table className='min-w-full divide-y divide-red-200'>
 								<thead className='bg-black font-bold'>
 									<tr>
@@ -130,7 +131,22 @@ const SupportSessionList = () => {
 										<th
 											scope='col'
 											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
-											Support Sessions
+											Session Name
+										</th>
+										<th
+											scope='col'
+											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
+											Session URL
+										</th>
+										<th
+											scope='col'
+											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
+											Session Start
+										</th>
+										<th
+											scope='col'
+											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
+											Session End
 										</th>
 										<th
 											scope='col'
@@ -156,50 +172,64 @@ const SupportSessionList = () => {
 												{n++}
 											</td>
 											<td className='px-6 py-3 whitespace-nowrap text-center'>
-												{supportSession?.url}
+												{supportSession?.name}
+											</td>
+											<td className='px-6 py-3 whitespace-nowrap text-center text-blue-600'>
+												<a
+													href={supportSession?.url}
+													target='_blank'
+													rel='noreferrer'>
+													{supportSession?.url}
+												</a>
+											</td>
+											<td className='px-6 py-3 whitespace-nowrap text-center'>
+												{supportSession?.startTime}
+											</td>
+											<td className='px-6 py-3 whitespace-nowrap text-center'>
+												{supportSession?.endTime}
 											</td>
 											<td className='px-6 py-3 whitespace-nowrap text-center'>
 												{supportSession?.needSupport?.length || 0}
 											</td>
 											{`${supportSession?.status}` === "End" && (
 												<td className='px-6 py-3 whitespace-nowrap text-center'>
-													<p className='text-center text-white rounded-lg bg-red-500'>{`${supportSession?.status}`}</p>
+													<p className='text-center text-white rounded-lg bg-red-500 w-[80px] mx-auto'>{`${supportSession?.status}`}</p>
 												</td>
 											)}
 											{`${supportSession?.status}` === "Pending" && (
 												<td className='px-6 py-3 whitespace-nowrap text-center'>
-													<p className='text-center text-white rounded-lg bg-yellow-500'>{`${supportSession?.status}`}</p>
+													<p className='text-center text-white rounded-lg bg-yellow-500 w-[80px] mx-auto'>{`${supportSession?.status}`}</p>
 												</td>
 											)}
 											{`${supportSession?.status}` === "Live" && (
 												<td className='px-6 py-3 whitespace-nowrap text-center'>
-													<p className='text-center text-white rounded-lg bg-green-500'>{`${supportSession?.status}`}</p>
+													<p className='text-center text-white rounded-lg bg-green-500 w-[80px] mx-auto'>{`${supportSession?.status}`}</p>
 												</td>
 											)}
 											<td className='px-6 py-3 whitespace-nowrap text-center'>
 												<FontAwesomeIcon
 													onClick={() => handleSolve(supportSession?._id)}
 													icon={faEye}
-													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
+													className='text-2xl mx-2 hover:text-red-500 cursor-pointer'
 												/>
 												<FontAwesomeIcon
 													onClick={() =>
 														handleStatus(supportSession?._id, "Live", "success")
 													}
 													icon={faCheck}
-													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
+													className='text-2xl mx-2 hover:text-red-500 cursor-pointer'
 												/>
 												<FontAwesomeIcon
 													onClick={() =>
 														handleStatus(supportSession?._id, "End", "error")
 													}
 													icon={faXmark}
-													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
+													className='text-2xl mx-2 hover:text-red-500 cursor-pointer'
 												/>
 												<FontAwesomeIcon
 													onClick={() => handleDelete(supportSession?._id)}
 													icon={faTrashCan}
-													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
+													className='text-2xl mx-2 text-red-500 cursor-pointer'
 												/>
 											</td>
 										</tr>
