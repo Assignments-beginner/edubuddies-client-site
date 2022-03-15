@@ -7,22 +7,17 @@ import LoadingOverlay from "../../Loading/LoadingOverlay";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
-const JoinSupportSessionModal = ({
-	setJoinSupportSessionModal,
-	id,
-	setSupportRoom,
-}) => {
+const JoinSupportSessionModal = ({ setJoinSupportSessionModal, id }) => {
 	const [join, setJoin] = React.useState(false);
 	const { user } = useAuth();
 	const [submitting, setSubmitting] = React.useState(false);
-	const { register, handleSubmit, reset } = useForm();
-	const [supportSession, setSupportSession] = useState();
-	console.log("supportSession", supportSession);
+	const { register, handleSubmit } = useForm();
 	const onSubmit = ({ problem }) => {
 		const data = {
 			problem,
 			email: user?.email,
 			name: user?.displayName,
+			supportId: "Support" + Math.floor(Math.random() * 90000) + 10000,
 			status: "Pending",
 		};
 		setSubmitting(true);
@@ -79,10 +74,6 @@ const JoinSupportSessionModal = ({
 		setSerial(remainingArray?.map((e) => e.email).indexOf(user?.email) + 1);
 	}, [remainingArray, user?.email, submitting, join]);
 
-	const setSupportRoomandClose = (url) => {
-		setSupportRoom(url);
-		setJoinSupportSessionModal(false);
-	};
 	return (
 		<div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
 			<form
@@ -159,17 +150,6 @@ const JoinSupportSessionModal = ({
 												icon={faArrowRightLong}
 											/>
 										</a>
-										{/* <div
-											onClick={() =>
-												setSupportRoomandClose(singlesupportsession?.url)
-											}
-											className='border border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold py-2 w-[130px] mx-auto rounded-lg cursor-pointer hover:text-red-500 '>
-											Join Now
-											<FontAwesomeIcon
-												className='ml-3 faArrowRightLong'
-												icon={faArrowRightLong}
-											/>
-										</div> */}
 									</div>
 								</div>
 							)}
