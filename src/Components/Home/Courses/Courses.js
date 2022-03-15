@@ -1,5 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faUsers } from "@fortawesome/free-solid-svg-icons";
+import {
+  faClockRotateLeft,
+  faUsers,
+  faBookmark,
+} from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect } from "react";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -28,7 +32,7 @@ const Courses = () => {
   console.log(courses);
 
   return (
-    <div className="container mx-auto px-4 md:px-11  ">
+    <div className="container mx-auto px-4 md:px-11">
       <h1 className="text-center text-3xl uppercase font-semibold mt-14 md:mb-9 mb-5 text-red-500">
         Popular Courses
       </h1>
@@ -48,7 +52,7 @@ const Courses = () => {
               slidesPerView: 3,
             },
             900: {
-              slidesPerView: 4,
+              slidesPerView: 3,
             },
           }}
           className="mySwiper"
@@ -60,33 +64,53 @@ const Courses = () => {
                   <div className=" overflow-hidden rounded-t-lg">
                     <img
                       style={{ height: "150px" }}
-                      className="w-full card-image rounded-t-lg"
+                      className="w-full h-52 card-image rounded-t-lg"
                       src={course?.image}
                       alt=""
                     />
+                    <button
+                      className="
+                    top-4 
+                    right-4 
+                    absolute 
+                    focus:outline-none 
+                    focus:ring-2 
+                    focus:ring-offset-2 
+                    focus:ring-gray-800 
+                    p-1.5 
+                    bg-white  
+                    hover:text-gray-400"
+                    >
+                      <FontAwesomeIcon
+                        className="text-red-500 text-xl"
+                        icon={faBookmark}
+                      />
+                    </button>
+                    <div className="bg-slate-900 top-4 left-4 absolute px-2 rounded">
+                      <span className="text-white text-xs">
+                        {course?.category}
+                      </span>
+                    </div>
                   </div>
                   <div className="px-4 pb-4 card-content">
-                    <img
-                      className="w-20 rounded-full mx-auto -mt-9 border-4 border-white relative z-10"
-                      alt=""
-                      src={course?.owner?.photo || demoUser}
-                    />
-                    <h6 className="text-base text-stone-500 mt-2 hover:underline duration-300 cursor-pointer">
-                      {course?.owner?.name}
-                    </h6>
                     <h1 className="text-lg font-bold mt-1 mb-3 text-stone-700 hover:text-red-500 duration-300 cursor-pointer">
                       {course?.title}
                     </h1>
-                    <hr className="border " />
+                    <hr />
                     <div className="flex justify-between pt-2">
                       <div className="flex text-stone-500 text-sm">
+                        <div className="flex items-center mr-4">
+                          <FontAwesomeIcon
+                            icon={faClockRotateLeft}
+                            className="mr-1 font-thin text-xl"
+                          />
+                          <span className="text-sm">
+                            {course?.courseDuration || 0} hrs
+                          </span>
+                        </div>
                         <div className="mr-3 text-base">
                           <FontAwesomeIcon icon={faUsers} className="mr-2 " />
                           <span>{course?.totalStudents || 0}</span>
-                        </div>
-                        <div className="text-base">
-                          <FontAwesomeIcon icon={faComment} className="mr-2 " />
-                          <span>{course?.comments || 0}</span>
                         </div>
                       </div>
                       <div>
@@ -107,3 +131,9 @@ const Courses = () => {
 };
 
 export default Courses;
+
+/*
+
+src={course?.owner?.photo || demoUser}
+
+*/
