@@ -1,11 +1,12 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faClockRotateLeft,
-  faUsers,
-  faBookmark,
-  faStar,
-} from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faBookmark,
+  faClock,
+  faStar as faRegularStar,
+} from "@fortawesome/free-regular-svg-icons";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -34,7 +35,10 @@ const Courses = () => {
   console.log(courses);
 
   return (
-    <div className="container mx-auto px-4 md:px-11">
+    <div
+      style={{ backgroundColor: "#FAFAFA" }}
+      className="container mx-auto px-4 md:px-11"
+    >
       <h1 className="text-center text-3xl uppercase font-semibold mt-14 md:mb-9 mb-5 text-red-500">
         Popular Courses
       </h1>
@@ -61,8 +65,8 @@ const Courses = () => {
         >
           {courses?.map((course, key) => (
             <SwiperSlide key={key}>
-              <div className="border rounded-lg card duration-300  bg-white">
-                <div className=" overflow-hidden rounded-t-lg">
+              <div className="border rounded-lg card duration-300 bg-white">
+                <div className="overflow-hidden rounded-t-lg">
                   <img
                     className="w-full h-52 card-image rounded-t-lg"
                     src={course?.image}
@@ -73,13 +77,9 @@ const Courses = () => {
                     top-4 
                     right-4 
                     absolute 
-                    focus:outline-none 
-                    focus:ring-2 
-                    focus:ring-offset-2 
-                    focus:ring-gray-800 
-                    p-1.5 
-                    bg-white  
-                    hover:text-gray-400"
+                    px-1.5
+                    pt-1.5
+                    bg-white"
                   >
                     <FontAwesomeIcon
                       className="text-red-500 text-xl"
@@ -101,7 +101,7 @@ const Courses = () => {
                       emptySymbol={
                         <FontAwesomeIcon
                           className="text-yellow-300 text-md"
-                          icon={faStar}
+                          icon={faRegularStar}
                         />
                       }
                       fullSymbol={
@@ -135,21 +135,21 @@ const Courses = () => {
                       {/* Duration   */}
                       <div className="flex items-center mr-4">
                         <FontAwesomeIcon
-                          icon={faClockRotateLeft}
-                          className="mr-1 font-thin text-xl"
+                          icon={faClock}
+                          className="mr-1 font-thin text-2xl text-gray-300"
                         />
-                        <span className="text-sm">
+                        <span className="text-sm text-gray-300">
                           {course?.courseDuration || 0} hrs
                         </span>
                       </div>
                       {/* Students  */}
                       <div className="flex items-center">
                         <FontAwesomeIcon
-                          icon={faUsers}
-                          className="mr-1 font-thin text-lg"
+                          icon={faUser}
+                          className="mr-1 font-thin text-lg text-gray-300"
                         />
-                        <span className="text-sm">
-                          {course?.totalStudents || 0}
+                        <span className="text-sm text-gray-300">
+                          {course?.totalStudents || 1024}
                         </span>
                       </div>
                     </div>
