@@ -1,29 +1,27 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import AddSkillModal from "./AddSkillModal";
+import {
+	faTrashCan,
+	faXmark,
+	faCheck,
+} from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
-import useAuth from "../../../hooks/useAuth";
-import LoadingOverlay from "../../Loading/LoadingOverlay";
 import Swal from "sweetalert2";
+import LoadingOverlay from "../../Loading/LoadingOverlay";
 
-const StudentSkills = () => {
-	const [showAddSkillModal, setShowAddSkillModal] = React.useState(false);
+const AllUsers = () => {
 	const [deleted, setDeleted] = React.useState(false);
-	const { user } = useAuth();
-	const [skills, setSkills] = React.useState();
+	const [users, setUsers] = React.useState();
 	React.useEffect(() => {
 		axios
-			.get(
-				`https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`,
-			)
+			.get(`https://fierce-caverns-90976.herokuapp.com/allusersdata`)
 			.then((res) => {
-				setSkills(res.data);
+				setUsers(res.data);
 			});
-	}, [user?.email, deleted, showAddSkillModal]);
-	console.log(skills);
+	}, [deleted]);
 
-	const handleDelete = (skill) => {
+	const handleDelete = (id) => {
+		setDeleted(true);
 		Swal.fire({
 			title: "Are you sure?",
 			text: "You won't be able to revert this!",
@@ -33,13 +31,14 @@ const StudentSkills = () => {
 			cancelButtonColor: "#d33",
 			confirmButtonText: "Yes, delete it!",
 		}).then((result) => {
+			setDeleted(false);
 			if (result.isConfirmed) {
 				axios
-					.put(
-						`https://fierce-caverns-90976.herokuapp.com/skillsetDelete/${user?.email}/${skill}`,
+					.delete(
+						`https://fierce-caverns-90976.herokuapp.com/allusersdata/${id}`,
 					)
 					.then(function(response) {
-						Swal.fire("Deleted!", "That mail has been deleted.", "success");
+						Swal.fire("Deleted!", "That user has been deleted.", "success");
 						setDeleted(true);
 					})
 					.catch(function(error) {
@@ -48,24 +47,16 @@ const StudentSkills = () => {
 			}
 		});
 	};
+	console.log("users", users);
 
 	let n = 1;
 
 	return (
 		<div className='container mx-auto px-4 md:px-9'>
-			<div className='p-5 border-b border-solid border-red-500 rounded-t mb-5'>
-				<div className='mb-2 mt-4 flex justify-between'>
-					<h3 className='text-3xl font-semibold text-center text-red-500'>
-						Skills
-					</h3>
-					<div>
-						<FontAwesomeIcon
-							onClick={() => setShowAddSkillModal(true)}
-							icon={faPenToSquare}
-							className='text-2xl sm:mr-9 mr-0 cursor-pointer text-red-500'
-						/>
-					</div>
-				</div>
+			<div className='mb-8 mt-4'>
+				<h3 className='text-3xl font-semibold text-center text-red-500'>
+					All Users
+				</h3>
 			</div>
 			<div className='flex flex-col'>
 				<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
@@ -82,17 +73,22 @@ const StudentSkills = () => {
 										<th
 											scope='col'
 											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
-											Skill
+											Photo
 										</th>
 										<th
 											scope='col'
 											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
-											Experiance Year
+											Name
 										</th>
 										<th
 											scope='col'
 											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
-											Projects
+											Role
+										</th>
+										<th
+											scope='col'
+											className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
+											Email
 										</th>
 										<th
 											scope='col'
@@ -101,44 +97,48 @@ const StudentSkills = () => {
 										</th>
 									</tr>
 								</thead>
-								{skills?.skillset?.map((skill) => (
-									<tbody className='bg-white divide-y divide-red-200'>
-										<tr>
+
+								<tbody className='bg-white divide-y divide-red-200'>
+									{users?.map((user, key) => (
+										<tr key={key}>
 											<td className='px-6 py-3 whitespace-nowrap text-center'>
 												{n++}
 											</td>
 											<td className='px-6 py-3 whitespace-nowrap text-center'>
-												{skill?.skill}
+												<img
+													className='w-9 h-9 rounded-full'
+													src={user?.photoURL}
+													alt=''
+												/>
 											</td>
 											<td className='px-6 py-3 whitespace-nowrap text-center'>
-												{skill?.expYear}
+												{user?.displayName}
 											</td>
 											<td className='px-6 py-3 whitespace-nowrap text-center'>
-												{skill?.projects}
+												{user?.role || "User"}
 											</td>
+											<td className='px-6 py-3 whitespace-nowrap text-center'>
+												{user?.email}
+											</td>
+
 											<td className='px-6 py-3 whitespace-nowrap text-center'>
 												<FontAwesomeIcon
-													onClick={() => handleDelete(skill?.skill)}
+													onClick={() => handleDelete(user?._id)}
 													icon={faTrashCan}
-													className='text-2xl hover:text-red-500 cursor-pointer '
+													className='text-2xl mx-2 hover:text-red-500 cursor-pointer text-red-600'
 												/>
 											</td>
 										</tr>
-									</tbody>
-								))}
+									))}
+								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
 			</div>
-			{showAddSkillModal ? (
-				<>
-					<AddSkillModal setShowAddSkillModal={setShowAddSkillModal} />
-				</>
-			) : null}
-			{!user && <LoadingOverlay />}
+			{!users && <LoadingOverlay />}
 		</div>
 	);
 };
 
-export default StudentSkills;
+export default AllUsers;

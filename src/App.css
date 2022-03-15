@@ -10,3 +10,53 @@
 .content-wrap {
 	flex: 1;
 }
+.nav-up {
+	top: -90px;
+	transition: all 0.5s;
+}
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #dc3545;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+.rsc-header,
+.rsc-float-button,
+.rsc-ts-bubble {
+	background-color: #ef4444 !important;
+	color: #fff !important;
+}
+.tables {
+	height: 70vh !important;
+	max-width: 74vw !important;
+	overflow: scroll !important;
+}
+
+@media only screen and (min-width: 600px) {
+	.tables {
+		height: 70vh !important;
+		max-width: 90vw !important;
+		overflow: scroll !important;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.tables {
+		height: 70vh !important;
+		max-width: 74vw !important;
+		overflow: scroll !important;
+	}
+}

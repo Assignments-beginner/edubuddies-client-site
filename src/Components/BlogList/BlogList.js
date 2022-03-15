@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import Swal from "sweetalert2";
+import LoadingOverlay from "../Loading/LoadingOverlay";
 
 const BlogList = () => {
 	const [deleted, setDeleted] = React.useState(false);
@@ -34,11 +35,11 @@ const BlogList = () => {
 			if (result.isConfirmed) {
 				axios
 					.delete(`https://fierce-caverns-90976.herokuapp.com/blogs/${id}`)
-					.then(function (response) {
+					.then(function(response) {
 						Swal.fire("Deleted!", "That blog has been deleted.", "success");
 						setDeleted(false);
 					})
-					.catch(function (error) {
+					.catch(function(error) {
 						console.log(error);
 					});
 			}
@@ -61,11 +62,11 @@ const BlogList = () => {
 					.put(`https://fierce-caverns-90976.herokuapp.com/blogStatus/${id}`, {
 						text: text,
 					})
-					.then(function (response) {
+					.then(function(response) {
 						Swal.fire(`${text}!`, "That blog has been approved.", `${mark}`);
 						setStatus(false);
 					})
-					.catch(function (error) {
+					.catch(function(error) {
 						console.log(error);
 					});
 			}
@@ -74,18 +75,16 @@ const BlogList = () => {
 	let n = 1;
 
 	return (
-		<div className='container mx-auto px-4 md:px-11'>
-			<div className='p-2 border-b border-solid border-red-500 rounded-t mb-5'>
-				<div className='mb-2'>
-					<h3 className='text-3xl font-semibold text-center text-red-500'>
-						All Blogs
-					</h3>
-				</div>
+		<div className='container mx-auto px-4 md:px-9'>
+			<div className='mb-8 mt-4'>
+				<h3 className='text-3xl font-semibold text-center text-red-500'>
+					All Blogs
+				</h3>
 			</div>
 			<div className='flex flex-col'>
 				<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
 					<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
-						<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg'>
+						<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg tables'>
 							<table className='min-w-full divide-y divide-red-200'>
 								<thead className='bg-black font-bold'>
 									<tr>
@@ -131,17 +130,17 @@ const BlogList = () => {
 											</td>
 											{`${blog?.blogStatus}` === "Denied" && (
 												<td className='px-6 py-3 whitespace-nowrap text-center'>
-													<p className='text-center text-white rounded-lg bg-red-500'>{`${blog?.blogStatus}`}</p>
+													<p className='text-center text-white rounded-lg bg-red-500 w-[100px] mx-auto'>{`${blog?.blogStatus}`}</p>
 												</td>
 											)}
 											{`${blog?.blogStatus}` === "Approved" && (
 												<td className='px-6 py-3 whitespace-nowrap text-center'>
-													<p className='text-center text-white rounded-lg bg-green-500'>{`${blog?.blogStatus}`}</p>
+													<p className='text-center text-white rounded-lg bg-green-600 w-[100px] mx-auto'>{`${blog?.blogStatus}`}</p>
 												</td>
 											)}
 											{`${blog?.blogStatus}` === "Pending" && (
 												<td className='px-6 py-3 whitespace-nowrap text-center'>
-													<p className='text-center text-white rounded-lg bg-yellow-500'>{`${blog?.blogStatus}`}</p>
+													<p className='text-center text-white rounded-lg bg-yellow-400 w-[100px] mx-auto'>{`${blog?.blogStatus}`}</p>
 												</td>
 											)}
 
@@ -151,19 +150,19 @@ const BlogList = () => {
 														handleStatus(blog?._id, "Approved", "success")
 													}
 													icon={faCheck}
-													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
+													className='text-2xl mx-2 hover:text-red-500 cursor-pointer'
 												/>
 												<FontAwesomeIcon
 													onClick={() =>
 														handleStatus(blog?._id, "Denied", "error")
 													}
 													icon={faXmark}
-													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
+													className='text-2xl mx-2 hover:text-red-500 cursor-pointer'
 												/>
 												<FontAwesomeIcon
 													onClick={() => handleDelete(blog?._id)}
 													icon={faTrashCan}
-													className='text-2xl mx-1 hover:text-red-500 cursor-pointer'
+													className='text-2xl mx-2 hover:text-red-500 cursor-pointer text-red-600'
 												/>
 											</td>
 										</tr>
@@ -174,7 +173,7 @@ const BlogList = () => {
 					</div>
 				</div>
 			</div>
-			{/* {!data && <LoadingOverlay />} */}
+			{!allBlogs && <LoadingOverlay />}
 		</div>
 	);
 };

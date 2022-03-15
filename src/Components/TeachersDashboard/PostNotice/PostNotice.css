@@ -11,3 +11,9 @@
 	border: 1px solid rgb(199, 198, 198);
     border-radius: 5px;
 }
+.wrapper{
+	border: none;
+}
+.toolbar, .editor{
+	border: 1px solid rgb(199, 198, 198);
+}

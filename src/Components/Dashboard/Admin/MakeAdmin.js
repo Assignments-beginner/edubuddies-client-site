@@ -6,6 +6,7 @@ import LoadingOverlay from "../../Loading/LoadingOverlay";
 import "./MakeAdmin.css";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import Select from "react-select";
+import useAuth from "../../../hooks/useAuth";
 
 const MakeAdmin = () => {
 	const [admin, setAdmin] = useState(false);
@@ -93,9 +94,9 @@ const MakeAdmin = () => {
 		}),
 	};
 	return (
-		<div className='bg-style container mx-auto px-4 md:px-11'>
+		<div className='container mx-auto px-4 md:px-9 bg-style'>
 			<div className='grid place-items-center h-screen -mt-16'>
-				<div style={{ width: 400 }}>
+				<div className=' lg:w-2/4 w-full'>
 					<h1 className='text-3xl mb-9 text-red-500 font-bold'>
 						Change User Role
 					</h1>
