@@ -33,6 +33,7 @@
     "react-jitsi": "^1.0.4",
     "react-jutsu": "^3.0.3",
     "react-player": "^2.9.0",
+    "react-rating": "^2.0.5",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-router-hash-link": "^2.4.3",

@@ -1,5 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+	faUser,
+	faBookmark,
+	faClock,
+	faStar as faRegularStar,
+} from "@fortawesome/free-regular-svg-icons";
 import React, { useEffect } from "react";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { addCourse } from "../../../Redux/edubuddySlice";
 import demoUser from "../../../Images/user-demo.png";
+import Rating from "react-rating";
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -48,53 +55,110 @@ const Courses = () => {
 							slidesPerView: 3,
 						},
 						900: {
-							slidesPerView: 4,
+							slidesPerView: 3,
 						},
 					}}
 					className='mySwiper'>
 					{courses?.map((course, key) => (
 						<SwiperSlide key={key}>
 							<Link to={`/singlecourse/${course._id}`}>
-								<div className='border rounded-lg card duration-300  bg-white'>
-									<div className=' overflow-hidden rounded-t-lg'>
+								<div className='border rounded-lg card duration-300 bg-white'>
+									<div className='overflow-hidden rounded-t-lg'>
 										<img
-											style={{ height: "150px" }}
-											className='w-full card-image rounded-t-lg'
+											className='w-full h-52 card-image rounded-t-lg'
 											src={course?.image}
 											alt=''
 										/>
+										<button
+											className='
+                    top-4 
+                    right-4 
+                    absolute 
+                    px-1.5
+                    pt-1.5
+                    bg-white'>
+											<FontAwesomeIcon
+												className='text-red-500 text-xl'
+												icon={faBookmark}
+											/>
+										</button>
+										<div className='bg-slate-900 top-4 left-4 absolute px-2 rounded'>
+											<span className='text-white text-xs'>
+												{course?.category}
+											</span>
+										</div>
 									</div>
-									<div className='px-4 pb-4 card-content'>
-										<img
-											className='w-20 rounded-full mx-auto -mt-9 border-4 border-white relative z-10'
-											alt=''
-											src={course?.owner?.photo || demoUser}
-										/>
-										<h6 className='text-base text-stone-500 mt-2 hover:underline duration-300 cursor-pointer'>
-											{course?.owner?.name}
-										</h6>
-										<h1 className='text-lg font-bold mt-1 mb-3 text-stone-700 hover:text-red-500 duration-300 cursor-pointer'>
-											{course?.title}
-										</h1>
-										<hr className='border ' />
-										<div className='flex justify-between pt-2'>
+									{/* Course Details Body  */}
+									<div className='px-4 pb-4'>
+										<div className='py-6 flex flex-col items-start'>
+											<Rating
+												initialRating='3.5'
+												readonly
+												emptySymbol={
+													<FontAwesomeIcon
+														className='text-yellow-300 text-md'
+														icon={faRegularStar}
+													/>
+												}
+												fullSymbol={
+													<FontAwesomeIcon
+														className='text-yellow-300 text-md'
+														icon={faStar}
+													/>
+												}
+											/>
+											<Link to={`/singlecourse/${course._id}`}>
+												<h1 className='text-2xl mt-1 mb-3 text-stone-700 hover:text-red-500 duration-300 cursor-pointer'>
+													{course?.title}
+												</h1>
+											</Link>
+											{/* Course Instructor  */}
+											<div className='flex items-center'>
+												<img
+													className='w-8 h-8 rounded-full mr-2'
+													src={course?.owner?.photo || demoUser}
+													alt=''
+												/>
+												<p className='text-gray-900 leading-none'>
+													<span className='text-gray-400'>By</span>{" "}
+													{course?.owner?.name}
+												</p>
+											</div>
+										</div>
+										<hr />
+										<div className='flex items-center justify-between pt-3'>
 											<div className='flex text-stone-500 text-sm'>
-												<div className='mr-3 text-base'>
-													<FontAwesomeIcon icon={faUsers} className='mr-2 ' />
-													<span>{course?.totalStudents || 0}</span>
+												{/* Duration   */}
+												<div className='flex items-center mr-4'>
+													<FontAwesomeIcon
+														icon={faClock}
+														className='mr-1 font-thin text-2xl text-gray-400'
+													/>
+													<span className='text-sm text-gray-400'>
+														{course?.courseDuration || 0} hrs
+													</span>
 												</div>
-												<div className='text-base'>
-													<FontAwesomeIcon icon={faComment} className='mr-2 ' />
-													<span>{course?.comments || 0}</span>
+												{/* Students  */}
+												<div className='flex items-center'>
+													<FontAwesomeIcon
+														icon={faUser}
+														className='mr-1 font-thin text-lg text-gray-400'
+													/>
+													<span className='text-sm text-gray-400'>
+														{course?.totalStudents || 1024}
+													</span>
 												</div>
 											</div>
+											{/* Fee */}
 											<div>
-												<h6 className='text-base font-bold text-red-500'>
-													<span className='mr-1'>{course?.courseFee}</span>$
+												<h6 className='text-2xl text-red-500'>
+													{course?.courseFee} $
 												</h6>
 											</div>
 										</div>
+										{/* End of Bottom Bar  */}
 									</div>
+									{/* End of Course Details Body  */}
 								</div>
 							</Link>
 						</SwiperSlide>
