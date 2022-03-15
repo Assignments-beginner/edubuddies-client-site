@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ChatBot from "react-simple-chatbot";
 
 const Test = () => {
-	const config = {
+	/* 	const config = {
 		width: "300px",
 		height: "400px",
 		floating: true,
@@ -56,7 +56,7 @@ const Test = () => {
 			id: "9",
 			message: "We have best Web developer.",
 		},
-	];
+	]; */
 	/* 	const [room, setRoom] = useState();
 	console.log(room);
 	const [start, setStart] = useState(false);
@@ -64,9 +64,9 @@ const Test = () => {
 		setStart(true);
 	};
  */
-	return (
-		<div className='chat'>
-			{/* 		{start ? (
+	return {
+		/*	<div className='chat'>
+			 	{start ? (
 				<JitsiMeeting
 					roomName={room}
 					configOverwrite={{
@@ -80,16 +80,16 @@ const Test = () => {
 					<input type='text' onChange={(e) => setRoom(e.target.value)} />
 					<button onClick={createMeeting}>Create</button>
 				</>
-			)} */}
-			<ChatBot
+			)} 
+		<ChatBot
 				headerTitle='Speech Recognition'
 				recognitionEnable={true}
 				speechSynthesis={{ enable: true, lang: "en" }}
 				steps={steps}
 				{...config}
 			/>
-		</div>
-	);
+		</div>  */
+	};
 };
 
 export default Test;
