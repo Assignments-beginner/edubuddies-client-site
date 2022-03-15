@@ -28,6 +28,7 @@ const NeedSupportDetailsModal = ({ handleSolveId, setHandleSolveModal }) => {
 	const handleStatus = (datas, status, mark) => {
 		setSubmitting(true);
 		const data = { ...datas, status };
+		console.log(data);
 		Swal.fire({
 			title: "Are you sure?",
 			text: "You won't be able to revert this!",

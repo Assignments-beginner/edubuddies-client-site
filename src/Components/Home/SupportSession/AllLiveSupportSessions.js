@@ -1,13 +1,11 @@
-import { JitsiMeeting } from "@jitsi/react-sdk";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faFaceFrown,
 	faVideo,
 	faCode,
 } from "@fortawesome/free-solid-svg-icons";
-import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
 import LoadingOverlay from "../../Loading/LoadingOverlay";
 import JoinSupportSessionModal from "./JoinSupportSessionModal";
@@ -49,82 +47,65 @@ const AllLiveSupportSessions = () => {
 		a?.needSupport?.some((u) => u?.status?.includes("Pending")),
 	);
 	console.log("serialLive", serialLive);
-	const [supportRoom, setSupportRoom] = useState();
 
 	return (
 		<div className='container mx-auto p-1'>
 			<div
 				className='w-full mx-auto grid items-center '
 				style={{ minHeight: "90vh" }}>
-				{supportRoom ? (
-					<iframe
-						allow='camera; microphone; fullscreen; display-capture; autoplay'
-						src={`https://meet.jit.si/${supportRoom}`}
-						style={{ height: "90vh", width: "100%", border: "0px" }}
-						title='dsdadas'></iframe>
-				) : (
-					/* <JitsiMeeting className='my-3'
-						roomName={supportRoom}
-						configOverwrite={{
-							startWithAudioMuted: true,
-							hiddenPremeetingButtons: ["microphone"],
-						}}
-						getIFrameRef={(node) => (node.style.height = "90vh")}
-					/> */
-					<>
-						{filterLiveSupportSessions?.length > 0 ? (
-							<>
-								{serialPending?.length === 0 ? (
-									<div>
-										{
-											newArray?.map((supportSession) => (
-												<button
-													onClick={() => setModalAndId(supportSession?._id)}
-													className='p-5 bg-red-500 text-white rounded-lg'>
-													<FontAwesomeIcon
-														className='text-white mx-2 group-hover:text-red-500'
-														icon={faCode}
-													/>{" "}
-													Request For Support Session
-												</button>
-											))[0]
-										}
-									</div>
-								) : (
-									<div>
-										{
-											serialLive?.map((supportSession) => (
-												<button
-													onClick={() => setModalAndId(supportSession?._id)}
-													className='px-5 py-3 bg-red-500 text-white rounded-md group hover:text-red-500 hover:bg-transparent border border-red-500 duration-200'>
-													<FontAwesomeIcon
-														className='text-white mx-2 group-hover:text-red-500'
-														icon={faVideo}
-													/>{" "}
-													Click to Join On Support Session
-												</button>
-											))[0]
-										}
-									</div>
-								)}
-							</>
-						) : (
-							<div>
-								<FontAwesomeIcon
-									className='mx-auto text-red-500 icon text-4xl mb-4'
-									icon={faFaceFrown}
-								/>
-								<h2 className=' text-xl font-bold  text-red-500'>
-									Sorry, No support sessions for now
-								</h2>
-							</div>
-						)}
-					</>
-				)}
+				<>
+					{filterLiveSupportSessions?.length > 0 ? (
+						<>
+							{serialPending?.length === 0 ? (
+								<div>
+									{
+										newArray?.map((supportSession) => (
+											<button
+												onClick={() => setModalAndId(supportSession?._id)}
+												className='p-5 bg-red-500 text-white rounded-lg'>
+												<FontAwesomeIcon
+													className='text-white mx-2 group-hover:text-red-500'
+													icon={faCode}
+												/>{" "}
+												Request For Support Session
+											</button>
+										))[0]
+									}
+								</div>
+							) : (
+								<div>
+									{
+										serialLive?.map((supportSession) => (
+											<button
+												onClick={() => setModalAndId(supportSession?._id)}
+												className='px-5 py-3 bg-red-500 text-white rounded-md group hover:text-red-500 hover:bg-transparent border border-red-500 duration-200'>
+												<FontAwesomeIcon
+													className='text-white mx-2 group-hover:text-red-500'
+													icon={faVideo}
+												/>{" "}
+												Click to Join On Support Session
+											</button>
+										))[0]
+									}
+								</div>
+							)}
+						</>
+					) : (
+						<div>
+							<FontAwesomeIcon
+								className='mx-auto text-red-500 icon text-4xl mb-4'
+								icon={faFaceFrown}
+							/>
+							<h2 className=' text-xl font-bold  text-red-500'>
+								Sorry, No support sessions for now
+							</h2>
+						</div>
+					)}
+				</>
+
 				{joinSupportSessionModal ? (
 					<>
 						<JoinSupportSessionModal
-							setSupportRoom={setSupportRoom}
 							setJoinSupportSessionModal={setJoinSupportSessionModal}
 							id={id}
 						/>

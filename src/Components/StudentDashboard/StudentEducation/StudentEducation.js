@@ -19,6 +19,7 @@ const StudentEducation = () => {
 				setEducation(res.data?.educationalExp);
 			});
 	}, [user?.email, showModal]);
+	console.log("education", education);
 
 	return (
 		<div className='container mx-auto px-4 md:px-11'>
