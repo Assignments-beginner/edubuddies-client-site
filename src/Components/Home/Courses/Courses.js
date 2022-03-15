@@ -61,17 +61,15 @@ const Courses = () => {
         >
           {courses?.map((course, key) => (
             <SwiperSlide key={key}>
-              <Link to={`/singlecourse/${course._id}`}>
-                <div className="border rounded-lg card duration-300  bg-white">
-                  <div className=" overflow-hidden rounded-t-lg">
-                    <img
-                      style={{ height: "150px" }}
-                      className="w-full h-52 card-image rounded-t-lg"
-                      src={course?.image}
-                      alt=""
-                    />
-                    <button
-                      className="
+              <div className="border rounded-lg card duration-300  bg-white">
+                <div className=" overflow-hidden rounded-t-lg">
+                  <img
+                    className="w-full h-52 card-image rounded-t-lg"
+                    src={course?.image}
+                    alt=""
+                  />
+                  <button
+                    className="
                     top-4 
                     right-4 
                     absolute 
@@ -82,40 +80,54 @@ const Courses = () => {
                     p-1.5 
                     bg-white  
                     hover:text-gray-400"
-                    >
-                      <FontAwesomeIcon
-                        className="text-red-500 text-xl"
-                        icon={faBookmark}
-                      />
-                    </button>
-                    <div className="bg-slate-900 top-4 left-4 absolute px-2 rounded">
-                      <span className="text-white text-xs">
-                        {course?.category}
-                      </span>
-                    </div>
+                  >
+                    <FontAwesomeIcon
+                      className="text-red-500 text-xl"
+                      icon={faBookmark}
+                    />
+                  </button>
+                  <div className="bg-slate-900 top-4 left-4 absolute px-2 rounded">
+                    <span className="text-white text-xs">
+                      {course?.category}
+                    </span>
                   </div>
-                  {/* Course Details Body  */}
-                  <div className="px-4 pb-4">
+                </div>
+                {/* Course Details Body  */}
+                <div className="px-4 pb-4">
                   <div className="py-6 flex flex-col items-start">
                     <Rating
                       initialRating="3.5"
                       readonly
                       emptySymbol={
                         <FontAwesomeIcon
-                          className="text-yellow-300 text-lg"
+                          className="text-yellow-300 text-md"
                           icon={faStar}
                         />
                       }
                       fullSymbol={
                         <FontAwesomeIcon
-                          className="text-yellow-300 text-lg"
+                          className="text-yellow-300 text-md"
                           icon={faStar}
                         />
                       }
                     />
-                    <h1 className="text-lg font-bold mt-1 mb-3 text-stone-700 hover:text-red-500 duration-300 cursor-pointer">
-                      {course?.title}
-                    </h1>
+                    <Link to={`/singlecourse/${course._id}`}>
+                      <h1 className="text-2xl mt-1 mb-3 text-stone-700 hover:text-red-500 duration-300 cursor-pointer">
+                        {course?.title}
+                      </h1>
+                    </Link>
+                    {/* Course Instructor  */}
+                    <div className="flex items-center">
+                      <img
+                        className="w-8 h-8 rounded-full mr-2"
+                        src={course?.owner?.photo || demoUser}
+                        alt=""
+                      />
+                      <p className="text-gray-900 leading-none">
+                        <span className="text-gray-400">By</span>{" "}
+                        {course?.owner?.name}
+                      </p>
+                    </div>
                   </div>
                   <hr />
                   <div className="flex items-center justify-between pt-3">
@@ -149,10 +161,9 @@ const Courses = () => {
                     </div>
                   </div>
                   {/* End of Bottom Bar  */}
-                  </div>
-                  {/* End of Course Details Body  */}
                 </div>
-              </Link>
+                {/* End of Course Details Body  */}
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -162,9 +173,3 @@ const Courses = () => {
 };
 
 export default Courses;
-
-/*
-
-src={course?.owner?.photo || demoUser}
-
-*/
