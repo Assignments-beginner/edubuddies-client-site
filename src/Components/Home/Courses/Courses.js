@@ -3,6 +3,7 @@ import {
   faClockRotateLeft,
   faUsers,
   faBookmark,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect } from "react";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
@@ -11,6 +12,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Rating from "react-rating";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -92,34 +94,63 @@ const Courses = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="px-4 pb-4 card-content">
+                  {/* Course Details Body  */}
+                  <div className="px-4 pb-4">
+                  <div className="py-6 flex flex-col items-start">
+                    <Rating
+                      initialRating="3.5"
+                      readonly
+                      emptySymbol={
+                        <FontAwesomeIcon
+                          className="text-yellow-300 text-lg"
+                          icon={faStar}
+                        />
+                      }
+                      fullSymbol={
+                        <FontAwesomeIcon
+                          className="text-yellow-300 text-lg"
+                          icon={faStar}
+                        />
+                      }
+                    />
                     <h1 className="text-lg font-bold mt-1 mb-3 text-stone-700 hover:text-red-500 duration-300 cursor-pointer">
                       {course?.title}
                     </h1>
-                    <hr />
-                    <div className="flex justify-between pt-2">
-                      <div className="flex text-stone-500 text-sm">
-                        <div className="flex items-center mr-4">
-                          <FontAwesomeIcon
-                            icon={faClockRotateLeft}
-                            className="mr-1 font-thin text-xl"
-                          />
-                          <span className="text-sm">
-                            {course?.courseDuration || 0} hrs
-                          </span>
-                        </div>
-                        <div className="mr-3 text-base">
-                          <FontAwesomeIcon icon={faUsers} className="mr-2 " />
-                          <span>{course?.totalStudents || 0}</span>
-                        </div>
+                  </div>
+                  <hr />
+                  <div className="flex items-center justify-between pt-3">
+                    <div className="flex text-stone-500 text-sm">
+                      {/* Duration   */}
+                      <div className="flex items-center mr-4">
+                        <FontAwesomeIcon
+                          icon={faClockRotateLeft}
+                          className="mr-1 font-thin text-xl"
+                        />
+                        <span className="text-sm">
+                          {course?.courseDuration || 0} hrs
+                        </span>
                       </div>
-                      <div>
-                        <h6 className="text-base font-bold text-red-500">
-                          <span className="mr-1">{course?.courseFee}</span>$
-                        </h6>
+                      {/* Students  */}
+                      <div className="flex items-center">
+                        <FontAwesomeIcon
+                          icon={faUsers}
+                          className="mr-1 font-thin text-lg"
+                        />
+                        <span className="text-sm">
+                          {course?.totalStudents || 0}
+                        </span>
                       </div>
                     </div>
+                    {/* Fee */}
+                    <div>
+                      <h6 className="text-2xl text-red-500">
+                        {course?.courseFee} $
+                      </h6>
+                    </div>
                   </div>
+                  {/* End of Bottom Bar  */}
+                  </div>
+                  {/* End of Course Details Body  */}
                 </div>
               </Link>
             </SwiperSlide>
