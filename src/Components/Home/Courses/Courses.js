@@ -55,7 +55,7 @@ const Courses = () => {
 							slidesPerView: 3,
 						},
 						900: {
-							slidesPerView: 3,
+							slidesPerView: 4,
 						},
 					}}
 					className='mySwiper'>
@@ -65,7 +65,7 @@ const Courses = () => {
 								<div className='border rounded-lg card duration-300 bg-white'>
 									<div className='overflow-hidden rounded-t-lg'>
 										<img
-											className='w-full h-52 card-image rounded-t-lg'
+											className='w-full h-40 card-image rounded-t-lg'
 											src={course?.image}
 											alt=''
 										/>
@@ -108,7 +108,9 @@ const Courses = () => {
 												}
 											/>
 											<Link to={`/singlecourse/${course._id}`}>
-												<h1 className='text-2xl mt-1 mb-3 text-stone-700 hover:text-red-500 duration-300 cursor-pointer'>
+												<h1
+													style={{ fontSize: "1.15rem" }}
+													className=' mt-1 mb-3 text-stone-700 hover:text-red-500 duration-300 cursor-pointer'>
 													{course?.title}
 												</h1>
 											</Link>
@@ -119,7 +121,7 @@ const Courses = () => {
 													src={course?.owner?.photo || demoUser}
 													alt=''
 												/>
-												<p className='text-gray-900 leading-none'>
+												<p className='text-gray-900 leading-none text-sm'>
 													<span className='text-gray-400'>By</span>{" "}
 													{course?.owner?.name}
 												</p>
@@ -132,7 +134,7 @@ const Courses = () => {
 												<div className='flex items-center mr-4'>
 													<FontAwesomeIcon
 														icon={faClock}
-														className='mr-1 font-thin text-2xl text-gray-400'
+														className='mr-1 font-thin text-xl text-gray-400'
 													/>
 													<span className='text-sm text-gray-400'>
 														{course?.courseDuration || 0} hrs

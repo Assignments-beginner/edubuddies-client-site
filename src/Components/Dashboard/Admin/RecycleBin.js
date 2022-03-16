@@ -46,7 +46,7 @@ const RecycleBin = () => {
 							<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
 								<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg tables'>
 									<table className='min-w-full divide-y divide-red-200'>
-										<thead className='bg-black font-bold'>
+										<thead className='bg-slate-900 font-bold'>
 											<tr>
 												<th
 													scope='col'
@@ -138,7 +138,7 @@ const RecycleBin = () => {
 							<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
 								<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg tables'>
 									<table className='min-w-full divide-y divide-red-200'>
-										<thead className='bg-black font-bold'>
+										<thead className='bg-slate-900 font-bold'>
 											<tr>
 												<th
 													scope='col'
