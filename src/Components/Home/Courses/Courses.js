@@ -35,9 +35,7 @@ const Courses = () => {
   console.log(courses);
 
   return (
-    <div
-      className="container mx-auto pb-12 px-4 md:px-12"
-    >
+    <div className="container mx-auto pb-12 px-4 md:px-12">
       <h1 className="text-center text-3xl uppercase font-semibold mt-14 md:mb-9 mb-5 text-red-500">
         Popular Courses
       </h1>
@@ -62,7 +60,7 @@ const Courses = () => {
           }}
           className="mySwiper"
         >
-          {courses?.map((course, key) => (
+          {courses.slice(0, 6).map((course, key) => (
             <SwiperSlide key={key}>
               <div className="border rounded-lg card duration-300 bg-white">
                 <div className="overflow-hidden rounded-t-lg">
