@@ -4,7 +4,7 @@ import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 import "../Footer/Footer.css";
 import { Link, useLocation } from "react-router-dom";
 
-/* Please don't edit this file - Team Leader (Avishek) */
+/*  Please don't edit this file - Team Leader (Avishek) */
 
 const Footer = () => {
 	const [hide, setHide] = useState("block");
