@@ -4,6 +4,7 @@ import useAuth from "../../../hooks/useAuth";
 
 const AdminRoute = ({ children, ...rest }) => {
   const { user, admin, isLoading } = useAuth();
+  console.log(admin);
   const location = useLocation();
   if (isLoading) {
     return <div className="animate-spin"></div>;

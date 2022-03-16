@@ -60,7 +60,7 @@ import ChatBot006 from "./Components/Shared/ChatBot006/ChatBot006";
 import Mails from "./Components/Dashboard/Mails/Mails";
 import AllUsers from "./Components/Dashboard/AllUsers/AllUsers";
 import UserChart from "./Components/Dashboard/Admin/Chart/UserChart";
-
+import AdminRoute from "./Components/Login/AdminRoute/AdminRoute";
 function App() {
   return (
     <div className="App">
@@ -120,7 +120,14 @@ function App() {
               </Route>
 
               {/* //Dashboard Nested Routing */}
-              <Route path="/dashboard" element={<Dashboard />}>
+              <Route
+                path="/dashboard"
+                element={
+                  <AdminRoute>
+                    <Dashboard />
+                  </AdminRoute>
+                }
+              >
                 <Route exact path="/dashboard" element={<CoursesList />} />
                 <Route path="/dashboard/blogs" element={<AllBlogs />} />
                 <Route

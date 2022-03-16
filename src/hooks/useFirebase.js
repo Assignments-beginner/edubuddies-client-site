@@ -25,6 +25,7 @@ const useFirebase = () => {
   const [admin, setAdmin] = useState(false);
   const [student, setStudent] = useState(false);
   const [teacher, setTeacher] = useState(false);
+  const [data, setData] = useState([]);
 
   const [token, setToken] = useState("");
   const auth = getAuth();
@@ -234,11 +235,13 @@ const useFirebase = () => {
     axios
       .get(`http://localhost:5000/getUserRole/${user.email}`)
       .then((data) => {
-        if (data.data.role === "Admin") {
+        const result = data.data[0];
+        console.log(result.role);
+        if (result.role == "Admin") {
           setAdmin(true);
-        } else if (data.data.role === "Teacher") {
+        } else if (result.role == "Teacher") {
           setTeacher(true);
-        } else if (data.data.role === "Student") {
+        } else if (result.role == "Student") {
           setStudent(true);
         }
       });
