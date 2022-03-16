@@ -23,11 +23,6 @@ import useAuth from "../../../hooks/useAuth";
 
 const TeachersDashboard = () => {
 	const { user, logOut } = useAuth();
-	const [isActive, setActive] = useState("block");
-	const handleToggle = () => {
-		setActive(!isActive);
-	};
-
 	return (
 		<div style={{ maxHeight: "100vh" }}>
 			<div
