@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-faFacebookF,
+  faFacebookF,
   faPinterest,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
@@ -34,10 +34,10 @@ const Footer = () => {
   return (
     <footer
       style={{ display: `${hide}` }}
-      className="main-footer text-center text-gray-300 bg-gray-900 pt-6"
+      className="main-footer text-center text-gray-300 bg-gray-900 pt-8"
     >
       <div className="container mx-auto grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 pb-8">
-        <div className="logo-part py-6 pl-14">
+        <div className="logo-part pl-14">
           <Link to="/home">
             <img
               className="w-40 mb-4"
@@ -45,9 +45,9 @@ const Footer = () => {
               alt="footer logo"
             />
           </Link>
-          <p className="text-md">            
-            Great lesson ideas and plans for students, that students can
-            observe their learning.
+          <p className="text-md">
+            Great lesson ideas and plans for students, that students can observe
+            their learning.
           </p>
           <div>
             <div className="mt-4 flex gap-3">
