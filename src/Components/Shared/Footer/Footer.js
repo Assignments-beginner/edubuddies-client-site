@@ -104,7 +104,7 @@ const Footer = () => {
             </h5>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
-              <Link to="/home"> Admins </Link>
+              <Link to="/footerAdmins"> Admins </Link>
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />

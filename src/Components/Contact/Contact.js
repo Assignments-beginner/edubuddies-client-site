@@ -67,7 +67,7 @@ const Contact = () => {
             Have a question or just want to say hi? We'd love to hear from you.
           </p>
         </div>
-        <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 gap-2">
+        <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 gap-2">
           <div className="text-left">
             <input
               className="w-full bg-gray-100 text-gray-900 mt-2 py-3 px-4 rounded-lg"
