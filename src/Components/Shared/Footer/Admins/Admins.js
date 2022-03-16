@@ -20,11 +20,13 @@ const Admins = () => {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={"auto"}
+          initialSlide={1}
           coverflowEffect={{
             rotate: 50,
             stretch: 0,
             depth: 100,
             modifier: 1,
+            initialSlide: 2,
           }}
           pagination={true}
           modules={[EffectCoverflow, Pagination]}
@@ -32,10 +34,12 @@ const Admins = () => {
         >
           <SwiperSlide>
             <div class="bg-white p-10 rounded-lg">
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-5">
-                <img src={Admin1} alt="" />
+              <div className="flex justify-center">
+                <div className="w-20 h-20 rounded-full overflow-hidden mb-5">
+                  <img src={Admin1} alt="" />
+                </div>
               </div>
-              <div className="text-left">
+              <div>
                 <h2 class="tracking-wide">Nizam Uddin</h2>
                 <h2 class="tracking-wide">Full Stack Developer</h2>
                 <h2 class="tracking-wide">nizamcse.seu.bd@gmail.com</h2>
@@ -45,10 +49,12 @@ const Admins = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div class="bg-white p-10 rounded-lg">
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-5">
-                <img src={Admin2} alt="" />
+              <div className="flex justify-center">
+                <div className="w-20 h-20 rounded-full overflow-hidden mb-5">
+                  <img src={Admin2} alt="" />
+                </div>
               </div>
-              <div className="text-left">
+              <div>
                 <h2 class="tracking-wide">Mohammad Suny</h2>
                 <h2 class="tracking-wide">Full Stack Developer</h2>
                 <h2 class="tracking-wide">suny.w68@gmail.com</h2>
@@ -58,10 +64,12 @@ const Admins = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div class="bg-white p-10 rounded-lg">
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-5">
-                <img src={Admin3} alt="" />
+              <div className="flex justify-center">
+                <div className="w-20 h-20 rounded-full overflow-hidden mb-5">
+                  <img src={Admin3} alt="" />
+                </div>
               </div>
-              <div className="text-left">
+              <div>
                 <h2 class="tracking-wide">Ashraful Islam</h2>
                 <h2 class="tracking-wide">MERN Stack Developer</h2>
                 <h2 class="tracking-wide">ashrafulislam2880@gmail.com</h2>
