@@ -148,14 +148,14 @@ const useFirebase = () => {
       });
   };
 
-  const saveUserToDb = (email, displayName, PhotoURL, navigate, location) => {
+  const saveUserToDb = (email, displayName, photoURL, navigate, location) => {
     const save = {
       email,
       displayName,
-      photoURL: PhotoURL,
+      photoURL,
     };
     axios
-      .post(`https://fierce-caverns-90976.herokuapp.com/signup`, save)
+      .post(`http://localhost:5000/signup`, save)
       .then(function(response) {
         Swal.fire({
           icon: "success",
@@ -210,11 +210,11 @@ const useFirebase = () => {
   };
 
   /*------ to findout user is admin or not---------- */
-  useEffect(() => {
-    fetch(`https://fierce-caverns-90976.herokuapp.com/users/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => setAdmin(data?.admin));
-  }, [user?.email]);
+  //   useEffect(() => {
+  //     fetch(`https://fierce-caverns-90976.herokuapp.com/users/${user?.email}`)
+  //       .then((res) => res.json())
+  //       .then((data) => setAdmin(data?.admin));
+  //   }, [user?.email]);
 
   const logOut = () => {
     console.log("fro header");
