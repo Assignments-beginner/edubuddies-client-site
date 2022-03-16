@@ -23,6 +23,9 @@ const useFirebase = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsloading] = useState(true);
   const [admin, setAdmin] = useState(false);
+  const [student, setStudent] = useState(false);
+  const [teacher, setTeacher] = useState(false);
+
   const [token, setToken] = useState("");
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -231,7 +234,13 @@ const useFirebase = () => {
     axios
       .get(`http://localhost:5000/getUserRole/${user.email}`)
       .then((data) => {
-        console.log("from hook", data);
+        if (data.data.role === "Admin") {
+          setAdmin(true);
+        } else if (data.data.role === "Teacher") {
+          setTeacher(true);
+        } else if (data.data.role === "Student") {
+          setStudent(true);
+        }
       });
   }, [user.email]);
 
@@ -260,6 +269,8 @@ const useFirebase = () => {
     isLoading,
     resetPassword,
     admin,
+    student,
+    teacher,
     token,
   };
 };
