@@ -10,6 +10,7 @@ import {
   sendPasswordResetEmail,
   getIdToken,
   sendEmailVerification,
+  updateProfile,
 } from "firebase/auth";
 import initializeAuth from "../Firebase/firebase.init";
 import axios from "axios";
@@ -79,12 +80,14 @@ const useFirebase = () => {
     navigate,
     location
   ) => {
+    const URL = "https://teamssyaan.blob.core.windows.net/images/user.png";
     setIsloading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((res) => {
         sendEmailVerification(auth.currentUser);
         setUser(res.user);
-        saveUserToDb(email, displayName, navigate, location);
+        profileUpdate(displayName, URL);
+        saveUserToDb(email, displayName, URL, navigate, location);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -133,11 +136,23 @@ const useFirebase = () => {
       .finally(() => setIsloading(false));
   };
 
-  const saveUserToDb = (email, displayName, navigate, location) => {
+  //update profile
+  const profileUpdate = (name, URl) => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: URl,
+    })
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const saveUserToDb = (email, displayName, PhotoURL, navigate, location) => {
     const save = {
       email,
       displayName,
-      photoURL: "https://teamssyaan.blob.core.windows.net/images/user.png",
+      photoURL: PhotoURL,
     };
     axios
       .post(`https://fierce-caverns-90976.herokuapp.com/signup`, save)
@@ -215,7 +230,9 @@ const useFirebase = () => {
   useEffect(() => {
     axios
       .get(`http://localhost:5000/getUserRole/${user.email}`)
-      .then((data) => {console.log("from hook",data)});
+      .then((data) => {
+        console.log("from hook", data);
+      });
   }, [user.email]);
 
   useEffect(() => {
