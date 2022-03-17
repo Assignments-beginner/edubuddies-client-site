@@ -5,22 +5,22 @@ import {
   faUsers,
   faClockFour,
   faArrowRight,
-  faPerson,
 } from "@fortawesome/free-solid-svg-icons";
 import CountUp from "react-countup";
 import { useParams, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import "../SingleCourse/SingleCourse.css";
 import demoUser from "../../../Images/user-demo.png";
 import axios from "axios";
 import Swal from "sweetalert2";
 import AddReview from "./AddReview";
 import Reviews from "./Reviews";
+import useAuth from "../../../hooks/useAuth";
 
 const SingleCourse = () => {
   const [submitting, setSubmitting] = useState(false);
   const [used, setUsed] = React.useState(false);
   const { id } = useParams();
+  const { user } = useAuth();
   const [sigleData, setSigleData] = React.useState();
   React.useEffect(() => {
     axios
@@ -192,18 +192,17 @@ const SingleCourse = () => {
               </div>
               <span className="text-3xl">$ {fee || sigleData?.courseFee}</span>
             </div>
-            <Link to={`/milestone/${sigleData?._id}`}>
-              <button
-                className="bg-red-700 hover:bg-red-800 text-white py-2 px-4 mt-2 rounded focus:outline-none focus:shadow-outline w-full flex items-center justify-center"
-                type="submit"
-              >
-                Get This Course at ${fee || sigleData?.courseFee} &nbsp;&nbsp;
-                <FontAwesomeIcon
-                  className="text-white pr-2 text-xl"
-                  icon={faArrowRight}
-                />
-              </button>
-            </Link>
+            {/* <Link to={`/milestone/${sigleData?._id}`}> Course Video Link. Enable After Payment </Link> */}
+            <button
+              className="bg-red-700 hover:bg-red-800 text-white py-2 px-4 mt-2 rounded focus:outline-none focus:shadow-outline w-full flex items-center justify-center"
+              type="submit"
+            >
+              Get This Course at ${fee || sigleData?.courseFee} &nbsp;&nbsp;
+              <FontAwesomeIcon
+                className="text-white pr-2 text-xl"
+                icon={faArrowRight}
+              />
+            </button>
           </div>
         </div>
       </div>
