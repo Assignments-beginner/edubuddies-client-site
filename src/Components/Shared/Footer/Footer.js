@@ -104,15 +104,15 @@ const Footer = () => {
             </h5>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
-              <Link to="/footerAdmins"> Admins </Link>
+              <Link to="/OurAdmins"> Admins </Link>
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
-              <Link to="/footerDevelopers"> Developers </Link>
+              <Link to="/OurDevelopers"> Developers </Link>
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
-              <Link to="/footerTerms"> Our Terms </Link>
+              <Link to="/OurTerms"> Our Terms </Link>
             </li>
           </ul>
         </div>
@@ -123,7 +123,7 @@ const Footer = () => {
             </h5>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
-              <Link to="/home"> Career Guides</Link>
+              <Link to="/CareerGuideline"> Career Guides</Link>
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />

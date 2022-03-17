@@ -62,6 +62,7 @@ import AllUsers from "./Components/Dashboard/AllUsers/AllUsers";
 import Admins from "../src/Components/Shared/Footer/Admins/Admins.js";
 import Developers from "../src/Components/Shared/Footer/Developers/Developers";
 import Terms from "../src/Components/Shared/Footer/Terms/Terms";
+import CareerGuides from "../src/Components/Shared/Footer/CareerGuides/CareerGuides";
 
 function App() {
   return (
@@ -91,9 +92,10 @@ function App() {
               <Route path="/resetpassword" element={<ResetPass />} />
               <Route path="/greetings" element={<Greetings />} />
               <Route path="/userProfile" element={<UserProfile />} />
-              <Route path="/footerAdmins" element={<Admins />} />
-              <Route path="/footerDevelopers" element={<Developers />} />
-              <Route path="/footerTerms" element={<Terms />} />
+              <Route path="/OurAdmins" element={<Admins />} />
+              <Route path="/OurDevelopers" element={<Developers />} />
+              <Route path="/CareerGuideline" element={<CareerGuides />} />
+              <Route path="/OurTerms" element={<Terms />} />
               <Route path="/test" element={<Test />} />
 
               <Route path="/studentdashboard" element={<StudentDashboard />}>

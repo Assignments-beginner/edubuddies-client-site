@@ -2,7 +2,7 @@ import React from "react";
 
 const Terms = () => {
   return (
-    <div className="mt-8 mb-16 px-52">
+    <div className="mt-8 mb-16 xl:px-52 lg:px-52 md:px-12 px-12">
       <h1 className="font-bold text-3xl text-slate-900 uppercase mb-8">
         Our <span className="text-red-500">Terms &#38; Conditions</span>
       </h1>
@@ -41,7 +41,7 @@ const Terms = () => {
       </p>
 
       <h2 className="mt-8 text-lg font-bold uppercase text-left">
-        Copyright Warning
+        Copyright Warning !
       </h2>
       <p className="text-md text-justify">
         It's a criminal offense to exchange or share any course content related
