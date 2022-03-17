@@ -51,21 +51,6 @@ const Admins = () => {
             <div class="bg-white p-10 rounded-lg">
               <div className="flex justify-center">
                 <div className="w-20 h-20 rounded-full overflow-hidden mb-5">
-                  <img src={Admin2} alt="" />
-                </div>
-              </div>
-              <div>
-                <h2 class="tracking-wide">Mohammad Suny</h2>
-                <h2 class="tracking-wide">Full Stack Developer</h2>
-                <h2 class="tracking-wide">suny.w68@gmail.com</h2>
-                <h2 class="tracking-wide">+8801861917938</h2>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="bg-white p-10 rounded-lg">
-              <div className="flex justify-center">
-                <div className="w-20 h-20 rounded-full overflow-hidden mb-5">
                   <img src={Admin3} alt="" />
                 </div>
               </div>
@@ -74,6 +59,21 @@ const Admins = () => {
                 <h2 class="tracking-wide">MERN Stack Developer</h2>
                 <h2 class="tracking-wide">ashrafulislam2880@gmail.com</h2>
                 <h2 class="tracking-wide">+8801974238487</h2>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="bg-white p-10 rounded-lg">
+              <div className="flex justify-center">
+                <div className="w-20 h-20 rounded-full overflow-hidden mb-5">
+                  <img src={Admin2} alt="" />
+                </div>
+              </div>
+              <div>
+                <h2 class="tracking-wide">Mohammad Suny</h2>
+                <h2 class="tracking-wide">Full Stack Developer</h2>
+                <h2 class="tracking-wide">suny.w68@gmail.com</h2>
+                <h2 class="tracking-wide">+8801861917938</h2>
               </div>
             </div>
           </SwiperSlide>

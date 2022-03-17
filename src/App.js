@@ -60,6 +60,7 @@ import ChatBot006 from "./Components/Shared/ChatBot006/ChatBot006";
 import Mails from "./Components/Dashboard/Mails/Mails";
 import AllUsers from "./Components/Dashboard/AllUsers/AllUsers";
 import Admins from "../src/Components/Shared/Footer/Admins/Admins.js";
+import Developers from "../src/Components/Shared/Footer/Developers/Developers";
 
 function App() {
   return (
@@ -90,6 +91,7 @@ function App() {
               <Route path="/greetings" element={<Greetings />} />
               <Route path="/userProfile" element={<UserProfile />} />
               <Route path="/footerAdmins" element={<Admins />} />
+              <Route path="/footerDevelopers" element={<Developers />} />
               <Route path="/test" element={<Test />} />
 
               <Route path="/studentdashboard" element={<StudentDashboard />}>

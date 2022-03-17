@@ -108,7 +108,7 @@ const Footer = () => {
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
-              <Link to="/home"> Developers </Link>
+              <Link to="/footerDevelopers"> Developers </Link>
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
