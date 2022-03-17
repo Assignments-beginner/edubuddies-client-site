@@ -1,56 +1,76 @@
-import React, { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 import "./CourseCategories.css";
-import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-import { addCourse } from "../../../Redux/edubuddySlice";
 import { Link } from "react-router-dom";
+import Category1 from "../../../Images/categories/programming_fundamentals.jpg";
+import Category2 from "../../../Images/categories/Software_Development.jpg";
+import Category3 from "../../../Images/categories/Web_development.jpg";
+import Category4 from "../../../Images/categories/AI.jpg";
+import Category5 from "../../../Images/categories/Game_development.webp";
+import Category6 from "../../../Images/categories/machine_Learning.webp";
 
 const CourseCategories = () => {
-  const courses = useSelector((state) => state?.edu?.courses);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const url = "https://fierce-caverns-90976.herokuapp.com/courses";
-    axios.get(url).then((res) => {
-      dispatch(addCourse(res?.data));
-    });
-  }, [dispatch]);
-
   return (
-    <div className="container mx-auto px-4 md:px-11">
-      <h1 className="text-center text-3xl uppercase font-semibold mt-24 md:mb-9 mb-5 text-red-500">
-        Choose Course Categories
+    <div className="container mx-auto px-4 md:px-11 mt-12">
+      <h1 className="text-center text-3xl uppercase font-semibold md:mb-9 mb-5 text-red-500">
+        Our Course Categories
       </h1>
       <div className="w-full">
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mx-auto md:gap-5 gap-4">
-          {courses?.map((course, key) => (
-            <Link
-              key={key}
-              to={`/singlecourse/${course._id}`}
-              className="flex justify-start border-2 p-5 OurCourses hover:cursor-pointer duration-500 rounded-lg  bg-white"
-              style={{ alignItems: "center" }}
-            >
-              {/* <Link
-                className="flex items-center justify-between border-2"
-                to={`/singlecourse/${course._id}`}
-              > */}
-              <div className="">
-                <FontAwesomeIcon
-                  className="text-slate-900 px-6 icon text-3xl"
-                  icon={faCode}
-                />
-              </div>
-              <div className="text-left px-3">
-                <div className="md:text-md text-red-500 text-md font-extrabold mb-1">
-                  {course?.title}
-                </div>
-                <div className="text-sm">{course?.category}</div>
-              </div>
-              {/* </Link> */}
-            </Link>
-          ))}
+        <div className="grid gap-20 grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 lg:px-56 xl:px-56 md:px-12 px-0">
+          {/* Fundamental  */}
+          <div className="w-60 h-44 card duration-300">
+            <img className="w-full h-full card-image" src={Category1} alt="" />
+            <div className="centered stroke p-2 absolute">
+              <span className="text-white text-center text-xl">
+                Programming Fundamentals
+              </span>
+            </div>
+          </div>
+          {/* Software  */}
+          <div className="w-60 h-44 card duration-300">
+            <img className="w-full h-full card-image" src={Category2} alt="" />
+            <div className="bottom-8 left-8 right-8 top-8 stroke absolute">
+              <span className="text-white text-center text-xl">
+                Software Development
+              </span>
+            </div>
+          </div>
+          {/* Web  */}
+          <div className="w-60 h-44 card duration-300">
+            <img className="w-full h-full card-image" src={Category3} alt="" />
+            <div className="bottom-8 left-8 right-8 top-8 stroke absolute">
+              <span className="text-white text-center text-xl">
+                Web Development
+              </span>
+            </div>
+          </div>
+          {/* AI  */}
+          <div className="w-60 h-44 card duration-300">
+            <img className="w-full h-full card-image" src={Category4} alt="" />
+            <div className="bottom-8 left-8 right-8 top-8 stroke absolute">
+              <span className="text-white text-center text-xl">
+                Artificial Intelligence
+              </span>
+            </div>
+          </div>          
+          {/* Game  */}
+          <div className="w-60 h-44 card duration-300">
+            <img className="w-full h-full card-image" src={Category5} alt="" />
+            <div className="bottom-8 left-8 right-8 top-8 stroke absolute">
+              <span className="text-white text-center text-xl">
+                Game Development
+              </span>
+            </div>
+          </div>
+          {/* Machine  */}
+          <div className="w-60 h-44 card duration-300">
+            <img className="w-full h-full card-image" src={Category6} alt="" />
+            <div className="bottom-8 left-8 right-8 top-8 stroke absolute">
+              <span className="text-white text-center text-xl">
+                Machine Learning
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
