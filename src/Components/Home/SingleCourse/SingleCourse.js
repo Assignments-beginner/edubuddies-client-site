@@ -38,11 +38,11 @@ const SingleCourse = () => {
         setPromos(res.data);
       });
   }, []);
-  console.log(promos);
+
   const filterPromo = promos?.filter(
     (value) => value?.promo === promo && value?.status === "Live"
   );
-  console.log("filterPromo", filterPromo);
+
   function handleChange(e) {
     setPromo(e.target.value);
   }
@@ -69,7 +69,38 @@ const SingleCourse = () => {
       });
     }
   };
+  //<-------- sslCommerz Function Here --------->
 
+  const handlePay = () => {
+    const info = {
+      product_name: sigleData?.title,
+      product_category: sigleData?.category,
+      product_profile: sigleData?.description,
+      product_image: sigleData?.image,
+      total_amount: fee || sigleData?.courseFee,
+      instructor: sigleData?.owner?.name,
+      cus_name: user?.displayName,
+      cus_email: user?.email,
+      cus_add1: "N/A",
+      cus_street: "N/A",
+      cus_city: "N/A",
+      cus_state: "N/A",
+      cus_postcode: "N/A",
+      cus_country: "N/A",
+      cus_phone: "N/A",
+    };
+    fetch(`https://fierce-caverns-90976.herokuapp.com/init`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(info),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        window.location.replace(data);
+      });
+  };
   return (
     <div className="entireCourse pb-20 container mx-auto">
       <div className="instructor px-4 text-left">
@@ -194,6 +225,7 @@ const SingleCourse = () => {
             </div>
             {/* <Link to={`/milestone/${sigleData?._id}`}> Course Video Link. Enable After Payment </Link> */}
             <button
+              onClick={handlePay}
               className="bg-red-700 hover:bg-red-800 text-white py-2 px-4 mt-2 rounded focus:outline-none focus:shadow-outline w-full flex items-center justify-center"
               type="submit"
             >

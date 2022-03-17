@@ -64,6 +64,7 @@ import Developers from "../src/Components/Shared/Footer/Developers/Developers";
 import Terms from "../src/Components/Shared/Footer/Terms/Terms";
 import CareerGuides from "../src/Components/Shared/Footer/CareerGuides/CareerGuides";
 import Faq from "../src/Components/Shared/Footer/Faq/Faq";
+import Success from "./Components/Payment/Success/Success";
 
 function App() {
   return (
@@ -99,7 +100,6 @@ function App() {
               <Route path="/OurTerms" element={<Terms />} />
               <Route path="/Faq" element={<Faq />} />
               <Route path="/test" element={<Test />} />
-
               <Route path="/studentdashboard" element={<StudentDashboard />}>
                 <Route path="/studentdashboard" element={<StudentProfile />} />
                 <Route
@@ -127,7 +127,6 @@ function App() {
                   element={<StudentSkills />}
                 />
               </Route>
-
               {/* //Dashboard Nested Routing */}
               <Route path="/dashboard" element={<Dashboard />}>
                 <Route exact path="/dashboard" element={<CoursesList />} />
@@ -176,7 +175,6 @@ function App() {
                 />
                 <Route path="/dashboard/admin/history" element={<History />} />
               </Route>
-
               <Route path="/teachersDashboard" element={<TeachersDashboard />}>
                 <Route
                   exact
@@ -232,6 +230,7 @@ function App() {
                   element={<PostNotice />}
                 />
               </Route>
+              <Route path="/success/:id" element={<Success />} />;
             </Routes>
           </div>
           <Footer />
