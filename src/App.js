@@ -63,6 +63,7 @@ import Admins from "../src/Components/Shared/Footer/Admins/Admins.js";
 import Developers from "../src/Components/Shared/Footer/Developers/Developers";
 import Terms from "../src/Components/Shared/Footer/Terms/Terms";
 import CareerGuides from "../src/Components/Shared/Footer/CareerGuides/CareerGuides";
+import Faq from "../src/Components/Shared/Footer/Faq/Faq";
 
 function App() {
   return (
@@ -96,6 +97,7 @@ function App() {
               <Route path="/OurDevelopers" element={<Developers />} />
               <Route path="/CareerGuideline" element={<CareerGuides />} />
               <Route path="/OurTerms" element={<Terms />} />
+              <Route path="/Faq" element={<Faq />} />
               <Route path="/test" element={<Test />} />
 
               <Route path="/studentdashboard" element={<StudentDashboard />}>

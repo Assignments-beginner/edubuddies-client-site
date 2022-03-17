@@ -110,7 +110,7 @@ const Developers = () => {
             <div class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-slate-100 overflow-hidden">
               <div class="text-center flex flex-col items-center justify-center h-full text-gray-800">
                 <div className="text-xs">
-                  <h2 className="font-bold text-lg">Shoyeb Mohammed Suny</h2>
+                  <h2 className="font-bold text-lg">Mohammed Suny</h2>
                   <h2>Mern Stack Developer</h2>
                   <h2>suny.w68@gmail.com</h2>
                   <h2>01861917938</h2>

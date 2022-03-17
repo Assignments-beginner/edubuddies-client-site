@@ -89,7 +89,7 @@ const Footer = () => {
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
-              <Link to="/home"> Programs </Link>
+              <Link to="/courses"> Programs </Link>
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
@@ -131,7 +131,7 @@ const Footer = () => {
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
-              <Link to="/home"> FAQs </Link>
+              <Link to="/Faq"> FAQs </Link>
             </li>
           </ul>
         </div>
