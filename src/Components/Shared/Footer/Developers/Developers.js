@@ -102,7 +102,7 @@ const Developers = () => {
               bottom-3              
               absolute"
               >
-                <span className="stroke rounded px-2  uppercase text-white text-sm font-bold">
+                <span className="stroke rounded px-2 uppercase text-white text-sm font-bold">
                   Mohammad Suny
                 </span>
               </div>
