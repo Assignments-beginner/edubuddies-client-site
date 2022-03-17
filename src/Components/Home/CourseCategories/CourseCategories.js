@@ -14,7 +14,7 @@ const CourseCategories = () => {
       <h1 className="text-center text-3xl uppercase font-semibold md:mb-9 mb-5 text-red-500">
         Our Course Categories
       </h1>
-      <div className="w-full">
+      <div className="w-full"> 
         <div className="grid gap-20 grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 lg:px-56 xl:px-56 md:px-12 px-0">
           {/* Fundamental  */}
           <div className="w-60 h-44 card duration-300">
