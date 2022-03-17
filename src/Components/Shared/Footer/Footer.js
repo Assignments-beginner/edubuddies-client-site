@@ -112,7 +112,7 @@ const Footer = () => {
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
-              <Link to="/home"> Our Terms </Link>
+              <Link to="/footerTerms"> Our Terms </Link>
             </li>
           </ul>
         </div>

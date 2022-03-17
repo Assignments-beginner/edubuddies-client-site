@@ -32,7 +32,7 @@ const Developers = () => {
             <div class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-slate-100 overflow-hidden">
               <div class="text-center flex flex-col items-center justify-center h-full text-gray-800">
                 <div className="text-xs">
-                  <h2>Md Ashraful Islam</h2>
+                  <h2 className="font-bold text-lg">Md Ashraful Islam</h2>
                   <h2>Mern Stack Developer</h2>
                   <h2>ashrafulislam2880@gmail.com</h2>
                   <h2>01974238487</h2>
@@ -71,7 +71,7 @@ const Developers = () => {
             <div class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-slate-100 overflow-hidden">
               <div class="text-center flex flex-col items-center justify-center h-full text-gray-800">
                 <div className="text-xs">
-                  <h2>Nizam Uddin</h2>
+                  <h2 className="font-bold text-lg">Nizam Uddin</h2>
                   <h2>Mern Stack Developer</h2>
                   <h2>nizamcse.seu.bd@gmail.com</h2>
                   <h2>01609292828</h2>
@@ -110,7 +110,7 @@ const Developers = () => {
             <div class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-slate-100 overflow-hidden">
               <div class="text-center flex flex-col items-center justify-center h-full text-gray-800">
                 <div className="text-xs">
-                  <h2>Shoyeb Mohammed Suny</h2>
+                  <h2 className="font-bold text-lg">Shoyeb Mohammed Suny</h2>
                   <h2>Mern Stack Developer</h2>
                   <h2>suny.w68@gmail.com</h2>
                   <h2>01861917938</h2>
@@ -149,7 +149,7 @@ const Developers = () => {
             <div class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-slate-100 overflow-hidden">
               <div class="text-center flex flex-col items-center justify-center h-full text-gray-800">
                 <div className="text-xs">
-                  <h2>Avishek Ataur</h2>
+                  <h2 className="font-bold text-lg">Avishek Ataur</h2>
                   <h2>Mern Stack Developer</h2>
                   <h2>avishekataur@gmail.com</h2>
                   <h2>01782869159</h2>
@@ -188,7 +188,7 @@ const Developers = () => {
             <div class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-slate-100 overflow-hidden">
               <div class="text-center flex flex-col items-center justify-center h-full text-gray-800">
                 <div className="text-xs">
-                  <h2>Sangita Das</h2>
+                  <h2 className="font-bold text-lg">Sangita Das</h2>
                   <h2>Mern Stack Developer</h2>
                   <h2>sangita9606@gmail.com</h2>
                   <h2>01628158140</h2>

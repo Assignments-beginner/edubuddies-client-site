@@ -61,6 +61,7 @@ import Mails from "./Components/Dashboard/Mails/Mails";
 import AllUsers from "./Components/Dashboard/AllUsers/AllUsers";
 import Admins from "../src/Components/Shared/Footer/Admins/Admins.js";
 import Developers from "../src/Components/Shared/Footer/Developers/Developers";
+import Terms from "../src/Components/Shared/Footer/Terms/Terms";
 
 function App() {
   return (
@@ -92,6 +93,7 @@ function App() {
               <Route path="/userProfile" element={<UserProfile />} />
               <Route path="/footerAdmins" element={<Admins />} />
               <Route path="/footerDevelopers" element={<Developers />} />
+              <Route path="/footerTerms" element={<Terms />} />
               <Route path="/test" element={<Test />} />
 
               <Route path="/studentdashboard" element={<StudentDashboard />}>
