@@ -24,7 +24,7 @@ const Developers = () => {
               bottom-3              
               absolute"
               >
-                <span className="uppercase text-white text-sm font-bold">
+                <span className="stroke rounded px-2  uppercase text-white text-sm font-bold">
                   Ashraful Islam
                 </span>
               </div>
@@ -63,8 +63,8 @@ const Developers = () => {
               bottom-3              
               absolute"
               >
-                <span className="uppercase text-white text-sm font-bold">
-                  
+                <span className="stroke rounded px-2 uppercase text-white text-sm font-bold">
+                  Nizam Uddin
                 </span>
               </div>
             </div>
@@ -88,12 +88,12 @@ const Developers = () => {
             </div>
           </div>
         </div>
-        {/* Dummy's Profile  */}
+        {/* Suny's Profile  */}
         <div class="mx-auto w-[200px] h-[200px] bg-transparent cursor-pointer group perspective">
           <div class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
             <div class="absolute backface-hidden border-2 w-full h-full">
               <img
-                src=""
+                src="https://avatars.githubusercontent.com/u/69183694?v=4"
                 class="w-full h-full"
                 alt=""
               />
@@ -102,21 +102,21 @@ const Developers = () => {
               bottom-3              
               absolute"
               >
-                <span className="uppercase text-white text-sm font-bold">
-                  
+                <span className="stroke rounded px-2  uppercase text-white text-sm font-bold">
+                  Mohammad Suny
                 </span>
               </div>
             </div>
             <div class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-slate-100 overflow-hidden">
               <div class="text-center flex flex-col items-center justify-center h-full text-gray-800">
                 <div className="text-xs">
-                  <h2>
-                  <h2>
-                  <h2>
-                  <h2>
+                  <h2>Shoyeb Mohammed Suny</h2>
+                  <h2>Mern Stack Developer</h2>
+                  <h2>suny.w68@gmail.com</h2>
+                  <h2>01861917938</h2>
                 </div>
                 <a
-                  href=""
+                  href="https://www.facebook.com/shoyebmohammed.suny.5"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-red-500 bg-slate-900 border border-red-500 py-1.5 px-2.5 inline-flex items-center rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-5 scale-0 group-hover:scale-125"
@@ -127,12 +127,12 @@ const Developers = () => {
             </div>
           </div>
         </div>
-        {/* Dummy's Profile  */}
+        {/* Avishek's Profile  */}
         <div class="mx-auto w-[200px] h-[200px] bg-transparent cursor-pointer group perspective">
           <div class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
             <div class="absolute backface-hidden border-2 w-full h-full">
               <img
-                src=""
+                src="https://avatars.githubusercontent.com/u/86649640?v=4"
                 class="w-full h-full"
                 alt=""
               />
@@ -141,21 +141,21 @@ const Developers = () => {
               bottom-3              
               absolute"
               >
-                <span className="uppercase text-white text-sm font-bold">
-                  
+                <span className="stroke rounded px-2  uppercase text-white text-sm font-bold">
+                  Avishek Ataur
                 </span>
               </div>
             </div>
             <div class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-slate-100 overflow-hidden">
               <div class="text-center flex flex-col items-center justify-center h-full text-gray-800">
                 <div className="text-xs">
-                  <h2>
-                  <h2>
-                  <h2>
-                  <h2>
+                  <h2>Avishek Ataur</h2>
+                  <h2>Mern Stack Developer</h2>
+                  <h2>avishekataur@gmail.com</h2>
+                  <h2>01782869159</h2>
                 </div>
                 <a
-                  href=""
+                  href="https://www.facebook.com/avishek.ataur/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-red-500 bg-slate-900 border border-red-500 py-1.5 px-2.5 inline-flex items-center rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-5 scale-0 group-hover:scale-125"
@@ -166,12 +166,12 @@ const Developers = () => {
             </div>
           </div>
         </div>
-        {/* Dummy's Profile  */}
+        {/* Sangita's Profile  */}
         <div class="mx-auto w-[200px] h-[200px] bg-transparent cursor-pointer group perspective">
           <div class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
             <div class="absolute backface-hidden border-2 w-full h-full">
               <img
-                src=""
+                src="https://avatars.githubusercontent.com/u/32577044?v=4"
                 class="w-full h-full"
                 alt=""
               />
@@ -180,21 +180,21 @@ const Developers = () => {
               bottom-3              
               absolute"
               >
-                <span className="uppercase text-white text-sm font-bold">
-                  
+                <span className="stroke rounded px-2  uppercase text-white text-sm font-bold">
+                  Sangita Das
                 </span>
               </div>
             </div>
             <div class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-slate-100 overflow-hidden">
               <div class="text-center flex flex-col items-center justify-center h-full text-gray-800">
                 <div className="text-xs">
-                  <h2>
-                  <h2>
-                  <h2>
-                  <h2>
+                  <h2>Sangita Das</h2>
+                  <h2>Mern Stack Developer</h2>
+                  <h2>sangita9606@gmail.com</h2>
+                  <h2>01628158140</h2>
                 </div>
                 <a
-                  href=""
+                  href="https://web.facebook.com/sangita.shormi?_rdc=1&_rdr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-red-500 bg-slate-900 border border-red-500 py-1.5 px-2.5 inline-flex items-center rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-5 scale-0 group-hover:scale-125"

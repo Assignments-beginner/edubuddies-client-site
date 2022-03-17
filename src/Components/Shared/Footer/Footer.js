@@ -93,7 +93,7 @@ const Footer = () => {
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
-              <Link to="/home"> Blogs </Link>
+              <Link to="/blog"> Blogs </Link>
             </li>
           </ul>
         </div>
@@ -127,7 +127,7 @@ const Footer = () => {
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
-              <Link to="/home"> Contact Us </Link>
+              <Link to="/contact"> Contact Us </Link>
             </li>
             <li className="mb-4 hover:text-red-500">
               <FontAwesomeIcon className="mt-1" icon={faAnglesRight} />
