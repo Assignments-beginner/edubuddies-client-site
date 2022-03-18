@@ -16,6 +16,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@zoomus/websdk": "^2.2.0",
+    "aos": "^3.0.0-beta.6",
     "axios": "^0.26.0",
     "daisyui": "^2.6.4",
     "dompurify": "^2.3.6",

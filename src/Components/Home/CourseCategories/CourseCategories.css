@@ -1,9 +1,10 @@
-.OurCourses:hover {
-	background-color: #111827 !important;
+.stroke {
+    background-color: rgba(0, 0, 0, 0.637);
+    border-radius: 10px;
 }
-.OurCourses:hover .icon {
-	color: #EF4444 !important;
-}
-.OurCourses:hover .text-left {
-	color: white !important;
-}
+.centered {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
