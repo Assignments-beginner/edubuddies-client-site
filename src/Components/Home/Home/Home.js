@@ -35,7 +35,7 @@ const Home = () => {
       <Courses />
       <About />
       <Achievement />
-      <CourseCategories />
+      {/* <CourseCategories /> */}
       <Testimonial />
       <Blogs />
       <CoreFeatures />

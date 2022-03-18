@@ -15,7 +15,7 @@ import {
 import initializeAuth from "../Firebase/firebase.init";
 import axios from "axios";
 import Swal from "sweetalert2";
-
+import { useLocation, useNavigate } from "react-router";
 initializeAuth();
 
 const useFirebase = () => {
@@ -26,6 +26,10 @@ const useFirebase = () => {
   const [student, setStudent] = useState(false);
   const [teacher, setTeacher] = useState(false);
   const [data, setData] = useState([]);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
 
   const [token, setToken] = useState("");
   const auth = getAuth();
@@ -229,23 +233,6 @@ const useFirebase = () => {
       .catch((error) => {})
       .finally(() => setIsloading(false));
   };
-
-  // is admin
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5000/getUserRole/${user.email}`)
-      .then((data) => {
-        const result = data.data[0];
-        console.log(result.role);
-        if (result.role == "Admin") {
-          setAdmin(true);
-        } else if (result.role == "Teacher") {
-          setTeacher(true);
-        } else if (result.role == "Student") {
-          setStudent(true);
-        }
-      });
-  }, [user.email]);
 
   useEffect(() => {
     const unSubscribed = onAuthStateChanged(auth, (user) => {
