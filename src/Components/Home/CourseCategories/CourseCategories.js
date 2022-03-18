@@ -47,7 +47,7 @@ const CourseCategories = () => {
             </div>
           </Link>
           {/* Web  */}
-          <Link to="">
+          <Link to="/WebDevCourses">
             <div className="w-60 h-44 card duration-300">
               <img
                 className="w-full h-full card-image"

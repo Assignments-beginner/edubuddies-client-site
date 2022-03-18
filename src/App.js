@@ -70,6 +70,7 @@ import AiCourses from "../src/Components/Home/CourseCategories/AiCourses/AiCours
 import MachineCourses from "../src/Components/Home/CourseCategories/MachineCourses/MachineCourses";
 import SoftDevCourses from "../src/Components/Home/CourseCategories/SoftDevCourses/SoftDevCourses";
 import ProgrammingCourses from "../src/Components/Home/CourseCategories/ProgrammingCourses/ProgrammingCourses";
+import WebDevCourses from "../src/Components/Home/CourseCategories/WebDevCourses/WebDevCourses";
 
 function App() {
   return (
@@ -109,6 +110,7 @@ function App() {
               <Route path="/AiCourses" element={<AiCourses />} />
               <Route path="/MachineCourses" element={<MachineCourses />} />
               <Route path="/SoftDevCourses" element={<SoftDevCourses />} />
+              <Route path="/WebDevCourses" element={<WebDevCourses />} />
               <Route
                 path="/ProgrammingCourses"
                 element={<ProgrammingCourses />}
