@@ -61,6 +61,8 @@ import Mails from "./Components/Dashboard/Mails/Mails";
 import AllUsers from "./Components/Dashboard/AllUsers/AllUsers";
 import UserChart from "./Components/Dashboard/Admin/Chart/UserChart";
 import AdminRoute from "./Components/Login/AdminRoute/AdminRoute";
+import TeacherRoute from "./Components/Login/TeacherRoute/TeacherRoute";
+import StudentRoute from "./Components/Login/StudentRoute/StudentRoute";
 function App() {
   return (
     <div className="App">
@@ -91,7 +93,14 @@ function App() {
               <Route path="/userProfile" element={<UserProfile />} />
               <Route path="/test" element={<Test />} />
 
-              <Route path="/studentdashboard" element={<StudentDashboard />}>
+              <Route
+                path="/studentdashboard"
+                element={
+                  <StudentRoute>
+                    <StudentDashboard />
+                  </StudentRoute>
+                }
+              >
                 <Route path="/studentdashboard" element={<StudentProfile />} />
                 <Route
                   path="/studentdashboard/address"
@@ -179,7 +188,14 @@ function App() {
                 />
               </Route>
 
-              <Route path="/teachersDashboard" element={<TeachersDashboard />}>
+              <Route
+                path="/teachersDashboard"
+                element={
+                  <TeacherRoute>
+                    <TeachersDashboard />
+                  </TeacherRoute>
+                }
+              >
                 <Route
                   exact
                   path="/teachersDashboard/allTeachers"

@@ -25,6 +25,7 @@ const useFirebase = () => {
   const [admin, setAdmin] = useState(false);
   const [student, setStudent] = useState(false);
   const [teacher, setTeacher] = useState(false);
+  const [role, setRole] = useState();
   const [data, setData] = useState([]);
 
   const location = useLocation();
@@ -230,18 +231,18 @@ const useFirebase = () => {
   // is Admin
   useEffect(() => {
     const loadFUncion = async () => {
-      setIsloading(true);
       await fetch(
         `https://fierce-caverns-90976.herokuapp.com/getUserRole/${user.email}`
       )
         .then((res) => res.json())
         .then((data) => {
-          setAdmin(true);
-          setIsloading(false);
+          setRole(data[0].role);
         });
     };
     loadFUncion();
   }, [user.email]);
+
+  console.log("role", role);
 
   useEffect(() => {
     const unSubscribed = onAuthStateChanged(auth, (user) => {

@@ -7,7 +7,6 @@ const AdminRoute = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const { user } = useAuth();
   const [admin, setAdmin] = useState(false);
-  console.log(user.email);
 
   useEffect(() => {
     const loadFUncion = async () => {
@@ -23,7 +22,7 @@ const AdminRoute = ({ children }) => {
     };
     loadFUncion();
   }, [user.email]);
-  console.log("from admin route", admin, isLoading);
+
   const location = useLocation();
 
   if (isLoading) {
