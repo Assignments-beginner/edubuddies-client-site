@@ -191,12 +191,12 @@ const Header = () => {
                       </Link>
                     )}
                     <hr />
-                    {role === "Teacher" && (
+                    {role === "Instructor" && (
                       <Link
                         className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
                         to="/teachersDashboard"
                       >
-                        Teachers DB
+                        Dashboard
                       </Link>
                     )}
                     <hr />
@@ -205,7 +205,7 @@ const Header = () => {
                         className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
                         to="/studentdashboard"
                       >
-                        Student DB
+                        Dashboard
                       </Link>
                     )}
                     <hr />
