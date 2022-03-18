@@ -223,7 +223,6 @@ const SingleCourse = () => {
               </div>
               <span className="text-3xl">$ {fee || sigleData?.courseFee}</span>
             </div>
-            {/* <Link to={`/milestone/${sigleData?._id}`}> Course Video Link. Enable After Payment </Link> */}
             <button
               onClick={handlePay}
               className="bg-red-700 hover:bg-red-800 text-white py-2 px-4 mt-2 rounded focus:outline-none focus:shadow-outline w-full flex items-center justify-center"
