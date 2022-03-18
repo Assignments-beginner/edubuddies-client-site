@@ -32,7 +32,7 @@ const Success = () => {
 
   return (
     <div className=" min-h-[50vh] mb-10">
-      <h1 className="text-3xl mt-2">Payment Succesful</h1>
+      <h1 className="text-3xl mt-2">Payment Succesfull</h1>
       <h2 className="text-xl">
         You have Pay{" "}
         <span className="text-red-500 font-bold">
@@ -47,14 +47,14 @@ const Success = () => {
           alt="CourseImage"
         />
         <div className="flex justify-between border rounded-md border-gray-300 cursor-pointer">
-          <h1 className="lg:text-2xl text-xl border-r-2 w-1/2 p-3 bg-gray-100">
+          <h1 className=" text-xl border-r-2 w-1/2 p-3 bg-gray-100">
             {paymentDetails?.product_name}
           </h1>
-          <h2 className="lg:text-2xl text-xl w-1/2 p-3 bg-gray-100">
+          <h2 className=" text-xl w-1/2 p-3 bg-gray-100">
             Instructor: {paymentDetails?.instructor}
           </h2>
         </div>
-        <p className="text-base text-left mt-4 text-gray-500 tracking-wide">
+        <p className="text-base text-justify mt-4 text-gray-500 tracking-wide">
           {paymentDetails?.productDetails}
         </p>
       </div>
