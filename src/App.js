@@ -4,6 +4,7 @@ import About from "../src/Components/Home/About/About";
 import Contact from "../src/Components/Contact/Contact";
 import Dashboard from "../src/Components/Dashboard/Dashboard";
 import Home from "../src/Components/Home/Home/Home";
+import AllCourseList from "../src/Components/AllCourseList/AllCourseList";
 import Courses from "../src/Components/Home/Courses/Courses";
 import Login from "./Components/Login/Login";
 import NotFound from "./Components/NotFound/NotFound";
@@ -64,6 +65,12 @@ import Developers from "../src/Components/Shared/Footer/Developers/Developers";
 import Terms from "../src/Components/Shared/Footer/Terms/Terms";
 import CareerGuides from "../src/Components/Shared/Footer/CareerGuides/CareerGuides";
 import Faq from "../src/Components/Shared/Footer/Faq/Faq";
+import GameDevCourses from "../src/Components/Home/CourseCategories/GameDevCourses/GameDevCourses";
+import AiCourses from "../src/Components/Home/CourseCategories/AiCourses/AiCourses";
+import MachineCourses from "../src/Components/Home/CourseCategories/MachineCourses/MachineCourses";
+import SoftDevCourses from "../src/Components/Home/CourseCategories/SoftDevCourses/SoftDevCourses";
+import ProgrammingCourses from "../src/Components/Home/CourseCategories/ProgrammingCourses/ProgrammingCourses";
+import WebDevCourses from "../src/Components/Home/CourseCategories/WebDevCourses/WebDevCourses";
 import Success from "./Components/Payment/Success/Success";
 
 function App() {
@@ -82,6 +89,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/blog" element={<AllBlogsPage />} />
+              <Route path="/allCourseList" element={<AllCourseList />} />
               <Route path="/singleblog/:id" element={<SingleBlogMain />} />
               <Route path="/about" element={<About />} />
               <Route path="/courses" element={<Courses />} />
@@ -99,6 +107,15 @@ function App() {
               <Route path="/CareerGuideline" element={<CareerGuides />} />
               <Route path="/OurTerms" element={<Terms />} />
               <Route path="/Faq" element={<Faq />} />
+              <Route path="/GameDevCourses" element={<GameDevCourses />} />
+              <Route path="/AiCourses" element={<AiCourses />} />
+              <Route path="/MachineCourses" element={<MachineCourses />} />
+              <Route path="/SoftDevCourses" element={<SoftDevCourses />} />
+              <Route path="/WebDevCourses" element={<WebDevCourses />} />
+              <Route
+                path="/ProgrammingCourses"
+                element={<ProgrammingCourses />}
+              />
               <Route path="/test" element={<Test />} />
               <Route path="/studentdashboard" element={<StudentDashboard />}>
                 <Route path="/studentdashboard" element={<StudentProfile />} />

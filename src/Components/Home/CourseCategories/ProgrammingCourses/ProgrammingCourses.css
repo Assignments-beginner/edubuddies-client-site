@@ -1,17 +1,17 @@
-.adminSlide .swiper {
+.ProgramFun .swiper {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.adminSlide .swiper-slide {
+.ProgramFun .swiper-slide {
   background-position: center;
   background-size: cover;
   width: 300px;
-  height: 277px;
+  height: 370px;
 }
 
-.adminSlide .swiper-slide img {
+.ProgramFun .swiper-slide img {
   display: block;
   width: 100%;
 }
