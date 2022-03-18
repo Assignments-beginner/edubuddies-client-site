@@ -16,24 +16,24 @@ import Rating from "react-rating";
 import demoUser from "../../../../Images/user-demo.png";
 import "../GameDevCourses/GameDevCourses.css";
 
-const GameDevCourses = () => {
+const ProgrammingCourses = () => {
   const [courses, setCourses] = useState([]);
 
-  const gameCategory = "Game Development";
+  const programCategory = "Programming Language";
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/GameDevCourses?particularCategory=${gameCategory}`
+      `http://localhost:5000/ProgrammingCourses?particularCategory=${programCategory}`
     )
       .then((res) => res.json())
       .then((data) => setCourses(data));
     // .then((data) => console.log(data))
-  }, [gameCategory]);
+  }, [programCategory]);
 
   return (
     <div className="mt-8 mb-16">
       <h1 className="font-bold text-3xl text-slate-900 uppercase">
-        <span className="text-red-500">Game</span> Development Courses
+        Programming <span className="text-red-500">Fundamentals</span>
       </h1>
       <div className="GameDev">
         <Swiper
@@ -164,4 +164,4 @@ const GameDevCourses = () => {
   );
 };
 
-export default GameDevCourses;
+export default ProgrammingCourses;

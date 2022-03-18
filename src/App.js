@@ -69,6 +69,7 @@ import GameDevCourses from "../src/Components/Home/CourseCategories/GameDevCours
 import AiCourses from "../src/Components/Home/CourseCategories/AiCourses/AiCourses";
 import MachineCourses from "../src/Components/Home/CourseCategories/MachineCourses/MachineCourses";
 import SoftDevCourses from "../src/Components/Home/CourseCategories/SoftDevCourses/SoftDevCourses";
+import ProgrammingCourses from "../src/Components/Home/CourseCategories/ProgrammingCourses/ProgrammingCourses";
 
 function App() {
   return (
@@ -108,6 +109,10 @@ function App() {
               <Route path="/AiCourses" element={<AiCourses />} />
               <Route path="/MachineCourses" element={<MachineCourses />} />
               <Route path="/SoftDevCourses" element={<SoftDevCourses />} />
+              <Route
+                path="/ProgrammingCourses"
+                element={<ProgrammingCourses />}
+              />
               <Route path="/test" element={<Test />} />
 
               <Route path="/studentdashboard" element={<StudentDashboard />}>
