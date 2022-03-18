@@ -33,7 +33,7 @@ const Admins = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <div class="bg-white p-10 rounded-lg">
+            <div class="bg-white border p-10 rounded-lg">
               <div className="flex justify-center">
                 <div className="w-20 h-20 rounded-full overflow-hidden mb-5">
                   <img src={Admin1} alt="" />
@@ -48,7 +48,7 @@ const Admins = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div class="bg-white p-10 rounded-lg">
+            <div class="bg-white border p-10 rounded-lg">
               <div className="flex justify-center">
                 <div className="w-20 h-20 rounded-full overflow-hidden mb-5">
                   <img src={Admin3} alt="" />
@@ -63,7 +63,7 @@ const Admins = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div class="bg-white p-10 rounded-lg">
+            <div class="bg-white border p-10 rounded-lg">
               <div className="flex justify-center">
                 <div className="w-20 h-20 rounded-full overflow-hidden mb-5">
                   <img src={Admin2} alt="" />

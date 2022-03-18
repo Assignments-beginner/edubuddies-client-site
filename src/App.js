@@ -64,6 +64,10 @@ import Developers from "../src/Components/Shared/Footer/Developers/Developers";
 import Terms from "../src/Components/Shared/Footer/Terms/Terms";
 import CareerGuides from "../src/Components/Shared/Footer/CareerGuides/CareerGuides";
 import Faq from "../src/Components/Shared/Footer/Faq/Faq";
+import GameDevCourses from "../src/Components/Home/CourseCategories/GameDevCourses/GameDevCourses";
+import AiCourses from "../src/Components/Home/CourseCategories/AiCourses/AiCourses";
+import MachineCourses from "../src/Components/Home/CourseCategories/MachineCourses/MachineCourses";
+import SoftDevCourses from "../src/Components/Home/CourseCategories/SoftDevCourses/SoftDevCourses";
 
 function App() {
   return (
@@ -98,6 +102,10 @@ function App() {
               <Route path="/CareerGuideline" element={<CareerGuides />} />
               <Route path="/OurTerms" element={<Terms />} />
               <Route path="/Faq" element={<Faq />} />
+              <Route path="/GameDevCourses" element={<GameDevCourses />} />
+              <Route path="/AiCourses" element={<AiCourses />} />
+              <Route path="/MachineCourses" element={<MachineCourses />} />
+              <Route path="/SoftDevCourses" element={<SoftDevCourses />} />
               <Route path="/test" element={<Test />} />
 
               <Route path="/studentdashboard" element={<StudentDashboard />}>

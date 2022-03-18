@@ -53,7 +53,7 @@ const AddCourse = () => {
   const onSubmit = ({ title, courseFee, courseDuration, description }) => {
     const file = {
       title,
-      category: category,
+      category: category.value,
       courseFee,
       courseDuration,
       description,

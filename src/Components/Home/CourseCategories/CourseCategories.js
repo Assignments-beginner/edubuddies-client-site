@@ -32,7 +32,7 @@ const CourseCategories = () => {
             </div>
           </Link>
           {/* Software  */}
-          <Link to="">
+          <Link to="/SoftDevCourses">
             <div className="w-60 h-44 card duration-300">
               <img
                 className="w-full h-full card-image"
@@ -62,7 +62,7 @@ const CourseCategories = () => {
             </div>
           </Link>
           {/* AI  */}
-          <Link to="">
+          <Link to="/AiCourses">
             <div className="w-60 h-44 card duration-300">
               <img
                 className="w-full h-full card-image"
@@ -77,7 +77,7 @@ const CourseCategories = () => {
             </div>
           </Link>
           {/* Game  */}
-          <Link to="">
+          <Link to="/GameDevCourses">
             <div className="w-60 h-44 card duration-300">
               <img
                 className="w-full h-full card-image"
@@ -92,7 +92,7 @@ const CourseCategories = () => {
             </div>
           </Link>
           {/* Machine  */}
-          <Link to="">
+          <Link to="/MachineCourses">
             <div className="w-60 h-44 card duration-300">
               <img
                 className="w-full h-full card-image"
