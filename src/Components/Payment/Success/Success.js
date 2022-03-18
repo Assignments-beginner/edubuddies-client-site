@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Success = () => {
   const { id } = useParams();
   const [paymentDetails, setpaymentDetails] = useState({});
-  const goToHome = useNavigate();
+  console.log(paymentDetails);
 
-  const validateOrder = () => {
-    const orderInfo = {
+  // Validate Payment By User
+
+  const validatePayment = () => {
+    const paymentInfo = {
       tran_id: id,
       val_id: paymentDetails?.val_id,
     };
@@ -16,11 +18,10 @@ const Success = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(orderInfo),
+      body: JSON.stringify(paymentInfo),
     })
       .then((res) => res.json())
       .then((data) => {});
-    goToHome("/home");
   };
 
   useEffect(() => {
@@ -28,13 +29,42 @@ const Success = () => {
       .then((res) => res.json())
       .then((data) => setpaymentDetails(data));
   }, [id]);
+
   return (
-    <div className=" min-h-[50vh]">
-      <h1 className="text-3xl">Payment Succesfull. Confirm Your Order</h1>
-      <h1 className="text-3xl">Your Id is {id}</h1>
+    <div className=" min-h-[50vh] mb-10">
+      <div className="mt-4 mb-8">
+        <h1 className="text-3xl mt-2 text-red-500 font-bold">
+          Payment Succesfull
+        </h1>
+        <h2 className="text-xl">
+          You have Pay{" "}
+          <span className="text-red-500 font-bold">
+            {paymentDetails?.total_amount}$
+          </span>{" "}
+          For
+        </h2>
+      </div>
+      <div className="lg:w-1/2 w-full mx-auto px-2 lg:px-1">
+        <img
+          className="my-4 rounded-lg w-full mx-auto"
+          src={paymentDetails?.product_image}
+          alt="CourseImage"
+        />
+        <div className="flex justify-between border rounded-md border-gray-300 cursor-pointer">
+          <h1 className=" text-xl border-r-2 w-1/2 p-3 bg-gray-100">
+            {paymentDetails?.product_name}
+          </h1>
+          <h2 className=" text-xl w-1/2 p-3 bg-gray-100">
+            Instructor: {paymentDetails?.instructor}
+          </h2>
+        </div>
+        <p className="text-base text-justify mt-4 text-gray-500 tracking-wide">
+          {paymentDetails?.productDetails}
+        </p>
+      </div>
       <button
-        className="bg-orange-500 hover:bg-transparent border border-orange-500 px-4 py-2 font-bold text-white hover:text-orange-500 rounded-lg duration-300"
-        onClick={validateOrder}
+        className="bg-red-500 hover:bg-transparent border border-red-500 px-4 py-3 font-bold text-white hover:text-red-500 rounded-lg duration-300 mt-4 tracking-widest"
+        onClick={validatePayment}
       >
         Confirm Order
       </button>
