@@ -32,14 +32,18 @@ const Success = () => {
 
   return (
     <div className=" min-h-[50vh] mb-10">
-      <h1 className="text-3xl mt-2">Payment Succesfull</h1>
-      <h2 className="text-xl">
-        You have Pay{" "}
-        <span className="text-red-500 font-bold">
-          {paymentDetails?.total_amount}$
-        </span>{" "}
-        For
-      </h2>
+      <div className="mt-4 mb-8">
+        <h1 className="text-3xl mt-2 text-red-500 font-bold">
+          Payment Succesfull
+        </h1>
+        <h2 className="text-xl">
+          You have Pay{" "}
+          <span className="text-red-500 font-bold">
+            {paymentDetails?.total_amount}$
+          </span>{" "}
+          For
+        </h2>
+      </div>
       <div className="lg:w-1/2 w-full mx-auto px-2 lg:px-1">
         <img
           className="my-4 rounded-lg w-full mx-auto"
