@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -20,6 +20,19 @@ import demoUser from "../../../../Images/user-demo.png";
 import "../GameDevCourses/GameDevCourses.css";
 
 const GameDevCourses = () => {
+  const [courses, setCourses] = useState([]);
+
+  const gameCategory = "Programming Language";
+
+  useEffect(() => {
+    fetch(
+      `https://fierce-caverns-90976.herokuapp.com/GameDevCourses?particularCategory=${gameCategory}`
+    )
+      .then((res) => res.json())
+      .then((data) => setCourses(data));
+    // .then((data) => console.log(data))
+  }, [gameCategory]);
+
   return (
     <div className="mt-8 mb-16">
       <h1 className="font-bold text-3xl text-slate-900 uppercase">
@@ -42,6 +55,116 @@ const GameDevCourses = () => {
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
+          {courses.map((courses, key) => (
+            <SwiperSlide key={key}>
+              <div className="border rounded-lg bg-white">
+                <div className="overflow-hidden rounded-t-lg">
+                  <img
+                    className="w-full h-40 rounded-t-lg"
+                    src={courses?.image}
+                    alt=""
+                  />
+                  <button
+                    className="
+                    top-4 
+                    right-4 
+                    absolute 
+                    px-1.5
+                    pt-1.5
+                    bg-white"
+                  >
+                    <FontAwesomeIcon
+                      className="text-red-500 text-xl"
+                      icon={faBookmark}
+                    />
+                  </button>
+                  <div className="bg-slate-900 top-4 left-4 absolute px-2 rounded">
+                    <span className="text-white text-xs">
+                      {courses?.category}
+                    </span>
+                  </div>
+                </div>
+                {/* Course Details Body  */}
+                <div className="px-4 pb-4">
+                  <div className="py-6 flex flex-col items-start">
+                    <Rating
+                      initialRating="3.5"
+                      readonly
+                      emptySymbol={
+                        <FontAwesomeIcon
+                          className="text-yellow-300 text-md"
+                          icon={faRegularStar}
+                        />
+                      }
+                      fullSymbol={
+                        <FontAwesomeIcon
+                          className="text-yellow-300 text-md"
+                          icon={faStar}
+                        />
+                      }
+                    />
+
+                    <h1
+                      style={{ fontSize: "1.15rem" }}
+                      className=" mt-1 mb-3 text-stone-700 hover:text-red-500 duration-300 cursor-pointer"
+                    >
+                      {courses?.title}
+                    </h1>
+                    {/* Course Instructor  */}
+                    <div className="flex items-center">
+                      <div className="w-8 h-8">
+                        <img
+                          className="rounded-full mr-2"
+                          src={courses?.owner?.photo || demoUser}
+                          alt=""
+                        />
+                      </div>
+                      <p className="text-gray-900 w-full leading-none text-sm">
+                        by {courses?.owner?.name}
+                      </p>
+                    </div>
+                  </div>
+                  <hr />
+                  <div className="flex items-center justify-between pt-3">
+                    <div className="flex text-stone-500 text-sm">
+                      {/* Duration   */}
+                      <div className="flex items-center mr-4">
+                        <FontAwesomeIcon
+                          icon={faClock}
+                          className="mr-1 font-thin text-xl text-gray-400"
+                        />
+                        <span className="text-sm text-gray-400">
+                          {courses?.courseDuration || 0} hrs
+                        </span>
+                      </div>
+                      {/* Students  */}
+                      <div className="flex items-center">
+                        <FontAwesomeIcon
+                          icon={faUser}
+                          className="mr-1 font-thin text-lg text-gray-400"
+                        />
+                        <span className="text-sm text-gray-400">
+                          {courses?.totalStudents || 1024}
+                        </span>
+                      </div>
+                    </div>
+                    {/* Fee */}
+                    <div>
+                      <h6 className="text-2xl text-red-500">
+                        {courses?.courseFee}
+                      </h6>
+                    </div>
+                  </div>
+                  {/* End of Bottom Bar  */}
+                </div>
+                {/* End of Course Details Body  */}
+              </div>
+            </SwiperSlide>
+          ))}
+          {/* /*-------------------------------------------------------------------------------*\
+  //////////////////////////////// Filtered Blogs \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\*-------------------------------------------------------------------------------*/}
+          {/* 
           <SwiperSlide>
             <div className="border rounded-lg bg-white">
               <div className="overflow-hidden rounded-t-lg">
@@ -64,7 +187,6 @@ const GameDevCourses = () => {
                   <span className="text-white text-xs">Game Development</span>
                 </div>
               </div>
-              {/* Course Details Body  */}
               <div className="px-4 pb-4">
                 <div className="py-6 flex flex-col items-start">
                   <Rating
@@ -90,7 +212,7 @@ const GameDevCourses = () => {
                   >
                     Gaming Mode On
                   </h1>
-                  {/* Course Instructor  */}
+                  
                   <div className="flex items-center">
                     <div className="w-8 h-8">
                       <img
@@ -107,7 +229,7 @@ const GameDevCourses = () => {
                 <hr />
                 <div className="flex items-center justify-between pt-3">
                   <div className="flex text-stone-500 text-sm">
-                    {/* Duration   */}
+                    
                     <div className="flex items-center mr-4">
                       <FontAwesomeIcon
                         icon={faClock}
@@ -115,7 +237,7 @@ const GameDevCourses = () => {
                       />
                       <span className="text-sm text-gray-400">7 hrs</span>
                     </div>
-                    {/* Students  */}
+                    
                     <div className="flex items-center">
                       <FontAwesomeIcon
                         icon={faUser}
@@ -124,20 +246,20 @@ const GameDevCourses = () => {
                       <span className="text-sm text-gray-400">1024</span>
                     </div>
                   </div>
-                  {/* Fee */}
+                  
                   <div>
                     <h6 className="text-2xl text-red-500">599 $</h6>
                   </div>
                 </div>
-                {/* End of Bottom Bar  */}
+                
               </div>
-              {/* End of Course Details Body  */}
+              
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="border rounded-lg bg-white">
               <div className="overflow-hidden rounded-t-lg">
-                <img className="w-full h-40 rounded-t-lg" src={Game2} alt="" />
+                <img className="w-full h-40 rounded-t-lg" src={Game1} alt="" />
                 <button
                   className="
                     top-4 
@@ -156,7 +278,6 @@ const GameDevCourses = () => {
                   <span className="text-white text-xs">Game Development</span>
                 </div>
               </div>
-              {/* Course Details Body  */}
               <div className="px-4 pb-4">
                 <div className="py-6 flex flex-col items-start">
                   <Rating
@@ -182,7 +303,7 @@ const GameDevCourses = () => {
                   >
                     Gaming Mode On
                   </h1>
-                  {/* Course Instructor  */}
+                  
                   <div className="flex items-center">
                     <div className="w-8 h-8">
                       <img
@@ -199,7 +320,7 @@ const GameDevCourses = () => {
                 <hr />
                 <div className="flex items-center justify-between pt-3">
                   <div className="flex text-stone-500 text-sm">
-                    {/* Duration   */}
+                    
                     <div className="flex items-center mr-4">
                       <FontAwesomeIcon
                         icon={faClock}
@@ -207,7 +328,7 @@ const GameDevCourses = () => {
                       />
                       <span className="text-sm text-gray-400">7 hrs</span>
                     </div>
-                    {/* Students  */}
+                    
                     <div className="flex items-center">
                       <FontAwesomeIcon
                         icon={faUser}
@@ -216,20 +337,20 @@ const GameDevCourses = () => {
                       <span className="text-sm text-gray-400">1024</span>
                     </div>
                   </div>
-                  {/* Fee */}
+                  
                   <div>
                     <h6 className="text-2xl text-red-500">599 $</h6>
                   </div>
                 </div>
-                {/* End of Bottom Bar  */}
+                
               </div>
-              {/* End of Course Details Body  */}
+              
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="border rounded-lg bg-white">
               <div className="overflow-hidden rounded-t-lg">
-                <img className="w-full h-40 rounded-t-lg" src={Game3} alt="" />
+                <img className="w-full h-40 rounded-t-lg" src={Game1} alt="" />
                 <button
                   className="
                     top-4 
@@ -248,7 +369,6 @@ const GameDevCourses = () => {
                   <span className="text-white text-xs">Game Development</span>
                 </div>
               </div>
-              {/* Course Details Body  */}
               <div className="px-4 pb-4">
                 <div className="py-6 flex flex-col items-start">
                   <Rating
@@ -274,7 +394,7 @@ const GameDevCourses = () => {
                   >
                     Gaming Mode On
                   </h1>
-                  {/* Course Instructor  */}
+                  
                   <div className="flex items-center">
                     <div className="w-8 h-8">
                       <img
@@ -291,7 +411,7 @@ const GameDevCourses = () => {
                 <hr />
                 <div className="flex items-center justify-between pt-3">
                   <div className="flex text-stone-500 text-sm">
-                    {/* Duration   */}
+                    
                     <div className="flex items-center mr-4">
                       <FontAwesomeIcon
                         icon={faClock}
@@ -299,7 +419,7 @@ const GameDevCourses = () => {
                       />
                       <span className="text-sm text-gray-400">7 hrs</span>
                     </div>
-                    {/* Students  */}
+                    
                     <div className="flex items-center">
                       <FontAwesomeIcon
                         icon={faUser}
@@ -308,16 +428,17 @@ const GameDevCourses = () => {
                       <span className="text-sm text-gray-400">1024</span>
                     </div>
                   </div>
-                  {/* Fee */}
+                  
                   <div>
                     <h6 className="text-2xl text-red-500">599 $</h6>
                   </div>
                 </div>
-                {/* End of Bottom Bar  */}
+                
               </div>
-              {/* End of Course Details Body  */}
+              
             </div>
           </SwiperSlide>
+           */}
         </Swiper>
       </div>
     </div>
