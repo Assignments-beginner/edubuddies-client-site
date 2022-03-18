@@ -13,6 +13,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 import demoUser from "../../../../Images/user-demo.png";
 import "../GameDevCourses/GameDevCourses.css";
 
@@ -100,13 +101,14 @@ const GameDevCourses = () => {
                         />
                       }
                     />
-
-                    <h1
-                      style={{ fontSize: "1.15rem" }}
-                      className=" mt-1 mb-3 text-stone-700 hover:text-red-500 duration-300 cursor-pointer"
-                    >
-                      {courses?.title}
-                    </h1>
+                    <Link to={`/singlecourse/${courses._id}`}>
+                      <h1
+                        style={{ fontSize: "1.15rem" }}
+                        className=" mt-1 mb-3 text-stone-700 hover:text-red-500 duration-300 cursor-pointer"
+                      >
+                        {courses?.title}
+                      </h1>
+                    </Link>
                     {/* Course Instructor  */}
                     <div className="flex items-center">
                       <div className="w-8 h-8">

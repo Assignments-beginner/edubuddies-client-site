@@ -71,6 +71,7 @@ import MachineCourses from "../src/Components/Home/CourseCategories/MachineCours
 import SoftDevCourses from "../src/Components/Home/CourseCategories/SoftDevCourses/SoftDevCourses";
 import ProgrammingCourses from "../src/Components/Home/CourseCategories/ProgrammingCourses/ProgrammingCourses";
 import WebDevCourses from "../src/Components/Home/CourseCategories/WebDevCourses/WebDevCourses";
+import Success from "./Components/Payment/Success/Success";
 
 function App() {
   return (
@@ -116,7 +117,6 @@ function App() {
                 element={<ProgrammingCourses />}
               />
               <Route path="/test" element={<Test />} />
-
               <Route path="/studentdashboard" element={<StudentDashboard />}>
                 <Route path="/studentdashboard" element={<StudentProfile />} />
                 <Route
@@ -144,7 +144,6 @@ function App() {
                   element={<StudentSkills />}
                 />
               </Route>
-
               {/* //Dashboard Nested Routing */}
               <Route path="/dashboard" element={<Dashboard />}>
                 <Route exact path="/dashboard" element={<CoursesList />} />
@@ -193,7 +192,6 @@ function App() {
                 />
                 <Route path="/dashboard/admin/history" element={<History />} />
               </Route>
-
               <Route path="/teachersDashboard" element={<TeachersDashboard />}>
                 <Route
                   exact
@@ -249,6 +247,7 @@ function App() {
                   element={<PostNotice />}
                 />
               </Route>
+              <Route path="/success/:id" element={<Success />} />;
             </Routes>
           </div>
           <Footer />

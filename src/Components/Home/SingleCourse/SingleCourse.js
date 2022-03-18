@@ -5,22 +5,22 @@ import {
   faUsers,
   faClockFour,
   faArrowRight,
-  faPerson,
 } from "@fortawesome/free-solid-svg-icons";
 import CountUp from "react-countup";
 import { useParams, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import "../SingleCourse/SingleCourse.css";
 import demoUser from "../../../Images/user-demo.png";
 import axios from "axios";
 import Swal from "sweetalert2";
 import AddReview from "./AddReview";
 import Reviews from "./Reviews";
+import useAuth from "../../../hooks/useAuth";
 
 const SingleCourse = () => {
   const [submitting, setSubmitting] = useState(false);
   const [used, setUsed] = React.useState(false);
   const { id } = useParams();
+  const { user } = useAuth();
   const [sigleData, setSigleData] = React.useState();
   React.useEffect(() => {
     axios
@@ -38,11 +38,11 @@ const SingleCourse = () => {
         setPromos(res.data);
       });
   }, []);
-  console.log(promos);
+
   const filterPromo = promos?.filter(
     (value) => value?.promo === promo && value?.status === "Live"
   );
-  console.log("filterPromo", filterPromo);
+
   function handleChange(e) {
     setPromo(e.target.value);
   }
@@ -69,7 +69,38 @@ const SingleCourse = () => {
       });
     }
   };
+  //<-------- sslCommerz Function Here --------->
 
+  const handlePay = () => {
+    const info = {
+      product_name: sigleData?.title,
+      product_category: sigleData?.category,
+      product_profile: sigleData?.description,
+      product_image: sigleData?.image,
+      total_amount: fee || sigleData?.courseFee,
+      instructor: sigleData?.owner?.name,
+      cus_name: user?.displayName,
+      cus_email: user?.email,
+      cus_add1: "N/A",
+      cus_street: "N/A",
+      cus_city: "N/A",
+      cus_state: "N/A",
+      cus_postcode: "N/A",
+      cus_country: "N/A",
+      cus_phone: "N/A",
+    };
+    fetch(`https://fierce-caverns-90976.herokuapp.com/init`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(info),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        window.location.replace(data);
+      });
+  };
   return (
     <div className="entireCourse pb-20 container mx-auto">
       <div className="instructor px-4 text-left">
@@ -192,18 +223,18 @@ const SingleCourse = () => {
               </div>
               <span className="text-3xl">$ {fee || sigleData?.courseFee}</span>
             </div>
-            <Link to={`/milestone/${sigleData?._id}`}>
-              <button
-                className="bg-red-700 hover:bg-red-800 text-white py-2 px-4 mt-2 rounded focus:outline-none focus:shadow-outline w-full flex items-center justify-center"
-                type="submit"
-              >
-                Get This Course at ${fee || sigleData?.courseFee} &nbsp;&nbsp;
-                <FontAwesomeIcon
-                  className="text-white pr-2 text-xl"
-                  icon={faArrowRight}
-                />
-              </button>
-            </Link>
+            {/* <Link to={`/milestone/${sigleData?._id}`}> Course Video Link. Enable After Payment </Link> */}
+            <button
+              onClick={handlePay}
+              className="bg-red-700 hover:bg-red-800 text-white py-2 px-4 mt-2 rounded focus:outline-none focus:shadow-outline w-full flex items-center justify-center"
+              type="submit"
+            >
+              Get This Course at ${fee || sigleData?.courseFee} &nbsp;&nbsp;
+              <FontAwesomeIcon
+                className="text-white pr-2 text-xl"
+                icon={faArrowRight}
+              />
+            </button>
           </div>
         </div>
       </div>
