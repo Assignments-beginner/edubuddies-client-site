@@ -272,6 +272,7 @@ const useFirebase = () => {
     student,
     teacher,
     token,
+    role,
   };
 };
 
