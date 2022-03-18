@@ -1,21 +1,4 @@
-// import React from "react";
-// import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
-
-// const AdminRoute = ({ children, ...rest }) => {
-//   const { user, admin, isLoading } = useAuth();
-//   console.log(admin);
-//   const location = useLocation();
-//   if (isLoading) {
-//     return <div className="animate-spin"></div>;
-//   }
-//   if (user.email && admin) {
-//     return children;
-//   }
-//   return <Navigate to="/wrongAdminRoute" state={{ from: location }} />;
-// };
-
-// export default AdminRoute;
 
 import React, { useEffect, useState } from "react";
 import { Navigate, useLocation } from "react-router";
@@ -46,7 +29,7 @@ const AdminRoute = ({ children }) => {
   if (isLoading) {
     return <h1>Loading</h1>;
   }
-  if (admin) {
+  if (user.email && admin) {
     return children;
   } else return <Navigate to="/wrongAdminRoute" state={{ from: location }} />;
 };

@@ -217,13 +217,6 @@ const useFirebase = () => {
       });
   };
 
-  /*------ to findout user is admin or not---------- */
-  //   useEffect(() => {
-  //     fetch(`https://fierce-caverns-90976.herokuapp.com/users/${user?.email}`)
-  //       .then((res) => res.json())
-  //       .then((data) => setAdmin(data?.admin));
-  //   }, [user?.email]);
-
   const logOut = () => {
     console.log("fro header");
     signOut(auth)
@@ -233,6 +226,22 @@ const useFirebase = () => {
       .catch((error) => {})
       .finally(() => setIsloading(false));
   };
+
+  // is Admin
+  useEffect(() => {
+    const loadFUncion = async () => {
+      setIsloading(true);
+      await fetch(
+        `https://fierce-caverns-90976.herokuapp.com/getUserRole/${user.email}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setAdmin(true);
+          setIsloading(false);
+        });
+    };
+    loadFUncion();
+  }, [user.email]);
 
   useEffect(() => {
     const unSubscribed = onAuthStateChanged(auth, (user) => {
