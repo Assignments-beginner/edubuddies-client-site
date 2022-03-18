@@ -23,7 +23,7 @@ const WebDevCourses = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/WebDevCourses?particularCategory=${webCategory}`
+      `https://fierce-caverns-90976.herokuapp.com/WebDevCourses?particularCategory=${webCategory}`
     )
       .then((res) => res.json())
       .then((data) => setCourses(data));
@@ -33,9 +33,9 @@ const WebDevCourses = () => {
   return (
     <div className="mt-8 mb-16">
       <h1 className="font-bold text-3xl text-slate-900 uppercase">
-        Programming <span className="text-red-500">Fundamentals</span>
+        <span className="text-red-500">Web</span> Development Courses
       </h1>
-      <div className="GameDev">
+      <div className="WebDev">
         <Swiper
           effect={"coverflow"}
           grabCursor={true}

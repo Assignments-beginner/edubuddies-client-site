@@ -10,7 +10,7 @@ import Select from "react-select";
 
 const AddCourse = () => {
   const options = [
-    { value: "Game Development", label: "Game Development" },
+    { value: "Web Development", label: "Web Development" },
     { value: "Web Development", label: "Web Development" },
     { value: "Web Development", label: "Web Development" },
     { value: "Web Development", label: "Web Development" },
@@ -70,7 +70,7 @@ const AddCourse = () => {
     };
     setSubmitting(true);
     axios
-      .post(`http://localhost:5000/addCourse`, file)
+      .post(`https://fierce-caverns-90976.herokuapp.com/addCourse`, file)
       .then(function(response) {
         Swal.fire({
           icon: "success",
