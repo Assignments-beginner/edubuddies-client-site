@@ -4,6 +4,7 @@ import About from "../src/Components/Home/About/About";
 import Contact from "../src/Components/Contact/Contact";
 import Dashboard from "../src/Components/Dashboard/Dashboard";
 import Home from "../src/Components/Home/Home/Home";
+import AllCourseList from "../src/Components/AllCourseList/AllCourseList";
 import Courses from "../src/Components/Home/Courses/Courses";
 import Login from "./Components/Login/Login";
 import NotFound from "./Components/NotFound/NotFound";
@@ -85,6 +86,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/blog" element={<AllBlogsPage />} />
+              <Route path="/allCourseList" element={<AllCourseList />} />
               <Route path="/singleblog/:id" element={<SingleBlogMain />} />
               <Route path="/about" element={<About />} />
               <Route path="/courses" element={<Courses />} />

@@ -39,7 +39,7 @@ const About = () => {
               training platform.
             </div>
             <div>
-              <Link to="/Courses">
+              <Link to="/allCourseList">
                 <button className="bg-red-500 text-white py-3 px-8 mt-10 rounded-md mr-4 hover:bg-white border hover:border hover:border-red-500 hover:text-red-500 transition-all ease-linear duration-300">
                   Explore Courses
                 </button>
