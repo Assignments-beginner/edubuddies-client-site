@@ -4,6 +4,8 @@ import About from "../src/Components/Home/About/About";
 import Contact from "../src/Components/Contact/Contact";
 import Dashboard from "../src/Components/Dashboard/Dashboard";
 import Home from "../src/Components/Home/Home/Home";
+import AllCourseList from "../src/Components/AllCourseList/AllCourseList";
+import Courses from "../src/Components/Home/Courses/Courses";
 import Login from "./Components/Login/Login";
 import NotFound from "./Components/NotFound/NotFound";
 import Register from "./Components/Register/Register";
@@ -43,7 +45,6 @@ import History from "./Components/Dashboard/Admin/History";
 import Bestperformer from "./Components/TeachersDashboard/Bestperformer/Bestperformer";
 import PostNotice from "./Components/TeachersDashboard/PostNotice/PostNotice";
 import PostBlog from "./Components/PostBlog/PostBlog";
-import AllCoursesPage from "./Components/AllCoursesPage/AllCoursesPage";
 import AllBlogsPage from "./Components/AllBlogsPage/AllBlogsPage";
 import NewsletterList from "./Components/NewsletterList/NewsletterList";
 import PostNewsLetter from "./Components/PostNewsLetter/PostNewsLetter";
@@ -59,10 +60,22 @@ import SupportSessionList from "./Components/Home/SupportSession/SupportSessionL
 import ChatBot006 from "./Components/Shared/ChatBot006/ChatBot006";
 import Mails from "./Components/Dashboard/Mails/Mails";
 import AllUsers from "./Components/Dashboard/AllUsers/AllUsers";
-import UserChart from "./Components/Dashboard/Admin/Chart/UserChart";
-import AdminRoute from "./Components/Login/AdminRoute/AdminRoute";
+import Admins from "../src/Components/Shared/Footer/Admins/Admins.js";
+import Developers from "../src/Components/Shared/Footer/Developers/Developers";
+import Terms from "../src/Components/Shared/Footer/Terms/Terms";
+import CareerGuides from "../src/Components/Shared/Footer/CareerGuides/CareerGuides";
+import Faq from "../src/Components/Shared/Footer/Faq/Faq";
+import GameDevCourses from "../src/Components/Home/CourseCategories/GameDevCourses/GameDevCourses";
+import AiCourses from "../src/Components/Home/CourseCategories/AiCourses/AiCourses";
+import MachineCourses from "../src/Components/Home/CourseCategories/MachineCourses/MachineCourses";
+import SoftDevCourses from "../src/Components/Home/CourseCategories/SoftDevCourses/SoftDevCourses";
+import ProgrammingCourses from "../src/Components/Home/CourseCategories/ProgrammingCourses/ProgrammingCourses";
+import WebDevCourses from "../src/Components/Home/CourseCategories/WebDevCourses/WebDevCourses";
+import Success from "./Components/Payment/Success/Success";
 import TeacherRoute from "./Components/Login/TeacherRoute/TeacherRoute";
+import AdminRoute from "./Components/Login/AdminRoute/AdminRoute";
 import StudentRoute from "./Components/Login/StudentRoute/StudentRoute";
+import UserChart from "./Components/Dashboard/Admin/Chart/UserChart";
 function App() {
   return (
     <div className="App">
@@ -79,9 +92,10 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/blog" element={<AllBlogsPage />} />
+              <Route path="/allCourseList" element={<AllCourseList />} />
               <Route path="/singleblog/:id" element={<SingleBlogMain />} />
               <Route path="/about" element={<About />} />
-              <Route path="/courses" element={<AllCoursesPage />} />
+              <Route path="/courses" element={<Courses />} />
               <Route path="/singlecourse/:id" element={<SingleCourse />} />
               <Route path="/milestone/:id" element={<Milestones />} />
               <Route path="/contact" element={<Contact />} />
@@ -92,7 +106,6 @@ function App() {
               <Route path="/greetings" element={<Greetings />} />
               <Route path="/userProfile" element={<UserProfile />} />
               <Route path="/test" element={<Test />} />
-
               <Route
                 path="/studentdashboard"
                 element={
@@ -127,7 +140,6 @@ function App() {
                   element={<StudentSkills />}
                 />
               </Route>
-
               {/* //Dashboard Nested Routing */}
               <Route
                 path="/dashboard"
@@ -187,7 +199,6 @@ function App() {
                   element={<UserChart />}
                 />
               </Route>
-
               <Route
                 path="/teachersDashboard"
                 element={
@@ -250,6 +261,7 @@ function App() {
                   element={<PostNotice />}
                 />
               </Route>
+              <Route path="/success/:id" element={<Success />} />;
             </Routes>
           </div>
           <Footer />

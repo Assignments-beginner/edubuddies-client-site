@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,8 +6,17 @@ import { faImage } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
 import Loading from "../../Loading/Loading";
+import Select from "react-select";
 
 const AddCourse = () => {
+  const options = [
+    { value: "Web Development", label: "Web Development" },
+    { value: "Web Development", label: "Web Development" },
+    { value: "Web Development", label: "Web Development" },
+    { value: "Web Development", label: "Web Development" },
+    { value: "Web Development", label: "Web Development" },
+  ];
+  const [category, setCategory] = React.useState();
   const { user } = useAuth();
   console.log(user);
   const [fileLink, setFileLink] = useState(null);
@@ -32,16 +41,19 @@ const AddCourse = () => {
 
   const [submitting, setSubmitting] = useState(false);
   const { register, handleSubmit, reset } = useForm();
-  const onSubmit = ({
-    title,
-    category,
-    courseFee,
-    courseDuration,
-    description,
-  }) => {
+  const [disableBtn, setDisableBtn] = useState(false);
+  useEffect(() => {
+    if (category === null || fileLink === null) {
+      setDisableBtn(true);
+    } else {
+      setDisableBtn(false);
+    }
+  }, [category, fileLink]);
+
+  const onSubmit = ({ title, courseFee, courseDuration, description }) => {
     const file = {
       title,
-      category,
+      category: category.value,
       courseFee,
       courseDuration,
       description,
@@ -51,7 +63,6 @@ const AddCourse = () => {
         name: user?.displayName,
         photo: user?.photoURL,
       },
-      /* owner: { email: "nizamcse.seu@gmail.com", name: "Nizam Uddin" }, */
       data: [],
       enrolledStudents: [],
       reviews: [],
@@ -124,6 +135,7 @@ const AddCourse = () => {
               Title
             </label>
             <input
+              maxlength="25"
               id="Title"
               label="Title"
               name="Title"
@@ -140,14 +152,7 @@ const AddCourse = () => {
             >
               Category
             </label>
-            <input
-              id="Category"
-              label="Category"
-              name="Category"
-              {...register("category", { required: true })}
-              autoFocus
-              className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500"
-            />
+            <Select onChange={setCategory} options={options} />
           </div>
           <div className="flex flex-col space-y-1">
             <label
@@ -188,7 +193,8 @@ const AddCourse = () => {
             >
               Description
             </label>
-            <input
+            <textarea
+              rows="4"
               id="Description"
               label="Description"
               name="Description"
@@ -197,12 +203,22 @@ const AddCourse = () => {
               className="m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500"
             />
           </div>
-          <button
-            type="submit"
-            className="m-0 w-full px-4 py-2 text-lg text-white transition-colors duration-300 bg-red-500 rounded-md shadow hover:bg-red-600 focus:outline-none focus:ring-red-500 focus:ring-1"
-          >
-            Add New Course
-          </button>
+          {disableBtn ? (
+            <button
+              disabled
+              type="submit"
+              className="m-0 w-full px-4 py-2 text-lg text-white transition-colors duration-300 bg-red-500 rounded-md shadow hover:bg-red-600 focus:outline-none focus:ring-red-500 focus:ring-1"
+            >
+              Add New Course
+            </button>
+          ) : (
+            <button
+              type="submit"
+              className="m-0 w-full px-4 py-2 text-lg text-white transition-colors duration-300 bg-red-500 rounded-md shadow hover:bg-red-600 focus:outline-none focus:ring-red-500 focus:ring-1"
+            >
+              Add New Course
+            </button>
+          )}
         </form>
       </div>
       <div>{submitting ? <Loading /> : ""}</div>

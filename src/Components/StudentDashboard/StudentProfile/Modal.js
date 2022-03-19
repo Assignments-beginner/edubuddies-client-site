@@ -131,37 +131,39 @@ const Modal = ({ setShowModal }) => {
                     </span>
                   </div>
                 </div>
-                <div className="flex flex-col space-y-1">
-                  <label
-                    for="fullname"
-                    className="text-sm font-semibold tracking-widest text-left mt-2"
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="fullname"
-                    name="fullname"
-                    {...register("fullname", { required: true })}
-                    autofocus
-                    className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500"
-                  />
-                </div>
-                <div className="flex flex-col space-y-1">
-                  <label
-                    for="phone"
-                    className="text-sm font-semibold tracking-widest  text-left mt-2"
-                  >
-                    Phone
-                  </label>
-                  <input
-                    type="text"
-                    id="phone"
-                    name="phone"
-                    {...register("phone", { required: true })}
-                    autofocus
-                    className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500"
-                  />
+                <div className="flex space-x-1">
+                  <div className="flex flex-col space-y-1">
+                    <label
+                      for="fullname"
+                      className="text-sm font-semibold tracking-widest text-left mt-2"
+                    >
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      id="fullname"
+                      name="fullname"
+                      {...register("fullname", { required: true })}
+                      autofocus
+                      className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500"
+                    />
+                  </div>
+                  <div className="flex flex-col space-y-1">
+                    <label
+                      for="phone"
+                      className="text-sm font-semibold tracking-widest  text-left mt-2"
+                    >
+                      Phone
+                    </label>
+                    <input
+                      type="text"
+                      id="phone"
+                      name="phone"
+                      {...register("phone", { required: true })}
+                      autofocus
+                      className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500"
+                    />
+                  </div>
                 </div>
                 <div className="flex flex-col space-y-1">
                   <label

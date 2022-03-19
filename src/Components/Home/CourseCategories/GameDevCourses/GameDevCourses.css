@@ -1,0 +1,17 @@
+.GameDev .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.GameDev .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 370px;
+}
+
+.GameDev .swiper-slide img {
+  display: block;
+  width: 100%;
+}

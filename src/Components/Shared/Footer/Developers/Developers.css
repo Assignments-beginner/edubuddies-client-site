@@ -1,0 +1,44 @@
+.stroke {
+    background-color: rgba(0, 0, 0, 0.637);
+}
+
+.delay-500 {
+  transition-delay: 500ms;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
+.my-rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.group:hover .group-hover\:bottom-20 {
+  bottom: 5rem;
+}
+
+.group:hover .group-hover\:scale-125 {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:my-rotate-y-180 {
+  transform: rotateY(180deg);
+}

@@ -1,24 +1,24 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faTrashCan,
-	faXmark,
-	faCheck,
+  faTrashCan,
+  faXmark,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import Swal from "sweetalert2";
 
 const NewsletterList = () => {
-	const [status, setStatus] = React.useState(false);
-	const [deleted, setDeleted] = React.useState(false);
-	const [newsletters, setNewsletters] = React.useState();
-	React.useEffect(() => {
-		axios
-			.get(`https://fierce-caverns-90976.herokuapp.com/newsletter`)
-			.then((res) => {
-				setNewsletters(res.data);
-			});
-	}, [deleted, status]);
+  const [status, setStatus] = React.useState(false);
+  const [deleted, setDeleted] = React.useState(false);
+  const [newsletters, setNewsletters] = React.useState();
+  React.useEffect(() => {
+    axios
+      .get(`https://fierce-caverns-90976.herokuapp.com/newsletter`)
+      .then((res) => {
+        setNewsletters(res.data);
+      });
+  }, [deleted, status]);
 
 	const handleDelete = (id) => {
 		setDeleted(true);
@@ -95,7 +95,7 @@ const NewsletterList = () => {
 					<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
 						<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg tables'>
 							<table className='min-w-full divide-y divide-red-200'>
-								<thead className='bg-black font-bold'>
+								<thead className='bg-slate-900 font-bold'>
 									<tr>
 										<th
 											scope='col'

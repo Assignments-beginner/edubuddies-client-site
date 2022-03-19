@@ -60,6 +60,7 @@ const History = () => {
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8"></div>
 
+<<<<<<< HEAD
           <div className="shadow overflow-hidden border-b border-red-200 sm:rounded-lg mx-auto tables">
             <table className="min-w-full divide-y divide-red-200">
               <thead className="bg-black font-bold">
@@ -71,6 +72,29 @@ const History = () => {
                     IP Address
                   </th>
                   {/* <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+=======
+	return (
+		<div className='container mx-auto px-4 md:px-9'>
+			<div className='mb-8 mt-4'>
+				<h3 className='text-3xl font-semibold text-center text-red-500'>
+					Live History {hisData.length}
+				</h3>
+			</div>
+			<div className='flex flex-col'>
+				<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
+					<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'></div>
+
+					<div className='shadow overflow-hidden border-b border-red-200 sm:rounded-lg mx-auto tables'>
+						<table className='min-w-full divide-y divide-red-200'>
+							<thead className='bg-slate-900 font-bold'>
+								<tr>
+									<th
+										scope='col'
+										className='px-6 py-3 text-center border-r-2 text-xs font-medium text-white uppercase tracking-wider'>
+										IP Address
+									</th>
+									{/* <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
+>>>>>>> 17ff70815785ed04c45e82c519b9051d26deffde
                 Name
               </th>
               <th className="py-4 text-center text-sm font-bold text-white uppercase tracking-widest border border-red-300">
