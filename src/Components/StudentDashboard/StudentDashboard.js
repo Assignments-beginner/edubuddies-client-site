@@ -10,10 +10,7 @@ import {
   faLightbulb,
   faHeadset,
   faRightFromBracket,
-<<<<<<< HEAD
   faCirclePlay,
-=======
->>>>>>> 6c68a80e84cd30dc6eb1f57138e41768de5a3219
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
@@ -103,7 +100,6 @@ const StudentDashboard = () => {
             </li>
             <li>
               <NavLink
-<<<<<<< HEAD
                 to="/studentdashboard/myCourse/"
                 className="li text-md rounded-lg  text-white"
               >
@@ -116,8 +112,6 @@ const StudentDashboard = () => {
             </li>
             <li>
               <NavLink
-=======
->>>>>>> 6c68a80e84cd30dc6eb1f57138e41768de5a3219
                 to="supportsession"
                 className="li text-md rounded-lg  text-white "
               >
