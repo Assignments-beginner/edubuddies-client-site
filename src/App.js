@@ -108,6 +108,20 @@ function App() {
               <Route path="/resetpassword" element={<ResetPass />} />
               <Route path="/greetings" element={<Greetings />} />
               <Route path="/userProfile" element={<UserProfile />} />
+              <Route path="/OurAdmins" element={<Admins />} />
+              <Route path="/OurDevelopers" element={<Developers />} />
+              <Route path="/CareerGuideline" element={<CareerGuides />} />
+              <Route path="/OurTerms" element={<Terms />} />
+              <Route path="/Faq" element={<Faq />} />
+              <Route path="/GameDevCourses" element={<GameDevCourses />} />
+              <Route path="/AiCourses" element={<AiCourses />} />
+              <Route path="/MachineCourses" element={<MachineCourses />} />
+              <Route path="/SoftDevCourses" element={<SoftDevCourses />} />
+              <Route path="/WebDevCourses" element={<WebDevCourses />} />
+              <Route
+                path="/ProgrammingCourses"
+                element={<ProgrammingCourses />}
+              />
               <Route path="/test" element={<Test />} />
               <Route
                 path="/studentdashboard"
