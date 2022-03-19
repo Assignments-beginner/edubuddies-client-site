@@ -19,6 +19,9 @@ const StudentRoute = ({ children }) => {
           if (data[0].role === "Student") {
             setStudent(true);
             setIsLoading(false);
+          } else if (data[0].role !== "Student") {
+            setStudent(false);
+            setIsLoading(false);
           }
         });
     };
