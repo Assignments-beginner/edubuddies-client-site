@@ -168,7 +168,7 @@ const useFirebase = () => {
       photoURL,
     };
     axios
-      .post(`http://localhost:5000/signup`, save)
+      .post(`https://fierce-caverns-90976.herokuapp.com/signup`, save)
       .then(function(response) {
         Swal.fire({
           icon: "success",
