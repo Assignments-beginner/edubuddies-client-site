@@ -5,7 +5,6 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 import SwiperCore, { EffectFade, Pagination, Autoplay } from "swiper";
 import { Link } from "react-router-dom";
 SwiperCore.use([Autoplay, EffectFade, Pagination]);
@@ -43,10 +42,10 @@ const Banner = () => {
             </h3>
             <p className="mb-8 text-gray-300 text-lg sm:hidden lg:block description">
               This is the perfect platform for students and fresh graduates who
-              are <br /> about to launch their career, including securing an internship
-              or the first full-time job.
+              are <br /> about to launch their career, including securing an
+              internship or the first full-time job.
             </p>
-            <Link to="/Courses">
+            <Link to="/allCourseList">
               <button className="border-2 border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold py-3 px-6 rounded-lg tracking-wider">
                 Get Started
               </button>
@@ -74,9 +73,10 @@ const Banner = () => {
             </h3>
             <p className="mb-8 text-gray-300 text-lg sm:hidden lg:block description ">
               This website is specifically designed for young and ambitions
-              developers looking <br /> to launch their careers in turbulent 2022.
+              developers looking <br /> to launch their careers in turbulent
+              2022.
             </p>
-            <Link to="/Courses">
+            <Link to="/allCourseList">
               <button className="border-2 border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold py-3 px-6 rounded-lg tracking-wider">
                 Get Started
               </button>
@@ -103,9 +103,11 @@ const Banner = () => {
               To Learn Coding
             </h3>
             <p className="mb-8 text-gray-300 text-lg sm:hidden lg:block description">
-			Focus on the fundamentals, learn to ask for help. Put your knowledge into action <br /> and explore more than just read sample code.
+              Focus on the fundamentals, learn to ask for help. Put your
+              knowledge into action <br /> and explore more than just read
+              sample code.
             </p>
-            <Link to="/Courses">
+            <Link to="/allCourseList">
               <button className="border-2 border-red-500 bg-red-500 hover:bg-transparent duration-300 text-white font-bold py-3 px-6 rounded-lg tracking-wider">
                 Get Started
               </button>
