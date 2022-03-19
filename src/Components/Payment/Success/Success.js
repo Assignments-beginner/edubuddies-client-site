@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Success = () => {
   const { id } = useParams();
@@ -62,12 +62,14 @@ const Success = () => {
           {paymentDetails?.productDetails}
         </p>
       </div>
-      <button
-        className="bg-red-500 hover:bg-transparent border border-red-500 px-4 py-3 font-bold text-white hover:text-red-500 rounded-lg duration-300 mt-4 tracking-widest"
-        onClick={validatePayment}
-      >
-        Confirm Order
-      </button>
+      <Link to="/studentdashboard/myCourse/">
+        <button
+          className="bg-red-500 hover:bg-transparent border border-red-500 px-4 py-3 font-bold text-white hover:text-red-500 rounded-lg duration-300 mt-4 tracking-widest"
+          onClick={validatePayment}
+        >
+          Go to Courses
+        </button>
+      </Link>
     </div>
   );
 };

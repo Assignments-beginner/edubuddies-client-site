@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -10,6 +10,7 @@ import {
   faLightbulb,
   faHeadset,
   faRightFromBracket,
+  faCirclePlay,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
@@ -95,6 +96,18 @@ const StudentDashboard = () => {
                   icon={faUser}
                 />
                 <span className="mx-3">Profile</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/studentdashboard/myCourse/"
+                className="li text-md rounded-lg  text-white"
+              >
+                <FontAwesomeIcon
+                  className="mx-2 text-red-500 icon"
+                  icon={faCirclePlay}
+                />
+                <span className="mx-3">My Courses</span>
               </NavLink>
             </li>
             <li>

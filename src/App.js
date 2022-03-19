@@ -60,7 +60,7 @@ import SupportSessionList from "./Components/Home/SupportSession/SupportSessionL
 import ChatBot006 from "./Components/Shared/ChatBot006/ChatBot006";
 import Mails from "./Components/Dashboard/Mails/Mails";
 import AllUsers from "./Components/Dashboard/AllUsers/AllUsers";
-import Admins from "../src/Components/Shared/Footer/Admins/Admins.js";
+import Admins from "../src/Components/Shared/Footer/Admins/Admins";
 import Developers from "../src/Components/Shared/Footer/Developers/Developers";
 import Terms from "../src/Components/Shared/Footer/Terms/Terms";
 import CareerGuides from "../src/Components/Shared/Footer/CareerGuides/CareerGuides";
@@ -71,11 +71,14 @@ import MachineCourses from "../src/Components/Home/CourseCategories/MachineCours
 import SoftDevCourses from "../src/Components/Home/CourseCategories/SoftDevCourses/SoftDevCourses";
 import ProgrammingCourses from "../src/Components/Home/CourseCategories/ProgrammingCourses/ProgrammingCourses";
 import WebDevCourses from "../src/Components/Home/CourseCategories/WebDevCourses/WebDevCourses";
+import MyClasess from "./Components/StudentDashboard/MyClasess/MyClasess";
+
 import Success from "./Components/Payment/Success/Success";
 import TeacherRoute from "./Components/Login/TeacherRoute/TeacherRoute";
 import AdminRoute from "./Components/Login/AdminRoute/AdminRoute";
 import StudentRoute from "./Components/Login/StudentRoute/StudentRoute";
 import UserChart from "./Components/Dashboard/Admin/Chart/UserChart";
+
 function App() {
   return (
     <div className="App">
@@ -148,6 +151,10 @@ function App() {
                 <Route
                   path="/studentdashboard/supportsession"
                   element={<AllLiveSupportSessions />}
+                />
+                <Route
+                  path="/studentdashboard/myCourse"
+                  element={<MyClasess />}
                 />
                 <Route
                   path="/studentdashboard/skills"
