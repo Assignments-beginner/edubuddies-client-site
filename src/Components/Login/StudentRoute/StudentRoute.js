@@ -7,7 +7,6 @@ const StudentRoute = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const { user } = useAuth();
   const [student, setStudent] = useState(false);
-  console.log(user.email);
 
   useEffect(() => {
     const loadFUncion = async () => {
@@ -17,8 +16,10 @@ const StudentRoute = ({ children }) => {
       )
         .then((res) => res.json())
         .then((data) => {
-          setStudent(true);
-          setIsLoading(false);
+          if (data[0].role === "Student") {
+            setStudent(true);
+            setIsLoading(false);
+          }
         });
     };
     loadFUncion();

@@ -16,8 +16,10 @@ const AdminRoute = ({ children }) => {
       )
         .then((res) => res.json())
         .then((data) => {
-          setAdmin(true);
-          setIsLoading(false);
+          if (data[0].role === "Admin") {
+            setAdmin(true);
+            setIsLoading(false);
+          }
         });
     };
     loadFUncion();

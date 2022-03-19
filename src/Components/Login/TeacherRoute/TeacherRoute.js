@@ -16,8 +16,13 @@ const TeacherRoute = ({ children }) => {
       )
         .then((res) => res.json())
         .then((data) => {
-          setTeacher(true);
-          setIsLoading(false);
+          if (data[0].role === "Instructor") {
+            setTeacher(true);
+            setIsLoading(false);
+          } else if (data[0].role !== "Instructor") {
+            setTeacher(false);
+            setIsLoading(false);
+          }
         });
     };
     loadFUncion();

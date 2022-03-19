@@ -16,6 +16,8 @@ import initializeAuth from "../Firebase/firebase.init";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { addRole } from "../Redux/edubuddySlice";
 initializeAuth();
 
 const useFirebase = () => {
@@ -27,6 +29,8 @@ const useFirebase = () => {
   const [teacher, setTeacher] = useState(false);
   const [role, setRole] = useState();
   const [data, setData] = useState([]);
+
+  const dispatch = useDispatch();
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -230,6 +234,7 @@ const useFirebase = () => {
 
   // is Admin
   useEffect(() => {
+    setIsloading(true);
     const loadFUncion = async () => {
       await fetch(
         `https://fierce-caverns-90976.herokuapp.com/getUserRole/${user.email}`
@@ -237,7 +242,8 @@ const useFirebase = () => {
         .then((res) => res.json())
         .then((data) => {
           setRole(data[0].role);
-        });
+        })
+        .finally(setIsloading(false));
     };
     loadFUncion();
   }, [user.email]);
