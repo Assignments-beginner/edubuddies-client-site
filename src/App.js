@@ -72,7 +72,10 @@ import SoftDevCourses from "../src/Components/Home/CourseCategories/SoftDevCours
 import ProgrammingCourses from "../src/Components/Home/CourseCategories/ProgrammingCourses/ProgrammingCourses";
 import WebDevCourses from "../src/Components/Home/CourseCategories/WebDevCourses/WebDevCourses";
 import Success from "./Components/Payment/Success/Success";
-
+import TeacherRoute from "./Components/Login/TeacherRoute/TeacherRoute";
+import AdminRoute from "./Components/Login/AdminRoute/AdminRoute";
+import StudentRoute from "./Components/Login/StudentRoute/StudentRoute";
+import UserChart from "./Components/Dashboard/Admin/Chart/UserChart";
 function App() {
   return (
     <div className="App">
@@ -102,22 +105,15 @@ function App() {
               <Route path="/resetpassword" element={<ResetPass />} />
               <Route path="/greetings" element={<Greetings />} />
               <Route path="/userProfile" element={<UserProfile />} />
-              <Route path="/OurAdmins" element={<Admins />} />
-              <Route path="/OurDevelopers" element={<Developers />} />
-              <Route path="/CareerGuideline" element={<CareerGuides />} />
-              <Route path="/OurTerms" element={<Terms />} />
-              <Route path="/Faq" element={<Faq />} />
-              <Route path="/GameDevCourses" element={<GameDevCourses />} />
-              <Route path="/AiCourses" element={<AiCourses />} />
-              <Route path="/MachineCourses" element={<MachineCourses />} />
-              <Route path="/SoftDevCourses" element={<SoftDevCourses />} />
-              <Route path="/WebDevCourses" element={<WebDevCourses />} />
-              <Route
-                path="/ProgrammingCourses"
-                element={<ProgrammingCourses />}
-              />
               <Route path="/test" element={<Test />} />
-              <Route path="/studentdashboard" element={<StudentDashboard />}>
+              <Route
+                path="/studentdashboard"
+                element={
+                  <StudentRoute>
+                    <StudentDashboard />
+                  </StudentRoute>
+                }
+              >
                 <Route path="/studentdashboard" element={<StudentProfile />} />
                 <Route
                   path="/studentdashboard/address"
@@ -145,7 +141,14 @@ function App() {
                 />
               </Route>
               {/* //Dashboard Nested Routing */}
-              <Route path="/dashboard" element={<Dashboard />}>
+              <Route
+                path="/dashboard"
+                element={
+                  <AdminRoute>
+                    <Dashboard />
+                  </AdminRoute>
+                }
+              >
                 <Route exact path="/dashboard" element={<CoursesList />} />
                 <Route path="/dashboard/blogs" element={<AllBlogs />} />
                 <Route
@@ -191,8 +194,19 @@ function App() {
                   element={<RecycleBin />}
                 />
                 <Route path="/dashboard/admin/history" element={<History />} />
+                <Route
+                  path="/dashboard/admin/userActivity"
+                  element={<UserChart />}
+                />
               </Route>
-              <Route path="/teachersDashboard" element={<TeachersDashboard />}>
+              <Route
+                path="/teachersDashboard"
+                element={
+                  <TeacherRoute>
+                    <TeachersDashboard />
+                  </TeacherRoute>
+                }
+              >
                 <Route
                   exact
                   path="/teachersDashboard/allTeachers"
