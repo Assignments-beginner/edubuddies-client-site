@@ -72,6 +72,7 @@ import SoftDevCourses from "../src/Components/Home/CourseCategories/SoftDevCours
 import ProgrammingCourses from "../src/Components/Home/CourseCategories/ProgrammingCourses/ProgrammingCourses";
 import WebDevCourses from "../src/Components/Home/CourseCategories/WebDevCourses/WebDevCourses";
 import Success from "./Components/Payment/Success/Success";
+import MyClasess from "./Components/StudentDashboard/MyClasess/MyClasess";
 
 function App() {
   return (
@@ -138,6 +139,10 @@ function App() {
                 <Route
                   path="/studentdashboard/supportsession"
                   element={<AllLiveSupportSessions />}
+                />
+                <Route
+                  path="/studentdashboard/myCourse"
+                  element={<MyClasess />}
                 />
                 <Route
                   path="/studentdashboard/skills"
