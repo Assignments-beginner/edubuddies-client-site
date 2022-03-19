@@ -19,6 +19,9 @@ const AdminRoute = ({ children }) => {
           if (data[0].role === "Admin") {
             setAdmin(true);
             setIsLoading(false);
+          } else if (data[0].role !== "Admin") {
+            setAdmin(false);
+            setIsLoading(false);
           }
         });
     };
