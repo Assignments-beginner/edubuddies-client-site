@@ -15,7 +15,7 @@ import { EffectCoverflow, Pagination } from "swiper";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 import demoUser from "../../../../Images/user-demo.png";
-import "../GameDevCourses/GameDevCourses.css";
+import "../ProgrammingCourses/ProgrammingCourses.css";
 
 const ProgrammingCourses = () => {
   const [courses, setCourses] = useState([]);
