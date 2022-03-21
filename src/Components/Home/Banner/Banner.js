@@ -86,7 +86,7 @@ const Banner = () => {
         <SwiperSlide>
           <img
             className="w-full"
-            src="https://i.ibb.co/6gCTndZ/slider-3.png"
+            src="https://i.ibb.co/bRRHNrv/banner3.png"
             alt="SliderImage"
           />
           <div
