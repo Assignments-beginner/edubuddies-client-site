@@ -27,7 +27,7 @@ const Header = () => {
     }
   }, [location, hide]);
 
-  const { user, logOut } = useAuth();
+  const { role, user, logOut } = useAuth();
 
   const toggleFunction = () => {
     const toggleButton = document.getElementById("toogleDiv");
@@ -53,10 +53,10 @@ const Header = () => {
     }
   }
   let didScroll = false;
-  window.addEventListener("scroll", function (e) {
+  window.addEventListener("scroll", function(e) {
     didScroll = true;
   });
-  setInterval(function () {
+  setInterval(function() {
     if (didScroll) {
       scrolled();
       didScroll = false;
@@ -104,7 +104,13 @@ const Header = () => {
                 </Link>
                 <Link
                   className="text-gray-100 hover:bg-red-600 focus:bg-red-600 px-3 py-2 rounded-md text-md font-medium"
-                  to="/courses"
+                  to="/about"
+                >
+                  About
+                </Link>
+                <Link
+                  className="text-gray-100 hover:bg-red-600 focus:bg-red-600 px-3 py-2 rounded-md text-md font-medium"
+                  to="/allCourseList"
                 >
                   Courses
                 </Link>
@@ -113,12 +119,6 @@ const Header = () => {
                   to="/blog"
                 >
                   Blog
-                </Link>
-                <Link
-                  className="text-gray-100 hover:bg-red-600 focus:bg-red-600 px-3 py-2 rounded-md text-md font-medium"
-                  to="/about"
-                >
-                  About
                 </Link>
                 <Link
                   className="text-gray-100 hover:bg-red-600 focus:bg-red-600 px-3 py-2 rounded-md text-md font-medium"
@@ -182,26 +182,32 @@ const Header = () => {
                       View Profile
                     </Link>
                     <hr />
-                    <Link
-                      className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
-                      to="/dashboard"
-                    >
-                      Dashboard
-                    </Link>
+                    {role === "Admin" && (
+                      <Link
+                        className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
+                        to="/dashboard"
+                      >
+                        Dashboard
+                      </Link>
+                    )}
                     <hr />
-                    <Link
-                      className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
-                      to="/teachersDashboard"
-                    >
-                      Teachers DB
-                    </Link>
+                    {role === "Instructor" && (
+                      <Link
+                        className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
+                        to="/teachersDashboard"
+                      >
+                        Dashboard
+                      </Link>
+                    )}
                     <hr />
-                    <Link
-                      className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
-                      to="/studentdashboard"
-                    >
-                      Student DB
-                    </Link>
+                    {role === "Student" && (
+                      <Link
+                        className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
+                        to="/studentdashboard"
+                      >
+                        Dashboard
+                      </Link>
+                    )}
                     <hr />
                     {user?.email && (
                       <p className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white">
@@ -239,7 +245,7 @@ const Header = () => {
             About
           </Link>
           <Link
-            to="/courses"
+            to="/allCourseList"
             className="text-gray-100 hover:bg-red-600 focus:bg-red-600 block px-3 py-2 rounded-md text-base font-medium"
           >
             Courses

@@ -4,6 +4,8 @@ const initialState = {
   courses: [],
   student: [],
   teacher: [],
+  historyData: [],
+  role: [],
 };
 
 export const eduBuddySlice = createSlice({
@@ -17,8 +19,21 @@ export const eduBuddySlice = createSlice({
     loadStudent: (state, action) => {
       state.student = action.payload;
     },
+    addHistoryData: (state, action) => {
+      console.log(action.payload);
+      state.historyData = action.payload;
+    },
+    addRole: (state, action) => {
+      console.log(action.payload);
+      state.role = action.payload;
+    },
   },
 });
 
-export const { addCourse, loadStudent } = eduBuddySlice.actions;
+export const {
+  addCourse,
+  loadStudent,
+  addHistoryData,
+  addRole,
+} = eduBuddySlice.actions;
 export default eduBuddySlice.reducer;
