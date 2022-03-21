@@ -71,9 +71,3 @@
 .box ul li a .fa-linkedin:hover {
 	color: #0077b5;
 }
-
-@media all and (max-width: 688px) {
-	.team-box {
-		display: block;
-	}
-}
