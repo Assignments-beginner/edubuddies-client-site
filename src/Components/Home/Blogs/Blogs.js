@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "./Blogs.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import publisherImg from "../../../Images/user-demo.png";
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -59,13 +60,10 @@ const Blogs = () => {
           {blogs?.map((blog, key) => (
             <SwiperSlide key={key}>
               <Link key={key} to={`/singleblog/${blog?._id}`}>
-                <div
-                  className="border  rounded-lg card mx-auto duration-300  bg-white"
-                  style={{ maxWidth: "400px" }}
-                >
+                <div className="shadow-lg border rounded-lg mx-auto duration-300 bg-white">
                   <div className="overflow-hidden">
                     <img
-                      className="w-full card-image rounded-t-lg"
+                      className="w-full h-56 rounded-t-lg"
                       src={blog?.photo}
                       alt=""
                     />
@@ -77,7 +75,7 @@ const Blogs = () => {
                     <div className="flex items-center mb-6">
                       <img
                         className="w-8 h-8 rounded-full mr-2"
-                        src={blog?.photo}
+                        src={publisherImg}
                         alt=""
                       />
                       <p className="text-gray-900 leading-none text-sm">
