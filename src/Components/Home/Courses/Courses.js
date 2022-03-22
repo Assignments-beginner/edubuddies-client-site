@@ -116,16 +116,20 @@ const Courses = () => {
                       defaultValue="Added"
                       {...register("cartCourseStatus")}
                     />
-                    <input
-                      className="hidden"
-                      defaultValue={course?.owner?.name}
-                      {...register("cartUserName")}
-                    />
-                    <input
-                      className="hidden"
-                      defaultValue={course?.owner?.email}
-                      {...register("cartUserEmail")}
-                    />
+                    {user.displayName && (
+                      <input
+                        className="hidden"
+                        defaultValue={user.displayName}
+                        {...register("cartUserName")}
+                      />
+                    )}
+                    {user.email && (
+                      <input
+                        className="hidden"
+                        defaultValue={user.email}
+                        {...register("cartUserEmail")}
+                      />
+                    )}
                     {user.email ? (
                       <button
                         // onClick={() => changeIcon(course._id)}
