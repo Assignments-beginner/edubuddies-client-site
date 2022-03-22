@@ -94,7 +94,7 @@ const Courses = () => {
                     src={course?.image}
                     alt=""
                   />
-                  {/* Hidden Cart Form  */}
+                  {/* Hidden Wish Cart Form  */}
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <input
                       className="hidden"
@@ -132,7 +132,6 @@ const Courses = () => {
                     )}
                     {user.email ? (
                       <button
-                        // onClick={() => changeIcon(course._id)}
                         onClick={changeIcon}
                         type="submit"
                         className="
@@ -173,7 +172,7 @@ const Courses = () => {
                       </Link>
                     )}
                   </form>
-                  {/* Hidden Cart Form  */}
+                  {/* Hidden Wish Cart Form  */}
                   <div className="bg-slate-900 top-4 left-4 absolute px-2 rounded">
                     <span className="text-white text-xs">
                       {course?.category}

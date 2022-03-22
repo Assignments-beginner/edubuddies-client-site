@@ -179,17 +179,17 @@ const Header = () => {
                       <br />
                       <div className="flex justify-between items-center">
                         <span>{user.displayName}</span>
-                        <Link to="" className="flex justify-start">
+                        <Link to="/wishCart" className="flex justify-start">
                           <div className="pt-1">
                             <FontAwesomeIcon
                               className="text-red-500 text-lg"
                               icon={faCartShopping}
-                            />{" "}
+                            />
                             <div
-                              style={{ fontSize: "10px" }}
-                              className="text-white bg-red-500 px-0.5 font-black absolute right-2 left-34 top-7 rounded-full"
+                              style={{ fontSize: "12px" }}
+                              className="text-red-500 px-0.5 font-black absolute right-2 left-34 top-7"
                             >
-                              12
+                              3
                             </div>
                           </div>
                         </Link>

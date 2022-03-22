@@ -77,6 +77,7 @@ import TeacherRoute from "./Components/Login/TeacherRoute/TeacherRoute";
 import AdminRoute from "./Components/Login/AdminRoute/AdminRoute";
 import StudentRoute from "./Components/Login/StudentRoute/StudentRoute";
 import UserChart from "./Components/Dashboard/Admin/Chart/UserChart";
+import WishCart from "../src/Components/Shared/Header/WishCart/WishCart";
 
 function App() {
   return (
@@ -98,6 +99,7 @@ function App() {
               <Route path="/singleblog/:id" element={<SingleBlogMain />} />
               <Route path="/about" element={<About />} />
               <Route path="/courses" element={<Courses />} />
+              <Route path="/wishCart" element={<WishCart />} />
               <Route path="/singlecourse/:id" element={<SingleCourse />} />
               <Route path="/milestone/:id" element={<Milestones />} />
               <Route path="/contact" element={<Contact />} />
