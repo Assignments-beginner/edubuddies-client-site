@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightFromBracket, faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faRightFromBracket,
+  faBars,
+  faCartShopping,
+} from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 import useAuth from "../../../hooks/useAuth";
 // import { HashLink } from "react-router-hash-link";
@@ -173,7 +177,23 @@ const Header = () => {
                     <div className="px-3 py-2 text-left">
                       <span className="text-sm">Signed In As</span>
                       <br />
-                      <span>{user.displayName}</span>
+                      <div className="flex justify-between items-center">
+                        <span>{user.displayName}</span>
+                        <Link to="" className="flex justify-start">
+                          <div className="pt-1">
+                            <FontAwesomeIcon
+                              className="text-red-500 text-lg"
+                              icon={faCartShopping}
+                            />{" "}
+                            <div
+                              style={{ fontSize: "10px" }}
+                              className="text-white bg-red-500 px-0.5 font-black absolute right-2 left-34 top-7 rounded-full"
+                            >
+                              12
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
                     </div>
                     <hr />
                     <Link

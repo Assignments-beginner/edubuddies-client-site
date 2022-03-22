@@ -30,6 +30,7 @@ SwiperCore.use([Autoplay, Pagination]);
 
 const Courses = () => {
   const { user } = useAuth();
+  const [regularBookmark, setRegularBookmark] = useState(true);
   const { register, handleSubmit } = useForm();
   const courses = useSelector((state) => state?.edu?.courses);
   const dispatch = useDispatch();
@@ -42,11 +43,9 @@ const Courses = () => {
   }, [dispatch]);
   console.log(courses);
 
-  /* const openAlert = () => {
-    Swal.fire({
-      title: "Course Added To Wishlist",
-    });
-  }; */
+  const changeIcon = () => {
+    setRegularBookmark(false);
+  };
 
   // new work
   const onSubmit = (data) => {
@@ -95,42 +94,7 @@ const Courses = () => {
                     src={course?.image}
                     alt=""
                   />
-                  {/* old button */}
-                  {/* {user.email ? (
-                    <button
-                      onClick={openAlert}
-                      className="
-                    top-4 
-                    right-4 
-                    absolute 
-                    px-1.5
-                    pt-1.5
-                    bg-white"
-                    >
-                      <FontAwesomeIcon
-                        className="text-red-500 text-xl"
-                        icon={faBookmark}
-                      />
-                    </button>
-                  ) : (
-                    <Link
-                      to="/signup"
-                      className="
-                    top-4 
-                    right-4 
-                    absolute 
-                    px-1.5
-                    pt-1.5
-                    bg-white"
-                    >
-                      <FontAwesomeIcon
-                        className="text-red-500 text-xl"
-                        icon={faBookmark}
-                      />
-                    </Link>
-                  )} */}
-                  {/* old button */}
-                  {/* new test work  */}
+                  {/* Hidden Cart Form  */}
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <input
                       className="hidden"
@@ -164,6 +128,8 @@ const Courses = () => {
                     />
                     {user.email ? (
                       <button
+                        // onClick={() => changeIcon(course._id)}
+                        onClick={changeIcon}
                         type="submit"
                         className="
                     top-4 
@@ -173,10 +139,17 @@ const Courses = () => {
                     pt-1.5
                     bg-white"
                       >
-                        <FontAwesomeIcon
-                          className="text-red-500 text-xl"
-                          icon={faBookmark}
-                        />
+                        {regularBookmark ? (
+                          <FontAwesomeIcon
+                            className="text-red-500 text-xl"
+                            icon={faBookmark}
+                          />
+                        ) : (
+                          <FontAwesomeIcon
+                            className="text-red-500 text-xl"
+                            icon={solidBookmark}
+                          />
+                        )}
                       </button>
                     ) : (
                       <Link
@@ -196,7 +169,7 @@ const Courses = () => {
                       </Link>
                     )}
                   </form>
-                  {/* new test work  */}
+                  {/* Hidden Cart Form  */}
                   <div className="bg-slate-900 top-4 left-4 absolute px-2 rounded">
                     <span className="text-white text-xs">
                       {course?.category}
