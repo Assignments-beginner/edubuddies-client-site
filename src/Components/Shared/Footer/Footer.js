@@ -40,8 +40,9 @@ const Footer = () => {
         <div className="logo-part pl-14">
           <Link to="/home">
             <img
-              className="w-40 mb-4"
-              src="https://i.ibb.co/HzzW0Xv/logo.png"
+              className="w-32 mb-4"
+              // src="https://i.ibb.co/mbrPZ39/edu-buddies.png"
+              src="https://i.ibb.co/mbrPZ39/edu-buddies.png"
               alt="footer logo"
             />
           </Link>
