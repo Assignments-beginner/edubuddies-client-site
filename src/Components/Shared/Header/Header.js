@@ -86,10 +86,11 @@ const Header = () => {
             <Link to="/home">
               <img
                 className="hidden lg:block"
-                height="230"
-                width="130"
-                src="https://i.ibb.co/HzzW0Xv/logo.png"
-                alt="Workflow"
+                height="190"
+                width="90"
+                // src="https://i.ibb.co/HzzW0Xv/logo.png"
+                src="https://i.ibb.co/mbrPZ39/edu-buddies.png"
+                alt="Logo"
               />
             </Link>
           </div>
@@ -183,32 +184,40 @@ const Header = () => {
                     </Link>
                     <hr />
                     {role === "Admin" && (
-                      <Link
-                        className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
-                        to="/dashboard"
-                      >
-                        Dashboard
-                      </Link>
+                      <div>
+                        <Link
+                          className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
+                          to="/dashboard"
+                        >
+                          Dashboard
+                        </Link>
+                        <hr />
+                      </div>
                     )}
-                    <hr />
+
                     {role === "Instructor" && (
-                      <Link
-                        className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
-                        to="/teachersDashboard"
-                      >
-                        Dashboard
-                      </Link>
+                      <div>
+                        <Link
+                          className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
+                          to="/teachersDashboard"
+                        >
+                          Dashboard
+                        </Link>
+                        <hr />
+                      </div>
                     )}
-                    <hr />
+
                     {role === "Student" && (
-                      <Link
-                        className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
-                        to="/studentdashboard"
-                      >
-                        Dashboard
-                      </Link>
+                      <div>
+                        <Link
+                          className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white"
+                          to="/studentdashboard"
+                        >
+                          Dashboard
+                        </Link>
+                        <hr />
+                      </div>
                     )}
-                    <hr />
                     {user?.email && (
                       <p className="text-black-200 hover:bg-red-600 focus:bg-red-600 px-3 py-2 text-left text-md font-medium block hover:text-white">
                         <button onClick={logOut}>Log Out</button>
