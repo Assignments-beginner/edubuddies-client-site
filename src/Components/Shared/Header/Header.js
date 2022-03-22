@@ -88,7 +88,7 @@ const Header = () => {
                 className="hidden lg:block"
                 height="190"
                 width="90"
-                // src="https://i.ibb.co/HzzW0Xv/logo.png"
+                // src="https://i.ibb.co/mbrPZ39/edu-buddies.png"
                 src="https://i.ibb.co/mbrPZ39/edu-buddies.png"
                 alt="Logo"
               />
