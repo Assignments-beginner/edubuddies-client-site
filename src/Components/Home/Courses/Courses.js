@@ -20,10 +20,12 @@ import axios from "axios";
 import { addCourse } from "../../../Redux/edubuddySlice";
 import demoUser from "../../../Images/user-demo.png";
 import Swal from "sweetalert2";
+import useAuth from "../../../hooks/useAuth";
 
 SwiperCore.use([Autoplay, Pagination]);
 
 const Courses = () => {
+  const { user } = useAuth();
   const courses = useSelector((state) => state?.edu?.courses);
   const dispatch = useDispatch();
 
@@ -37,7 +39,7 @@ const Courses = () => {
 
   const openAlert = () => {
     Swal.fire({
-      title: "This Functionality Not Updated Yet",
+      title: "Course Added To Wishlist",
     });
   };
 
@@ -76,21 +78,39 @@ const Courses = () => {
                     src={course?.image}
                     alt=""
                   />
-                  <button
-                    onClick={openAlert}
-                    className="
+                  {user.email ? (
+                    <button
+                      onClick={openAlert}
+                      className="
                     top-4 
                     right-4 
                     absolute 
                     px-1.5
                     pt-1.5
                     bg-white"
-                  >
-                    <FontAwesomeIcon
-                      className="text-red-500 text-xl"
-                      icon={faBookmark}
-                    />
-                  </button>
+                    >
+                      <FontAwesomeIcon
+                        className="text-red-500 text-xl"
+                        icon={faBookmark}
+                      />
+                    </button>
+                  ) : (
+                    <Link
+                      to="/signup"
+                      className="
+                    top-4 
+                    right-4 
+                    absolute 
+                    px-1.5
+                    pt-1.5
+                    bg-white"
+                    >
+                      <FontAwesomeIcon
+                        className="text-red-500 text-xl"
+                        icon={faBookmark}
+                      />
+                    </Link>
+                  )}
                   <div className="bg-slate-900 top-4 left-4 absolute px-2 rounded">
                     <span className="text-white text-xs">
                       {course?.category}
