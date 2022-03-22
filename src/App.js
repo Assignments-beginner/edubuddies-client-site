@@ -72,7 +72,6 @@ import SoftDevCourses from "../src/Components/Home/CourseCategories/SoftDevCours
 import ProgrammingCourses from "../src/Components/Home/CourseCategories/ProgrammingCourses/ProgrammingCourses";
 import WebDevCourses from "../src/Components/Home/CourseCategories/WebDevCourses/WebDevCourses";
 import MyClasess from "./Components/StudentDashboard/MyClasess/MyClasess";
-
 import Success from "./Components/Payment/Success/Success";
 import TeacherRoute from "./Components/Login/TeacherRoute/TeacherRoute";
 import AdminRoute from "./Components/Login/AdminRoute/AdminRoute";

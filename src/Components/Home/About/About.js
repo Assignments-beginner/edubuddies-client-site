@@ -2,18 +2,22 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import about from "../../../Images/about.png";
+import useAuth from "../../../hooks/useAuth";
 import { Link } from "react-router-dom";
 
 const About = () => {
+  const { user } = useAuth();
   return (
     <div className="py-14">
-      <div className="container px-12 mx-auto 
+      <div
+        className="container px-12 mx-auto 
 	  lg:flex
 	  items-start 
 	  justify-between 
 	  md:block 
 	  sm:block
-	  ">
+	  "
+      >
         <div
           className="flex items-start justify-center
 		xl:text-left 
@@ -44,15 +48,17 @@ const About = () => {
                   Explore Courses
                 </button>
               </Link>
-              <Link to="/signup">
-                <button className="py-4 px-8 mt-10 rounded-md hover:text-red-500 transition-all ease-linear duration-300">
-                  Sign Up Now
-                  <FontAwesomeIcon
-                    className="ml-4 faArrowRightLong"
-                    icon={faArrowRightLong}
-                  />
-                </button>
-              </Link>
+              {!user?.email && (
+                <Link to="/signup">
+                  <button className="py-4 px-8 mt-10 rounded-md hover:text-red-500 transition-all ease-linear duration-300">
+                    Sign Up Now
+                    <FontAwesomeIcon
+                      className="ml-4 faArrowRightLong"
+                      icon={faArrowRightLong}
+                    />
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>

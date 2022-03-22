@@ -76,8 +76,8 @@ const StudentDashboard = () => {
               <div className="flex flex-col items-center">
                 <Link to="/home">
                   <img
-                    className="w-34 h-16"
-                    src="https://i.ibb.co/HzzW0Xv/logo.png"
+                    className="w-38 h-20"
+                    src="https://i.ibb.co/mbrPZ39/edu-buddies.png"
                     alt=""
                   />
                 </Link>
