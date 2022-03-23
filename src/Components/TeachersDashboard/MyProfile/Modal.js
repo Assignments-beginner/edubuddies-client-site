@@ -20,7 +20,7 @@ const Modal = ({ setShowModal }) => {
 			address: "",
 			about: "",
 			experinece: "",
-			skillset: "",
+			skills: "",
 			language: "",
 			type: "",
 		},
@@ -181,15 +181,15 @@ const Modal = ({ setShowModal }) => {
 								</div>
 								<div className='flex flex-col space-y-1'>
 									<label
-										for='skillset'
+										for='skills'
 										className='text-sm font-semibold tracking-widest  text-left mt-2'>
-										Skillset
+										skills
 									</label>
 									<input
 										type='text'
-										id='skillset'
-										name='skillset'
-										{...register("skillset", { required: true })}
+										id='skills'
+										name='skills'
+										{...register("skills", { required: true })}
 										autofocus
 										className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500'
 									/>
