@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faUser,
-  faBookmark,
   faClock,
   faStar as faRegularStar,
 } from "@fortawesome/free-regular-svg-icons";
@@ -19,7 +20,6 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { addCourse } from "../../../Redux/edubuddySlice";
 import demoUser from "../../../Images/user-demo.png";
-import Swal from "sweetalert2";
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -34,12 +34,6 @@ const Courses = () => {
     });
   }, [dispatch]);
   console.log(courses);
-
-  const openAlert = () => {
-    Swal.fire({
-      title: "This Functionality Not Updated Yet",
-    });
-  };
 
   return (
     <div className="container mb-14 mx-auto px-4 md:px-11">
@@ -76,21 +70,6 @@ const Courses = () => {
                     src={course?.image}
                     alt=""
                   />
-                  <button
-                    onClick={openAlert}
-                    className="
-                    top-4 
-                    right-4 
-                    absolute 
-                    px-1.5
-                    pt-1.5
-                    bg-white"
-                  >
-                    <FontAwesomeIcon
-                      className="text-red-500 text-xl"
-                      icon={faBookmark}
-                    />
-                  </button>
                   <div className="bg-slate-900 top-4 left-4 absolute px-2 rounded">
                     <span className="text-white text-xs">
                       {course?.category}
