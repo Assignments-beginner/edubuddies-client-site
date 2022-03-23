@@ -43,13 +43,10 @@ const Courses = () => {
   }, [dispatch]);
   console.log(courses);
 
-  const changeIcon = () => {
-    setRegularBookmark(false);
-  };
-
   // new work
   const onSubmit = (data) => {
-    axios.post("http://localhost:5000/addCourseToCart", data).then((res) => {
+    axios.post("http://localhost:5000/addCourseToCart",data).then((res) => {
+      // setRegularBookmark(false);
       if (res.data.insertedId) {
         Swal.fire({
           title: "Course Added To Wishlist",
@@ -132,7 +129,6 @@ const Courses = () => {
                     )}
                     {user.email ? (
                       <button
-                        onClick={changeIcon}
                         type="submit"
                         className="
                     top-4 

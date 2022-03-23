@@ -159,7 +159,7 @@ const Header = () => {
                 absolute 
                 right-0 
                 top-2
-                w-40 
+                w-44 
                 shadow-lg 
                 py-1 
                 px-1
@@ -177,17 +177,17 @@ const Header = () => {
                     <div className="px-3 py-2 text-left">
                       <span className="text-sm">Signed In As</span>
                       <br />
-                      <div className="flex justify-between items-center">
+                      <div className="flex flex-col justify-start">
                         <span>{user.displayName}</span>
                         <Link to="/wishCart" className="flex justify-start">
                           <div className="pt-1">
                             <FontAwesomeIcon
-                              className="text-red-500 text-lg"
+                              className="text-red-500 pt-1.5 text-lg"
                               icon={faCartShopping}
                             />
                             <div
                               style={{ fontSize: "12px" }}
-                              className="text-red-500 px-0.5 font-black absolute right-2 left-34 top-7"
+                              className="text-red-500 font-black absolute left-9 top-14"
                             >
                               3
                             </div>
