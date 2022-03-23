@@ -179,7 +179,7 @@ const Header = () => {
                       <br />
                       <div className="flex flex-col justify-start">
                         <span>{user.displayName}</span>
-                        <Link to="/wishCart" className="flex justify-start">
+                        {/* <Link to="/wishCart" className="flex justify-start">
                           <div className="pt-1">
                             <FontAwesomeIcon
                               className="text-red-500 pt-1.5 text-lg"
@@ -192,7 +192,7 @@ const Header = () => {
                               3
                             </div>
                           </div>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                     <hr />

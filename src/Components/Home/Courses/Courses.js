@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
-  faBookmark as solidBookmark,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faUser,
-  faBookmark,
   faClock,
   faStar as faRegularStar,
 } from "@fortawesome/free-regular-svg-icons";
@@ -22,16 +20,10 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { addCourse } from "../../../Redux/edubuddySlice";
 import demoUser from "../../../Images/user-demo.png";
-import Swal from "sweetalert2";
-import useAuth from "../../../hooks/useAuth";
-import { useForm } from "react-hook-form";
 
 SwiperCore.use([Autoplay, Pagination]);
 
 const Courses = () => {
-  const { user } = useAuth();
-  const [regularBookmark, setRegularBookmark] = useState(true);
-  const { register, handleSubmit } = useForm();
   const courses = useSelector((state) => state?.edu?.courses);
   const dispatch = useDispatch();
 
@@ -42,19 +34,6 @@ const Courses = () => {
     });
   }, [dispatch]);
   console.log(courses);
-
-  // new work
-  const onSubmit = (data) => {
-    axios.post("http://localhost:5000/addCourseToCart",data).then((res) => {
-      // setRegularBookmark(false);
-      if (res.data.insertedId) {
-        Swal.fire({
-          title: "Course Added To Wishlist",
-        });
-      }
-    });
-  };
-  // new work
 
   return (
     <div className="container mb-14 mx-auto px-4 md:px-11">
@@ -91,84 +70,6 @@ const Courses = () => {
                     src={course?.image}
                     alt=""
                   />
-                  {/* Hidden Wish Cart Form  */}
-                  <form onSubmit={handleSubmit(onSubmit)}>
-                    <input
-                      className="hidden"
-                      defaultValue={course?.image}
-                      {...register("cartCourseImage")}
-                    />
-                    <input
-                      className="hidden"
-                      defaultValue={course?.title}
-                      {...register("cartCourseTitle")}
-                    />
-                    <input
-                      className="hidden"
-                      defaultValue={course?.courseFee}
-                      {...register("cartCourseFee")}
-                    />
-                    <input
-                      className="hidden"
-                      defaultValue="Added"
-                      {...register("cartCourseStatus")}
-                    />
-                    {user.displayName && (
-                      <input
-                        className="hidden"
-                        defaultValue={user.displayName}
-                        {...register("cartUserName")}
-                      />
-                    )}
-                    {user.email && (
-                      <input
-                        className="hidden"
-                        defaultValue={user.email}
-                        {...register("cartUserEmail")}
-                      />
-                    )}
-                    {user.email ? (
-                      <button
-                        type="submit"
-                        className="
-                    top-4 
-                    right-4 
-                    absolute 
-                    px-1.5
-                    pt-1.5
-                    bg-white"
-                      >
-                        {regularBookmark ? (
-                          <FontAwesomeIcon
-                            className="text-red-500 text-xl"
-                            icon={faBookmark}
-                          />
-                        ) : (
-                          <FontAwesomeIcon
-                            className="text-red-500 text-xl"
-                            icon={solidBookmark}
-                          />
-                        )}
-                      </button>
-                    ) : (
-                      <Link
-                        to="/signup"
-                        className="
-                    top-4 
-                    right-4 
-                    absolute 
-                    px-1.5
-                    pt-1.5
-                    bg-white"
-                      >
-                        <FontAwesomeIcon
-                          className="text-red-500 text-xl"
-                          icon={faBookmark}
-                        />
-                      </Link>
-                    )}
-                  </form>
-                  {/* Hidden Wish Cart Form  */}
                   <div className="bg-slate-900 top-4 left-4 absolute px-2 rounded">
                     <span className="text-white text-xs">
                       {course?.category}
