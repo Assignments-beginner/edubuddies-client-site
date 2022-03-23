@@ -31,7 +31,11 @@ const Teachers = () => {
               <span>Senior Developer</span>
               <ul>
                 <li>
-                  <a href="/#">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://img.freepik.com/free-photo/pile-3d-facebook-logos_1379-875.jpg?w=740"
+                  >
                     <FontAwesomeIcon
                       className="text-gray-700 text-3xl mx-2"
                       icon={faFacebook}
@@ -39,7 +43,11 @@ const Teachers = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/#">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://img.freepik.com/free-photo/pile-3d-twitter-logos_1379-879.jpg?w=740"
+                  >
                     <FontAwesomeIcon
                       className="text-gray-700 text-3xl mx-2"
                       icon={faTwitter}
@@ -47,7 +55,11 @@ const Teachers = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/#">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.luanwise.co.uk/wp-content/uploads/2021/12/Linkedin-1200x500.jpeg"
+                  >
                     <FontAwesomeIcon
                       className="text-gray-700 text-3xl mx-2"
                       icon={faLinkedin}
@@ -69,7 +81,11 @@ const Teachers = () => {
               <span>Software Engineer</span>
               <ul>
                 <li>
-                  <a href="/#">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://img.freepik.com/free-photo/pile-3d-facebook-logos_1379-875.jpg?w=740"
+                  >
                     <FontAwesomeIcon
                       className="text-gray-700 text-3xl mx-2"
                       icon={faFacebook}
@@ -77,7 +93,11 @@ const Teachers = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/#">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://img.freepik.com/free-photo/pile-3d-twitter-logos_1379-879.jpg?w=740"
+                  >
                     <FontAwesomeIcon
                       className="text-gray-700 text-3xl mx-2"
                       icon={faTwitter}
@@ -85,7 +105,11 @@ const Teachers = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/#">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.luanwise.co.uk/wp-content/uploads/2021/12/Linkedin-1200x500.jpeg"
+                  >
                     <FontAwesomeIcon
                       className="text-gray-700 text-3xl mx-2"
                       icon={faLinkedin}
@@ -107,7 +131,11 @@ const Teachers = () => {
               <span>Web Developer</span>
               <ul>
                 <li>
-                  <a href="/#">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://img.freepik.com/free-photo/pile-3d-facebook-logos_1379-875.jpg?w=740"
+                  >
                     <FontAwesomeIcon
                       className="text-gray-700 text-3xl mx-2"
                       icon={faFacebook}
@@ -115,7 +143,11 @@ const Teachers = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/#">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://img.freepik.com/free-photo/pile-3d-twitter-logos_1379-879.jpg?w=740"
+                  >
                     <FontAwesomeIcon
                       className="text-gray-700 text-3xl mx-2"
                       icon={faTwitter}
@@ -123,7 +155,11 @@ const Teachers = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/#">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.luanwise.co.uk/wp-content/uploads/2021/12/Linkedin-1200x500.jpeg"
+                  >
                     <FontAwesomeIcon
                       className="text-gray-700 text-3xl mx-2"
                       icon={faLinkedin}

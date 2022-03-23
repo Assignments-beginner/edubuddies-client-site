@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightFromBracket, faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faRightFromBracket,
+  faBars,
+  faCartShopping,
+} from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 import useAuth from "../../../hooks/useAuth";
 // import { HashLink } from "react-router-hash-link";
@@ -155,7 +159,7 @@ const Header = () => {
                 absolute 
                 right-0 
                 top-2
-                w-40 
+                w-44 
                 shadow-lg 
                 py-1 
                 px-1
@@ -173,7 +177,23 @@ const Header = () => {
                     <div className="px-3 py-2 text-left">
                       <span className="text-sm">Signed In As</span>
                       <br />
-                      <span>{user.displayName}</span>
+                      <div className="flex flex-col justify-start">
+                        <span>{user.displayName}</span>
+                        {/* <Link to="/wishCart" className="flex justify-start">
+                          <div className="pt-1">
+                            <FontAwesomeIcon
+                              className="text-red-500 pt-1.5 text-lg"
+                              icon={faCartShopping}
+                            />
+                            <div
+                              style={{ fontSize: "12px" }}
+                              className="text-red-500 font-black absolute left-9 top-14"
+                            >
+                              3
+                            </div>
+                          </div>
+                        </Link> */}
+                      </div>
                     </div>
                     <hr />
                     <Link
