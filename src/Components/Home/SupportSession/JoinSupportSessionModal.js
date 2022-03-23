@@ -32,7 +32,10 @@ const JoinSupportSessionModal = ({ setJoinSupportSessionModal, id }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .put(`http://localhost:5000/joinsupportsession/${id}`, data)
+          .put(
+            `https://fierce-caverns-90976.herokuapp.com/joinsupportsession/${id}`,
+            data
+          )
           .then(function(response) {
             Swal.fire({
               icon: "success",
@@ -53,7 +56,9 @@ const JoinSupportSessionModal = ({ setJoinSupportSessionModal, id }) => {
   console.log("singlesupportsession", singlesupportsession);
   React.useEffect(() => {
     axios
-      .get(`http://localhost:5000/singlesupportsession/${id}`)
+      .get(
+        `https://fierce-caverns-90976.herokuapp.com/singlesupportsession/${id}`
+      )
       .then((res) => {
         setSinglesupportsession(res.data);
       });

@@ -11,7 +11,9 @@ const StudentRoute = ({ children }) => {
   useEffect(() => {
     const loadFUncion = async () => {
       setIsLoading(true);
-      await fetch(`http://localhost:5000/getUserRole/${user.email}`)
+      await fetch(
+        `https://fierce-caverns-90976.herokuapp.com/getUserRole/${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data[0].role === "Student") {

@@ -18,22 +18,26 @@ const MakeAdmin = () => {
   } = useForm();
   const onSubmit = (data, e) => {
     setAdmin(true);
-    axios.put("http://localhost:5000/users/admin", data).then((res) => {
-      Swal.fire({
-        icon: "success",
-        title: `You made a new admin ${data?.email}`,
-        showConfirmButton: false,
-        timer: 1500,
+    axios
+      .put("https://fierce-caverns-90976.herokuapp.com/users/admin", data)
+      .then((res) => {
+        Swal.fire({
+          icon: "success",
+          title: `You made a new admin ${data?.email}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        setAdmin(false);
       });
-      setAdmin(false);
-    });
     e.target.reset();
   };
   const [allUsers, setAllusers] = useState();
   React.useEffect(() => {
-    axios.get(`http://localhost:5000/allusersdata`).then((res) => {
-      setAllusers(res.data);
-    });
+    axios
+      .get(`https://fierce-caverns-90976.herokuapp.com/allusersdata`)
+      .then((res) => {
+        setAllusers(res.data);
+      });
   }, []);
   console.log(allUsers);
   const options = [
@@ -58,15 +62,17 @@ const MakeAdmin = () => {
     };
 
     console.log(data);
-    axios.put("http://localhost:5000/changerole", data).then((res) => {
-      console.log(res.data);
-      Swal.fire({
-        icon: "success",
-        title: `Role Changed Successfully for ${emails?.displayName}`,
-        showConfirmButton: false,
-        timer: 1500,
+    axios
+      .put("https://fierce-caverns-90976.herokuapp.com/changerole", data)
+      .then((res) => {
+        console.log(res.data);
+        Swal.fire({
+          icon: "success",
+          title: `Role Changed Successfully for ${emails?.displayName}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
       });
-    });
   };
 
   const handleOnSearch = (string, results) => {};

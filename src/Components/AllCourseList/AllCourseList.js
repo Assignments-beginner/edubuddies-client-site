@@ -19,7 +19,7 @@ const AllCourseList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const url = "http://localhost:5000/courses";
+    const url = "https://fierce-caverns-90976.herokuapp.com/courses";
     axios.get(url).then((res) => {
       dispatch(addCourse(res?.data));
     });

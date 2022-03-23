@@ -18,7 +18,9 @@ const NeedSupportDetailsModal = ({ handleSolveId, setHandleSolveModal }) => {
   const [singlesupportsession, setSinglesupportsession] = React.useState();
   React.useEffect(() => {
     axios
-      .get(`http://localhost:5000/singlesupportsession/${handleSolveId}`)
+      .get(
+        `https://fierce-caverns-90976.herokuapp.com/singlesupportsession/${handleSolveId}`
+      )
       .then((res) => {
         setSinglesupportsession(res.data);
       });
@@ -39,7 +41,7 @@ const NeedSupportDetailsModal = ({ handleSolveId, setHandleSolveModal }) => {
       if (result.isConfirmed) {
         axios
           .put(
-            `http://localhost:5000/singlesupportsessionstatus/${handleSolveId}`,
+            `https://fierce-caverns-90976.herokuapp.com/singlesupportsessionstatus/${handleSolveId}`,
             {
               data,
             }

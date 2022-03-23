@@ -23,16 +23,20 @@ const SingleCourse = () => {
   const { user } = useAuth();
   const [sigleData, setSigleData] = React.useState();
   React.useEffect(() => {
-    axios.get(`http://localhost:5000/courses/${id}`).then((res) => {
-      setSigleData(res.data);
-    });
+    axios
+      .get(`https://fierce-caverns-90976.herokuapp.com/courses/${id}`)
+      .then((res) => {
+        setSigleData(res.data);
+      });
   }, [id, submitting]);
   const [promo, setPromo] = useState("");
   const [promos, setPromos] = React.useState();
   React.useEffect(() => {
-    axios.get(`http://localhost:5000/promo`).then((res) => {
-      setPromos(res.data);
-    });
+    axios
+      .get(`https://fierce-caverns-90976.herokuapp.com/promo`)
+      .then((res) => {
+        setPromos(res.data);
+      });
   }, []);
 
   const filterPromo = promos?.filter(
@@ -85,7 +89,7 @@ const SingleCourse = () => {
       cus_country: "N/A",
       cus_phone: "N/A",
     };
-    fetch(`http://localhost:5000/init`, {
+    fetch(`https://fierce-caverns-90976.herokuapp.com/init`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -9,7 +9,7 @@ const RemoveCourse = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/getCourse/${user?.email}`;
+    const url = `https://fierce-caverns-90976.herokuapp.com/getCourse/${user?.email}`;
     axios.get(url).then((res) => {
       const data = res.data.filter((item) => item.courseStatus !== "delete");
       setCourses(data);

@@ -13,7 +13,7 @@ const MyCourses = () => {
   const [course, setCourse] = useState();
 
   useEffect(() => {
-    const url = `http://localhost:5000/getCourse/${user?.email}`;
+    const url = `https://fierce-caverns-90976.herokuapp.com/getCourse/${user?.email}`;
     axios.get(url).then((res) => {
       setCourse(res.data);
     });

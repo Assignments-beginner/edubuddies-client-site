@@ -29,7 +29,7 @@ const Contact = () => {
     };
     setSubmitting(true);
     axios
-      .post(`http://localhost:5000/email`, data)
+      .post(`https://fierce-caverns-90976.herokuapp.com/email`, data)
       .then(function(response) {
         setSubmitting(false);
         Swal.fire({

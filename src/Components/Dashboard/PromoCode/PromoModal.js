@@ -16,7 +16,7 @@ const PromoModal = ({ setShowPromoModal }) => {
     };
     setSubmitting(true);
     axios
-      .post(`http://localhost:5000/promo`, data)
+      .post(`https://fierce-caverns-90976.herokuapp.com/promo`, data)
       .then(function(response) {
         Swal.fire({
           icon: "success",

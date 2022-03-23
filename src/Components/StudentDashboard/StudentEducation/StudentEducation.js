@@ -12,7 +12,9 @@ const StudentEducation = () => {
   const { user } = useAuth();
   React.useEffect(() => {
     axios
-      .get(`http://localhost:5000/allusers?email=${user?.email}`)
+      .get(
+        `https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`
+      )
       .then((res) => {
         setEducation(res.data?.educationalExp);
       });

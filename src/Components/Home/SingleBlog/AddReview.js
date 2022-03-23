@@ -19,7 +19,10 @@ const AddReview = ({ blog, submitting, setSubmitting }) => {
     };
     setSubmitting(true);
     axios
-      .put(`http://localhost:5000/review/${blog?._id}`, addBlog)
+      .put(
+        `https://fierce-caverns-90976.herokuapp.com/review/${blog?._id}`,
+        addBlog
+      )
       .then(function(response) {
         Swal.fire({
           icon: "success",

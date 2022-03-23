@@ -10,14 +10,14 @@ const AddContent = () => {
   const courses = useSelector((state) => state.edu.courses);
 
   useEffect(() => {
-    const url = "http://localhost:5000/courses";
+    const url = "https://fierce-caverns-90976.herokuapp.com/courses";
     axios.get(url).then((res) => {
       dispatch(addCourse(res.data));
     });
   }, [dispatch]);
   /* 	const [courses, setCourses] = React.useState(); 
 	React.useEffect(() => {
-		axios.get(`http://localhost:5000/promo`).then((res) => {
+		axios.get(`https://fierce-caverns-90976.herokuapp.com/promo`).then((res) => {
 			setCourses(res.data);
 		});
 	}, []); */

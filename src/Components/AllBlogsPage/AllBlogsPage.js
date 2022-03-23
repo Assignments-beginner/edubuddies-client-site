@@ -8,9 +8,11 @@ import publisherImg from "../../Images/user-demo.png";
 const AllBlogsPage = () => {
   const [blogs, setBlogs] = React.useState();
   React.useEffect(() => {
-    axios.get(`http://localhost:5000/blogs`).then((res) => {
-      setBlogs(res.data);
-    });
+    axios
+      .get(`https://fierce-caverns-90976.herokuapp.com/blogs`)
+      .then((res) => {
+        setBlogs(res.data);
+      });
   }, []);
   console.log(blogs);
 

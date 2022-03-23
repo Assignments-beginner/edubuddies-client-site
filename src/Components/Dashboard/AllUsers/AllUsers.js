@@ -13,9 +13,11 @@ const AllUsers = () => {
   const [deleted, setDeleted] = React.useState(false);
   const [users, setUsers] = React.useState();
   React.useEffect(() => {
-    axios.get(`http://localhost:5000/allusersdata`).then((res) => {
-      setUsers(res.data);
-    });
+    axios
+      .get(`https://fierce-caverns-90976.herokuapp.com/allusersdata`)
+      .then((res) => {
+        setUsers(res.data);
+      });
   }, [deleted]);
 
   const handleDelete = (id) => {
@@ -32,7 +34,9 @@ const AllUsers = () => {
       setDeleted(false);
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/allusersdata/${id}`)
+          .delete(
+            `https://fierce-caverns-90976.herokuapp.com/allusersdata/${id}`
+          )
           .then(function(response) {
             Swal.fire("Deleted!", "That user has been deleted.", "success");
             setDeleted(true);

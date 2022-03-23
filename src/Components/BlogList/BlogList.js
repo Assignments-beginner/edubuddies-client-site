@@ -14,9 +14,11 @@ const BlogList = () => {
   const [status, setStatus] = React.useState(false);
   const [allBlogs, setAllBlogs] = React.useState();
   React.useEffect(() => {
-    axios.get(`http://localhost:5000/blogs`).then((res) => {
-      setAllBlogs(res.data);
-    });
+    axios
+      .get(`https://fierce-caverns-90976.herokuapp.com/blogs`)
+      .then((res) => {
+        setAllBlogs(res.data);
+      });
   }, [deleted, status]);
 
   const handleDelete = (id) => {
@@ -32,7 +34,7 @@ const BlogList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/blogs/${id}`)
+          .delete(`https://fierce-caverns-90976.herokuapp.com/blogs/${id}`)
           .then(function(response) {
             Swal.fire("Deleted!", "That blog has been deleted.", "success");
             setDeleted(false);
@@ -57,7 +59,7 @@ const BlogList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .put(`http://localhost:5000/blogStatus/${id}`, {
+          .put(`https://fierce-caverns-90976.herokuapp.com/blogStatus/${id}`, {
             text: text,
           })
           .then(function(response) {

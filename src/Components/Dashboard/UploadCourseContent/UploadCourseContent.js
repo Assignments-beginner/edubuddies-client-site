@@ -71,7 +71,10 @@ const UploadCourseContent = () => {
     };
     setSubmitting(true);
     axios
-      .patch(`http://localhost:5000/updateCourseContent/${id}`, file)
+      .patch(
+        `https://fierce-caverns-90976.herokuapp.com/updateCourseContent/${id}`,
+        file
+      )
       .then(function(response) {
         Swal.fire({
           icon: "success",
