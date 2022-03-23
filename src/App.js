@@ -76,8 +76,7 @@ import Success from "./Components/Payment/Success/Success";
 import TeacherRoute from "./Components/Login/TeacherRoute/TeacherRoute";
 import AdminRoute from "./Components/Login/AdminRoute/AdminRoute";
 import StudentRoute from "./Components/Login/StudentRoute/StudentRoute";
-import UserChart from "./Components/Dashboard/Admin/Chart/UserChart";
-
+import UserActivities from "./Components/Dashboard/Admin/Chart/UserActivities";
 function App() {
   return (
     <div className="App">
@@ -216,7 +215,7 @@ function App() {
                 <Route path="/dashboard/admin/history" element={<History />} />
                 <Route
                   path="/dashboard/admin/userActivity"
-                  element={<UserChart />}
+                  element={<UserActivities />}
                 />
               </Route>
               <Route
