@@ -1,95 +1,84 @@
-import { JitsiMeeting } from "@jitsi/react-sdk";
 import React, { useState } from "react";
-import ChatBot from "react-simple-chatbot";
 
 const Test = () => {
-	/* 	const config = {
-		width: "300px",
-		height: "400px",
-		floating: true,
+	const [length, setLength] = useState(0);
+	const [array, setArray] = useState([]);
+	const [nums, setNums] = useState([]);
+	const handleClick = (n) => {
+		const nn = [...nums, n];
+		if (nn.length - 1 < length) {
+			setNums(nn);
+		}
 	};
-	const steps = [
-		{
-			id: "1",
-			message: "What is your name?",
-			trigger: "2",
-		},
-		{
-			id: "2",
-			user: true,
-			trigger: "3",
-		},
-		{
-			id: "3",
-			message: "Do you want to know about our courses?",
-			trigger: "4",
-		},
-		{
-			id: "4",
-			options: [
-				{ value: 1, label: "Yes", trigger: "5" },
-				{ value: 2, label: "No", trigger: "3" },
-			],
-		},
-		{
-			id: "5",
-			options: [
-				{ value: 1, label: "Python", trigger: "6" },
-				{ value: 2, label: "C++", trigger: "7" },
-				{ value: 3, label: "C#", trigger: "8" },
-				{ value: 3, label: "Web Development", trigger: "9" },
-			],
-		},
-		{
-			id: "6",
-			message: "We have best Python developer.",
-		},
-		{
-			id: "7",
-			message: "We have best C++ developer.",
-		},
-		{
-			id: "8",
-			message: "We have best C# developer.",
-		},
-		{
-			id: "9",
-			message: "We have best Web developer.",
-		},
-	]; */
-	/* 	const [room, setRoom] = useState();
-	console.log(room);
-	const [start, setStart] = useState(false);
-	const createMeeting = () => {
-		setStart(true);
+	const show = () => {
+		setArray([...new Set(nums)]);
 	};
- */
-	return {
-		/*	<div className='chat'>
-			 	{start ? (
-				<JitsiMeeting
-					roomName={room}
-					configOverwrite={{
-						startWithAudioMuted: true,
-						hiddenPremeetingButtons: ["microphone"],
-					}}
-					getIFrameRef={(node) => (node.style.height = "800px")}
-				/>
-			) : (
-				<>
-					<input type='text' onChange={(e) => setRoom(e.target.value)} />
-					<button onClick={createMeeting}>Create</button>
-				</>
-			)} 
-		<ChatBot
-				headerTitle='Speech Recognition'
-				recognitionEnable={true}
-				speechSynthesis={{ enable: true, lang: "en" }}
-				steps={steps}
-				{...config}
+	const print = () => {};
+
+	return (
+		<div className='conatiner'>
+			<input
+				id='Title'
+				placeholder='Enter Length'
+				label='Title'
+				name='Title'
+				autofocus
+				className='mt-3 mx-1 m-0 px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500'
+				onChange={(e) => setLength(e.target.value)}
 			/>
-		</div>  */
-	};
+			<div className='w-1/5  mx-auto'>
+				<div className='grid grid-cols-5'>
+					{Array.from({ length: 30 }).map((_, idx) => (
+						<>
+							{nums?.includes(idx + 1) ? (
+								<button
+									onClick={() => handleClick(idx + 1)}
+									className='bg-black m-2 rounded-full text-white'>
+									{idx + 1}
+								</button>
+							) : (
+								<button
+									onClick={() => handleClick(idx + 1)}
+									className='bg-red-500 m-2 rounded-full text-white'>
+									{idx + 1}
+								</button>
+							)}
+						</>
+					))}
+				</div>
+			</div>
+			<div className='border-t border-red-5'></div>
+			<button
+				onClick={() => show()}
+				className='bg-red-500 m-2 p-4 rounded text-white'>
+				View
+			</button>
+			<div className='border-t border-red-5'></div>
+
+			<div className='w-1/5  mx-auto'>
+				<div className='grid grid-cols-5' id='print'>
+					{Array.from({ length: 30 }).map((_, idx) => (
+						<>
+							{array?.includes(idx + 1) ? (
+								<button className='bg-black m-2 border-2 rounded-full text-black'>
+									&nbsp;
+								</button>
+							) : (
+								<button className='bg-white m-2 border-2 rounded-full text-white'>
+									&nbsp;
+								</button>
+							)}
+						</>
+					))}
+				</div>
+			</div>
+			<button
+				onClick={() => print()}
+				className='bg-red-500 m-2 p-4 rounded text-white'>
+				Print
+			</button>
+		</div>
+	);
 };
 
 export default Test;
