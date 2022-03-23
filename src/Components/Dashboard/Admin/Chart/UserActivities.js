@@ -7,10 +7,9 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
-const UserChart = () => {
+const UserActivities = () => {
   const historyData = useSelector((state) => state.edu.historyData);
   Math.max();
   const findDate = async () => {
@@ -69,7 +68,7 @@ const UserChart = () => {
   ];
 
   return (
-    <div>
+    <div style={{ width: "100%", height: "100%" }}>
       <h1>User Activity</h1>
       <ResponsiveContainer width="100%" aspect={4 / 1}>
         <LineChart data={data}>
@@ -87,4 +86,4 @@ const UserChart = () => {
   );
 };
 
-export default UserChart;
+export default UserActivities;
