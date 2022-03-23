@@ -15,7 +15,7 @@ import { EffectCoverflow, Pagination } from "swiper";
 import Rating from "react-rating";
 import demoUser from "../../../../Images/user-demo.png";
 import { Link } from "react-router-dom";
-import "../GameDevCourses/GameDevCourses.css";
+import "../WebDevCourses/WebDevCourses.css";
 
 const WebDevCourses = () => {
   const [courses, setCourses] = useState([]);
@@ -62,7 +62,7 @@ const WebDevCourses = () => {
                     src={courses?.image}
                     alt=""
                   />
-                  <button
+                  {/* <button
                     className="
                     top-4 
                     right-4 
@@ -75,7 +75,7 @@ const WebDevCourses = () => {
                       className="text-red-500 text-xl"
                       icon={faBookmark}
                     />
-                  </button>
+                  </button> */}
                   <div className="bg-slate-900 top-4 left-4 absolute px-2 rounded">
                     <span className="text-white text-xs">
                       {courses?.category}

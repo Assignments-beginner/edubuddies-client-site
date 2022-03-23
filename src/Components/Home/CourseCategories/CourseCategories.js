@@ -15,7 +15,7 @@ const CourseCategories = () => {
         Our Course Categories
       </h1>
       <div className="flex justify-center">
-        <div className="grid gap-6 grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3">
+        <div className="grid gap-6 grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2">
           {/* Fundamental  */}
           <Link to="/ProgrammingCourses">
             <div className="w-60 h-44 card duration-300">

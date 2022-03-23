@@ -10,11 +10,12 @@ import Select from "react-select";
 
 const AddCourse = () => {
   const options = [
+    { value: "Programming Fundamentals", label: "Programming Fundamentals" },
+    { value: "Sofware Development", label: "Sofware Development" },
     { value: "Web Development", label: "Web Development" },
-    { value: "Web Development", label: "Web Development" },
-    { value: "Web Development", label: "Web Development" },
-    { value: "Web Development", label: "Web Development" },
-    { value: "Web Development", label: "Web Development" },
+    { value: "Artificial Intelligence", label: "Artificial Intelligence" },
+    { value: "Game Development", label: "Game Development" },
+    { value: "Machine Learning", label: "Machine Learning" },
   ];
   const [category, setCategory] = React.useState();
   const { user } = useAuth();

@@ -62,7 +62,7 @@ const Achievement = () => {
               icon={faTrophy}
             />
             <span className="text-3xl text-white font-black ml-3">
-              <CountUp start={0} end={663} duration={2.75} suffix={"+"} />
+              <CountUp start={0} end={64} duration={2.75} suffix={"+"} />
             </span>
             <span className="text-xl text-gray-300 ml-3"> Awards</span>
           </div>
