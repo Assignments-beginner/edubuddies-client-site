@@ -12,10 +12,7 @@ const AddSkillModal = ({ setShowAddSkillModal }) => {
   const onSubmit = (data) => {
     setSubmitting(true);
     axios
-      .put(
-        `https://fierce-caverns-90976.herokuapp.com/skillset?email=${user?.email}`,
-        data
-      )
+      .put(`http://localhost:5000/skillset?email=${user?.email}`, data)
       .then(function(response) {
         Swal.fire({
           icon: "success",

@@ -22,9 +22,9 @@ const GameDevCourses = () => {
 
   const gameCategory = "Game Development";
 
-  useEffect(() => { 
+  useEffect(() => {
     fetch(
-      `https://fierce-caverns-90976.herokuapp.com/GameDevCourses?particularCategory=${gameCategory}`
+      `http://localhost:5000/GameDevCourses?particularCategory=${gameCategory}`
     )
       .then((res) => res.json())
       .then((data) => setCourses(data));

@@ -21,7 +21,7 @@ const AutoEmailSendTest = () => {
     };
     setSubmitting(true);
     axios
-      .post(`https://fierce-caverns-90976.herokuapp.com/autoEmail`, data)
+      .post(`http://localhost:5000/autoEmail`, data)
       .then(function(response) {
         console.log("response", response);
         Swal.fire({

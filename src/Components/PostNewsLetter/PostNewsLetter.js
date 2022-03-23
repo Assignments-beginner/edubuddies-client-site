@@ -19,8 +19,8 @@ const PostNewsLetter = () => {
     };
     setSubmitting(true);
     axios
-      .post(`https://fierce-caverns-90976.herokuapp.com/postnewsletter`, data)
-      .then(function (response) {
+      .post(`http://localhost:5000/postnewsletter`, data)
+      .then(function(response) {
         console.log("response", response);
         Swal.fire({
           icon: "success",
@@ -30,7 +30,7 @@ const PostNewsLetter = () => {
         });
         setSubmitting(false);
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log("error", error);
         console.log(error);
       });

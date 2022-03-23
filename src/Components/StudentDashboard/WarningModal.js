@@ -9,9 +9,7 @@ const WarningModal = ({ setShowModal, submitting, setSubmitting }) => {
   const ok = () => {
     setSubmitting(true);
     axios
-      .put(
-        `https://fierce-caverns-90976.herokuapp.com/warning?email=${user?.email}`
-      )
+      .put(`http://localhost:5000/warning?email=${user?.email}`)
       .then(function(response) {
         Swal.fire({
           icon: "success",

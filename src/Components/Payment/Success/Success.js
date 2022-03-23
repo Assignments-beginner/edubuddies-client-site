@@ -13,7 +13,7 @@ const Success = () => {
       tran_id: id,
       val_id: paymentDetails?.val_id,
     };
-    fetch(`https://fierce-caverns-90976.herokuapp.com/validate`, {
+    fetch(`http://localhost:5000/validate`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -25,7 +25,7 @@ const Success = () => {
   };
 
   useEffect(() => {
-    fetch(`https://fierce-caverns-90976.herokuapp.com/orders/${id}`)
+    fetch(`http://localhost:5000/orders/${id}`)
       .then((res) => res.json())
       .then((data) => setpaymentDetails(data));
   }, [id]);

@@ -168,7 +168,7 @@ const useFirebase = () => {
       photoURL,
     };
     axios
-      .post(`https://fierce-caverns-90976.herokuapp.com/signup`, save)
+      .post(`http://localhost:5000/signup`, save)
       .then(function(response) {
         Swal.fire({
           icon: "success",
@@ -199,7 +199,7 @@ const useFirebase = () => {
   ) => {
     const save = { email, displayName, photoURL };
     axios
-      .put(`https://fierce-caverns-90976.herokuapp.com/login`, save)
+      .put(`http://localhost:5000/login`, save)
       .then(function(response) {
         Swal.fire({
           icon: "success",
@@ -236,9 +236,7 @@ const useFirebase = () => {
   useEffect(() => {
     setIsloading(true);
     const loadFUncion = async () => {
-      await fetch(
-        `https://fierce-caverns-90976.herokuapp.com/getUserRole/${user.email}`
-      )
+      await fetch(`http://localhost:5000/getUserRole/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setRole(data[0].role);

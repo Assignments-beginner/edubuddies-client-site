@@ -15,11 +15,9 @@ SwiperCore.use([Autoplay, Pagination]);
 const Testimonial = () => {
   const [files, setFiles] = React.useState();
   React.useEffect(() => {
-    axios
-      .get(`https://fierce-caverns-90976.herokuapp.com/courses`)
-      .then((res) => {
-        setFiles(res.data);
-      });
+    axios.get(`http://localhost:5000/courses`).then((res) => {
+      setFiles(res.data);
+    });
   }, []);
   const findReviewObject = files?.filter(
     (course) => course?.reviews?.length > 0

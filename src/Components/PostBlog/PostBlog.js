@@ -64,7 +64,7 @@ const PostBlog = () => {
     };
     setSubmitting(true);
     axios
-      .post(`https://fierce-caverns-90976.herokuapp.com/blogs`, blog)
+      .post(`http://localhost:5000/blogs`, blog)
       .then(function(response) {
         Swal.fire({
           icon: "success",

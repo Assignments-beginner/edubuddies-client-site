@@ -12,18 +12,16 @@ export const deleteAlert = (id, api) => {
     confirmButtonText: "Yes, delete it!",
   }).then((result) => {
     if (result.isConfirmed) {
-      axios
-        .delete(`https://fierce-caverns-90976.herokuapp.com/${api}/${id}`)
-        .then((res) => {
-          if (res.data.deletedCount > 0) {
-            Swal.fire({
-              showConfirmButton: false,
-              icon: "success",
-              title: "Your file has been deleted",
-              timer: 1000,
-            });
-          }
-        });
+      axios.delete(`http://localhost:5000/${api}/${id}`).then((res) => {
+        if (res.data.deletedCount > 0) {
+          Swal.fire({
+            showConfirmButton: false,
+            icon: "success",
+            title: "Your file has been deleted",
+            timer: 1000,
+          });
+        }
+      });
     }
   });
 };
@@ -43,22 +41,17 @@ export const updateAlert = (id, statusName, api) => {
     confirmButtonText: `Yes, I am sure`,
   }).then((result) => {
     if (result.isConfirmed) {
-      axios
-        .patch(
-          `https://fierce-caverns-90976.herokuapp.com/${api}/${id}`,
-          status
-        )
-        .then((res) => {
-          if (res.data.modifiedCount > 0) {
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "Successfully Done",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-          }
-        });
+      axios.patch(`http://localhost:5000/${api}/${id}`, status).then((res) => {
+        if (res.data.modifiedCount > 0) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Successfully Done",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
     }
   });
 };
