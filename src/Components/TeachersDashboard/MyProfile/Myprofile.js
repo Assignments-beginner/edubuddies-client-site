@@ -75,7 +75,7 @@ const MyProfile = () => {
 						</p>
 						<h2 className='text-2xl font-bold'>Skills</h2>
 						<h4 className='my-6'>
-							{singleTeacher?.skillset?.split(",")?.map((expert, key) => (
+							{singleTeacher?.skills?.split(",")?.map((expert, key) => (
 								<p
 									className='mr-4 bg-gray-800 text-white py-2 px-4 rounded-md inline-block mb-2'
 									key={key}>
