@@ -20,7 +20,7 @@ const Success = () => {
       tran_id: id,
       val_id: paymentDetails?.val_id,
     };
-    fetch(`https://fierce-caverns-90976.herokuapp.com/validate`, {
+    fetch(`http://localhost:5000/validate`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -31,7 +31,7 @@ const Success = () => {
       .then((data) => {
         if (data) {
           const result = axios.put(
-            `https://fierce-caverns-90976.herokuapp.com/addMyCourses/${user?.email}`,
+            `http://localhost:5000/addMyCourses/${user?.email}`,
             {
               paymentDetails,
               userData,

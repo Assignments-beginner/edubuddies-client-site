@@ -97,6 +97,7 @@ function App() {
 							<Route path='/home' element={<Home />} />
 							<Route path='/blog' element={<AllBlogsPage />} />
 							<Route path='/allCourseList' element={<AllCourseList />} />
+<<<<<<< HEAD
 							<Route
 								path='/singleblog/:id'
 								element={
@@ -115,6 +116,12 @@ function App() {
 									</PrivateRoute>
 								}
 							/>
+=======
+							<Route path='/singleblog/:id' element={<SingleBlogMain />} />
+							<Route path='/about' element={<About />} />
+							<Route path='/courses' element={<Courses />} />
+							<Route path='/singlecourse/:id' element={<SingleCourse />} />
+>>>>>>> d7328860410162a9a6984efa1cd6f8ecc618970f
 							<Route path='/contact' element={<Contact />} />
 							<Route path='/register' element={<Register />} />
 							<Route path='/login' element={<Login />} />
