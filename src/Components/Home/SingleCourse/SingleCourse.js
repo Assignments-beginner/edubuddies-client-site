@@ -73,6 +73,7 @@ const SingleCourse = () => {
 
 	const handlePay = () => {
 		const info = {
+			product_id: sigleData?._id,
 			product_name: sigleData?.title,
 			product_category: sigleData?.category,
 			product_profile: sigleData?.description,
