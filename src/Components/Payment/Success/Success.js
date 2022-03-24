@@ -1,43 +1,35 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 const Success = () => {
   const { id } = useParams();
   const { user } = useAuth();
   const [paymentDetails, setpaymentDetails] = useState({});
-  console.log(paymentDetails);
+  const navigate = useNavigate();
 
   const userData = {
-    email: user.eamil,
+    email: user.email,
     displayName: user.displayName,
-    photoURL: user.displayName,
+    photoURL: user.photoURL,
   };
 
-  const validatePayment = () => {
-    const paymentInfo = {
-      tran_id: id,
-      val_id: paymentDetails?.val_id,
-    };
-    fetch(`http://localhost:5000/validate`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(paymentInfo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          const result = axios.put(
-            `http://localhost:5000/addMyCourses/${user?.email}`,
-            {
-              paymentDetails,
-              userData,
-            }
-          );
-          console.log(result);
+  const courseInfo = {
+    courseId: paymentDetails?.product_id,
+    courseName: paymentDetails?.product_name,
+    courseImage: paymentDetails?.product_image,
+  };
+
+  const validatePayment = async () => {
+    await axios
+      .put(`http://localhost:5000/addMyCourses/${user?.email}`, {
+        courseInfo,
+        userData,
+      })
+      .then((res) => {
+        if (res) {
+          navigate("/studentdashboard/myCourse");
         }
       });
   };
@@ -80,14 +72,13 @@ const Success = () => {
           {paymentDetails?.productDetails}
         </p>
       </div>
-      <Link to="/studentdashboard/myCourse/">
-        <button
-          className="bg-red-500 hover:bg-transparent border border-red-500 px-4 py-3 font-bold text-white hover:text-red-500 rounded-lg duration-300 mt-4 tracking-widest"
-          onClick={validatePayment}
-        >
-          Go to Courses
-        </button>
-      </Link>
+
+      <button
+        className="bg-red-500 hover:bg-transparent border border-red-500 px-4 py-3 font-bold text-white hover:text-red-500 rounded-lg duration-300 mt-4 tracking-widest"
+        onClick={validatePayment}
+      >
+        Confirm Paymet
+      </button>
     </div>
   );
 };
