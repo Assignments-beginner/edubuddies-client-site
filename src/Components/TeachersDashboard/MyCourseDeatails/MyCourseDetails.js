@@ -10,7 +10,7 @@ const MyCourseDetails = () => {
 		)
 			.then((res) => res.json())
 			.then((data) => setcourseDetails(data));
-	}, []);
+	}, [courseId]);
 
 	return (
 		<div>

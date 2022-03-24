@@ -63,9 +63,7 @@ const NeedSupportDetailsModal = ({ handleSolveId, setHandleSolveModal }) => {
 	let n = 1;
 
 	return (
-		<div
-			style={{ zIndex: 999 }}
-			className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
+		<div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none modals'>
 			<div className='relative w-auto my-6 mx-auto'>
 				<div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none'>
 					<div className=' p-5 border-b border-solid border-red-500 rounded-t'>

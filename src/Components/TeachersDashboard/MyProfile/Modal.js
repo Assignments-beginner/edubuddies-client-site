@@ -87,7 +87,7 @@ const Modal = ({ setShowModal }) => {
 	};
 	return (
 		<div>
-			<div className='justify-center  flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
+			<div className='justify-center  flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none modals'>
 				<form
 					onSubmit={handleSubmit(onSubmit)}
 					className='flex flex-col space-y-3'>
