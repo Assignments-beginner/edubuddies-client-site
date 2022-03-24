@@ -29,7 +29,7 @@ const WarningModal = ({ setShowModal, submitting, setSubmitting }) => {
 	};
 	return (
 		<div>
-			<div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
+			<div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none modals'>
 				<div className='w-full grid place-items-center h-screen bg-black bg-opacity-40 z-50'>
 					<div className='flex flex-col space-y-3 '>
 						<div className='relative w-auto my-6 mx-auto max-w-3xl'>
