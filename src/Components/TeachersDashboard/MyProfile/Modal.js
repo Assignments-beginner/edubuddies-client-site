@@ -30,7 +30,7 @@ const Modal = ({ setShowModal }) => {
 		setLoading(false);
 	};
 
-	const [data, setData] = useState();
+	const [details, setDetails] = useState();
 	const { register, handleSubmit, reset } = useForm({
 		defaultValues: {
 			displayName: "",
@@ -57,18 +57,17 @@ const Modal = ({ setShowModal }) => {
 			)
 			.then((res) => {
 				reset(res?.data);
-				setData(res?.data);
+				setDetails(res?.data);
 			});
 	}, [reset, user?.email]);
 	const [submitting, setSubmitting] = useState(false);
 	const onSubmit = (data) => {
-		const photoURL = data?.fileLink || fileLink;
-		const datas = { ...data, photoURL: photoURL };
+		const datas = { ...data, photoURL: fileLink || details?.photoURL };
 		setSubmitting(true);
 		axios
 			.put(
 				`https://fierce-caverns-90976.herokuapp.com/teacherAbout?email=${user?.email}`,
-				data,
+				datas,
 			)
 			.then(function(response) {
 				Swal.fire({
