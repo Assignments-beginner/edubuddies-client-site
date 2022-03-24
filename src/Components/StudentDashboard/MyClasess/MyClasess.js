@@ -25,20 +25,20 @@ const MyClasess = () => {
 				{courses &&
 					courses?.map((item) => (
 						<div className='md:col-span-4 col-span-12'>
-							<Link to={`/studentdashboard/milestone/${item?._id}`}>
+							<Link to={`/studentdashboard/milestone/${item?.courseId}`}>
 								<div
 									className='border  rounded-lg card mx-auto duration-300  bg-white'
 									style={{ maxWidth: "400px" }}>
 									<div className='overflow-hidden'>
 										<img
 											className='object-fill h-36 w-96 card-image rounded-t-lg'
-											src={item?.image}
-											alt={item?.title}
+											src={item?.courseImage}
+											alt={item?.courseName}
 										/>
 									</div>
 									<div className='px-4 card-content'>
 										<h1 className='text-lg font-bold my-4 text-stone-700 hover:text-red-500 duration-300 cursor-pointer text-center'>
-											{item?.title}
+											{item?.courseName}
 										</h1>
 									</div>
 								</div>
