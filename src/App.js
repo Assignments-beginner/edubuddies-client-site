@@ -79,6 +79,7 @@ import AdminRoute from "./Components/Login/AdminRoute/AdminRoute";
 import StudentRoute from "./Components/Login/StudentRoute/StudentRoute";
 import UserActivities from "./Components/Dashboard/Admin/Chart/UserActivities";
 import MyProfile from "./Components/TeachersDashboard/MyProfile/Myprofile";
+import PrivateRoute from "./Components/Login/PrivateRoute/PrivateRoute";
 function App() {
 	return (
 		<div className='App'>
@@ -96,11 +97,24 @@ function App() {
 							<Route path='/home' element={<Home />} />
 							<Route path='/blog' element={<AllBlogsPage />} />
 							<Route path='/allCourseList' element={<AllCourseList />} />
-							<Route path='/singleblog/:id' element={<SingleBlogMain />} />
+							<Route
+								path='/singleblog/:id'
+								element={
+									<PrivateRoute>
+										<SingleBlogMain />
+									</PrivateRoute>
+								}
+							/>
 							<Route path='/about' element={<About />} />
 							<Route path='/courses' element={<Courses />} />
-							<Route path='/singlecourse/:id' element={<SingleCourse />} />
-							<Route path='/milestone/:id' element={<Milestones />} />
+							<Route
+								path='/singlecourse/:id'
+								element={
+									<PrivateRoute>
+										<SingleCourse />
+									</PrivateRoute>
+								}
+							/>
 							<Route path='/contact' element={<Contact />} />
 							<Route path='/register' element={<Register />} />
 							<Route path='/login' element={<Login />} />
@@ -130,6 +144,10 @@ function App() {
 										<StudentDashboard />
 									</StudentRoute>
 								}>
+								<Route
+									path='/studentdashboard/milestone/:id'
+									element={<Milestones />}
+								/>
 								<Route path='/studentdashboard' element={<StudentProfile />} />
 								<Route
 									path='/studentdashboard/address'
