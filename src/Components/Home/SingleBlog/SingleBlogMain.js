@@ -11,11 +11,9 @@ const SingleBlogMAin = () => {
   const { id } = useParams();
   const [blog, setBlog] = React.useState();
   React.useEffect(() => {
-    axios
-      .get(`https://fierce-caverns-90976.herokuapp.com/blogs/${id}`)
-      .then((res) => {
-        setBlog(res.data);
-      });
+    axios.get(`http://localhost:5000/blogs/${id}`).then((res) => {
+      setBlog(res.data);
+    });
   }, [id, submitting]);
 
   return (

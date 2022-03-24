@@ -14,9 +14,7 @@ const StudentAddress = () => {
   const [presentaddressUI, setPresentaddressUI] = React.useState();
   React.useEffect(() => {
     axios
-      .get(
-        `https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`
-      )
+      .get(`http://localhost:5000/allusers?email=${user?.email}`)
       .then((res) => {
         setPresentaddressUI(res.data?.presentAddress);
       });
@@ -25,9 +23,7 @@ const StudentAddress = () => {
   const [permanentaddressUI, setPermanentaddressUI] = React.useState();
   React.useEffect(() => {
     axios
-      .get(
-        `https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`
-      )
+      .get(`http://localhost:5000/allusers?email=${user?.email}`)
       .then((res) => {
         setPermanentaddressUI(res.data?.permanentAddress);
       });

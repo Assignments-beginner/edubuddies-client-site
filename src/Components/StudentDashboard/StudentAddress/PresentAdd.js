@@ -22,9 +22,7 @@ const PresentAdd = ({ setPresentAddModal }) => {
 
   React.useEffect(() => {
     axios
-      .get(
-        `https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`
-      )
+      .get(`http://localhost:5000/allusers?email=${user?.email}`)
       .then((res) => {
         reset(res.data?.presentAddress);
         setData(res.data?.presentAddress);
@@ -34,10 +32,7 @@ const PresentAdd = ({ setPresentAddModal }) => {
   const onSubmit = (data) => {
     setSubmitting(true);
     axios
-      .put(
-        `https://fierce-caverns-90976.herokuapp.com/presentaddress?email=${user?.email}`,
-        data
-      )
+      .put(`http://localhost:5000/presentaddress?email=${user?.email}`, data)
       .then(function(response) {
         Swal.fire({
           icon: "success",

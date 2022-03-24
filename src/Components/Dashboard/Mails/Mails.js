@@ -14,11 +14,9 @@ const Mails = () => {
   const [status, setStatus] = React.useState(false);
   const [data, setData] = React.useState();
   React.useEffect(() => {
-    axios
-      .get(`https://fierce-caverns-90976.herokuapp.com/email`)
-      .then((res) => {
-        setData(res.data);
-      });
+    axios.get(`http://localhost:5000/email`).then((res) => {
+      setData(res.data);
+    });
   }, [deleted, status]);
 
   const handleDelete = (id) => {
@@ -34,7 +32,7 @@ const Mails = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://fierce-caverns-90976.herokuapp.com/email/${id}`)
+          .delete(`http://localhost:5000/email/${id}`)
           .then(function(response) {
             Swal.fire("Deleted!", "That mail has been deleted.", "success");
             setDeleted(false);

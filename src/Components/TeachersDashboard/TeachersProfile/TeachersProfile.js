@@ -7,7 +7,7 @@ const TeachersProfile = () => {
   const [singleTeacher, setSingleTeacher] = useState({});
 
   useEffect(() => {
-    fetch(`https://fierce-caverns-90976.herokuapp.com/singleTeacher/${id}`)
+    fetch(`http://localhost:5000/singleTeacher/${id}`)
       .then((res) => res.json())
       .then((data) => setSingleTeacher(data));
   }, [id]);

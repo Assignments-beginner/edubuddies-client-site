@@ -12,11 +12,9 @@ const Milestones = () => {
 
   const [files, setFiles] = React.useState();
   React.useEffect(() => {
-    axios
-      .get(`https://fierce-caverns-90976.herokuapp.com/courses/${id}`)
-      .then((res) => {
-        setFiles(res.data);
-      });
+    axios.get(`http://localhost:5000/courses/${id}`).then((res) => {
+      setFiles(res.data);
+    });
   }, [id]);
   console.log(files);
   const [selectModule, setSelectModule] = React.useState(

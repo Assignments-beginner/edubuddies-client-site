@@ -9,9 +9,7 @@ const TestRoute = () => {
   useEffect(() => {
     setIsLoad(true);
     const loadFUncion = async () => {
-      await fetch(
-        `https://fierce-caverns-90976.herokuapp.com/getUserRole/${user.email}`
-      )
+      await fetch(`http://localhost:5000/getUserRole/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           const restData = data[0].role;

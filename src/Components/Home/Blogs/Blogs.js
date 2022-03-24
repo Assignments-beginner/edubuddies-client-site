@@ -17,11 +17,9 @@ SwiperCore.use([Autoplay, Pagination]);
 const Blogs = () => {
   const [blogs, setBlogs] = React.useState();
   React.useEffect(() => {
-    axios
-      .get(`https://fierce-caverns-90976.herokuapp.com/blogs`)
-      .then((res) => {
-        setBlogs(res.data);
-      });
+    axios.get(`http://localhost:5000/blogs`).then((res) => {
+      setBlogs(res.data);
+    });
   }, []);
   console.log(blogs);
 

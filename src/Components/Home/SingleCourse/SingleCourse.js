@@ -73,6 +73,7 @@ const SingleCourse = () => {
 
   const handlePay = () => {
     const info = {
+      product_ID: sigleData?._id,
       product_name: sigleData?.title,
       product_category: sigleData?.category,
       product_profile: sigleData?.description,
@@ -101,6 +102,7 @@ const SingleCourse = () => {
         window.location.replace(data);
       });
   };
+
   return (
     <div className="entireCourse pb-20 container mx-auto">
       <div className="instructor px-4 text-left">

@@ -24,7 +24,7 @@ const WebDevCourses = () => {
 
   useEffect(() => {
     fetch(
-      `https://fierce-caverns-90976.herokuapp.com/WebDevCourses?particularCategory=${webCategory}`
+      `http://localhost:5000/WebDevCourses?particularCategory=${webCategory}`
     )
       .then((res) => res.json())
       .then((data) => setCourses(data));

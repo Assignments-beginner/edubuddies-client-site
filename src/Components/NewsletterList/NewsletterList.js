@@ -13,11 +13,9 @@ const NewsletterList = () => {
   const [deleted, setDeleted] = React.useState(false);
   const [newsletters, setNewsletters] = React.useState();
   React.useEffect(() => {
-    axios
-      .get(`https://fierce-caverns-90976.herokuapp.com/newsletter`)
-      .then((res) => {
-        setNewsletters(res.data);
-      });
+    axios.get(`http://localhost:5000/newsletter`).then((res) => {
+      setNewsletters(res.data);
+    });
   }, [deleted, status]);
 
   const handleDelete = (id) => {
@@ -33,7 +31,7 @@ const NewsletterList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://fierce-caverns-90976.herokuapp.com/newsletter/${id}`)
+          .delete(`http://localhost:5000/newsletter/${id}`)
           .then(function(response) {
             Swal.fire(
               "Deleted!",
@@ -61,12 +59,9 @@ const NewsletterList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .put(
-            `https://fierce-caverns-90976.herokuapp.com/newsletterStatus/${id}`,
-            {
-              text: text,
-            }
-          )
+          .put(`http://localhost:5000/newsletterStatus/${id}`, {
+            text: text,
+          })
           .then(function(response) {
             Swal.fire(
               `${text}!`,

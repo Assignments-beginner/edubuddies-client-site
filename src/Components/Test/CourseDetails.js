@@ -53,10 +53,7 @@ const CourseDetails = () => {
     const data = { title: form.title, lectureURL: lectureURL };
     console.log(data);
     axios
-      .patch(
-        `https://fierce-caverns-90976.herokuapp.com/updateCourseContent/${id}`,
-        data
-      )
+      .patch(`http://localhost:5000/updateCourseContent/${id}`, data)
       .then((res) => console.log(res.data));
   };
 

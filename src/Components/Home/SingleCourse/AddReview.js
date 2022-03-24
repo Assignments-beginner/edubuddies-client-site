@@ -20,10 +20,7 @@ const AddReview = ({ sigleData, submitting, setSubmitting }) => {
     };
     setSubmitting(true);
     axios
-      .put(
-        `https://fierce-caverns-90976.herokuapp.com/courseReview/${sigleData?._id}`,
-        addReview
-      )
+      .put(`http://localhost:5000/courseReview/${sigleData?._id}`, addReview)
       .then(function(response) {
         Swal.fire({
           icon: "success",

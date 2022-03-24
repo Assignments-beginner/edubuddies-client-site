@@ -24,7 +24,7 @@ const ProgrammingCourses = () => {
 
   useEffect(() => {
     fetch(
-      `https://fierce-caverns-90976.herokuapp.com/ProgrammingCourses?particularCategory=${programCategory}`
+      `http://localhost:5000/ProgrammingCourses?particularCategory=${programCategory}`
     )
       .then((res) => res.json())
       .then((data) => setCourses(data));

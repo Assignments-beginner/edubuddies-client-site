@@ -9,7 +9,7 @@ const CoursesList = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    const url = "https://fierce-caverns-90976.herokuapp.com/courses";
+    const url = "http://localhost:5000/courses";
     axios.get(url).then((res) => {
       const data = res.data.filter((item) => item.courseStatus !== "delete");
       setCourses(data);
@@ -33,10 +33,7 @@ const CoursesList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .patch(
-            `https://fierce-caverns-90976.herokuapp.com/courses/${id}`,
-            status
-          )
+          .patch(`http://localhost:5000/courses/${id}`, status)
           .then((res) => {
             if (res.data.modifiedCount > 0) {
               Swal.fire({

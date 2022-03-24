@@ -14,9 +14,7 @@ const StudentSkills = () => {
   const [skills, setSkills] = React.useState();
   React.useEffect(() => {
     axios
-      .get(
-        `https://fierce-caverns-90976.herokuapp.com/allusers?email=${user?.email}`
-      )
+      .get(`http://localhost:5000/allusers?email=${user?.email}`)
       .then((res) => {
         setSkills(res.data);
       });
@@ -35,9 +33,7 @@ const StudentSkills = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .put(
-            `https://fierce-caverns-90976.herokuapp.com/skillsetDelete/${user?.email}/${skill}`
-          )
+          .put(`http://localhost:5000/skillsetDelete/${user?.email}/${skill}`)
           .then(function(response) {
             Swal.fire("Deleted!", "That mail has been deleted.", "success");
             setDeleted(true);

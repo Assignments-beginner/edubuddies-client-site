@@ -8,12 +8,10 @@ import LoadingOverlay from "../../Loading/LoadingOverlay";
 const TeacherList = () => {
   const [teachers, setTeachers] = useState([]);
   useEffect(() => {
-    axios
-      .get("https://fierce-caverns-90976.herokuapp.com/teachers")
-      .then((res) => {
-        const restData = res.data.filter((item) => item.status !== "deleted");
-        setTeachers(restData);
-      });
+    axios.get("http://localhost:5000/teachers").then((res) => {
+      const restData = res.data.filter((item) => item.status !== "deleted");
+      setTeachers(restData);
+    });
   }, [teachers]);
 
   return (

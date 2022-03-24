@@ -15,7 +15,7 @@ const RecycleBin = () => {
 
   // load courses
   useEffect(() => {
-    const url = "https://fierce-caverns-90976.herokuapp.com/courses";
+    const url = "http://localhost:5000/courses";
     axios.get(url).then((res) => {
       const data = res.data.filter((item) => item.courseStatus === "delete");
       setCourses(data);
@@ -24,12 +24,10 @@ const RecycleBin = () => {
 
   // load teacher data
   useEffect(() => {
-    axios
-      .get("https://fierce-caverns-90976.herokuapp.com/teachers")
-      .then((res) => {
-        const restData = res.data.filter((item) => item.status === "deleted");
-        setTeacher(restData);
-      });
+    axios.get("http://localhost:5000/teachers").then((res) => {
+      const restData = res.data.filter((item) => item.status === "deleted");
+      setTeacher(restData);
+    });
   }, [teacher]);
 
   return (

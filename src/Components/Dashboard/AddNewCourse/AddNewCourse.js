@@ -36,7 +36,7 @@ const AddNewCourse = () => {
 		form.owner = { email: "nizamcse.seu@gmail.com", name: "Nizam Uddin" };
 		form.data = [];
 		form.enrolledStudents = [];
-		axios.post("https://fierce-caverns-90976.herokuapp.com/addCourse", form).then((res) => {
+		axios.post("http://localhost:5000/addCourse", form).then((res) => {
 			console.log(res.data);
 		});
 	};
@@ -109,7 +109,7 @@ const uploadFiless = async () => {
     };
     setSubmitting(true);
     axios
-      .post(`https://fierce-caverns-90976.herokuapp.com/addCourse`, file)
+      .post(`http://localhost:5000/addCourse`, file)
       .then(function(response) {
         Swal.fire({
           icon: "success",

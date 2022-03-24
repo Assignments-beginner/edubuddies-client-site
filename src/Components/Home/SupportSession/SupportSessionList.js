@@ -21,11 +21,9 @@ const SupportSessionList = () => {
   const { user } = useAuth();
   const [supportSessions, setSupportSessions] = React.useState();
   React.useEffect(() => {
-    axios
-      .get(`https://fierce-caverns-90976.herokuapp.com/supportsession`)
-      .then((res) => {
-        setSupportSessions(res.data);
-      });
+    axios.get(`http://localhost:5000/supportsession`).then((res) => {
+      setSupportSessions(res.data);
+    });
   }, [deleted, supportSessionModal, status]);
   console.log(supportSessions);
 
@@ -42,9 +40,7 @@ const SupportSessionList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(
-            `https://fierce-caverns-90976.herokuapp.com/supportsession/${id}`
-          )
+          .delete(`http://localhost:5000/supportsession/${id}`)
           .then(function(response) {
             Swal.fire(
               "Deleted!",
@@ -72,12 +68,9 @@ const SupportSessionList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .put(
-            `https://fierce-caverns-90976.herokuapp.com/supportsession/${id}`,
-            {
-              text: text,
-            }
-          )
+          .put(`http://localhost:5000/supportsession/${id}`, {
+            text: text,
+          })
           .then(function(response) {
             Swal.fire(
               `${text}!`,

@@ -71,7 +71,7 @@ const AddCourse = () => {
     };
     setSubmitting(true);
     axios
-      .post(`https://fierce-caverns-90976.herokuapp.com/addCourse`, file)
+      .post(`http://localhost:5000/addCourse`, file)
       .then(function(response) {
         Swal.fire({
           icon: "success",

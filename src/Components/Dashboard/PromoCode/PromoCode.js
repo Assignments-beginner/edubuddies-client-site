@@ -18,11 +18,9 @@ const PromoCode = () => {
   const { user } = useAuth();
   const [promo, setPromo] = React.useState();
   React.useEffect(() => {
-    axios
-      .get(`https://fierce-caverns-90976.herokuapp.com/promo`)
-      .then((res) => {
-        setPromo(res.data);
-      });
+    axios.get(`http://localhost:5000/promo`).then((res) => {
+      setPromo(res.data);
+    });
   }, [deleted, showPromoModal, status]);
   console.log(promo);
 
@@ -38,7 +36,7 @@ const PromoCode = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://fierce-caverns-90976.herokuapp.com/promo/${id}`)
+          .delete(`http://localhost:5000/promo/${id}`)
           .then(function(response) {
             Swal.fire("Deleted!", "That promo has been deleted.", "success");
             setDeleted(true);
@@ -62,7 +60,7 @@ const PromoCode = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .put(`https://fierce-caverns-90976.herokuapp.com/promo/${id}`, {
+          .put(`http://localhost:5000/promo/${id}`, {
             text: text,
           })
           .then(function(response) {

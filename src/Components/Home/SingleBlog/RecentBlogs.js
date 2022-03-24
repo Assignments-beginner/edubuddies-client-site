@@ -7,11 +7,9 @@ import { Link } from "react-router-dom";
 const RecentBlogs = () => {
   const [blogs, setBlogs] = React.useState();
   React.useEffect(() => {
-    axios
-      .get(`https://fierce-caverns-90976.herokuapp.com/blogs`)
-      .then((res) => {
-        setBlogs(res.data.reverse().slice(0, 4));
-      });
+    axios.get(`http://localhost:5000/blogs`).then((res) => {
+      setBlogs(res.data.reverse().slice(0, 4));
+    });
   }, []);
   return (
     <div

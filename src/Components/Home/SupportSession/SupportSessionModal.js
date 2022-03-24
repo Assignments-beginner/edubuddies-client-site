@@ -28,7 +28,7 @@ const SupportSessionModal = ({ setSupportSessionModal }) => {
     };
     setSubmitting(true);
     axios
-      .post(`https://fierce-caverns-90976.herokuapp.com/supportsession`, data)
+      .post(`http://localhost:5000/supportsession`, data)
       .then(function(response) {
         Swal.fire({
           icon: "success",

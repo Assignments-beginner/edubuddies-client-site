@@ -20,11 +20,9 @@ const AllLiveSupportSessions = () => {
   const [supportSessions, setSupportSessions] = React.useState();
   console.log(id);
   React.useEffect(() => {
-    axios
-      .get(`https://fierce-caverns-90976.herokuapp.com/supportsession`)
-      .then((res) => {
-        setSupportSessions(res.data);
-      });
+    axios.get(`http://localhost:5000/supportsession`).then((res) => {
+      setSupportSessions(res.data);
+    });
   }, []);
   console.log(supportSessions);
   const setModalAndId = (id) => {
