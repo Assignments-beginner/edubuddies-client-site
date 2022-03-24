@@ -4,12 +4,11 @@ import { Link, useParams } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 const Success = () => {
-  const { user } = useAuth();
   const { id } = useParams();
+  const { user } = useAuth();
   const [paymentDetails, setpaymentDetails] = useState({});
   console.log(paymentDetails);
 
-  // Validate Payment By User
   const userData = {
     email: user.eamil,
     displayName: user.displayName,
@@ -21,7 +20,7 @@ const Success = () => {
       tran_id: id,
       val_id: paymentDetails?.val_id,
     };
-    fetch(`http://localhost:5000/validate`, {
+    fetch(`https://fierce-caverns-90976.herokuapp.com/validate`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -32,7 +31,7 @@ const Success = () => {
       .then((data) => {
         if (data) {
           const result = axios.put(
-            `http://localhost:5000/addMyCourses/${user?.email}`,
+            `https://fierce-caverns-90976.herokuapp.com/addMyCourses/${user?.email}`,
             {
               paymentDetails,
               userData,
@@ -44,7 +43,7 @@ const Success = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${id}`)
+    fetch(`https://fierce-caverns-90976.herokuapp.com/orders/${id}`)
       .then((res) => res.json())
       .then((data) => setpaymentDetails(data));
   }, [id]);
@@ -81,13 +80,14 @@ const Success = () => {
           {paymentDetails?.productDetails}
         </p>
       </div>
-
-      <button
-        className="bg-red-500 hover:bg-transparent border border-red-500 px-4 py-3 font-bold text-white hover:text-red-500 rounded-lg duration-300 mt-4 tracking-widest"
-        onClick={validatePayment}
-      >
-        Go to Coursessss
-      </button>
+      <Link to="/studentdashboard/myCourse/">
+        <button
+          className="bg-red-500 hover:bg-transparent border border-red-500 px-4 py-3 font-bold text-white hover:text-red-500 rounded-lg duration-300 mt-4 tracking-widest"
+          onClick={validatePayment}
+        >
+          Go to Courses
+        </button>
+      </Link>
     </div>
   );
 };
