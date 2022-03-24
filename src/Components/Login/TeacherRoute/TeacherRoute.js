@@ -2,6 +2,7 @@ import useAuth from "../../../hooks/useAuth";
 
 import React, { useEffect, useState } from "react";
 import { Navigate, useLocation } from "react-router";
+import Loading from "../../Loading/Loading";
 
 const TeacherRoute = ({ children }) => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +32,13 @@ const TeacherRoute = ({ children }) => {
 	const location = useLocation();
 
 	if (isLoading) {
-		return <h1>Loading</h1>;
+		return (
+			<div class='flex h-screen'>
+				<div class='m-auto'>
+					<Loading />
+				</div>
+			</div>
+		);
 	}
 	if (user.email && teacher) {
 		return children;
