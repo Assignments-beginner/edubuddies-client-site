@@ -1,19 +1,26 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const Success = () => {
 	const { id } = useParams();
+	const { user } = useAuth();
 	const [paymentDetails, setpaymentDetails] = useState({});
 	console.log(paymentDetails);
 
-	// Validate Payment By User
+	const userData = {
+		email: user.eamil,
+		displayName: user.displayName,
+		photoURL: user.displayName,
+	};
 
 	const validatePayment = () => {
 		const paymentInfo = {
 			tran_id: id,
 			val_id: paymentDetails?.val_id,
 		};
-		fetch(`https://fierce-caverns-90976.herokuapp.com/validate`, {
+		fetch(`http://localhost:5000/validate`, {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -21,7 +28,18 @@ const Success = () => {
 			body: JSON.stringify(paymentInfo),
 		})
 			.then((res) => res.json())
-			.then((data) => {});
+			.then((data) => {
+				if (data) {
+					const result = axios.put(
+						`http://localhost:5000/addMyCourses/${user?.email}`,
+						{
+							paymentDetails,
+							userData,
+						},
+					);
+					console.log(result);
+				}
+			});
 	};
 
 	useEffect(() => {
