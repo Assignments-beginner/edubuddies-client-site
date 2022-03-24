@@ -97,24 +97,10 @@ function App() {
 							<Route path='/home' element={<Home />} />
 							<Route path='/blog' element={<AllBlogsPage />} />
 							<Route path='/allCourseList' element={<AllCourseList />} />
-							<Route
-								path='/singleblog/:id'
-								element={
-									<PrivateRoute>
-										<SingleBlogMain />
-									</PrivateRoute>
-								}
-							/>
+							<Route path='/singleblog/:id' element={<SingleBlogMain />} />
 							<Route path='/about' element={<About />} />
 							<Route path='/courses' element={<Courses />} />
-							<Route
-								path='/singlecourse/:id'
-								element={
-									<PrivateRoute>
-										<SingleCourse />
-									</PrivateRoute>
-								}
-							/>
+							<Route path='/singlecourse/:id' element={<SingleCourse />} />
 							<Route path='/contact' element={<Contact />} />
 							<Route path='/register' element={<Register />} />
 							<Route path='/login' element={<Login />} />
