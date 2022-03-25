@@ -18,90 +18,66 @@ const CourseCategories = () => {
         <div className="grid gap-6 grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2">
           {/* Fundamental  */}
           <Link to="/ProgrammingCourses">
-            <div className="w-60 h-44 card duration-300">
-              <img
-                className="w-full h-full card-image"
-                src={Category1}
-                alt=""
-              />
-              <div className="centered stroke p-2 absolute">
-                <span className="text-white text-center text-xl">
-                  Programming Fundamentals
+            <div className="cat-box duration-300">
+              <img className="w-60 h-44 cat-box-image" src={Category1} alt="" />
+              <div className="absolute">
+                <span className="text-white text-left stroke text-md p-2 left-4 bottom-4 absolute">
+                  Programming <br /> Fundamentals
                 </span>
               </div>
             </div>
           </Link>
           {/* Software  */}
           <Link to="/SoftDevCourses">
-            <div className="w-60 h-44 card duration-300">
-              <img
-                className="w-full h-full card-image"
-                src={Category2}
-                alt=""
-              />
-              <div className="centered stroke p-2 absolute">
-                <span className="text-white text-center text-xl">
-                  Software Development
+            <div className="cat-box duration-300">
+              <img className="w-60 h-44 cat-box-image" src={Category2} alt="" />
+              <div className="absolute">
+                <span className="text-white text-left stroke text-md p-2 left-4 bottom-4 absolute">
+                  Software <br /> Development
                 </span>
               </div>
             </div>
           </Link>
           {/* Web  */}
           <Link to="/WebDevCourses">
-            <div className="w-60 h-44 card duration-300">
-              <img
-                className="w-full h-full card-image"
-                src={Category3}
-                alt=""
-              />
-              <div className="centered stroke p-2 absolute">
-                <span className="text-white text-center text-xl">
-                  Web Development
+            <div className="cat-box duration-300">
+              <img className="w-60 h-44 cat-box-image" src={Category3} alt="" />
+              <div className="absolute">
+                <span className="text-white text-left stroke text-md p-2 left-4 bottom-4 absolute">
+                  Web <br /> Development
                 </span>
               </div>
             </div>
           </Link>
           {/* AI  */}
           <Link to="/AiCourses">
-            <div className="w-60 h-44 card duration-300">
-              <img
-                className="w-full h-full card-image"
-                src={Category4}
-                alt=""
-              />
-              <div className="centered stroke p-2 absolute">
-                <span className="text-white text-center text-xl">
-                  Artificial Intelligence
+            <div className="cat-box duration-300">
+              <img className="w-60 h-44 cat-box-image" src={Category4} alt="" />
+              <div className="absolute">
+                <span className="text-white text-left stroke text-md p-2 left-4 bottom-4 absolute">
+                  Artificial <br /> Intelligence
                 </span>
               </div>
             </div>
           </Link>
           {/* Game  */}
           <Link to="/GameDevCourses">
-            <div className="w-60 h-44 card duration-300">
-              <img
-                className="w-full h-full card-image"
-                src={Category5}
-                alt=""
-              />
-              <div className="centered stroke p-2 absolute">
-                <span className="text-white text-center text-xl">
-                  Game Development
+            <div className="cat-box duration-300">
+              <img className="w-60 h-44 cat-box-image" src={Category5} alt="" />
+              <div className="absolute">
+                <span className="text-white text-left stroke text-md p-2 left-4 bottom-4 absolute">
+                  Game <br /> Development
                 </span>
               </div>
             </div>
           </Link>
           {/* Machine  */}
           <Link to="/MachineCourses">
-            <div className="w-60 h-44 card duration-300">
-              <img
-                className="w-full h-full card-image"
-                src={Category6}
-                alt=""
-              />
-              <div className="centered stroke p-2 absolute">
-                <span className="text-white text-center text-xl">
-                  Machine Learning
+            <div className="cat-box duration-300">
+              <img className="w-60 h-44 cat-box-image" src={Category6} alt="" />
+              <div className="absolute">
+                <span className="text-white text-left stroke text-md p-2 left-4 bottom-4 absolute">
+                  Machine <br /> Learning
                 </span>
               </div>
             </div>
