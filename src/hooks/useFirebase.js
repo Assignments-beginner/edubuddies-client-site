@@ -168,7 +168,7 @@ const useFirebase = () => {
       photoURL,
     };
     axios
-      .post(`http://localhost:5000/signup`, save)
+      .post(`https://fierce-caverns-90976.herokuapp.com/signup`, save)
       .then(function(response) {
         Swal.fire({
           icon: "success",
@@ -223,7 +223,6 @@ const useFirebase = () => {
   };
 
   const logOut = () => {
-    console.log("fro header");
     signOut(auth)
       .then(() => {
         setUser({});
@@ -247,8 +246,6 @@ const useFirebase = () => {
     };
     loadFUncion();
   }, [user.email]);
-
-  console.log("role", role);
 
   useEffect(() => {
     const unSubscribed = onAuthStateChanged(auth, (user) => {

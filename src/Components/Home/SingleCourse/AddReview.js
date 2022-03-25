@@ -24,7 +24,7 @@ const AddReview = ({ sigleData, submitting, setSubmitting }) => {
 				`https://fierce-caverns-90976.herokuapp.com/courseReview/${sigleData?._id}`,
 				addReview,
 			)
-			.then(function (response) {
+			.then(function(response) {
 				Swal.fire({
 					icon: "success",
 					title: "Your Review Successfully Added",
@@ -34,7 +34,7 @@ const AddReview = ({ sigleData, submitting, setSubmitting }) => {
 				setSubmitting(false);
 				reset();
 			})
-			.catch(function (error) {
+			.catch(function(error) {
 				console.log("error", error);
 				console.log(error);
 			});

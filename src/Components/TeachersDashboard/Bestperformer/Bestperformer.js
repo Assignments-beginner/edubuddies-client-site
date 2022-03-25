@@ -11,7 +11,7 @@ const Bestperformer = () => {
 	}, []);
 
 	return (
-		<div className='bg-gray-100 min-h-screen performer-container'>
+		<div className='performer-container'>
 			<h1 className='text-center text-3xl uppercase font-semibold pt-4 md:mb-9 mb-5 text-red-500'>
 				Top Teacher Of The Year
 			</h1>
@@ -19,6 +19,7 @@ const Bestperformer = () => {
 				{performer?.map((best, key) => (
 					<div key={key} className='px-4 font-bold'>
 						<img
+							style={{ width: "230px", height: "auto" }}
 							className='mx-auto shadow-md rounded-md'
 							src={best?.image}
 							alt='best Performer'

@@ -1,29 +1,40 @@
 import React, { useEffect, useState } from "react";
 import CountUp from "react-countup";
-import { useParams } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import Modal from "./Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import {
+	faFacebook,
+	faLinkedin,
+	faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
-const TeachersProfile = () => {
-	const { id } = useParams();
+const MyProfile = () => {
+	const [showModal, setShowModal] = React.useState(false);
+	const { user } = useAuth();
 	const [singleTeacher, setSingleTeacher] = useState({});
-
 	useEffect(() => {
-		fetch(`https://fierce-caverns-90976.herokuapp.com/singleTeacher/${id}`)
+		fetch(
+			`https://fierce-caverns-90976.herokuapp.com/singleTeacher?email=${user?.email}`,
+		)
 			.then((res) => res.json())
 			.then((data) => setSingleTeacher(data));
-	}, [id]);
+	}, [user?.email, showModal]);
 	console.log("singleTeacher", singleTeacher);
+
 	return (
 		<div className=' container mt-4 mx-auto'>
-			<div className='xl:flex lg:flex: md:flex sm:block flex-row'>
-				<div className='basis-2/5 text-left border rounded-md mb-4 mx-4 shadow-md'>
+			<div className='xl:flex lg:flex: md:flex sm:block flex-row w-full'>
+				<div className='w-2/6 text-left border rounded-md mb-4 mx-4 shadow-md'>
 					<img
 						style={{ width: "100%" }}
 						className='rounded-t-md'
-						src={singleTeacher?.photoURL}
+						src={singleTeacher?.photoURL || user?.photoURL}
 						alt='Teachers'
 					/>
-					<div className='flex justify-between items-center border-b-2 border-red-500 px-5 py-2 bg-gray-800 font-bold tracking-widest'>
-						<h4 className='text-lg text-red-500'>
+					<div className='border-b-2 border-red-500 px-5 py-2 bg-gray-800 font-bold tracking-widest'>
+						<h4 className='text-xl text-red-500'>
 							{singleTeacher?.displayName}
 						</h4>
 						<h4 className='text-white'>{singleTeacher?.designation}</h4>
@@ -45,17 +56,57 @@ const TeachersProfile = () => {
 							<span className='font-bold'>Address:</span>{" "}
 							{singleTeacher?.address}
 						</h4>
+						<ul className='flex mt-2'>
+							<li>
+								<a
+									target='_blank'
+									rel='noopener noreferrer'
+									href={singleTeacher?.facebook}>
+									<FontAwesomeIcon
+										className='text-gray-700 text-3xl mx-2'
+										icon={faFacebook}
+									/>
+								</a>
+							</li>
+							<li>
+								<a
+									target='_blank'
+									rel='noopener noreferrer'
+									href={singleTeacher?.twitter}>
+									<FontAwesomeIcon
+										className='text-gray-700 text-3xl mx-2'
+										icon={faTwitter}
+									/>
+								</a>
+							</li>
+							<li>
+								<a
+									target='_blank'
+									rel='noopener noreferrer'
+									href={singleTeacher?.linkedin}>
+									<FontAwesomeIcon
+										className='text-gray-700 text-3xl mx-2'
+										icon={faLinkedin}
+									/>
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
-				<div className='basis-4/5 mx-4 border rounded-md shadow-md pb-5 mb-8'>
-					<h4 className='text-left text-2xl p-5 font-semibold '>
+				<div className='w-4/6 mx-4 border rounded-md shadow-md pb-5 mb-8'>
+					<h4 className='text-left text-2xl p-5 font-semibold flex justify-between'>
 						<span>
 							<span>About Of</span>
 							{"  "}
 							<span className='text-red-500 text-3xl'>
-								{singleTeacher?.displayName}
+								{singleTeacher?.displayName || user?.displayName}
 							</span>
 						</span>
+						<FontAwesomeIcon
+							onClick={() => setShowModal(true)}
+							icon={faPenToSquare}
+							className='text-2xl sm:mr-9 mr-0 cursor-pointer text-red-500'
+						/>
 					</h4>
 					<hr />
 					<div className='pl-5 text-left'>
@@ -104,8 +155,13 @@ const TeachersProfile = () => {
 					</div>
 				</div>
 			</div>
+			{showModal ? (
+				<>
+					<Modal setShowModal={setShowModal} />
+				</>
+			) : null}
 		</div>
 	);
 };
 
-export default TeachersProfile;
+export default MyProfile;

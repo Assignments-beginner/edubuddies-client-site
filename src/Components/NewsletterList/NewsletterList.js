@@ -1,24 +1,24 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTrashCan,
-  faXmark,
-  faCheck,
+	faTrashCan,
+	faXmark,
+	faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import Swal from "sweetalert2";
 
 const NewsletterList = () => {
-  const [status, setStatus] = React.useState(false);
-  const [deleted, setDeleted] = React.useState(false);
-  const [newsletters, setNewsletters] = React.useState();
-  React.useEffect(() => {
-    axios
-      .get(`https://fierce-caverns-90976.herokuapp.com/newsletter`)
-      .then((res) => {
-        setNewsletters(res.data);
-      });
-  }, [deleted, status]);
+	const [status, setStatus] = React.useState(false);
+	const [deleted, setDeleted] = React.useState(false);
+	const [newsletters, setNewsletters] = React.useState();
+	React.useEffect(() => {
+		axios
+			.get(`https://fierce-caverns-90976.herokuapp.com/newsletter`)
+			.then((res) => {
+				setNewsletters(res.data);
+			});
+	}, [deleted, status]);
 
 	const handleDelete = (id) => {
 		setDeleted(true);

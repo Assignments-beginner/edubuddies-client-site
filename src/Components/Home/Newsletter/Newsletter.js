@@ -17,7 +17,7 @@ const Newsletter = () => {
 		setSubmitting(true);
 		axios
 			.post(`https://fierce-caverns-90976.herokuapp.com/newsletter`, newsletter)
-			.then(function (response) {
+			.then(function(response) {
 				Swal.fire({
 					icon: "success",
 					title: "You Successfully Requested For Newsletter",
@@ -27,7 +27,7 @@ const Newsletter = () => {
 				setSubmitting(false);
 				reset();
 			})
-			.catch(function (error) {
+			.catch(function(error) {
 				console.log("error", error);
 				console.log(error);
 			});

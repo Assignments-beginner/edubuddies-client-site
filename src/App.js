@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "../src/Components/Home/About/About";
@@ -76,8 +77,9 @@ import Success from "./Components/Payment/Success/Success";
 import TeacherRoute from "./Components/Login/TeacherRoute/TeacherRoute";
 import AdminRoute from "./Components/Login/AdminRoute/AdminRoute";
 import StudentRoute from "./Components/Login/StudentRoute/StudentRoute";
-import UserChart from "./Components/Dashboard/Admin/Chart/UserChart";
-
+import UserActivities from "./Components/Dashboard/Admin/Chart/UserActivities";
+import MyProfile from "./Components/TeachersDashboard/MyProfile/Myprofile";
+import PrivateRoute from "./Components/Login/PrivateRoute/PrivateRoute";
 function App() {
   return (
     <div className="App">
@@ -99,7 +101,6 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/courses" element={<Courses />} />
               <Route path="/singlecourse/:id" element={<SingleCourse />} />
-              <Route path="/milestone/:id" element={<Milestones />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
@@ -130,6 +131,10 @@ function App() {
                   </StudentRoute>
                 }
               >
+                <Route
+                  path="/studentdashboard/milestone/:id"
+                  element={<Milestones />}
+                />
                 <Route path="/studentdashboard" element={<StudentProfile />} />
                 <Route
                   path="/studentdashboard/address"
@@ -216,7 +221,7 @@ function App() {
                 <Route path="/dashboard/admin/history" element={<History />} />
                 <Route
                   path="/dashboard/admin/userActivity"
-                  element={<UserChart />}
+                  element={<UserActivities />}
                 />
               </Route>
               <Route
@@ -231,6 +236,11 @@ function App() {
                   exact
                   path="/teachersDashboard/allTeachers"
                   element={<AllTeachers />}
+                />
+                <Route
+                  exact
+                  path="/teachersDashboard/profile"
+                  element={<MyProfile />}
                 />
                 <Route
                   path="/teachersDashboard/bestPerformer"
