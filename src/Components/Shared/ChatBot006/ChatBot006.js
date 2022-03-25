@@ -98,7 +98,7 @@ const ChatBot006 = () => {
           steps={steps}
           {...config}
         />
-      </div>
+      </div> 
     </div>
   );
 };
