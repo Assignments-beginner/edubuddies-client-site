@@ -13,14 +13,14 @@ const Faq = () => {
         only in English.
       </p>
       <h2 className="mt-8 text-lg font-bold  text-left text-red-500">
-        Who uses the Edu Buddies service?
+        Who can use the Edu Buddies platform?
       </h2>
       <p className="text-md text-justify">
         Just about any one who wants to improve employee skills management,
         increase knowledge acquisition and retention, reduce liability through
         compliance training or even just complement traditional classroom
-        instruction can use the <strong>Edu Buddies</strong> online training
-        platform.
+        instruction can use the <strong>Edu Buddies</strong> online programming
+        training platform.
       </p>
       <h2 className="mt-8 text-lg font-bold  text-left text-red-500">
         Do we need to install anything?
